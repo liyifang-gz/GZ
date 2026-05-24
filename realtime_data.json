@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-25T02:44:50",
+  "timestamp": "2026-05-25T02:49:50",
   "date": "2026-05-25",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 93,
-      "signed": 6,
-      "waiting": 87
+      "signed": 7,
+      "waiting": 86
     },
     "ontime": {
       "ontime": 0,
-      "early": 6,
+      "early": 7,
       "late": 0,
       "total": 93,
       "rate": 0.0,
-      "early_rate": 6.5,
+      "early_rate": 7.5,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,25 +24,25 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 6,
+      "total": 7,
       "done": 6,
-      "rate": 100.0
+      "rate": 85.7
     },
     "qc": {
-      "total": 27,
+      "total": 29,
       "done": 0,
-      "pending": 27,
+      "pending": 29,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 27,
+      "bill_total": 29,
       "pcs_done": 0,
-      "pcs_total": 3877,
+      "pcs_total": 4123,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 26,
+      "sku_total": 28,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -57,8 +57,8 @@
     "dimensions": {
       "reserve": {
         "total": 93,
-        "done": 6,
-        "rate": 6.5
+        "done": 7,
+        "rate": 7.5
       },
       "pcs": {
         "total": 19287,
@@ -69,14 +69,18 @@
       },
       "sku": {
         "total": 449,
-        "done": 32,
-        "rate": 7.1
+        "done": 34,
+        "rate": 7.6
       },
       "supplier": {
         "total": 74,
-        "done": 5,
-        "rate": 6.8,
+        "done": 6,
+        "rate": 8.1,
         "detail": {
+          "金乡县英格电子商务有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州市白云区松洲中芬果菜经营部-快乐猴": {
             "plan": 1,
             "done": 1
@@ -138,10 +142,6 @@
             "done": 0
           },
           "深圳禾顺农业有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "金乡县英格电子商务有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -318,13 +318,6 @@
           "skuCount": 3,
           "pcs": 0,
           "timeSlot": "14:30 - 15:00"
-        },
-        {
-          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
-          "billCode": "YY20260524007253",
-          "skuCount": 2,
-          "pcs": 0,
-          "timeSlot": "15:00 - 15:30"
         },
         {
           "supplierName": "广州市昌兴农产品有限公司-快乐猴",
@@ -577,9 +570,22 @@
           "skuCount": 2,
           "pcs": 0,
           "timeSlot": "17:00 - 17:30"
+        },
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "billCode": "YY20260524003867",
+          "skuCount": 5,
+          "pcs": 0,
+          "timeSlot": "04:30 - 05:00"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
+          "billCode": "YY20260524007253",
+          "signTime": "02:47",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
           "billCode": "YY20260524006683",
@@ -837,12 +843,6 @@
           "billCode": "YY20260523003174",
           "signTime": "11:56",
           "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "广州泉润食品有限公司-快乐猴",
-          "billCode": "YY20260523003375",
-          "signTime": "10:57",
-          "status": "已签到未卸货"
         }
       ],
       "qc_pending": [
@@ -1060,6 +1060,22 @@
           "skuName": "板栗红薯 1kg",
           "arrivalTime": "06:30",
           "unloadFinishTime": "02:39",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 28,
+          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
+          "skuName": "紫皮大蒜  500g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 29,
+          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
+          "skuName": "独头蒜 200g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],

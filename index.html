@@ -638,17 +638,17 @@ let countdownTimer;
     if (dupList.length === 0) {
       html += '<p class="modal-empty">暂无重复预约</p>';
     } else {
-      html += '<table class="modal-table"><thead><tr><th>采购单号</th><th>预约单号</th><th>SKUID</th><th>商品名称</th><th>预约数量</th></tr></thead><tbody>';
+      html += '<table class="modal-table"><thead><tr><th>采购单号</th><th>供应商</th><th>预约单号</th><th>SKUID</th><th>商品名称</th><th>预约数量</th></tr></thead><tbody>';
       dupList.forEach(function(r) {
         var skuRows = r.skus || [];
         var billCodes = r.reserveBillCodes || [];
         var perBill = (skuRows.length > 0 && billCodes.length > 0) ? Math.ceil(skuRows.length / billCodes.length) : 1;
         if (skuRows.length === 0) {
-          html += '<tr><td>' + (r.poNo||'--') + '</td><td style="color:#ef4444">' + billCodes.join(' / ') + '</td><td colspan="3" style="color:#9ca3af">-</td></tr>';
+          html += '<tr><td>' + (r.poNo||'--') + '</td><td>' + (r.supplierName||'--') + '</td><td style="color:#ef4444">' + billCodes.join(' / ') + '</td><td colspan="3" style="color:#9ca3af">-</td></tr>';
         } else {
           skuRows.forEach(function(s, idx) {
             var billIdx = Math.min(Math.floor(idx / perBill), billCodes.length - 1);
-            html += '<tr><td>' + (idx===0?r.poNo:'') + '</td><td style="color:#ef4444;font-size:11px">' + (billCodes[billIdx]||'--') + '</td><td>' + (s.skuCode||s.skuId||'--') + '</td><td>' + (s.skuName||'--') + '</td><td>' + (s.quantity!=null?s.quantity:'--') + '</td></tr>';
+            html += '<tr><td>' + (idx===0?r.poNo:'') + '</td><td>' + (idx===0?(r.supplierName||'--'):'') + '</td><td style="color:#ef4444;font-size:11px">' + (billCodes[billIdx]||'--') + '</td><td>' + (s.skuCode||s.skuId||'--') + '</td><td>' + (s.skuName||'--') + '</td><td>' + (s.quantity!=null?s.quantity:'--') + '</td></tr>';
           });
         }
       });

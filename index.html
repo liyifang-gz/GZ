@@ -688,7 +688,7 @@ let countdownTimer;
     window.showInboundDetail = showInboundDetail;
 
     // 维度切换按钮事件
-    containerRef.current.querySelectorAll(".dim-btn").forEach((btn) => {
+    document.querySelectorAll(".dim-btn").forEach((btn) => {
       btn.addEventListener("click", function () {
         const dim = this.dataset.dim;
         const type = this.dataset.type;
@@ -703,11 +703,11 @@ let countdownTimer;
 
     // 详情按钮事件
     const inboundDetailBtn = document.getElementById("inbound-detail-btn");
-    if (inboundDetailBtn)
+    if (inboundDetailBtn && inboundDetailBtn.addEventListener)
       inboundDetailBtn.addEventListener("click", () => toggleDetail("inbound-detail"));
 
     const planDetailBtn = document.getElementById("plan-detail-btn");
-    if (planDetailBtn)
+    if (planDetailBtn && planDetailBtn.addEventListener)
       planDetailBtn.addEventListener("click", () => toggleDetail("plan-detail"));
 
     // 刷新按钮

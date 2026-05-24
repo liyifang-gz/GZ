@@ -796,22 +796,25 @@ let countdownTimer;
       document.getElementById("inb-reserve-bar").style.width = Math.min(reserveBarPct, 100) + "%";
 
       // 签到进度
+      // 口径（2026-05-24 用户确认）：签到分母 = 已预约PCS（dimDone），不是总PCS（dimTotal）
+      // 逻辑：没有预约的单不可能签到，用总PCS当分母会压低比率
       let signVal, signBarPct = signRate;
       if (inboundDim === "reserve") {
         signVal = `${fmt(reserveDim.done)}/${fmt(reserveDim.total)} 单 (${signRate}%)`;
       } else {
-        const signedQty = Math.round(dimTotal * signRate / 100);
-        signVal = `${fmt(signedQty)}/${fmt(dimTotal)} ${unit} (${signRate}%)`;
+        const signedQty = Math.round(dimDone * signRate / 100);  // 分母=已预约PCS
+        signVal = `${fmt(signedQty)}/${fmt(dimDone)} ${unit} (${signRate}%)`;
       }
       document.getElementById("inb-sign-val").textContent = signVal;
       document.getElementById("inb-sign-bar").style.width = signBarPct + "%";
 
-      // 卸货进度（分母=已签到量，不是总量）
+      // 卸货进度（分母=已签到量）
+      // 口径：卸货分母 = 已签到PCS（即签到分母×签到率）
       let unloadVal, unloadBarPct = unloadRate;
       if (inboundDim === "reserve") {
         unloadVal = `${fmt(unload.done)}/${fmt(unload.total)} 单 (${unloadRate}%)`;
       } else {
-        const signedQty = Math.round(dimTotal * signRate / 100);
+        const signedQty = Math.round(dimDone * signRate / 100);  // 已签到PCS，与签到行一致
         const unloadedQty = Math.round(signedQty * unloadRate / 100);
         unloadVal = `${fmt(unloadedQty)}/${fmt(signedQty)} ${unit} (${unloadRate}%)`;
       }

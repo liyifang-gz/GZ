@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GZ0210 实时履约监控</title>
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -25,16 +22,47 @@
         }
         .header h1 { font-size: 16px; font-weight: 600; color: #1a1a1a; }
         .header .meta { font-size: 12px; color: #999; }
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .countdown-hint {
+            font-size: 11px;
+            color: #bbb;
+        }
         .header .refresh-btn {
-            padding: 6px 12px;
-            border: 1px solid #ddd;
+            padding: 5px 10px;
+            border: 1px solid #1976d2;
             border-radius: 4px;
             background: white;
             cursor: pointer;
             font-size: 12px;
-            color: #666;
+            color: #1976d2;
+            font-weight: 500;
+            transition: background 0.15s;
         }
-        .header .refresh-btn:active { background: #f5f5f5; }
+        .header .refresh-btn:hover { background: #e3f0ff; }
+        .header .refresh-btn:active { background: #bbdefb; }
+        .header .refresh-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            border-color: #ddd;
+            color: #999;
+        }
+        .date-select {
+            padding: 4px 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #333;
+            background: white;
+            cursor: pointer;
+            outline: none;
+        }
+        .date-select:focus { border-color: #2196f3; }
+        .header-left { flex: 1; }
 
         /* 总进度条 */
         .pipeline {
@@ -146,12 +174,13 @@
         .progress-item:last-child { margin-bottom: 0; }
         .progress-label {
             display: flex;
-            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
             font-size: 12px;
             margin-bottom: 3px;
         }
-        .progress-label .name { color: #666; }
-        .progress-label .val { color: #333; font-weight: 500; }
+        .progress-label .name { color: #666; min-width: 28px; flex-shrink: 0; }
+        .progress-label .val { color: #334155; font-weight: 500; }
         .progress-bar {
             height: 6px;
             background: #f0f0f0;
@@ -168,6 +197,93 @@
         .fill-blue { background: linear-gradient(90deg, #42a5f5, #1e88e5); }
         .fill-orange { background: linear-gradient(90deg, #ffa726, #f57c00); }
         .fill-purple { background: linear-gradient(90deg, #ab47bc, #7b1fa2); }
+
+        /* 进度条行悬停明细按钮 */
+        .progress-row-wrap { position: relative; }
+        .progress-row-wrap .progress-label { position: relative; }
+        .inb-detail-trigger {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 13px;
+            padding: 0 2px;
+            margin-left: 4px;
+            opacity: 0;
+            transition: opacity 0.18s;
+            vertical-align: middle;
+            line-height: 1;
+        }
+        .progress-row-wrap:hover .inb-detail-trigger { opacity: 1; }
+
+        /* 弹窗升级样式 */
+        .modal-card {
+            background: #fff;
+            margin: 40px auto;
+            max-width: 900px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10);
+            overflow: hidden;
+            position: relative;
+        }
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 14px 18px;
+        }
+        .modal-header h3 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        .modal-close-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #64748b;
+            line-height: 1;
+            padding: 2px 4px;
+            border-radius: 4px;
+            transition: background 0.15s, color 0.15s;
+        }
+        .modal-close-btn:hover { background: #e2e8f0; color: #1e293b; }
+        .modal-body-wrap {
+            max-height: 60vh;
+            overflow-y: auto;
+            padding: 18px 18px 20px;
+        }
+        .modal-empty {
+            color: #94a3b8;
+            font-size: 13px;
+            text-align: center;
+            padding: 32px 0;
+        }
+        .modal-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        .modal-table thead th {
+            background: #f1f5f9;
+            padding: 8px 10px;
+            border-bottom: 2px solid #e2e8f0;
+            text-align: left;
+            font-weight: 600;
+            color: #475569;
+            white-space: nowrap;
+        }
+        .modal-table tbody td {
+            padding: 7px 10px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #334155;
+        }
+        .modal-table tbody tr:nth-child(even) td { background: #f8fafc; }
+        .modal-table tbody tr:last-child td { border-bottom: none; }
+        .modal-table tbody tr:hover td { background: #eff6ff; }
 
         /* KPI */
         .kpi-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
@@ -226,18 +342,6 @@
             border-bottom: 1px solid #eee;
         }
         .detail-panel th { color: #999; font-weight: 500; }
-        .detail-btn-sm {
-            font-size: 10px; color: #3b82f6; cursor: pointer;
-            margin-left: 6px; white-space: nowrap;
-            text-decoration: underline;
-        }
-        .recv-section-title {
-            font-size: 11px; font-weight: 600; color: #374151;
-            padding: 4px 0 2px 0; margin-top: 6px;
-        }
-        .recv-section-title:first-child { margin-top: 0; }
-        .recv-diff-plus { color: #ef4444; }
-        .recv-diff-minus { color: #f59e0b; }
 
         .footer {
             text-align: center;
@@ -246,14 +350,21 @@
             color: #bbb;
         }
     </style>
-</head>
-<body>
+
     <div class="header">
-        <div>
+        <div class="header-left">
             <h1>🏭 GZ0210 广州冷藏仓</h1>
             <div class="meta" id="update-time">加载中...</div>
         </div>
-        <button class="refresh-btn" onclick="loadData()">🔄 刷新</button>
+        <div class="header-right">
+            <div style="display:flex;align-items:center;gap:8px;">
+                <select class="date-select" id="date-select">
+                    <option value="">今天</option>
+                </select>
+                <button class="refresh-btn" id="refresh-btn">🔄 立即刷新</button>
+            </div>
+            <div class="countdown-hint">数据自动更新 <span id="auto-countdown">0:30</span></div>
+        </div>
     </div>
 
     <!-- 总进度（PCS维度） -->
@@ -292,10 +403,10 @@
                     <span class="badge badge-green" id="inbound-badge">--</span>
                 </div>
                 <div class="dim-switch">
-                    <button class="dim-btn active" onclick="switchInboundDim('pcs', this)">PCS</button>
-                    <button class="dim-btn" onclick="switchInboundDim('sku', this)">SKU</button>
-                    <button class="dim-btn" onclick="switchInboundDim('reserve', this)">预约单</button>
-                    <button class="dim-btn" onclick="switchInboundDim('supplier', this)">供应商</button>
+                    <button class="dim-btn active" data-dim="pcs" data-type="inbound">PCS</button>
+                    <button class="dim-btn" data-dim="sku" data-type="inbound">SKU</button>
+                    <button class="dim-btn" data-dim="reserve" data-type="inbound">预约单</button>
+                    <button class="dim-btn" data-dim="supplier" data-type="inbound">供应商</button>
                 </div>
             </div>
             <!-- KPI 行在上 -->
@@ -315,39 +426,43 @@
             </div>
             <!-- 进度条在下 -->
             <div id="inbound-content" style="margin-top:10px">
+                <div class="progress-row-wrap">
                 <div class="progress-item">
-                    <div class="progress-label"><span class="name">预约</span><span class="val" id="inb-reserve-val">--</span></div>
+                    <div class="progress-label"><span class="name">预约</span><span class="val" id="inb-reserve-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('unreserved')">🔍</button></div>
                     <div class="progress-bar"><div class="fill fill-teal" id="inb-reserve-bar" style="width:0%"></div></div>
                 </div>
+                </div>
+                <div class="progress-row-wrap">
                 <div class="progress-item">
-                    <div class="progress-label"><span class="name">签到</span><span class="val" id="inb-sign-val">--</span></div>
+                    <div class="progress-label"><span class="name">签到</span><span class="val" id="inb-sign-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('unsigned')">🔍</button></div>
                     <div class="progress-bar"><div class="fill fill-green" id="inb-sign-bar" style="width:0%"></div></div>
                 </div>
+                </div>
+                <div class="progress-row-wrap">
                 <div class="progress-item">
-                    <div class="progress-label"><span class="name">卸货</span><span class="val" id="inb-unload-val">--</span></div>
+                    <div class="progress-label"><span class="name">卸货</span><span class="val" id="inb-unload-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('unloading')">🔍</button></div>
                     <div class="progress-bar"><div class="fill fill-green" id="inb-unload-bar" style="width:0%"></div></div>
                 </div>
+                </div>
+                <div class="progress-row-wrap">
                 <div class="progress-item">
-                    <div class="progress-label"><span class="name">质检</span><span class="val" id="inb-qc-val">--</span></div>
+                    <div class="progress-label"><span class="name">质检</span><span class="val" id="inb-qc-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('qc_pending')">🔍</button></div>
                     <div class="progress-bar"><div class="fill fill-blue" id="inb-qc-bar" style="width:0%"></div></div>
                 </div>
+                </div>
+                <div class="progress-row-wrap">
                 <div class="progress-item">
-                    <div class="progress-label">
-                        <span class="name">收货</span>
-                        <span class="val" id="inb-recv-val">--</span>
-                        <span class="detail-btn-sm" id="recv-detail-btn" onclick="toggleRecvDetail()" style="display:none"></span>
-                    </div>
+                    <div class="progress-label"><span class="name">收货</span><span class="val" id="inb-recv-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('recv_pending')">🔍</button></div>
                     <div class="progress-bar"><div class="fill fill-blue" id="inb-recv-bar" style="width:0%"></div></div>
-                    <!-- 已质检未收货 & 收货差异 弹窗（展开面板） -->
-                    <div class="detail-panel" id="recv-detail-panel" style="max-height:300px;"></div>
+                </div>
                 </div>
                 <div class="progress-item">
-                    <div class="progress-label"><span class="name">上架</span><span class="val" id="inb-putaway-val">--</span></div>
+                  <div style="position:relative" class="progress-row-wrap">
+                    <div class="progress-label"><span class="name">上架</span><span class="val" id="inb-putaway-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('putaway')">🔍</button></div>
+                  </div>
                     <div class="progress-bar"><div class="fill fill-purple" id="inb-putaway-bar" style="width:0%"></div></div>
                 </div>
             </div>
-            <span class="detail-btn" onclick="toggleDetail('inbound-detail')">查看明细 ▸</span>
-            <div class="detail-panel" id="inbound-detail"></div>
         </div>
 
         <!-- 出库 -->
@@ -358,8 +473,8 @@
                     <span class="badge badge-orange" id="outbound-badge">--</span>
                 </div>
                 <div class="dim-switch">
-                    <button class="dim-btn active" onclick="switchOutboundDim('pcs', this)">PCS</button>
-                    <button class="dim-btn" onclick="switchOutboundDim('sku', this)">SKU</button>
+                    <button class="dim-btn active" data-dim="pcs" data-type="outbound">PCS</button>
+                    <button class="dim-btn" data-dim="sku" data-type="outbound">SKU</button>
                 </div>
             </div>
             <!-- 出库 KPI 行在上 -->
@@ -413,7 +528,7 @@
                 <div class="kpi"><div class="number" id="plan-pcs">--</div><div class="unit">计划件数</div></div>
                 <div class="kpi"><div class="number" id="plan-stores">--</div><div class="unit">门店数</div></div>
             </div>
-            <span class="detail-btn" onclick="toggleDetail('plan-detail')">门店分布 ▸</span>
+            <span class="detail-btn" id="plan-detail-btn">门店分布 ▸</span>
             <div class="detail-panel" id="plan-detail"></div>
             <div style="margin-top:10px; padding-top:8px; border-top:1px solid #f0f0f0;">
                 <div style="font-size:11px;color:#bbb;margin-bottom:6px;">运输实时数据接入中，当前展示明日配送计划</div>
@@ -441,8 +556,7 @@
                     <div class="unit">单仓人效<br><span style="font-size:9px;color:#bbb">出库/出勤</span></div>
                 </div>
             </div>
-            <!-- 出勤率进度条已移除 -->
-            <!-- 分岗位 -->
+<!-- 分岗位 -->
             <table class="job-table" id="job-table">
                 <thead><tr><th>岗位</th><th style="text-align:center">在职</th><th style="text-align:center">出勤</th><th style="text-align:center">出勤率</th></tr></thead>
                 <tbody id="job-tbody"></tbody>
@@ -450,4841 +564,658 @@
         </div>
     </div>
 
-    <div class="footer">
-        GZ0210 广州冷藏1仓 · 每5分钟刷新 · <span id="auto-countdown">300</span>s
+<div class="footer">
+GZ0210 广州冷藏1仓 · 每5分钟自动刷新
+</div>
+
+<!-- 入库明细弹窗 -->
+<div id="detail-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;overflow:auto">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3 id="modal-title"></h3>
+      <button class="modal-close-btn" onclick="document.getElementById('detail-modal').style.display='none'">✕</button>
     </div>
+    <div class="modal-body-wrap" id="modal-body"></div>
+  </div>
+</div>
 
-    <script>
-        let countdownTimer;
-        let countdown = 300;
-        let currentData = null;
-        let inboundDim = 'pcs';
-        let outboundDim = 'pcs';
+<script>
+(function() {
+let countdownTimer;
+    let countdown = 30;
+    let currentData = null;
+    let inboundDim = "pcs";
+    let outboundDim = "pcs";
 
-        function fmt(n) { return n == null ? '--' : n.toLocaleString(); }
-        function pct(n, d) { return d > 0 ? Math.round(n / d * 100) : 0; }
+    function fmt(n) {
+      return n == null ? "--" : n.toLocaleString();
+    }
+    function pct(n, d) {
+      return d > 0 ? Math.round((n / d) * 100) : 0;
+    }
 
-        function switchInboundDim(dim, btn) {
-            inboundDim = dim;
-            btn.closest('.dim-switch').querySelectorAll('.dim-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            if (currentData) renderInbound(currentData.inbound);
+    function switchInboundDim(dim) {
+      inboundDim = dim;
+      if (currentData) renderInbound(currentData.inbound);
+    }
+
+    function switchOutboundDim(dim) {
+      outboundDim = dim;
+      if (currentData) renderOutbound(currentData.outbound);
+    }
+
+    function toggleDetail(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle("show");
+    }
+
+    function showInboundDetail(key) {
+      const details = currentData && currentData.inbound && currentData.inbound.details
+        ? currentData.inbound.details : null;
+      const list = details ? (details[key] || []) : [];
+      const titles = {
+        unreserved: '未预约采购单',
+        unsigned: '未签到预约单',
+        unloading: '已签到未卸货',
+        qc_pending: '未质检任务',
+        recv_pending: '已质检未收货',
+        putaway: '上架明细'
+      };
+      document.getElementById('modal-title').textContent =
+        (titles[key] || key) + '（' + list.length + '条）';
+      let html = '';
+      if (key === 'unreserved') {
+    var dupList = (currentData && currentData.inbound && currentData.inbound.details && currentData.inbound.details.duplicate_reserve) || [];
+    html = '<h4 style="margin:0 0 8px;font-size:13px;color:#374151">未预约采购单（' + list.length + '条）</h4>';
+    if (list.length === 0) {
+      html += '<p class="modal-empty">暂无未预约采购单</p>';
+    } else {
+      html += '<table class="modal-table"><thead><tr><th>供应商</th><th>采购单号</th><th>SKU数</th><th>采购数量</th><th>预计到货日</th><th>备注</th></tr></thead><tbody>';
+      list.forEach(function(r) { html += '<tr><td>' + (r.supplierName||'--') + '</td><td>' + (r.poNo||'--') + '</td><td>' + (r.skuCount!=null?r.skuCount:'--') + '</td><td>' + (r.pcs!=null?r.pcs:'--') + '</td><td>' + (r.preArrivalTime||'--') + '</td><td style="color:#f59e0b;font-weight:500">有采购单无预约</td></tr>'; });
+      html += '</tbody></table>';
+    }
+    html += '<h4 style="margin:16px 0 8px;font-size:13px;color:#374151">重复预约采购单（' + dupList.length + '条）<span style="font-size:11px;color:#6b7280;font-weight:normal;margin-left:6px">同一采购单关联多个预约单</span></h4>';
+    if (dupList.length === 0) {
+      html += '<p class="modal-empty">暂无重复预约</p>';
+    } else {
+      html += '<table class="modal-table"><thead><tr><th>采购单号</th><th>预约单号</th><th>SKUID</th><th>商品名称</th><th>预约数量</th></tr></thead><tbody>';
+      dupList.forEach(function(r) {
+        var skuRows = r.skus || [];
+        var billCodes = r.reserveBillCodes || [];
+        var perBill = (skuRows.length > 0 && billCodes.length > 0) ? Math.ceil(skuRows.length / billCodes.length) : 1;
+        if (skuRows.length === 0) {
+          html += '<tr><td>' + (r.poNo||'--') + '</td><td style="color:#ef4444">' + billCodes.join(' / ') + '</td><td colspan="3" style="color:#9ca3af">-</td></tr>';
+        } else {
+          skuRows.forEach(function(s, idx) {
+            var billIdx = Math.min(Math.floor(idx / perBill), billCodes.length - 1);
+            html += '<tr><td>' + (idx===0?r.poNo:'') + '</td><td style="color:#ef4444;font-size:11px">' + (billCodes[billIdx]||'--') + '</td><td>' + (s.skuCode||s.skuId||'--') + '</td><td>' + (s.skuName||'--') + '</td><td>' + (s.quantity!=null?s.quantity:'--') + '</td></tr>';
+          });
         }
-
-        function switchOutboundDim(dim, btn) {
-            outboundDim = dim;
-            btn.closest('.dim-switch').querySelectorAll('.dim-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            if (currentData) renderOutbound(currentData.outbound);
+      });
+      html += '</tbody></table>';
+    }
+      } else if (key === 'unsigned') {
+        html = `<table class="modal-table"><thead><tr><th>供应商</th><th>预约单号</th><th>SKU数</th><th>采购数量</th><th>预约送货时段</th></tr></thead><tbody>`;
+        list.forEach(r => { html += `<tr><td>${r.supplierName||'--'}</td><td>${r.billCode||'--'}</td><td>${r.skuCount!=null?r.skuCount:'--'}</td><td>${r.pcs!=null?r.pcs:'--'}</td><td>${r.timeSlot||'--'}</td></tr>`; });
+        html += '</tbody></table>';
+      } else if (key === 'unloading') {
+        html = `<table class="modal-table"><thead><tr><th>供应商</th><th>预约单号</th><th>签到时间</th></tr></thead><tbody>`;
+        list.forEach(r => { html += `<tr><td>${r.supplierName||'--'}</td><td>${r.billCode||'--'}</td><td>${r.signTime||'--'}</td></tr>`; });
+        html += '</tbody></table>';
+      } else if (key === 'qc_pending') {
+        html = `<table class="modal-table"><thead><tr><th>供应商</th><th>商品名称</th><th>到货时间</th><th>质检状态</th></tr></thead><tbody>`;
+        list.forEach(r => { html += `<tr><td>${r.supplierName||'--'}</td><td>${r.skuName||'--'}</td><td>${r.arrivalTime||'--'}</td><td>${r.statusLabel||'--'}</td></tr>`; });
+        html += '</tbody></table>';
+      } else if (key === 'recv_pending') {
+        // Part1: 已质检未收货
+        const pendingList = (currentData && currentData.inbound && currentData.inbound.details && currentData.inbound.details.qc_recv_pending) || list;
+        const diffList = (currentData && currentData.inbound && currentData.inbound.details && currentData.inbound.details.recv_diff) || [];
+        html = `<div style="font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">已质检未收货（${pendingList.length} 条）</div>`;
+        if (pendingList.length === 0) {
+          html += '<p style="color:#10b981;font-size:12px;">✅ 全部已收货</p>';
+        } else {
+          html += `<table class="modal-table"><thead><tr><th>供应商</th><th>商品名称</th><th>质检完成时间</th><th>等待(分)</th></tr></thead><tbody>`;
+          pendingList.forEach(r => { html += `<tr><td>${r.supplierName||'--'}</td><td>${r.skuName||'--'}</td><td>${r.qcCompleteTime||r.completeTime||'--'}</td><td>${r.waitingMins!=null?r.waitingMins:'--'}</td></tr>`; });
+          html += '</tbody></table>';
         }
-
-        function toggleDetail(id) {
-            document.getElementById(id).classList.toggle('show');
+        // Part2: 收货差异
+        html += `<div style="font-size:11px;font-weight:600;color:#374151;margin:10px 0 4px;">收货差异（${diffList.length} 条）</div>`;
+        if (diffList.length === 0) {
+          html += '<p style="color:#10b981;font-size:12px;">✅ 无差异</p>';
+        } else {
+          html += `<table class="modal-table"><thead><tr><th>供应商</th><th>商品名称</th><th>采购</th><th>实收</th><th>差异</th></tr></thead><tbody>`;
+          diffList.forEach(r => {
+            const cls = r.diffQty > 0 ? 'color:#ef4444' : 'color:#f59e0b';
+            const sign = r.diffQty > 0 ? '+' : '';
+            html += `<tr><td>${r.supplierName||'--'}</td><td>${r.skuName||'--'}</td><td>${r.purchaseQty??'--'}</td><td>${r.recvQty??'--'}</td><td style="${cls}">${sign}${r.diffQty??'--'}</td></tr>`;
+          });
+          html += '</tbody></table>';
         }
-
-        // 收货明细：已质检未收货 + 收货差异两部分
-        let _recvDetailOpen = false;
-        function toggleRecvDetail() {
-            _recvDetailOpen = !_recvDetailOpen;
-            const panel = document.getElementById('recv-detail-panel');
-            const btn = document.getElementById('recv-detail-btn');
-            if (_recvDetailOpen) {
-                panel.classList.add('show');
-                btn.textContent = '收起 ▴';
-                renderRecvDetail();
-            } else {
-                panel.classList.remove('show');
-                btn.textContent = btn.dataset.label || '查看明细 ▾';
-            }
+  } else if (key === 'putaway') {
+        var items = (currentData && currentData.inbound && currentData.inbound.putaway ? currentData.inbound.putaway.details : null) || [];
+        if (!items.length) {
+          html = '<p class="modal-empty">暂无上架明细数据</p>';
+        } else {
+          html = '<table class="modal-table"><thead><tr><th>采购单号</th><th>应上架SKU数</th><th>已上架SKU数</th><th>应上架数量</th><th>已上架数量</th></tr></thead><tbody>';
+          items.forEach(function(x) {
+            html += '<tr><td>' + (x.poNo||'--') + '</td><td>' + (x.hopeSku||0) + '</td><td>' + (x.putSku||0) + '</td><td>' + (x.hopePcs||0) + '</td><td>' + (x.putPcs||0) + '</td></tr>';
+          });
+          html += '</tbody></table>';
         }
+      }
+      document.getElementById('modal-body').innerHTML = html;
+      document.getElementById('detail-modal').style.display = 'block';
+    }
+    window.showInboundDetail = showInboundDetail;
 
-        function renderRecvDetail() {
-            if (!currentData) return;
-            const details = (currentData.inbound || {}).details || {};
-            const pending = details.qc_recv_pending || [];
-            const diffs   = details.recv_diff || [];
-            let html = '';
+    // 维度切换按钮事件
+    document.querySelectorAll(".dim-btn").forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const dim = this.dataset.dim;
+        const type = this.dataset.type;
+        this.closest(".dim-switch")
+          .querySelectorAll(".dim-btn")
+          .forEach((b) => b.classList.remove("active"));
+        this.classList.add("active");
+        if (type === "inbound") switchInboundDim(dim);
+        else if (type === "outbound") switchOutboundDim(dim);
+      });
+    });
 
-            // Part1：已质检未收货
-            html += `<div class="recv-section-title">已质检未收货（${pending.length} 条）</div>`;
-            if (pending.length === 0) {
-                html += '<div style="color:#10b981;padding:4px 0;">✅ 全部已收货</div>';
-            } else {
-                html += '<table><tr><th>供应商</th><th>商品</th><th>质检完成</th><th>等待(分)</th></tr>';
-                pending.forEach(function(x) {
-                    html += `<tr><td>${x.supplierName || '--'}</td><td>${x.skuName || '--'}</td><td>${x.qcCompleteTime || '--'}</td><td>${x.waitingMins ?? '--'}</td></tr>`;
-                });
-                html += '</table>';
-            }
+    // 详情按钮事件
+    const inboundDetailBtn = document.getElementById("inbound-detail-btn");
+    if (inboundDetailBtn && inboundDetailBtn.addEventListener)
+      inboundDetailBtn.addEventListener("click", () => toggleDetail("inbound-detail"));
 
-            // Part2：收货差异
-            html += `<div class="recv-section-title" style="margin-top:10px;">收货差异（${diffs.length} 条）</div>`;
-            if (diffs.length === 0) {
-                html += '<div style="color:#10b981;padding:4px 0;">✅ 无差异</div>';
-            } else {
-                html += '<table><tr><th>供应商</th><th>商品</th><th>采购</th><th>实收</th><th>差异</th></tr>';
-                diffs.forEach(function(x) {
-                    const diffClass = x.diffQty > 0 ? 'recv-diff-plus' : 'recv-diff-minus';
-                    const diffSign = x.diffQty > 0 ? '+' : '';
-                    html += `<tr><td>${x.supplierName || '--'}</td><td>${x.skuName || '--'}</td><td>${x.purchaseQty ?? '--'}</td><td>${x.recvQty ?? '--'}</td><td class="${diffClass}">${diffSign}${x.diffQty ?? '--'}</td></tr>`;
-                });
-                html += '</table>';
-            }
+    const planDetailBtn = document.getElementById("plan-detail-btn");
+    if (planDetailBtn && planDetailBtn.addEventListener)
+      planDetailBtn.addEventListener("click", () => toggleDetail("plan-detail"));
 
-            document.getElementById('recv-detail-panel').innerHTML = html;
+    // 刷新按钮
+    const refreshBtn = document.getElementById("refresh-btn");
+    if (refreshBtn) {
+      refreshBtn.addEventListener("click", () => {
+        refreshBtn.disabled = true;
+        refreshBtn.textContent = "⏳ 刷新中...";
+        silentRefresh().then(() => {
+          refreshBtn.disabled = false;
+          refreshBtn.textContent = "🔄 立即刷新";
+          countdown = 30;
+        });
+      });
+    }
+
+    function renderInbound(inb) {
+      if (!inb) return;
+      const reserve = inb.reserve || {};
+      const unload = inb.unload || {};
+      const qc = inb.qc || {};
+      const putaway = inb.putaway || {};
+      const dims = inb.dimensions || {};
+      const d = dims[inboundDim] || {};
+
+      const unitLabels = { pcs: "件", sku: "SKU", reserve: "单", supplier: "供应商" };
+      const unit = unitLabels[inboundDim] || "";
+
+      const rp = inb.reserve_progress || {};
+      const reserveDim = dims.reserve || {};
+      const reserveProgRate = rp.rate || 0;
+      const signRate = reserveDim.rate || 0;
+      const unloadRate = unload.rate || 0;
+      const qcRate = qc.rate || 0;
+
+      const dimTotal = d.total || 0;
+      const dimDone = d.done || 0;
+
+      // 预约进度
+      let reserveVal, reserveBarPct;
+      if (inboundDim === "reserve") {
+        reserveVal =
+          rp.po_total > 0
+            ? `${fmt(rp.po_reserved)}/${fmt(rp.po_total)} 单 (${reserveProgRate}%)`
+            : `${fmt(reserveDim.total || 0)} 单 (预约)`;
+        reserveBarPct = reserveProgRate;
+      } else {
+        const reservedQty = dimDone;
+        const reserveRate = d.rate || 0;
+        reserveVal = `${fmt(reservedQty)}/${fmt(dimTotal)} ${unit} (${reserveRate}%)`;
+        reserveBarPct = reserveRate;
+      }
+      document.getElementById("inb-reserve-val").textContent = reserveVal;
+      document.getElementById("inb-reserve-bar").style.width = Math.min(reserveBarPct, 100) + "%";
+
+      // 签到进度
+      let signVal, signBarPct = signRate;
+      if (inboundDim === "reserve") {
+        signVal = `${fmt(reserveDim.done)}/${fmt(reserveDim.total)} 单 (${signRate}%)`;
+      } else {
+        const signedQty = Math.round(dimTotal * signRate / 100);
+        signVal = `${fmt(signedQty)}/${fmt(dimTotal)} ${unit} (${signRate}%)`;
+      }
+      document.getElementById("inb-sign-val").textContent = signVal;
+      document.getElementById("inb-sign-bar").style.width = signBarPct + "%";
+
+      // 卸货进度（分母=已签到量，不是总量）
+      let unloadVal, unloadBarPct = unloadRate;
+      if (inboundDim === "reserve") {
+        unloadVal = `${fmt(unload.done)}/${fmt(unload.total)} 单 (${unloadRate}%)`;
+      } else {
+        const signedQty = Math.round(dimTotal * signRate / 100);
+        const unloadedQty = Math.round(signedQty * unloadRate / 100);
+        unloadVal = `${fmt(unloadedQty)}/${fmt(signedQty)} ${unit} (${unloadRate}%)`;
+      }
+      document.getElementById("inb-unload-val").textContent = unloadVal;
+      document.getElementById("inb-unload-bar").style.width = unloadBarPct + "%";
+
+// 质检进度（任务/SKU/PCS 三维度均使用真实字段，用户 2026-05-22 确认口径）
+const qcExtra = qc.rejected > 0 ? ` ⚠️${qc.rejected}不合格` : "";
+let qcVal, qcBarPct;
+if (inboundDim === "sku") {
+const skuTotal = qc.sku_total || 0;
+const skuDone  = qc.sku_done  || 0;
+const skuRate  = skuTotal > 0 ? Math.round(skuDone / skuTotal * 100) : 0;
+qcVal     = `${fmt(skuDone)}/${fmt(skuTotal)} SKU (${skuRate}%)${qcExtra}`;
+qcBarPct  = skuRate;
+} else if (inboundDim === "reserve") {
+qcVal     = `${fmt(qc.bill_done || qc.done)}/${fmt(qc.bill_total || qc.total)} 单 (${qcRate}%)${qcExtra}`;
+qcBarPct  = qcRate;
+} else {
+// PCS 维度（默认）：直接使用 specialRecvQuantity 汇总的 pcs_done/pcs_total
+const qcPcsDone  = qc.pcs_done  || Math.round(dimTotal * qcRate / 100);
+const qcPcsTotal = qc.pcs_total || dimTotal;
+const qcPcsRate  = qcPcsTotal > 0 ? Math.round(qcPcsDone / qcPcsTotal * 100) : 0;
+qcVal     = `${fmt(qcPcsDone)}/${fmt(qcPcsTotal)} 件 (${qcPcsRate}%)${qcExtra}`;
+qcBarPct  = qcPcsRate;
+}
+      document.getElementById("inb-qc-val").textContent = qcVal;
+      document.getElementById("inb-qc-bar").style.width = qcBarPct + "%";
+
+      // 收货进度：使用独立的 recv_done/recv_rate 字段（status=2用合同量，status=7用WIS实收量）
+      let recvVal, recvBarPct;
+      if (inboundDim === 'reserve') {
+        recvVal = `${fmt(d.done)}/${fmt(d.total)} 单`;
+        recvBarPct = d.rate || 0;
+      } else {
+        const recvDone = d.recv_done != null ? d.recv_done : dimDone;
+        const recvRate = d.recv_rate != null ? d.recv_rate : (d.rate || 0);
+        recvVal = `${fmt(recvDone)}/${fmt(dimTotal)} ${unit} (${recvRate}%)`;
+        recvBarPct = recvRate;
+      }
+      document.getElementById("inb-recv-val").textContent = recvVal;
+      document.getElementById("inb-recv-bar").style.width = Math.min(recvBarPct, 100) + "%";
+
+// putaway v2: uses real hopeQuantity/putQuantity data
+// 上架进度（使用真实上架任务数据：hopeQuantity/putQuantity & hopeCount/putCount）
+let putawayVal, putawayBarPct;
+if (inboundDim === 'sku') {
+const skuTotal = putaway.sku_total || 0;
+const skuDone  = putaway.sku_done  || 0;
+const skuRate  = skuTotal > 0 ? Math.round(skuDone / skuTotal * 100) : 0;
+putawayVal   = `${fmt(skuDone)}/${fmt(skuTotal)} SKU (${skuRate}%)`;
+putawayBarPct = skuRate;
+} else if (inboundDim === 'reserve') {
+const putawayRate = putaway.rate || 0;
+putawayVal   = `${fmt(putaway.done)}/${fmt(putaway.total)} PCS (${putawayRate}%)`;
+putawayBarPct = putawayRate;
+} else {
+// PCS 维度（默认）：直接使用真实 hopeQuantity/putQuantity
+const pcsTotal = putaway.total || 0;
+const pcsDone  = putaway.done  || 0;
+const pcsRate  = putaway.rate  || 0;
+putawayVal   = `${fmt(pcsDone)}/${fmt(pcsTotal)} 件 (${pcsRate}%)`;
+putawayBarPct = pcsRate;
+}
+      document.getElementById("inb-putaway-val").textContent = putawayVal;
+      document.getElementById("inb-putaway-bar").style.width = putawayBarPct + "%";
+
+      // KPI
+      document.getElementById("inb-total").textContent = fmt(dimTotal);
+      document.getElementById("inb-done").textContent = fmt(dimDone);
+      document.getElementById("inb-rate").textContent = (d.rate || 0) + "%";
+      const labels = { pcs: "总件数", sku: "总SKU数", reserve: "总预约单", supplier: "总供应商" };
+      const doneLabels = { pcs: "已收货件", sku: "已收货SKU", reserve: "已签到单", supplier: "已完成" };
+      document.getElementById("inb-total-label").textContent = labels[inboundDim] || "总量";
+      document.getElementById("inb-done-label").textContent = doneLabels[inboundDim] || "已完成";
+
+      // 签到准时率
+      const ontimeData = inb.ontime || {};
+      const ontimeRate = ontimeData.rate || 0;
+      const ontimeEl = document.getElementById("inb-ontime-rate");
+      if (ontimeEl) {
+        ontimeEl.textContent = ontimeData.total > 0 ? ontimeRate + "%" : "--";
+        ontimeEl.style.color = ontimeRate >= 90 ? "#10b981" : ontimeRate >= 70 ? "#f59e0b" : "#ef4444";
+      }
+      const subEl = document.getElementById("inb-ontime-sub");
+      if (subEl && ontimeData.total > 0) {
+        subEl.style.display = "block";
+        const earlyEl = document.getElementById("inb-early-rate");
+        const lateEl  = document.getElementById("inb-late-rate");
+        if (earlyEl) earlyEl.textContent = (ontimeData.early_rate != null ? ontimeData.early_rate + "%" : "--");
+        if (lateEl)  lateEl.textContent  = (ontimeData.late_rate  != null ? ontimeData.late_rate  + "%" : "--");
+      }
+
+      // 入库效率
+      const inbEff = (inb.kpi && inb.kpi.efficiency) || 0;
+      const inbPcsDone = (inb.dimensions && inb.dimensions.pcs && inb.dimensions.pcs.done) || 0;
+      const attActual = (currentData && currentData.attendance && currentData.attendance.attendance) || 0;
+      const calcInbEff = attActual > 0 && inbPcsDone > 0 ? Math.round(inbPcsDone / attActual) : inbEff;
+      document.getElementById("inb-efficiency").textContent = calcInbEff > 0 ? calcInbEff : "--";
+
+      // badge
+      const overallRate = Math.min(signRate, unloadRate || signRate, qcRate || signRate);
+      document.getElementById("inbound-badge").textContent = overallRate >= 90 ? "接近完成" : "进行中";
+      document.getElementById("inbound-badge").className =
+        "badge " + (overallRate >= 90 ? "badge-green" : "badge-orange");
+
+      // 供应商明细
+      if (inboundDim === "supplier" && d.detail) {
+        let html = "<table><tr><th>供应商</th><th>计划</th><th>完成</th></tr>";
+        for (const [name, info] of Object.entries(d.detail)) {
+          html += `<tr><td>${name}</td><td>${fmt(info.plan)}</td><td>${fmt(info.done)}</td></tr>`;
         }
+        html += "</table>";
+        document.getElementById("inbound-detail").innerHTML = html;
+      }
+    }
 
-        function renderInbound(inb) {
-            if (!inb) return;
-            const reserve = inb.reserve || {};
-            const unload = inb.unload || {};
-            const qc = inb.qc || {};
-            const receipt = inb.receipt || {};
-            const putaway = inb.putaway || {};
-            const dims = inb.dimensions || {};
-            const d = dims[inboundDim] || {};
+    function renderOutbound(out) {
+      if (!out) return;
+      const dims = out.dimensions || {};
+      const d = dims[outboundDim] || {};
+      const picking = out.picking || {};
+      const sowing = out.sowing || {};
+      const caging = out.caging || {};
+      const packing = out.packing || {};
+      const shipping = out.shipping || {};
+      const kpi = out.kpi || {};
 
-            // 维度单位映射
-            const unitLabels = { pcs: '件', sku: 'SKU', reserve: '单', supplier: '供应商' };
-            const unit = unitLabels[inboundDim] || '';
+      const total = d.total || 0;
 
-            // 各维度下，所有进度条都用 d（当前维度）数据驱动
-            // 逻辑：各阶段进度 = 该阶段完成比例 × 当前维度总量/已完成
-            // 具体：前置阶段（预约/签到/卸货/质检）用预约单比例 × 当前维度总量换算；收货/上架直接用维度数据
+      // 拣货进度
+      const pickTotal = picking.total_tasks || 0;
+      const pickDone = picking.done_tasks || 0;
+      const pickRate = picking.rate || d.pick_rate || 0;
+      if (pickTotal > 0) {
+        document.getElementById("out-pick-val").textContent = `${fmt(pickDone)}/${fmt(pickTotal)} 任务 (${pickRate}%)`;
+      } else {
+        document.getElementById("out-pick-val").textContent = `${fmt(d.picked)}/${fmt(total)} (${pickRate}%)`;
+      }
+      document.getElementById("out-pick-bar").style.width = pickRate + "%";
 
-            // 预约单维度的各阶段比率（基准比率，固定口径）
-            const rp = inb.reserve_progress || {};
-            const reserveDim = dims.reserve || {};
-            const reserveProgRate = rp.rate || 0;   // 预约进度（预约单口径）
-            const signRate = reserveDim.rate || 0;  // 签到率（预约单口径）
-            const unloadRate = unload.rate || 0;    // 卸货率
-            const qcRate = qc.rate || 0;            // 质检率
+      // 播种进度
+      const sowRate = sowing.rate || 0;
+      document.getElementById("out-sow-val").textContent = `${fmt(sowing.done)}/${fmt(sowing.total)} SKU行 (${sowRate}%)`;
+      document.getElementById("out-sow-bar").style.width = sowRate + "%";
 
-            // 当前维度的总量 & 已完成量（收货维度）
-            const dimTotal = d.total || 0;
-            const dimDone = d.done || 0;
+      // 关笼进度
+      const cageRate = caging.rate || 0;
+      document.getElementById("out-cage-val").textContent = `${fmt(caging.done)}/${fmt(caging.total)} SKU行 (${cageRate}%)`;
+      document.getElementById("out-cage-bar").style.width = cageRate + "%";
 
-            // 0. 预约进度
-            // 预约单维度：显示 po_reserved/po_total；其他维度：换算为当前维度数值
-            let reserveVal, reserveBarPct;
-            if (inboundDim === 'reserve') {
-                reserveVal = rp.po_total > 0
-                    ? `${fmt(rp.po_reserved)}/${fmt(rp.po_total)} 单 (${reserveProgRate}%)`
-                    : `${fmt(reserveDim.total || 0)} 单 (预约)`;
-                reserveBarPct = reserveProgRate;
-            } else {
-                // 用预约率 × 维度总量估算已预约数量
-                const reservedQty = Math.round(dimTotal * reserveProgRate / 100);
-                reserveVal = `${fmt(reservedQty)}/${fmt(dimTotal)} ${unit} (${reserveProgRate}%)`;
-                reserveBarPct = reserveProgRate;
-            }
-            document.getElementById('inb-reserve-val').textContent = reserveVal;
-            document.getElementById('inb-reserve-bar').style.width = Math.min(reserveBarPct, 100) + '%';
+      // 组盘（复核）
+      const packRate = packing.rate || 0;
+      if (packing.total > 0) {
+        document.getElementById("out-pack-val").textContent = `${fmt(packing.done)}/${fmt(packing.total)} (${packRate}%)`;
+        document.getElementById("out-pack-val").style.color = "";
+        document.getElementById("out-pack-bar").style.width = packRate + "%";
+      } else {
+        document.getElementById("out-pack-val").textContent = "--/-- (暂未接入)";
+        document.getElementById("out-pack-val").style.color = "#bbb";
+      }
 
-            // 1. 签到进度
-            let signVal, signBarPct = signRate;
-            if (inboundDim === 'reserve') {
-                signVal = `${fmt(reserveDim.done)}/${fmt(reserveDim.total)} 单 (${signRate}%)`;
-            } else {
-                const signedQty = Math.round(dimTotal * signRate / 100);
-                signVal = `${fmt(signedQty)}/${fmt(dimTotal)} ${unit} (${signRate}%)`;
-            }
-            document.getElementById('inb-sign-val').textContent = signVal;
-            document.getElementById('inb-sign-bar').style.width = signBarPct + '%';
+      // 发运
+      const shipRate = shipping.rate || 0;
+      if (shipping.total > 0) {
+        document.getElementById("out-ship-val").textContent = `${fmt(shipping.done)}/${fmt(shipping.total)} (${shipRate}%)`;
+        document.getElementById("out-ship-val").style.color = "";
+        document.getElementById("out-ship-bar").style.width = shipRate + "%";
+      } else {
+        document.getElementById("out-ship-val").textContent = "--/-- (暂未接入)";
+        document.getElementById("out-ship-val").style.color = "#bbb";
+      }
 
-            // 2. 卸货进度
-            let unloadVal, unloadBarPct = unloadRate;
-            if (inboundDim === 'reserve') {
-                unloadVal = `${fmt(unload.done)}/${fmt(unload.total)} 单 (${unloadRate}%)`;
-            } else {
-                const unloadedQty = Math.round(dimTotal * unloadRate / 100);
-                unloadVal = `${fmt(unloadedQty)}/${fmt(dimTotal)} ${unit} (${unloadRate}%)`;
-            }
-            document.getElementById('inb-unload-val').textContent = unloadVal;
-            document.getElementById('inb-unload-bar').style.width = unloadBarPct + '%';
+      // KPI 指标
+      const multiCount = kpi.multi_pallet_count || 0;
+      const multiTotal = kpi.multi_pallet_total || 0;
+      const multiRate = kpi.multi_pallet_rate || 0;
+      document.getElementById("out-multi-pallet").textContent =
+        multiTotal > 0 ? `${multiCount}/${multiTotal} (${multiRate}%)` : "--";
 
-            // 3. 质检进度
-            const qcExtra = qc.rejected > 0 ? ` ⚠️${qc.rejected}不合格` : '';
-            let qcVal, qcBarPct = qcRate;
-            if (inboundDim === 'reserve') {
-                qcVal = `${fmt(qc.bill_done || qc.done)}/${fmt(qc.bill_total || qc.total)} 单 (${qcRate}%)${qcExtra}`;
-            } else if (inboundDim === 'pcs') {
-                // 质检维度PCS：用质检率估算件数（pcs_done/pcs_total 已在后端计算）
-                const qcPcsDone = qc.pcs_done || Math.round(dimTotal * qcRate / 100);
-                const qcPcsTotal = qc.pcs_total || dimTotal;
-                qcVal = `${fmt(qcPcsDone)}/${fmt(qcPcsTotal)} 件 (${qcRate}%)${qcExtra}`;
-            } else {
-                const qcQty = Math.round(dimTotal * qcRate / 100);
-                qcVal = `${fmt(qcQty)}/${fmt(dimTotal)} ${unit} (${qcRate}%)${qcExtra}`;
-            }
-            document.getElementById('inb-qc-val').textContent = qcVal;
-            document.getElementById('inb-qc-bar').style.width = qcBarPct + '%';
+      const loadRate = kpi.load_rate || cageRate;
+      document.getElementById("out-load-rate").textContent = loadRate > 0 ? loadRate + "%" : "--%";
 
-            // 4. 收货进度（直接用维度数据，最准确）
-            const recvRate = d.rate || 0;
-            const recvVal = `${fmt(dimDone)}/${fmt(dimTotal)} ${unit} (${recvRate}%)`;
-            document.getElementById('inb-recv-val').textContent = recvVal;
-            document.getElementById('inb-recv-bar').style.width = recvRate + '%';
-            // 收货明细按钮：有已质检未收货或差异时显示
-            (function() {
-                const details = inb.details || {};
-                const pendingCnt = (details.qc_recv_pending || []).length;
-                const diffCnt    = (details.recv_diff || []).length;
-                const btn = document.getElementById('recv-detail-btn');
-                if (btn) {
-                    if (pendingCnt > 0 || diffCnt > 0) {
-                        btn.style.display = 'inline';
-                        const label = `待收${pendingCnt}·差异${diffCnt} ▾`;
-                        btn.dataset.label = label;
-                        if (!_recvDetailOpen) btn.textContent = label;
-                        // 有待收货时高亮按钮
-                        btn.style.color = pendingCnt > 0 ? '#ef4444' : '#3b82f6';
-                    } else {
-                        btn.style.display = 'none';
-                    }
-                }
-                // 如果面板已打开，刷新内容
-                if (_recvDetailOpen) renderRecvDetail();
-            })();
+      const outEff = kpi.outbound_efficiency || out.outbound_efficiency || 0;
+      document.getElementById("out-efficiency").textContent = outEff > 0 ? outEff : "--";
 
-            // 5. 上架进度（使用真实上架任务数据：hopeQuantity/putQuantity & hopeCount/putCount）
-            let putawayVal, putawayBarPct;
-            if (inboundDim === 'sku') {
-                const skuTotal = putaway.sku_total || 0;
-                const skuDone  = putaway.sku_done  || 0;
-                const skuRate  = skuTotal > 0 ? Math.round(skuDone / skuTotal * 100) : 0;
-                putawayVal   = `${fmt(skuDone)}/${fmt(skuTotal)} SKU (${skuRate}%)`;
-                putawayBarPct = skuRate;
-            } else if (inboundDim === 'reserve') {
-                // 预约单维度用 PCS 比率近似换算预约单数
-                const putawayRate = putaway.rate || 0;
-                putawayVal   = `${fmt(putaway.done)}/${fmt(putaway.total)} PCS (${putawayRate}%)`;
-                putawayBarPct = putawayRate;
-            } else {
-                // PCS 维度（默认）：直接使用真实 hopeQuantity/putQuantity
-                const pcsTotal = putaway.total || 0;
-                const pcsDone  = putaway.done  || 0;
-                const pcsRate  = putaway.rate  || 0;
-                putawayVal   = `${fmt(pcsDone)}/${fmt(pcsTotal)} 件 (${pcsRate}%)`;
-                putawayBarPct = pcsRate;
-            }
-            document.getElementById('inb-putaway-val').textContent = putawayVal;
-            document.getElementById('inb-putaway-bar').style.width = putawayBarPct + '%';
+      // badge
+      if (total > 0 || pickTotal > 0) {
+        document.getElementById("outbound-badge").textContent = cageRate >= 100 ? "已完成" : "作业中";
+        document.getElementById("outbound-badge").className =
+          "badge " + (cageRate >= 100 ? "badge-green" : "badge-orange");
+      } else {
+        document.getElementById("outbound-badge").textContent = "待启动";
+        document.getElementById("outbound-badge").className = "badge badge-orange";
+      }
+    }
 
-            // KPI（按维度切换）
-            document.getElementById('inb-total').textContent = fmt(dimTotal);
-            document.getElementById('inb-done').textContent = fmt(dimDone);
-            document.getElementById('inb-rate').textContent = (d.rate || 0) + '%';
-            const labels = { pcs: '总件数', sku: '总SKU数', reserve: '总预约单', supplier: '总供应商' };
-            const doneLabels = { pcs: '已收货件', sku: '已收货SKU', reserve: '已签到单', supplier: '已完成' };
-            document.getElementById('inb-total-label').textContent = labels[inboundDim] || '总量';
-            document.getElementById('inb-done-label').textContent = doneLabels[inboundDim] || '已完成';
+    function renderPlan(plan) {
+      if (!plan) return;
+      document.getElementById("plan-orders").textContent = fmt(plan.total_orders);
+      document.getElementById("plan-pcs").textContent = fmt(plan.total_pcs);
+      document.getElementById("plan-stores").textContent = fmt(plan.store_count);
+      document.getElementById("plan-badge").textContent =
+        plan.total_pcs > 0 ? fmt(plan.total_pcs) + "件" : "暂无";
 
-            // 签到准时率 + 早到率/迟到率子项
-            const ontimeData = inb.ontime || {};
-            const ontimeRate = ontimeData.rate || 0;
-            const ontimeEl = document.getElementById('inb-ontime-rate');
-            if (ontimeEl) {
-                ontimeEl.textContent = ontimeData.total > 0 ? ontimeRate + '%' : '--';
-                ontimeEl.style.color = ontimeRate >= 90 ? '#10b981' : ontimeRate >= 70 ? '#f59e0b' : '#ef4444';
-            }
-            // 早到率/迟到率子项
-            const subEl = document.getElementById('inb-ontime-sub');
-            if (subEl && ontimeData.total > 0) {
-                subEl.style.display = 'block';
-                const earlyEl = document.getElementById('inb-early-rate');
-                const lateEl  = document.getElementById('inb-late-rate');
-                if (earlyEl) earlyEl.textContent = (ontimeData.early_rate ?? '--') + (ontimeData.early_rate != null ? '%' : '');
-                if (lateEl)  lateEl.textContent  = (ontimeData.late_rate  ?? '--') + (ontimeData.late_rate  != null ? '%' : '');
-            }
-
-            // 入库效率（PCS/人，用 PCS 维度件数 / 出勤人数）
-            const inbEff = (inb.kpi && inb.kpi.efficiency) || 0;
-            const inbPcsDone = (inb.dimensions && inb.dimensions.pcs && inb.dimensions.pcs.done) || 0;
-            const attActual = (currentData && currentData.attendance && currentData.attendance.attendance) || 0;
-            const calcInbEff = attActual > 0 && inbPcsDone > 0 ? Math.round(inbPcsDone / attActual) : inbEff;
-            document.getElementById('inb-efficiency').textContent = calcInbEff > 0 ? calcInbEff : '--';
-
-            // badge
-            const overallRate = Math.min(signRate, unloadRate || signRate, qcRate || signRate);
-            document.getElementById('inbound-badge').textContent = overallRate >= 90 ? '接近完成' : '进行中';
-            document.getElementById('inbound-badge').className = 'badge ' + (overallRate >= 90 ? 'badge-green' : 'badge-orange');
-
-            // 供应商明细
-            if (inboundDim === 'supplier' && d.detail) {
-                let html = '<table><tr><th>供应商</th><th>计划</th><th>完成</th></tr>';
-                for (const [name, info] of Object.entries(d.detail)) {
-                    html += `<tr><td>${name}</td><td>${fmt(info.plan)}</td><td>${fmt(info.done)}</td></tr>`;
-                }
-                html += '</table>';
-                document.getElementById('inbound-detail').innerHTML = html;
-            }
+      if (plan.by_store && Object.keys(plan.by_store).length > 0) {
+        let html = "<table><tr><th>门店</th><th>件数</th></tr>";
+        for (const [s, p] of Object.entries(plan.by_store)) {
+          html += `<tr><td>${s}</td><td>${fmt(p)}</td></tr>`;
         }
+        html += "</table>";
+        document.getElementById("plan-detail").innerHTML = html;
+      }
+    }
 
-        function renderOutbound(out) {
-            if (!out) return;
-            const dims = out.dimensions || {};
-            const d = dims[outboundDim] || {};
-            const picking = out.picking || {};
-            const sowing = out.sowing || {};
-            const caging = out.caging || {};
-            const packing = out.packing || {};
-            const shipping = out.shipping || {};
-            const kpi = out.kpi || {};
+    function renderAttendance(att) {
+      if (!att) return;
+      const totalInservice = att.total_inservice || 0;
+      const actual = att.attendance || 0;
+      const rate = att.rate || 0;
 
-            const total = d.total || 0;
+      document.getElementById("att-schedule").textContent = fmt(totalInservice);
+      document.getElementById("att-actual").textContent = fmt(actual);
+      document.getElementById("att-rate").textContent = totalInservice > 0 ? rate + "%" : "--%";
+      if (totalInservice > 0) {
+        document.getElementById("att-badge").textContent = "今日排班";
+        document.getElementById("att-badge").className = "badge badge-purple";
+      } else {
+        document.getElementById("att-badge").textContent = "暂无数据";
+        document.getElementById("att-badge").className = "badge badge-gray";
+      }
 
-            // 拣货进度：优先用 pickingTask 数据（任务维度），data为0时降级到行维度
-            const pickTotal = picking.total_tasks || 0;
-            const pickDone = picking.done_tasks || 0;
-            const pickRate = picking.rate || d.pick_rate || 0;
-            if (pickTotal > 0) {
-                document.getElementById('out-pick-val').textContent = `${fmt(pickDone)}/${fmt(pickTotal)} 任务 (${pickRate}%)`;
-            } else {
-                document.getElementById('out-pick-val').textContent = `${fmt(d.picked)}/${fmt(total)} (${pickRate}%)`;
-            }
-            document.getElementById('out-pick-bar').style.width = pickRate + '%';
+      // 单仓人效
+      const outboundPcs =
+        (currentData &&
+          currentData.outbound &&
+          currentData.outbound.dimensions &&
+          currentData.outbound.dimensions.pcs &&
+          currentData.outbound.dimensions.pcs.total) ||
+        0;
+      const productivity = actual > 0 && outboundPcs > 0 ? Math.round(outboundPcs / actual) : 0;
+      document.getElementById("att-productivity").textContent = productivity > 0 ? fmt(productivity) : "--";
 
-            // 播种进度（SKU行维度）
-            const sowRate = sowing.rate || 0;
-            document.getElementById('out-sow-val').textContent = `${fmt(sowing.done)}/${fmt(sowing.total)} SKU行 (${sowRate}%)`;
-            document.getElementById('out-sow-bar').style.width = sowRate + '%';
+      // 分岗位表格（4列：岗位、在职、出勤、出勤率）
+      const tbody = document.getElementById("job-tbody");
+      tbody.innerHTML = "";
+      const byJob = att.by_job || {};
+      const jobOrder = ["N拣播员", "N冷藏收退", "N库维", "N物资"];
+      let sumInservice = 0;
+      let sumAttendance = 0;
+      for (const name of jobOrder) {
+        const info = byJob[name];
+        const inservice = info ? (info.inservice || 0) : 0;
+        const attendance = info ? (info.attendance || 0) : 0;
+        sumInservice += inservice;
+        sumAttendance += attendance;
+        const jobRate = inservice > 0 ? Math.round((attendance / inservice) * 100) : 0;
+        const rateColor = jobRate >= 80 ? "#10b981" : jobRate >= 60 ? "#f59e0b" : "#ef4444";
+        const rateStr = inservice > 0 ? jobRate + "%" : "--";
+        tbody.innerHTML += `<tr>
+          <td>${name}</td>
+          <td style="text-align:center">${inservice}</td>
+          <td style="text-align:center">${attendance}</td>
+          <td style="text-align:center;font-weight:600;color:${rateColor}">${rateStr}</td>
+        </tr>`;
+      }
+const totalRate = totalInservice > 0 ? Math.round((actual / totalInservice) * 100) : 0;
+const totalRateStr = totalInservice > 0 ? totalRate + "%" : "--";
+const totalRateColor = totalRate >= 80 ? "#10b981" : totalRate >= 60 ? "#f59e0b" : "#ef4444";
+tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
+<td style="font-weight:600">合计</td>
+<td style="text-align:center;font-weight:700;color:#2196f3">${totalInservice}</td>
+<td style="text-align:center;font-weight:700;color:#2196f3">${actual}</td>
+<td style="text-align:center;font-weight:700;color:${totalRateColor}">${totalRateStr}</td>
+</tr>`;
+    }
 
-            // 关笼进度（SKU行维度）
-            const cageRate = caging.rate || 0;
-            document.getElementById('out-cage-val').textContent = `${fmt(caging.done)}/${fmt(caging.total)} SKU行 (${cageRate}%)`;
-            document.getElementById('out-cage-bar').style.width = cageRate + '%';
+    function renderPipeline(data) {
+      const inb = data.inbound || {};
+      const reserve = inb.reserve || {};
+      const unload = inb.unload || {};
+      const qc = inb.qc || {};
+      const recvDim = (inb.dimensions && inb.dimensions.pcs) || {};
+      const putaway = inb.putaway || {};
 
-            // 组盘（复核）- 暂未接入
-            const packRate = packing.rate || 0;
-            if (packing.total > 0) {
-                document.getElementById('out-pack-val').textContent = `${fmt(packing.done)}/${fmt(packing.total)} (${packRate}%)`;
-                document.getElementById('out-pack-val').style.color = '';
-                document.getElementById('out-pack-bar').style.width = packRate + '%';
-            } else {
-                document.getElementById('out-pack-val').textContent = '--/-- (暂未接入)';
-                document.getElementById('out-pack-val').style.color = '#bbb';
-            }
+      document.getElementById("p-sign").textContent = pct(reserve.signed, reserve.total) + "%";
+      document.getElementById("p-unload").textContent = (unload.rate || 0) + "%";
+      document.getElementById("p-qc").textContent = (qc.rate || 0) + "%";
+      document.getElementById("p-recv").textContent = (recvDim.rate || 0) + "%";
+      document.getElementById("p-putaway").textContent = (putaway.rate || 0) + "%";
 
-            // 发运 - 暂未接入
-            const shipRate = shipping.rate || 0;
-            if (shipping.total > 0) {
-                document.getElementById('out-ship-val').textContent = `${fmt(shipping.done)}/${fmt(shipping.total)} (${shipRate}%)`;
-                document.getElementById('out-ship-val').style.color = '';
-                document.getElementById('out-ship-bar').style.width = shipRate + '%';
-            } else {
-                document.getElementById('out-ship-val').textContent = '--/-- (暂未接入)';
-                document.getElementById('out-ship-val').style.color = '#bbb';
-            }
+      const outPicking = (data.outbound && data.outbound.picking) || {};
+      const outSowing = (data.outbound && data.outbound.sowing) || {};
+      const outCaging = (data.outbound && data.outbound.caging) || {};
+      const outDims = (data.outbound && data.outbound.dimensions && data.outbound.dimensions.pcs) || {};
+      document.getElementById("p-pick").textContent = (outPicking.rate || outDims.pick_rate || 0) + "%";
+      document.getElementById("p-sow").textContent = (outSowing.rate || outDims.sow_rate || 0) + "%";
+      document.getElementById("p-cage").textContent = (outCaging.rate || outDims.cage_rate || 0) + "%";
+      document.getElementById("p-ship").textContent = (outCaging.rate >= 100 ? "100" : "0") + "%";
+    }
 
-            // KPI 指标
-            const multiCount = kpi.multi_pallet_count || 0;
-            const multiTotal = kpi.multi_pallet_total || 0;
-            const multiRate = kpi.multi_pallet_rate || 0;
-            document.getElementById('out-multi-pallet').textContent = multiTotal > 0 ? `${multiCount}/${multiTotal} (${multiRate}%)` : '--';
+    function renderData(data) {
+      currentData = data;
+      const ts = new Date(data.timestamp);
+      document.getElementById("update-time").textContent =
+        `更新于 ${ts.getHours().toString().padStart(2, "0")}:${ts.getMinutes().toString().padStart(2, "0")}:${ts.getSeconds().toString().padStart(2, "0")}`;
 
-            const loadRate = kpi.load_rate || cageRate;
-            document.getElementById('out-load-rate').textContent = loadRate > 0 ? loadRate + '%' : '--%';
+      renderPipeline(data);
+      renderInbound(data.inbound);
+      renderOutbound(data.outbound);
+      renderPlan(data.plan);
+      renderAttendance(data.attendance);
+    }
 
-            const outEff = (kpi.outbound_efficiency || out.outbound_efficiency) || 0;
-            document.getElementById('out-efficiency').textContent = outEff > 0 ? outEff : '--';
+async function loadData() {
+      try {
+        const resp = await fetch("realtime_data.json?t=" + Date.now());
+          if (!resp.ok) throw new Error("HTTP " + resp.status);
+          const data = await resp.json();
+          window._latestData = data;
+          renderData(data);
+          initDateSelect(data);
+          countdown = 30;
+      } catch (e) {
+        document.getElementById("update-time").textContent = "加载失败: " + e.message;
+      }
+    }
 
-            // badge
-            if (total > 0 || pickTotal > 0) {
-                document.getElementById('outbound-badge').textContent = cageRate >= 100 ? '已完成' : '作业中';
-                document.getElementById('outbound-badge').className = 'badge ' + (cageRate >= 100 ? 'badge-green' : 'badge-orange');
-            } else {
-                document.getElementById('outbound-badge').textContent = '待启动';
-                document.getElementById('outbound-badge').className = 'badge badge-orange';
-            }
-        }
+    function fmtCountdown(s) {
+      const m = Math.floor(s / 60);
+      const sec = s % 60;
+      return m + ":" + String(sec).padStart(2, "0");
+    }
 
-        function renderPlan(plan) {
-            if (!plan) return;
-            document.getElementById('plan-orders').textContent = fmt(plan.total_orders);
-            document.getElementById('plan-pcs').textContent = fmt(plan.total_pcs);
-            document.getElementById('plan-stores').textContent = fmt(plan.store_count);
-            document.getElementById('plan-badge').textContent = plan.total_pcs > 0 ? fmt(plan.total_pcs) + '件' : '暂无';
-
-            if (plan.by_store && Object.keys(plan.by_store).length > 0) {
-                let html = '<table><tr><th>门店</th><th>件数</th></tr>';
-                for (const [s, p] of Object.entries(plan.by_store)) {
-                    html += `<tr><td>${s}</td><td>${fmt(p)}</td></tr>`;
-                }
-                html += '</table>';
-                document.getElementById('plan-detail').innerHTML = html;
-            }
-        }
-
-        function renderAttendance(att) {
-            if (!att) return;
-            const totalInservice = att.total_inservice || 0;
-            const actual = att.attendance || 0;
-            const rate = att.rate || 0;
-
-            // 第一格：在职总人数
-            document.getElementById('att-schedule').textContent = fmt(totalInservice);
-            document.getElementById('att-actual').textContent = fmt(actual);
-            document.getElementById('att-rate').textContent = totalInservice > 0 ? rate + '%' : '--%';
-            document.getElementById('att-rate2').textContent = totalInservice > 0 ? rate + '%' : '--%';
-            document.getElementById('att-bar').style.width = rate + '%';
-
-            // badge
-            if (totalInservice > 0) {
-                document.getElementById('att-badge').textContent = '今日排班';
-                document.getElementById('att-badge').className = 'badge badge-purple';
-            } else {
-                document.getElementById('att-badge').textContent = '暂无数据';
-                document.getElementById('att-badge').className = 'badge badge-gray';
-            }
-
-            // 单仓人效 = 出库量 / 今日出勤人数
-            const outboundPcs = (currentData && currentData.outbound && currentData.outbound.dimensions && currentData.outbound.dimensions.pcs && currentData.outbound.dimensions.pcs.total) || 0;
-            const productivity = actual > 0 && outboundPcs > 0 ? Math.round(outboundPcs / actual) : 0;
-            document.getElementById('att-productivity').textContent = productivity > 0 ? fmt(productivity) : '--';
-
-            // 分岗位表格：岗位 | 在职总人数 | 出勤 | 出勤率
-            const tbody = document.getElementById('job-tbody');
-            tbody.innerHTML = '';
-            const byJob = att.by_job || {};
-            const JOB_ORDER = ['N拣播员', 'N冷藏收退', 'N库维', 'N物资'];
-            const rows = [];
-            let sumInservice = 0, sumAttendance = 0;
-            for (const name of JOB_ORDER) {
-                const info = byJob[name];
-                if (!info) continue;
-                const inservice = info.inservice || 0;
-                const attended = info.attendance || 0;
-                const jobRate = inservice > 0 ? Math.round(attended / inservice * 100) : 0;
-                sumInservice += inservice;
-                sumAttendance += attended;
-                rows.push(`<tr>
-                    <td>${name}</td>
-                    <td style="text-align:center">${fmt(inservice)}</td>
-                    <td style="text-align:center">${fmt(attended)}</td>
-                    <td style="text-align:center;color:${jobRate>=80?'#10b981':jobRate>=60?'#f59e0b':'#ef4444'};font-weight:600">${jobRate}%</td>
-                </tr>`);
-            }
-            // 合计行：用全仓总数（in_service=21, attendance=16），不是4岗位相加
-            if (rows.length > 0) {
-                const totalRate = totalInservice > 0 ? Math.round(actual / totalInservice * 100) : 0;
-                rows.push(`<tr style="border-top:1px solid #e5e7eb;font-weight:700;background:#f9fafb">
-                    <td>合计</td>
-                    <td style="text-align:center">${fmt(totalInservice)}</td>
-                    <td style="text-align:center">${fmt(actual)}</td>
-                    <td style="text-align:center">${totalRate}%</td>
-                </tr>`);
-            }
-            tbody.innerHTML = rows.join('');
-        }
-
-        function renderPipeline(data) {
-            // 总进度按 PCS 维度
-            const inb = data.inbound || {};
-            const outDims = data.outbound?.dimensions?.pcs || {};
-            const reserve = inb.reserve || {};
-            const unload = inb.unload || {};
-            const qc = inb.qc || {};
-            const recvDim = inb.dimensions?.pcs || {};
-            const putaway = inb.putaway || {};
-
-            // 入库阶段（签到→卸货→质检→收货→上架）
-            document.getElementById('p-sign').textContent = (pct(reserve.signed, reserve.total)) + '%';
-            document.getElementById('p-unload').textContent = (unload.rate || 0) + '%';
-            document.getElementById('p-qc').textContent = (qc.rate || 0) + '%';
-            document.getElementById('p-recv').textContent = (recvDim.rate || 0) + '%';
-            document.getElementById('p-putaway').textContent = (putaway.rate || 0) + '%';
-
-            // 出库阶段（使用新数据结构）
-            const outPicking = data.outbound?.picking || {};
-            const outSowing = data.outbound?.sowing || {};
-            const outCaging = data.outbound?.caging || {};
-            document.getElementById('p-pick').textContent = (outPicking.rate || outDims.pick_rate || 0) + '%';
-            document.getElementById('p-sow').textContent = (outSowing.rate || outDims.sow_rate || 0) + '%';
-            document.getElementById('p-cage').textContent = (outCaging.rate || outDims.cage_rate || 0) + '%';
-            document.getElementById('p-ship').textContent = (outCaging.rate >= 100 ? '100' : '0') + '%';
-        }
-
-        function renderData(data) {
-            currentData = data;
-            const ts = new Date(data.timestamp);
-            document.getElementById('update-time').textContent =
-                `更新于 ${ts.getHours().toString().padStart(2,'0')}:${ts.getMinutes().toString().padStart(2,'0')}:${ts.getSeconds().toString().padStart(2,'0')}`;
-
-            renderPipeline(data);
-            renderInbound(data.inbound);
-            renderOutbound(data.outbound);
-            renderPlan(data.plan);
-            renderAttendance(data.attendance);
-        }
-
-        async function loadData() {
-            try {
-                const resp = await fetch('realtime_data.json?t=' + Date.now());
-                if (!resp.ok) throw new Error('HTTP ' + resp.status);
-                const data = await resp.json();
-                renderData(data);
-                countdown = 300;
-            } catch(e) {
-                document.getElementById('update-time').textContent = '加载失败: ' + e.message;
-            }
-        }
-
-        function startCountdown() {
-            clearInterval(countdownTimer);
-            countdownTimer = setInterval(() => {
-                countdown--;
-                document.getElementById('auto-countdown').textContent = countdown;
-                if (countdown <= 0) loadData();
-            }, 1000);
-        }
-
-        
-        // 内嵌数据（构建时注入）用哨兵标记精确包裹，避免正则截断
-        /*__REALTIME_DATA_START__*/
-        const EMBEDDED_DATA = {
-  "timestamp": "2026-05-24T19:20:03",
-  "date": "2026-05-24",
-  "warehouse": "GZ0210",
-  "inbound": {
-    "reserve": {
-      "total": 98,
-      "signed": 91,
-      "waiting": 0
-    },
-    "ontime": {
-      "ontime": 7,
-      "early": 81,
-      "late": 3,
-      "total": 91,
-      "rate": 7.7,
-      "early_rate": 89.0,
-      "late_rate": 3.3
-    },
-    "reserve_progress": {
-      "po_total": 88,
-      "po_reserved": 87,
-      "rate": 98.9,
-      "po_data_ok": true
-    },
-    "unload": {
-      "total": 91,
-      "done": 91,
-      "rate": 100.0
-    },
-    "qc": {
-      "total": 440,
-      "done": 438,
-      "pending": 2,
-      "passed": 438,
-      "rejected": 0,
-      "rate": 99.5,
-      "bill_done": 438,
-      "bill_total": 440,
-      "pcs_done": 24126,
-      "pcs_total": 24258,
-      "pcs_rejected": 0,
-      "pcs_rate": 99.5,
-      "sku_done": 400,
-      "sku_total": 400,
-      "sku_rate": 100.0
-    },
-    "putaway": {
-      "total": 23973,
-      "done": 23973,
-      "rate": 100.0,
-      "sku_total": 441,
-      "sku_done": 441,
-      "sku_rate": 100.0,
-      "details": [
-        {
-          "poNo": "CG202605240510",
-          "hopePcs": 560,
-          "putPcs": 560,
-          "hopeSku": 4,
-          "putSku": 4
-        },
-        {
-          "poNo": "CG202605237178",
-          "hopePcs": 207,
-          "putPcs": 207,
-          "hopeSku": 4,
-          "putSku": 4
-        },
-        {
-          "poNo": "CG202605237063",
-          "hopePcs": 154,
-          "putPcs": 154,
-          "hopeSku": 4,
-          "putSku": 4
-        },
-        {
-          "poNo": "CG202605237061",
-          "hopePcs": 93,
-          "putPcs": 93,
-          "hopeSku": 3,
-          "putSku": 3
-        },
-        {
-          "poNo": "CG202605237060",
-          "hopePcs": 27,
-          "putPcs": 27,
-          "hopeSku": 1,
-          "putSku": 1
-        },
-        {
-          "poNo": "CG202605237014",
-          "hopePcs": 2752,
-          "putPcs": 2752,
-          "hopeSku": 27,
-          "putSku": 27
-        },
-        {
-          "poNo": "CG202605237013",
-          "hopePcs": 803,
-          "putPcs": 803,
-          "hopeSku": 13,
-          "putSku": 13
-        },
-        {
-          "poNo": "CG202605237012",
-          "hopePcs": 1624,
-          "putPcs": 1624,
-          "hopeSku": 12,
-          "putSku": 12
-        },
-        {
-          "poNo": "CG202605237011",
-          "hopePcs": 1342,
-          "putPcs": 1342,
-          "hopeSku": 12,
-          "putSku": 12
-        },
-        {
-          "poNo": "CG202605237009",
-          "hopePcs": 588,
-          "putPcs": 588,
-          "hopeSku": 6,
-          "putSku": 6
-        },
-        {
-          "poNo": "CG202605237010",
-          "hopePcs": 68,
-          "putPcs": 68,
-          "hopeSku": 3,
-          "putSku": 3
-        },
-        {
-          "poNo": "CG202605237008",
-          "hopePcs": 168,
-          "putPcs": 168,
-          "hopeSku": 2,
-          "putSku": 2
-        },
-        {
-          "poNo": "CG202605237007",
-          "hopePcs": 169,
-          "putPcs": 169,
-          "hopeSku": 3,
-          "putSku": 3
-        },
-        {
-          "poNo": "CG202605237006",
-          "hopePcs": 297,
-          "putPcs": 297,
-          "hopeSku": 4,
-          "putSku": 4
-        },
-        {
-          "poNo": "CG202605237005",
-          "hopePcs": 316,
-          "putPcs": 316,
-          "hopeSku": 3,
-          "putSku": 3
-        },
-        {
-          "poNo": "CG202605237004",
-          "hopePcs": 697,
-          "putPcs": 697,
-          "hopeSku": 3,
-          "putSku": 3
-        },
-        {
-          "poNo": "CG202605237003",
-          "hopePcs": 255,
-          "putPcs": 255,
-          "hopeSku": 4,
-          "putSku": 4
-        },
-        {
-          "poNo": "CG202605237002",
-          "hopePcs": 281,
-          "putPcs": 281,
-          "hopeSku": 2,
-          "putSku": 2
-        },
-        {
-          "poNo": "CG202605237000",
-          "hopePcs": 413,
-          "putPcs": 413,
-          "hopeSku": 1,
-          "putSku": 1
-        },
-        {
-          "poNo": "CG202605236913",
-          "hopePcs": 127,
-          "putPcs": 127,
-          "hopeSku": 13,
-          "putSku": 13
-        },
-        {
-          "poNo": "CG202605236562",
-          "hopePcs": 96,
-          "putPcs": 96,
-          "hopeSku": 1,
-          "putSku": 1
-        },
-        {
-          "poNo": "CG202605236546",
-          "hopePcs": 1001,
-          "putPcs": 1001,
-          "hopeSku": 23,
-          "putSku": 23
-        },
-        {
-          "poNo": "CG202605236545",
-          "hopePcs": 590,
-          "putPcs": 590,
-          "hopeSku": 9,
-          "putSku": 9
-        },
-        {
-          "poNo": "CG202605236544",
-          "hopePcs": 33,
-          "putPcs": 33,
-          "hopeSku": 3,
-          "putSku": 3
-        },
-        {
-          "poNo": "CG202605236543",
-          "hopePcs": 190,
-          "putPcs": 190,
-          "hopeSku": 7,
-          "putSku": 7
-        },
-        {
-          "poNo": "CG202605236541",
-          "hopePcs": 392,
-          "putPcs": 392,
-          "hopeSku": 3,
-          "putSku": 3
-        },
-        {
-          "poNo": "CG202605236539",
-          "hopePcs": 195,
-          "putPcs": 195,
-          "hopeSku": 5,
-          "putSku": 5
-        },
-        {
-          "poNo": "CG202605236536",
-          "hopePcs": 392,
-          "putPcs": 392,
-          "hopeSku": 4,
-          "putSku": 4
-        },
-        {
-          "poNo": "CG202605236535",
-          "hopePcs": 20,
-          "putPcs": 20,
-          "hopeSku": 3,
-          "putSku": 3
-        },
-        {
-          "poNo": "CG202605236534",
-          "hopePcs": 138,
-          "putPcs": 138,
-          "hopeSku": 7,
-          "putSku": 7
-        },
-        {
-          "poNo": "CG202605236533",
-          "hopePcs": 148,
-          "putPcs": 148,
-          "hopeSku": 3,
-          "putSku": 3
-        },
-        {
-          "poNo": "CG202605236532",
-          "hopePcs": 45,
-          "putPcs": 45,
-          "hopeSku": 2,
-          "putSku": 2
-        },
-        {
-          "poNo": "CG202605236531",
-          "hopePcs": 329,
-          "putPcs": 329,
-          "hopeSku": 1,
-          "putSku": 1
-        },
-        {
-          "poNo": "CG202605236483",
-          "hopePcs": 36,
-          "putPcs": 36,
-          "hopeSku": 7,
-          "putSku": 7
-        },
-        {
-          "poNo": "CG202605236482",
-          "hopePcs": 13,
-          "putPcs": 13,
-          "hopeSku": 3,
-          "putSku": 3
-        },
-        {
-          "poNo": "CG202605236186",
-          "hopePcs": 36,
-          "putPcs": 36,
-          "hopeSku": 8,
-          "putSku": 8
-        },
-        {
-          "poNo": "CG202605236185",
-          "hopePcs": 115,
-          "putPcs": 115,
-          "hopeSku": 13,
-          "putSku": 13
-        },
-        {
-          "poNo": "CG202605236184",
-          "hopePcs": 75,
-          "putPcs": 75,
-          "hopeSku": 6,
-          "putSku": 6
-        },
-        {
-          "poNo": "CG202605236183",
-          "hopePcs": 39,
-          "putPcs": 39,
-          "hopeSku": 5,
-          "putSku": 5
-        },
-        {
-          "poNo": "CG202605236182",
-          "hopePcs": 163,
-          "putPcs": 163,
-          "hopeSku": 10,
-          "putSku": 10
-        },
-        {
-          "poNo": "CG202605236181",
-          "hopePcs": 7,
-          "putPcs": 7,
-          "hopeSku": 2,
-          "putSku": 2
-        },
-        {
-          "poNo": "CG202605234616",
-          "hopePcs": 20,
-          "putPcs": 20,
-          "hopeSku": 6,
-          "putSku": 6
-        },
-        {
-          "poNo": "CG202605234615",
-          "hopePcs": 36,
-          "putPcs": 36,
-          "hopeSku": 5,
-          "putSku": 5
-        },
-        {
-          "poNo": "CG202605232943",
-          "hopePcs": 30,
-          "putPcs": 30,
-          "hopeSku": 6,
-          "putSku": 6
-        },
-        {
-          "poNo": "CG202605232942",
-          "hopePcs": 36,
-          "putPcs": 36,
-          "hopeSku": 2,
-          "putSku": 2
-        },
-        {
-          "poNo": "CG202605232846",
-          "hopePcs": 30,
-          "putPcs": 30,
-          "hopeSku": 1,
-          "putSku": 1
-        },
-        {
-          "poNo": "CG202605232845",
-          "hopePcs": 8,
-          "putPcs": 8,
-          "hopeSku": 1,
-          "putSku": 1
-        },
-        {
-          "poNo": "CG202605232844",
-          "hopePcs": 605,
-          "putPcs": 605,
-          "hopeSku": 3,
-          "putSku": 3
-        },
-        {
-          "poNo": "CG202605232843",
-          "hopePcs": 10,
-          "putPcs": 10,
-          "hopeSku": 1,
-          "putSku": 1
-        },
-        {
-          "poNo": "CG202605232842",
-          "hopePcs": 18,
-          "putPcs": 18,
-          "hopeSku": 2,
-          "putSku": 2
-        }
-      ]
-    },
-    "dimensions": {
-      "reserve": {
-        "total": 91,
-        "done": 91,
-        "rate": 100.0
-      },
-      "pcs": {
-        "total": 24172,
-        "done": 24148,
-        "rate": 99.9,
-        "recv_done": 23973,
-        "recv_rate": 99.2
-      },
-      "sku": {
-        "total": 495,
-        "done": 495,
-        "rate": 100.0
-      },
-      "supplier": {
-        "total": 76,
-        "done": 76,
-        "rate": 100.0,
-        "detail": {
-          "山东兴业源现代农业发展有限公司-快乐猴": {
-            "plan": 2,
-            "done": 2
-          },
-          "广东美而美食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "广东晟果食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "深圳市超跃食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "广州市鲜之源农产品加工有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "广州嘉美欧包食品有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 1
-          },
-          "广东天之瓜农业发展有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 1
-          },
-          "广州市抖鲜农业科技有限公司": {
-            "plan": 1,
-            "done": 1
-          },
-          "东莞鲜通天下供应链管理有限公司-快乐猴": {
-            "plan": 2,
-            "done": 2
-          },
-          "广东逅厨食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "广州尚好菜食品有限公司-快乐猴": {
-            "plan": 2,
-            "done": 2
-          },
-          "广州老厨坊食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "京懋丰园（北京）商贸有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "莘泽优品贸易(福建)有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "湖北农发零号食品有限公司-快乐猴": {
-            "plan": 2,
-            "done": 2
-          },
-          "广东慧智农业科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "东莞仁麦食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "广州香满楼乳业有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "广州市广懋鲜农业发展有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "东莞桃李面包有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
+    async function silentRefresh() {
+      try {
+        const resp = await fetch("realtime_data.json?t=" + Date.now());
+        if (!resp.ok) throw new Error("HTTP " + resp.status);
+        const data = await resp.json();
+        // 只在今天模式下更新数据（历史模式不覆盖）
+        const sel = document.getElementById('date-select');
+        const isToday = !sel || !sel.value;
+        if (isToday) {
+          window._latestData = data;
+          renderData(data);
+          // 更新历史选项（不重置选择器）
+          const historyMap = (data && data.history_map) || {};
+          const dates = Object.keys(historyMap).sort().reverse();
+          if (sel) {
+            const existing = Array.from(sel.options).map(o => o.value).filter(v => v);
+            dates.forEach(function(d) {
+              if (!existing.includes(d)) {
+                const opt = document.createElement('option');
+                opt.value = d; opt.textContent = d;
+                sel.appendChild(opt);
+              }
+            });
           }
         }
+      } catch (e) {
+        // 静默失败，不打扰用户
       }
-    },
-    "details": {
-      "unreserved": [
-        {
-          "supplierName": "深圳市隆力普贸易有限公司-快乐猴",
-          "poNo": "CG202605192485",
-          "skuCount": 1,
-          "pcs": 24,
-          "preArrivalTime": "2026-05-24"
-        }
-      ],
-      "unsigned": [],
-      "unloading": [],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "老黄瓜 600g",
-          "arrivalTime": "17:30",
-          "unloadFinishTime": "17:45",
-          "statusLabel": "补货待验收"
-        },
-        {
-          "seq": 2,
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "棱丝瓜 600g",
-          "arrivalTime": "17:30",
-          "unloadFinishTime": "17:45",
-          "statusLabel": "状态5"
-        }
-      ],
-      "recv_pending": [
-        {
-          "supplierName": "久泰现代农业有限公司-快乐猴",
-          "skuName": "云南沃柑 1.5kg",
-          "completeTime": "09:04",
-          "waitingMins": 616
-        },
-        {
-          "supplierName": "久泰现代农业有限公司-快乐猴",
-          "skuName": "白糖罂荔枝 450g",
-          "completeTime": "09:14",
-          "waitingMins": 605
-        },
-        {
-          "supplierName": "久泰现代农业有限公司-快乐猴",
-          "skuName": "秭归夏橙 1kg",
-          "completeTime": "09:07",
-          "waitingMins": 612
-        },
-        {
-          "supplierName": "久泰现代农业有限公司-快乐猴",
-          "skuName": "妃子笑荔枝 1kg",
-          "completeTime": "09:25",
-          "waitingMins": 595
-        },
-        {
-          "supplierName": "成都绥粤绿色蔬菜有限公司-快乐猴",
-          "skuName": "贝贝南瓜  1kg",
-          "completeTime": "08:39",
-          "waitingMins": 640
-        },
-        {
-          "supplierName": "成都绥粤绿色蔬菜有限公司-快乐猴",
-          "skuName": "鲜切南瓜 500g",
-          "completeTime": "08:38",
-          "waitingMins": 642
-        },
-        {
-          "supplierName": "成都绥粤绿色蔬菜有限公司-快乐猴",
-          "skuName": "鲜切冬瓜 600g",
-          "completeTime": "08:36",
-          "waitingMins": 644
-        },
-        {
-          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
-          "skuName": "紫皮大蒜  500g",
-          "completeTime": "09:30",
-          "waitingMins": 589
-        },
-        {
-          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
-          "skuName": "独头蒜 200g",
-          "completeTime": "09:28",
-          "waitingMins": 591
-        },
-        {
-          "supplierName": "广州光明乳品有限公司-快乐猴",
-          "skuName": "光明新鲜牧场高品质牛乳950ml",
-          "completeTime": "08:22",
-          "waitingMins": 657
-        },
-        {
-          "supplierName": "汶上县富鑫种植农民专业合作社-快乐猴",
-          "skuName": "小黄姜 500g",
-          "completeTime": "09:31",
-          "waitingMins": 588
-        },
-        {
-          "supplierName": "汶上县富鑫种植农民专业合作社-快乐猴",
-          "skuName": "老姜  500g",
-          "completeTime": "09:29",
-          "waitingMins": 590
-        },
-        {
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "skuName": "上海青苗500g",
-          "completeTime": "11:15",
-          "waitingMins": 485
-        },
-        {
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "skuName": "薄皮青椒 500g",
-          "completeTime": "11:23",
-          "waitingMins": 476
-        },
-        {
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "skuName": "韭黄 400g",
-          "completeTime": "11:16",
-          "waitingMins": 484
-        },
-        {
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "skuName": "螺丝椒 500g",
-          "completeTime": "11:08",
-          "waitingMins": 491
-        },
-        {
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "skuName": "大葱 500g",
-          "completeTime": "11:18",
-          "waitingMins": 481
-        },
-        {
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "skuName": "尖椒 500g",
-          "completeTime": "11:13",
-          "waitingMins": 487
-        },
-        {
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "skuName": "指天椒 100g",
-          "completeTime": "11:19",
-          "waitingMins": 480
-        },
-        {
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "skuName": "蒜苗 250g",
-          "completeTime": "11:16",
-          "waitingMins": 483
-        },
-        {
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "skuName": "香芹  350g",
-          "completeTime": "11:09",
-          "waitingMins": 491
-        },
-        {
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "skuName": "菜心 500g (N)",
-          "completeTime": "11:04",
-          "waitingMins": 495
-        },
-        {
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "skuName": "彩椒 550g",
-          "completeTime": "11:12",
-          "waitingMins": 488
-        },
-        {
-          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
-          "skuName": "青花椒烤鱼 1.415kg",
-          "completeTime": "08:31",
-          "waitingMins": 648
-        },
-        {
-          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
-          "skuName": "潮汕风味牛肉丸火锅 1.23kg",
-          "completeTime": "08:26",
-          "waitingMins": 653
-        },
-        {
-          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
-          "skuName": "咸蛋黄酥松乌米粢饭卷 170g",
-          "completeTime": "08:29",
-          "waitingMins": 651
-        },
-        {
-          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
-          "skuName": "奥尔良风味烤鸡腿排大口饭团 180g",
-          "completeTime": "08:39",
-          "waitingMins": 640
-        },
-        {
-          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
-          "skuName": "多彩什锦寿司拼盘 410g",
-          "completeTime": "08:27",
-          "waitingMins": 652
-        },
-        {
-          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
-          "skuName": "红油麻酱凉皮 370g",
-          "completeTime": "08:28",
-          "waitingMins": 651
-        },
-        {
-          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
-          "skuName": "反卷寿司拼盘 220g",
-          "completeTime": "08:24",
-          "waitingMins": 656
-        },
-        {
-          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
-          "skuName": "土豆泥红肠沙拉 250g",
-          "completeTime": "08:27",
-          "waitingMins": 652
-        },
-        {
-          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
-          "skuName": "日式混合蔬菜沙拉 200g",
-          "completeTime": "08:26",
-          "waitingMins": 653
-        },
-        {
-          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
-          "skuName": "海陆空蔬菜混合沙拉 250g",
-          "completeTime": "08:30",
-          "waitingMins": 650
-        },
-        {
-          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
-          "skuName": "鸡胸肉凯撒沙拉 270g",
-          "completeTime": "08:30",
-          "waitingMins": 650
-        },
-        {
-          "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
-          "skuName": "农耕记 宫保鸡丁 400g",
-          "completeTime": "08:23",
-          "waitingMins": 656
-        },
-        {
-          "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
-          "skuName": "农耕记 鱼香肉丝 410g",
-          "completeTime": "08:22",
-          "waitingMins": 658
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "番茄 1kg",
-          "completeTime": "14:28",
-          "waitingMins": 291
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "水洗胡萝卜 1kg",
-          "completeTime": "12:13",
-          "waitingMins": 427
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "蒜苔  350g",
-          "completeTime": "12:51",
-          "waitingMins": 389
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "小香葱  100g",
-          "completeTime": "12:54",
-          "waitingMins": 386
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "苦瓜  600g",
-          "completeTime": "12:00",
-          "waitingMins": 439
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "四季豆  500g",
-          "completeTime": "12:27",
-          "waitingMins": 413
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "去皮紫洋葱 500g",
-          "completeTime": "12:03",
-          "waitingMins": 436
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "紫长茄 500g",
-          "completeTime": "12:33",
-          "waitingMins": 406
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "莴笋 1kg",
-          "completeTime": "11:58",
-          "waitingMins": 442
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "莲藕 500g",
-          "completeTime": "11:38",
-          "waitingMins": 461
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "带泥胡萝卜 1kg",
-          "completeTime": "12:21",
-          "waitingMins": 419
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "草莓番茄 500g",
-          "completeTime": "11:41",
-          "waitingMins": 459
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "黄心土豆 1kg",
-          "completeTime": "12:27",
-          "waitingMins": 413
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "豇豆 500g(N)",
-          "completeTime": "12:44",
-          "waitingMins": 395
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "西葫芦 750g(N)",
-          "completeTime": "12:35",
-          "waitingMins": 405
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "切叶西芹 约800g",
-          "completeTime": "12:45",
-          "waitingMins": 394
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "香菜 100g(N)",
-          "completeTime": "11:36",
-          "waitingMins": 463
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "荷兰豆  300g",
-          "completeTime": "11:43",
-          "waitingMins": 456
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "白萝卜 1.2kg",
-          "completeTime": "12:31",
-          "waitingMins": 409
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "普罗旺斯番茄 500g",
-          "completeTime": "11:48",
-          "waitingMins": 451
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "丝瓜 650g",
-          "completeTime": "12:40",
-          "waitingMins": 399
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "老黄瓜 600g",
-          "completeTime": "13:03",
-          "waitingMins": 377
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "粉莲藕 500g",
-          "completeTime": "12:43",
-          "waitingMins": 397
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "棱丝瓜 600g",
-          "completeTime": "12:56",
-          "waitingMins": 384
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "牛奶水果玉米 500g",
-          "completeTime": "11:46",
-          "waitingMins": 454
-        },
-        {
-          "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
-          "skuName": "香菇青菜包 340g",
-          "completeTime": "08:15",
-          "waitingMins": 665
-        },
-        {
-          "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
-          "skuName": "手作葱油花卷 360g",
-          "completeTime": "08:18",
-          "waitingMins": 661
-        },
-        {
-          "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
-          "skuName": "手作肉多多花卷 300g",
-          "completeTime": "08:20",
-          "waitingMins": 659
-        },
-        {
-          "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
-          "skuName": "韭菜煎饺 240g",
-          "completeTime": "08:16",
-          "waitingMins": 664
-        },
-        {
-          "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
-          "skuName": "鲜汁肉包 340g",
-          "completeTime": "08:19",
-          "waitingMins": 660
-        },
-        {
-          "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
-          "skuName": "广式叉烧包 240g",
-          "completeTime": "08:17",
-          "waitingMins": 662
-        },
-        {
-          "supplierName": "深圳禾顺农业有限公司-快乐猴",
-          "skuName": "黄豆芽 500g",
-          "completeTime": "08:07",
-          "waitingMins": 673
-        },
-        {
-          "supplierName": "深圳禾顺农业有限公司-快乐猴",
-          "skuName": "绿豆芽 500g",
-          "completeTime": "08:04",
-          "waitingMins": 675
-        },
-        {
-          "supplierName": "深圳禾顺农业有限公司-快乐猴",
-          "skuName": "豌豆苗 250g",
-          "completeTime": "08:08",
-          "waitingMins": 671
-        },
-        {
-          "supplierName": "深圳市金农供应链管理有限公司-快乐猴-自营",
-          "skuName": "西州蜜瓜25号单粒 1.5kg",
-          "completeTime": "08:20",
-          "waitingMins": 659
-        },
-        {
-          "supplierName": "深圳市大程鑫农业开发有限公司-快乐猴",
-          "skuName": "冰淇淋网纹瓜单粒 1kg",
-          "completeTime": "08:09",
-          "waitingMins": 671
-        },
-        {
-          "supplierName": "深圳市大程鑫农业开发有限公司-快乐猴",
-          "skuName": "缤纷什锦小番茄 500g",
-          "completeTime": "08:02",
-          "waitingMins": 678
-        },
-        {
-          "supplierName": "深圳市大程鑫农业开发有限公司-快乐猴",
-          "skuName": "广东三华李 500g(单果20g起)",
-          "completeTime": "07:50",
-          "waitingMins": 689
-        },
-        {
-          "supplierName": "深圳市味中王食品有限公司-快乐猴-自营",
-          "skuName": "潮汕卤水四拼(含蒜蓉醋) 260g+12g",
-          "completeTime": "08:33",
-          "waitingMins": 647
-        },
-        {
-          "supplierName": "深圳市新鼎食品开发有限公司-快乐猴",
-          "skuName": "凉拌酸辣海带丝 180g",
-          "completeTime": "08:32",
-          "waitingMins": 648
-        },
-        {
-          "supplierName": "深圳市山有有农产品开发有限公司-快乐猴",
-          "skuName": "顾爷爷 潮汕猪肉卷 230g",
-          "completeTime": "07:52",
-          "waitingMins": 688
-        },
-        {
-          "supplierName": "深圳市山有有农产品开发有限公司-快乐猴",
-          "skuName": "海鲜粉丝煲 460g",
-          "completeTime": "07:53",
-          "waitingMins": 687
-        },
-        {
-          "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
-          "skuName": "芋艿 1kg",
-          "completeTime": "09:37",
-          "waitingMins": 583
-        },
-        {
-          "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
-          "skuName": "金针菇   400g",
-          "completeTime": "09:19",
-          "waitingMins": 600
-        },
-        {
-          "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
-          "skuName": "【煲汤提鲜】虫草花 100g",
-          "completeTime": "09:40",
-          "waitingMins": 580
-        },
-        {
-          "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
-          "skuName": "杏鲍菇 500g",
-          "completeTime": "09:40",
-          "waitingMins": 580
-        },
-        {
-          "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
-          "skuName": "鲜花生  500g",
-          "completeTime": "09:49",
-          "waitingMins": 571
-        },
-        {
-          "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
-          "skuName": "茭白 500g",
-          "completeTime": "09:46",
-          "waitingMins": 573
-        },
-        {
-          "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
-          "skuName": "白蘑菇 230g(N)",
-          "completeTime": "09:39",
-          "waitingMins": 581
-        },
-        {
-          "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
-          "skuName": "平菇  300g",
-          "completeTime": "09:49",
-          "waitingMins": 571
-        },
-        {
-          "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
-          "skuName": "毛豆 500g",
-          "completeTime": "09:35",
-          "waitingMins": 585
-        },
-        {
-          "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
-          "skuName": "去根香菇 300g",
-          "completeTime": "09:43",
-          "waitingMins": 577
-        },
-        {
-          "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
-          "skuName": "秋葵 300g",
-          "completeTime": "09:31",
-          "waitingMins": 589
-        },
-        {
-          "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
-          "skuName": "芦笋 350g",
-          "completeTime": "09:37",
-          "waitingMins": 583
-        },
-        {
-          "supplierName": "深圳新泉农产品有限公司-快乐猴",
-          "skuName": "鲜散养130天文昌鸡切块 450g",
-          "completeTime": "07:44",
-          "waitingMins": 696
-        },
-        {
-          "supplierName": "广州华富东农产品有限公司-快乐猴",
-          "skuName": "甜玉米约1kg",
-          "completeTime": "08:49",
-          "waitingMins": 631
-        },
-        {
-          "supplierName": "广州华富东农产品有限公司-快乐猴",
-          "skuName": "花糯玉米 600g",
-          "completeTime": "08:45",
-          "waitingMins": 635
-        },
-        {
-          "supplierName": "广州华富东农产品有限公司-快乐猴",
-          "skuName": "金银水果玉米 600g",
-          "completeTime": "08:53",
-          "waitingMins": 626
-        },
-        {
-          "supplierName": "广州华富东农产品有限公司-快乐猴",
-          "skuName": "甜玉米约1kg",
-          "completeTime": "08:53",
-          "waitingMins": 626
-        },
-        {
-          "supplierName": "佳农食品（上海）有限公司-快乐猴",
-          "skuName": "泰国易开椰青单粒 900g",
-          "completeTime": "10:08",
-          "waitingMins": 551
-        },
-        {
-          "supplierName": "佳农食品（上海）有限公司-快乐猴",
-          "skuName": "进口甜糯蕉 1kg",
-          "completeTime": "10:59",
-          "waitingMins": 501
-        },
-        {
-          "supplierName": "佳农食品（上海）有限公司-快乐猴",
-          "skuName": "佳农 菲律宾超甜蕉 700g",
-          "completeTime": "10:02",
-          "waitingMins": 558
-        },
-        {
-          "supplierName": "深圳市一二三农产品投资有限公司-快乐猴",
-          "skuName": "绿宝甜瓜 700g(2粒)",
-          "completeTime": "10:42",
-          "waitingMins": 518
-        },
-        {
-          "supplierName": "深圳市一二三农产品投资有限公司-快乐猴",
-          "skuName": "羊角蜜甜瓜 750g",
-          "completeTime": "10:47",
-          "waitingMins": 513
-        },
-        {
-          "supplierName": "深圳市一二三农产品投资有限公司-快乐猴",
-          "skuName": "黄金油蟠桃 500g",
-          "completeTime": "10:58",
-          "waitingMins": 502
-        },
-        {
-          "supplierName": "北京硕果多农业科技有限公司-快乐猴",
-          "skuName": "云南人参果 500g",
-          "completeTime": "10:24",
-          "waitingMins": 536
-        },
-        {
-          "supplierName": "北京硕果多农业科技有限公司-快乐猴",
-          "skuName": "四川高山五星枇杷 300g(单果25g起)",
-          "completeTime": "10:31",
-          "waitingMins": 528
-        },
-        {
-          "supplierName": "深圳市易丰行实业有限公司-快乐猴",
-          "skuName": "【细腻粉嫩】芋头片 300g",
-          "completeTime": "09:21",
-          "waitingMins": 598
-        },
-        {
-          "supplierName": "深圳市易丰行实业有限公司-快乐猴",
-          "skuName": "板栗仁 200g",
-          "completeTime": "09:24",
-          "waitingMins": 596
-        },
-        {
-          "supplierName": "深圳市易丰行实业有限公司-快乐猴",
-          "skuName": "胡萝卜玉米马蹄汤料包 500g",
-          "completeTime": "09:26",
-          "waitingMins": 594
-        },
-        {
-          "supplierName": "北京沃千里贸易有限公司-快乐猴",
-          "skuName": "黄金百香果 500g(单果45g起)",
-          "completeTime": "10:38",
-          "waitingMins": 521
-        },
-        {
-          "supplierName": "北京沃千里贸易有限公司-快乐猴",
-          "skuName": "国产红心火龙果 1kg(单果300g起)",
-          "completeTime": "10:45",
-          "waitingMins": 514
-        },
-        {
-          "supplierName": "北京沃千里贸易有限公司-快乐猴",
-          "skuName": "金煌芒 1kg(单果300g起)",
-          "completeTime": "10:26",
-          "waitingMins": 534
-        },
-        {
-          "supplierName": "北京沃千里贸易有限公司-快乐猴",
-          "skuName": "彩虹贵妃芒 500g(单果90g起)",
-          "completeTime": "10:50",
-          "waitingMins": 509
-        },
-        {
-          "supplierName": "北京沃千里贸易有限公司-快乐猴",
-          "skuName": "小台农芒果 750g(单果70g起)",
-          "completeTime": "10:53",
-          "waitingMins": 506
-        },
-        {
-          "supplierName": "东莞市荣心食品有限公司-快乐猴",
-          "skuName": "毛毛虫面包 240g",
-          "completeTime": "09:35",
-          "waitingMins": 584
-        },
-        {
-          "supplierName": "东莞市荣心食品有限公司-快乐猴",
-          "skuName": "快乐猴 黄油老婆饼 160g",
-          "completeTime": "09:36",
-          "waitingMins": 583
-        },
-        {
-          "supplierName": "东莞市荣心食品有限公司-快乐猴",
-          "skuName": "快乐猴 鸡仔饼 180g",
-          "completeTime": "09:38",
-          "waitingMins": 581
-        },
-        {
-          "supplierName": "东莞市荣心食品有限公司-快乐猴",
-          "skuName": "快乐猴 芝士肠仔面包 150g",
-          "completeTime": "09:37",
-          "waitingMins": 582
-        },
-        {
-          "supplierName": "深圳市香蕉姐水果有限公司-快乐猴-自营",
-          "skuName": "进口香蕉 500g",
-          "completeTime": "10:18",
-          "waitingMins": 542
-        },
-        {
-          "supplierName": "君乐宝乳业集团股份有限公司-快乐猴",
-          "skuName": "快乐猴 3.3g蛋白质鲜牛奶 950ml",
-          "completeTime": "09:12",
-          "waitingMins": 608
-        },
-        {
-          "supplierName": "广东英农食品有限公司-快乐猴",
-          "skuName": "顺味德食 顺德鱼腐 150g",
-          "completeTime": "09:16",
-          "waitingMins": 603
-        },
-        {
-          "supplierName": "广东英农食品有限公司-快乐猴",
-          "skuName": "顺味德食 冬菇马蹄肉滑 200g",
-          "completeTime": "09:18",
-          "waitingMins": 602
-        },
-        {
-          "supplierName": "广东英农食品有限公司-快乐猴",
-          "skuName": "顺味德食 玉米青豆肉滑 200g",
-          "completeTime": "09:17",
-          "waitingMins": 602
-        },
-        {
-          "supplierName": "广东英农食品有限公司-快乐猴",
-          "skuName": "顺味德食 梅菜肉饼 200g",
-          "completeTime": "09:16",
-          "waitingMins": 604
-        },
-        {
-          "supplierName": "广东英农食品有限公司-快乐猴",
-          "skuName": "顺味德食 豉汁排骨 200g",
-          "completeTime": "09:15",
-          "waitingMins": 605
-        },
-        {
-          "supplierName": "广东英农食品有限公司-快乐猴",
-          "skuName": "顺味德食 客家酿豆腐 180g",
-          "completeTime": "09:14",
-          "waitingMins": 606
-        },
-        {
-          "supplierName": "广州市鲜之源农产品加工有限公司-快乐猴",
-          "skuName": "活杀三去鲈鱼 230-350g",
-          "completeTime": "18:58",
-          "waitingMins": 22
-        },
-        {
-          "supplierName": "广州市鲜之源农产品加工有限公司-快乐猴",
-          "skuName": "冰鲜黄脚立 300g",
-          "completeTime": "18:55",
-          "waitingMins": 24
-        },
-        {
-          "supplierName": "广州市鲜之源农产品加工有限公司-快乐猴",
-          "skuName": "冰鲜黄鳝片 200g",
-          "completeTime": "18:57",
-          "waitingMins": 22
-        },
-        {
-          "supplierName": "广州市鲜之源农产品加工有限公司-快乐猴",
-          "skuName": "冰鲜活杀大头鱼头 600g",
-          "completeTime": "18:55",
-          "waitingMins": 25
-        },
-        {
-          "supplierName": "广州市鲜之源农产品加工有限公司-快乐猴",
-          "skuName": "冰鲜三去黄骨鱼 300g",
-          "completeTime": "18:57",
-          "waitingMins": 22
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜鸡翅中 500g",
-          "completeTime": "10:00",
-          "waitingMins": 560
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜鸡爪 500g",
-          "completeTime": "10:08",
-          "waitingMins": 551
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜鸡琵琶腿 800g",
-          "completeTime": "10:12",
-          "waitingMins": 548
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜鸡大胸  800g",
-          "completeTime": "09:56",
-          "waitingMins": 563
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜鸡腿肉丁 400g",
-          "completeTime": "09:49",
-          "waitingMins": 571
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜鸡小胸 500g",
-          "completeTime": "09:50",
-          "waitingMins": 569
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜鸡翅根 500g",
-          "completeTime": "09:52",
-          "waitingMins": 567
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜鸡胗 400g",
-          "completeTime": "09:42",
-          "waitingMins": 578
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜切去骨脆皮鸡 200g",
-          "completeTime": "09:58",
-          "waitingMins": 562
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜青脚草鸡半只切块 500g",
-          "completeTime": "10:14",
-          "waitingMins": 546
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜黄皮嫩鸡 1kg",
-          "completeTime": "09:54",
-          "waitingMins": 565
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜供港乳鸽 300g",
-          "completeTime": "10:02",
-          "waitingMins": 558
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜乌鸡半只切块 500g",
-          "completeTime": "09:44",
-          "waitingMins": 576
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜带蛋老母鸡半只切块 500g",
-          "completeTime": "10:10",
-          "waitingMins": 550
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜番鸭切块 500g",
-          "completeTime": "09:47",
-          "waitingMins": 572
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜土鸡腿 320g",
-          "completeTime": "09:46",
-          "waitingMins": 574
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜鸡翅中 500g",
-          "completeTime": "10:00",
-          "waitingMins": 560
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜鸡爪 500g",
-          "completeTime": "10:08",
-          "waitingMins": 551
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜鸡大胸  800g",
-          "completeTime": "09:56",
-          "waitingMins": 563
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜黄皮嫩鸡 1kg",
-          "completeTime": "09:54",
-          "waitingMins": 565
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜乌鸡半只切块 500g",
-          "completeTime": "09:44",
-          "waitingMins": 576
-        },
-        {
-          "supplierName": "上海易食科技有限公司-快乐猴",
-          "skuName": "鲜剥越南菠萝蜜肉 400g",
-          "completeTime": "10:32",
-          "waitingMins": 527
-        },
-        {
-          "supplierName": "上海易食科技有限公司-快乐猴",
-          "skuName": "鲜切越南玫瑰红肉菠萝蜜 250g",
-          "completeTime": "10:44",
-          "waitingMins": 515
-        },
-        {
-          "supplierName": "上海易食科技有限公司-快乐猴",
-          "skuName": "迷你去皮小菠萝 500g",
-          "completeTime": "10:42",
-          "waitingMins": 517
-        },
-        {
-          "supplierName": "上海易食科技有限公司-快乐猴",
-          "skuName": "鲜切脆甜蜜瓜 500g",
-          "completeTime": "10:38",
-          "waitingMins": 522
-        },
-        {
-          "supplierName": "上海易食科技有限公司-快乐猴",
-          "skuName": "鲜切青芒条(赠调味粉) 250g",
-          "completeTime": "10:46",
-          "waitingMins": 514
-        },
-        {
-          "supplierName": "上海易食科技有限公司-快乐猴",
-          "skuName": "鲜切麒麟西瓜 400g",
-          "completeTime": "10:40",
-          "waitingMins": 519
-        },
-        {
-          "supplierName": "上海易食科技有限公司-快乐猴",
-          "skuName": "鲜切网纹瓜 500g",
-          "completeTime": "10:34",
-          "waitingMins": 525
-        },
-        {
-          "supplierName": "北京宏福国际农业科技有限公司-快乐猴",
-          "skuName": "樱桃千禧番茄(车厘茄) 800g",
-          "completeTime": "11:37",
-          "waitingMins": 462
-        },
-        {
-          "supplierName": "北京宏福国际农业科技有限公司-快乐猴",
-          "skuName": "黄樱桃小番茄 800g",
-          "completeTime": "11:33",
-          "waitingMins": 467
-        },
-        {
-          "supplierName": "北京宏福国际农业科技有限公司-快乐猴",
-          "skuName": "车厘串茄(樱桃番茄) 500g",
-          "completeTime": "11:39",
-          "waitingMins": 461
-        },
-        {
-          "supplierName": "北京宏福国际农业科技有限公司-快乐猴",
-          "skuName": "翠玉樱桃小番茄 400g",
-          "completeTime": "11:30",
-          "waitingMins": 470
-        },
-        {
-          "supplierName": "东莞千厨食品有限公司-快乐猴",
-          "skuName": "猪耳猪头肉卤味双拼 205g",
-          "completeTime": "11:01",
-          "waitingMins": 499
-        },
-        {
-          "supplierName": "东莞千厨食品有限公司-快乐猴",
-          "skuName": "手撕酱板鸭 120g",
-          "completeTime": "11:00",
-          "waitingMins": 500
-        },
-        {
-          "supplierName": "东莞千厨食品有限公司-快乐猴",
-          "skuName": "盐焗鹌鹑蛋 200g",
-          "completeTime": "11:01",
-          "waitingMins": 498
-        },
-        {
-          "supplierName": "深圳市理念供应链管理有限公司-快乐猴",
-          "skuName": "黄瓜   1kg",
-          "completeTime": "11:34",
-          "waitingMins": 466
-        },
-        {
-          "supplierName": "深圳市理念供应链管理有限公司-快乐猴",
-          "skuName": "韭菜 350g",
-          "completeTime": "11:14",
-          "waitingMins": 485
-        },
-        {
-          "supplierName": "深圳市理念供应链管理有限公司-快乐猴",
-          "skuName": "杭白菜 500g",
-          "completeTime": "11:17",
-          "waitingMins": 483
-        },
-        {
-          "supplierName": "深圳市理念供应链管理有限公司-快乐猴",
-          "skuName": "生菜 400g",
-          "completeTime": "11:31",
-          "waitingMins": 469
-        },
-        {
-          "supplierName": "深圳市理念供应链管理有限公司-快乐猴",
-          "skuName": "红薯叶 350g",
-          "completeTime": "11:23",
-          "waitingMins": 477
-        },
-        {
-          "supplierName": "深圳市理念供应链管理有限公司-快乐猴",
-          "skuName": "鸡毛菜300g",
-          "completeTime": "11:25",
-          "waitingMins": 474
-        },
-        {
-          "supplierName": "深圳市理念供应链管理有限公司-快乐猴",
-          "skuName": "水果黄瓜 约500g",
-          "completeTime": "11:28",
-          "waitingMins": 471
-        },
-        {
-          "supplierName": "深圳市理念供应链管理有限公司-快乐猴",
-          "skuName": "空心菜 350g",
-          "completeTime": "11:19",
-          "waitingMins": 481
-        },
-        {
-          "supplierName": "深圳市理念供应链管理有限公司-快乐猴",
-          "skuName": "红苋菜 350g",
-          "completeTime": "11:13",
-          "waitingMins": 487
-        },
-        {
-          "supplierName": "深圳市理念供应链管理有限公司-快乐猴",
-          "skuName": "枸杞叶 250g",
-          "completeTime": "11:20",
-          "waitingMins": 479
-        },
-        {
-          "supplierName": "深圳市理念供应链管理有限公司-快乐猴",
-          "skuName": "粽叶 约50片",
-          "completeTime": "11:11",
-          "waitingMins": 489
-        },
-        {
-          "supplierName": "上海全苗蔬农业科技发展有限公司-快乐猴",
-          "skuName": "松花菜半颗   500g",
-          "completeTime": "11:04",
-          "waitingMins": 496
-        },
-        {
-          "supplierName": "上海全苗蔬农业科技发展有限公司-快乐猴",
-          "skuName": "去根西兰花 400g",
-          "completeTime": "10:49",
-          "waitingMins": 511
-        },
-        {
-          "supplierName": "上海全苗蔬农业科技发展有限公司-快乐猴",
-          "skuName": "球生菜 400g",
-          "completeTime": "11:06",
-          "waitingMins": 493
-        },
-        {
-          "supplierName": "上海全苗蔬农业科技发展有限公司-快乐猴",
-          "skuName": "甜杆西兰花苔 300g",
-          "completeTime": "10:54",
-          "waitingMins": 505
-        },
-        {
-          "supplierName": "广州市昌兴农产品有限公司-快乐猴",
-          "skuName": "油麦菜   500g",
-          "completeTime": "12:00",
-          "waitingMins": 440
-        },
-        {
-          "supplierName": "广州市昌兴农产品有限公司-快乐猴",
-          "skuName": "小娃娃菜 550g(3颗)",
-          "completeTime": "11:54",
-          "waitingMins": 446
-        },
-        {
-          "supplierName": "广州市昌兴农产品有限公司-快乐猴",
-          "skuName": "菠菜苗 300g",
-          "completeTime": "11:48",
-          "waitingMins": 452
-        },
-        {
-          "supplierName": "广州市昌兴农产品有限公司-快乐猴",
-          "skuName": "大娃娃菜 500g(N)",
-          "completeTime": "11:49",
-          "waitingMins": 450
-        },
-        {
-          "supplierName": "广州市昌兴农产品有限公司-快乐猴",
-          "skuName": "茼蒿 400g",
-          "completeTime": "11:52",
-          "waitingMins": 448
-        },
-        {
-          "supplierName": "广州市昌兴农产品有限公司-快乐猴",
-          "skuName": "青甘蓝 800g",
-          "completeTime": "11:56",
-          "waitingMins": 444
-        },
-        {
-          "supplierName": "广州市白云区松洲中芬果菜经营部-快乐猴",
-          "skuName": "蜜薯 1kg",
-          "completeTime": "12:07",
-          "waitingMins": 433
-        },
-        {
-          "supplierName": "广州市白云区松洲中芬果菜经营部-快乐猴",
-          "skuName": "铁棍山药 1kg",
-          "completeTime": "12:15",
-          "waitingMins": 425
-        },
-        {
-          "supplierName": "广州市白云区松洲中芬果菜经营部-快乐猴",
-          "skuName": "小香薯 1kg",
-          "completeTime": "12:13",
-          "waitingMins": 427
-        },
-        {
-          "supplierName": "广州市白云区松洲中芬果菜经营部-快乐猴",
-          "skuName": "板栗红薯 1kg",
-          "completeTime": "12:17",
-          "waitingMins": 423
-        },
-        {
-          "supplierName": "佛山市南海日宥农副食品加工有限公司-快乐猴",
-          "skuName": "古法马拉糕 150g",
-          "completeTime": "10:58",
-          "waitingMins": 502
-        },
-        {
-          "supplierName": "佛山市南海日宥农副食品加工有限公司-快乐猴",
-          "skuName": "广式葱油饼 270g",
-          "completeTime": "10:57",
-          "waitingMins": 503
-        },
-        {
-          "supplierName": "广州泉润食品有限公司-快乐猴",
-          "skuName": "快乐猴 浓醇豆浆1L",
-          "completeTime": "12:23",
-          "waitingMins": 416
-        },
-        {
-          "supplierName": "广州泉润食品有限公司-快乐猴",
-          "skuName": "快乐猴 无糖黑豆豆浆 1L",
-          "completeTime": "12:26",
-          "waitingMins": 414
-        },
-        {
-          "supplierName": "广州泉润食品有限公司-快乐猴",
-          "skuName": "快乐猴 红豆味豆腐花 208g",
-          "completeTime": "12:19",
-          "waitingMins": 421
-        },
-        {
-          "supplierName": "广州泉润食品有限公司-快乐猴",
-          "skuName": "快乐猴 冰糖味豆腐花 320g",
-          "completeTime": "12:21",
-          "waitingMins": 418
-        },
-        {
-          "supplierName": "广州泉润食品有限公司-快乐猴",
-          "skuName": "快乐猴 甜豆浆 248ml",
-          "completeTime": "12:15",
-          "waitingMins": 425
-        },
-        {
-          "supplierName": "广州泉润食品有限公司-快乐猴",
-          "skuName": "快乐猴 攸县风味香干 280g",
-          "completeTime": "12:17",
-          "waitingMins": 423
-        },
-        {
-          "supplierName": "广东牛人食品有限公司-快乐猴",
-          "skuName": "牛杂 500g",
-          "completeTime": "12:11",
-          "waitingMins": 428
-        },
-        {
-          "supplierName": "广东牛人食品有限公司-快乐猴",
-          "skuName": "国产鲜牛腿肉400g",
-          "completeTime": "12:00",
-          "waitingMins": 439
-        },
-        {
-          "supplierName": "广东牛人食品有限公司-快乐猴",
-          "skuName": "国产鲜牛腩 400g",
-          "completeTime": "12:02",
-          "waitingMins": 438
-        },
-        {
-          "supplierName": "广东牛人食品有限公司-快乐猴",
-          "skuName": "国产鲜牛肉馅 200g",
-          "completeTime": "12:13",
-          "waitingMins": 426
-        },
-        {
-          "supplierName": "广东牛人食品有限公司-快乐猴",
-          "skuName": "鲜切黄牛吊龙潮汕火锅肉片 150g",
-          "completeTime": "12:10",
-          "waitingMins": 430
-        },
-        {
-          "supplierName": "广东牛人食品有限公司-快乐猴",
-          "skuName": "鲜切黄牛肥牛潮汕火锅肉片 150g",
-          "completeTime": "11:58",
-          "waitingMins": 441
-        },
-        {
-          "supplierName": "广东牛人食品有限公司-快乐猴",
-          "skuName": "鲜切黄牛涮炒嫩肉片 150g",
-          "completeTime": "12:18",
-          "waitingMins": 422
-        },
-        {
-          "supplierName": "广东牛人食品有限公司-快乐猴",
-          "skuName": "广式卤牛杂 350g",
-          "completeTime": "12:08",
-          "waitingMins": 432
-        },
-        {
-          "supplierName": "广东牛人食品有限公司-快乐猴",
-          "skuName": "鲜切黄牛吊龙潮汕火锅肉片 150g",
-          "completeTime": "12:10",
-          "waitingMins": 430
-        },
-        {
-          "supplierName": "广东牛人食品有限公司-快乐猴",
-          "skuName": "鲜切黄牛肥牛潮汕火锅肉片 150g",
-          "completeTime": "11:58",
-          "waitingMins": 441
-        },
-        {
-          "supplierName": "广东牛人食品有限公司-快乐猴",
-          "skuName": "鲜切黄牛涮炒嫩肉片 150g",
-          "completeTime": "12:18",
-          "waitingMins": 422
-        },
-        {
-          "supplierName": "深圳市众口味食品集团有限公司-快乐猴",
-          "skuName": "黄金糕 228g",
-          "completeTime": "11:56",
-          "waitingMins": 443
-        },
-        {
-          "supplierName": "深圳市众口味食品集团有限公司-快乐猴",
-          "skuName": "老面馒头 400g",
-          "completeTime": "11:48",
-          "waitingMins": 452
-        },
-        {
-          "supplierName": "深圳市众口味食品集团有限公司-快乐猴",
-          "skuName": "手撕红糖馒头 400g",
-          "completeTime": "11:54",
-          "waitingMins": 446
-        },
-        {
-          "supplierName": "深圳市众口味食品集团有限公司-快乐猴",
-          "skuName": "杂粮馒头(黑米+荞麦+玉米) 480g",
-          "completeTime": "11:52",
-          "waitingMins": 448
-        },
-        {
-          "supplierName": "深圳市众口味食品集团有限公司-快乐猴",
-          "skuName": "红糖发糕 218g",
-          "completeTime": "11:55",
-          "waitingMins": 444
-        },
-        {
-          "supplierName": "深圳市众口味食品集团有限公司-快乐猴",
-          "skuName": "双色开花馒头(紫薯味+南瓜味) 360g",
-          "completeTime": "11:46",
-          "waitingMins": 454
-        },
-        {
-          "supplierName": "深圳市众口味食品集团有限公司-快乐猴",
-          "skuName": "刀切馒头 400g(N)",
-          "completeTime": "11:50",
-          "waitingMins": 449
-        },
-        {
-          "supplierName": "广东爱健康农牧集团有限公司-快乐猴",
-          "skuName": "鲜散养138天清远鸡整只 900g",
-          "completeTime": "11:48",
-          "waitingMins": 451
-        },
-        {
-          "supplierName": "广州市一惜地农产品有限公司-快乐猴",
-          "skuName": "精选清洁鲜鸡蛋30枚 1.6kg",
-          "completeTime": "14:16",
-          "waitingMins": 304
-        },
-        {
-          "supplierName": "广州市一惜地农产品有限公司-快乐猴",
-          "skuName": "粗粮谷物红心蛋30枚 1.35kg",
-          "completeTime": "14:08",
-          "waitingMins": 312
-        },
-        {
-          "supplierName": "成都七海食品有限公司-快乐猴-自营",
-          "skuName": "挪威冰鲜三文鱼切片(刺身) 100g",
-          "completeTime": "12:21",
-          "waitingMins": 419
-        },
-        {
-          "supplierName": "成都七海食品有限公司-快乐猴-自营",
-          "skuName": "冷鲜三文鱼鱼头(整鱼头) 400g",
-          "completeTime": "12:20",
-          "waitingMins": 420
-        },
-        {
-          "supplierName": "成都七海食品有限公司-快乐猴-自营",
-          "skuName": "冷鲜三文鱼鱼骨 500g",
-          "completeTime": "12:20",
-          "waitingMins": 419
-        },
-        {
-          "supplierName": "成都七海食品有限公司-快乐猴-自营",
-          "skuName": "【挪威】冰鲜三文鱼厚切 280g",
-          "completeTime": "12:22",
-          "waitingMins": 417
-        },
-        {
-          "supplierName": "成都七海食品有限公司-快乐猴-自营",
-          "skuName": "加拿大北极甜虾刺身 98g",
-          "completeTime": "12:23",
-          "waitingMins": 417
-        },
-        {
-          "supplierName": "成都七海食品有限公司-快乐猴-自营",
-          "skuName": "北极贝轻食装 50g",
-          "completeTime": "12:19",
-          "waitingMins": 420
-        },
-        {
-          "supplierName": "成都七海食品有限公司-快乐猴-自营",
-          "skuName": "刺身三拼(三文鱼+北极贝+甜虾) 180g",
-          "completeTime": "12:23",
-          "waitingMins": 416
-        },
-        {
-          "supplierName": "成都七海食品有限公司-快乐猴-自营",
-          "skuName": "三文鱼轻食波奇 130g",
-          "completeTime": "12:22",
-          "waitingMins": 417
-        },
-        {
-          "supplierName": "成都七海食品有限公司-快乐猴-自营",
-          "skuName": "冰鲜三文鱼厚脂鱼腩切片 70g",
-          "completeTime": "12:22",
-          "waitingMins": 418
-        },
-        {
-          "supplierName": "成都七海食品有限公司-快乐猴-自营",
-          "skuName": "挪威冰鲜三文鱼肉 400g",
-          "completeTime": "12:21",
-          "waitingMins": 418
-        },
-        {
-          "supplierName": "上海丰楷农业科技有限公司-快乐猴-自营",
-          "skuName": "阳光玫瑰青提 450g",
-          "completeTime": "13:07",
-          "waitingMins": 373
-        },
-        {
-          "supplierName": "上海丰楷农业科技有限公司-快乐猴-自营",
-          "skuName": "巨峰葡萄 500g(N)",
-          "completeTime": "13:03",
-          "waitingMins": 377
-        },
-        {
-          "supplierName": "上海丰楷农业科技有限公司-快乐猴-自营",
-          "skuName": "新疆小白杏 300g",
-          "completeTime": "13:00",
-          "waitingMins": 379
-        },
-        {
-          "supplierName": "上海丰楷农业科技有限公司-快乐猴-自营",
-          "skuName": "茉莉香葡萄 400g",
-          "completeTime": "12:56",
-          "waitingMins": 383
-        },
-        {
-          "supplierName": "东莞市恒集祥食品有限公司-快乐猴",
-          "skuName": "特色玉米粑粑 200g",
-          "completeTime": "12:30",
-          "waitingMins": 410
-        },
-        {
-          "supplierName": "恒集祥食品科技（东莞市）有限公司-快乐猴-自营",
-          "skuName": "快乐猴 抹茶泡芙 155g",
-          "completeTime": "12:28",
-          "waitingMins": 411
-        },
-        {
-          "supplierName": "恒集祥食品科技（东莞市）有限公司-快乐猴-自营",
-          "skuName": "快乐猴 原味双皮奶 200g",
-          "completeTime": "12:32",
-          "waitingMins": 408
-        },
-        {
-          "supplierName": "恒集祥食品科技（东莞市）有限公司-快乐猴-自营",
-          "skuName": "快乐猴 抹茶布丁 100g",
-          "completeTime": "12:34",
-          "waitingMins": 405
-        },
-        {
-          "supplierName": "广州市广懋鲜农业发展有限公司-快乐猴",
-          "skuName": "即食海鸥岛红心芭乐 500g",
-          "completeTime": "15:14",
-          "waitingMins": 246
-        },
-        {
-          "supplierName": "广州市广懋鲜农业发展有限公司-快乐猴",
-          "skuName": "广州番禺海鸥岛无花果 300g",
-          "completeTime": "15:12",
-          "waitingMins": 248
-        },
-        {
-          "supplierName": "广州市广懋鲜农业发展有限公司-快乐猴",
-          "skuName": "即食海鸥岛白心芭乐 600g",
-          "completeTime": "15:02",
-          "waitingMins": 258
-        },
-        {
-          "supplierName": "宁德市三港湾水产贸易有限公司-快乐猴",
-          "skuName": "冰鲜大黄鱼 290-400g",
-          "completeTime": "14:20",
-          "waitingMins": 300
-        },
-        {
-          "supplierName": "宁德市三港湾水产贸易有限公司-快乐猴",
-          "skuName": "冰鲜小黄鱼400-500g",
-          "completeTime": "14:17",
-          "waitingMins": 302
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "花蛤肉 200g",
-          "completeTime": "14:15",
-          "waitingMins": 304
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "海捕大鱿鱼 400g",
-          "completeTime": "14:12",
-          "waitingMins": 307
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "扇贝肉 200g",
-          "completeTime": "14:15",
-          "waitingMins": 305
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "东海白鲳鱼 500g",
-          "completeTime": "14:23",
-          "waitingMins": 297
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "冰鲜鱿鱼须 400g",
-          "completeTime": "14:18",
-          "waitingMins": 301
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "冰鲜海鲈鱼 500-650g",
-          "completeTime": "14:21",
-          "waitingMins": 298
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "金鲳鱼 200-250g",
-          "completeTime": "14:16",
-          "waitingMins": 304
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "冰鲜基围虾(南美白对虾) 350g",
-          "completeTime": "14:23",
-          "waitingMins": 296
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "冰鲜黑虎虾仁 150g",
-          "completeTime": "14:17",
-          "waitingMins": 303
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "东海带鱼 400g",
-          "completeTime": "14:20",
-          "waitingMins": 300
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "鲜虾手剥无保水青虾仁 280g",
-          "completeTime": "14:21",
-          "waitingMins": 299
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "冰鲜原切黑鱼片 190-200g",
-          "completeTime": "14:11",
-          "waitingMins": 309
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "盐田对虾 400g",
-          "completeTime": "14:13",
-          "waitingMins": 306
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "草饲牛肋条 1kg",
-          "completeTime": "15:46",
-          "waitingMins": 213
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "阿根廷谷饲上脑牛排 700g",
-          "completeTime": "15:44",
-          "waitingMins": 216
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "蚝油牛肉片 300g",
-          "completeTime": "15:54",
-          "waitingMins": 205
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "五香牛肉丝 300g",
-          "completeTime": "15:52",
-          "waitingMins": 208
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "阿根廷眼肉牛排  400g",
-          "completeTime": "15:54",
-          "waitingMins": 206
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "奥尔良风味鸡翅中 500g",
-          "completeTime": "15:56",
-          "waitingMins": 204
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "法切羊排 400g",
-          "completeTime": "15:50",
-          "waitingMins": 209
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "韩式烤肉 300g",
-          "completeTime": "15:57",
-          "waitingMins": 202
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "阿根廷谷饲板腱牛排 400g",
-          "completeTime": "15:56",
-          "waitingMins": 204
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "烧烤牛肉串 200g",
-          "completeTime": "15:52",
-          "waitingMins": 207
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "烧烤羊肉串 200g",
-          "completeTime": "15:51",
-          "waitingMins": 209
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "罗勒风味鸡腿扒 400g",
-          "completeTime": "15:48",
-          "waitingMins": 211
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "黑胡椒牛排 400g",
-          "completeTime": "15:49",
-          "waitingMins": 210
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "原切牛腱 1kg",
-          "completeTime": "15:47",
-          "waitingMins": 213
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "草饲牛肋条 1kg",
-          "completeTime": "15:46",
-          "waitingMins": 213
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "阿根廷谷饲上脑牛排 700g",
-          "completeTime": "15:44",
-          "waitingMins": 216
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "五香牛肉丝 300g",
-          "completeTime": "15:52",
-          "waitingMins": 208
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "烧烤牛肉串 200g",
-          "completeTime": "15:52",
-          "waitingMins": 207
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "罗勒风味鸡腿扒 400g",
-          "completeTime": "15:48",
-          "waitingMins": 211
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "黑胡椒牛排 400g",
-          "completeTime": "15:49",
-          "waitingMins": 210
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "原切牛腱 1kg",
-          "completeTime": "15:47",
-          "waitingMins": 213
-        },
-        {
-          "supplierName": "广东家家唛食品有限公司-快乐猴",
-          "skuName": "豆沙包 360g",
-          "completeTime": "14:12",
-          "waitingMins": 307
-        },
-        {
-          "supplierName": "广东家家唛食品有限公司-快乐猴",
-          "skuName": "牛奶馒头 240g",
-          "completeTime": "14:11",
-          "waitingMins": 309
-        },
-        {
-          "supplierName": "广东家家唛食品有限公司-快乐猴",
-          "skuName": "紫薯包 180g",
-          "completeTime": "14:13",
-          "waitingMins": 306
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪筒骨 550g",
-          "completeTime": "14:49",
-          "waitingMins": 270
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪肉丝 300g",
-          "completeTime": "14:43",
-          "waitingMins": 277
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪小排(脊骨+肋排) 1.2kg",
-          "completeTime": "14:49",
-          "waitingMins": 270
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪带皮精五花肉 500g",
-          "completeTime": "15:08",
-          "waitingMins": 251
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪带筋猪蹄块(猪爪)  900g",
-          "completeTime": "14:39",
-          "waitingMins": 280
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪肋排 400g",
-          "completeTime": "15:00",
-          "waitingMins": 260
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪肥瘦猪肉馅(肥瘦比约2:8) 500g",
-          "completeTime": "14:52",
-          "waitingMins": 268
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪带皮猪腿肉 500g",
-          "completeTime": "14:53",
-          "waitingMins": 267
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪小排(脊骨+肋排) 400g",
-          "completeTime": "14:41",
-          "waitingMins": 278
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪棒骨 1.2kg",
-          "completeTime": "14:32",
-          "waitingMins": 287
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪大肠 350g",
-          "completeTime": "14:34",
-          "waitingMins": 285
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪梅花肉 400g",
-          "completeTime": "15:03",
-          "waitingMins": 256
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪小里脊 300g",
-          "completeTime": "14:55",
-          "waitingMins": 264
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪软骨肋排 1kg",
-          "completeTime": "14:46",
-          "waitingMins": 274
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪汤骨 500g",
-          "completeTime": "15:08",
-          "waitingMins": 252
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪扇子骨 500g",
-          "completeTime": "15:12",
-          "waitingMins": 248
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪颈肉(松板肉)  200g",
-          "completeTime": "14:51",
-          "waitingMins": 269
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪猪肝 350g",
-          "completeTime": "14:44",
-          "waitingMins": 276
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪小肠(粉肠)  200g",
-          "completeTime": "14:44",
-          "waitingMins": 276
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪猪展(腱子肉)  300g",
-          "completeTime": "14:54",
-          "waitingMins": 266
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪猪肚 500g",
-          "completeTime": "14:46",
-          "waitingMins": 273
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪瘦肉 350g",
-          "completeTime": "15:09",
-          "waitingMins": 251
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪带皮五花肉 1kg",
-          "completeTime": "14:57",
-          "waitingMins": 262
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪小排(脊骨+肋排) 1.2kg",
-          "completeTime": "14:49",
-          "waitingMins": 270
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪带皮精五花肉 500g",
-          "completeTime": "15:08",
-          "waitingMins": 251
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪肋排 400g",
-          "completeTime": "15:00",
-          "waitingMins": 260
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪带皮猪腿肉 500g",
-          "completeTime": "14:53",
-          "waitingMins": 267
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪小排(脊骨+肋排) 400g",
-          "completeTime": "14:41",
-          "waitingMins": 278
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪梅花肉 400g",
-          "completeTime": "15:03",
-          "waitingMins": 256
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪小里脊 300g",
-          "completeTime": "14:55",
-          "waitingMins": 264
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪软骨肋排 1kg",
-          "completeTime": "14:46",
-          "waitingMins": 274
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪汤骨 500g",
-          "completeTime": "15:08",
-          "waitingMins": 252
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪扇子骨 500g",
-          "completeTime": "15:12",
-          "waitingMins": 248
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪猪展(腱子肉)  300g",
-          "completeTime": "14:54",
-          "waitingMins": 266
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪瘦肉 350g",
-          "completeTime": "15:09",
-          "waitingMins": 251
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪带皮五花肉 1kg",
-          "completeTime": "14:57",
-          "waitingMins": 262
-        },
-        {
-          "supplierName": "福州洪福食品有限公司-快乐猴-自营",
-          "skuName": "油炸花生 150g",
-          "completeTime": "13:58",
-          "waitingMins": 321
-        },
-        {
-          "supplierName": "福建省嘎嘎黄小鸭食品有限公司-快乐猴",
-          "skuName": "卤素三拼(莲藕+豆皮+海带) 210g",
-          "completeTime": "14:03",
-          "waitingMins": 317
-        },
-        {
-          "supplierName": "福建省嘎嘎黄小鸭食品有限公司-快乐猴",
-          "skuName": "卤鸡腿 170g(2个)",
-          "completeTime": "14:01",
-          "waitingMins": 319
-        },
-        {
-          "supplierName": "福建省嘎嘎黄小鸭食品有限公司-快乐猴",
-          "skuName": "毛豆花生双拼 500g",
-          "completeTime": "14:00",
-          "waitingMins": 320
-        },
-        {
-          "supplierName": "福建省嘎嘎黄小鸭食品有限公司-快乐猴",
-          "skuName": "烧烤味牛板筋 100g",
-          "completeTime": "14:04",
-          "waitingMins": 315
-        },
-        {
-          "supplierName": "深圳市优选农业开发有限公司-快乐猴",
-          "skuName": "满籽满膏海兔 250g(5-10只)",
-          "completeTime": "14:35",
-          "waitingMins": 284
-        },
-        {
-          "supplierName": "深圳市优选农业开发有限公司-快乐猴",
-          "skuName": "清水螺蛳肉 180g",
-          "completeTime": "14:29",
-          "waitingMins": 290
-        },
-        {
-          "supplierName": "深圳市优选农业开发有限公司-快乐猴",
-          "skuName": "墨鱼仔 300g",
-          "completeTime": "14:28",
-          "waitingMins": 291
-        },
-        {
-          "supplierName": "深圳市优选农业开发有限公司-快乐猴",
-          "skuName": "笔管鱿鱼 250g",
-          "completeTime": "14:34",
-          "waitingMins": 285
-        },
-        {
-          "supplierName": "深圳市优选农业开发有限公司-快乐猴",
-          "skuName": "黄金螺片 100g",
-          "completeTime": "14:37",
-          "waitingMins": 282
-        },
-        {
-          "supplierName": "深圳市优选农业开发有限公司-快乐猴",
-          "skuName": "冰鲜大粒生蚝肉 200g(6-10只)",
-          "completeTime": "14:33",
-          "waitingMins": 286
-        },
-        {
-          "supplierName": "深圳市优选农业开发有限公司-快乐猴",
-          "skuName": "冰鲜大马鲛鱼切块 200g",
-          "completeTime": "14:31",
-          "waitingMins": 289
-        },
-        {
-          "supplierName": "深圳市优选农业开发有限公司-快乐猴",
-          "skuName": "大号小龙虾 600g(19-23只)",
-          "completeTime": "14:32",
-          "waitingMins": 288
-        },
-        {
-          "supplierName": "广东泓润源食品科技有限公司-快乐猴-自营",
-          "skuName": "饺子皮 250g",
-          "completeTime": "14:29",
-          "waitingMins": 290
-        },
-        {
-          "supplierName": "广东泓润源食品科技有限公司-快乐猴-自营",
-          "skuName": "细圆面 300g",
-          "completeTime": "14:27",
-          "waitingMins": 292
-        },
-        {
-          "supplierName": "广东泓润源食品科技有限公司-快乐猴-自营",
-          "skuName": "云吞皮 250g",
-          "completeTime": "14:26",
-          "waitingMins": 294
-        },
-        {
-          "supplierName": "广东泓润源食品科技有限公司-快乐猴-自营",
-          "skuName": "手擀式鲜面 300g",
-          "completeTime": "14:25",
-          "waitingMins": 295
-        },
-        {
-          "supplierName": "广东泓润源食品科技有限公司-快乐猴-自营",
-          "skuName": "鲜刀削面 300g",
-          "completeTime": "14:27",
-          "waitingMins": 293
-        },
-        {
-          "supplierName": "深圳市隆力普贸易有限公司-快乐猴",
-          "skuName": "新希望 活润草莓+桑葚风味发酵乳 200g",
-          "completeTime": "14:34",
-          "waitingMins": 285
-        },
-        {
-          "supplierName": "京懋丰园（北京）商贸有限公司-快乐猴",
-          "skuName": "泰国香水椰青单粒(不开口) 800g",
-          "completeTime": "15:34",
-          "waitingMins": 226
-        },
-        {
-          "supplierName": "京懋丰园（北京）商贸有限公司-快乐猴",
-          "skuName": "燕窝果 750g",
-          "completeTime": "15:20",
-          "waitingMins": 239
-        },
-        {
-          "supplierName": "京懋丰园（北京）商贸有限公司-快乐猴",
-          "skuName": "进口牛油果 440g(4粒)",
-          "completeTime": "15:22",
-          "waitingMins": 237
-        },
-        {
-          "supplierName": "京懋丰园（北京）商贸有限公司-快乐猴",
-          "skuName": "黑金刚莲雾 320g",
-          "completeTime": "15:33",
-          "waitingMins": 226
-        },
-        {
-          "supplierName": "京懋丰园（北京）商贸有限公司-快乐猴",
-          "skuName": "四川安岳黄柠檬 500g",
-          "completeTime": "15:18",
-          "waitingMins": 242
-        },
-        {
-          "supplierName": "京懋丰园（北京）商贸有限公司-快乐猴",
-          "skuName": "新西兰加力果 600g(4个)",
-          "completeTime": "15:26",
-          "waitingMins": 233
-        },
-        {
-          "supplierName": "京懋丰园（北京）商贸有限公司-快乐猴",
-          "skuName": "佳沛 金奇异果 420g(4粒)",
-          "completeTime": "15:25",
-          "waitingMins": 234
-        },
-        {
-          "supplierName": "清远清鑫食品有限公司-快乐猴",
-          "skuName": "手撕鸡 200g",
-          "completeTime": "14:44",
-          "waitingMins": 275
-        },
-        {
-          "supplierName": "清远清鑫食品有限公司-快乐猴",
-          "skuName": "豉油鸡 350g",
-          "completeTime": "14:41",
-          "waitingMins": 278
-        },
-        {
-          "supplierName": "清远清鑫食品有限公司-快乐猴",
-          "skuName": "盐焗鸡爪 110g",
-          "completeTime": "14:40",
-          "waitingMins": 280
-        },
-        {
-          "supplierName": "清远清鑫食品有限公司-快乐猴",
-          "skuName": "盐焗鸡翅尖 180g",
-          "completeTime": "14:42",
-          "waitingMins": 277
-        },
-        {
-          "supplierName": "清远清鑫食品有限公司-快乐猴",
-          "skuName": "广式白切鸡 350g",
-          "completeTime": "14:37",
-          "waitingMins": 282
-        },
-        {
-          "supplierName": "清远清鑫食品有限公司-快乐猴",
-          "skuName": "盐焗鸡 630g",
-          "completeTime": "14:38",
-          "waitingMins": 281
-        },
-        {
-          "supplierName": "莘泽优品贸易(福建)有限公司-快乐猴",
-          "skuName": "鲜活净化沙甲(花蛤) 500g",
-          "completeTime": "15:41",
-          "waitingMins": 219
-        },
-        {
-          "supplierName": "莘泽优品贸易(福建)有限公司-快乐猴",
-          "skuName": "冰鲜海带结 200g",
-          "completeTime": "15:39",
-          "waitingMins": 221
-        },
-        {
-          "supplierName": "莘泽优品贸易(福建)有限公司-快乐猴",
-          "skuName": "鲜活净化蛏子 400g(32-40粒)",
-          "completeTime": "15:40",
-          "waitingMins": 220
-        },
-        {
-          "supplierName": "莘泽优品贸易(福建)有限公司-快乐猴",
-          "skuName": "鲜活净化大粒美贝(美国贝) 500g(15-25粒)",
-          "completeTime": "15:38",
-          "waitingMins": 222
-        },
-        {
-          "supplierName": "莘泽优品贸易(福建)有限公司-快乐猴",
-          "skuName": "鲜活生蚝 1kg(4-5只)",
-          "completeTime": "15:45",
-          "waitingMins": 215
-        },
-        {
-          "supplierName": "莘泽优品贸易(福建)有限公司-快乐猴",
-          "skuName": "鲜活净化花甲(油蛤) 500g",
-          "completeTime": "15:38",
-          "waitingMins": 221
-        },
-        {
-          "supplierName": "广州澳儿沙拉餐饮管理有限公司-快乐猴",
-          "skuName": "金典 3.8g乳蛋白鲜牛奶 235ml*4",
-          "completeTime": "14:49",
-          "waitingMins": 270
-        },
-        {
-          "supplierName": "广州澳儿沙拉餐饮管理有限公司-快乐猴",
-          "skuName": "伊利 果蔬双拼风味发酵乳 90g*8",
-          "completeTime": "14:52",
-          "waitingMins": 268
-        },
-        {
-          "supplierName": "广州香满楼乳业有限公司-快乐猴",
-          "skuName": "香满楼 3.3g蛋白质鲜牛奶 2L",
-          "completeTime": "14:58",
-          "waitingMins": 262
-        },
-        {
-          "supplierName": "广州香满楼乳业有限公司-快乐猴",
-          "skuName": "香满楼 3.3g蛋白质屋顶鲜牛奶 180ml",
-          "completeTime": "14:55",
-          "waitingMins": 265
-        },
-        {
-          "supplierName": "山东兴业源现代农业发展有限公司-快乐猴",
-          "skuName": "陕西洛川红富士苹果 1kg",
-          "completeTime": "17:02",
-          "waitingMins": 138
-        },
-        {
-          "supplierName": "山东兴业源现代农业发展有限公司-快乐猴",
-          "skuName": "大连美早樱桃 250g(单果8g起)",
-          "completeTime": "16:19",
-          "waitingMins": 181
-        },
-        {
-          "supplierName": "山东兴业源现代农业发展有限公司-快乐猴",
-          "skuName": "山东烟台富士苹果 1kg",
-          "completeTime": "17:12",
-          "waitingMins": 128
-        },
-        {
-          "supplierName": "山东兴业源现代农业发展有限公司-快乐猴",
-          "skuName": "山西贡梨 1kg",
-          "completeTime": "16:49",
-          "waitingMins": 151
-        },
-        {
-          "supplierName": "山东兴业源现代农业发展有限公司-快乐猴",
-          "skuName": "河北皇冠梨 1kg(4个)",
-          "completeTime": "16:45",
-          "waitingMins": 155
-        },
-        {
-          "supplierName": "山东兴业源现代农业发展有限公司-快乐猴",
-          "skuName": "新疆库尔勒香梨 900g(单果100g起)",
-          "completeTime": "16:54",
-          "waitingMins": 145
-        },
-        {
-          "supplierName": "山东兴业源现代农业发展有限公司-快乐猴",
-          "skuName": "国产黄肉油桃 750g(单果60g起)",
-          "completeTime": "17:04",
-          "waitingMins": 136
-        },
-        {
-          "supplierName": "山东兴业源现代农业发展有限公司-快乐猴",
-          "skuName": "春雪蜜桃 700g(4粒)",
-          "completeTime": "17:19",
-          "waitingMins": 121
-        },
-        {
-          "supplierName": "山东兴业源现代农业发展有限公司-快乐猴",
-          "skuName": "山东红樱桃 500g(单果6g起)",
-          "completeTime": "16:40",
-          "waitingMins": 160
-        },
-        {
-          "supplierName": "山东兴业源现代农业发展有限公司-快乐猴",
-          "skuName": "云南夏黑葡萄 500g",
-          "completeTime": "16:25",
-          "waitingMins": 175
-        },
-        {
-          "supplierName": "广州市抖鲜农业科技有限公司",
-          "skuName": "进口金枕榴莲单粒(散称)",
-          "completeTime": "16:42",
-          "waitingMins": 157
-        },
-        {
-          "supplierName": "广州市抖鲜农业科技有限公司",
-          "skuName": "进口山竹 500g(N)",
-          "completeTime": "18:06",
-          "waitingMins": 74
-        },
-        {
-          "supplierName": "广州市抖鲜农业科技有限公司",
-          "skuName": "国产蓝莓 250g(果径18mm起)",
-          "completeTime": "16:05",
-          "waitingMins": 195
-        },
-        {
-          "supplierName": "广州市抖鲜农业科技有限公司",
-          "skuName": "国产蓝莓 400g(果径14mm起)",
-          "completeTime": "16:12",
-          "waitingMins": 187
-        },
-        {
-          "supplierName": "深圳市超跃食品有限公司-快乐猴",
-          "skuName": "快乐猴 卤水老豆腐 400g",
-          "completeTime": "16:23",
-          "waitingMins": 177
-        },
-        {
-          "supplierName": "深圳市超跃食品有限公司-快乐猴",
-          "skuName": "快乐猴 千张 200g",
-          "completeTime": "16:16",
-          "waitingMins": 183
-        },
-        {
-          "supplierName": "深圳市超跃食品有限公司-快乐猴",
-          "skuName": "快乐猴 嫩豆腐 400g",
-          "completeTime": "16:20",
-          "waitingMins": 179
-        },
-        {
-          "supplierName": "深圳市超跃食品有限公司-快乐猴",
-          "skuName": "快乐猴 客家豆腐 400g",
-          "completeTime": "16:21",
-          "waitingMins": 178
-        },
-        {
-          "supplierName": "深圳市超跃食品有限公司-快乐猴",
-          "skuName": "快乐猴 油豆腐 150g",
-          "completeTime": "16:15",
-          "waitingMins": 184
-        },
-        {
-          "supplierName": "深圳市超跃食品有限公司-快乐猴",
-          "skuName": "快乐猴 豆腐丝 200g",
-          "completeTime": "16:14",
-          "waitingMins": 185
-        },
-        {
-          "supplierName": "深圳市超跃食品有限公司-快乐猴",
-          "skuName": "快乐猴 豆腐串 65g",
-          "completeTime": "16:17",
-          "waitingMins": 182
-        },
-        {
-          "supplierName": "深圳市超跃食品有限公司-快乐猴",
-          "skuName": "快乐猴 内酯豆腐 350g",
-          "completeTime": "16:19",
-          "waitingMins": 181
-        },
-        {
-          "supplierName": "广东逅厨食品有限公司-快乐猴",
-          "skuName": "日式红豆餐包 300g(4粒)",
-          "completeTime": "16:07",
-          "waitingMins": 193
-        },
-        {
-          "supplierName": "广东逅厨食品有限公司-快乐猴",
-          "skuName": "原味汉堡面包 330g",
-          "completeTime": "16:06",
-          "waitingMins": 194
-        },
-        {
-          "supplierName": "广东逅厨食品有限公司-快乐猴",
-          "skuName": "迷你松松面包卷 300g",
-          "completeTime": "16:09",
-          "waitingMins": 191
-        },
-        {
-          "supplierName": "广东逅厨食品有限公司-快乐猴",
-          "skuName": "快乐猴 厚切火腿三明治 120g",
-          "completeTime": "16:02",
-          "waitingMins": 198
-        },
-        {
-          "supplierName": "广东逅厨食品有限公司-快乐猴",
-          "skuName": "快乐猴 奥尔良风味鸡腿肉三明治 120g",
-          "completeTime": "16:03",
-          "waitingMins": 196
-        },
-        {
-          "supplierName": "广东逅厨食品有限公司-快乐猴",
-          "skuName": "快乐猴 全麦火腿芝士三明治 170g",
-          "completeTime": "16:00",
-          "waitingMins": 199
-        },
-        {
-          "supplierName": "广东逅厨食品有限公司-快乐猴",
-          "skuName": "快乐猴 滑蛋培根包(汉堡) 85g",
-          "completeTime": "15:59",
-          "waitingMins": 201
-        },
-        {
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "skuName": "芥兰苗 300g",
-          "completeTime": "17:19",
-          "waitingMins": 120
-        },
-        {
-          "supplierName": "广东晟果食品有限公司-快乐猴",
-          "skuName": "经典奶油小方蛋糕 170g",
-          "completeTime": "16:51",
-          "waitingMins": 148
-        },
-        {
-          "supplierName": "广东晟果食品有限公司-快乐猴",
-          "skuName": "快乐猴 鲜芒斑斓味蛋糕 450g",
-          "completeTime": "16:53",
-          "waitingMins": 147
-        },
-        {
-          "supplierName": "广东晟果食品有限公司-快乐猴",
-          "skuName": "坚果核桃拿破仑 120g(4块）",
-          "completeTime": "16:48",
-          "waitingMins": 152
-        },
-        {
-          "supplierName": "广东晟果食品有限公司-快乐猴",
-          "skuName": "快乐猴 香蕉可丽饼糕点 100g",
-          "completeTime": "16:50",
-          "waitingMins": 150
-        },
-        {
-          "supplierName": "广东晟果食品有限公司-快乐猴",
-          "skuName": "快乐猴 爆浆泡芙 155g(4只)",
-          "completeTime": "16:47",
-          "waitingMins": 153
-        },
-        {
-          "supplierName": "广东慧智农业科技有限公司-快乐猴",
-          "skuName": "富硒大码鲜鸡蛋20枚1.2kg",
-          "completeTime": "17:43",
-          "waitingMins": 97
-        },
-        {
-          "supplierName": "广东慧智农业科技有限公司-快乐猴",
-          "skuName": "鲜鹌鹑蛋24枚装 251g",
-          "completeTime": "17:26",
-          "waitingMins": 113
-        },
-        {
-          "supplierName": "广东慧智农业科技有限公司-快乐猴",
-          "skuName": "清洁大码鲜鸡蛋30枚 1.8kg",
-          "completeTime": "17:11",
-          "waitingMins": 129
-        },
-        {
-          "supplierName": "广东慧智农业科技有限公司-快乐猴",
-          "skuName": "精选叶黄素富硒鲜鸡蛋12枚 700g",
-          "completeTime": "16:55",
-          "waitingMins": 145
-        },
-        {
-          "supplierName": "广东美而美食品有限公司-快乐猴",
-          "skuName": "快乐猴 可生食富硒鲜鸡蛋 500g(10枚)",
-          "completeTime": "16:42",
-          "waitingMins": 157
-        },
-        {
-          "supplierName": "深圳市理念供应链管理有限公司-快乐猴",
-          "skuName": "韭菜 350g",
-          "completeTime": "17:24",
-          "waitingMins": 116
-        },
-        {
-          "supplierName": "东莞桃李面包有限公司-快乐猴",
-          "skuName": "快乐猴 超软吐司面包 250g",
-          "completeTime": "17:25",
-          "waitingMins": 115
-        },
-        {
-          "supplierName": "东莞桃李面包有限公司-快乐猴",
-          "skuName": "快乐猴 蔓越莓贝果面包 110g",
-          "completeTime": "17:26",
-          "waitingMins": 113
-        },
-        {
-          "supplierName": "东莞桃李面包有限公司-快乐猴",
-          "skuName": "快乐猴 全麦吐司面包 250g",
-          "completeTime": "17:27",
-          "waitingMins": 113
-        },
-        {
-          "supplierName": "东莞仁麦食品有限公司-快乐猴",
-          "skuName": "黄油海盐面包 180g(4粒)",
-          "completeTime": "17:33",
-          "waitingMins": 106
-        },
-        {
-          "supplierName": "东莞仁麦食品有限公司-快乐猴",
-          "skuName": "快乐猴 杂粮黑麦吐司面包 280g",
-          "completeTime": "17:36",
-          "waitingMins": 103
-        },
-        {
-          "supplierName": "东莞仁麦食品有限公司-快乐猴",
-          "skuName": "经典牛奶小餐包 280g",
-          "completeTime": "17:32",
-          "waitingMins": 107
-        },
-        {
-          "supplierName": "东莞仁麦食品有限公司-快乐猴",
-          "skuName": "快乐猴 北海道风味葡萄吐司面包 210g",
-          "completeTime": "17:30",
-          "waitingMins": 109
-        },
-        {
-          "supplierName": "东莞仁麦食品有限公司-快乐猴",
-          "skuName": "快乐猴 奶棒面包 330g(6只)",
-          "completeTime": "17:38",
-          "waitingMins": 101
-        },
-        {
-          "supplierName": "东莞仁麦食品有限公司-快乐猴",
-          "skuName": "快乐猴 红豆松松吐司面包 360g",
-          "completeTime": "17:37",
-          "waitingMins": 103
-        },
-        {
-          "supplierName": "东莞仁麦食品有限公司-快乐猴",
-          "skuName": "快乐猴  北海道风味香浓吐司面包 210g",
-          "completeTime": "17:34",
-          "waitingMins": 106
-        },
-        {
-          "supplierName": "东莞仁麦食品有限公司-快乐猴",
-          "skuName": "快乐猴 枫糖拌核桃吐司面包 300g",
-          "completeTime": "17:28",
-          "waitingMins": 111
-        },
-        {
-          "supplierName": "东莞仁麦食品有限公司-快乐猴",
-          "skuName": "快乐猴 4.0纯牛奶吐司面包 300g",
-          "completeTime": "17:35",
-          "waitingMins": 105
-        },
-        {
-          "supplierName": "广州嘉美欧包食品有限公司-快乐猴-自营",
-          "skuName": "海苔松松小贝 280g(6粒)",
-          "completeTime": "18:47",
-          "waitingMins": 33
-        },
-        {
-          "supplierName": "广州嘉美欧包食品有限公司-快乐猴-自营",
-          "skuName": "快乐猴 虎皮蛋糕卷 240g(8片)",
-          "completeTime": "18:47",
-          "waitingMins": 33
-        },
-        {
-          "supplierName": "广州嘉美欧包食品有限公司-快乐猴-自营",
-          "skuName": "焦糖布丁 100g",
-          "completeTime": "18:44",
-          "waitingMins": 35
-        },
-        {
-          "supplierName": "广州嘉美欧包食品有限公司-快乐猴-自营",
-          "skuName": "海盐奥利奥盒子蛋糕 135g",
-          "completeTime": "18:53",
-          "waitingMins": 27
-        },
-        {
-          "supplierName": "广州嘉美欧包食品有限公司-快乐猴-自营",
-          "skuName": "软萌牛奶小蛋糕 200g",
-          "completeTime": "18:40",
-          "waitingMins": 39
-        },
-        {
-          "supplierName": "广州嘉美欧包食品有限公司-快乐猴-自营",
-          "skuName": "无水鸡蛋糕 230g",
-          "completeTime": "18:37",
-          "waitingMins": 42
-        },
-        {
-          "supplierName": "广州嘉美欧包食品有限公司-快乐猴-自营",
-          "skuName": "快乐猴 碱水扭结面包 80g",
-          "completeTime": "18:39",
-          "waitingMins": 41
-        },
-        {
-          "supplierName": "广州嘉美欧包食品有限公司-快乐猴-自营",
-          "skuName": "快乐猴 芥末籽魔芋热狗面包 110g",
-          "completeTime": "18:50",
-          "waitingMins": 30
-        },
-        {
-          "supplierName": "广州嘉美欧包食品有限公司-快乐猴-自营",
-          "skuName": "快乐猴 迷你肉扒包 250g",
-          "completeTime": "18:48",
-          "waitingMins": 32
-        },
-        {
-          "supplierName": "广州嘉美欧包食品有限公司-快乐猴-自营",
-          "skuName": "快乐猴 芒果盒子蛋糕 290g",
-          "completeTime": "18:42",
-          "waitingMins": 37
-        },
-        {
-          "supplierName": "广州嘉美欧包食品有限公司-快乐猴-自营",
-          "skuName": "快乐猴 蓝莓盒子蛋糕 290g",
-          "completeTime": "18:51",
-          "waitingMins": 28
-        },
-        {
-          "supplierName": "广州嘉美欧包食品有限公司-快乐猴-自营",
-          "skuName": "快乐猴 超软奶酪包 230g",
-          "completeTime": "18:50",
-          "waitingMins": 29
-        },
-        {
-          "supplierName": "广东天之瓜农业发展有限公司-快乐猴-自营",
-          "skuName": "美都麒麟西瓜1粒3kg",
-          "completeTime": "18:34",
-          "waitingMins": 46
-        },
-        {
-          "supplierName": "广东天之瓜农业发展有限公司-快乐猴-自营",
-          "skuName": "手捧甜心小西瓜 1.2kg",
-          "completeTime": "18:03",
-          "waitingMins": 76
-        },
-        {
-          "supplierName": "广东天之瓜农业发展有限公司-快乐猴-自营",
-          "skuName": "手捧黄瓤小西瓜 1.5kg",
-          "completeTime": "17:54",
-          "waitingMins": 85
-        },
-        {
-          "supplierName": "湖北农发零号食品有限公司-快乐猴",
-          "skuName": "鲜黑猪小排 350g",
-          "completeTime": "17:55",
-          "waitingMins": 84
-        },
-        {
-          "supplierName": "湖北农发零号食品有限公司-快乐猴",
-          "skuName": "鲜黑猪去皮五花肉 350g",
-          "completeTime": "17:48",
-          "waitingMins": 91
-        },
-        {
-          "supplierName": "湖北农发零号食品有限公司-快乐猴",
-          "skuName": "鲜黑猪肋排 350g",
-          "completeTime": "17:50",
-          "waitingMins": 89
-        },
-        {
-          "supplierName": "湖北农发零号食品有限公司-快乐猴",
-          "skuName": "鲜黑猪汤骨 500g",
-          "completeTime": "17:54",
-          "waitingMins": 86
-        },
-        {
-          "supplierName": "湖北农发零号食品有限公司-快乐猴",
-          "skuName": "鲜黑猪梅花肉 250g",
-          "completeTime": "17:52",
-          "waitingMins": 87
-        },
-        {
-          "supplierName": "湖北农发零号食品有限公司-快乐猴",
-          "skuName": "鲜黑猪瘦肉 250g",
-          "completeTime": "17:46",
-          "waitingMins": 93
-        },
-        {
-          "supplierName": "湖北农发零号食品有限公司-快乐猴",
-          "skuName": "鲜黑猪小排 350g",
-          "completeTime": "17:55",
-          "waitingMins": 84
-        },
-        {
-          "supplierName": "湖北农发零号食品有限公司-快乐猴",
-          "skuName": "鲜黑猪去皮五花肉 350g",
-          "completeTime": "17:48",
-          "waitingMins": 91
-        },
-        {
-          "supplierName": "湖北农发零号食品有限公司-快乐猴",
-          "skuName": "鲜黑猪肥瘦肉馅(肥瘦比约2:8) 400g",
-          "completeTime": "17:44",
-          "waitingMins": 96
-        },
-        {
-          "supplierName": "湖北农发零号食品有限公司-快乐猴",
-          "skuName": "鲜黑猪肋排 350g",
-          "completeTime": "17:50",
-          "waitingMins": 89
-        },
-        {
-          "supplierName": "湖北农发零号食品有限公司-快乐猴",
-          "skuName": "鲜黑猪汤骨 500g",
-          "completeTime": "17:54",
-          "waitingMins": 86
-        },
-        {
-          "supplierName": "湖北农发零号食品有限公司-快乐猴",
-          "skuName": "鲜黑猪梅花肉 250g",
-          "completeTime": "17:52",
-          "waitingMins": 87
-        },
-        {
-          "supplierName": "湖北农发零号食品有限公司-快乐猴",
-          "skuName": "鲜黑猪瘦肉 250g",
-          "completeTime": "17:46",
-          "waitingMins": 93
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "粉莲藕 500g",
-          "completeTime": "18:28",
-          "waitingMins": 51
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "紫长茄 500g",
-          "completeTime": "18:29",
-          "waitingMins": 50
-        }
-      ],
-      "qc_recv_pending": [
-        {
-          "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
-          "skuName": "芋艿 1kg",
-          "qcCompleteTime": "09:37",
-          "waitingMins": 583,
-          "poNo": "CG202605237013"
-        },
-        {
-          "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
-          "skuName": "【煲汤提鲜】虫草花 100g",
-          "qcCompleteTime": "09:40",
-          "waitingMins": 580,
-          "poNo": "CG202605237013"
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜鸡胗 400g",
-          "qcCompleteTime": "09:42",
-          "waitingMins": 578,
-          "poNo": "CG202605232837"
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜土鸡腿 320g",
-          "qcCompleteTime": "09:46",
-          "waitingMins": 574,
-          "poNo": "CG202605232837"
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜黄皮嫩鸡 1kg",
-          "qcCompleteTime": "09:54",
-          "waitingMins": 565,
-          "poNo": "CG202605232837"
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜鸡大胸  800g",
-          "qcCompleteTime": "09:56",
-          "waitingMins": 563,
-          "poNo": "CG202605232837"
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜供港乳鸽 300g",
-          "qcCompleteTime": "10:02",
-          "waitingMins": 558,
-          "poNo": "CG202605232837"
-        },
-        {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "skuName": "鲜带蛋老母鸡半只切块 500g",
-          "qcCompleteTime": "10:10",
-          "waitingMins": 550,
-          "poNo": "CG202605232837"
-        },
-        {
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "skuName": "香芹  350g",
-          "qcCompleteTime": "11:09",
-          "waitingMins": 491,
-          "poNo": "CG202605237012"
-        },
-        {
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "skuName": "彩椒 550g",
-          "qcCompleteTime": "11:12",
-          "waitingMins": 488,
-          "poNo": "CG202605237012"
-        },
-        {
-          "supplierName": "深圳市理念供应链管理有限公司-快乐猴",
-          "skuName": "红苋菜 350g",
-          "qcCompleteTime": "11:13",
-          "waitingMins": 487,
-          "poNo": "CG202605237011"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "草莓番茄 500g",
-          "qcCompleteTime": "11:41",
-          "waitingMins": 459,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "牛奶水果玉米 500g",
-          "qcCompleteTime": "11:46",
-          "waitingMins": 454,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "普罗旺斯番茄 500g",
-          "qcCompleteTime": "11:48",
-          "waitingMins": 451,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "莴笋 1kg",
-          "qcCompleteTime": "11:58",
-          "waitingMins": 442,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "苦瓜  600g",
-          "qcCompleteTime": "12:00",
-          "waitingMins": 439,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "水洗胡萝卜 1kg",
-          "qcCompleteTime": "12:13",
-          "waitingMins": 427,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "黄心土豆 1kg",
-          "qcCompleteTime": "12:27",
-          "waitingMins": 413,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "西葫芦 750g(N)",
-          "qcCompleteTime": "12:35",
-          "waitingMins": 405,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "丝瓜 650g",
-          "qcCompleteTime": "12:40",
-          "waitingMins": 399,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "粉莲藕 500g",
-          "qcCompleteTime": "12:43",
-          "waitingMins": 397,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "豇豆 500g(N)",
-          "qcCompleteTime": "12:44",
-          "waitingMins": 395,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "切叶西芹 约800g",
-          "qcCompleteTime": "12:45",
-          "waitingMins": 394,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "小香葱  100g",
-          "qcCompleteTime": "12:54",
-          "waitingMins": 386,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "棱丝瓜 600g",
-          "qcCompleteTime": "12:56",
-          "waitingMins": 384,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "老黄瓜 600g",
-          "qcCompleteTime": "13:03",
-          "waitingMins": 377,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "盐田对虾 400g",
-          "qcCompleteTime": "14:13",
-          "waitingMins": 306,
-          "poNo": "CG202605236185"
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "冰鲜鱿鱼须 400g",
-          "qcCompleteTime": "14:18",
-          "waitingMins": 301,
-          "poNo": "CG202605236185"
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "skuName": "冰鲜海鲈鱼 500-650g",
-          "qcCompleteTime": "14:21",
-          "waitingMins": 298,
-          "poNo": "CG202605236185"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪棒骨 1.2kg",
-          "qcCompleteTime": "14:32",
-          "waitingMins": 287,
-          "poNo": "CG202605236546"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪大肠 350g",
-          "qcCompleteTime": "14:34",
-          "waitingMins": 285,
-          "poNo": "CG202605236546"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪带筋猪蹄块(猪爪)  900g",
-          "qcCompleteTime": "14:39",
-          "waitingMins": 280,
-          "poNo": "CG202605236546"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪小排(脊骨+肋排) 400g",
-          "qcCompleteTime": "14:41",
-          "waitingMins": 278,
-          "poNo": "CG202605236913"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪肉丝 300g",
-          "qcCompleteTime": "14:43",
-          "waitingMins": 277,
-          "poNo": "CG202605236546"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪猪肝 350g",
-          "qcCompleteTime": "14:44",
-          "waitingMins": 276,
-          "poNo": "CG202605236546"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪小肠(粉肠)  200g",
-          "qcCompleteTime": "14:44",
-          "waitingMins": 276,
-          "poNo": "CG202605236546"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪软骨肋排 1kg",
-          "qcCompleteTime": "14:46",
-          "waitingMins": 274,
-          "poNo": "CG202605236913"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪猪肚 500g",
-          "qcCompleteTime": "14:46",
-          "waitingMins": 273,
-          "poNo": "CG202605236546"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪颈肉(松板肉)  200g",
-          "qcCompleteTime": "14:51",
-          "waitingMins": 269,
-          "poNo": "CG202605236546"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪肥瘦猪肉馅(肥瘦比约2:8) 500g",
-          "qcCompleteTime": "14:52",
-          "waitingMins": 268,
-          "poNo": "CG202605236546"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪带皮猪腿肉 500g",
-          "qcCompleteTime": "14:53",
-          "waitingMins": 267,
-          "poNo": "CG202605236546"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪带皮猪腿肉 500g",
-          "qcCompleteTime": "14:53",
-          "waitingMins": 267,
-          "poNo": "CG202605236913"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪肋排 400g",
-          "qcCompleteTime": "15:00",
-          "waitingMins": 260,
-          "poNo": "CG202605236546"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪汤骨 500g",
-          "qcCompleteTime": "15:08",
-          "waitingMins": 252,
-          "poNo": "CG202605236546"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪瘦肉 350g",
-          "qcCompleteTime": "15:09",
-          "waitingMins": 251,
-          "poNo": "CG202605236546"
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "草饲牛肋条 1kg",
-          "qcCompleteTime": "15:46",
-          "waitingMins": 213,
-          "poNo": "CG202605232823"
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "原切牛腱 1kg",
-          "qcCompleteTime": "15:47",
-          "waitingMins": 213,
-          "poNo": "CG202605232823"
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "烧烤牛肉串 200g",
-          "qcCompleteTime": "15:52",
-          "waitingMins": 207,
-          "poNo": "CG202605232823"
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "skuName": "蚝油牛肉片 300g",
-          "qcCompleteTime": "15:54",
-          "waitingMins": 205,
-          "poNo": "CG202605232823"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "粉莲藕 500g",
-          "qcCompleteTime": "18:28",
-          "waitingMins": 51,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "广州嘉美欧包食品有限公司-快乐猴-自营",
-          "skuName": "软萌牛奶小蛋糕 200g",
-          "qcCompleteTime": "18:40",
-          "waitingMins": 39,
-          "poNo": "CG202605232822"
-        },
-        {
-          "supplierName": "广州嘉美欧包食品有限公司-快乐猴-自营",
-          "skuName": "海盐奥利奥盒子蛋糕 135g",
-          "qcCompleteTime": "18:53",
-          "waitingMins": 27,
-          "poNo": "CG202605232822"
-        }
-      ],
-      "recv_diff": [
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "skuName": "紫长茄 500g",
-          "purchaseQty": 1,
-          "recvQty": 98,
-          "diffQty": 97,
-          "poNo": "CG202605237014"
-        },
-        {
-          "supplierName": "深圳市理念供应链管理有限公司-快乐猴",
-          "skuName": "韭菜 350g",
-          "purchaseQty": 8,
-          "recvQty": 35,
-          "diffQty": 27,
-          "poNo": "CG202605237011"
-        },
-        {
-          "supplierName": "广东慧智农业科技有限公司-快乐猴",
-          "skuName": "鲜鹌鹑蛋24枚装 251g",
-          "purchaseQty": 120,
-          "recvQty": 110,
-          "diffQty": -10,
-          "poNo": "CG2026052110166"
-        },
-        {
-          "supplierName": "上海全苗蔬农业科技发展有限公司-快乐猴",
-          "skuName": "去根西兰花 400g",
-          "purchaseQty": 199,
-          "recvQty": 192,
-          "diffQty": -7,
-          "poNo": "CG202605237006"
-        },
-        {
-          "supplierName": "广州市昌兴农产品有限公司-快乐猴",
-          "skuName": "茼蒿 400g",
-          "purchaseQty": 29,
-          "recvQty": 25,
-          "diffQty": -4,
-          "poNo": "CG202605237009"
-        },
-        {
-          "supplierName": "深圳市金农供应链管理有限公司-快乐猴-自营",
-          "skuName": "西州蜜瓜25号单粒 1.5kg",
-          "purchaseQty": 99,
-          "recvQty": 96,
-          "diffQty": -3,
-          "poNo": "CG202605236562"
-        },
-        {
-          "supplierName": "宁德市三港湾水产贸易有限公司-快乐猴",
-          "skuName": "冰鲜大黄鱼 290-400g",
-          "purchaseQty": 7,
-          "recvQty": 4,
-          "diffQty": -3,
-          "poNo": "CG202605236181"
-        },
-        {
-          "supplierName": "深圳市大程鑫农业开发有限公司-快乐猴",
-          "skuName": "缤纷什锦小番茄 500g",
-          "purchaseQty": 50,
-          "recvQty": 48,
-          "diffQty": -2,
-          "poNo": "CG202605237061"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪扇子骨 500g",
-          "purchaseQty": 6,
-          "recvQty": 4,
-          "diffQty": -2,
-          "poNo": "CG202605236913"
-        },
-        {
-          "supplierName": "佳农食品（上海）有限公司-快乐猴",
-          "skuName": "进口甜糯蕉 1kg",
-          "purchaseQty": 94,
-          "recvQty": 93,
-          "diffQty": -1,
-          "poNo": "CG202605236533"
-        },
-        {
-          "supplierName": "广州市昌兴农产品有限公司-快乐猴",
-          "skuName": "小娃娃菜 550g(3颗)",
-          "purchaseQty": 84,
-          "recvQty": 83,
-          "diffQty": -1,
-          "poNo": "CG202605237009"
-        },
-        {
-          "supplierName": "广东牛人食品有限公司-快乐猴",
-          "skuName": "鲜切黄牛涮炒嫩肉片 150g",
-          "purchaseQty": 5,
-          "recvQty": 4,
-          "diffQty": -1,
-          "poNo": "CG202605236482"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪带皮五花肉 1kg",
-          "purchaseQty": 45,
-          "recvQty": 44,
-          "diffQty": -1,
-          "poNo": "CG202605236546"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪汤骨 500g",
-          "purchaseQty": 12,
-          "recvQty": 11,
-          "diffQty": -1,
-          "poNo": "CG202605236913"
-        },
-        {
-          "supplierName": "珠海市利源农畜产品有限公司-快乐猴",
-          "skuName": "鲜猪瘦肉 350g",
-          "purchaseQty": 6,
-          "recvQty": 5,
-          "diffQty": -1,
-          "poNo": "CG202605236913"
-        },
-        {
-          "supplierName": "深圳市优选农业开发有限公司-快乐猴",
-          "skuName": "黄金螺片 100g",
-          "purchaseQty": 5,
-          "recvQty": 4,
-          "diffQty": -1,
-          "poNo": "CG202605236186"
-        },
-        {
-          "supplierName": "京懋丰园（北京）商贸有限公司-快乐猴",
-          "skuName": "四川安岳黄柠檬 500g",
-          "purchaseQty": 32,
-          "recvQty": 31,
-          "diffQty": -1,
-          "poNo": "CG202605236543"
-        },
-        {
-          "supplierName": "广州市抖鲜农业科技有限公司",
-          "skuName": "进口山竹 500g(N)",
-          "purchaseQty": 155,
-          "recvQty": 154,
-          "diffQty": -1,
-          "poNo": "CG202605240510"
-        },
-        {
-          "supplierName": "东莞桃李面包有限公司-快乐猴",
-          "skuName": "快乐猴 全麦吐司面包 250g",
-          "purchaseQty": 252,
-          "recvQty": 251,
-          "diffQty": -1,
-          "poNo": "CG202605232844"
-        }
-      ],
-      "duplicate_reserve": [
-        {
-          "poNo": "CG202605237014",
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "reserveBillCodes": [
-            "YY20260524006683",
-            "YY20260523007563"
-          ],
-          "skus": [
-            {
-              "skuId": 1056076,
-              "skuCode": "50665",
-              "skuName": "紫长茄 500g",
-              "quantity": 1,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1373606,
-              "skuCode": "29835",
-              "skuName": "老黄瓜 600g",
-              "quantity": 1,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1374600,
-              "skuCode": "29819",
-              "skuName": "粉莲藕 500g",
-              "quantity": 5,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1375021,
-              "skuCode": "29842",
-              "skuName": "棱丝瓜 600g",
-              "quantity": 131,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1037165,
-              "skuCode": "59776",
-              "skuName": "番茄 1kg",
-              "quantity": 350,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1040421,
-              "skuCode": "50016",
-              "skuName": "水洗胡萝卜 1kg",
-              "quantity": 52,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1045003,
-              "skuCode": "50254",
-              "skuName": "蒜苔  350g",
-              "quantity": 97,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1045080,
-              "skuCode": "50252",
-              "skuName": "小香葱  100g",
-              "quantity": 242,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1045836,
-              "skuCode": "50275",
-              "skuName": "苦瓜  600g",
-              "quantity": 91,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1052024,
-              "skuCode": "50517",
-              "skuName": "四季豆  500g",
-              "quantity": 158,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1055152,
-              "skuCode": "50634",
-              "skuName": "去皮紫洋葱 500g",
-              "quantity": 216,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1056076,
-              "skuCode": "50665",
-              "skuName": "紫长茄 500g",
-              "quantity": 98,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1058102,
-              "skuCode": "50708",
-              "skuName": "莴笋 1kg",
-              "quantity": 42,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1061820,
-              "skuCode": "50841",
-              "skuName": "莲藕 500g",
-              "quantity": 28,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1080298,
-              "skuCode": "51374",
-              "skuName": "带泥胡萝卜 1kg",
-              "quantity": 292,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1082792,
-              "skuCode": "51434",
-              "skuName": "草莓番茄 500g",
-              "quantity": 11,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1129099,
-              "skuCode": "36472",
-              "skuName": "黄心土豆 1kg",
-              "quantity": 372,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1129268,
-              "skuCode": "36456",
-              "skuName": "豇豆 500g(N)",
-              "quantity": 21,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1133945,
-              "skuCode": "37197",
-              "skuName": "西葫芦 750g(N)",
-              "quantity": 62,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1135913,
-              "skuCode": "37328",
-              "skuName": "切叶西芹 约800g",
-              "quantity": 40,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1136151,
-              "skuCode": "37337",
-              "skuName": "香菜 100g(N)",
-              "quantity": 101,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1171878,
-              "skuCode": "39090",
-              "skuName": "荷兰豆  300g",
-              "quantity": 50,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1285429,
-              "skuCode": "39727",
-              "skuName": "白萝卜 1.2kg",
-              "quantity": 91,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1307912,
-              "skuCode": "33491",
-              "skuName": "普罗旺斯番茄 500g",
-              "quantity": 57,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1313633,
-              "skuCode": "36544",
-              "skuName": "丝瓜 650g",
-              "quantity": 61,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1373606,
-              "skuCode": "29835",
-              "skuName": "老黄瓜 600g",
-              "quantity": 105,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1374600,
-              "skuCode": "29819",
-              "skuName": "粉莲藕 500g",
-              "quantity": 29,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1375021,
-              "skuCode": "29842",
-              "skuName": "棱丝瓜 600g",
-              "quantity": 191,
-              "cgNo": "CG202605237014"
-            },
-            {
-              "skuId": 1391432,
-              "skuCode": "20636",
-              "skuName": "牛奶水果玉米 500g",
-              "quantity": 27,
-              "cgNo": "CG202605237014"
-            }
-          ]
-        },
-        {
-          "poNo": "CG202605237011",
-          "supplierName": "深圳市理念供应链管理有限公司-快乐猴",
-          "reserveBillCodes": [
-            "YY20260524005049",
-            "YY20260523007539"
-          ],
-          "skus": [
-            {
-              "skuId": 1050414,
-              "skuCode": "50401",
-              "skuName": "韭菜 350g",
-              "quantity": 8,
-              "cgNo": "CG202605237011"
-            },
-            {
-              "skuId": 1037426,
-              "skuCode": "59782",
-              "skuName": "黄瓜   1kg",
-              "quantity": 595,
-              "cgNo": "CG202605237011"
-            },
-            {
-              "skuId": 1050414,
-              "skuCode": "50401",
-              "skuName": "韭菜 350g",
-              "quantity": 35,
-              "cgNo": "CG202605237011"
-            },
-            {
-              "skuId": 1051275,
-              "skuCode": "50434",
-              "skuName": "杭白菜 500g",
-              "quantity": 99,
-              "cgNo": "CG202605237011"
-            },
-            {
-              "skuId": 1054550,
-              "skuCode": "50620",
-              "skuName": "生菜 400g",
-              "quantity": 225,
-              "cgNo": "CG202605237011"
-            },
-            {
-              "skuId": 1055237,
-              "skuCode": "50632",
-              "skuName": "红薯叶 350g",
-              "quantity": 29,
-              "cgNo": "CG202605237011"
-            },
-            {
-              "skuId": 1122982,
-              "skuCode": "37964",
-              "skuName": "鸡毛菜300g",
-              "quantity": 56,
-              "cgNo": "CG202605237011"
-            },
-            {
-              "skuId": 1171881,
-              "skuCode": "39076",
-              "skuName": "水果黄瓜 约500g",
-              "quantity": 126,
-              "cgNo": "CG202605237011"
-            },
-            {
-              "skuId": 1207807,
-              "skuCode": "31940",
-              "skuName": "空心菜 350g",
-              "quantity": 86,
-              "cgNo": "CG202605237011"
-            },
-            {
-              "skuId": 1375061,
-              "skuCode": "29840",
-              "skuName": "红苋菜 350g",
-              "quantity": 38,
-              "cgNo": "CG202605237011"
-            },
-            {
-              "skuId": 1392432,
-              "skuCode": "20655",
-              "skuName": "枸杞叶 250g",
-              "quantity": 40,
-              "cgNo": "CG202605237011"
-            },
-            {
-              "skuId": 1463111,
-              "skuCode": "23424",
-              "skuName": "粽叶 约50片",
-              "quantity": 13,
-              "cgNo": "CG202605237011"
-            }
-          ]
-        },
-        {
-          "poNo": "CG202605237012",
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "reserveBillCodes": [
-            "YY20260524004572",
-            "YY20260523007569"
-          ],
-          "skus": [
-            {
-              "skuId": 1458167,
-              "skuCode": "25413",
-              "skuName": "芥兰苗 300g",
-              "quantity": 39,
-              "cgNo": "CG202605237012"
-            },
-            {
-              "skuId": 1051048,
-              "skuCode": "50427",
-              "skuName": "上海青苗500g",
-              "quantity": 70,
-              "cgNo": "CG202605237012"
-            },
-            {
-              "skuId": 1122356,
-              "skuCode": "37942",
-              "skuName": "薄皮青椒 500g",
-              "quantity": 129,
-              "cgNo": "CG202605237012"
-            },
-            {
-              "skuId": 1123071,
-              "skuCode": "38688",
-              "skuName": "韭黄 400g",
-              "quantity": 44,
-              "cgNo": "CG202605237012"
-            },
-            {
-              "skuId": 1123222,
-              "skuCode": "37947",
-              "skuName": "螺丝椒 500g",
-              "quantity": 33,
-              "cgNo": "CG202605237012"
-            },
-            {
-              "skuId": 1129425,
-              "skuCode": "37945",
-              "skuName": "大葱 500g",
-              "quantity": 93,
-              "cgNo": "CG202605237012"
-            },
-            {
-              "skuId": 1129908,
-              "skuCode": "36525",
-              "skuName": "尖椒 500g",
-              "quantity": 205,
-              "cgNo": "CG202605237012"
-            },
-            {
-              "skuId": 1130142,
-              "skuCode": "36528",
-              "skuName": "指天椒 100g",
-              "quantity": 135,
-              "cgNo": "CG202605237012"
-            },
-            {
-              "skuId": 1222205,
-              "skuCode": "33312",
-              "skuName": "蒜苗 250g",
-              "quantity": 17,
-              "cgNo": "CG202605237012"
-            },
-            {
-              "skuId": 1254694,
-              "skuCode": "36223",
-              "skuName": "香芹  350g",
-              "quantity": 45,
-              "cgNo": "CG202605237012"
-            },
-            {
-              "skuId": 1374206,
-              "skuCode": "29828",
-              "skuName": "菜心 500g (N)",
-              "quantity": 756,
-              "cgNo": "CG202605237012"
-            },
-            {
-              "skuId": 1408735,
-              "skuCode": "21751",
-              "skuName": "彩椒 550g",
-              "quantity": 58,
-              "cgNo": "CG202605237012"
-            },
-            {
-              "skuId": 1458167,
-              "skuCode": "25413",
-              "skuName": "芥兰苗 300g",
-              "quantity": 39,
-              "cgNo": "CG202605237012"
-            }
-          ]
-        },
-        {
-          "poNo": "CG202605237003",
-          "supplierName": "广州市白云区松洲中芬果菜经营部-快乐猴",
-          "reserveBillCodes": [
-            "YY20260524001687",
-            "YY20260523007551"
-          ],
-          "skus": [
-            {
-              "skuId": 1044877,
-              "skuCode": "50250",
-              "skuName": "铁棍山药 1kg",
-              "quantity": 20,
-              "cgNo": "CG202605237003"
-            },
-            {
-              "skuId": 1059041,
-              "skuCode": "50724",
-              "skuName": "小香薯 1kg",
-              "quantity": 69,
-              "cgNo": "CG202605237003"
-            },
-            {
-              "skuId": 1060899,
-              "skuCode": "50815",
-              "skuName": "蜜薯 1kg",
-              "quantity": 135,
-              "cgNo": "CG202605237003"
-            },
-            {
-              "skuId": 1373899,
-              "skuCode": "29849",
-              "skuName": "板栗红薯 1kg",
-              "quantity": 31,
-              "cgNo": "CG202605237003"
-            },
-            {
-              "skuId": 1044877,
-              "skuCode": "50250",
-              "skuName": "铁棍山药 1kg",
-              "quantity": 20,
-              "cgNo": "CG202605237003"
-            },
-            {
-              "skuId": 1059041,
-              "skuCode": "50724",
-              "skuName": "小香薯 1kg",
-              "quantity": 69,
-              "cgNo": "CG202605237003"
-            },
-            {
-              "skuId": 1060899,
-              "skuCode": "50815",
-              "skuName": "蜜薯 1kg",
-              "quantity": 135,
-              "cgNo": "CG202605237003"
-            },
-            {
-              "skuId": 1373899,
-              "skuCode": "29849",
-              "skuName": "板栗红薯 1kg",
-              "quantity": 31,
-              "cgNo": "CG202605237003"
-            }
-          ]
-        }
-      ]
-    },
-    "status": "ok",
-    "kpi": {
-      "efficiency": 3449.7,
-      "efficiency_formula": "24148 PCS / 7 人",
-      "inbound_schedule": 7
     }
-  },
-  "outbound": {
-    "picking": {
-      "total_tasks": 0,
-      "done_tasks": 0,
-      "in_progress_tasks": 0,
-      "pending_tasks": 0,
-      "total_pcs": 0,
-      "done_pcs": 0,
-      "rate": 0.0
-    },
-    "sowing": {
-      "total": 946,
-      "done": 575,
-      "rate": 60.8
-    },
-    "caging": {
-      "total": 946,
-      "done": 575,
-      "rate": 60.8
-    },
-    "packing": {
-      "total": 0,
-      "done": 0,
-      "rate": 0.0
-    },
-    "shipping": {
-      "total": 0,
-      "done": 0,
-      "rate": 0.0
-    },
-    "kpi": {
-      "multi_pallet_count": 0,
-      "multi_pallet_total": 906,
-      "multi_pallet_rate": 0.0,
-      "load_rate": 54.0,
-      "outbound_efficiency": 1996.0,
-      "outbound_efficiency_formula": "9980 PCS / 5 人(拣播员)"
-    },
-    "dimensions": {
-      "pcs": {
-        "total": 9980,
-        "picked": 0,
-        "sowed": 0,
-        "caged": 5392,
-        "not_caged": 4588,
-        "pick_rate": 0.0,
-        "sow_rate": 0.0,
-        "cage_rate": 54.0
-      },
-      "sku": {
-        "total": 946,
-        "picked": 0,
-        "sowed": 0,
-        "caged": 575,
-        "pick_rate": 0.0,
-        "sow_rate": 0.0,
-        "cage_rate": 60.8
-      }
-    },
-    "status": "ok"
-  },
-  "plan": {
-    "total_orders": 0,
-    "total_pcs": 0,
-    "store_count": 0,
-    "by_store": {},
-    "status": "ok"
-  },
-  "attendance": {
-    "total_inservice": 15,
-    "schedule": 12,
-    "attendance": 12,
-    "rate": 80.0,
-    "by_job": {
-      "N拣播员": {
-        "inservice": 7,
-        "schedule": 5,
-        "attendance": 5,
-        "rate": 71.4
-      },
-      "N冷藏收退": {
-        "inservice": 7,
-        "schedule": 7,
-        "attendance": 7,
-        "rate": 100.0
-      },
-      "N库维": {
-        "inservice": 0,
-        "schedule": 0,
-        "attendance": 0,
-        "rate": 0
-      },
-      "N物资": {
-        "inservice": 1,
-        "schedule": 0,
-        "attendance": 0,
-        "rate": 0.0
-      }
-    },
-    "by_pos_total": {
-      "N冷藏收退": 7,
-      "N冷藏拣播员": 7,
-      "N冷藏物资": 1
-    },
-    "by_pos_scheduled": {
-      "N冷藏收退": 7,
-      "N冷藏拣播员": 5
-    },
-    "predicted_efficiency": 831.7,
-    "efficiency_formula": "9980 PCS / 12 人",
-    "outbound_efficiency": 1996.0,
-    "outbound_efficiency_formula": "9980 PCS / 5 人(拣播员)",
-    "inbound_efficiency_workers": 7,
-    "status": "ok"
-  }
-};
-        /*__REALTIME_DATA_END__*/
-        
-        // 覆盖 loadData 为从内嵌数据加载（首次），后续从同 URL 拉取更新
-        const SELF_URL = window.location.href;
-        const originalLoadData = loadData;
-        let firstLoad = true;
-        
-        loadData = async function() {
-            if (firstLoad) {
-                firstLoad = false;
-                renderData(EMBEDDED_DATA);
-                countdown = 300;
-                return;
-            }
-            // 后续刷新从同一 URL 拉取新版本（定时任务会重新构建上传）
-            try {
-                const resp = await fetch(SELF_URL + '?t=' + Date.now());
-                if (!resp.ok) throw new Error('HTTP ' + resp.status);
-                const text = await resp.text();
-                // 用哨兵标记精确提取 JSON，避免正则截断嵌套花括号
-                const startMark = '/*__REALTIME_DATA_START__*/';
-                const endMark = '/*__REALTIME_DATA_END__*/';
-                const startIdx = text.indexOf(startMark);
-                const endIdx = text.indexOf(endMark);
-                if (startIdx !== -1 && endIdx !== -1) {
-                    const block = text.slice(startIdx + startMark.length, endIdx);
-                    // 定位 JSON：找 prefix 之后的内容，去掉末尾分号
-                    const prefix = 'const EMBEDDED_DATA = ';
-                    const pi = block.indexOf(prefix);
-                    if (pi !== -1) {
-                        const jsonStr = block.slice(pi + prefix.length).trim().replace(/;\s*$/, '');
-                        try {
-                            const newData = JSON.parse(jsonStr);
-                            renderData(newData);
-                        } catch(pe) {
-                            console.warn('realtime data parse error', pe);
-                        }
-                    }
-                }
-                countdown = 300;
-            } catch(e) {
-                // 降级：保持当前数据
-                countdown = 300;
-            }
-        };
-        
-        // 重新触发首次加载
-        loadData();
-    
-        startCountdown();
-    </script>
-</body>
+
+    function startCountdown() {
+      clearInterval(countdownTimer);
+      countdown = 30;
+      countdownTimer = setInterval(() => {
+        countdown--;
+        const el = document.getElementById("auto-countdown");
+        if (el) el.textContent = fmtCountdown(Math.max(countdown, 0));
+        if (countdown <= 0) {
+          countdown = 30;
+          silentRefresh();
+        }
+      }, 1000);
+    }
+
+    // 初始化日期选择器
+    function initDateSelect(data) {
+      const sel = document.getElementById('date-select');
+      if (!sel) return;
+      while (sel.options.length > 1) sel.remove(1);
+      const historyMap = (data && data.history_map) || {};
+      const dates = Object.keys(historyMap).sort().reverse();
+      dates.forEach(function(d) {
+        const opt = document.createElement('option');
+        opt.value = d;
+        opt.textContent = d;
+        sel.appendChild(opt);
+      });
+      sel.addEventListener('change', function() {
+        const selectedDate = this.value;
+        if (!selectedDate) {
+          if (window._latestData) { renderData(window._latestData); }
+          startCountdown();
+          var rb = document.getElementById('refresh-btn');
+          if (rb) { rb.disabled = false; rb.textContent = '🔄 立即刷新'; }
+        } else {
+          var snap = historyMap[selectedDate];
+          if (snap) {
+            renderData(snap);
+            clearInterval(countdownTimer);
+            var el = document.getElementById('auto-countdown');
+            if (el) el.textContent = '历史';
+            var rb = document.getElementById('refresh-btn');
+            if (rb) { rb.disabled = true; rb.textContent = '历史模式'; }
+          }
+        }
+      });
+    }
+
+    // 初始化
+    loadData();
+    startCountdown();
+})();
+</script>
 </html>

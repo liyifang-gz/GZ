@@ -634,8 +634,8 @@ let countdownTimer;
     if (list.length === 0) {
       html += '<p class="modal-empty">暂无未预约采购单</p>';
     } else {
-      html += '<table class="modal-table"><thead><tr><th>供应商</th><th>采购单号</th><th>SKU数</th><th>采购数量</th><th>预计到货日</th><th>备注</th></tr></thead><tbody>';
-      list.forEach(function(r) { html += '<tr><td>' + (r.supplierName||'--') + '</td><td>' + (r.poNo||'--') + '</td><td>' + (r.skuCount!=null?r.skuCount:'--') + '</td><td>' + (r.pcs!=null?r.pcs:'--') + '</td><td>' + (r.preArrivalTime||'--') + '</td><td style="color:#f59e0b;font-weight:500">有采购单无预约</td></tr>'; });
+      html += '<table class="modal-table"><thead><tr><th>供应商</th><th>采购单号</th><th>SKU数</th><th>采购数量</th><th>预计到货日</th><th>采购单状态</th><th>备注</th></tr></thead><tbody>';
+      list.forEach(function(r) { html += '<tr><td>' + (r.supplierName||'--') + '</td><td>' + (r.poNo||'--') + '</td><td>' + (r.skuCount!=null?r.skuCount:'--') + '</td><td>' + (r.pcs!=null?r.pcs:'--') + '</td><td>' + (r.preArrivalTime||'--') + '</td><td>' + (r.poStatus||'--') + '</td><td style="color:#f59e0b;font-weight:500">有采购单无预约</td></tr>'; });
       html += '</tbody></table>';
     }
     html += '<h4 style="margin:16px 0 8px;font-size:13px;color:#374151">重复预约采购单（' + dupList.length + '条）<span style="font-size:11px;color:#6b7280;font-weight:normal;margin-left:6px">同一采购单关联多个预约单</span></h4>';

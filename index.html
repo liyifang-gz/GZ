@@ -1,9 +1,6 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GZ0210 实时履约监控</title>
+
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -25,16 +22,47 @@
         }
         .header h1 { font-size: 16px; font-weight: 600; color: #1a1a1a; }
         .header .meta { font-size: 12px; color: #999; }
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .countdown-hint {
+            font-size: 11px;
+            color: #bbb;
+        }
         .header .refresh-btn {
-            padding: 6px 12px;
-            border: 1px solid #ddd;
+            padding: 5px 10px;
+            border: 1px solid #1976d2;
             border-radius: 4px;
             background: white;
             cursor: pointer;
             font-size: 12px;
-            color: #666;
+            color: #1976d2;
+            font-weight: 500;
+            transition: background 0.15s;
         }
-        .header .refresh-btn:active { background: #f5f5f5; }
+        .header .refresh-btn:hover { background: #e3f0ff; }
+        .header .refresh-btn:active { background: #bbdefb; }
+        .header .refresh-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            border-color: #ddd;
+            color: #999;
+        }
+        .date-select {
+            padding: 4px 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #333;
+            background: white;
+            cursor: pointer;
+            outline: none;
+        }
+        .date-select:focus { border-color: #2196f3; }
+        .header-left { flex: 1; }
 
         /* 总进度条 */
         .pipeline {
@@ -146,12 +174,13 @@
         .progress-item:last-child { margin-bottom: 0; }
         .progress-label {
             display: flex;
-            justify-content: space-between;
+            align-items: center;
+            gap: 8px;
             font-size: 12px;
             margin-bottom: 3px;
         }
-        .progress-label .name { color: #666; }
-        .progress-label .val { color: #333; font-weight: 500; }
+        .progress-label .name { color: #666; min-width: 28px; flex-shrink: 0; }
+        .progress-label .val { color: #334155; font-weight: 500; }
         .progress-bar {
             height: 6px;
             background: #f0f0f0;
@@ -168,6 +197,93 @@
         .fill-blue { background: linear-gradient(90deg, #42a5f5, #1e88e5); }
         .fill-orange { background: linear-gradient(90deg, #ffa726, #f57c00); }
         .fill-purple { background: linear-gradient(90deg, #ab47bc, #7b1fa2); }
+
+        /* 进度条行悬停明细按钮 */
+        .progress-row-wrap { position: relative; }
+        .progress-row-wrap .progress-label { position: relative; }
+        .inb-detail-trigger {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 13px;
+            padding: 0 2px;
+            margin-left: 4px;
+            opacity: 0;
+            transition: opacity 0.18s;
+            vertical-align: middle;
+            line-height: 1;
+        }
+        .progress-row-wrap:hover .inb-detail-trigger { opacity: 1; }
+
+        /* 弹窗升级样式 */
+        .modal-card {
+            background: #fff;
+            margin: 40px auto;
+            max-width: 900px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10);
+            overflow: hidden;
+            position: relative;
+        }
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 14px 18px;
+        }
+        .modal-header h3 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        .modal-close-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #64748b;
+            line-height: 1;
+            padding: 2px 4px;
+            border-radius: 4px;
+            transition: background 0.15s, color 0.15s;
+        }
+        .modal-close-btn:hover { background: #e2e8f0; color: #1e293b; }
+        .modal-body-wrap {
+            max-height: 60vh;
+            overflow-y: auto;
+            padding: 18px 18px 20px;
+        }
+        .modal-empty {
+            color: #94a3b8;
+            font-size: 13px;
+            text-align: center;
+            padding: 32px 0;
+        }
+        .modal-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        .modal-table thead th {
+            background: #f1f5f9;
+            padding: 8px 10px;
+            border-bottom: 2px solid #e2e8f0;
+            text-align: left;
+            font-weight: 600;
+            color: #475569;
+            white-space: nowrap;
+        }
+        .modal-table tbody td {
+            padding: 7px 10px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #334155;
+        }
+        .modal-table tbody tr:nth-child(even) td { background: #f8fafc; }
+        .modal-table tbody tr:last-child td { border-bottom: none; }
+        .modal-table tbody tr:hover td { background: #eff6ff; }
 
         /* KPI */
         .kpi-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
@@ -234,14 +350,21 @@
             color: #bbb;
         }
     </style>
-</head>
-<body>
+
     <div class="header">
-        <div>
+        <div class="header-left">
             <h1>🏭 GZ0210 广州冷藏仓</h1>
             <div class="meta" id="update-time">加载中...</div>
         </div>
-        <button class="refresh-btn" onclick="loadData()">🔄 刷新</button>
+        <div class="header-right">
+            <div style="display:flex;align-items:center;gap:8px;">
+                <select class="date-select" id="date-select">
+                    <option value="">今天</option>
+                </select>
+                <button class="refresh-btn" id="refresh-btn">🔄 立即刷新</button>
+            </div>
+            <div class="countdown-hint">下次自动刷新 <span id="auto-countdown">5:00</span></div>
+        </div>
     </div>
 
     <!-- 总进度（PCS维度） -->
@@ -280,10 +403,10 @@
                     <span class="badge badge-green" id="inbound-badge">--</span>
                 </div>
                 <div class="dim-switch">
-                    <button class="dim-btn active" onclick="switchInboundDim('pcs', this)">PCS</button>
-                    <button class="dim-btn" onclick="switchInboundDim('sku', this)">SKU</button>
-                    <button class="dim-btn" onclick="switchInboundDim('reserve', this)">预约单</button>
-                    <button class="dim-btn" onclick="switchInboundDim('supplier', this)">供应商</button>
+                    <button class="dim-btn active" data-dim="pcs" data-type="inbound">PCS</button>
+                    <button class="dim-btn" data-dim="sku" data-type="inbound">SKU</button>
+                    <button class="dim-btn" data-dim="reserve" data-type="inbound">预约单</button>
+                    <button class="dim-btn" data-dim="supplier" data-type="inbound">供应商</button>
                 </div>
             </div>
             <!-- KPI 行在上 -->
@@ -303,33 +426,43 @@
             </div>
             <!-- 进度条在下 -->
             <div id="inbound-content" style="margin-top:10px">
+                <div class="progress-row-wrap">
                 <div class="progress-item">
-                    <div class="progress-label"><span class="name">预约</span><span class="val" id="inb-reserve-val">--</span></div>
+                    <div class="progress-label"><span class="name">预约</span><span class="val" id="inb-reserve-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('unreserved')">🔍</button></div>
                     <div class="progress-bar"><div class="fill fill-teal" id="inb-reserve-bar" style="width:0%"></div></div>
                 </div>
+                </div>
+                <div class="progress-row-wrap">
                 <div class="progress-item">
-                    <div class="progress-label"><span class="name">签到</span><span class="val" id="inb-sign-val">--</span></div>
+                    <div class="progress-label"><span class="name">签到</span><span class="val" id="inb-sign-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('unsigned')">🔍</button></div>
                     <div class="progress-bar"><div class="fill fill-green" id="inb-sign-bar" style="width:0%"></div></div>
                 </div>
+                </div>
+                <div class="progress-row-wrap">
                 <div class="progress-item">
-                    <div class="progress-label"><span class="name">卸货</span><span class="val" id="inb-unload-val">--</span></div>
+                    <div class="progress-label"><span class="name">卸货</span><span class="val" id="inb-unload-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('unloading')">🔍</button></div>
                     <div class="progress-bar"><div class="fill fill-green" id="inb-unload-bar" style="width:0%"></div></div>
                 </div>
+                </div>
+                <div class="progress-row-wrap">
                 <div class="progress-item">
-                    <div class="progress-label"><span class="name">质检</span><span class="val" id="inb-qc-val">--</span></div>
+                    <div class="progress-label"><span class="name">质检</span><span class="val" id="inb-qc-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('qc_pending')">🔍</button></div>
                     <div class="progress-bar"><div class="fill fill-blue" id="inb-qc-bar" style="width:0%"></div></div>
                 </div>
+                </div>
+                <div class="progress-row-wrap">
                 <div class="progress-item">
-                    <div class="progress-label"><span class="name">收货</span><span class="val" id="inb-recv-val">--</span></div>
+                    <div class="progress-label"><span class="name">收货</span><span class="val" id="inb-recv-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('recv_pending')">🔍</button></div>
                     <div class="progress-bar"><div class="fill fill-blue" id="inb-recv-bar" style="width:0%"></div></div>
                 </div>
+                </div>
                 <div class="progress-item">
-                    <div class="progress-label"><span class="name">上架</span><span class="val" id="inb-putaway-val">--</span></div>
+                  <div style="position:relative" class="progress-row-wrap">
+                    <div class="progress-label"><span class="name">上架</span><span class="val" id="inb-putaway-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('putaway')">🔍</button></div>
+                  </div>
                     <div class="progress-bar"><div class="fill fill-purple" id="inb-putaway-bar" style="width:0%"></div></div>
                 </div>
             </div>
-            <span class="detail-btn" onclick="toggleDetail('inbound-detail')">查看明细 ▸</span>
-            <div class="detail-panel" id="inbound-detail"></div>
         </div>
 
         <!-- 出库 -->
@@ -340,8 +473,8 @@
                     <span class="badge badge-orange" id="outbound-badge">--</span>
                 </div>
                 <div class="dim-switch">
-                    <button class="dim-btn active" onclick="switchOutboundDim('pcs', this)">PCS</button>
-                    <button class="dim-btn" onclick="switchOutboundDim('sku', this)">SKU</button>
+                    <button class="dim-btn active" data-dim="pcs" data-type="outbound">PCS</button>
+                    <button class="dim-btn" data-dim="sku" data-type="outbound">SKU</button>
                 </div>
             </div>
             <!-- 出库 KPI 行在上 -->
@@ -395,7 +528,7 @@
                 <div class="kpi"><div class="number" id="plan-pcs">--</div><div class="unit">计划件数</div></div>
                 <div class="kpi"><div class="number" id="plan-stores">--</div><div class="unit">门店数</div></div>
             </div>
-            <span class="detail-btn" onclick="toggleDetail('plan-detail')">门店分布 ▸</span>
+            <span class="detail-btn" id="plan-detail-btn">门店分布 ▸</span>
             <div class="detail-panel" id="plan-detail"></div>
             <div style="margin-top:10px; padding-top:8px; border-top:1px solid #f0f0f0;">
                 <div style="font-size:11px;color:#bbb;margin-bottom:6px;">运输实时数据接入中，当前展示明日配送计划</div>
@@ -423,8 +556,7 @@
                     <div class="unit">单仓人效<br><span style="font-size:9px;color:#bbb">出库/出勤</span></div>
                 </div>
             </div>
-            <!-- 出勤率进度条已移除 -->
-            <!-- 分岗位 -->
+<!-- 分岗位 -->
             <table class="job-table" id="job-table">
                 <thead><tr><th>岗位</th><th style="text-align:center">在职</th><th style="text-align:center">出勤</th><th style="text-align:center">出勤率</th></tr></thead>
                 <tbody id="job-tbody"></tbody>
@@ -432,437 +564,618 @@
         </div>
     </div>
 
-    <div class="footer">
-        GZ0210 广州冷藏1仓 · 每30秒刷新 · <span id="auto-countdown">30</span>s
+<div class="footer">
+GZ0210 广州冷藏1仓 · 每5分钟自动刷新
+</div>
+
+<!-- 入库明细弹窗 -->
+<div id="detail-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;overflow:auto">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3 id="modal-title"></h3>
+      <button class="modal-close-btn" onclick="document.getElementById('detail-modal').style.display='none'">✕</button>
     </div>
+    <div class="modal-body-wrap" id="modal-body"></div>
+  </div>
+</div>
 
-    <script>
-        let countdownTimer;
-        let countdown = 30;
-        let currentData = null;
-        let inboundDim = 'pcs';
-        let outboundDim = 'pcs';
+`;
 
-        function fmt(n) { return n == null ? '--' : n.toLocaleString(); }
-        function pct(n, d) { return d > 0 ? Math.round(n / d * 100) : 0; }
+const Index = () => {
+  const containerRef = useRef(null);
 
-        function switchInboundDim(dim, btn) {
-            inboundDim = dim;
-            btn.closest('.dim-switch').querySelectorAll('.dim-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            if (currentData) renderInbound(currentData.inbound);
+  useEffect(() => {
+    if (!containerRef.current) return;
+
+    // 注入全局样式（覆盖 body 背景等）
+    const styleEl = document.createElement("style");
+    styleEl.id = "gz0210-global-style";
+    styleEl.textContent = `
+      body { background: #f0f2f5 !important; padding: 0 !important; margin: 0 !important; }
+      #root { min-height: 100vh; }
+    `;
+    document.head.appendChild(styleEl);
+
+    // 绑定事件和执行 JS 逻辑
+    let countdownTimer;
+    let countdown = 300;
+    let currentData = null;
+    let inboundDim = "pcs";
+    let outboundDim = "pcs";
+
+    function fmt(n) {
+      return n == null ? "--" : n.toLocaleString();
+    }
+    function pct(n, d) {
+      return d > 0 ? Math.round((n / d) * 100) : 0;
+    }
+
+    function switchInboundDim(dim) {
+      inboundDim = dim;
+      if (currentData) renderInbound(currentData.inbound);
+    }
+
+    function switchOutboundDim(dim) {
+      outboundDim = dim;
+      if (currentData) renderOutbound(currentData.outbound);
+    }
+
+    function toggleDetail(id) {
+      const el = document.getElementById(id);
+      if (el) el.classList.toggle("show");
+    }
+
+    function showInboundDetail(key) {
+      const details = currentData && currentData.inbound && currentData.inbound.details
+        ? currentData.inbound.details : null;
+      const list = details ? (details[key] || []) : [];
+      const titles = {
+        unreserved: '未预约采购单',
+        unsigned: '未签到预约单',
+        unloading: '已签到未卸货',
+        qc_pending: '未质检任务',
+        recv_pending: '已质检未收货',
+        putaway: '上架明细'
+      };
+      document.getElementById('modal-title').textContent =
+        (titles[key] || key) + '（' + list.length + '条）';
+      let html = '';
+      if (key === 'unreserved') {
+    var dupList = (currentData && currentData.inbound && currentData.inbound.details && currentData.inbound.details.duplicate_reserve) || [];
+    html = '<h4 style="margin:0 0 8px;font-size:13px;color:#374151">未预约采购单（' + list.length + '条）</h4>';
+    if (list.length === 0) {
+      html += '<p class="modal-empty">暂无未预约采购单</p>';
+    } else {
+      html += '<table class="modal-table"><thead><tr><th>供应商</th><th>采购单号</th><th>SKU数</th><th>采购数量</th><th>预计到货日</th><th>备注</th></tr></thead><tbody>';
+      list.forEach(function(r) { html += '<tr><td>' + (r.supplierName||'--') + '</td><td>' + (r.poNo||'--') + '</td><td>' + (r.skuCount!=null?r.skuCount:'--') + '</td><td>' + (r.pcs!=null?r.pcs:'--') + '</td><td>' + (r.preArrivalTime||'--') + '</td><td style="color:#f59e0b;font-weight:500">有采购单无预约</td></tr>'; });
+      html += '</tbody></table>';
+    }
+    html += '<h4 style="margin:16px 0 8px;font-size:13px;color:#374151">重复预约采购单（' + dupList.length + '条）<span style="font-size:11px;color:#6b7280;font-weight:normal;margin-left:6px">同一采购单关联多个预约单</span></h4>';
+    if (dupList.length === 0) {
+      html += '<p class="modal-empty">暂无重复预约</p>';
+    } else {
+      html += '<table class="modal-table"><thead><tr><th>采购单号</th><th>预约单号</th><th>SKUID</th><th>商品名称</th><th>预约数量</th></tr></thead><tbody>';
+      dupList.forEach(function(r) {
+        var skuRows = r.skus || [];
+        var billCodes = r.reserveBillCodes || [];
+        var perBill = (skuRows.length > 0 && billCodes.length > 0) ? Math.ceil(skuRows.length / billCodes.length) : 1;
+        if (skuRows.length === 0) {
+          html += '<tr><td>' + (r.poNo||'--') + '</td><td style="color:#ef4444">' + billCodes.join(' / ') + '</td><td colspan="3" style="color:#9ca3af">-</td></tr>';
+        } else {
+          skuRows.forEach(function(s, idx) {
+            var billIdx = Math.min(Math.floor(idx / perBill), billCodes.length - 1);
+            html += '<tr><td>' + (idx===0?r.poNo:'') + '</td><td style="color:#ef4444;font-size:11px">' + (billCodes[billIdx]||'--') + '</td><td>' + (s.skuCode||s.skuId||'--') + '</td><td>' + (s.skuName||'--') + '</td><td>' + (s.quantity!=null?s.quantity:'--') + '</td></tr>';
+          });
         }
-
-        function switchOutboundDim(dim, btn) {
-            outboundDim = dim;
-            btn.closest('.dim-switch').querySelectorAll('.dim-btn').forEach(b => b.classList.remove('active'));
-            btn.classList.add('active');
-            if (currentData) renderOutbound(currentData.outbound);
+      });
+      html += '</tbody></table>';
+    }
+      } else if (key === 'unsigned') {
+        html = `<table class="modal-table"><thead><tr><th>供应商</th><th>预约单号</th><th>SKU数</th><th>采购数量</th><th>预约送货时段</th></tr></thead><tbody>`;
+        list.forEach(r => { html += `<tr><td>${r.supplierName||'--'}</td><td>${r.billCode||'--'}</td><td>${r.skuCount!=null?r.skuCount:'--'}</td><td>${r.pcs!=null?r.pcs:'--'}</td><td>${r.timeSlot||'--'}</td></tr>`; });
+        html += '</tbody></table>';
+      } else if (key === 'unloading') {
+        html = `<table class="modal-table"><thead><tr><th>供应商</th><th>预约单号</th><th>签到时间</th></tr></thead><tbody>`;
+        list.forEach(r => { html += `<tr><td>${r.supplierName||'--'}</td><td>${r.billCode||'--'}</td><td>${r.signTime||'--'}</td></tr>`; });
+        html += '</tbody></table>';
+      } else if (key === 'qc_pending') {
+        html = `<table class="modal-table"><thead><tr><th>供应商</th><th>商品名称</th><th>到货时间</th><th>质检状态</th></tr></thead><tbody>`;
+        list.forEach(r => { html += `<tr><td>${r.supplierName||'--'}</td><td>${r.skuName||'--'}</td><td>${r.arrivalTime||'--'}</td><td>${r.statusLabel||'--'}</td></tr>`; });
+        html += '</tbody></table>';
+      } else if (key === 'recv_pending') {
+        html = `<table class="modal-table"><thead><tr><th>供应商</th><th>商品名称</th><th>质检完成时间</th><th>等待时长(分钟)</th></tr></thead><tbody>`;
+        list.forEach(r => { html += `<tr><td>${r.supplierName||'--'}</td><td>${r.skuName||'--'}</td><td>${r.completeTime||'--'}</td><td>${r.waitingMins!=null?r.waitingMins:'--'}</td></tr>`; });
+        html += '</tbody></table>';
+  } else if (key === 'putaway') {
+        var items = (currentData && currentData.inbound && currentData.inbound.putaway ? currentData.inbound.putaway.details : null) || [];
+        if (!items.length) {
+          html = '<p class="modal-empty">暂无上架明细数据</p>';
+        } else {
+          html = '<table class="modal-table"><thead><tr><th>采购单号</th><th>应上架SKU数</th><th>已上架SKU数</th><th>应上架数量</th><th>已上架数量</th></tr></thead><tbody>';
+          items.forEach(function(x) {
+            html += '<tr><td>' + (x.poNo||'--') + '</td><td>' + (x.hopeSku||0) + '</td><td>' + (x.putSku||0) + '</td><td>' + (x.hopePcs||0) + '</td><td>' + (x.putPcs||0) + '</td></tr>';
+          });
+          html += '</tbody></table>';
         }
+      }
+      document.getElementById('modal-body').innerHTML = html;
+      document.getElementById('detail-modal').style.display = 'block';
+    }
+    window.showInboundDetail = showInboundDetail;
 
-        function toggleDetail(id) {
-            document.getElementById(id).classList.toggle('show');
+    // 维度切换按钮事件
+    containerRef.current.querySelectorAll(".dim-btn").forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const dim = this.dataset.dim;
+        const type = this.dataset.type;
+        this.closest(".dim-switch")
+          .querySelectorAll(".dim-btn")
+          .forEach((b) => b.classList.remove("active"));
+        this.classList.add("active");
+        if (type === "inbound") switchInboundDim(dim);
+        else if (type === "outbound") switchOutboundDim(dim);
+      });
+    });
+
+    // 详情按钮事件
+    const inboundDetailBtn = document.getElementById("inbound-detail-btn");
+    if (inboundDetailBtn)
+      inboundDetailBtn.addEventListener("click", () => toggleDetail("inbound-detail"));
+
+    const planDetailBtn = document.getElementById("plan-detail-btn");
+    if (planDetailBtn)
+      planDetailBtn.addEventListener("click", () => toggleDetail("plan-detail"));
+
+    // 刷新按钮
+    const refreshBtn = document.getElementById("refresh-btn");
+    if (refreshBtn) {
+      refreshBtn.addEventListener("click", () => {
+        refreshBtn.disabled = true;
+        refreshBtn.textContent = "⏳ 刷新中...";
+        location.reload();
+      });
+    }
+
+    function renderInbound(inb) {
+      if (!inb) return;
+      const reserve = inb.reserve || {};
+      const unload = inb.unload || {};
+      const qc = inb.qc || {};
+      const putaway = inb.putaway || {};
+      const dims = inb.dimensions || {};
+      const d = dims[inboundDim] || {};
+
+      const unitLabels = { pcs: "件", sku: "SKU", reserve: "单", supplier: "供应商" };
+      const unit = unitLabels[inboundDim] || "";
+
+      const rp = inb.reserve_progress || {};
+      const reserveDim = dims.reserve || {};
+      const reserveProgRate = rp.rate || 0;
+      const signRate = reserveDim.rate || 0;
+      const unloadRate = unload.rate || 0;
+      const qcRate = qc.rate || 0;
+
+      const dimTotal = d.total || 0;
+      const dimDone = d.done || 0;
+
+      // 预约进度
+      let reserveVal, reserveBarPct;
+      if (inboundDim === "reserve") {
+        reserveVal =
+          rp.po_total > 0
+            ? `${fmt(rp.po_reserved)}/${fmt(rp.po_total)} 单 (${reserveProgRate}%)`
+            : `${fmt(reserveDim.total || 0)} 单 (预约)`;
+        reserveBarPct = reserveProgRate;
+      } else {
+        const reservedQty = dimDone;
+        const reserveRate = d.rate || 0;
+        reserveVal = `${fmt(reservedQty)}/${fmt(dimTotal)} ${unit} (${reserveRate}%)`;
+        reserveBarPct = reserveRate;
+      }
+      document.getElementById("inb-reserve-val").textContent = reserveVal;
+      document.getElementById("inb-reserve-bar").style.width = Math.min(reserveBarPct, 100) + "%";
+
+      // 签到进度
+      let signVal, signBarPct = signRate;
+      if (inboundDim === "reserve") {
+        signVal = `${fmt(reserveDim.done)}/${fmt(reserveDim.total)} 单 (${signRate}%)`;
+      } else {
+        const signedQty = Math.round(dimTotal * signRate / 100);
+        signVal = `${fmt(signedQty)}/${fmt(dimTotal)} ${unit} (${signRate}%)`;
+      }
+      document.getElementById("inb-sign-val").textContent = signVal;
+      document.getElementById("inb-sign-bar").style.width = signBarPct + "%";
+
+      // 卸货进度（分母=已签到量，不是总量）
+      let unloadVal, unloadBarPct = unloadRate;
+      if (inboundDim === "reserve") {
+        unloadVal = `${fmt(unload.done)}/${fmt(unload.total)} 单 (${unloadRate}%)`;
+      } else {
+        const signedQty = Math.round(dimTotal * signRate / 100);
+        const unloadedQty = Math.round(signedQty * unloadRate / 100);
+        unloadVal = `${fmt(unloadedQty)}/${fmt(signedQty)} ${unit} (${unloadRate}%)`;
+      }
+      document.getElementById("inb-unload-val").textContent = unloadVal;
+      document.getElementById("inb-unload-bar").style.width = unloadBarPct + "%";
+
+// 质检进度（任务/SKU/PCS 三维度均使用真实字段，用户 2026-05-22 确认口径）
+const qcExtra = qc.rejected > 0 ? ` ⚠️${qc.rejected}不合格` : "";
+let qcVal, qcBarPct;
+if (inboundDim === "sku") {
+const skuTotal = qc.sku_total || 0;
+const skuDone  = qc.sku_done  || 0;
+const skuRate  = skuTotal > 0 ? Math.round(skuDone / skuTotal * 100) : 0;
+qcVal     = `${fmt(skuDone)}/${fmt(skuTotal)} SKU (${skuRate}%)${qcExtra}`;
+qcBarPct  = skuRate;
+} else if (inboundDim === "reserve") {
+qcVal     = `${fmt(qc.bill_done || qc.done)}/${fmt(qc.bill_total || qc.total)} 单 (${qcRate}%)${qcExtra}`;
+qcBarPct  = qcRate;
+} else {
+// PCS 维度（默认）：直接使用 specialRecvQuantity 汇总的 pcs_done/pcs_total
+const qcPcsDone  = qc.pcs_done  || Math.round(dimTotal * qcRate / 100);
+const qcPcsTotal = qc.pcs_total || dimTotal;
+const qcPcsRate  = qcPcsTotal > 0 ? Math.round(qcPcsDone / qcPcsTotal * 100) : 0;
+qcVal     = `${fmt(qcPcsDone)}/${fmt(qcPcsTotal)} 件 (${qcPcsRate}%)${qcExtra}`;
+qcBarPct  = qcPcsRate;
+}
+      document.getElementById("inb-qc-val").textContent = qcVal;
+      document.getElementById("inb-qc-bar").style.width = qcBarPct + "%";
+
+      // 收货进度：使用独立的 recv_done/recv_rate 字段（status=2用合同量，status=7用WIS实收量）
+      let recvVal, recvBarPct;
+      if (inboundDim === 'reserve') {
+        recvVal = `${fmt(d.done)}/${fmt(d.total)} 单`;
+        recvBarPct = d.rate || 0;
+      } else {
+        const recvDone = d.recv_done != null ? d.recv_done : dimDone;
+        const recvRate = d.recv_rate != null ? d.recv_rate : (d.rate || 0);
+        recvVal = `${fmt(recvDone)}/${fmt(dimTotal)} ${unit} (${recvRate}%)`;
+        recvBarPct = recvRate;
+      }
+      document.getElementById("inb-recv-val").textContent = recvVal;
+      document.getElementById("inb-recv-bar").style.width = Math.min(recvBarPct, 100) + "%";
+
+// putaway v2: uses real hopeQuantity/putQuantity data
+// 上架进度（使用真实上架任务数据：hopeQuantity/putQuantity & hopeCount/putCount）
+let putawayVal, putawayBarPct;
+if (inboundDim === 'sku') {
+const skuTotal = putaway.sku_total || 0;
+const skuDone  = putaway.sku_done  || 0;
+const skuRate  = skuTotal > 0 ? Math.round(skuDone / skuTotal * 100) : 0;
+putawayVal   = `${fmt(skuDone)}/${fmt(skuTotal)} SKU (${skuRate}%)`;
+putawayBarPct = skuRate;
+} else if (inboundDim === 'reserve') {
+const putawayRate = putaway.rate || 0;
+putawayVal   = `${fmt(putaway.done)}/${fmt(putaway.total)} PCS (${putawayRate}%)`;
+putawayBarPct = putawayRate;
+} else {
+// PCS 维度（默认）：直接使用真实 hopeQuantity/putQuantity
+const pcsTotal = putaway.total || 0;
+const pcsDone  = putaway.done  || 0;
+const pcsRate  = putaway.rate  || 0;
+putawayVal   = `${fmt(pcsDone)}/${fmt(pcsTotal)} 件 (${pcsRate}%)`;
+putawayBarPct = pcsRate;
+}
+      document.getElementById("inb-putaway-val").textContent = putawayVal;
+      document.getElementById("inb-putaway-bar").style.width = putawayBarPct + "%";
+
+      // KPI
+      document.getElementById("inb-total").textContent = fmt(dimTotal);
+      document.getElementById("inb-done").textContent = fmt(dimDone);
+      document.getElementById("inb-rate").textContent = (d.rate || 0) + "%";
+      const labels = { pcs: "总件数", sku: "总SKU数", reserve: "总预约单", supplier: "总供应商" };
+      const doneLabels = { pcs: "已收货件", sku: "已收货SKU", reserve: "已签到单", supplier: "已完成" };
+      document.getElementById("inb-total-label").textContent = labels[inboundDim] || "总量";
+      document.getElementById("inb-done-label").textContent = doneLabels[inboundDim] || "已完成";
+
+      // 签到准时率
+      const ontimeData = inb.ontime || {};
+      const ontimeRate = ontimeData.rate || 0;
+      const ontimeEl = document.getElementById("inb-ontime-rate");
+      if (ontimeEl) {
+        ontimeEl.textContent = ontimeData.total > 0 ? ontimeRate + "%" : "--";
+        ontimeEl.style.color = ontimeRate >= 90 ? "#10b981" : ontimeRate >= 70 ? "#f59e0b" : "#ef4444";
+      }
+      const subEl = document.getElementById("inb-ontime-sub");
+      if (subEl && ontimeData.total > 0) {
+        subEl.style.display = "block";
+        const earlyEl = document.getElementById("inb-early-rate");
+        const lateEl  = document.getElementById("inb-late-rate");
+        if (earlyEl) earlyEl.textContent = (ontimeData.early_rate != null ? ontimeData.early_rate + "%" : "--");
+        if (lateEl)  lateEl.textContent  = (ontimeData.late_rate  != null ? ontimeData.late_rate  + "%" : "--");
+      }
+
+      // 入库效率
+      const inbEff = (inb.kpi && inb.kpi.efficiency) || 0;
+      const inbPcsDone = (inb.dimensions && inb.dimensions.pcs && inb.dimensions.pcs.done) || 0;
+      const attActual = (currentData && currentData.attendance && currentData.attendance.attendance) || 0;
+      const calcInbEff = attActual > 0 && inbPcsDone > 0 ? Math.round(inbPcsDone / attActual) : inbEff;
+      document.getElementById("inb-efficiency").textContent = calcInbEff > 0 ? calcInbEff : "--";
+
+      // badge
+      const overallRate = Math.min(signRate, unloadRate || signRate, qcRate || signRate);
+      document.getElementById("inbound-badge").textContent = overallRate >= 90 ? "接近完成" : "进行中";
+      document.getElementById("inbound-badge").className =
+        "badge " + (overallRate >= 90 ? "badge-green" : "badge-orange");
+
+      // 供应商明细
+      if (inboundDim === "supplier" && d.detail) {
+        let html = "<table><tr><th>供应商</th><th>计划</th><th>完成</th></tr>";
+        for (const [name, info] of Object.entries(d.detail)) {
+          html += `<tr><td>${name}</td><td>${fmt(info.plan)}</td><td>${fmt(info.done)}</td></tr>`;
         }
+        html += "</table>";
+        document.getElementById("inbound-detail").innerHTML = html;
+      }
+    }
 
-        function renderInbound(inb) {
-            if (!inb) return;
-            const reserve = inb.reserve || {};
-            const unload = inb.unload || {};
-            const qc = inb.qc || {};
-            const receipt = inb.receipt || {};
-            const putaway = inb.putaway || {};
-            const dims = inb.dimensions || {};
-            const d = dims[inboundDim] || {};
+    function renderOutbound(out) {
+      if (!out) return;
+      const dims = out.dimensions || {};
+      const d = dims[outboundDim] || {};
+      const picking = out.picking || {};
+      const sowing = out.sowing || {};
+      const caging = out.caging || {};
+      const packing = out.packing || {};
+      const shipping = out.shipping || {};
+      const kpi = out.kpi || {};
 
-            // 维度单位映射
-            const unitLabels = { pcs: '件', sku: 'SKU', reserve: '单', supplier: '供应商' };
-            const unit = unitLabels[inboundDim] || '';
+      const total = d.total || 0;
 
-            // 各维度下，所有进度条都用 d（当前维度）数据驱动
-            // 逻辑：各阶段进度 = 该阶段完成比例 × 当前维度总量/已完成
-            // 具体：前置阶段（预约/签到/卸货/质检）用预约单比例 × 当前维度总量换算；收货/上架直接用维度数据
+      // 拣货进度
+      const pickTotal = picking.total_tasks || 0;
+      const pickDone = picking.done_tasks || 0;
+      const pickRate = picking.rate || d.pick_rate || 0;
+      if (pickTotal > 0) {
+        document.getElementById("out-pick-val").textContent = `${fmt(pickDone)}/${fmt(pickTotal)} 任务 (${pickRate}%)`;
+      } else {
+        document.getElementById("out-pick-val").textContent = `${fmt(d.picked)}/${fmt(total)} (${pickRate}%)`;
+      }
+      document.getElementById("out-pick-bar").style.width = pickRate + "%";
 
-            // 预约单维度的各阶段比率（基准比率，固定口径）
-            const rp = inb.reserve_progress || {};
-            const reserveDim = dims.reserve || {};
-            const reserveProgRate = rp.rate || 0;   // 预约进度（预约单口径）
-            const signRate = reserveDim.rate || 0;  // 签到率（预约单口径）
-            const unloadRate = unload.rate || 0;    // 卸货率
-            const qcRate = qc.rate || 0;            // 质检率
+      // 播种进度
+      const sowRate = sowing.rate || 0;
+      document.getElementById("out-sow-val").textContent = `${fmt(sowing.done)}/${fmt(sowing.total)} SKU行 (${sowRate}%)`;
+      document.getElementById("out-sow-bar").style.width = sowRate + "%";
 
-            // 当前维度的总量 & 已完成量（收货维度）
-            const dimTotal = d.total || 0;
-            const dimDone = d.done || 0;
+      // 关笼进度
+      const cageRate = caging.rate || 0;
+      document.getElementById("out-cage-val").textContent = `${fmt(caging.done)}/${fmt(caging.total)} SKU行 (${cageRate}%)`;
+      document.getElementById("out-cage-bar").style.width = cageRate + "%";
 
-            // 0. 预约进度
-            // 预约单维度：显示 po_reserved/po_total；其他维度：换算为当前维度数值
-            let reserveVal, reserveBarPct;
-            if (inboundDim === 'reserve') {
-                reserveVal = rp.po_total > 0
-                    ? `${fmt(rp.po_reserved)}/${fmt(rp.po_total)} 单 (${reserveProgRate}%)`
-                    : `${fmt(reserveDim.total || 0)} 单 (预约)`;
-                reserveBarPct = reserveProgRate;
-            } else {
-                // 用预约率 × 维度总量估算已预约数量
-                const reservedQty = Math.round(dimTotal * reserveProgRate / 100);
-                reserveVal = `${fmt(reservedQty)}/${fmt(dimTotal)} ${unit} (${reserveProgRate}%)`;
-                reserveBarPct = reserveProgRate;
-            }
-            document.getElementById('inb-reserve-val').textContent = reserveVal;
-            document.getElementById('inb-reserve-bar').style.width = Math.min(reserveBarPct, 100) + '%';
+      // 组盘（复核）
+      const packRate = packing.rate || 0;
+      if (packing.total > 0) {
+        document.getElementById("out-pack-val").textContent = `${fmt(packing.done)}/${fmt(packing.total)} (${packRate}%)`;
+        document.getElementById("out-pack-val").style.color = "";
+        document.getElementById("out-pack-bar").style.width = packRate + "%";
+      } else {
+        document.getElementById("out-pack-val").textContent = "--/-- (暂未接入)";
+        document.getElementById("out-pack-val").style.color = "#bbb";
+      }
 
-            // 1. 签到进度
-            let signVal, signBarPct = signRate;
-            if (inboundDim === 'reserve') {
-                signVal = `${fmt(reserveDim.done)}/${fmt(reserveDim.total)} 单 (${signRate}%)`;
-            } else {
-                const signedQty = Math.round(dimTotal * signRate / 100);
-                signVal = `${fmt(signedQty)}/${fmt(dimTotal)} ${unit} (${signRate}%)`;
-            }
-            document.getElementById('inb-sign-val').textContent = signVal;
-            document.getElementById('inb-sign-bar').style.width = signBarPct + '%';
+      // 发运
+      const shipRate = shipping.rate || 0;
+      if (shipping.total > 0) {
+        document.getElementById("out-ship-val").textContent = `${fmt(shipping.done)}/${fmt(shipping.total)} (${shipRate}%)`;
+        document.getElementById("out-ship-val").style.color = "";
+        document.getElementById("out-ship-bar").style.width = shipRate + "%";
+      } else {
+        document.getElementById("out-ship-val").textContent = "--/-- (暂未接入)";
+        document.getElementById("out-ship-val").style.color = "#bbb";
+      }
 
-            // 2. 卸货进度
-            let unloadVal, unloadBarPct = unloadRate;
-            if (inboundDim === 'reserve') {
-                unloadVal = `${fmt(unload.done)}/${fmt(unload.total)} 单 (${unloadRate}%)`;
-            } else {
-                const unloadedQty = Math.round(dimTotal * unloadRate / 100);
-                unloadVal = `${fmt(unloadedQty)}/${fmt(dimTotal)} ${unit} (${unloadRate}%)`;
-            }
-            document.getElementById('inb-unload-val').textContent = unloadVal;
-            document.getElementById('inb-unload-bar').style.width = unloadBarPct + '%';
+      // KPI 指标
+      const multiCount = kpi.multi_pallet_count || 0;
+      const multiTotal = kpi.multi_pallet_total || 0;
+      const multiRate = kpi.multi_pallet_rate || 0;
+      document.getElementById("out-multi-pallet").textContent =
+        multiTotal > 0 ? `${multiCount}/${multiTotal} (${multiRate}%)` : "--";
 
-            // 3. 质检进度
-            const qcExtra = qc.rejected > 0 ? ` ⚠️${qc.rejected}不合格` : '';
-            let qcVal, qcBarPct = qcRate;
-            if (inboundDim === 'reserve') {
-                qcVal = `${fmt(qc.bill_done || qc.done)}/${fmt(qc.bill_total || qc.total)} 单 (${qcRate}%)${qcExtra}`;
-            } else if (inboundDim === 'pcs') {
-                // 质检维度PCS：用质检率估算件数（pcs_done/pcs_total 已在后端计算）
-                const qcPcsDone = qc.pcs_done || Math.round(dimTotal * qcRate / 100);
-                const qcPcsTotal = qc.pcs_total || dimTotal;
-                qcVal = `${fmt(qcPcsDone)}/${fmt(qcPcsTotal)} 件 (${qcRate}%)${qcExtra}`;
-            } else {
-                const qcQty = Math.round(dimTotal * qcRate / 100);
-                qcVal = `${fmt(qcQty)}/${fmt(dimTotal)} ${unit} (${qcRate}%)${qcExtra}`;
-            }
-            document.getElementById('inb-qc-val').textContent = qcVal;
-            document.getElementById('inb-qc-bar').style.width = qcBarPct + '%';
+      const loadRate = kpi.load_rate || cageRate;
+      document.getElementById("out-load-rate").textContent = loadRate > 0 ? loadRate + "%" : "--%";
 
-            // 4. 收货进度（直接用维度数据，最准确）
-            const recvRate = d.rate || 0;
-            const recvVal = `${fmt(dimDone)}/${fmt(dimTotal)} ${unit} (${recvRate}%)`;
-            document.getElementById('inb-recv-val').textContent = recvVal;
-            document.getElementById('inb-recv-bar').style.width = recvRate + '%';
+      const outEff = kpi.outbound_efficiency || out.outbound_efficiency || 0;
+      document.getElementById("out-efficiency").textContent = outEff > 0 ? outEff : "--";
 
-            // 5. 上架进度（使用真实上架任务数据：hopeQuantity/putQuantity & hopeCount/putCount）
-            let putawayVal, putawayBarPct;
-            if (inboundDim === 'sku') {
-                const skuTotal = putaway.sku_total || 0;
-                const skuDone  = putaway.sku_done  || 0;
-                const skuRate  = skuTotal > 0 ? Math.round(skuDone / skuTotal * 100) : 0;
-                putawayVal   = `${fmt(skuDone)}/${fmt(skuTotal)} SKU (${skuRate}%)`;
-                putawayBarPct = skuRate;
-            } else if (inboundDim === 'reserve') {
-                // 预约单维度用 PCS 比率近似换算预约单数
-                const putawayRate = putaway.rate || 0;
-                putawayVal   = `${fmt(putaway.done)}/${fmt(putaway.total)} PCS (${putawayRate}%)`;
-                putawayBarPct = putawayRate;
-            } else {
-                // PCS 维度（默认）：直接使用真实 hopeQuantity/putQuantity
-                const pcsTotal = putaway.total || 0;
-                const pcsDone  = putaway.done  || 0;
-                const pcsRate  = putaway.rate  || 0;
-                putawayVal   = `${fmt(pcsDone)}/${fmt(pcsTotal)} 件 (${pcsRate}%)`;
-                putawayBarPct = pcsRate;
-            }
-            document.getElementById('inb-putaway-val').textContent = putawayVal;
-            document.getElementById('inb-putaway-bar').style.width = putawayBarPct + '%';
+      // badge
+      if (total > 0 || pickTotal > 0) {
+        document.getElementById("outbound-badge").textContent = cageRate >= 100 ? "已完成" : "作业中";
+        document.getElementById("outbound-badge").className =
+          "badge " + (cageRate >= 100 ? "badge-green" : "badge-orange");
+      } else {
+        document.getElementById("outbound-badge").textContent = "待启动";
+        document.getElementById("outbound-badge").className = "badge badge-orange";
+      }
+    }
 
-            // KPI（按维度切换）
-            document.getElementById('inb-total').textContent = fmt(dimTotal);
-            document.getElementById('inb-done').textContent = fmt(dimDone);
-            document.getElementById('inb-rate').textContent = (d.rate || 0) + '%';
-            const labels = { pcs: '总件数', sku: '总SKU数', reserve: '总预约单', supplier: '总供应商' };
-            const doneLabels = { pcs: '已收货件', sku: '已收货SKU', reserve: '已签到单', supplier: '已完成' };
-            document.getElementById('inb-total-label').textContent = labels[inboundDim] || '总量';
-            document.getElementById('inb-done-label').textContent = doneLabels[inboundDim] || '已完成';
+    function renderPlan(plan) {
+      if (!plan) return;
+      document.getElementById("plan-orders").textContent = fmt(plan.total_orders);
+      document.getElementById("plan-pcs").textContent = fmt(plan.total_pcs);
+      document.getElementById("plan-stores").textContent = fmt(plan.store_count);
+      document.getElementById("plan-badge").textContent =
+        plan.total_pcs > 0 ? fmt(plan.total_pcs) + "件" : "暂无";
 
-            // 签到准时率 + 早到率/迟到率子项
-            const ontimeData = inb.ontime || {};
-            const ontimeRate = ontimeData.rate || 0;
-            const ontimeEl = document.getElementById('inb-ontime-rate');
-            if (ontimeEl) {
-                ontimeEl.textContent = ontimeData.total > 0 ? ontimeRate + '%' : '--';
-                ontimeEl.style.color = ontimeRate >= 90 ? '#10b981' : ontimeRate >= 70 ? '#f59e0b' : '#ef4444';
-            }
-            // 早到率/迟到率子项
-            const subEl = document.getElementById('inb-ontime-sub');
-            if (subEl && ontimeData.total > 0) {
-                subEl.style.display = 'block';
-                const earlyEl = document.getElementById('inb-early-rate');
-                const lateEl  = document.getElementById('inb-late-rate');
-                if (earlyEl) earlyEl.textContent = (ontimeData.early_rate ?? '--') + (ontimeData.early_rate != null ? '%' : '');
-                if (lateEl)  lateEl.textContent  = (ontimeData.late_rate  ?? '--') + (ontimeData.late_rate  != null ? '%' : '');
-            }
-
-            // 入库效率（PCS/人，用 PCS 维度件数 / 出勤人数）
-            const inbEff = (inb.kpi && inb.kpi.efficiency) || 0;
-            const inbPcsDone = (inb.dimensions && inb.dimensions.pcs && inb.dimensions.pcs.done) || 0;
-            const attActual = (currentData && currentData.attendance && currentData.attendance.attendance) || 0;
-            const calcInbEff = attActual > 0 && inbPcsDone > 0 ? Math.round(inbPcsDone / attActual) : inbEff;
-            document.getElementById('inb-efficiency').textContent = calcInbEff > 0 ? calcInbEff : '--';
-
-            // badge
-            const overallRate = Math.min(signRate, unloadRate || signRate, qcRate || signRate);
-            document.getElementById('inbound-badge').textContent = overallRate >= 90 ? '接近完成' : '进行中';
-            document.getElementById('inbound-badge').className = 'badge ' + (overallRate >= 90 ? 'badge-green' : 'badge-orange');
-
-            // 供应商明细
-            if (inboundDim === 'supplier' && d.detail) {
-                let html = '<table><tr><th>供应商</th><th>计划</th><th>完成</th></tr>';
-                for (const [name, info] of Object.entries(d.detail)) {
-                    html += `<tr><td>${name}</td><td>${fmt(info.plan)}</td><td>${fmt(info.done)}</td></tr>`;
-                }
-                html += '</table>';
-                document.getElementById('inbound-detail').innerHTML = html;
-            }
+      if (plan.by_store && Object.keys(plan.by_store).length > 0) {
+        let html = "<table><tr><th>门店</th><th>件数</th></tr>";
+        for (const [s, p] of Object.entries(plan.by_store)) {
+          html += `<tr><td>${s}</td><td>${fmt(p)}</td></tr>`;
         }
+        html += "</table>";
+        document.getElementById("plan-detail").innerHTML = html;
+      }
+    }
 
-        function renderOutbound(out) {
-            if (!out) return;
-            const dims = out.dimensions || {};
-            const d = dims[outboundDim] || {};
-            const picking = out.picking || {};
-            const sowing = out.sowing || {};
-            const caging = out.caging || {};
-            const packing = out.packing || {};
-            const shipping = out.shipping || {};
-            const kpi = out.kpi || {};
+    function renderAttendance(att) {
+      if (!att) return;
+      const totalInservice = att.total_inservice || 0;
+      const actual = att.attendance || 0;
+      const rate = att.rate || 0;
 
-            const total = d.total || 0;
+      document.getElementById("att-schedule").textContent = fmt(totalInservice);
+      document.getElementById("att-actual").textContent = fmt(actual);
+      document.getElementById("att-rate").textContent = totalInservice > 0 ? rate + "%" : "--%";
+      if (totalInservice > 0) {
+        document.getElementById("att-badge").textContent = "今日排班";
+        document.getElementById("att-badge").className = "badge badge-purple";
+      } else {
+        document.getElementById("att-badge").textContent = "暂无数据";
+        document.getElementById("att-badge").className = "badge badge-gray";
+      }
 
-            // 拣货进度：优先用 pickingTask 数据（任务维度），data为0时降级到行维度
-            const pickTotal = picking.total_tasks || 0;
-            const pickDone = picking.done_tasks || 0;
-            const pickRate = picking.rate || d.pick_rate || 0;
-            if (pickTotal > 0) {
-                document.getElementById('out-pick-val').textContent = `${fmt(pickDone)}/${fmt(pickTotal)} 任务 (${pickRate}%)`;
-            } else {
-                document.getElementById('out-pick-val').textContent = `${fmt(d.picked)}/${fmt(total)} (${pickRate}%)`;
-            }
-            document.getElementById('out-pick-bar').style.width = pickRate + '%';
+      // 单仓人效
+      const outboundPcs =
+        (currentData &&
+          currentData.outbound &&
+          currentData.outbound.dimensions &&
+          currentData.outbound.dimensions.pcs &&
+          currentData.outbound.dimensions.pcs.total) ||
+        0;
+      const productivity = actual > 0 && outboundPcs > 0 ? Math.round(outboundPcs / actual) : 0;
+      document.getElementById("att-productivity").textContent = productivity > 0 ? fmt(productivity) : "--";
 
-            // 播种进度（SKU行维度）
-            const sowRate = sowing.rate || 0;
-            document.getElementById('out-sow-val').textContent = `${fmt(sowing.done)}/${fmt(sowing.total)} SKU行 (${sowRate}%)`;
-            document.getElementById('out-sow-bar').style.width = sowRate + '%';
+      // 分岗位表格（4列：岗位、在职、出勤、出勤率）
+      const tbody = document.getElementById("job-tbody");
+      tbody.innerHTML = "";
+      const byJob = att.by_job || {};
+      const jobOrder = ["N拣播员", "N冷藏收退", "N库维", "N物资"];
+      let sumInservice = 0;
+      let sumAttendance = 0;
+      for (const name of jobOrder) {
+        const info = byJob[name];
+        const inservice = info ? (info.inservice || 0) : 0;
+        const attendance = info ? (info.attendance || 0) : 0;
+        sumInservice += inservice;
+        sumAttendance += attendance;
+        const jobRate = inservice > 0 ? Math.round((attendance / inservice) * 100) : 0;
+        const rateColor = jobRate >= 80 ? "#10b981" : jobRate >= 60 ? "#f59e0b" : "#ef4444";
+        const rateStr = inservice > 0 ? jobRate + "%" : "--";
+        tbody.innerHTML += `<tr>
+          <td>${name}</td>
+          <td style="text-align:center">${inservice}</td>
+          <td style="text-align:center">${attendance}</td>
+          <td style="text-align:center;font-weight:600;color:${rateColor}">${rateStr}</td>
+        </tr>`;
+      }
+const totalRate = totalInservice > 0 ? Math.round((actual / totalInservice) * 100) : 0;
+const totalRateStr = totalInservice > 0 ? totalRate + "%" : "--";
+const totalRateColor = totalRate >= 80 ? "#10b981" : totalRate >= 60 ? "#f59e0b" : "#ef4444";
+tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
+<td style="font-weight:600">合计</td>
+<td style="text-align:center;font-weight:700;color:#2196f3">${totalInservice}</td>
+<td style="text-align:center;font-weight:700;color:#2196f3">${actual}</td>
+<td style="text-align:center;font-weight:700;color:${totalRateColor}">${totalRateStr}</td>
+</tr>`;
+    }
 
-            // 关笼进度（SKU行维度）
-            const cageRate = caging.rate || 0;
-            document.getElementById('out-cage-val').textContent = `${fmt(caging.done)}/${fmt(caging.total)} SKU行 (${cageRate}%)`;
-            document.getElementById('out-cage-bar').style.width = cageRate + '%';
+    function renderPipeline(data) {
+      const inb = data.inbound || {};
+      const reserve = inb.reserve || {};
+      const unload = inb.unload || {};
+      const qc = inb.qc || {};
+      const recvDim = (inb.dimensions && inb.dimensions.pcs) || {};
+      const putaway = inb.putaway || {};
 
-            // 组盘（复核）- 暂未接入
-            const packRate = packing.rate || 0;
-            if (packing.total > 0) {
-                document.getElementById('out-pack-val').textContent = `${fmt(packing.done)}/${fmt(packing.total)} (${packRate}%)`;
-                document.getElementById('out-pack-val').style.color = '';
-                document.getElementById('out-pack-bar').style.width = packRate + '%';
-            } else {
-                document.getElementById('out-pack-val').textContent = '--/-- (暂未接入)';
-                document.getElementById('out-pack-val').style.color = '#bbb';
-            }
+      document.getElementById("p-sign").textContent = pct(reserve.signed, reserve.total) + "%";
+      document.getElementById("p-unload").textContent = (unload.rate || 0) + "%";
+      document.getElementById("p-qc").textContent = (qc.rate || 0) + "%";
+      document.getElementById("p-recv").textContent = (recvDim.rate || 0) + "%";
+      document.getElementById("p-putaway").textContent = (putaway.rate || 0) + "%";
 
-            // 发运 - 暂未接入
-            const shipRate = shipping.rate || 0;
-            if (shipping.total > 0) {
-                document.getElementById('out-ship-val').textContent = `${fmt(shipping.done)}/${fmt(shipping.total)} (${shipRate}%)`;
-                document.getElementById('out-ship-val').style.color = '';
-                document.getElementById('out-ship-bar').style.width = shipRate + '%';
-            } else {
-                document.getElementById('out-ship-val').textContent = '--/-- (暂未接入)';
-                document.getElementById('out-ship-val').style.color = '#bbb';
-            }
+      const outPicking = (data.outbound && data.outbound.picking) || {};
+      const outSowing = (data.outbound && data.outbound.sowing) || {};
+      const outCaging = (data.outbound && data.outbound.caging) || {};
+      const outDims = (data.outbound && data.outbound.dimensions && data.outbound.dimensions.pcs) || {};
+      document.getElementById("p-pick").textContent = (outPicking.rate || outDims.pick_rate || 0) + "%";
+      document.getElementById("p-sow").textContent = (outSowing.rate || outDims.sow_rate || 0) + "%";
+      document.getElementById("p-cage").textContent = (outCaging.rate || outDims.cage_rate || 0) + "%";
+      document.getElementById("p-ship").textContent = (outCaging.rate >= 100 ? "100" : "0") + "%";
+    }
 
-            // KPI 指标
-            const multiCount = kpi.multi_pallet_count || 0;
-            const multiTotal = kpi.multi_pallet_total || 0;
-            const multiRate = kpi.multi_pallet_rate || 0;
-            document.getElementById('out-multi-pallet').textContent = multiTotal > 0 ? `${multiCount}/${multiTotal} (${multiRate}%)` : '--';
+    function renderData(data) {
+      currentData = data;
+      const ts = new Date(data.timestamp);
+      document.getElementById("update-time").textContent =
+        `更新于 ${ts.getHours().toString().padStart(2, "0")}:${ts.getMinutes().toString().padStart(2, "0")}:${ts.getSeconds().toString().padStart(2, "0")}
+<script>
+// GitHub Pages 初始化脚本（由 cron 定期推送 realtime_data.json）
+(function() {
+  let countdown = 30;
+  let countdownTimer;
+  async function loadData() {
+      try {
+        const resp = await fetch("realtime_data.json?t=" + Date.now());
+          if (!resp.ok) throw new Error("HTTP " + resp.status);
+          const data = await resp.json();
+          window._latestData = data;
+          try { renderData(data); } catch(re) { console.error("renderData error:", re); }
+          // 更新历史选择器
+          initDateSelect(data);
+          countdown = 30;
+      } catch (e) {
+        document.getElementById("update-time").textContent = "加载失败: " + e.message;
+      }
+    }
 
-            const loadRate = kpi.load_rate || cageRate;
-            document.getElementById('out-load-rate').textContent = loadRate > 0 ? loadRate + '%' : '--%';
+    function fmtCountdown(s) {
+      const m = Math.floor(s / 60);
+      const sec = s % 60;
+      return m + ":" + String(sec).padStart(2, "0");
+    }
 
-            const outEff = (kpi.outbound_efficiency || out.outbound_efficiency) || 0;
-            document.getElementById('out-efficiency').textContent = outEff > 0 ? outEff : '--';
-
-            // badge
-            if (total > 0 || pickTotal > 0) {
-                document.getElementById('outbound-badge').textContent = cageRate >= 100 ? '已完成' : '作业中';
-                document.getElementById('outbound-badge').className = 'badge ' + (cageRate >= 100 ? 'badge-green' : 'badge-orange');
-            } else {
-                document.getElementById('outbound-badge').textContent = '待启动';
-                document.getElementById('outbound-badge').className = 'badge badge-orange';
-            }
+    function startCountdown() {
+      clearInterval(countdownTimer);
+      countdown = 30;
+      countdownTimer = setInterval(() => {
+        countdown--;
+        const el = document.getElementById("auto-countdown");
+        if (el) el.textContent = fmtCountdown(Math.max(countdown, 0));
+        if (countdown <= 0) {
+          clearInterval(countdownTimer);
+          location.reload();
         }
+      }, 1000);
+    }
 
-        function renderPlan(plan) {
-            if (!plan) return;
-            document.getElementById('plan-orders').textContent = fmt(plan.total_orders);
-            document.getElementById('plan-pcs').textContent = fmt(plan.total_pcs);
-            document.getElementById('plan-stores').textContent = fmt(plan.store_count);
-            document.getElementById('plan-badge').textContent = plan.total_pcs > 0 ? fmt(plan.total_pcs) + '件' : '暂无';
-
-            if (plan.by_store && Object.keys(plan.by_store).length > 0) {
-                let html = '<table><tr><th>门店</th><th>件数</th></tr>';
-                for (const [s, p] of Object.entries(plan.by_store)) {
-                    html += `<tr><td>${s}</td><td>${fmt(p)}</td></tr>`;
-                }
-                html += '</table>';
-                document.getElementById('plan-detail').innerHTML = html;
-            }
-        }
-
-        function renderAttendance(att) {
-            if (!att) return;
-            const totalInservice = att.total_inservice || 0;
-            const actual = att.attendance || 0;
-            const rate = att.rate || 0;
-
-            // 第一格：在职总人数
-            document.getElementById('att-schedule').textContent = fmt(totalInservice);
-            document.getElementById('att-actual').textContent = fmt(actual);
-            document.getElementById('att-rate').textContent = totalInservice > 0 ? rate + '%' : '--%';
-            const attRate2El = document.getElementById('att-rate2'); if (attRate2El) attRate2El.textContent = totalInservice > 0 ? rate + '%' : '--%';
-            const attBarEl = document.getElementById('att-bar'); if (attBarEl) attBarEl.style.width = rate + '%';
-
-            // badge
-            if (totalInservice > 0) {
-                document.getElementById('att-badge').textContent = '今日排班';
-                document.getElementById('att-badge').className = 'badge badge-purple';
-            } else {
-                document.getElementById('att-badge').textContent = '暂无数据';
-                document.getElementById('att-badge').className = 'badge badge-gray';
-            }
-
-            // 单仓人效 = 出库量 / 今日出勤人数
-            const outboundPcs = (currentData && currentData.outbound && currentData.outbound.dimensions && currentData.outbound.dimensions.pcs && currentData.outbound.dimensions.pcs.total) || 0;
-            const productivity = actual > 0 && outboundPcs > 0 ? Math.round(outboundPcs / actual) : 0;
-            document.getElementById('att-productivity').textContent = productivity > 0 ? fmt(productivity) : '--';
-
-            // 分岗位表格：岗位 | 在职总人数 | 出勤 | 出勤率
-            const tbody = document.getElementById('job-tbody');
-            tbody.innerHTML = '';
-            const byJob = att.by_job || {};
-            const JOB_ORDER = ['N拣播员', 'N冷藏收退', 'N库维', 'N物资'];
-            const rows = [];
-            let sumInservice = 0, sumAttendance = 0;
-            for (const name of JOB_ORDER) {
-                const info = byJob[name];
-                if (!info) continue;
-                const inservice = info.inservice || 0;
-                const attended = info.attendance || 0;
-                const jobRate = inservice > 0 ? Math.round(attended / inservice * 100) : 0;
-                sumInservice += inservice;
-                sumAttendance += attended;
-                rows.push(`<tr>
-                    <td>${name}</td>
-                    <td style="text-align:center">${fmt(inservice)}</td>
-                    <td style="text-align:center">${fmt(attended)}</td>
-                    <td style="text-align:center;color:${jobRate>=80?'#10b981':jobRate>=60?'#f59e0b':'#ef4444'};font-weight:600">${jobRate}%</td>
-                </tr>`);
-            }
-            // 合计行：用全仓总数（in_service=21, attendance=16），不是4岗位相加
-            if (rows.length > 0) {
-                const totalRate = totalInservice > 0 ? Math.round(actual / totalInservice * 100) : 0;
-                rows.push(`<tr style="border-top:1px solid #e5e7eb;font-weight:700;background:#f9fafb">
-                    <td>合计</td>
-                    <td style="text-align:center">${fmt(totalInservice)}</td>
-                    <td style="text-align:center">${fmt(actual)}</td>
-                    <td style="text-align:center">${totalRate}%</td>
-                </tr>`);
-            }
-            tbody.innerHTML = rows.join('');
-        }
-
-        function renderPipeline(data) {
-            // 总进度按 PCS 维度
-            const inb = data.inbound || {};
-            const outDims = data.outbound?.dimensions?.pcs || {};
-            const reserve = inb.reserve || {};
-            const unload = inb.unload || {};
-            const qc = inb.qc || {};
-            const recvDim = inb.dimensions?.pcs || {};
-            const putaway = inb.putaway || {};
-
-            // 入库阶段（签到→卸货→质检→收货→上架）
-            document.getElementById('p-sign').textContent = (pct(reserve.signed, reserve.total)) + '%';
-            document.getElementById('p-unload').textContent = (unload.rate || 0) + '%';
-            document.getElementById('p-qc').textContent = (qc.rate || 0) + '%';
-            document.getElementById('p-recv').textContent = (recvDim.rate || 0) + '%';
-            document.getElementById('p-putaway').textContent = (putaway.rate || 0) + '%';
-
-            // 出库阶段（使用新数据结构）
-            const outPicking = data.outbound?.picking || {};
-            const outSowing = data.outbound?.sowing || {};
-            const outCaging = data.outbound?.caging || {};
-            document.getElementById('p-pick').textContent = (outPicking.rate || outDims.pick_rate || 0) + '%';
-            document.getElementById('p-sow').textContent = (outSowing.rate || outDims.sow_rate || 0) + '%';
-            document.getElementById('p-cage').textContent = (outCaging.rate || outDims.cage_rate || 0) + '%';
-            document.getElementById('p-ship').textContent = (outCaging.rate >= 100 ? '100' : '0') + '%';
-        }
-
-        function renderData(data) {
-            currentData = data;
-            const ts = new Date(data.timestamp);
-            document.getElementById('update-time').textContent =
-                `更新于 ${ts.getHours().toString().padStart(2,'0')}:${ts.getMinutes().toString().padStart(2,'0')}:${ts.getSeconds().toString().padStart(2,'0')}`;
-
-            const renders = [
-                () => renderPipeline(data),
-                () => renderInbound(data.inbound),
-                () => renderOutbound(data.outbound),
-                () => renderPlan(data.plan),
-                () => renderAttendance(data.attendance),
-            ];
-            for (const fn of renders) {
-                try { fn(); } catch(e) { console.error('render error:', e); }
-            }
-        }
-
-        async function loadData() {
-            try {
-                const resp = await fetch('realtime_data.json?t=' + Date.now());
-                if (!resp.ok) throw new Error('HTTP ' + resp.status);
-                const data = await resp.json();
-                try {
-                    renderData(data);
-                } catch(renderErr) {
-                    console.error('renderData error:', renderErr);
-                    document.getElementById('update-time').textContent = '渲染错误: ' + renderErr.message;
-                }
-                countdown = 30;
-            } catch(e) {
-                const el = document.getElementById('update-time');
-                if (el) el.textContent = '加载失败: ' + e.message;
-            }
-        }
-
-        function startCountdown() {
+    // 初始化日期选择器
+    function initDateSelect(data) {
+      const sel = document.getElementById('date-select');
+      if (!sel) return;
+      // 清空旧选项（保留第一个「今天」）
+      while (sel.options.length > 1) sel.remove(1);
+      const historyMap = (data && data.history_map) || {};
+      const dates = Object.keys(historyMap).sort().reverse();
+      dates.forEach(function(d) {
+        const opt = document.createElement('option');
+        opt.value = d;
+        opt.textContent = d;
+        sel.appendChild(opt);
+      });
+      sel.addEventListener('change', function() {
+        const selectedDate = this.value;
+        if (!selectedDate) {
+          if (window._latestData) { renderData(window._latestData); }
+          startCountdown();
+          var rb = document.getElementById('refresh-btn');
+          if (rb) { rb.disabled = false; rb.textContent = '🔄 立即刷新'; }
+        } else {
+          var snap = historyMap[selectedDate];
+          if (snap) {
+            renderData(snap);
             clearInterval(countdownTimer);
-            countdownTimer = setInterval(() => {
-                countdown--;
-                document.getElementById('auto-countdown').textContent = countdown;
-                if (countdown <= 0) loadData();
-            }, 1000);
+            var el = document.getElementById('auto-countdown');
+            if (el) el.textContent = '历史';
+            var rb = document.getElementById('refresh-btn');
+            if (rb) { rb.disabled = true; rb.textContent = '历史模式'; }
+          }
         }
+      });
+    }
 
-        
-        // GitHub Pages: 直接从 realtime_data.json 加载，30秒自动刷新
-        loadData();
-        startCountdown();
-    </script>
-</body>
+    // 初始化
+    loadData();
+    startCountdown();
+})();
+</script>
 </html>

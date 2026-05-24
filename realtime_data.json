@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-25T06:59:50",
+  "timestamp": "2026-05-25T07:04:51",
   "date": "2026-05-25",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 93,
-      "signed": 29,
-      "waiting": 64
+      "signed": 30,
+      "waiting": 63
     },
     "ontime": {
       "ontime": 2,
-      "early": 26,
+      "early": 27,
       "late": 1,
       "total": 93,
       "rate": 2.2,
-      "early_rate": 28.0,
+      "early_rate": 29.0,
       "late_rate": 1.1
     },
     "reserve_progress": {
@@ -24,25 +24,25 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 29,
+      "total": 30,
       "done": 20,
-      "rate": 69.0
+      "rate": 66.7
     },
     "qc": {
-      "total": 100,
+      "total": 103,
       "done": 0,
-      "pending": 100,
+      "pending": 103,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 100,
+      "bill_total": 103,
       "pcs_done": 0,
-      "pcs_total": 8168,
+      "pcs_total": 8179,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 95,
+      "sku_total": 98,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -57,8 +57,8 @@
     "dimensions": {
       "reserve": {
         "total": 93,
-        "done": 29,
-        "rate": 31.2
+        "done": 30,
+        "rate": 32.3
       },
       "pcs": {
         "total": 19287,
@@ -69,14 +69,18 @@
       },
       "sku": {
         "total": 449,
-        "done": 112,
-        "rate": 24.9
+        "done": 115,
+        "rate": 25.6
       },
       "supplier": {
         "total": 74,
-        "done": 20,
-        "rate": 27.0,
+        "done": 21,
+        "rate": 28.4,
         "detail": {
+          "东莞千厨食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳市福品元食品开发有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -152,10 +156,6 @@
           "广州市友心农业发展有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "佳农食品（上海）有限公司-快乐猴": {
-            "plan": 2,
-            "done": 0
           }
         }
       }
@@ -551,13 +551,6 @@
           "timeSlot": "13:00 - 13:30"
         },
         {
-          "supplierName": "东莞千厨食品有限公司-快乐猴",
-          "billCode": "YY20260524003497",
-          "skuCount": 3,
-          "pcs": 0,
-          "timeSlot": "10:00 - 10:30"
-        },
-        {
           "supplierName": "广州尚好菜食品有限公司-快乐猴",
           "billCode": "YY20260524003474",
           "skuCount": 14,
@@ -577,9 +570,22 @@
           "skuCount": 2,
           "pcs": 0,
           "timeSlot": "18:30 - 19:00"
+        },
+        {
+          "supplierName": "杭州味全食品有限公司广州第一分公司-快乐猴",
+          "billCode": "YY20260524003295",
+          "skuCount": 4,
+          "pcs": 0,
+          "timeSlot": "09:30 - 10:00"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "billCode": "YY20260524003497",
+          "signTime": "07:04",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "深圳市福品元食品开发有限公司-快乐猴-自营",
           "billCode": "YY20260524003416",
@@ -756,12 +762,6 @@
         {
           "supplierName": "广州尚好菜食品有限公司-快乐猴",
           "billCode": "YY20260523007123",
-          "signTime": "12:35",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "广州尚好菜食品有限公司-快乐猴",
-          "billCode": "YY20260523003506",
           "signTime": "12:35",
           "status": "已签到未卸货"
         }
@@ -1241,21 +1241,23 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 0,
+      "plan_pcs": 18313,
       "alloc_pcs": 0,
       "picked_pcs": 0,
       "sow_pcs": 0,
-      "total_orders": 0
+      "total_orders": 271
     }
   },
   "plan": {
-    "total_orders": 0,
-    "total_pcs": 0,
+    "total_orders": 271,
+    "total_pcs": 18313,
     "alloc_pcs": 0,
     "picked_pcs": 0,
     "sow_pcs": 0,
-    "store_count": 0,
-    "by_store": {},
+    "store_count": 1,
+    "by_store": {
+      "KLH-广州冷藏1仓-GZ0210": 18313.0
+    },
     "status": "ok"
   },
   "attendance": {

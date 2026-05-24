@@ -883,8 +883,10 @@ putawayBarPct = pcsRate;
       document.getElementById("inb-putaway-bar").style.width = putawayBarPct + "%";
 
       // KPI
+      // 口径（2026-05-24 用户确认）：「已收货件」= 实收PCS（recv_done），不是已预约PCS（done）
       document.getElementById("inb-total").textContent = fmt(dimTotal);
-      document.getElementById("inb-done").textContent = fmt(dimDone);
+      const recvDoneKpi = (dims.pcs && dims.pcs.recv_done != null) ? dims.pcs.recv_done : dimDone;
+      document.getElementById("inb-done").textContent = inboundDim === "pcs" ? fmt(recvDoneKpi) : fmt(dimDone);
       document.getElementById("inb-rate").textContent = (d.rate || 0) + "%";
       const labels = { pcs: "总件数", sku: "总SKU数", reserve: "总预约单", supplier: "总供应商" };
       const doneLabels = { pcs: "已收货件", sku: "已收货SKU", reserve: "已签到单", supplier: "已完成" };
@@ -908,11 +910,12 @@ putawayBarPct = pcsRate;
         if (lateEl)  lateEl.textContent  = (ontimeData.late_rate  != null ? ontimeData.late_rate  + "%" : "--");
       }
 
-      // 入库效率
+      // 入库效率 = 实收PCS / N冷藏收退出勤（inbound_efficiency_workers=7人）
+      // 口径（2026-05-24 用户确认）：分子=recv_done(实收PCS)，分母=inbound_efficiency_workers，不是全仓出勤
       const inbEff = (inb.kpi && inb.kpi.efficiency) || 0;
-      const inbPcsDone = (inb.dimensions && inb.dimensions.pcs && inb.dimensions.pcs.done) || 0;
-      const attActual = (currentData && currentData.attendance && currentData.attendance.attendance) || 0;
-      const calcInbEff = attActual > 0 && inbPcsDone > 0 ? Math.round(inbPcsDone / attActual) : inbEff;
+      const inbRecvDone = (inb.dimensions && inb.dimensions.pcs && inb.dimensions.pcs.recv_done) || 0;
+      const inbWorkers = (currentData && currentData.attendance && currentData.attendance.inbound_efficiency_workers) || 0;
+      const calcInbEff = inbWorkers > 0 && inbRecvDone > 0 ? Math.round(inbRecvDone / inbWorkers) : inbEff;
       document.getElementById("inb-efficiency").textContent = calcInbEff > 0 ? calcInbEff : "--";
 
       // badge

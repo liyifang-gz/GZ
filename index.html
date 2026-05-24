@@ -688,11 +688,18 @@ let countdownTimer;
           html += '<p style="color:#10b981;font-size:12px;">✅ 无差异</p>';
         } else {
           html += `<table class="modal-table"><thead><tr><th>供应商</th><th>商品名称</th><th>采购</th><th>实收</th><th>差异</th></tr></thead><tbody>`;
+          let totalPurchase = 0, totalRecv = 0, totalDiff = 0;
           diffList.forEach(r => {
             const cls = r.diffQty > 0 ? 'color:#ef4444' : 'color:#f59e0b';
             const sign = r.diffQty > 0 ? '+' : '';
             html += `<tr><td>${r.supplierName||'--'}</td><td>${r.skuName||'--'}</td><td>${r.purchaseQty??'--'}</td><td>${r.recvQty??'--'}</td><td style="${cls}">${sign}${r.diffQty??'--'}</td></tr>`;
+            totalPurchase += r.purchaseQty || 0;
+            totalRecv += r.recvQty || 0;
+            totalDiff += r.diffQty || 0;
           });
+          const totalCls = totalDiff > 0 ? 'color:#ef4444' : totalDiff < 0 ? 'color:#f59e0b' : 'color:#6b7280';
+          const totalSign = totalDiff > 0 ? '+' : '';
+          html += `<tr style="font-weight:600;background:#f3f4f6;border-top:2px solid #d1d5db;"><td colspan="2" style="text-align:right;padding-right:8px;">合计</td><td>${totalPurchase}</td><td>${totalRecv}</td><td style="${totalCls}">${totalSign}${totalDiff}</td></tr>`;
           html += '</tbody></table>';
         }
   } else if (key === 'putaway') {

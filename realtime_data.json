@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-25T04:39:50",
+  "timestamp": "2026-05-25T04:44:50",
   "date": "2026-05-25",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 93,
-      "signed": 16,
-      "waiting": 77
+      "signed": 17,
+      "waiting": 76
     },
     "ontime": {
       "ontime": 0,
-      "early": 16,
+      "early": 17,
       "late": 0,
       "total": 93,
       "rate": 0.0,
-      "early_rate": 17.2,
+      "early_rate": 18.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,25 +24,25 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 16,
+      "total": 17,
       "done": 15,
-      "rate": 93.8
+      "rate": 88.2
     },
     "qc": {
-      "total": 48,
+      "total": 73,
       "done": 0,
-      "pending": 48,
+      "pending": 73,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 48,
+      "bill_total": 73,
       "pcs_done": 0,
-      "pcs_total": 4428,
+      "pcs_total": 7238,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 46,
+      "sku_total": 71,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -57,8 +57,8 @@
     "dimensions": {
       "reserve": {
         "total": 93,
-        "done": 16,
-        "rate": 17.2
+        "done": 17,
+        "rate": 18.3
       },
       "pcs": {
         "total": 19287,
@@ -69,14 +69,18 @@
       },
       "sku": {
         "total": 449,
-        "done": 53,
-        "rate": 11.8
+        "done": 78,
+        "rate": 17.4
       },
       "supplier": {
         "total": 74,
-        "done": 10,
-        "rate": 13.5,
+        "done": 11,
+        "rate": 14.9,
         "detail": {
+          "东莞鲜通天下供应链管理有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "佛山市轩宝食品有限公司-快乐猴": {
             "plan": 3,
             "done": 3
@@ -130,10 +134,6 @@
             "done": 0
           },
           "广东省邻优家农业发展有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "东莞鲜通天下供应链管理有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -262,13 +262,6 @@
           "skuCount": 12,
           "pcs": 0,
           "timeSlot": "10:30 - 11:00"
-        },
-        {
-          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
-          "billCode": "YY20260524007535",
-          "skuCount": 25,
-          "pcs": 0,
-          "timeSlot": "13:30 - 14:00"
         },
         {
           "supplierName": "深圳市金农供应链管理有限公司-快乐猴-自营",
@@ -577,9 +570,22 @@
           "skuCount": 6,
           "pcs": 0,
           "timeSlot": "06:00 - 06:30"
+        },
+        {
+          "supplierName": "深圳新泉农产品有限公司-快乐猴",
+          "billCode": "YY20260524003640",
+          "skuCount": 1,
+          "pcs": 0,
+          "timeSlot": "13:00 - 13:30"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
+          "billCode": "YY20260524007535",
+          "signTime": "04:43",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "金乡县英格电子商务有限公司-快乐猴",
           "billCode": "YY20260524007253",
@@ -782,12 +788,6 @@
           "supplierName": "中山市宏旷食品有限公司-快乐猴",
           "billCode": "YY20260523006148",
           "signTime": "12:21",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "宁德市三港湾水产贸易有限公司-快乐猴",
-          "billCode": "YY20260523006187",
-          "signTime": "12:20",
           "status": "已签到未卸货"
         }
       ],
@@ -1174,6 +1174,22 @@
           "skuName": "鸡胸肉凯撒沙拉 270g",
           "arrivalTime": "04:30",
           "unloadFinishTime": "04:28",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 49,
+          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
+          "skuName": "番茄 1kg",
+          "arrivalTime": "13:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 50,
+          "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
+          "skuName": "水洗胡萝卜 1kg",
+          "arrivalTime": "13:30",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],

@@ -363,7 +363,7 @@
                 </select>
                 <button class="refresh-btn" id="refresh-btn">🔄 立即刷新</button>
             </div>
-            <div class="countdown-hint">下次自动刷新 <span id="auto-countdown">5:00</span></div>
+            <div class="countdown-hint">数据自动更新 <span id="auto-countdown">0:30</span></div>
         </div>
     </div>
 
@@ -716,7 +716,11 @@ let countdownTimer;
       refreshBtn.addEventListener("click", () => {
         refreshBtn.disabled = true;
         refreshBtn.textContent = "⏳ 刷新中...";
-        location.reload();
+        silentRefresh().then(() => {
+          refreshBtn.disabled = false;
+          refreshBtn.textContent = "🔄 立即刷新";
+          countdown = 30;
+        });
       });
     }
 
@@ -1110,6 +1114,36 @@ async function loadData() {
       return m + ":" + String(sec).padStart(2, "0");
     }
 
+    async function silentRefresh() {
+      try {
+        const resp = await fetch("realtime_data.json?t=" + Date.now());
+        if (!resp.ok) throw new Error("HTTP " + resp.status);
+        const data = await resp.json();
+        // 只在今天模式下更新数据（历史模式不覆盖）
+        const sel = document.getElementById('date-select');
+        const isToday = !sel || !sel.value;
+        if (isToday) {
+          window._latestData = data;
+          renderData(data);
+          // 更新历史选项（不重置选择器）
+          const historyMap = (data && data.history_map) || {};
+          const dates = Object.keys(historyMap).sort().reverse();
+          if (sel) {
+            const existing = Array.from(sel.options).map(o => o.value).filter(v => v);
+            dates.forEach(function(d) {
+              if (!existing.includes(d)) {
+                const opt = document.createElement('option');
+                opt.value = d; opt.textContent = d;
+                sel.appendChild(opt);
+              }
+            });
+          }
+        }
+      } catch (e) {
+        // 静默失败，不打扰用户
+      }
+    }
+
     function startCountdown() {
       clearInterval(countdownTimer);
       countdown = 30;
@@ -1118,8 +1152,8 @@ async function loadData() {
         const el = document.getElementById("auto-countdown");
         if (el) el.textContent = fmtCountdown(Math.max(countdown, 0));
         if (countdown <= 0) {
-          clearInterval(countdownTimer);
-          location.reload();
+          countdown = 30;
+          silentRefresh();
         }
       }, 1000);
     }

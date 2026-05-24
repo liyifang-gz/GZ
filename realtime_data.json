@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-05-25T06:49:50",
+  "timestamp": "2026-05-25T06:54:51",
   "date": "2026-05-25",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 93,
-      "signed": 26,
-      "waiting": 67
+      "signed": 27,
+      "waiting": 66
     },
     "ontime": {
       "ontime": 2,
       "early": 24,
-      "late": 0,
+      "late": 1,
       "total": 93,
       "rate": 2.2,
       "early_rate": 25.8,
-      "late_rate": 0.0
+      "late_rate": 1.1
     },
     "reserve_progress": {
       "po_total": 101,
@@ -24,25 +24,25 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 26,
+      "total": 27,
       "done": 19,
-      "rate": 73.1
+      "rate": 70.4
     },
     "qc": {
-      "total": 90,
+      "total": 96,
       "done": 0,
-      "pending": 90,
+      "pending": 96,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 90,
+      "bill_total": 96,
       "pcs_done": 0,
-      "pcs_total": 8025,
+      "pcs_total": 8140,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 85,
+      "sku_total": 91,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -57,8 +57,8 @@
     "dimensions": {
       "reserve": {
         "total": 93,
-        "done": 26,
-        "rate": 28.0
+        "done": 27,
+        "rate": 29.0
       },
       "pcs": {
         "total": 19287,
@@ -69,14 +69,18 @@
       },
       "sku": {
         "total": 449,
-        "done": 102,
-        "rate": 22.7
+        "done": 108,
+        "rate": 24.1
       },
       "supplier": {
         "total": 74,
-        "done": 17,
-        "rate": 23.0,
+        "done": 18,
+        "rate": 24.3,
         "detail": {
+          "津园食品（广东）有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳市味中王食品有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -150,10 +154,6 @@
             "done": 2
           },
           "山东兴业源现代农业发展有限公司-快乐猴": {
-            "plan": 2,
-            "done": 0
-          },
-          "深圳市一二三农产品投资有限公司-快乐猴": {
             "plan": 2,
             "done": 0
           }
@@ -509,13 +509,6 @@
           "timeSlot": "17:30 - 18:00"
         },
         {
-          "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
-          "billCode": "YY20260524003657",
-          "skuCount": 6,
-          "pcs": 0,
-          "timeSlot": "06:00 - 06:30"
-        },
-        {
           "supplierName": "深圳新泉农产品有限公司-快乐猴",
           "billCode": "YY20260524003640",
           "skuCount": 1,
@@ -577,9 +570,23 @@
           "skuCount": 1,
           "pcs": 0,
           "timeSlot": "17:30 - 18:00"
+        },
+        {
+          "supplierName": "深圳市福品元食品开发有限公司-快乐猴-自营",
+          "billCode": "YY20260524003416",
+          "skuCount": 2,
+          "pcs": 0,
+          "timeSlot": "10:00 - 10:30"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
+          "billCode": "YY20260524003657",
+          "signTime": "06:50",
+          "unloadStartTime": "06:51",
+          "status": "卸货中"
+        },
         {
           "supplierName": "深圳市金农供应链管理有限公司-快乐猴-自营",
           "billCode": "YY20260524007403",
@@ -763,12 +770,6 @@
           "supplierName": "莘泽优品贸易(福建)有限公司-快乐猴",
           "billCode": "YY20260523005691",
           "signTime": "14:33",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "广州香满楼乳业有限公司-快乐猴",
-          "billCode": "YY20260523001924",
-          "signTime": "14:44",
           "status": "已签到未卸货"
         }
       ],

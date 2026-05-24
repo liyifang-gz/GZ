@@ -619,7 +619,7 @@ let countdownTimer;
         unloading: '已签到未卸货',
         qc_pending: '未质检任务',
         recv_pending: '已质检未收货',
-        putaway: '上架明细'
+        putaway: '未上架明细'
       };
       // 收货明细用新口径(qc_recv_pending)计数，其余用list.length
       const titleCount = key === 'recv_pending'
@@ -705,11 +705,13 @@ let countdownTimer;
   } else if (key === 'putaway') {
         var items = (currentData && currentData.inbound && currentData.inbound.putaway ? currentData.inbound.putaway.details : null) || [];
         if (!items.length) {
-          html = '<p class="modal-empty">暂无上架明细数据</p>';
+          html = '<p class="modal-empty">✅ 暂无未上架采购单</p>';
         } else {
-          html = '<table class="modal-table"><thead><tr><th>采购单号</th><th>应上架SKU数</th><th>已上架SKU数</th><th>应上架数量</th><th>已上架数量</th></tr></thead><tbody>';
+          html = '<table class="modal-table"><thead><tr><th>采购单号</th><th>应上架SKU数</th><th>已上架SKU数</th><th>应上架数量</th><th>已上架数量</th><th>未上架数量</th></tr></thead><tbody>';
           items.forEach(function(x) {
-            html += '<tr><td>' + (x.poNo||'--') + '</td><td>' + (x.hopeSku||0) + '</td><td>' + (x.putSku||0) + '</td><td>' + (x.hopePcs||0) + '</td><td>' + (x.putPcs||0) + '</td></tr>';
+            var pendingPcs = (x.hopePcs||0) - (x.putPcs||0);
+            var pendingSku = (x.hopeSku||0) - (x.putSku||0);
+            html += '<tr><td>' + (x.poNo||'--') + '</td><td>' + (x.hopeSku||0) + '</td><td>' + (x.putSku||0) + '</td><td>' + (x.hopePcs||0) + '</td><td>' + (x.putPcs||0) + '</td><td style="color:#ef4444;font-weight:600">' + pendingPcs + '</td></tr>';
           });
           html += '</tbody></table>';
         }

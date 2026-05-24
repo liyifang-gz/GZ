@@ -621,8 +621,12 @@ let countdownTimer;
         recv_pending: '已质检未收货',
         putaway: '上架明细'
       };
+      // 收货明细用新口径(qc_recv_pending)计数，其余用list.length
+      const titleCount = key === 'recv_pending'
+        ? ((details && details.qc_recv_pending) || []).length
+        : list.length;
       document.getElementById('modal-title').textContent =
-        (titles[key] || key) + '（' + list.length + '条）';
+        (titles[key] || key) + '（' + titleCount + '条）';
       let html = '';
       if (key === 'unreserved') {
     var dupList = (currentData && currentData.inbound && currentData.inbound.details && currentData.inbound.details.duplicate_reserve) || [];

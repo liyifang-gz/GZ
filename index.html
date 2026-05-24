@@ -820,11 +820,16 @@
             document.getElementById('update-time').textContent =
                 `更新于 ${ts.getHours().toString().padStart(2,'0')}:${ts.getMinutes().toString().padStart(2,'0')}:${ts.getSeconds().toString().padStart(2,'0')}`;
 
-            renderPipeline(data);
-            renderInbound(data.inbound);
-            renderOutbound(data.outbound);
-            renderPlan(data.plan);
-            renderAttendance(data.attendance);
+            const renders = [
+                () => renderPipeline(data),
+                () => renderInbound(data.inbound),
+                () => renderOutbound(data.outbound),
+                () => renderPlan(data.plan),
+                () => renderAttendance(data.attendance),
+            ];
+            for (const fn of renders) {
+                try { fn(); } catch(e) { console.error('render error:', e); }
+            }
         }
 
         async function loadData() {
@@ -832,10 +837,16 @@
                 const resp = await fetch('realtime_data.json?t=' + Date.now());
                 if (!resp.ok) throw new Error('HTTP ' + resp.status);
                 const data = await resp.json();
-                renderData(data);
+                try {
+                    renderData(data);
+                } catch(renderErr) {
+                    console.error('renderData error:', renderErr);
+                    document.getElementById('update-time').textContent = '渲染错误: ' + renderErr.message;
+                }
                 countdown = 30;
             } catch(e) {
-                document.getElementById('update-time').textContent = '加载失败: ' + e.message;
+                const el = document.getElementById('update-time');
+                if (el) el.textContent = '加载失败: ' + e.message;
             }
         }
 

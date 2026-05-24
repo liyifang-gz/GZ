@@ -735,8 +735,8 @@
             document.getElementById('att-schedule').textContent = fmt(totalInservice);
             document.getElementById('att-actual').textContent = fmt(actual);
             document.getElementById('att-rate').textContent = totalInservice > 0 ? rate + '%' : '--%';
-            document.getElementById('att-rate2').textContent = totalInservice > 0 ? rate + '%' : '--%';
-            document.getElementById('att-bar').style.width = rate + '%';
+            const attRate2El = document.getElementById('att-rate2'); if (attRate2El) attRate2El.textContent = totalInservice > 0 ? rate + '%' : '--%';
+            const attBarEl = document.getElementById('att-bar'); if (attBarEl) attBarEl.style.width = rate + '%';
 
             // badge
             if (totalInservice > 0) {

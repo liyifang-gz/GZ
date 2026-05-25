@@ -638,9 +638,21 @@ let countdownTimer;
     }
 
     // ===== 出库明细弹窗（分配/关笼/组盘）=====
-    function showOutboundDetail(type) {
-      const ob = currentData && currentData.outbound ? currentData.outbound : null;
-      if (!ob) return;
+    async function showOutboundDetail(type) {
+      // 优先用缓存，没有就重新 fetch
+      let data = currentData;
+      if (!data) {
+        try {
+          const resp = await fetch('realtime_data.json?t=' + Date.now());
+          data = await resp.json();
+          currentData = data;
+        } catch(e) {
+          alert('数据加载失败: ' + e.message);
+          return;
+        }
+      }
+      const ob = data.outbound;
+      if (!ob) { alert('暂无出库数据'); return; }
       const modal = document.getElementById('detail-modal');
       const titleEl = document.getElementById('modal-title');
       const bodyEl  = document.getElementById('modal-body');

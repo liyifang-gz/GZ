@@ -638,6 +638,47 @@ let countdownTimer;
     }
 
     // ===== 出库明细弹窗（分配/关笼/组盘）=====
+    // 出库明细：可排序表格渲染
+    var _obDetailSort = { type: '', key: '', asc: true };
+
+    function renderObTable(type, list, cols, emptyMsg) {
+      var bodyEl = document.getElementById('modal-body');
+      if (!list.length) { bodyEl.innerHTML = '<p class="modal-empty">' + emptyMsg + '</p>'; return; }
+      var sk = _obDetailSort.key || cols[0].key;
+      var sa = _obDetailSort.asc;
+      var sorted = list.slice().sort(function(a, b) {
+        var va = a[sk], vb = b[sk];
+        var isNum = typeof va === 'number' || (typeof va === 'string' && !isNaN(parseFloat(va)));
+        var cmp = isNum ? (parseFloat(va||0) - parseFloat(vb||0)) : String(va||'').localeCompare(String(vb||''), 'zh-CN');
+        return sa ? cmp : -cmp;
+      });
+      var thStyle = 'cursor:pointer;user-select:none;white-space:nowrap';
+      var ths = cols.map(function(c) {
+        var arrow = c.key === sk ? (sa ? ' ↑' : ' ↓') : ' ↕';
+        return '<th style="' + thStyle + '" data-obsort="' + c.key + '">' + c.label + '<span style="color:#93c5fd;font-size:10px">' + arrow + '</span></th>';
+      }).join('');
+      var trs = sorted.map(function(r) {
+        return '<tr>' + cols.map(function(c) {
+          var v = r[c.key];
+          if (v === undefined || v === null) v = '--';
+          var style = c.style ? ' style="' + c.style + '"' : '';
+          if (c.key === 'unallocQty') style = ' style="color:#e53e3e;font-weight:600"';
+          return '<td' + style + '>' + v + '</td>';
+        }).join('') + '</tr>';
+      }).join('');
+      bodyEl.innerHTML = '<table class="modal-table" id="ob-detail-table"><thead><tr>' + ths + '</tr></thead><tbody>' + trs + '</tbody></table>';
+      // 绑定表头点击排序
+      var tbl = document.getElementById('ob-detail-table');
+      tbl && tbl.querySelectorAll('th[data-obsort]').forEach(function(th) {
+        th.addEventListener('click', function() {
+          var k = this.getAttribute('data-obsort');
+          if (_obDetailSort.key === k) { _obDetailSort.asc = !_obDetailSort.asc; }
+          else { _obDetailSort.key = k; _obDetailSort.asc = true; }
+          renderObTable(type, list, cols, emptyMsg);
+        });
+      });
+    }
+
     async function showOutboundDetail(type) {
       // 优先用缓存，没有就重新 fetch
       let data = currentData;
@@ -655,50 +696,39 @@ let countdownTimer;
       if (!ob) { alert('暂无出库数据'); return; }
       const modal = document.getElementById('detail-modal');
       const titleEl = document.getElementById('modal-title');
-      const bodyEl  = document.getElementById('modal-body');
+
+      // 重置排序状态（切换弹窗类型时）
+      if (_obDetailSort.type !== type) {
+        _obDetailSort = { type: type, key: '', asc: true };
+      }
 
       if (type === 'unalloc') {
         const list = ob.unalloc_details || [];
-        titleEl.textContent = `未分配明细（${list.length} 条出库单）`;
-        if (!list.length) { bodyEl.innerHTML = '<p class="modal-empty">暂无未分配出库单</p>'; }
-        else {
-          bodyEl.innerHTML = `<table class="modal-table"><thead><tr>
-            <th>收货方</th><th>出库单号</th><th>SKU种数</th><th>计划量</th><th>已分配</th><th>未分配</th>
-          </tr></thead><tbody>` +
-          list.map(r => `<tr>
-            <td>${r.receiverName||'--'}</td><td style="font-size:11px">${r.orderNo||'--'}</td>
-            <td>${r.skuNum||0}</td><td>${r.planQty||0}</td><td>${r.allocQty||0}</td>
-            <td style="color:#e53e3e;font-weight:600">${r.unallocQty||0}</td>
-          </tr>`).join('') + '</tbody></table>';
-        }
+        titleEl.textContent = '未分配明细（' + list.length + ' 条出库单）';
+        renderObTable(type, list, [
+          { key: 'receiverName', label: '收货方' },
+          { key: 'orderNo',      label: '出库单号', style: 'font-size:11px' },
+          { key: 'skuNum',       label: 'SKU种数' },
+          { key: 'planQty',      label: '计划量' },
+          { key: 'allocQty',     label: '已分配' },
+          { key: 'unallocQty',   label: '未分配' }
+        ], '暂无未分配出库单');
       } else if (type === 'uncaged') {
         const list = ob.uncaged_details || [];
-        titleEl.textContent = `未装笼明细（${list.length} 个周转箱）`;
-        if (!list.length) { bodyEl.innerHTML = '<p class="modal-empty">🎉 全部已装笼</p>'; }
-        else {
-          bodyEl.innerHTML = `<table class="modal-table"><thead><tr>
-            <th>周转箱码</th><th>收货方</th><th>件数</th>
-          </tr></thead><tbody>` +
-          list.map(r => `<tr>
-            <td style="font-size:11px">${r.containerCode||'--'}</td>
-            <td>${r.poiName||'--'}</td>
-            <td>${r.qty||0}</td>
-          </tr>`).join('') + '</tbody></table>';
-        }
+        titleEl.textContent = '未装笼明细（' + list.length + ' 个周转箱）';
+        renderObTable(type, list, [
+          { key: 'containerCode', label: '周转箱码', style: 'font-size:11px' },
+          { key: 'poiName',       label: '收货方' },
+          { key: 'qty',           label: '件数' }
+        ], '🎉 全部已装笼');
       } else if (type === 'unpacked') {
         const list = ob.unpacked_details || [];
-        titleEl.textContent = `未组盘明细（${list.length} 个笼车）`;
-        if (!list.length) { bodyEl.innerHTML = '<p class="modal-empty">🎉 全部已组盘</p>'; }
-        else {
-          bodyEl.innerHTML = `<table class="modal-table"><thead><tr>
-            <th>笼车码</th><th>收货方</th><th>件数</th>
-          </tr></thead><tbody>` +
-          list.map(r => `<tr>
-            <td style="font-size:11px">${r.containerCode||'--'}</td>
-            <td>${r.poiName||'--'}</td>
-            <td>${r.qty||0}</td>
-          </tr>`).join('') + '</tbody></table>';
-        }
+        titleEl.textContent = '未组盘明细（' + list.length + ' 个笼车）';
+        renderObTable(type, list, [
+          { key: 'containerCode', label: '笼车码', style: 'font-size:11px' },
+          { key: 'poiName',       label: '收货方' },
+          { key: 'qty',           label: '件数' }
+        ], '🎉 全部已组盘');
       }
 
       modal.style.display = 'block';

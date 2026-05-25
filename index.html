@@ -629,7 +629,7 @@ let countdownTimer;
         unreserved: '未预约采购单',
         unsigned: '未签到预约单',
         unloading: '已签到未卸货',
-        qc_pending: '未质检任务',
+        qc_pending: '质检明细',
         recv_pending: '已质检未收货',
         putaway: '未上架明细'
       };
@@ -728,6 +728,19 @@ let countdownTimer;
             });
           });
         }, 50);
+        // 拒收明细区块（追加在未质检任务表格下方）
+        var rejList = (currentData && currentData.inbound && currentData.inbound.details && currentData.inbound.details.qc_rejected) || [];
+        var rejHtml = `<div style="margin-top:14px;font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">拒收明细（${rejList.length} 条）</div>`;
+        if (rejList.length === 0) {
+          rejHtml += '<p style="color:#10b981;font-size:12px;">✅ 暂无拒收</p>';
+        } else {
+          rejHtml += '<table class="modal-table"><thead><tr><th>商家名称</th><th>商品名称</th><th>SKU ID</th><th>数量</th></tr></thead><tbody>';
+          rejList.forEach(function(r) {
+            rejHtml += `<tr><td>${r.supplierName||'--'}</td><td>${r.skuName||'--'}</td><td>${r.skuId||'--'}</td><td>${r.pcs!=null?r.pcs:'--'}</td></tr>`;
+          });
+          rejHtml += '</tbody></table>';
+        }
+        html += rejHtml;
       } else if (key === 'recv_pending') {
         // Part1: 已质检未收货
         const pendingList = (currentData && currentData.inbound && currentData.inbound.details && currentData.inbound.details.qc_recv_pending) || list;

@@ -520,7 +520,7 @@
                     </div>
                 </div>
             </div>
-            <!-- 出库进度条在下：分配→拣货→播种→关笼→组盘→发运（2026-05-24 用户确认环节顺序） -->
+            <!-- 出库进度条：分配→播种→关笼→组盘→发运 -->
             <div id="outbound-content" style="margin-top:10px">
                 <div class="progress-item">
                     <div class="progress-label"><span class="name">分配</span><span class="val" id="out-alloc-val">--</span></div>
@@ -539,7 +539,7 @@
                     <div class="progress-bar"><div class="fill fill-purple" id="out-pack-bar" style="width:0%"></div></div>
                 </div>
                 <div class="progress-item">
-                    <div class="progress-label"><span class="name">发运</span><span class="val" id="out-ship-val" style="color:#bbb">--/-- (暂未接入)</span></div>
+                    <div class="progress-label"><span class="name">发运</span><span class="val" id="out-ship-val" style="color:#bbb">--</span></div>
                     <div class="progress-bar"><div class="fill fill-blue" id="out-ship-bar" style="width:0%"></div></div>
                 </div>
             </div>
@@ -1062,21 +1062,46 @@ putawayBarPct = pcsRate;
       const planPcs = pool.plan_pcs || 0;
       document.getElementById("out-plan-pcs").textContent = planPcs > 0 ? fmt(planPcs) : (total > 0 ? fmt(total) : "--");
 
-      // 分配进度（来自生产订单池 allocatedQuantity / planQuantity）
-      const allocPcs = pool.alloc_pcs || 0;
+      // ── 分配/播种/发运进度（来自生产订单池，2026-05-25 口径升级）──
+      // PCS维度：分配=分配数量/计划数量；播种=播种数量/分配数量；发运=发运数量/分配数量
+      // SKU维度：skuNum 累加（单据级商品种类数）
+      const allocPcs  = pool.alloc_pcs  || 0;
+      const sowPcs    = pool.sow_pcs    || 0;
+      const shipPcs   = pool.ship_pcs   || 0;
+      const skuPlan   = pool.sku_plan   || 0;
+      const skuAlloc  = pool.sku_alloc  || 0;
+      const skuSow    = pool.sku_sow    || 0;
+
+      const isPcs = (outboundDim === "pcs");
+
+      // 分配进度
       const allocDenom = planPcs || total;
-      const allocRate = allocDenom > 0 ? Math.round(allocPcs / allocDenom * 100 * 10) / 10 : 0;
-      document.getElementById("out-alloc-val").textContent = allocDenom > 0
-        ? `${fmt(allocPcs)}/${fmt(allocDenom)} PCS (${allocRate}%)`
-        : "--";
+      const allocRate  = allocDenom > 0 ? Math.round(allocPcs / allocDenom * 100 * 10) / 10 : (pool.alloc_rate || 0);
+      if (isPcs) {
+        document.getElementById("out-alloc-val").textContent = allocDenom > 0
+          ? `${fmt(allocPcs)}/${fmt(allocDenom)} PCS (${allocRate}%)`
+          : "--";
+      } else {
+        document.getElementById("out-alloc-val").textContent = skuPlan > 0
+          ? `${fmt(skuAlloc)}/${fmt(skuPlan)} 种 (${allocDenom>0?allocRate:0}%)`
+          : "--";
+      }
       document.getElementById("out-alloc-bar").style.width = allocRate + "%";
 
-      // 播种进度
-      const sowRate = sowing.rate || 0;
-      document.getElementById("out-sow-val").textContent = `${fmt(sowing.done)}/${fmt(sowing.total)} SKU行 (${sowRate}%)`;
-      document.getElementById("out-sow-bar").style.width = sowRate + "%";
+      // 播种进度（= sowQuantity / allocatedQuantity）
+      const sowRatePool = allocPcs > 0 ? Math.round(sowPcs / allocPcs * 100 * 10) / 10 : (pool.sow_rate || 0);
+      if (isPcs) {
+        document.getElementById("out-sow-val").textContent = allocPcs > 0
+          ? `${fmt(sowPcs)}/${fmt(allocPcs)} PCS (${sowRatePool}%)`
+          : "--";
+      } else {
+        document.getElementById("out-sow-val").textContent = skuAlloc > 0
+          ? `${fmt(skuSow)}/${fmt(skuAlloc)} 种 (${allocPcs>0?sowRatePool:0}%)`
+          : "--";
+      }
+      document.getElementById("out-sow-bar").style.width = sowRatePool + "%";
 
-      // 关笼进度
+      // 关笼进度（来自 caging）
       const cageRate = caging.rate || 0;
       document.getElementById("out-cage-val").textContent = `${fmt(caging.done)}/${fmt(caging.total)} SKU行 (${cageRate}%)`;
       document.getElementById("out-cage-bar").style.width = cageRate + "%";
@@ -1092,14 +1117,16 @@ putawayBarPct = pcsRate;
         document.getElementById("out-pack-val").style.color = "#bbb";
       }
 
-      // 发运
-      const shipRate = shipping.rate || 0;
-      if (shipping.total > 0) {
-        document.getElementById("out-ship-val").textContent = `${fmt(shipping.done)}/${fmt(shipping.total)} (${shipRate}%)`;
+      // 发运进度（= shipQuantity / allocatedQuantity，字段待接入）
+      const shipRatePool = allocPcs > 0 ? Math.round(shipPcs / allocPcs * 100 * 10) / 10 : (pool.ship_rate || 0);
+      if (shipPcs > 0) {
+        document.getElementById("out-ship-val").textContent = isPcs
+          ? `${fmt(shipPcs)}/${fmt(allocPcs)} PCS (${shipRatePool}%)`
+          : "--";
         document.getElementById("out-ship-val").style.color = "";
-        document.getElementById("out-ship-bar").style.width = shipRate + "%";
+        document.getElementById("out-ship-bar").style.width = shipRatePool + "%";
       } else {
-        document.getElementById("out-ship-val").textContent = "--/-- (暂未接入)";
+        document.getElementById("out-ship-val").textContent = "--（待接入）";
         document.getElementById("out-ship-val").style.color = "#bbb";
       }
 

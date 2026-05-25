@@ -1424,7 +1424,7 @@ async function loadData() {
           const data = await resp.json();
           window._latestData = data;
           renderData(data);
-          initDateSelect(data);
+          initDateSelect(data);  // async，后台探测历史文件，不阻塞主渲染
           countdown = 30;
       } catch (e) {
         document.getElementById("update-time").textContent = "加载失败: " + e.message;
@@ -1448,19 +1448,6 @@ async function loadData() {
         if (isToday) {
           window._latestData = data;
           renderData(data);
-          // 更新历史选项（不重置选择器）
-          const historyMap = (data && data.history_map) || {};
-          const dates = Object.keys(historyMap).sort().reverse();
-          if (sel) {
-            const existing = Array.from(sel.options).map(o => o.value).filter(v => v);
-            dates.forEach(function(d) {
-              if (!existing.includes(d)) {
-                const opt = document.createElement('option');
-                opt.value = d; opt.textContent = d;
-                sel.appendChild(opt);
-              }
-            });
-          }
         }
       } catch (e) {
         // 静默失败，不打扰用户
@@ -1481,35 +1468,60 @@ async function loadData() {
       }, 1000);
     }
 
-    // 初始化日期选择器
-    function initDateSelect(data) {
+    // 初始化日期选择器（2026-05-25 升级：从 history/ 目录读取历史快照）
+    async function initDateSelect(data) {
       const sel = document.getElementById('date-select');
       if (!sel) return;
+      // 清空旧选项（保留"今天"）
       while (sel.options.length > 1) sel.remove(1);
-      const historyMap = (data && data.history_map) || {};
-      const dates = Object.keys(historyMap).sort().reverse();
-      dates.forEach(function(d) {
+
+      // 探测过去14天是否有历史快照
+      const today = new Date();
+      const availDates = [];
+      for (let i = 1; i <= 14; i++) {
+        const d = new Date(today);
+        d.setDate(today.getDate() - i);
+        const dateStr = d.toISOString().slice(0, 10);
+        try {
+          const r = await fetch(`history/${dateStr}.json`, { method: 'HEAD' });
+          if (r.ok) availDates.push(dateStr);
+        } catch (e) { /* 文件不存在，跳过 */ }
+      }
+
+      availDates.forEach(function(dateStr) {
         const opt = document.createElement('option');
-        opt.value = d;
-        opt.textContent = d;
+        opt.value = dateStr;
+        opt.textContent = dateStr;
         sel.appendChild(opt);
       });
-      sel.addEventListener('change', function() {
+
+      // 切换事件
+      sel.addEventListener('change', async function() {
         const selectedDate = this.value;
         if (!selectedDate) {
+          // 切回今天
           if (window._latestData) { renderData(window._latestData); }
           startCountdown();
-          var rb = document.getElementById('refresh-btn');
+          const rb = document.getElementById('refresh-btn');
           if (rb) { rb.disabled = false; rb.textContent = '🔄 立即刷新'; }
+          const ut = document.getElementById('update-time');
+          if (ut && window._latestData) ut.textContent = '更新于 ' + (window._latestData.timestamp || '').slice(11, 16);
         } else {
-          var snap = historyMap[selectedDate];
-          if (snap) {
+          // 加载历史快照
+          try {
+            const resp = await fetch(`history/${selectedDate}.json?t=` + Date.now());
+            if (!resp.ok) throw new Error('HTTP ' + resp.status);
+            const snap = await resp.json();
             renderData(snap);
             clearInterval(countdownTimer);
-            var el = document.getElementById('auto-countdown');
+            const el = document.getElementById('auto-countdown');
             if (el) el.textContent = '历史';
-            var rb = document.getElementById('refresh-btn');
+            const rb = document.getElementById('refresh-btn');
             if (rb) { rb.disabled = true; rb.textContent = '历史模式'; }
+            const ut = document.getElementById('update-time');
+            if (ut) ut.textContent = '历史快照 ' + selectedDate;
+          } catch (e) {
+            alert('历史数据加载失败：' + e.message);
           }
         }
       });

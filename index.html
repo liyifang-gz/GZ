@@ -386,8 +386,6 @@
             <div class="pipeline-arrow">→</div>
             <div class="pipeline-node"><div class="icon orange">📋</div><div class="value" id="p-alloc">--</div><div class="label">分配</div></div>
             <div class="pipeline-arrow">→</div>
-            <div class="pipeline-node"><div class="icon orange">✂️</div><div class="value" id="p-pick">--</div><div class="label">拣货</div></div>
-            <div class="pipeline-arrow">→</div>
             <div class="pipeline-node"><div class="icon orange">🌱</div><div class="value" id="p-sow">--</div><div class="label">播种</div></div>
             <div class="pipeline-arrow">→</div>
             <div class="pipeline-node"><div class="icon orange">🔒</div><div class="value" id="p-cage">--</div><div class="label">关笼</div></div>
@@ -527,10 +525,6 @@
                 <div class="progress-item">
                     <div class="progress-label"><span class="name">分配</span><span class="val" id="out-alloc-val">--</span></div>
                     <div class="progress-bar"><div class="fill fill-orange" id="out-alloc-bar" style="width:0%"></div></div>
-                </div>
-                <div class="progress-item">
-                    <div class="progress-label"><span class="name">拣货</span><span class="val" id="out-pick-val">--</span></div>
-                    <div class="progress-bar"><div class="fill fill-orange" id="out-pick-bar" style="width:0%"></div></div>
                 </div>
                 <div class="progress-item">
                     <div class="progress-label"><span class="name">播种</span><span class="val" id="out-sow-val">--</span></div>
@@ -1077,17 +1071,6 @@ putawayBarPct = pcsRate;
         : "--";
       document.getElementById("out-alloc-bar").style.width = allocRate + "%";
 
-      // 拣货进度
-      const pickTotal = picking.total_tasks || 0;
-      const pickDone = picking.done_tasks || 0;
-      const pickRate = picking.rate || d.pick_rate || 0;
-      if (pickTotal > 0) {
-        document.getElementById("out-pick-val").textContent = `${fmt(pickDone)}/${fmt(pickTotal)} 任务 (${pickRate}%)`;
-      } else {
-        document.getElementById("out-pick-val").textContent = `${fmt(d.picked)}/${fmt(total)} (${pickRate}%)`;
-      }
-      document.getElementById("out-pick-bar").style.width = pickRate + "%";
-
       // 播种进度
       const sowRate = sowing.rate || 0;
       document.getElementById("out-sow-val").textContent = `${fmt(sowing.done)}/${fmt(sowing.total)} SKU行 (${sowRate}%)`;
@@ -1246,7 +1229,6 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       const allocDenomP = outPool.plan_pcs || outDims.total || 0;
       const allocRateP = allocDenomP > 0 ? Math.round((outPool.alloc_pcs || 0) / allocDenomP * 100 * 10) / 10 : 0;
       document.getElementById("p-alloc").textContent = allocRateP + "%";
-      document.getElementById("p-pick").textContent = (outPicking.rate || outDims.pick_rate || 0) + "%";
       document.getElementById("p-sow").textContent = (outSowing.rate || outDims.sow_rate || 0) + "%";
       document.getElementById("p-cage").textContent = (outCaging.rate || outDims.cage_rate || 0) + "%";
       document.getElementById("p-pack").textContent = "--";  // 组盘暂未接入

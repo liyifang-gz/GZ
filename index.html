@@ -679,9 +679,55 @@ let countdownTimer;
         list.forEach(r => { html += `<tr><td>${r.supplierName||'--'}</td><td>${r.billCode||'--'}</td><td>${r.signTime||'--'}</td></tr>`; });
         html += '</tbody></table>';
       } else if (key === 'qc_pending') {
-        html = `<table class="modal-table"><thead><tr><th>供应商</th><th>商品名称</th><th>到货时间</th><th>质检状态</th></tr></thead><tbody>`;
-        list.forEach(r => { html += `<tr><td>${r.supplierName||'--'}</td><td>${r.skuName||'--'}</td><td>${r.arrivalTime||'--'}</td><td>${r.statusLabel||'--'}</td></tr>`; });
-        html += '</tbody></table>';
+        // 可排序表格：点击表头升序/降序，再次点击切换
+        var qcSortKey = 'arrivalTime', qcSortAsc = true;
+        function renderQcTable(rows, sortKey, sortAsc) {
+          var cols = [
+            {key:'supplierName', label:'供应商'},
+            {key:'skuName',      label:'商品名称'},
+            {key:'arrivalTime',  label:'到货时间'},
+            {key:'statusLabel',  label:'质检状态'}
+          ];
+          var sorted = rows.slice().sort(function(a,b){
+            var va = a[sortKey]||'', vb = b[sortKey]||'';
+            var cmp = va < vb ? -1 : va > vb ? 1 : 0;
+            return sortAsc ? cmp : -cmp;
+          });
+          var thStyle = 'cursor:pointer;user-select:none;white-space:nowrap;';
+          var ths = cols.map(function(c){
+            var arrow = c.key===sortKey ? (sortAsc?' ↑':' ↓') : ' ↕';
+            return '<th style="'+thStyle+'" data-qcsort="'+c.key+'">'+c.label+'<span style="color:#93c5fd;font-size:10px">'+arrow+'</span></th>';
+          }).join('');
+          var trs = sorted.map(function(r){
+            return '<tr><td>'+(r.supplierName||'--')+'</td><td>'+(r.skuName||'--')+'</td><td>'+(r.arrivalTime||'--')+'</td><td>'+(r.statusLabel||'--')+'</td></tr>';
+          }).join('');
+          return '<table class="modal-table" id="qc-pending-table"><thead><tr>'+ths+'</tr></thead><tbody>'+trs+'</tbody></table>';
+        }
+        html = renderQcTable(list, qcSortKey, qcSortAsc);
+        // 绑定表头点击事件（在 html 插入 DOM 后执行）
+        setTimeout(function(){
+          var tbl = document.getElementById('qc-pending-table');
+          if (!tbl) return;
+          tbl.querySelectorAll('th[data-qcsort]').forEach(function(th){
+            th.addEventListener('click', function(){
+              var k = th.getAttribute('data-qcsort');
+              if (qcSortKey === k) { qcSortAsc = !qcSortAsc; } else { qcSortKey = k; qcSortAsc = true; }
+              var body = document.getElementById('modal-body');
+              if (body) body.innerHTML = renderQcTable(list, qcSortKey, qcSortAsc);
+              // 重新绑定（innerHTML 替换后需重新绑定）
+              var tbl2 = document.getElementById('qc-pending-table');
+              if (!tbl2) return;
+              tbl2.querySelectorAll('th[data-qcsort]').forEach(function(th2){
+                th2.addEventListener('click', function(){
+                  var k2 = th2.getAttribute('data-qcsort');
+                  if (qcSortKey === k2) { qcSortAsc = !qcSortAsc; } else { qcSortKey = k2; qcSortAsc = true; }
+                  var body2 = document.getElementById('modal-body');
+                  if (body2) body2.innerHTML = renderQcTable(list, qcSortKey, qcSortAsc);
+                });
+              });
+            });
+          });
+        }, 50);
       } else if (key === 'recv_pending') {
         // Part1: 已质检未收货
         const pendingList = (currentData && currentData.inbound && currentData.inbound.details && currentData.inbound.details.qc_recv_pending) || list;

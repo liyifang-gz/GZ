@@ -1115,14 +1115,14 @@ putawayBarPct = pcsRate;
       }
       document.getElementById("out-cage-bar").style.width = cageRate + "%";
 
-      // 组盘（复核）
+      // 组盘（笼维度：已组盘笼数 / 总笼数，2026-05-25）
       const packRate = packing.rate || 0;
       if (packing.total > 0) {
-        document.getElementById("out-pack-val").textContent = `${fmt(packing.done)}/${fmt(packing.total)} (${packRate}%)`;
+        document.getElementById("out-pack-val").textContent = `${fmt(packing.done)}/${fmt(packing.total)} 笼 (${packRate}%)`;
         document.getElementById("out-pack-val").style.color = "";
         document.getElementById("out-pack-bar").style.width = packRate + "%";
       } else {
-        document.getElementById("out-pack-val").textContent = "--/-- (暂未接入)";
+        document.getElementById("out-pack-val").textContent = "0/0 笼";
         document.getElementById("out-pack-val").style.color = "#bbb";
       }
 
@@ -1269,7 +1269,8 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       document.getElementById("p-alloc").textContent = allocRateP + "%";
       document.getElementById("p-sow").textContent = (outSowing.rate || outDims.sow_rate || 0) + "%";
       document.getElementById("p-cage").textContent = (outCaging.pcs_rate || outCaging.rate || outDims.cage_rate || 0) + "%";
-      document.getElementById("p-pack").textContent = "--";  // 组盘暂未接入
+      const outPacking = (data.outbound && data.outbound.packing) || {};
+      document.getElementById("p-pack").textContent = outPacking.total > 0 ? (outPacking.rate || 0) + "%" : "--";
       document.getElementById("p-ship").textContent = (outCaging.rate >= 100 ? "100" : "0") + "%";
     }
 

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-26T06:54:08",
+  "timestamp": "2026-05-26T06:58:38",
   "date": "2026-05-26",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 87,
-      "signed": 21,
-      "waiting": 65
+      "signed": 22,
+      "waiting": 64
     },
     "ontime": {
       "ontime": 0,
-      "early": 21,
+      "early": 22,
       "late": 0,
       "total": 86,
       "rate": 0.0,
-      "early_rate": 24.4,
+      "early_rate": 25.6,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,27 +24,27 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 21,
+      "total": 22,
       "done": 16,
-      "rate": 76.2,
+      "rate": 72.7,
       "pcs_done": 5963
     },
     "qc": {
-      "total": 99,
+      "total": 102,
       "done": 0,
-      "pending": 99,
+      "pending": 102,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 99,
+      "bill_total": 102,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 10723,
+      "pcs_total": 10958,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 99,
+      "sku_total": 102,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -59,8 +59,8 @@
     "dimensions": {
       "reserve": {
         "total": 86,
-        "done": 21,
-        "rate": 24.4
+        "done": 22,
+        "rate": 25.6
       },
       "pcs": {
         "total": 24610,
@@ -71,14 +71,18 @@
       },
       "sku": {
         "total": 523,
-        "done": 99,
-        "rate": 18.9
+        "done": 102,
+        "rate": 19.5
       },
       "supplier": {
         "total": 74,
-        "done": 18,
-        "rate": 24.3,
+        "done": 19,
+        "rate": 25.7,
         "detail": {
+          "佳农食品（上海）有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳市金农供应链管理有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -152,10 +156,6 @@
             "done": 1
           },
           "上海全苗蔬农业科技发展有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "深圳市一二三农产品投资有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -351,13 +351,6 @@
           "skuCount": 3,
           "pcs": 0,
           "timeSlot": "14:30 - 15:00"
-        },
-        {
-          "supplierName": "佳农食品（上海）有限公司-快乐猴",
-          "billCode": "YY20260525009741",
-          "skuCount": 3,
-          "pcs": 0,
-          "timeSlot": "15:00 - 15:30"
         },
         {
           "supplierName": "上海易食科技有限公司-快乐猴",
@@ -603,9 +596,22 @@
           "skuCount": 9,
           "pcs": 0,
           "timeSlot": "17:30 - 18:00"
+        },
+        {
+          "supplierName": "东莞桃李面包有限公司-快乐猴",
+          "billCode": "YY20260525003532",
+          "skuCount": 3,
+          "pcs": 0,
+          "timeSlot": "17:30 - 18:00"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "佳农食品（上海）有限公司-快乐猴",
+          "billCode": "YY20260525009741",
+          "signTime": "06:58",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "深圳市金农供应链管理有限公司-快乐猴-自营",
           "billCode": "YY20260525009959",
@@ -805,12 +811,6 @@
           "supplierName": "深圳市优选农业开发有限公司-快乐猴",
           "billCode": "YY20260524006363",
           "signTime": "13:44",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "广东泓润源食品科技有限公司-快乐猴-自营",
-          "billCode": "YY20260524004101",
-          "signTime": "14:25",
           "status": "已签到未卸货"
         }
       ],
@@ -1604,6 +1604,30 @@
           "supplierName": "深圳市金农供应链管理有限公司-快乐猴-自营",
           "skuName": "西州蜜瓜25号单粒 1.5kg",
           "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 100,
+          "supplierName": "佳农食品（上海）有限公司-快乐猴",
+          "skuName": "泰国易开椰青单粒 900g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 101,
+          "supplierName": "佳农食品（上海）有限公司-快乐猴",
+          "skuName": "进口甜糯蕉 1kg",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 102,
+          "supplierName": "佳农食品（上海）有限公司-快乐猴",
+          "skuName": "佳农 菲律宾超甜蕉 700g",
+          "arrivalTime": "15:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }

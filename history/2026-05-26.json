@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-26T03:08:38",
+  "timestamp": "2026-05-26T03:13:39",
   "date": "2026-05-26",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 87,
-      "signed": 8,
-      "waiting": 78
+      "signed": 10,
+      "waiting": 76
     },
     "ontime": {
       "ontime": 0,
-      "early": 8,
+      "early": 10,
       "late": 0,
       "total": 86,
       "rate": 0.0,
-      "early_rate": 9.3,
+      "early_rate": 11.6,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,27 +24,27 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 8,
+      "total": 10,
       "done": 7,
-      "rate": 87.5,
+      "rate": 70.0,
       "pcs_done": 5666
     },
     "qc": {
-      "total": 42,
+      "total": 44,
       "done": 0,
-      "pending": 42,
+      "pending": 44,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 42,
+      "bill_total": 44,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 6025,
+      "pcs_total": 6082,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 42,
+      "sku_total": 44,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -59,8 +59,8 @@
     "dimensions": {
       "reserve": {
         "total": 86,
-        "done": 8,
-        "rate": 9.3
+        "done": 10,
+        "rate": 11.6
       },
       "pcs": {
         "total": 24610,
@@ -71,14 +71,18 @@
       },
       "sku": {
         "total": 523,
-        "done": 42,
-        "rate": 8.0
+        "done": 44,
+        "rate": 8.4
       },
       "supplier": {
         "total": 74,
-        "done": 8,
-        "rate": 10.8,
+        "done": 9,
+        "rate": 12.2,
         "detail": {
+          "广州光明乳品有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "金乡县英格电子商务有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -152,10 +156,6 @@
             "done": 0
           },
           "深圳市大程鑫农业开发有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "深圳禾顺农业有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -607,6 +607,18 @@
       ],
       "unloading": [
         {
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "billCode": "YY20260525003648",
+          "signTime": "03:10",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "billCode": "YY20260518004390",
+          "signTime": "03:10",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "金乡县英格电子商务有限公司-快乐猴",
           "billCode": "YY20260525010026",
           "signTime": "03:06",
@@ -849,18 +861,6 @@
         {
           "supplierName": "恒集祥食品科技（东莞市）有限公司-快乐猴-自营",
           "billCode": "YY20260524003987",
-          "signTime": "12:06",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "广州澳儿沙拉餐饮管理有限公司-快乐猴",
-          "billCode": "YY20260521007457",
-          "signTime": "12:25",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "东莞市恒集祥食品有限公司-快乐猴",
-          "billCode": "YY20260524003462",
           "signTime": "12:06",
           "status": "已签到未卸货"
         }
@@ -1199,6 +1199,22 @@
           "supplierName": "金乡县英格电子商务有限公司-快乐猴",
           "skuName": "独头蒜 200g",
           "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 43,
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "skuName": "光明 红枣益生菌风味发酵乳 100g*8",
+          "arrivalTime": "04:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 44,
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "skuName": "光明新鲜牧场高品质牛乳950ml",
+          "arrivalTime": "04:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }

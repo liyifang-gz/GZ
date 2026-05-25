@@ -1117,17 +1117,19 @@ putawayBarPct = pcsRate;
         document.getElementById("out-pack-val").style.color = "#bbb";
       }
 
-      // 发运进度（= shipQuantity / allocatedQuantity，字段待接入）
+      // 发运进度（= cargoStatus!=-1 的 PCS / 分配PCS）
+      const skuShip    = pool.sku_ship    || 0;
       const shipRatePool = allocPcs > 0 ? Math.round(shipPcs / allocPcs * 100 * 10) / 10 : (pool.ship_rate || 0);
-      if (shipPcs > 0) {
+      if (shipPcs > 0 || pool.ship_rate > 0) {
         document.getElementById("out-ship-val").textContent = isPcs
           ? `${fmt(shipPcs)}/${fmt(allocPcs)} PCS (${shipRatePool}%)`
-          : "--";
+          : `${fmt(skuShip)}/${fmt(skuAlloc)} 种`;
         document.getElementById("out-ship-val").style.color = "";
         document.getElementById("out-ship-bar").style.width = shipRatePool + "%";
       } else {
-        document.getElementById("out-ship-val").textContent = "--（待接入）";
-        document.getElementById("out-ship-val").style.color = "#bbb";
+        document.getElementById("out-ship-val").textContent = isPcs ? "0 PCS（待发运）" : "0 种（待发运）";
+        document.getElementById("out-ship-val").style.color = "#888";
+        document.getElementById("out-ship-bar").style.width = "0%";
       }
 
       // KPI 指标

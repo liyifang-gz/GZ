@@ -1355,24 +1355,26 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       // 口径确认：2026-05-25 用户明确要求
       const totalPcs = recvDim.total || 0;
 
+      // 履约进度总览专用：保留一位小数（pct1d）
+      const pct1d = (n, d) => d > 0 ? (Math.round((n || 0) / d * 1000) / 10).toFixed(1) : "0.0";
+
       // 签到：分子 = 已预约PCS（pcs.done，与入库模块签到行分母一致）
-      document.getElementById("p-sign").textContent = pct(recvDim.done, totalPcs) + "%";
+      document.getElementById("p-sign").textContent = pct1d(recvDim.done, totalPcs) + "%";
 
       // 卸货：分子 = 已签到PCS × 卸货率（与入库模块卸货行分子一致）
       // signedQty = pcs.done × pcs.rate/100；unloadedQty = signedQty × unload.rate/100
       const signedPcs = Math.round((recvDim.done || 0) * ((recvDim.rate || 0) / 100));
       const unloadedPcs = Math.round(signedPcs * ((unload.rate || 0) / 100));
-      document.getElementById("p-unload").textContent = pct(unloadedPcs, totalPcs) + "%";
+      document.getElementById("p-unload").textContent = pct1d(unloadedPcs, totalPcs) + "%";
 
       // 质检：分子 = 已质检PCS（qc.pcs_done，与入库模块质检行PCS维度分子一致）
-      // 注意：不用 pcs_passed，质检行本身显示的是已质检（含不合格）；合格数体现在其他地方
-      document.getElementById("p-qc").textContent = pct(qc.pcs_done || 0, totalPcs) + "%";
+      document.getElementById("p-qc").textContent = pct1d(qc.pcs_done || 0, totalPcs) + "%";
 
       // 收货：分子 = 实收PCS（pcs.recv_done，与入库模块收货行分子一致）
-      document.getElementById("p-recv").textContent = pct(recvDim.recv_done, totalPcs) + "%";
+      document.getElementById("p-recv").textContent = pct1d(recvDim.recv_done, totalPcs) + "%";
 
       // 上架：分子 = 已上架PCS（putaway.done，与入库模块上架行分子一致）
-      document.getElementById("p-putaway").textContent = pct(putaway.done, totalPcs) + "%";
+      document.getElementById("p-putaway").textContent = pct1d(putaway.done, totalPcs) + "%";
 
       const outPicking = (data.outbound && data.outbound.picking) || {};
       const outSowing = (data.outbound && data.outbound.sowing) || {};

@@ -489,9 +489,18 @@
                     <div class="number" id="out-multi-pallet">--</div>
                     <div class="unit">一品多托</div>
                 </div>
-                <div class="kpi">
-                    <div class="number" id="out-load-rate">--%</div>
-                    <div class="unit">装载率(估算)</div>
+                <div class="kpi" style="min-width:120px">
+                    <div style="display:flex;flex-direction:column;gap:2px;align-items:flex-start">
+                        <div style="display:flex;align-items:baseline;gap:4px">
+                            <span style="font-size:10px;color:#aaa;white-space:nowrap">未装笼</span>
+                            <span class="number" id="out-load-rate-unloaded" style="font-size:16px">--</span>
+                        </div>
+                        <div style="display:flex;align-items:baseline;gap:4px">
+                            <span style="font-size:10px;color:#aaa;white-space:nowrap">已装笼</span>
+                            <span class="number" id="out-load-rate-loaded" style="font-size:16px">--</span>
+                        </div>
+                    </div>
+                    <div class="unit">托盘装载率</div>
                 </div>
                 <div class="kpi">
                     <div class="number" id="out-efficiency">--</div>
@@ -1246,8 +1255,15 @@ putawayBarPct = pcsRate;
       document.getElementById("out-multi-pallet").textContent =
         multiTotal > 0 ? `${multiCount}/${multiTotal} (${multiRate}%)` : "--";
 
-      const loadRate = kpi.load_rate || cageRate;
-      document.getElementById("out-load-rate").textContent = loadRate > 0 ? loadRate + "%" : "--%";
+      // 托盘装载率（TMS真实口径，2026-05-25）
+      const loadRateUnloaded = kpi.load_rate_unloaded || '--';
+      const loadRateLoaded   = kpi.load_rate_loaded   || '--';
+      document.getElementById("out-load-rate-unloaded").textContent = loadRateUnloaded;
+      document.getElementById("out-load-rate-loaded").textContent   = loadRateLoaded;
+      // 颜色：<60% 橙色警示
+      const parseRatePct = s => parseFloat((s||'').replace('%','')) || 0;
+      document.getElementById("out-load-rate-unloaded").style.color = parseRatePct(loadRateUnloaded) > 0 && parseRatePct(loadRateUnloaded) < 60 ? '#ff9966' : '#4caf50';
+      document.getElementById("out-load-rate-loaded").style.color   = parseRatePct(loadRateLoaded)   > 0 && parseRatePct(loadRateLoaded)   < 60 ? '#ff9966' : '#4caf50';
 
       const outEff = kpi.outbound_efficiency || out.outbound_efficiency || 0;
       document.getElementById("out-efficiency").textContent = outEff > 0 ? outEff : "--";

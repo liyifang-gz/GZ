@@ -523,7 +523,7 @@
             <!-- 出库进度条：分配→播种→关笼→组盘→发运 -->
             <div id="outbound-content" style="margin-top:10px">
                 <div class="progress-item">
-                    <div class="progress-label"><span class="name">分配</span><span class="val" id="out-alloc-val">--</span></div>
+                    <div class="progress-label"><span class="name">分配 <span class="detail-btn" onclick="showOutboundDetail('unalloc')" title="未分配明细">🔍</span></span><span class="val" id="out-alloc-val">--</span></div>
                     <div class="progress-bar"><div class="fill fill-orange" id="out-alloc-bar" style="width:0%"></div></div>
                 </div>
                 <div class="progress-item">
@@ -531,11 +531,11 @@
                     <div class="progress-bar"><div class="fill fill-orange" id="out-sow-bar" style="width:0%"></div></div>
                 </div>
                 <div class="progress-item">
-                    <div class="progress-label"><span class="name">关笼</span><span class="val" id="out-cage-val">--</span></div>
+                    <div class="progress-label"><span class="name">关笼 <span class="detail-btn" onclick="showOutboundDetail('uncaged')" title="未装笼明细">🔍</span></span><span class="val" id="out-cage-val">--</span></div>
                     <div class="progress-bar"><div class="fill fill-orange" id="out-cage-bar" style="width:0%"></div></div>
                 </div>
                 <div class="progress-item">
-                    <div class="progress-label"><span class="name">组盘</span><span class="val" id="out-pack-val" style="color:#bbb">--/-- (暂未接入)</span></div>
+                    <div class="progress-label"><span class="name">组盘 <span class="detail-btn" onclick="showOutboundDetail('unpacked')" title="未组盘明细">🔍</span></span><span class="val" id="out-pack-val" style="color:#bbb">--/-- (暂未接入)</span></div>
                     <div class="progress-bar"><div class="fill fill-purple" id="out-pack-bar" style="width:0%"></div></div>
                 </div>
                 <div class="progress-item">
@@ -635,6 +635,61 @@ let countdownTimer;
     function toggleDetail(id) {
       const el = document.getElementById(id);
       if (el) el.classList.toggle("show");
+    }
+
+    // ===== 出库明细弹窗（分配/关笼/组盘）=====
+    function showOutboundDetail(type) {
+      const ob = currentData && currentData.outbound ? currentData.outbound : null;
+      if (!ob) return;
+      const modal = document.getElementById('detail-modal');
+      const titleEl = document.getElementById('modal-title');
+      const bodyEl  = document.getElementById('modal-body');
+
+      if (type === 'unalloc') {
+        const list = ob.unalloc_details || [];
+        titleEl.textContent = `未分配明细（${list.length} 条出库单）`;
+        if (!list.length) { bodyEl.innerHTML = '<p class="modal-empty">暂无未分配出库单</p>'; }
+        else {
+          bodyEl.innerHTML = `<table class="modal-table"><thead><tr>
+            <th>收货方</th><th>出库单号</th><th>SKU种数</th><th>计划量</th><th>已分配</th><th>未分配</th>
+          </tr></thead><tbody>` +
+          list.map(r => `<tr>
+            <td>${r.receiverName||'--'}</td><td style="font-size:11px">${r.orderNo||'--'}</td>
+            <td>${r.skuNum||0}</td><td>${r.planQty||0}</td><td>${r.allocQty||0}</td>
+            <td style="color:#e53e3e;font-weight:600">${r.unallocQty||0}</td>
+          </tr>`).join('') + '</tbody></table>';
+        }
+      } else if (type === 'uncaged') {
+        const list = ob.uncaged_details || [];
+        titleEl.textContent = `未装笼明细（${list.length} 个周转箱）`;
+        if (!list.length) { bodyEl.innerHTML = '<p class="modal-empty">🎉 全部已装笼</p>'; }
+        else {
+          bodyEl.innerHTML = `<table class="modal-table"><thead><tr>
+            <th>周转箱码</th><th>收货方</th><th>件数</th>
+          </tr></thead><tbody>` +
+          list.map(r => `<tr>
+            <td style="font-size:11px">${r.containerCode||'--'}</td>
+            <td>${r.poiName||'--'}</td>
+            <td>${r.qty||0}</td>
+          </tr>`).join('') + '</tbody></table>';
+        }
+      } else if (type === 'unpacked') {
+        const list = ob.unpacked_details || [];
+        titleEl.textContent = `未组盘明细（${list.length} 个笼车）`;
+        if (!list.length) { bodyEl.innerHTML = '<p class="modal-empty">🎉 全部已组盘</p>'; }
+        else {
+          bodyEl.innerHTML = `<table class="modal-table"><thead><tr>
+            <th>笼车码</th><th>收货方</th><th>件数</th>
+          </tr></thead><tbody>` +
+          list.map(r => `<tr>
+            <td style="font-size:11px">${r.containerCode||'--'}</td>
+            <td>${r.poiName||'--'}</td>
+            <td>${r.qty||0}</td>
+          </tr>`).join('') + '</tbody></table>';
+        }
+      }
+
+      modal.style.display = 'flex';
     }
 
     function showInboundDetail(key) {

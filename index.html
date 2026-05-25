@@ -500,6 +500,28 @@
                     <div class="unit">出库效率<br><span style="font-size:9px;color:#bbb">PCS/人</span></div>
                 </div>
             </div>
+            <!-- 播种任务进度（任务数维度，2026-05-25 新增） -->
+            <div id="seeding-tasks-row" style="display:flex;gap:8px;margin:8px 0 4px 0;padding:8px 10px;background:rgba(255,165,0,0.08);border-radius:8px;border:1px solid rgba(255,165,0,0.2)">
+                <div style="font-size:11px;color:#aaa;align-self:center;margin-right:4px;white-space:nowrap">🌱 播种任务</div>
+                <div style="display:flex;gap:12px;flex:1;justify-content:space-around">
+                    <div style="text-align:center">
+                        <div style="font-size:18px;font-weight:700;color:#ff9966" id="seed-not-started">--</div>
+                        <div style="font-size:10px;color:#aaa">待开始</div>
+                    </div>
+                    <div style="text-align:center">
+                        <div style="font-size:18px;font-weight:700;color:#ffcc44" id="seed-in-progress">--</div>
+                        <div style="font-size:10px;color:#aaa">播种中</div>
+                    </div>
+                    <div style="text-align:center">
+                        <div style="font-size:18px;font-weight:700;color:#55cc88" id="seed-done">--</div>
+                        <div style="font-size:10px;color:#aaa">已完成</div>
+                    </div>
+                    <div style="text-align:center">
+                        <div style="font-size:18px;font-weight:700;color:#ccc" id="seed-total">--</div>
+                        <div style="font-size:10px;color:#aaa">合计</div>
+                    </div>
+                </div>
+            </div>
             <!-- 出库进度条在下：分配→拣货→播种→关笼→组盘→发运（2026-05-24 用户确认环节顺序） -->
             <div id="outbound-content" style="margin-top:10px">
                 <div class="progress-item">
@@ -1030,8 +1052,17 @@ putawayBarPct = pcsRate;
       const shipping = out.shipping || {};
       const kpi = out.kpi || {};
       const pool = out.pool || {};  // 今日生产订单池数据（分配进度）
+      const seeding = out.seeding || {};  // 播种任务（任务数维度，2026-05-25）
 
       const total = d.total || 0;
+
+      // 播种任务进度（任务数维度）
+      if (seeding.total > 0 || seeding.not_started >= 0) {
+        document.getElementById("seed-not-started").textContent = seeding.not_started ?? "--";
+        document.getElementById("seed-in-progress").textContent = seeding.in_progress ?? "--";
+        document.getElementById("seed-done").textContent = seeding.done ?? "--";
+        document.getElementById("seed-total").textContent = seeding.total ?? "--";
+      }
 
       // 出库量 KPI（来自生产订单池 planQuantity，口径：芥末出库管理→生产订单池→计划数量）
       const planPcs = pool.plan_pcs || 0;

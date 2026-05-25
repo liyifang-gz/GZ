@@ -1078,15 +1078,14 @@ putawayBarPct = pcsRate;
         document.getElementById("att-badge").className = "badge badge-gray";
       }
 
-      // 单仓人效
-      const outboundPcs =
+      // 单仓人效 = 出库计划量(plan_pcs) / 全仓出勤人数
+      const outboundPlanPcs =
         (currentData &&
           currentData.outbound &&
-          currentData.outbound.dimensions &&
-          currentData.outbound.dimensions.pcs &&
-          currentData.outbound.dimensions.pcs.total) ||
+          currentData.outbound.pool &&
+          currentData.outbound.pool.plan_pcs) ||
         0;
-      const productivity = actual > 0 && outboundPcs > 0 ? Math.round(outboundPcs / actual) : 0;
+      const productivity = actual > 0 && outboundPlanPcs > 0 ? Math.round(outboundPlanPcs / actual) : 0;
       document.getElementById("att-productivity").textContent = productivity > 0 ? fmt(productivity) : "--";
 
       // 分岗位表格（4列：岗位、在职、出勤、出勤率）

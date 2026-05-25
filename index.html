@@ -1350,11 +1350,19 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       const recvDim = (inb.dimensions && inb.dimensions.pcs) || {};
       const putaway = inb.putaway || {};
 
-      document.getElementById("p-sign").textContent = pct(reserve.signed, reserve.total) + "%";
-      document.getElementById("p-unload").textContent = (unload.rate || 0) + "%";
-      document.getElementById("p-qc").textContent = (qc.rate || 0) + "%";
-      document.getElementById("p-recv").textContent = (recvDim.rate || 0) + "%";
-      document.getElementById("p-putaway").textContent = (putaway.rate || 0) + "%";
+      // 履约进度总览 —— 统一口径：分母 = 当天入库总件数（pcs.total）
+      // 签到：已预约PCS / 总PCS（pcs.done 即已预约PCS，用反推法得到，与已签到高度对齐）
+      // 卸货：unload.done（PCS）/ 总PCS
+      // 质检：qc.pcs_done（已质检PCS）/ 总PCS
+      // 收货：pcs.recv_done（实收PCS）/ 总PCS
+      // 上架：putaway.done（上架PCS）/ 总PCS
+      // 口径确认：2026-05-25 用户明确要求，统一用PCS维度，分母=入库总件数
+      const totalPcs = recvDim.total || 0;
+      document.getElementById("p-sign").textContent = pct(recvDim.done, totalPcs) + "%";
+      document.getElementById("p-unload").textContent = pct(unload.pcs_done, totalPcs) + "%";
+      document.getElementById("p-qc").textContent = pct(qc.pcs_done, totalPcs) + "%";
+      document.getElementById("p-recv").textContent = pct(recvDim.recv_done, totalPcs) + "%";
+      document.getElementById("p-putaway").textContent = pct(putaway.done, totalPcs) + "%";
 
       const outPicking = (data.outbound && data.outbound.picking) || {};
       const outSowing = (data.outbound && data.outbound.sowing) || {};

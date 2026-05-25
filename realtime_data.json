@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-26T03:04:07",
+  "timestamp": "2026-05-26T03:08:38",
   "date": "2026-05-26",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 87,
-      "signed": 7,
-      "waiting": 79
+      "signed": 8,
+      "waiting": 78
     },
     "ontime": {
       "ontime": 0,
-      "early": 7,
+      "early": 8,
       "late": 0,
       "total": 86,
       "rate": 0.0,
-      "early_rate": 8.1,
+      "early_rate": 9.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,27 +24,27 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 7,
+      "total": 8,
       "done": 7,
-      "rate": 100.0,
+      "rate": 87.5,
       "pcs_done": 5666
     },
     "qc": {
-      "total": 40,
+      "total": 42,
       "done": 0,
-      "pending": 40,
+      "pending": 42,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 40,
+      "bill_total": 42,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 5666,
+      "pcs_total": 6025,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 40,
+      "sku_total": 42,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -59,8 +59,8 @@
     "dimensions": {
       "reserve": {
         "total": 86,
-        "done": 7,
-        "rate": 8.1
+        "done": 8,
+        "rate": 9.3
       },
       "pcs": {
         "total": 24610,
@@ -71,14 +71,18 @@
       },
       "sku": {
         "total": 523,
-        "done": 40,
-        "rate": 7.6
+        "done": 42,
+        "rate": 8.0
       },
       "supplier": {
         "total": 74,
-        "done": 7,
-        "rate": 9.5,
+        "done": 8,
+        "rate": 10.8,
         "detail": {
+          "金乡县英格电子商务有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广东省邻优家农业发展有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -144,10 +148,6 @@
             "done": 0
           },
           "东莞鲜通天下供应链管理有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "金乡县英格电子商务有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -344,13 +344,6 @@
           "skuCount": 25,
           "pcs": 0,
           "timeSlot": "14:00 - 14:30"
-        },
-        {
-          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
-          "billCode": "YY20260525010026",
-          "skuCount": 2,
-          "pcs": 0,
-          "timeSlot": "14:30 - 15:00"
         },
         {
           "supplierName": "深圳市大程鑫农业开发有限公司-快乐猴",
@@ -603,9 +596,22 @@
           "skuCount": 6,
           "pcs": 0,
           "timeSlot": "16:30 - 17:00"
+        },
+        {
+          "supplierName": "广东爱健康农牧集团有限公司-快乐猴",
+          "billCode": "YY20260525003842",
+          "skuCount": 1,
+          "pcs": 0,
+          "timeSlot": "11:30 - 12:00"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
+          "billCode": "YY20260525010026",
+          "signTime": "03:06",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
           "billCode": "YY20260525008294",
@@ -856,12 +862,6 @@
           "supplierName": "东莞市恒集祥食品有限公司-快乐猴",
           "billCode": "YY20260524003462",
           "signTime": "12:06",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "广州市白云区松洲中芬果菜经营部-快乐猴",
-          "billCode": "YY20260525001710",
-          "signTime": "11:00",
           "status": "已签到未卸货"
         }
       ],
@@ -1184,6 +1184,22 @@
           "skuName": "芦笋 350g",
           "arrivalTime": "10:00",
           "unloadFinishTime": "02:33",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 41,
+          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
+          "skuName": "紫皮大蒜  500g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 42,
+          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
+          "skuName": "独头蒜 200g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],

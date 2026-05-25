@@ -629,7 +629,7 @@ let countdownTimer;
         unreserved: '未预约采购单',
         unsigned: '未签到预约单',
         unloading: '已签到未卸货',
-        qc_pending: '质检明细',
+        qc_pending: '未质检明细',
         recv_pending: '已质检未收货',
         putaway: '未上架明细'
       };
@@ -703,34 +703,9 @@ let countdownTimer;
           }).join('');
           return '<table class="modal-table" id="qc-pending-table"><thead><tr>'+ths+'</tr></thead><tbody>'+trs+'</tbody></table>';
         }
-        html = renderQcTable(list, qcSortKey, qcSortAsc);
-        // 绑定表头点击事件（在 html 插入 DOM 后执行）
-        setTimeout(function(){
-          var tbl = document.getElementById('qc-pending-table');
-          if (!tbl) return;
-          tbl.querySelectorAll('th[data-qcsort]').forEach(function(th){
-            th.addEventListener('click', function(){
-              var k = th.getAttribute('data-qcsort');
-              if (qcSortKey === k) { qcSortAsc = !qcSortAsc; } else { qcSortKey = k; qcSortAsc = true; }
-              var body = document.getElementById('modal-body');
-              if (body) body.innerHTML = renderQcTable(list, qcSortKey, qcSortAsc);
-              // 重新绑定（innerHTML 替换后需重新绑定）
-              var tbl2 = document.getElementById('qc-pending-table');
-              if (!tbl2) return;
-              tbl2.querySelectorAll('th[data-qcsort]').forEach(function(th2){
-                th2.addEventListener('click', function(){
-                  var k2 = th2.getAttribute('data-qcsort');
-                  if (qcSortKey === k2) { qcSortAsc = !qcSortAsc; } else { qcSortKey = k2; qcSortAsc = true; }
-                  var body2 = document.getElementById('modal-body');
-                  if (body2) body2.innerHTML = renderQcTable(list, qcSortKey, qcSortAsc);
-                });
-              });
-            });
-          });
-        }, 50);
-        // 拒收明细区块（追加在未质检任务表格下方）
+        // 拒收明细区块（第一个表，放在未质检任务前面）
         var rejList = (currentData && currentData.inbound && currentData.inbound.details && currentData.inbound.details.qc_rejected) || [];
-        var rejHtml = `<div style="margin-top:14px;font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">拒收明细（${rejList.length} 条）</div>`;
+        var rejHtml = `<div style="font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">拒收明细（${rejList.length} 条）</div>`;
         if (rejList.length === 0) {
           rejHtml += '<p style="color:#10b981;font-size:12px;">✅ 暂无拒收</p>';
         } else {
@@ -740,7 +715,43 @@ let countdownTimer;
           });
           rejHtml += '</tbody></table>';
         }
-        html += rejHtml;
+        html = rejHtml;
+        // 未质检任务表格（第二个表）
+        html += `<div style="margin-top:14px;font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">未质检任务（${list.length} 条）</div>`;
+        html += renderQcTable(list, qcSortKey, qcSortAsc);
+        // 绑定表头点击事件（在 html 插入 DOM 后执行）
+        setTimeout(function(){
+          var tbl = document.getElementById('qc-pending-table');
+          if (!tbl) return;
+          tbl.querySelectorAll('th[data-qcsort]').forEach(function(th){
+            th.addEventListener('click', function(){
+              var k = th.getAttribute('data-qcsort');
+              if (qcSortKey === k) { qcSortAsc = !qcSortAsc; } else { qcSortKey = k; qcSortAsc = true; }
+              var body = document.getElementById('modal-body');
+              if (!body) return;
+              // 重新渲染保留拒收明细在前
+              var newHtml = rejHtml;
+              newHtml += `<div style="margin-top:14px;font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">未质检任务（${list.length} 条）</div>`;
+              newHtml += renderQcTable(list, qcSortKey, qcSortAsc);
+              body.innerHTML = newHtml;
+              // 重新绑定
+              var tbl2 = document.getElementById('qc-pending-table');
+              if (!tbl2) return;
+              tbl2.querySelectorAll('th[data-qcsort]').forEach(function(th2){
+                th2.addEventListener('click', function(){
+                  var k2 = th2.getAttribute('data-qcsort');
+                  if (qcSortKey === k2) { qcSortAsc = !qcSortAsc; } else { qcSortKey = k2; qcSortAsc = true; }
+                  var body2 = document.getElementById('modal-body');
+                  if (!body2) return;
+                  var newHtml2 = rejHtml;
+                  newHtml2 += `<div style="margin-top:14px;font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">未质检任务（${list.length} 条）</div>`;
+                  newHtml2 += renderQcTable(list, qcSortKey, qcSortAsc);
+                  body2.innerHTML = newHtml2;
+                });
+              });
+            });
+          });
+        }, 50);
       } else if (key === 'recv_pending') {
         // Part1: 已质检未收货
         const pendingList = (currentData && currentData.inbound && currentData.inbound.details && currentData.inbound.details.qc_recv_pending) || list;

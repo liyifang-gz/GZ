@@ -1600,9 +1600,9 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
 
     // 当前仓配置
     const WAREHOUSES = {
-      'gz0210': { name: 'GZ0210 冷藏', dataUrl: 'realtime_data.json',         historyDir: 'history/' },
-      'gz0211': { name: 'GZ0211 冷冻', dataUrl: 'gz0211/realtime_data.json',   historyDir: 'gz0211/history/' },
-      'gz0209': { name: 'GZ0209 常温', dataUrl: 'gz0209/realtime_data.json',   historyDir: 'gz0209/history/' },
+      'gz0210': { name: 'GZ0210 冷藏', dataUrl: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/realtime_data.json',         historyDir: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/history/' },
+      'gz0211': { name: 'GZ0211 冷冻', dataUrl: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0211/realtime_data.json',   historyDir: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0211/history/' },
+      'gz0209': { name: 'GZ0209 常温', dataUrl: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0209/realtime_data.json',   historyDir: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0209/history/' },
     };
     function getCurrentWarehouse() {
       const sel = document.getElementById('warehouse-select');

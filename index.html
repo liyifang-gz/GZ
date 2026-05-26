@@ -1081,15 +1081,19 @@ let countdownTimer;
       document.getElementById("inb-sign-val").textContent = signVal;
       document.getElementById("inb-sign-bar").style.width = Math.min(signBarPct, 100) + "%";
 
-      // 卸货进度（分母=已签到量）
-      // 口径：卸货分母 = 已签到PCS（即签到分母×签到率）
-      let unloadVal, unloadBarPct = unloadRate;
+      // 卸货进度
+      // 口径（2026-05-26 修复）：
+      //   分子 = unload.pcs_done（已卸货PCS，signPcs之和）真实值，禁止推算
+      //   分母 = unload.sign_pcs_done（已签到PCS，reserveQuantity之和）真实值，禁止推算
+      const unloadedPcsDone = unload.pcs_done || 0;
+      const signedPcsDone = unload.sign_pcs_done || 0;
+      let unloadVal, unloadBarPct;
       if (inboundDim === "reserve") {
         unloadVal = `${fmt(unload.done)}/${fmt(unload.total)} 单 (${unloadRate}%)`;
+        unloadBarPct = unloadRate;
       } else {
-        const signedQty = Math.round(dimDone * signRate / 100);  // 已签到PCS，与签到行一致
-        const unloadedQty = Math.round(signedQty * unloadRate / 100);
-        unloadVal = `${fmt(unloadedQty)}/${fmt(signedQty)} ${unit} (${unloadRate}%)`;
+        unloadBarPct = signedPcsDone > 0 ? Math.round(unloadedPcsDone / signedPcsDone * 100 * 10) / 10 : 0;
+        unloadVal = `${fmt(unloadedPcsDone)}/${fmt(signedPcsDone)} ${unit} (${unloadBarPct}%)`;
       }
       document.getElementById("inb-unload-val").textContent = unloadVal;
       document.getElementById("inb-unload-bar").style.width = unloadBarPct + "%";

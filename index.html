@@ -914,6 +914,7 @@ let countdownTimer;
           const pendingList = (details && details.qc_recv_pending) || list;
           const diffList = (details && details.recv_diff) || [];
           html = '<div style="font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">已质检未收货（' + pendingList.length + ' 条）</div>';
+          html += '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">口径：质检合格（result=合格）且 PMS 未收货的采购单级明细。质检PCS与收货PCS存在口径差异（质检用计划到货量，收货用实收量），不代表有未收货货品。</div>';
           if (pendingList.length === 0) {
             html += '<p style="color:#10b981;font-size:12px;">✅ 全部已收货</p>';
           } else {

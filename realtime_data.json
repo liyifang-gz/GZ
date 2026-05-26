@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-26T08:04:07",
+  "timestamp": "2026-05-26T08:08:38",
   "date": "2026-05-26",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 87,
-      "signed": 24,
-      "waiting": 62
+      "signed": 25,
+      "waiting": 61
     },
     "ontime": {
       "ontime": 0,
-      "early": 24,
+      "early": 25,
       "late": 0,
       "total": 86,
       "rate": 0.0,
-      "early_rate": 27.9,
+      "early_rate": 29.1,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 24,
+      "total": 25,
       "done": 22,
-      "rate": 91.7,
+      "rate": 88.0,
       "pcs_done": 6567
     },
     "qc": {
-      "total": 104,
-      "done": 13,
-      "pending": 91,
-      "passed": 13,
+      "total": 120,
+      "done": 14,
+      "pending": 106,
+      "passed": 14,
       "rejected": 0,
-      "rate": 12.5,
-      "bill_done": 13,
-      "bill_total": 104,
-      "pcs_done": 396,
-      "pcs_passed": 396,
-      "pcs_total": 10968,
+      "rate": 11.7,
+      "bill_done": 14,
+      "bill_total": 120,
+      "pcs_done": 424,
+      "pcs_passed": 424,
+      "pcs_total": 11440,
       "pcs_rejected": 0,
-      "pcs_rate": 3.6,
-      "sku_done": 13,
-      "sku_total": 104,
-      "sku_rate": 12.5
+      "pcs_rate": 3.7,
+      "sku_done": 14,
+      "sku_total": 120,
+      "sku_rate": 11.7
     },
     "putaway": {
       "total": 24,
@@ -59,8 +59,8 @@
     "dimensions": {
       "reserve": {
         "total": 86,
-        "done": 24,
-        "rate": 27.9
+        "done": 25,
+        "rate": 29.1
       },
       "pcs": {
         "total": 24610,
@@ -71,14 +71,18 @@
       },
       "sku": {
         "total": 523,
-        "done": 104,
-        "rate": 19.9
+        "done": 120,
+        "rate": 22.9
       },
       "supplier": {
         "total": 74,
-        "done": 21,
-        "rate": 28.4,
+        "done": 22,
+        "rate": 29.7,
         "detail": {
+          "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳市味中王食品有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -152,10 +156,6 @@
             "done": 1
           },
           "深圳市农耕记智慧科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "东莞鲜通天下供应链管理有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           }
@@ -472,13 +472,6 @@
           "timeSlot": "16:00 - 16:30"
         },
         {
-          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
-          "billCode": "YY20260525004077",
-          "skuCount": 16,
-          "pcs": 0,
-          "timeSlot": "10:30 - 11:00"
-        },
-        {
           "supplierName": "广东泓润源食品科技有限公司-快乐猴-自营",
           "billCode": "YY20260525004056",
           "skuCount": 5,
@@ -603,9 +596,22 @@
           "skuCount": 2,
           "pcs": 0,
           "timeSlot": "18:30 - 19:00"
+        },
+        {
+          "supplierName": "广东晟果食品有限公司-快乐猴",
+          "billCode": "YY20260525003342",
+          "skuCount": 5,
+          "pcs": 0,
+          "timeSlot": "17:00 - 17:30"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "billCode": "YY20260525004077",
+          "signTime": "08:07",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
           "billCode": "YY20260525010068",
@@ -766,12 +772,6 @@
           "supplierName": "广东逅厨食品有限公司-快乐猴",
           "billCode": "YY20260524003710",
           "signTime": "14:51",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "中山市宏旷食品有限公司-快乐猴",
-          "billCode": "YY20260524007150",
-          "signTime": "13:01",
           "status": "已签到未卸货"
         }
       ],
@@ -1470,7 +1470,7 @@
           "skuName": "泰国易开椰青单粒 900g",
           "arrivalTime": "15:00",
           "unloadFinishTime": "07:16",
-          "statusLabel": "待质检"
+          "statusLabel": "首次进行中"
         },
         {
           "seq": 88,
@@ -1482,14 +1482,6 @@
         },
         {
           "seq": 89,
-          "supplierName": "佳农食品（上海）有限公司-快乐猴",
-          "skuName": "佳农 菲律宾超甜蕉 700g",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "07:16",
-          "statusLabel": "首次进行中"
-        },
-        {
-          "seq": 90,
           "supplierName": "深圳市新鼎食品开发有限公司-快乐猴",
           "skuName": "凉拌酸辣海带丝 180g",
           "arrivalTime": "15:30",
@@ -1497,11 +1489,139 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 91,
+          "seq": 90,
           "supplierName": "深圳市味中王食品有限公司-快乐猴-自营",
           "skuName": "潮汕卤水四拼(含蒜蓉醋) 260g+12g",
           "arrivalTime": "09:30",
           "unloadFinishTime": "07:35",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 91,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜鸡翅中 500g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 92,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜鸡爪 500g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 93,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜鸡琵琶腿 800g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 94,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜鸡大胸  800g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 95,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜鸡腿肉丁 400g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 96,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜鸡小胸 500g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 97,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜鸡翅根 500g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 98,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜鸡胗 400g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 99,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜切去骨脆皮鸡 200g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 100,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜青脚草鸡半只切块 500g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 101,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜黄皮嫩鸡 1kg",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 102,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜供港乳鸽 300g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 103,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜乌鸡半只切块 500g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 104,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜带蛋老母鸡半只切块 500g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 105,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜番鸭切块 500g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 106,
+          "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
+          "skuName": "鲜土鸡腿 320g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],
@@ -1510,79 +1630,85 @@
           "supplierName": "广州光明乳品有限公司-快乐猴",
           "skuName": "光明新鲜牧场高品质牛乳950ml",
           "completeTime": "07:31",
-          "waitingMins": 33
+          "waitingMins": 37
         },
         {
           "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
           "skuName": "农耕记 宫保鸡丁 400g",
           "completeTime": "07:29",
-          "waitingMins": 35
+          "waitingMins": 39
         },
         {
           "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
           "skuName": "农耕记 鱼香肉丝 410g",
           "completeTime": "07:28",
-          "waitingMins": 36
+          "waitingMins": 40
         },
         {
           "supplierName": "东莞千厨食品有限公司-快乐猴",
           "skuName": "猪耳猪头肉卤味双拼 205g",
           "completeTime": "07:23",
-          "waitingMins": 40
+          "waitingMins": 45
         },
         {
           "supplierName": "东莞千厨食品有限公司-快乐猴",
           "skuName": "手撕酱板鸭 120g",
           "completeTime": "07:26",
-          "waitingMins": 38
+          "waitingMins": 42
         },
         {
           "supplierName": "东莞千厨食品有限公司-快乐猴",
           "skuName": "盐焗鹌鹑蛋 200g",
           "completeTime": "07:25",
-          "waitingMins": 39
+          "waitingMins": 43
         },
         {
           "supplierName": "深圳新泉农产品有限公司-快乐猴",
           "skuName": "鲜散养130天文昌鸡切块 450g",
           "completeTime": "07:08",
-          "waitingMins": 56
+          "waitingMins": 60
         },
         {
           "supplierName": "深圳禾顺农业有限公司-快乐猴",
           "skuName": "黄豆芽 500g",
           "completeTime": "07:16",
-          "waitingMins": 48
+          "waitingMins": 52
         },
         {
           "supplierName": "深圳禾顺农业有限公司-快乐猴",
           "skuName": "绿豆芽 500g",
           "completeTime": "07:14",
-          "waitingMins": 50
+          "waitingMins": 54
         },
         {
           "supplierName": "深圳禾顺农业有限公司-快乐猴",
           "skuName": "豌豆苗 250g",
           "completeTime": "07:18",
-          "waitingMins": 46
+          "waitingMins": 50
         },
         {
           "supplierName": "深圳市大程鑫农业开发有限公司-快乐猴",
           "skuName": "冰淇淋网纹瓜单粒 1kg",
           "completeTime": "07:31",
-          "waitingMins": 33
+          "waitingMins": 37
         },
         {
           "supplierName": "深圳市大程鑫农业开发有限公司-快乐猴",
           "skuName": "广东三华李 500g(单果20g起)",
           "completeTime": "07:37",
-          "waitingMins": 27
+          "waitingMins": 31
         },
         {
           "supplierName": "深圳市金农供应链管理有限公司-快乐猴-自营",
           "skuName": "西州蜜瓜25号单粒 1.5kg",
           "completeTime": "07:49",
-          "waitingMins": 15
+          "waitingMins": 19
+        },
+        {
+          "supplierName": "佳农食品（上海）有限公司-快乐猴",
+          "skuName": "佳农 菲律宾超甜蕉 700g",
+          "completeTime": "08:06",
+          "waitingMins": 2
         }
       ],
       "qc_recv_pending": [],

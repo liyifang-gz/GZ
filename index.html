@@ -743,6 +743,56 @@ let countdownTimer;
       modal.style.display = 'block';
     }
 
+    // ===== 入库弹窗通用排序表格 =====
+    // 每个弹窗 key 独立维护排序状态，切换弹窗不互相影响
+    var _inbSort = {};  // key -> { sortKey, sortAsc }
+    function _inbSortState(key, defaultKey) {
+      if (!_inbSort[key]) _inbSort[key] = { sortKey: defaultKey, sortAsc: true };
+      return _inbSort[key];
+    }
+    // 渲染一张可排序表格，并绑定表头点击事件（事件委托，自动重渲染）
+    // tableId: DOM id；rows: 数据数组；cols: [{key,label,style?,num?}]；
+    // stateKey: 排序状态 key（同 showInboundDetail 的 key）；defaultSortKey: 初始排序列
+    function renderInbTable(tableId, rows, cols, stateKey, defaultSortKey, renderWrapper) {
+      var st = _inbSortState(stateKey, defaultSortKey || cols[0].key);
+      var sorted = rows.slice().sort(function(a, b) {
+        var va = a[st.sortKey], vb = b[st.sortKey];
+        var isNum = (cols.find(function(c){return c.key===st.sortKey;})||{}).num
+          || typeof va === 'number' || (typeof va === 'string' && va !== '' && !isNaN(parseFloat(va)));
+        var cmp = isNum ? (parseFloat(va||0) - parseFloat(vb||0))
+                        : String(va||'').localeCompare(String(vb||''), 'zh-CN');
+        return st.sortAsc ? cmp : -cmp;
+      });
+      var thStyle = 'cursor:pointer;user-select:none;white-space:nowrap';
+      var ths = cols.map(function(c) {
+        var arrow = c.key === st.sortKey ? (st.sortAsc ? ' ↑' : ' ↓') : ' ↕';
+        return '<th style="' + thStyle + '" data-inbsort="' + c.key + '">' + c.label +
+          '<span style="color:#93c5fd;font-size:10px">' + arrow + '</span></th>';
+      }).join('');
+      var trs = sorted.map(function(r) {
+        return '<tr>' + cols.map(function(c) {
+          var v = r[c.key]; if (v === undefined || v === null) v = '--';
+          var s = c.style ? ' style="' + (typeof c.style === 'function' ? c.style(r) : c.style) + '"' : '';
+          return '<td' + s + '>' + v + '</td>';
+        }).join('') + '</tr>';
+      }).join('');
+      var tbl = '<table class="modal-table" id="' + tableId + '"><thead><tr>' + ths + '</tr></thead><tbody>' + trs + '</tbody></table>';
+      // 绑定点击：50ms 后找到 DOM 再绑
+      setTimeout(function() {
+        var el = document.getElementById(tableId);
+        if (!el) return;
+        el.querySelectorAll('th[data-inbsort]').forEach(function(th) {
+          th.addEventListener('click', function() {
+            var k = th.getAttribute('data-inbsort');
+            if (st.sortKey === k) { st.sortAsc = !st.sortAsc; } else { st.sortKey = k; st.sortAsc = true; }
+            // 重新渲染整个弹窗 body（由 renderWrapper 负责）
+            if (renderWrapper) renderWrapper();
+          });
+        });
+      }, 50);
+      return tbl;
+    }
+
     function showInboundDetail(key) {
       const details = currentData && currentData.inbound && currentData.inbound.details
         ? currentData.inbound.details : null;
@@ -758,169 +808,183 @@ let countdownTimer;
       // 收货明细用新口径(qc_recv_pending)计数，其余用list.length
       const titleCount = key === 'recv_pending'
         ? ((details && details.qc_recv_pending) || []).length
-        : list.length;
+        : key === 'putaway'
+          ? ((currentData && currentData.inbound && currentData.inbound.putaway ? currentData.inbound.putaway.details : null) || []).length
+          : list.length;
       document.getElementById('modal-title').textContent =
         (titles[key] || key) + '（' + titleCount + '条）';
-      let html = '';
-      if (key === 'unreserved') {
-    var dupList = (currentData && currentData.inbound && currentData.inbound.details && currentData.inbound.details.duplicate_reserve) || [];
-    html = '<h4 style="margin:0 0 8px;font-size:13px;color:#374151">未预约采购单（' + list.length + '条）</h4>';
-    if (list.length === 0) {
-      html += '<p class="modal-empty">暂无未预约采购单</p>';
-    } else {
-      html += '<table class="modal-table"><thead><tr><th>供应商</th><th>采购单号</th><th>SKU数</th><th>采购数量</th><th>预计到货日</th><th>采购单状态</th><th>备注</th></tr></thead><tbody>';
-      list.forEach(function(r) { html += '<tr><td>' + (r.supplierName||'--') + '</td><td>' + (r.poNo||'--') + '</td><td>' + (r.skuCount!=null?r.skuCount:'--') + '</td><td>' + (r.pcs!=null?r.pcs:'--') + '</td><td>' + (r.preArrivalTime||'--') + '</td><td>' + (r.poStatus||'--') + '</td><td style="color:#f59e0b;font-weight:500">有采购单无预约</td></tr>'; });
-      html += '</tbody></table>';
-    }
-    html += '<h4 style="margin:16px 0 8px;font-size:13px;color:#374151">重复预约采购单（' + dupList.length + '条）<span style="font-size:11px;color:#6b7280;font-weight:normal;margin-left:6px">同一采购单关联多个预约单</span></h4>';
-    if (dupList.length === 0) {
-      html += '<p class="modal-empty">暂无重复预约</p>';
-    } else {
-      html += '<table class="modal-table"><thead><tr><th>采购单号</th><th>预约单号</th><th>SKUID</th><th>商品名称</th><th>预约数量</th></tr></thead><tbody>';
-      dupList.forEach(function(r) {
-        var skuRows = r.skus || [];
-        var billCodes = r.reserveBillCodes || [];
-        var perBill = (skuRows.length > 0 && billCodes.length > 0) ? Math.ceil(skuRows.length / billCodes.length) : 1;
-        if (skuRows.length === 0) {
-          html += '<tr><td>' + (r.poNo||'--') + '</td><td style="color:#ef4444">' + billCodes.join(' / ') + '</td><td colspan="3" style="color:#9ca3af">-</td></tr>';
-        } else {
-          skuRows.forEach(function(s, idx) {
-            var billIdx = Math.min(Math.floor(idx / perBill), billCodes.length - 1);
-            html += '<tr><td>' + (idx===0?r.poNo:'') + '</td><td style="color:#ef4444;font-size:11px">' + (billCodes[billIdx]||'--') + '</td><td>' + (s.skuCode||s.skuId||'--') + '</td><td>' + (s.skuName||'--') + '</td><td>' + (s.quantity!=null?s.quantity:'--') + '</td></tr>';
-          });
-        }
-      });
-      html += '</tbody></table>';
-    }
-      } else if (key === 'unsigned') {
-        html = `<table class="modal-table"><thead><tr><th>供应商</th><th>预约单号</th><th>SKU数</th><th>采购数量</th><th>预约送货时段</th></tr></thead><tbody>`;
-        list.forEach(r => { html += `<tr><td>${r.supplierName||'--'}</td><td>${r.billCode||'--'}</td><td>${r.skuCount!=null?r.skuCount:'--'}</td><td>${r.pcs!=null?r.pcs:'--'}</td><td>${r.timeSlot||'--'}</td></tr>`; });
-        html += '</tbody></table>';
-      } else if (key === 'unloading') {
-        html = `<table class="modal-table"><thead><tr><th>供应商</th><th>预约单号</th><th>签到时间</th></tr></thead><tbody>`;
-        list.forEach(r => { html += `<tr><td>${r.supplierName||'--'}</td><td>${r.billCode||'--'}</td><td>${r.signTime||'--'}</td></tr>`; });
-        html += '</tbody></table>';
-      } else if (key === 'qc_pending') {
-        // 可排序表格：点击表头升序/降序，再次点击切换
-        var qcSortKey = 'arrivalTime', qcSortAsc = true;
-        function renderQcTable(rows, sortKey, sortAsc) {
-          var cols = [
-            {key:'supplierName', label:'供应商'},
-            {key:'skuName',      label:'商品名称'},
-            {key:'arrivalTime',  label:'到货时间'},
-            {key:'statusLabel',  label:'质检状态'}
-          ];
-          var sorted = rows.slice().sort(function(a,b){
-            var va = a[sortKey]||'', vb = b[sortKey]||'';
-            var cmp = va < vb ? -1 : va > vb ? 1 : 0;
-            return sortAsc ? cmp : -cmp;
-          });
-          var thStyle = 'cursor:pointer;user-select:none;white-space:nowrap;';
-          var ths = cols.map(function(c){
-            var arrow = c.key===sortKey ? (sortAsc?' ↑':' ↓') : ' ↕';
-            return '<th style="'+thStyle+'" data-qcsort="'+c.key+'">'+c.label+'<span style="color:#93c5fd;font-size:10px">'+arrow+'</span></th>';
-          }).join('');
-          var trs = sorted.map(function(r){
-            return '<tr><td>'+(r.supplierName||'--')+'</td><td>'+(r.skuName||'--')+'</td><td>'+(r.arrivalTime||'--')+'</td><td>'+(r.statusLabel||'--')+'</td></tr>';
-          }).join('');
-          return '<table class="modal-table" id="qc-pending-table"><thead><tr>'+ths+'</tr></thead><tbody>'+trs+'</tbody></table>';
-        }
-        // 拒收明细区块（第一个表，放在未质检任务前面）
-        var rejList = (currentData && currentData.inbound && currentData.inbound.details && currentData.inbound.details.qc_rejected) || [];
-        var rejHtml = `<div style="font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">拒收明细（${rejList.length} 条）</div>`;
-        if (rejList.length === 0) {
-          rejHtml += '<p style="color:#10b981;font-size:12px;">✅ 暂无拒收</p>';
-        } else {
-          rejHtml += '<table class="modal-table"><thead><tr><th>商家名称</th><th>商品名称</th><th>SKU ID</th><th>数量</th></tr></thead><tbody>';
-          rejList.forEach(function(r) {
-            rejHtml += `<tr><td>${r.supplierName||'--'}</td><td>${r.skuName||'--'}</td><td>${r.skuId||'--'}</td><td>${r.pcs!=null?r.pcs:'--'}</td></tr>`;
-          });
-          rejHtml += '</tbody></table>';
-        }
-        html = rejHtml;
-        // 未质检任务表格（第二个表）
-        html += `<div style="margin-top:14px;font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">未质检任务（${list.length} 条）</div>`;
-        html += renderQcTable(list, qcSortKey, qcSortAsc);
-        // 绑定表头点击事件（在 html 插入 DOM 后执行）
-        setTimeout(function(){
-          var tbl = document.getElementById('qc-pending-table');
-          if (!tbl) return;
-          tbl.querySelectorAll('th[data-qcsort]').forEach(function(th){
-            th.addEventListener('click', function(){
-              var k = th.getAttribute('data-qcsort');
-              if (qcSortKey === k) { qcSortAsc = !qcSortAsc; } else { qcSortKey = k; qcSortAsc = true; }
-              var body = document.getElementById('modal-body');
-              if (!body) return;
-              // 重新渲染保留拒收明细在前
-              var newHtml = rejHtml;
-              newHtml += `<div style="margin-top:14px;font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">未质检任务（${list.length} 条）</div>`;
-              newHtml += renderQcTable(list, qcSortKey, qcSortAsc);
-              body.innerHTML = newHtml;
-              // 重新绑定
-              var tbl2 = document.getElementById('qc-pending-table');
-              if (!tbl2) return;
-              tbl2.querySelectorAll('th[data-qcsort]').forEach(function(th2){
-                th2.addEventListener('click', function(){
-                  var k2 = th2.getAttribute('data-qcsort');
-                  if (qcSortKey === k2) { qcSortAsc = !qcSortAsc; } else { qcSortKey = k2; qcSortAsc = true; }
-                  var body2 = document.getElementById('modal-body');
-                  if (!body2) return;
-                  var newHtml2 = rejHtml;
-                  newHtml2 += `<div style="margin-top:14px;font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">未质检任务（${list.length} 条）</div>`;
-                  newHtml2 += renderQcTable(list, qcSortKey, qcSortAsc);
-                  body2.innerHTML = newHtml2;
+
+      // 各弹窗的渲染函数（供排序点击后重渲染调用）
+      function doRender() {
+        var html = '';
+
+        if (key === 'unreserved') {
+          // ── 未预约采购单（可排序） ──
+          var dupList = (details && details.duplicate_reserve) || [];
+          html = '<h4 style="margin:0 0 8px;font-size:13px;color:#374151">未预约采购单（' + list.length + '条）</h4>';
+          if (list.length === 0) {
+            html += '<p class="modal-empty">暂无未预约采购单</p>';
+          } else {
+            // 预先填好备注字段（渲染前）
+            list.forEach(function(r){ r._remark = '有采购单无预约'; });
+            html += renderInbTable('inb-unreserved-tbl', list, [
+              {key:'supplierName',   label:'供应商'},
+              {key:'poNo',           label:'采购单号'},
+              {key:'skuCount',       label:'SKU数', num:true},
+              {key:'pcs',            label:'采购数量', num:true},
+              {key:'preArrivalTime', label:'预计到货日'},
+              {key:'poStatus',       label:'采购单状态'},
+              {key:'_remark',        label:'备注', style:'color:#f59e0b;font-weight:500'}
+            ], 'unreserved', 'pcs', doRender);
+          }
+          html += '<h4 style="margin:16px 0 8px;font-size:13px;color:#374151">重复预约采购单（' + dupList.length + '条）<span style="font-size:11px;color:#6b7280;font-weight:normal;margin-left:6px">同一采购单关联多个预约单</span></h4>';
+          if (dupList.length === 0) {
+            html += '<p class="modal-empty">暂无重复预约</p>';
+          } else {
+            // 重复预约是嵌套结构，展平后排序
+            var dupRows = [];
+            dupList.forEach(function(r) {
+              var skuRows = r.skus || [], billCodes = r.reserveBillCodes || [];
+              var perBill = (skuRows.length > 0 && billCodes.length > 0) ? Math.ceil(skuRows.length / billCodes.length) : 1;
+              if (skuRows.length === 0) {
+                dupRows.push({poNo:r.poNo, billCode:billCodes.join(' / '), skuCode:'--', skuName:'--', quantity:'--'});
+              } else {
+                skuRows.forEach(function(s, idx) {
+                  var billIdx = Math.min(Math.floor(idx / perBill), billCodes.length - 1);
+                  dupRows.push({poNo: idx===0?r.poNo:'', billCode:billCodes[billIdx]||'--',
+                    skuCode:s.skuCode||s.skuId||'--', skuName:s.skuName||'--', quantity:s.quantity!=null?s.quantity:'--'});
                 });
-              });
+              }
             });
-          });
-        }, 50);
-      } else if (key === 'recv_pending') {
-        // Part1: 已质检未收货
-        const pendingList = (currentData && currentData.inbound && currentData.inbound.details && currentData.inbound.details.qc_recv_pending) || list;
-        const diffList = (currentData && currentData.inbound && currentData.inbound.details && currentData.inbound.details.recv_diff) || [];
-        html = `<div style="font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">已质检未收货（${pendingList.length} 条）</div>`;
-        if (pendingList.length === 0) {
-          html += '<p style="color:#10b981;font-size:12px;">✅ 全部已收货</p>';
-        } else {
-          html += `<table class="modal-table"><thead><tr><th>供应商</th><th>商品名称</th><th>质检完成时间</th><th>等待(分)</th></tr></thead><tbody>`;
-          pendingList.forEach(r => { html += `<tr><td>${r.supplierName||'--'}</td><td>${r.skuName||'--'}</td><td>${r.qcCompleteTime||r.completeTime||'--'}</td><td>${r.waitingMins!=null?r.waitingMins:'--'}</td></tr>`; });
-          html += '</tbody></table>';
+            html += renderInbTable('inb-dup-tbl', dupRows, [
+              {key:'poNo',      label:'采购单号'},
+              {key:'billCode',  label:'预约单号', style:'color:#ef4444;font-size:11px'},
+              {key:'skuCode',   label:'SKUID'},
+              {key:'skuName',   label:'商品名称'},
+              {key:'quantity',  label:'预约数量', num:true}
+            ], 'unreserved_dup', 'poNo', doRender);
+          }
+
+        } else if (key === 'unsigned') {
+          // ── 未签到预约单（可排序） ──
+          html = renderInbTable('inb-unsigned-tbl', list, [
+            {key:'supplierName', label:'供应商'},
+            {key:'billCode',     label:'预约单号'},
+            {key:'skuCount',     label:'SKU数', num:true},
+            {key:'pcs',          label:'采购数量', num:true},
+            {key:'timeSlot',     label:'预约送货时段'}
+          ], key, 'pcs', doRender);
+
+        } else if (key === 'unloading') {
+          // ── 已签到未卸货（可排序） ──
+          html = renderInbTable('inb-unloading-tbl', list, [
+            {key:'supplierName', label:'供应商'},
+            {key:'billCode',     label:'预约单号'},
+            {key:'signTime',     label:'签到时间'}
+          ], key, 'signTime', doRender);
+
+        } else if (key === 'qc_pending') {
+          // ── 质检弹窗：拒收 + 未质检任务（均可排序） ──
+          var rejList = (details && details.qc_rejected) || [];
+          html = '<div style="font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">拒收明细（' + rejList.length + ' 条）</div>';
+          if (rejList.length === 0) {
+            html += '<p style="color:#10b981;font-size:12px;">✅ 暂无拒收</p>';
+          } else {
+            html += renderInbTable('inb-rej-tbl', rejList, [
+              {key:'supplierName', label:'商家名称'},
+              {key:'skuName',      label:'商品名称'},
+              {key:'skuId',        label:'SKU ID'},
+              {key:'pcs',          label:'数量', num:true}
+            ], 'qc_rejected', 'pcs', doRender);
+          }
+          html += '<div style="margin-top:14px;font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">未质检任务（' + list.length + ' 条）</div>';
+          if (list.length === 0) {
+            html += '<p class="modal-empty">✅ 暂无未质检任务</p>';
+          } else {
+            html += renderInbTable('inb-qc-tbl', list, [
+              {key:'supplierName', label:'供应商'},
+              {key:'skuName',      label:'商品名称'},
+              {key:'arrivalTime',  label:'到货时间'},
+              {key:'statusLabel',  label:'质检状态'}
+            ], key, 'arrivalTime', doRender);
+          }
+
+        } else if (key === 'recv_pending') {
+          // ── 收货弹窗：已质检未收货 + 收货差异（均可排序） ──
+          const pendingList = (details && details.qc_recv_pending) || list;
+          const diffList = (details && details.recv_diff) || [];
+          html = '<div style="font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">已质检未收货（' + pendingList.length + ' 条）</div>';
+          if (pendingList.length === 0) {
+            html += '<p style="color:#10b981;font-size:12px;">✅ 全部已收货</p>';
+          } else {
+            html += renderInbTable('inb-recv-tbl', pendingList, [
+              {key:'supplierName',   label:'供应商'},
+              {key:'skuName',        label:'商品名称'},
+              {key:'qcCompleteTime', label:'质检完成时间'},
+              {key:'waitingMins',    label:'等待(分)', num:true}
+            ], key, 'waitingMins', doRender);
+          }
+          html += '<div style="font-size:11px;font-weight:600;color:#374151;margin:10px 0 4px;">收货差异（' + diffList.length + ' 条）</div>';
+          if (diffList.length === 0) {
+            html += '<p style="color:#10b981;font-size:12px;">✅ 无差异</p>';
+          } else {
+            // 计算合计行数据（排序不影响合计，预先算好）
+            var totalPurchase = 0, totalRecv = 0, totalDiff = 0;
+            diffList.forEach(function(r){ totalPurchase += r.purchaseQty||0; totalRecv += r.recvQty||0; totalDiff += r.diffQty||0; });
+            var totalCls = totalDiff > 0 ? 'color:#ef4444' : totalDiff < 0 ? 'color:#f59e0b' : 'color:#6b7280';
+            var totalSign = totalDiff > 0 ? '+' : '';
+            html += renderInbTable('inb-diff-tbl', diffList, [
+              {key:'supplierName', label:'供应商'},
+              {key:'skuName',      label:'商品名称'},
+              {key:'purchaseQty',  label:'采购', num:true},
+              {key:'recvQty',      label:'实收', num:true},
+              {key:'diffQty',      label:'差异', num:true,
+               style: function(r){ return r.diffQty > 0 ? 'color:#ef4444' : 'color:#f59e0b'; }}
+            ], 'recv_diff', 'diffQty', doRender);
+            // 在表格后追加合计行（插入 DOM 后）
+            setTimeout(function(){
+              var tbl = document.getElementById('inb-diff-tbl');
+              if (!tbl) return;
+              var foot = document.createElement('tfoot');
+              foot.innerHTML = '<tr style="font-weight:600;background:#f3f4f6;border-top:2px solid #d1d5db;">' +
+                '<td colspan="2" style="text-align:right;padding-right:8px;">合计</td>' +
+                '<td>' + totalPurchase + '</td><td>' + totalRecv + '</td>' +
+                '<td style="' + totalCls + '">' + totalSign + totalDiff + '</td></tr>';
+              tbl.appendChild(foot);
+            }, 60);
+          }
+
+        } else if (key === 'putaway') {
+          // ── 未上架明细（可排序） ──
+          var items = (currentData && currentData.inbound && currentData.inbound.putaway
+            ? currentData.inbound.putaway.details : null) || [];
+          if (!items.length) {
+            html = '<p class="modal-empty">✅ 暂无未上架采购单</p>';
+          } else {
+            // 预先计算派生字段
+            items.forEach(function(x){
+              x._pendingPcs = (x.hopePcs||0) - (x.putPcs||0);
+              x._pendingSku = (x.hopeSku||0) - (x.putSku||0);
+            });
+            html = renderInbTable('inb-putaway-tbl', items, [
+              {key:'poNo',        label:'采购单号'},
+              {key:'hopeSku',     label:'应上架SKU数', num:true},
+              {key:'putSku',      label:'已上架SKU数', num:true},
+              {key:'hopePcs',     label:'应上架数量', num:true},
+              {key:'putPcs',      label:'已上架数量', num:true},
+              {key:'_pendingPcs', label:'未上架数量', num:true, style:'color:#ef4444;font-weight:600'}
+            ], key, '_pendingPcs', doRender);
+          }
         }
-        // Part2: 收货差异
-        html += `<div style="font-size:11px;font-weight:600;color:#374151;margin:10px 0 4px;">收货差异（${diffList.length} 条）</div>`;
-        if (diffList.length === 0) {
-          html += '<p style="color:#10b981;font-size:12px;">✅ 无差异</p>';
-        } else {
-          html += `<table class="modal-table"><thead><tr><th>供应商</th><th>商品名称</th><th>采购</th><th>实收</th><th>差异</th></tr></thead><tbody>`;
-          let totalPurchase = 0, totalRecv = 0, totalDiff = 0;
-          diffList.forEach(r => {
-            const cls = r.diffQty > 0 ? 'color:#ef4444' : 'color:#f59e0b';
-            const sign = r.diffQty > 0 ? '+' : '';
-            html += `<tr><td>${r.supplierName||'--'}</td><td>${r.skuName||'--'}</td><td>${r.purchaseQty??'--'}</td><td>${r.recvQty??'--'}</td><td style="${cls}">${sign}${r.diffQty??'--'}</td></tr>`;
-            totalPurchase += r.purchaseQty || 0;
-            totalRecv += r.recvQty || 0;
-            totalDiff += r.diffQty || 0;
-          });
-          const totalCls = totalDiff > 0 ? 'color:#ef4444' : totalDiff < 0 ? 'color:#f59e0b' : 'color:#6b7280';
-          const totalSign = totalDiff > 0 ? '+' : '';
-          html += `<tr style="font-weight:600;background:#f3f4f6;border-top:2px solid #d1d5db;"><td colspan="2" style="text-align:right;padding-right:8px;">合计</td><td>${totalPurchase}</td><td>${totalRecv}</td><td style="${totalCls}">${totalSign}${totalDiff}</td></tr>`;
-          html += '</tbody></table>';
-        }
-  } else if (key === 'putaway') {
-        var items = (currentData && currentData.inbound && currentData.inbound.putaway ? currentData.inbound.putaway.details : null) || [];
-        if (!items.length) {
-          html = '<p class="modal-empty">✅ 暂无未上架采购单</p>';
-        } else {
-          html = '<table class="modal-table"><thead><tr><th>采购单号</th><th>应上架SKU数</th><th>已上架SKU数</th><th>应上架数量</th><th>已上架数量</th><th>未上架数量</th></tr></thead><tbody>';
-          items.forEach(function(x) {
-            var pendingPcs = (x.hopePcs||0) - (x.putPcs||0);
-            var pendingSku = (x.hopeSku||0) - (x.putSku||0);
-            html += '<tr><td>' + (x.poNo||'--') + '</td><td>' + (x.hopeSku||0) + '</td><td>' + (x.putSku||0) + '</td><td>' + (x.hopePcs||0) + '</td><td>' + (x.putPcs||0) + '</td><td style="color:#ef4444;font-weight:600">' + pendingPcs + '</td></tr>';
-          });
-          html += '</tbody></table>';
+
+        document.getElementById('modal-body').innerHTML = html;
+        // 预约弹窗：备注字段预填（重渲染后再填一次）
+        if (key === 'unreserved') {
+          list.forEach(function(r){ r._remark = '有采购单无预约'; });
         }
       }
-      document.getElementById('modal-body').innerHTML = html;
+
+      doRender();
       document.getElementById('detail-modal').style.display = 'block';
     }
     window.showInboundDetail = showInboundDetail;

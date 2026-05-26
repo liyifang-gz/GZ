@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-27T06:32:40",
+  "timestamp": "2026-05-27T06:35:38",
   "date": "2026-05-27",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 91,
-      "signed": 19,
-      "waiting": 70
+      "signed": 20,
+      "waiting": 69
     },
     "ontime": {
       "ontime": 0,
-      "early": 19,
+      "early": 20,
       "late": 0,
       "total": 89,
       "rate": 0.0,
-      "early_rate": 21.3,
+      "early_rate": 22.5,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 17,
+      "total": 18,
       "done": 15,
-      "rate": 88.2,
+      "rate": 83.3,
       "pcs_done": 5881,
-      "sign_pcs_done": 9836
+      "sign_pcs_done": 9867
     },
     "qc": {
-      "total": 90,
+      "total": 91,
       "done": 0,
-      "pending": 90,
+      "pending": 91,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 90,
+      "bill_total": 91,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 9836,
+      "pcs_total": 9867,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 90,
+      "sku_total": 91,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 89,
-        "done": 19,
-        "rate": 21.3
+        "done": 20,
+        "rate": 22.5
       },
       "pcs": {
         "total": 25570,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 445,
-        "done": 96,
-        "rate": 21.6
+        "done": 97,
+        "rate": 21.8
       },
       "supplier": {
         "total": 79,
-        "done": 15,
-        "rate": 19.0,
+        "done": 16,
+        "rate": 20.3,
         "detail": {
+          "深圳新泉农产品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "佳农食品（上海）有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -153,10 +157,6 @@
             "done": 0
           },
           "珠海市利源农畜产品有限公司-快乐猴": {
-            "plan": 2,
-            "done": 0
-          },
-          "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴": {
             "plan": 2,
             "done": 0
           }
@@ -438,13 +438,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "深圳新泉农产品有限公司-快乐猴",
-          "billCode": "YY20260526007640",
-          "skuCount": 1,
-          "pcs": 31,
-          "timeSlot": "12:30 - 13:00"
-        },
-        {
           "supplierName": "广东泓润源食品科技有限公司-快乐猴-自营",
           "billCode": "YY20260526007038",
           "skuCount": 5,
@@ -548,9 +541,22 @@
           "skuCount": 1,
           "pcs": 22,
           "timeSlot": "16:30 - 17:00"
+        },
+        {
+          "supplierName": "深圳市山有有农产品开发有限公司-快乐猴",
+          "billCode": "YY20260526005551",
+          "skuCount": 2,
+          "pcs": 14,
+          "timeSlot": "10:00 - 10:30"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "深圳新泉农产品有限公司-快乐猴",
+          "billCode": "YY20260526007640",
+          "signTime": "06:33",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "东莞鲜通天下供应链管理有限公司-快乐猴",
           "billCode": "YY20260526011811",
@@ -1283,6 +1289,14 @@
           "skuName": "佳农 菲律宾超甜蕉 700g",
           "arrivalTime": "14:30",
           "unloadFinishTime": "06:19",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 91,
+          "supplierName": "深圳新泉农产品有限公司-快乐猴",
+          "skuName": "鲜散养130天文昌鸡切块 450g",
+          "arrivalTime": "12:30",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],

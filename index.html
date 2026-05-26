@@ -1111,11 +1111,14 @@ qcBarPct  = skuRate;
 qcVal     = `${fmt(qc.bill_done || qc.done)}/${fmt(qc.bill_total || qc.total)} 单 (${qcRate}%)${qcExtra}`;
 qcBarPct  = qcRate;
 } else {
-// PCS 维度（默认）：直接使用 specialRecvQuantity 汇总的 pcs_done/pcs_total
-const qcPcsDone  = qc.pcs_done  || Math.round(dimTotal * qcRate / 100);
-const qcPcsTotal = qc.pcs_total || dimTotal;
-const qcPcsRate  = qcPcsTotal > 0 ? Math.round(qcPcsDone / qcPcsTotal * 100) : 0;
-qcVal     = `${fmt(qcPcsDone)}/${fmt(qcPcsTotal)} 件 (${qcPcsRate}%)${qcExtra}`;
+// PCS 维度（默认）：直接使用真实字段，禁止推算（2026-05-26 修复）
+// qc.pcs_done / qc.pcs_total 均为后端真实取数，字段缺失时显示 -- 而非静默fallback
+const qcPcsDone  = qc.pcs_done  != null ? qc.pcs_done  : null;
+const qcPcsTotal = qc.pcs_total != null ? qc.pcs_total : null;
+const qcPcsRate  = (qcPcsDone != null && qcPcsTotal > 0) ? Math.round(qcPcsDone / qcPcsTotal * 100) : (qc.pcs_rate || 0);
+qcVal     = qcPcsDone != null
+  ? `${fmt(qcPcsDone)}/${fmt(qcPcsTotal)} 件 (${qcPcsRate}%)${qcExtra}`
+  : `-- 件${qcExtra}`;
 qcBarPct  = qcPcsRate;
 }
       document.getElementById("inb-qc-val").textContent = qcVal;

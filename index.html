@@ -1269,7 +1269,7 @@ putawayBarPct = pcsRate;
       document.getElementById("out-efficiency").textContent = outEff > 0 ? outEff : "--";
 
       // badge
-      if (total > 0 || pickTotal > 0) {
+      if (total > 0 || planPcs > 0) {
         document.getElementById("outbound-badge").textContent = cageRate >= 100 ? "已完成" : "作业中";
         document.getElementById("outbound-badge").className =
           "badge " + (cageRate >= 100 ? "badge-green" : "badge-orange");

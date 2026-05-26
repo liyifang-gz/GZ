@@ -1138,16 +1138,19 @@ let countdownTimer;
       document.getElementById("inb-reserve-bar").style.width = Math.min(reserveBarPct, 100) + "%";
 
       // 签到进度
-      // 口径（2026-05-26 升级）：分子 = sign_pcs_done（本次预约数量真实值），分母 = 已预约PCS（dimDone）不变
-      // sign_pcs_done = 所有已签到预约单 skus[].reserveQuantity 之和（芥末「本次预约数量」字段）
+      // 口径（2026-05-26 升级）：分子 = sign_pcs_done（本次预约数量真实值）
+      // 分母（方案B，2026-05-26 升级）= sign_pcs_total（今日所有预约单reserveQuantity之和，含未签到）
+      //   避免常温/冷冻仓跨日预约导致 sign_pcs_done > dimDone 的显示超100%问题
+      // 若 sign_pcs_total 不存在（旧数据），fallback 到 dimDone（已预约PCS）
       const signPcsDoneInb = unload.sign_pcs_done || 0;
+      const signPcsTotalInb = (unload.sign_pcs_total > 0) ? unload.sign_pcs_total : dimDone;
       let signVal, signBarPct;
       if (inboundDim === "reserve") {
         signVal = `${fmt(reserveDim.done)}/${fmt(reserveDim.total)} 单 (${signRate}%)`;
         signBarPct = signRate;
       } else {
-        signBarPct = dimDone > 0 ? Math.round(signPcsDoneInb / dimDone * 100 * 10) / 10 : 0;
-        signVal = `${fmt(signPcsDoneInb)}/${fmt(dimDone)} ${unit} (${signBarPct}%)`;
+        signBarPct = signPcsTotalInb > 0 ? Math.round(signPcsDoneInb / signPcsTotalInb * 100 * 10) / 10 : 0;
+        signVal = `${fmt(signPcsDoneInb)}/${fmt(signPcsTotalInb)} ${unit} (${signBarPct}%)`;
       }
       document.getElementById("inb-sign-val").textContent = signVal;
       document.getElementById("inb-sign-bar").style.width = Math.min(signBarPct, 100) + "%";
@@ -1539,9 +1542,10 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       const pct1d = (n, d) => d > 0 ? (Math.round((n || 0) / d * 1000) / 10).toFixed(1) : "0.0";
 
       // 签到：分子 = 已签到PCS（unload.sign_pcs_done，本次预约数量真实值，2026-05-26 口径升级）
-      // 分母 = 入库总量 totalPcs
+      // 分母（方案B）= sign_pcs_total（今日所有预约单reserveQuantity之和），fallback 到 totalPcs
       const signPcsDone = unload.sign_pcs_done || 0;
-      document.getElementById("p-sign").textContent = pct1d(signPcsDone, totalPcs) + "%";
+      const signPcsTotal = (unload.sign_pcs_total > 0) ? unload.sign_pcs_total : totalPcs;
+      document.getElementById("p-sign").textContent = pct1d(signPcsDone, signPcsTotal) + "%";
 
       // 卸货：分子 = 已卸货PCS（unload.pcs_done，本次预约数量真实值，2026-05-26 口径升级）
       // 分母 = 入库总量 totalPcs

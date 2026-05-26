@@ -819,11 +819,11 @@ let countdownTimer;
       } else if (type === 'low_load') {
         const list = window._lowLoadContainers || [];
         const all  = window._allContainersDetail || [];
-        title = `装载率明细（未达75%：${list.length} 笼 / 共 ${all.length} 笼）`;
+        title = `已装笼装载率明细（未达75%：${list.length} 笼 / 已装笼 ${all.length} 笼）`;
         if (list.length === 0) {
           html = '<p style="color:#10b981;font-size:12px;">✅ 所有笼装载率均≥75%</p>';
         } else {
-          html += '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">口径：TMS 二级容器装载率（SKU体积/满托容积），仅显示装载率<75%的笼，按装载率升序</div>';
+          html += '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">口径：TMS 已装笼二级容器装载率（SKU体积/满托容积），仅显示未达75%的笼，按装载率升序</div>';
           html += renderInbTable('ob-load-tbl', list, [
             {key:'containerCode', label:'笼号'},
             {key:'poiName',       label:'门店'},

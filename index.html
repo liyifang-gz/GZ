@@ -62,6 +62,18 @@
             outline: none;
         }
         .date-select:focus { border-color: #2196f3; }
+        .warehouse-select {
+            padding: 4px 8px;
+            border: 1px solid #2196f3;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #1565c0;
+            background: #e3f2fd;
+            cursor: pointer;
+            outline: none;
+            font-weight: 600;
+        }
+        .warehouse-select:focus { border-color: #1565c0; }
         .header-left { flex: 1; }
 
         /* 总进度条 */
@@ -358,6 +370,11 @@
         </div>
         <div class="header-right">
             <div style="display:flex;align-items:center;gap:8px;">
+                <select class="warehouse-select" id="warehouse-select">
+                    <option value="gz0210">🧊 GZ0210 冷藏</option>
+                    <option value="gz0211">❄️ GZ0211 冷冻</option>
+                    <option value="gz0209">🌡️ GZ0209 常温</option>
+                </select>
                 <select class="date-select" id="date-select">
                     <option value="">今天</option>
                 </select>
@@ -1581,9 +1598,26 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       renderAttendance(data.attendance);
     }
 
-async function loadData() {
+    // 当前仓配置
+    const WAREHOUSES = {
+      'gz0210': { name: 'GZ0210 冷藏', dataUrl: 'realtime_data.json',         historyDir: 'history/' },
+      'gz0211': { name: 'GZ0211 冷冻', dataUrl: 'gz0211/realtime_data.json',   historyDir: 'gz0211/history/' },
+      'gz0209': { name: 'GZ0209 常温', dataUrl: 'gz0209/realtime_data.json',   historyDir: 'gz0209/history/' },
+    };
+    function getCurrentWarehouse() {
+      const sel = document.getElementById('warehouse-select');
+      return sel ? (sel.value || 'gz0210') : 'gz0210';
+    }
+    function getDataUrl() {
+      return WAREHOUSES[getCurrentWarehouse()].dataUrl;
+    }
+    function getHistoryDir() {
+      return WAREHOUSES[getCurrentWarehouse()].historyDir;
+    }
+
+    async function loadData() {
       try {
-        const resp = await fetch("realtime_data.json?t=" + Date.now());
+        const resp = await fetch(getDataUrl() + "?t=" + Date.now());
           if (!resp.ok) throw new Error("HTTP " + resp.status);
           const data = await resp.json();
           window._latestData = data;
@@ -1603,7 +1637,7 @@ async function loadData() {
 
     async function silentRefresh() {
       try {
-        const resp = await fetch("realtime_data.json?t=" + Date.now());
+        const resp = await fetch(getDataUrl() + "?t=" + Date.now());
         if (!resp.ok) throw new Error("HTTP " + resp.status);
         const data = await resp.json();
         // 只在今天模式下更新数据（历史模式不覆盖）
@@ -1640,6 +1674,7 @@ async function loadData() {
       while (sel.options.length > 1) sel.remove(1);
 
       // 探测过去14天是否有历史快照
+      const histDir = getHistoryDir();
       const today = new Date();
       const availDates = [];
       for (let i = 1; i <= 14; i++) {
@@ -1647,7 +1682,7 @@ async function loadData() {
         d.setDate(today.getDate() - i);
         const dateStr = d.toISOString().slice(0, 10);
         try {
-          const r = await fetch(`history/${dateStr}.json`, { method: 'HEAD' });
+          const r = await fetch(`${histDir}${dateStr}.json`, { method: 'HEAD' });
           if (r.ok) availDates.push(dateStr);
         } catch (e) { /* 文件不存在，跳过 */ }
       }
@@ -1673,7 +1708,7 @@ async function loadData() {
         } else {
           // 加载历史快照
           try {
-            const resp = await fetch(`history/${selectedDate}.json?t=` + Date.now());
+            const resp = await fetch(`${histDir}${selectedDate}.json?t=` + Date.now());
             if (!resp.ok) throw new Error('HTTP ' + resp.status);
             const snap = await resp.json();
             renderData(snap);
@@ -1690,6 +1725,22 @@ async function loadData() {
             alert('历史数据加载失败：' + e.message);
           }
         }
+      });
+    }
+
+    // 仓切换
+    const warehouseSel = document.getElementById('warehouse-select');
+    if (warehouseSel) {
+      warehouseSel.addEventListener('change', function() {
+        // 重置日期到今天
+        const dateSel = document.getElementById('date-select');
+        if (dateSel) dateSel.value = '';
+        // 重置刷新按钮
+        const rb = document.getElementById('refresh-btn');
+        if (rb) { rb.disabled = false; rb.textContent = '🔄 立即刷新'; }
+        // 重新加载
+        loadData();
+        startCountdown();
       });
     }
 

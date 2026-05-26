@@ -1003,17 +1003,19 @@ let countdownTimer;
       document.getElementById("inb-reserve-bar").style.width = Math.min(reserveBarPct, 100) + "%";
 
       // 签到进度
-      // 口径（2026-05-24 用户确认）：签到分母 = 已预约PCS（dimDone），不是总PCS（dimTotal）
-      // 逻辑：没有预约的单不可能签到，用总PCS当分母会压低比率
-      let signVal, signBarPct = signRate;
+      // 口径（2026-05-26 升级）：分子 = sign_pcs_done（本次预约数量真实值），分母 = 已预约PCS（dimDone）不变
+      // sign_pcs_done = 所有已签到预约单 skus[].reserveQuantity 之和（芥末「本次预约数量」字段）
+      const signPcsDoneInb = unload.sign_pcs_done || 0;
+      let signVal, signBarPct;
       if (inboundDim === "reserve") {
         signVal = `${fmt(reserveDim.done)}/${fmt(reserveDim.total)} 单 (${signRate}%)`;
+        signBarPct = signRate;
       } else {
-        const signedQty = Math.round(dimDone * signRate / 100);  // 分母=已预约PCS
-        signVal = `${fmt(signedQty)}/${fmt(dimDone)} ${unit} (${signRate}%)`;
+        signBarPct = dimDone > 0 ? Math.round(signPcsDoneInb / dimDone * 100 * 10) / 10 : 0;
+        signVal = `${fmt(signPcsDoneInb)}/${fmt(dimDone)} ${unit} (${signBarPct}%)`;
       }
       document.getElementById("inb-sign-val").textContent = signVal;
-      document.getElementById("inb-sign-bar").style.width = signBarPct + "%";
+      document.getElementById("inb-sign-bar").style.width = Math.min(signBarPct, 100) + "%";
 
       // 卸货进度（分母=已签到量）
       // 口径：卸货分母 = 已签到PCS（即签到分母×签到率）
@@ -1374,13 +1376,14 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       // 履约进度总览专用：保留一位小数（pct1d）
       const pct1d = (n, d) => d > 0 ? (Math.round((n || 0) / d * 1000) / 10).toFixed(1) : "0.0";
 
-      // 签到：分子 = 已预约PCS（pcs.done，与入库模块签到行分母一致）
-      document.getElementById("p-sign").textContent = pct1d(recvDim.done, totalPcs) + "%";
+      // 签到：分子 = 已签到PCS（unload.sign_pcs_done，本次预约数量真实值，2026-05-26 口径升级）
+      // 分母 = 入库总量 totalPcs
+      const signPcsDone = unload.sign_pcs_done || 0;
+      document.getElementById("p-sign").textContent = pct1d(signPcsDone, totalPcs) + "%";
 
-      // 卸货：分子 = 已签到PCS × 卸货率（与入库模块卸货行分子一致）
-      // signedQty = pcs.done × pcs.rate/100；unloadedQty = signedQty × unload.rate/100
-      const signedPcs = Math.round((recvDim.done || 0) * ((recvDim.rate || 0) / 100));
-      const unloadedPcs = Math.round(signedPcs * ((unload.rate || 0) / 100));
+      // 卸货：分子 = 已卸货PCS（unload.pcs_done，本次预约数量真实值，2026-05-26 口径升级）
+      // 分母 = 入库总量 totalPcs
+      const unloadedPcs = unload.pcs_done || 0;
       document.getElementById("p-unload").textContent = pct1d(unloadedPcs, totalPcs) + "%";
 
       // 质检：分子 = 已质检PCS（qc.pcs_done，与入库模块质检行PCS维度分子一致）

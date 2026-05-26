@@ -1383,12 +1383,11 @@ putawayBarPct = pcsRate;
       const multiRate = kpi.multi_pallet_rate || 0;
       document.getElementById("out-multi-pallet").textContent =
         multiTotal > 0 ? `${multiCount}/${multiTotal} (${multiRate}%)` : "--";
-      // 一品多托有数据时才显示🔍按钮
+      // 有出库计划就显示🔍（明细为空时弹窗显示「暂无」）
       const multiDetails = (kpi.multi_pallet_details || []);
       const multiBtn = document.getElementById("out-multi-pallet-btn");
-      // 有数据：清除 inline opacity（让 CSS hover 规则接管），启用点击；无数据：强制隐藏
       if (multiBtn) {
-        if (multiDetails.length > 0) { multiBtn.style.opacity = ''; multiBtn.style.pointerEvents = 'auto'; }
+        if (planPcs > 0) { multiBtn.style.opacity = ''; multiBtn.style.pointerEvents = 'auto'; }
         else { multiBtn.style.opacity = '0'; multiBtn.style.pointerEvents = 'none'; }
       }
       window._multiPalletDetails = multiDetails;
@@ -1402,12 +1401,12 @@ putawayBarPct = pcsRate;
       const parseRatePct = s => parseFloat((s||'').replace('%','')) || 0;
       document.getElementById("out-load-rate-unloaded").style.color = parseRatePct(loadRateUnloaded) > 0 && parseRatePct(loadRateUnloaded) < 60 ? '#ff9966' : '#4caf50';
       document.getElementById("out-load-rate-loaded").style.color   = parseRatePct(loadRateLoaded)   > 0 && parseRatePct(loadRateLoaded)   < 60 ? '#ff9966' : '#4caf50';
-      // 已装笼有数据时显示🔍按钮（不管有没有<75%）
+      // 有出库计划就显示装载率🔍（无已装笼时弹窗显示「暂无」）
       const lowLoadContainers = (kpi.low_load_containers || []);
       const allContainersDetail = (kpi.all_containers_detail || []);
       const loadBtn = document.getElementById("out-load-rate-btn");
       if (loadBtn) {
-        if (allContainersDetail.length > 0) { loadBtn.style.opacity = ''; loadBtn.style.pointerEvents = 'auto'; }
+        if (planPcs > 0) { loadBtn.style.opacity = ''; loadBtn.style.pointerEvents = 'auto'; }
         else { loadBtn.style.opacity = '0'; loadBtn.style.pointerEvents = 'none'; }
       }
       window._lowLoadContainers = lowLoadContainers;

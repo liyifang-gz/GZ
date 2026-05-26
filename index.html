@@ -823,7 +823,7 @@ let countdownTimer;
         if (list.length === 0 && all.length === 0) {
           html = '<p style="color:#888;font-size:12px;">⏳ 暂无已装笼数据，装笼完成后展示</p>';
         } else if (list.length === 0) {
-          html = '<p style="color:#10b981;font-size:12px;">✅ 所有已装笼装载率均≥75%</p>';
+          html = '<p style="color:#10b981;font-size:12px;">✅ 已装笼中暂没有低于75%装载率的明细</p>';
         } else {
           html += '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">口径：TMS 已装笼二级容器装载率（SKU体积/满托容积），仅显示未达75%的笼，按装载率升序</div>';
           html += renderInbTable('ob-load-tbl', list, [

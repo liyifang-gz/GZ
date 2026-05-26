@@ -1111,10 +1111,12 @@ qcBarPct  = skuRate;
 qcVal     = `${fmt(qc.bill_done || qc.done)}/${fmt(qc.bill_total || qc.total)} 单 (${qcRate}%)${qcExtra}`;
 qcBarPct  = qcRate;
 } else {
-// PCS 维度（默认）：直接使用真实字段，禁止推算（2026-05-26 修复）
-// qc.pcs_done / qc.pcs_total 均为后端真实取数，字段缺失时显示 -- 而非静默fallback
-const qcPcsDone  = qc.pcs_done  != null ? qc.pcs_done  : null;
-const qcPcsTotal = qc.pcs_total != null ? qc.pcs_total : null;
+// PCS 维度（默认）：分子用合格量 pcs_passed（2026-05-26 用户确认）
+// 逻辑：货到→质检→合格→收货，质检行应显示合格量，与收货量对齐
+// qc.pcs_passed = status=2 AND result=5（合格）的 specialRecvQuantity 之和
+// qc.pcs_total  = 有效质检任务总量（排除status=3/9）
+const qcPcsDone  = qc.pcs_passed != null ? qc.pcs_passed : null;  // 合格量
+const qcPcsTotal = qc.pcs_total  != null ? qc.pcs_total  : null;
 const qcPcsRate  = (qcPcsDone != null && qcPcsTotal > 0) ? Math.round(qcPcsDone / qcPcsTotal * 100) : (qc.pcs_rate || 0);
 qcVal     = qcPcsDone != null
   ? `${fmt(qcPcsDone)}/${fmt(qcPcsTotal)} 件 (${qcPcsRate}%)${qcExtra}`
@@ -1457,8 +1459,8 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       const unloadedPcs = unload.pcs_done || 0;
       document.getElementById("p-unload").textContent = pct1d(unloadedPcs, totalPcs) + "%";
 
-      // 质检：分子 = 已质检PCS（qc.pcs_done，与入库模块质检行PCS维度分子一致）
-      document.getElementById("p-qc").textContent = pct1d(qc.pcs_done || 0, totalPcs) + "%";
+      // 质检：分子 = 合格PCS（qc.pcs_passed，2026-05-26 用户确认，与入库模块质检行一致）
+      document.getElementById("p-qc").textContent = pct1d(qc.pcs_passed || 0, totalPcs) + "%";
 
       // 收货：分子 = 实收PCS（pcs.recv_done，与入库模块收货行分子一致）
       document.getElementById("p-recv").textContent = pct1d(recvDim.recv_done, totalPcs) + "%";

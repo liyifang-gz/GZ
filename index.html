@@ -1677,7 +1677,9 @@ async function loadData() {
             const rb = document.getElementById('refresh-btn');
             if (rb) { rb.disabled = true; rb.textContent = '历史模式'; }
             const ut = document.getElementById('update-time');
-            if (ut) ut.textContent = '历史快照 ' + selectedDate;
+            // 显示日期+时间（取快照里的 timestamp，格式 YYYY-MM-DD HH:MM）
+            const snapTs = snap.timestamp ? snap.timestamp.slice(0, 16).replace('T', ' ') : selectedDate;
+            if (ut) ut.textContent = '历史快照 ' + snapTs;
           } catch (e) {
             alert('历史数据加载失败：' + e.message);
           }

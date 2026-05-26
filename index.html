@@ -714,7 +714,7 @@ let countdownTimer;
       let data = currentData;
       if (!data) {
         try {
-          const resp = await fetch('realtime_data.json?t=' + Date.now());
+          const resp = await fetch(getDataUrl() + '?t=' + Date.now(), {cache: 'no-store'});
           data = await resp.json();
           currentData = data;
         } catch(e) {
@@ -1617,7 +1617,7 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
 
     async function loadData() {
       try {
-        const resp = await fetch(getDataUrl() + "?t=" + Date.now());
+        const resp = await fetch(getDataUrl() + "?t=" + Date.now(), {cache: "no-store"});
           if (!resp.ok) {
             const wh = getCurrentWarehouse();
             if (wh !== 'gz0210' && resp.status === 404) {
@@ -1645,7 +1645,7 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
 
     async function silentRefresh() {
       try {
-        const resp = await fetch(getDataUrl() + "?t=" + Date.now());
+        const resp = await fetch(getDataUrl() + "?t=" + Date.now(), {cache: "no-store"});
         if (!resp.ok) throw new Error("HTTP " + resp.status);
         const data = await resp.json();
         // 只在今天模式下更新数据（历史模式不覆盖）
@@ -1716,7 +1716,7 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
         } else {
           // 加载历史快照
           try {
-            const resp = await fetch(`${histDir}${selectedDate}.json?t=` + Date.now());
+            const resp = await fetch(`${histDir}${selectedDate}.json?t=` + Date.now(), {cache: "no-store"});
             if (!resp.ok) throw new Error('HTTP ' + resp.status);
             const snap = await resp.json();
             renderData(snap);

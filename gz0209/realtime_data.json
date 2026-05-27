@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-27T15:12:26",
+  "timestamp": "2026-05-27T15:15:26",
   "date": "2026-05-27",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 10,
-      "signed": 8,
-      "waiting": 1
+      "signed": 9,
+      "waiting": 0
     },
     "ontime": {
       "ontime": 3,
-      "early": 5,
+      "early": 6,
       "late": 0,
       "total": 9,
       "rate": 33.3,
-      "early_rate": 55.6,
+      "early_rate": 66.7,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 6,
+      "total": 7,
       "done": 4,
-      "rate": 66.7,
+      "rate": 57.1,
       "pcs_done": 28500,
-      "sign_pcs_done": 46890
+      "sign_pcs_done": 46950
     },
     "qc": {
-      "total": 5,
+      "total": 6,
       "done": 1,
-      "pending": 4,
+      "pending": 5,
       "passed": 1,
       "rejected": 0,
-      "rate": 20.0,
+      "rate": 16.7,
       "bill_done": 1,
-      "bill_total": 5,
+      "bill_total": 6,
       "pcs_done": 120,
       "pcs_passed": 120,
-      "pcs_total": 18510,
+      "pcs_total": 18570,
       "pcs_rejected": 0,
       "pcs_rate": 0.6,
       "sku_done": 1,
-      "sku_total": 5,
-      "sku_rate": 20.0
+      "sku_total": 6,
+      "sku_rate": 16.7
     },
     "putaway": {
       "total": 8164,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 9,
-        "done": 8,
-        "rate": 88.9
+        "done": 9,
+        "rate": 100.0
       },
       "pcs": {
         "total": 15364,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 30,
-        "done": 29,
-        "rate": 96.7
+        "done": 30,
+        "rate": 100.0
       },
       "supplier": {
         "total": 6,
-        "done": 5,
-        "rate": 83.3,
+        "done": 6,
+        "rate": 100.0,
         "detail": {
+          "三全食品股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "汇成（深圳）食品科技有限公司-快乐猴": {
             "plan": 3,
             "done": 3
@@ -99,10 +103,6 @@
           "东莞市天骏生物科技有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "三全食品股份有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -118,16 +118,14 @@
           "poStatus": "部分收货"
         }
       ],
-      "unsigned": [
+      "unsigned": [],
+      "unloading": [
         {
           "supplierName": "三全食品股份有限公司-快乐猴",
           "billCode": "YY20260526006655",
-          "skuCount": 1,
-          "pcs": 60,
-          "timeSlot": "15:30 - 16:00"
-        }
-      ],
-      "unloading": [
+          "signTime": "15:14",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "东莞市赢卓商贸有限公司-快乐猴-自营",
           "billCode": "YY20260526010162",
@@ -173,6 +171,14 @@
           "arrivalTime": "14:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "skuName": "三全 大黄米八宝五色杂粮粽 200g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -180,7 +186,7 @@
           "supplierName": "湖北良品铺子电子商务有限公司-快乐猴-自营",
           "skuName": "良品铺子 荟裳坚果礼盒  1.668kg",
           "completeTime": "14:36",
-          "waitingMins": 36
+          "waitingMins": 39
         }
       ],
       "qc_recv_pending": [],
@@ -852,10 +858,10 @@
       }
     ],
     "seeding": {
-      "not_started": 72,
+      "not_started": 71,
       "in_progress": 2,
-      "done": 221,
-      "total": 295,
+      "done": 225,
+      "total": 298,
       "status": "ok"
     }
   },

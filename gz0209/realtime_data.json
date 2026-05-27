@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-27T08:30:30",
+  "timestamp": "2026-05-27T08:34:02",
   "date": "2026-05-27",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 10,
-      "signed": 1,
-      "waiting": 8
+      "signed": 2,
+      "waiting": 7
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 2,
       "late": 0,
       "total": 9,
       "rate": 0.0,
-      "early_rate": 11.1,
+      "early_rate": 22.2,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 1,
-      "rate": 100.0,
+      "rate": 50.0,
       "pcs_done": 3600,
-      "sign_pcs_done": 3600
+      "sign_pcs_done": 17640
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 14040,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 8164,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 9,
-        "done": 1,
-        "rate": 11.1
+        "done": 2,
+        "rate": 22.2
       },
       "pcs": {
         "total": 15364,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 30,
-        "done": 2,
-        "rate": 6.7
+        "done": 3,
+        "rate": 10.0
       },
       "supplier": {
         "total": 6,
-        "done": 1,
-        "rate": 16.7,
+        "done": 2,
+        "rate": 33.3,
         "detail": {
+          "广东绿番茄供应链管理有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "东莞市天骏生物科技有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -97,10 +101,6 @@
             "done": 0
           },
           "湖北良品铺子电子商务有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
-          "广东绿番茄供应链管理有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
           }
@@ -167,17 +167,26 @@
           "skuCount": 1,
           "pcs": 120,
           "timeSlot": "15:00 - 15:30"
-        },
+        }
+      ],
+      "unloading": [
         {
           "supplierName": "广东绿番茄供应链管理有限公司-快乐猴-自营",
           "billCode": "YY20260522008008",
-          "skuCount": 1,
-          "pcs": 14040,
-          "timeSlot": "11:00 - 14:00"
+          "signTime": "08:32",
+          "status": "已签到未卸货"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "广东绿番茄供应链管理有限公司-快乐猴-自营",
+          "skuName": "泰象苏打水325ml 泰国进口",
+          "arrivalTime": "11:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [

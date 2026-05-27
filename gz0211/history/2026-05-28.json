@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-05-28T06:29:09",
+  "timestamp": "2026-05-28T06:33:05",
   "date": "2026-05-28",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
-      "total": 0,
+      "total": 3,
       "signed": 0,
-      "waiting": 0
+      "waiting": 3
     },
     "ontime": {
       "ontime": 0,
       "early": 0,
       "late": 0,
-      "total": 0,
-      "rate": 0,
-      "early_rate": 0,
-      "late_rate": 0
+      "total": 3,
+      "rate": 0.0,
+      "early_rate": 0.0,
+      "late_rate": 0.0
     },
     "reserve_progress": {
-      "po_total": 0,
-      "po_reserved": 0,
-      "rate": 0,
+      "po_total": 1,
+      "po_reserved": 1,
+      "rate": 100.0,
       "po_data_ok": true
     },
     "unload": {
@@ -59,32 +59,63 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 0,
+        "total": 3,
         "done": 0,
-        "rate": 0
+        "rate": 0.0
       },
       "pcs": {
-        "total": 0,
-        "done": 0,
-        "rate": 0,
-        "recv_done": 0,
-        "recv_rate": 0
+        "total": 15,
+        "done": 15,
+        "rate": 100.0,
+        "recv_done": 15,
+        "recv_rate": 100.0
       },
       "sku": {
-        "total": 0,
+        "total": 6,
         "done": 0,
-        "rate": 0
+        "rate": 0.0
       },
       "supplier": {
-        "total": 0,
+        "total": 2,
         "done": 0,
-        "rate": 0,
-        "detail": {}
+        "rate": 0.0,
+        "detail": {
+          "济南高贝食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 0
+          },
+          "上海大江通泰食品有限公司-快乐猴": {
+            "plan": 2,
+            "done": 0
+          }
+        }
       }
     },
     "details": {
       "unreserved": [],
-      "unsigned": [],
+      "unsigned": [
+        {
+          "supplierName": "济南高贝食品有限公司-快乐猴",
+          "billCode": "YY20260526003821",
+          "skuCount": 2,
+          "pcs": 900,
+          "timeSlot": "11:30 - 12:00"
+        },
+        {
+          "supplierName": "上海大江通泰食品有限公司-快乐猴",
+          "billCode": "YY20260519003282",
+          "skuCount": 2,
+          "pcs": 1015,
+          "timeSlot": "16:00 - 16:30"
+        },
+        {
+          "supplierName": "上海大江通泰食品有限公司-快乐猴",
+          "billCode": "YY20260519003282",
+          "skuCount": 2,
+          "pcs": 1015,
+          "timeSlot": "16:00 - 16:30"
+        }
+      ],
       "unloading": [],
       "qc_pending": [],
       "recv_pending": [],
@@ -95,9 +126,9 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 0.0,
-      "efficiency_formula": "0 PCS / 0 人",
-      "inbound_schedule": 0
+      "efficiency": 2.1,
+      "efficiency_formula": "15 PCS / 7 人",
+      "inbound_schedule": 7
     }
   },
   "outbound": {
@@ -148,7 +179,7 @@
       "low_load_containers": [],
       "all_containers_detail": [],
       "outbound_efficiency": 0.0,
-      "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)"
+      "outbound_efficiency_formula": "0 PCS / 7 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
@@ -216,22 +247,22 @@
     "status": "ok"
   },
   "attendance": {
-    "total_inservice": 0,
-    "schedule": 0,
-    "attendance": 0,
-    "rate": 0,
+    "total_inservice": 15,
+    "schedule": 15,
+    "attendance": 15,
+    "rate": 100.0,
     "by_job": {
       "N拣播员": {
-        "inservice": 0,
-        "schedule": 0,
-        "attendance": 0,
-        "rate": 0
+        "inservice": 7,
+        "schedule": 7,
+        "attendance": 7,
+        "rate": 100.0
       },
       "N冷藏收退": {
-        "inservice": 0,
-        "schedule": 0,
-        "attendance": 0,
-        "rate": 0
+        "inservice": 7,
+        "schedule": 7,
+        "attendance": 7,
+        "rate": 100.0
       },
       "N库维": {
         "inservice": 0,
@@ -240,19 +271,27 @@
         "rate": 0
       },
       "N物资": {
-        "inservice": 0,
-        "schedule": 0,
-        "attendance": 0,
-        "rate": 0
+        "inservice": 1,
+        "schedule": 1,
+        "attendance": 1,
+        "rate": 100.0
       }
     },
-    "by_pos_total": {},
-    "by_pos_scheduled": {},
+    "by_pos_total": {
+      "N冷藏收退": 7,
+      "N冷藏拣播员": 7,
+      "N冷藏物资": 1
+    },
+    "by_pos_scheduled": {
+      "N冷藏收退": 7,
+      "N冷藏拣播员": 7,
+      "N冷藏物资": 1
+    },
     "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS / 0 人",
+    "efficiency_formula": "0 PCS / 15 人",
     "outbound_efficiency": 0.0,
-    "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)",
-    "inbound_efficiency_workers": 0,
+    "outbound_efficiency_formula": "0 PCS / 7 人(拣播员)",
+    "inbound_efficiency_workers": 7,
     "status": "ok"
   }
 }

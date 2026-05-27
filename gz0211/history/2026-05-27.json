@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-27T14:19:18",
+  "timestamp": "2026-05-27T14:22:18",
   "date": "2026-05-27",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 4,
-      "signed": 1,
-      "waiting": 3
+      "signed": 2,
+      "waiting": 2
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 2,
       "late": 0,
       "total": 4,
       "rate": 0.0,
-      "early_rate": 25.0,
+      "early_rate": 50.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 300
+      "sign_pcs_done": 600
     },
     "qc": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "pending": 0,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 300,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 2,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 41,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 4,
-        "done": 1,
-        "rate": 25.0
+        "done": 2,
+        "rate": 50.0
       },
       "pcs": {
         "total": 421,
@@ -72,21 +72,21 @@
       },
       "sku": {
         "total": 5,
-        "done": 1,
-        "rate": 20.0
+        "done": 3,
+        "rate": 60.0
       },
       "supplier": {
         "total": 2,
-        "done": 1,
-        "rate": 50.0,
+        "done": 2,
+        "rate": 100.0,
         "detail": {
+          "三全食品股份有限公司-快乐猴": {
+            "plan": 3,
+            "done": 1
+          },
           "杭州一起闯荡科技有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "三全食品股份有限公司-快乐猴": {
-            "plan": 3,
-            "done": 0
           }
         }
       }
@@ -107,16 +107,15 @@
           "skuCount": 1,
           "pcs": 80,
           "timeSlot": "16:00 - 16:30"
-        },
-        {
-          "supplierName": "三全食品股份有限公司-快乐猴",
-          "billCode": "YY20260526006510",
-          "skuCount": 2,
-          "pcs": 300,
-          "timeSlot": "16:00 - 16:30"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "billCode": "YY20260526006510",
+          "signTime": "14:22",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
           "billCode": "YY20260521002852",
@@ -124,7 +123,24 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "skuName": "三全龙舟粽板栗猪肉粽750g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "skuName": "三全 龙舟粽网兜豆沙粽 455g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [],
@@ -275,9 +291,9 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 98,
-      "in_progress": 6,
-      "done": 142,
+      "not_started": 94,
+      "in_progress": 4,
+      "done": 148,
       "total": 246,
       "status": "ok"
     }

@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-05-27T11:15:18",
+  "timestamp": "2026-05-27T11:18:20",
   "date": "2026-05-27",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 10,
-      "signed": 2,
-      "waiting": 7
+      "signed": 5,
+      "waiting": 4
     },
     "ontime": {
-      "ontime": 0,
+      "ontime": 3,
       "early": 2,
       "late": 0,
       "total": 9,
-      "rate": 0.0,
+      "rate": 33.3,
       "early_rate": 22.2,
       "late_rate": 0.0
     },
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 3,
       "done": 2,
-      "rate": 100.0,
+      "rate": 66.7,
       "pcs_done": 17640,
-      "sign_pcs_done": 17640
+      "sign_pcs_done": 28380
     },
     "qc": {
-      "total": 0,
+      "total": 7,
       "done": 0,
-      "pending": 0,
+      "pending": 7,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 7,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 10740,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 5,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 8164,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 9,
-        "done": 2,
-        "rate": 22.2
+        "done": 5,
+        "rate": 55.6
       },
       "pcs": {
         "total": 15364,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 30,
-        "done": 3,
-        "rate": 10.0
+        "done": 24,
+        "rate": 80.0
       },
       "supplier": {
         "total": 6,
-        "done": 2,
-        "rate": 33.3,
+        "done": 3,
+        "rate": 50.0,
         "detail": {
+          "汇成（深圳）食品科技有限公司-快乐猴": {
+            "plan": 3,
+            "done": 3
+          },
           "广东绿番茄供应链管理有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -94,10 +98,6 @@
           },
           "三全食品股份有限公司-快乐猴": {
             "plan": 1,
-            "done": 0
-          },
-          "汇成（深圳）食品科技有限公司-快乐猴": {
-            "plan": 3,
             "done": 0
           },
           "湖北良品铺子电子商务有限公司-快乐猴-自营": {
@@ -134,27 +134,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "汇成（深圳）食品科技有限公司-快乐猴",
-          "billCode": "YY20260526001351",
-          "skuCount": 7,
-          "pcs": 10740,
-          "timeSlot": "09:30 - 16:00"
-        },
-        {
-          "supplierName": "汇成（深圳）食品科技有限公司-快乐猴",
-          "billCode": "YY20260526001351",
-          "skuCount": 7,
-          "pcs": 10740,
-          "timeSlot": "09:30 - 16:00"
-        },
-        {
-          "supplierName": "汇成（深圳）食品科技有限公司-快乐猴",
-          "billCode": "YY20260526001351",
-          "skuCount": 7,
-          "pcs": 10740,
-          "timeSlot": "09:30 - 16:00"
-        },
-        {
           "supplierName": "东莞市赢卓商贸有限公司-快乐猴-自营",
           "billCode": "YY20260524001989",
           "skuCount": 2,
@@ -169,8 +148,84 @@
           "timeSlot": "15:00 - 15:30"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "汇成（深圳）食品科技有限公司-快乐猴",
+          "billCode": "YY20260526001351",
+          "signTime": "11:17",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "汇成（深圳）食品科技有限公司-快乐猴",
+          "billCode": "YY20260526001351",
+          "signTime": "11:17",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "汇成（深圳）食品科技有限公司-快乐猴",
+          "billCode": "YY20260526001351",
+          "signTime": "11:17",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "汇成（深圳）食品科技有限公司-快乐猴",
+          "skuName": "元气森林 好自在红枣枸杞水 500ml",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "汇成（深圳）食品科技有限公司-快乐猴",
+          "skuName": "元气森林白桃味气泡水480ml",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "汇成（深圳）食品科技有限公司-快乐猴",
+          "skuName": "元气森林白桃味气泡水480ml",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "汇成（深圳）食品科技有限公司-快乐猴",
+          "skuName": "元气森林 红豆薏米水 500ml",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "汇成（深圳）食品科技有限公司-快乐猴",
+          "skuName": "元气森林 柠檬味冰茶冰爆饮料 900ml",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "汇成（深圳）食品科技有限公司-快乐猴",
+          "skuName": "元气森林 好自在红枣枸杞水 500ml",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "汇成（深圳）食品科技有限公司-快乐猴",
+          "skuName": "元气森林 白桃茉莉味冰茶 900ml",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [
@@ -575,10 +630,10 @@
       }
     ],
     "seeding": {
-      "not_started": 127,
+      "not_started": 134,
       "in_progress": 0,
       "done": 0,
-      "total": 127,
+      "total": 134,
       "status": "ok"
     }
   },

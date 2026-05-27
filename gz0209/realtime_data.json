@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-27T14:33:58",
+  "timestamp": "2026-05-27T14:36:59",
   "date": "2026-05-27",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 5,
-      "done": 0,
-      "pending": 5,
-      "passed": 0,
+      "done": 1,
+      "pending": 4,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 20.0,
+      "bill_done": 1,
       "bill_total": 5,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 120,
+      "pcs_passed": 120,
       "pcs_total": 18510,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 0.6,
+      "sku_done": 1,
       "sku_total": 5,
-      "sku_rate": 0.0
+      "sku_rate": 20.0
     },
     "putaway": {
       "total": 8164,
@@ -173,17 +173,16 @@
           "arrivalTime": "14:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
-        },
-        {
-          "seq": 5,
-          "supplierName": "湖北良品铺子电子商务有限公司-快乐猴-自营",
-          "skuName": "良品铺子 荟裳坚果礼盒  1.668kg",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "14:18",
-          "statusLabel": "待质检"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "湖北良品铺子电子商务有限公司-快乐猴-自营",
+          "skuName": "良品铺子 荟裳坚果礼盒  1.668kg",
+          "completeTime": "14:36",
+          "waitingMins": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [
         {
@@ -823,10 +822,10 @@
       }
     ],
     "seeding": {
-      "not_started": 70,
-      "in_progress": 2,
-      "done": 174,
-      "total": 246,
+      "not_started": 72,
+      "in_progress": 3,
+      "done": 176,
+      "total": 251,
       "status": "ok"
     }
   },

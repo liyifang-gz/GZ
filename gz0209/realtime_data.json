@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-05-28T12:40:09",
+  "timestamp": "2026-05-28T12:46:09",
   "date": "2026-05-28",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 18,
-      "signed": 4,
-      "waiting": 7
+      "signed": 5,
+      "waiting": 6
     },
     "ontime": {
       "ontime": 0,
       "early": 4,
-      "late": 0,
+      "late": 1,
       "total": 11,
       "rate": 0.0,
       "early_rate": 36.4,
-      "late_rate": 0.0
+      "late_rate": 9.1
     },
     "reserve_progress": {
       "po_total": 15,
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 4,
+      "total": 5,
       "done": 4,
-      "rate": 100.0,
+      "rate": 80.0,
       "pcs_done": 2274,
-      "sign_pcs_done": 2274
+      "sign_pcs_done": 2324
     },
     "qc": {
-      "total": 2,
+      "total": 5,
       "done": 2,
-      "pending": 0,
+      "pending": 3,
       "passed": 2,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 40.0,
       "bill_done": 2,
-      "bill_total": 2,
+      "bill_total": 5,
       "pcs_done": 1074,
       "pcs_passed": 1074,
-      "pcs_total": 1074,
+      "pcs_total": 1124,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 95.6,
       "sku_done": 2,
-      "sku_total": 2,
-      "sku_rate": 100.0
+      "sku_total": 5,
+      "sku_rate": 40.0
     },
     "putaway": {
       "total": 26538,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 11,
-        "done": 4,
-        "rate": 36.4
+        "done": 5,
+        "rate": 45.5
       },
       "pcs": {
         "total": 34794,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 18,
-        "done": 4,
-        "rate": 22.2
+        "done": 7,
+        "rate": 38.9
       },
       "supplier": {
         "total": 11,
-        "done": 4,
-        "rate": 36.4,
+        "done": 5,
+        "rate": 45.5,
         "detail": {
+          "江华九恒数码科技有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "福建省星玛食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -91,10 +95,6 @@
           "安徽汉邦日化有限公司": {
             "plan": 1,
             "done": 1
-          },
-          "江华九恒数码科技有限公司": {
-            "plan": 1,
-            "done": 0
           },
           "湖南智能供应链管理有限公司-快乐猴": {
             "plan": 1,
@@ -164,13 +164,6 @@
       ],
       "unsigned": [
         {
-          "supplierName": "江华九恒数码科技有限公司",
-          "billCode": "YY20260528002725",
-          "skuCount": 3,
-          "pcs": 50,
-          "timeSlot": "11:30 - 12:00"
-        },
-        {
           "supplierName": "福建省美巧乐食品有限公司",
           "billCode": "YY20260526002674",
           "skuCount": 1,
@@ -213,20 +206,52 @@
           "timeSlot": "15:00 - 16:00"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "江华九恒数码科技有限公司",
+          "billCode": "YY20260528002725",
+          "signTime": "12:46",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "江华九恒数码科技有限公司",
+          "skuName": "快乐猴-黄色出清标签",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "江华九恒数码科技有限公司",
+          "skuName": "快乐猴-6050机用标签",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "江华九恒数码科技有限公司",
+          "skuName": "快乐猴-6050便携机标签",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "漳州含羞草食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 厚切芒果干 100g",
           "completeTime": "12:03",
-          "waitingMins": 37
+          "waitingMins": 43
         },
         {
           "supplierName": "福建省星玛食品有限公司-快乐猴",
           "skuName": "快乐猴 香葱苏打饼干 500g",
           "completeTime": "12:05",
-          "waitingMins": 35
+          "waitingMins": 41
         }
       ],
       "qc_recv_pending": [],
@@ -270,7 +295,7 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 6983,
+      "pcs_total": 7103,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -310,7 +335,7 @@
         "pick_rate": 0,
         "sow_rate": 0,
         "cage_rate": 0.0,
-        "sowed_picked": 6983
+        "sowed_picked": 7103
       },
       "sku": {
         "total": 0,
@@ -325,8 +350,8 @@
     "status": "ok",
     "pool": {
       "plan_pcs": 7569,
-      "alloc_pcs": 6983,
-      "alloc_rate": 92.3,
+      "alloc_pcs": 7103,
+      "alloc_rate": 93.8,
       "picked_pcs": 0,
       "sow_pcs": 0,
       "sow_rate": 0.0,
@@ -344,39 +369,39 @@
         "orderNo": "DB2026052885506",
         "skuNum": 165,
         "planQty": 3092,
-        "allocQty": 2854,
-        "unallocQty": 238
+        "allocQty": 2914,
+        "unallocQty": 178
       },
       {
         "receiverName": "快乐猴-南海国昌广场店-023",
         "orderNo": "DB2026052885479",
         "skuNum": 113,
         "planQty": 2233,
-        "allocQty": 2051,
-        "unallocQty": 182
+        "allocQty": 2075,
+        "unallocQty": 158
       },
       {
         "receiverName": "快乐猴-禅城东方广场店-018",
         "orderNo": "DB2026052885460",
         "skuNum": 121,
         "planQty": 2044,
-        "allocQty": 1878,
-        "unallocQty": 166
+        "allocQty": 1914,
+        "unallocQty": 130
       }
     ],
     "seeding": {
-      "not_started": 102,
-      "in_progress": 5,
-      "done": 42,
-      "total": 149,
+      "not_started": 95,
+      "in_progress": 2,
+      "done": 54,
+      "total": 151,
       "status": "ok"
     }
   },
   "plan": {
     "total_orders": 8,
     "total_pcs": 7569,
-    "alloc_pcs": 6983,
-    "alloc_rate": 92.3,
+    "alloc_pcs": 7103,
+    "alloc_rate": 93.8,
     "picked_pcs": 0,
     "sow_pcs": 0,
     "sow_rate": 0.0,
@@ -395,24 +420,24 @@
         "orderNo": "DB2026052885506",
         "skuNum": 165,
         "planQty": 3092,
-        "allocQty": 2854,
-        "unallocQty": 238
+        "allocQty": 2914,
+        "unallocQty": 178
       },
       {
         "receiverName": "快乐猴-南海国昌广场店-023",
         "orderNo": "DB2026052885479",
         "skuNum": 113,
         "planQty": 2233,
-        "allocQty": 2051,
-        "unallocQty": 182
+        "allocQty": 2075,
+        "unallocQty": 158
       },
       {
         "receiverName": "快乐猴-禅城东方广场店-018",
         "orderNo": "DB2026052885460",
         "skuNum": 121,
         "planQty": 2044,
-        "allocQty": 1878,
-        "unallocQty": 166
+        "allocQty": 1914,
+        "unallocQty": 130
       }
     ],
     "status": "ok"

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-29T03:26:28",
+  "timestamp": "2026-05-29T03:29:27",
   "date": "2026-05-29",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 83,
-      "signed": 5,
-      "waiting": 76
+      "signed": 7,
+      "waiting": 74
     },
     "ontime": {
       "ontime": 0,
-      "early": 5,
+      "early": 7,
       "late": 0,
       "total": 81,
       "rate": 0.0,
-      "early_rate": 6.2,
+      "early_rate": 8.6,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 5,
+      "total": 7,
       "done": 5,
-      "rate": 100.0,
+      "rate": 71.4,
       "pcs_done": 4328,
-      "sign_pcs_done": 4328
+      "sign_pcs_done": 4433
     },
     "qc": {
-      "total": 25,
+      "total": 27,
       "done": 0,
-      "pending": 25,
+      "pending": 27,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 25,
+      "bill_total": 27,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 4328,
+      "pcs_total": 4433,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 25,
+      "sku_total": 27,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 81,
-        "done": 5,
-        "rate": 6.2
+        "done": 7,
+        "rate": 8.6
       },
       "pcs": {
         "total": 31728,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 405,
-        "done": 25,
-        "rate": 6.2
+        "done": 27,
+        "rate": 6.7
       },
       "supplier": {
         "total": 74,
-        "done": 5,
-        "rate": 6.8,
+        "done": 6,
+        "rate": 8.1,
         "detail": {
+          "广州光明乳品有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "广州华富东农产品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -153,10 +157,6 @@
             "done": 0
           },
           "北京沃千里贸易有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "广州市广懋鲜农业发展有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -417,13 +417,6 @@
           "timeSlot": "16:30 - 17:00"
         },
         {
-          "supplierName": "广州光明乳品有限公司-快乐猴",
-          "billCode": "YY20260528006050",
-          "skuCount": 1,
-          "pcs": 96,
-          "timeSlot": "04:00 - 04:30"
-        },
-        {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
           "billCode": "YY20260528005713",
           "skuCount": 2,
@@ -548,9 +541,29 @@
           "skuCount": 12,
           "pcs": 261,
           "timeSlot": "17:30 - 18:00"
+        },
+        {
+          "supplierName": "广东英农食品有限公司-快乐猴",
+          "billCode": "YY20260528004523",
+          "skuCount": 6,
+          "pcs": 45,
+          "timeSlot": "10:00 - 10:30"
         }
       ],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "billCode": "YY20260521009176",
+          "signTime": "03:29",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "billCode": "YY20260528006050",
+          "signTime": "03:29",
+          "status": "已签到未卸货"
+        }
+      ],
       "qc_pending": [
         {
           "seq": 1,
@@ -750,6 +763,22 @@
           "skuName": "金银水果玉米 600g",
           "arrivalTime": "13:00",
           "unloadFinishTime": "01:52",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 26,
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "skuName": "光明新鲜牧场高品质牛乳950ml",
+          "arrivalTime": "04:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 27,
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "skuName": "光明 红枣益生菌风味发酵乳 100g*8",
+          "arrivalTime": "04:00",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],

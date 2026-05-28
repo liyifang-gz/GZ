@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-28T14:17:23",
+  "timestamp": "2026-05-28T14:20:24",
   "date": "2026-05-28",
   "warehouse": "GZ0210",
   "inbound": {
@@ -80,15 +80,15 @@
         "done": 9,
         "rate": 81.8,
         "detail": {
+          "武汉绿禾堂食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "安徽汉邦日化有限公司": {
             "plan": 1,
             "done": 1
           },
           "湖南世容纸塑包装有限公司": {
-            "plan": 1,
-            "done": 1
-          },
-          "武汉绿禾堂食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -209,13 +209,13 @@
           "supplierName": "漳州含羞草食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 厚切芒果干 100g",
           "completeTime": "12:03",
-          "waitingMins": 134
+          "waitingMins": 137
         },
         {
           "supplierName": "福建省星玛食品有限公司-快乐猴",
           "skuName": "快乐猴 香葱苏打饼干 500g",
           "completeTime": "12:05",
-          "waitingMins": 132
+          "waitingMins": 135
         }
       ],
       "qc_recv_pending": [],
@@ -250,29 +250,24 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 164,
-      "done": 44,
-      "rate": 26.8
-    },
-    "caging": {
-      "total": 164,
-      "done": 44,
-      "rate": 26.8,
-      "pcs_done": 0,
-      "pcs_total": 3224,
-      "pcs_rate": 0.0
-    },
-    "packing": {
-      "total": 8,
+      "total": 74,
       "done": 0,
       "rate": 0.0
     },
+    "caging": {
+      "total": 74,
+      "done": 0,
+      "rate": 0.0,
+      "pcs_done": 1432,
+      "pcs_total": 3224,
+      "pcs_rate": 44.4
+    },
+    "packing": {
+      "total": 8,
+      "done": 2,
+      "rate": 25.0
+    },
     "uncaged_details": [
-      {
-        "containerCode": "RQ-28-03-0900214",
-        "poiName": "南海国昌广场店",
-        "qty": 841
-      },
       {
         "containerCode": "RQ-28-03-0900092",
         "poiName": "禅城东方广场店",
@@ -306,11 +301,6 @@
     ],
     "unpacked_details": [
       {
-        "containerCode": "RQ-28-03-0900214",
-        "poiName": "南海国昌广场店",
-        "qty": 841
-      },
-      {
         "containerCode": "RQ-28-03-0900092",
         "poiName": "禅城东方广场店",
         "qty": 626
@@ -342,16 +332,16 @@
       }
     ],
     "shipping": {
-      "total": 3224,
+      "total": 1792,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 1,
-      "multi_pallet_total": 163,
-      "multi_pallet_rate": 0.6,
-      "load_rate": 18.3,
+      "multi_pallet_total": 73,
+      "multi_pallet_rate": 1.4,
+      "load_rate": 0.0,
       "multi_pallet_details": [
         {
           "skuName": "农夫山泉东方树叶茉莉花茶原味茶饮料900ml",
@@ -364,18 +354,17 @@
           "qty": 60
         }
       ],
-      "load_rate_unloaded": "53.11%",
-      "load_rate_loaded": "--",
+      "load_rate_unloaded": "49.86%",
+      "load_rate_loaded": "62.87%",
       "load_rate_shipped": "--",
-      "low_load_containers": [],
-      "all_containers_detail": [
+      "low_load_containers": [
         {
-          "containerCode": "RQ-28-03-0900218",
-          "poiName": "南海国昌广场店",
-          "loadingRate": "112.10%",
-          "loadingRateVal": 112.1,
-          "skuPcs": "292.000",
-          "skuVolume": "2.220",
+          "containerCode": "RQ-28-03-0900007",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "55.82%",
+          "loadingRateVal": 55.82,
+          "skuPcs": "591.000",
+          "skuVolume": "1.105",
           "planOutTime": "05-28 20:00"
         },
         {
@@ -385,6 +374,26 @@
           "loadingRateVal": 69.91,
           "skuPcs": "841.000",
           "skuVolume": "1.384",
+          "planOutTime": "05-28 20:00"
+        }
+      ],
+      "all_containers_detail": [
+        {
+          "containerCode": "RQ-28-03-0900214",
+          "poiName": "南海国昌广场店",
+          "loadingRate": "69.91%",
+          "loadingRateVal": 69.91,
+          "skuPcs": "841.000",
+          "skuVolume": "1.384",
+          "planOutTime": "05-28 20:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900218",
+          "poiName": "南海国昌广场店",
+          "loadingRate": "112.10%",
+          "loadingRateVal": 112.1,
+          "skuPcs": "292.000",
+          "skuVolume": "2.220",
           "planOutTime": "05-28 20:00"
         },
         {
@@ -442,29 +451,29 @@
           "planOutTime": "05-28 20:00"
         }
       ],
-      "outbound_efficiency": 460.6,
-      "outbound_efficiency_formula": "3224 PCS / 7 人(拣播员)"
+      "outbound_efficiency": 256.0,
+      "outbound_efficiency_formula": "1792 PCS / 7 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 3224,
+        "total": 1792,
         "picked": 0,
         "sowed": 0,
-        "caged": 591,
-        "not_caged": 2633,
+        "caged": 0,
+        "not_caged": 1792,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 0.0,
+        "cage_rate": 44.4,
         "sowed_picked": 3224
       },
       "sku": {
-        "total": 164,
+        "total": 74,
         "picked": 0,
         "sowed": 0,
-        "caged": 44,
+        "caged": 0,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 26.8
+        "cage_rate": 0.0
       }
     },
     "status": "ok",
@@ -485,10 +494,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 75,
-      "in_progress": 0,
-      "done": 124,
-      "total": 199,
+      "not_started": 72,
+      "in_progress": 3,
+      "done": 125,
+      "total": 200,
       "status": "ok"
     }
   },
@@ -553,10 +562,10 @@
       "N冷藏拣播员": 7,
       "N冷藏物资": 1
     },
-    "predicted_efficiency": 214.9,
-    "efficiency_formula": "3224 PCS / 15 人",
-    "outbound_efficiency": 460.6,
-    "outbound_efficiency_formula": "3224 PCS / 7 人(拣播员)",
+    "predicted_efficiency": 119.5,
+    "efficiency_formula": "1792 PCS / 15 人",
+    "outbound_efficiency": 256.0,
+    "outbound_efficiency_formula": "1792 PCS / 7 人(拣播员)",
     "inbound_efficiency_workers": 7,
     "status": "ok"
   }

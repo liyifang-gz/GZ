@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-28T13:22:06",
+  "timestamp": "2026-05-28T13:28:04",
   "date": "2026-05-28",
   "warehouse": "GZ0210",
   "inbound": {
@@ -204,7 +204,8 @@
           "supplierName": "广州市润江贸易有限公司-快乐猴",
           "billCode": "YY20260521002263",
           "signTime": "13:17",
-          "status": "已签到未卸货"
+          "unloadStartTime": "13:27",
+          "status": "卸货中"
         }
       ],
       "qc_pending": [
@@ -230,13 +231,13 @@
           "supplierName": "漳州含羞草食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 厚切芒果干 100g",
           "completeTime": "12:03",
-          "waitingMins": 79
+          "waitingMins": 85
         },
         {
           "supplierName": "福建省星玛食品有限公司-快乐猴",
           "skuName": "快乐猴 香葱苏打饼干 500g",
           "completeTime": "12:05",
-          "waitingMins": 77
+          "waitingMins": 83
         }
       ],
       "qc_recv_pending": [],
@@ -271,20 +272,20 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 19,
+      "total": 22,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 19,
+      "total": 22,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 377,
+      "pcs_total": 424,
       "pcs_rate": 0.0
     },
     "packing": {
-      "total": 3,
+      "total": 4,
       "done": 0,
       "rate": 0.0
     },
@@ -303,6 +304,11 @@
         "containerCode": "RQ-28-03-0900020",
         "poiName": "禅城东方广场店",
         "qty": 66
+      },
+      {
+        "containerCode": "RQ-28-03-0900214",
+        "poiName": "南海国昌广场店",
+        "qty": 47
       }
     ],
     "unpacked_details": [
@@ -320,21 +326,26 @@
         "containerCode": "RQ-28-03-0900020",
         "poiName": "禅城东方广场店",
         "qty": 66
+      },
+      {
+        "containerCode": "RQ-28-03-0900214",
+        "poiName": "南海国昌广场店",
+        "qty": 47
       }
     ],
     "shipping": {
-      "total": 377,
+      "total": 424,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 19,
+      "multi_pallet_total": 22,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "49.48%",
+      "load_rate_unloaded": "38.23%",
       "load_rate_loaded": "--",
       "load_rate_shipped": "--",
       "low_load_containers": [],
@@ -346,6 +357,15 @@
           "loadingRateVal": 103.01,
           "skuPcs": "134.000",
           "skuVolume": "2.040",
+          "planOutTime": "05-28 20:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900214",
+          "poiName": "南海国昌广场店",
+          "loadingRate": "4.50%",
+          "loadingRateVal": 4.5,
+          "skuPcs": "47.000",
+          "skuVolume": "0.089",
           "planOutTime": "05-28 20:00"
         },
         {
@@ -367,23 +387,23 @@
           "planOutTime": "05-28 20:00"
         }
       ],
-      "outbound_efficiency": 53.9,
-      "outbound_efficiency_formula": "377 PCS / 7 人(拣播员)"
+      "outbound_efficiency": 60.6,
+      "outbound_efficiency_formula": "424 PCS / 7 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 377,
+        "total": 424,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 377,
+        "not_caged": 424,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
         "cage_rate": 0.0,
-        "sowed_picked": 377
+        "sowed_picked": 424
       },
       "sku": {
-        "total": 19,
+        "total": 22,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -397,9 +417,9 @@
       "plan_pcs": 7569,
       "alloc_pcs": 7569,
       "alloc_rate": 100.0,
-      "picked_pcs": 377,
-      "sow_pcs": 377,
-      "sow_rate": 5.0,
+      "picked_pcs": 424,
+      "sow_pcs": 424,
+      "sow_rate": 5.6,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 405,
@@ -410,10 +430,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 86,
-      "in_progress": 0,
-      "done": 90,
-      "total": 176,
+      "not_started": 85,
+      "in_progress": 1,
+      "done": 93,
+      "total": 179,
       "status": "ok"
     }
   },
@@ -422,9 +442,9 @@
     "total_pcs": 7569,
     "alloc_pcs": 7569,
     "alloc_rate": 100.0,
-    "picked_pcs": 377,
-    "sow_pcs": 377,
-    "sow_rate": 5.0,
+    "picked_pcs": 424,
+    "sow_pcs": 424,
+    "sow_rate": 5.6,
     "ship_pcs": 0,
     "ship_rate": 0,
     "sku_plan": 405,
@@ -478,10 +498,10 @@
       "N冷藏拣播员": 7,
       "N冷藏物资": 1
     },
-    "predicted_efficiency": 25.1,
-    "efficiency_formula": "377 PCS / 15 人",
-    "outbound_efficiency": 53.9,
-    "outbound_efficiency_formula": "377 PCS / 7 人(拣播员)",
+    "predicted_efficiency": 28.3,
+    "efficiency_formula": "424 PCS / 15 人",
+    "outbound_efficiency": 60.6,
+    "outbound_efficiency_formula": "424 PCS / 7 人(拣播员)",
     "inbound_efficiency_workers": 7,
     "status": "ok"
   }

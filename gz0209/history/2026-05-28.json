@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-28T10:10:43",
+  "timestamp": "2026-05-28T10:16:42",
   "date": "2026-05-28",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 1,
-      "waiting": 9
+      "signed": 2,
+      "waiting": 8
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 2,
       "late": 0,
       "total": 10,
       "rate": 0.0,
-      "early_rate": 10.0,
+      "early_rate": 20.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 1,
-      "rate": 100.0,
+      "rate": 50.0,
       "pcs_done": 600,
-      "sign_pcs_done": 600
+      "sign_pcs_done": 1050
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 450,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 26088,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 10,
-        "done": 1,
-        "rate": 10.0
+        "done": 2,
+        "rate": 20.0
       },
       "pcs": {
         "total": 34794,
@@ -72,23 +72,23 @@
       },
       "sku": {
         "total": 15,
-        "done": 1,
-        "rate": 6.7
+        "done": 2,
+        "rate": 13.3
       },
       "supplier": {
         "total": 10,
-        "done": 1,
-        "rate": 10.0,
+        "done": 2,
+        "rate": 20.0,
         "detail": {
+          "漳州含羞草食品有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "湖南智能供应链管理有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
           "福建省星玛食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "漳州含羞草食品有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
           },
@@ -167,13 +167,6 @@
           "timeSlot": "14:30 - 15:00"
         },
         {
-          "supplierName": "漳州含羞草食品有限公司-快乐猴-自营",
-          "billCode": "YY20260526003956",
-          "skuCount": 1,
-          "pcs": 450,
-          "timeSlot": "14:30 - 15:00"
-        },
-        {
           "supplierName": "福建省美巧乐食品有限公司",
           "billCode": "YY20260526002674",
           "skuCount": 1,
@@ -223,8 +216,24 @@
           "timeSlot": "15:00 - 16:00"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "漳州含羞草食品有限公司-快乐猴-自营",
+          "billCode": "YY20260526003956",
+          "signTime": "10:16",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "漳州含羞草食品有限公司-快乐猴-自营",
+          "skuName": "快乐猴 厚切芒果干 100g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [
@@ -337,10 +346,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 79,
+      "not_started": 82,
       "in_progress": 0,
       "done": 0,
-      "total": 79,
+      "total": 82,
       "status": "ok"
     }
   },

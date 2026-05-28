@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-28T15:27:14",
+  "timestamp": "2026-05-28T15:30:15",
   "date": "2026-05-28",
   "warehouse": "GZ0210",
   "inbound": {
@@ -80,6 +80,10 @@
         "done": 10,
         "rate": 90.9,
         "detail": {
+          "江华九恒数码科技有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "山东阳春酒业有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -109,10 +113,6 @@
             "done": 1
           },
           "广州市润江贸易有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "江华九恒数码科技有限公司": {
             "plan": 1,
             "done": 1
           },
@@ -202,13 +202,13 @@
           "supplierName": "漳州含羞草食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 厚切芒果干 100g",
           "completeTime": "12:03",
-          "waitingMins": 204
+          "waitingMins": 207
         },
         {
           "supplierName": "福建省星玛食品有限公司-快乐猴",
           "skuName": "快乐猴 香葱苏打饼干 500g",
           "completeTime": "12:05",
-          "waitingMins": 202
+          "waitingMins": 205
         }
       ],
       "qc_recv_pending": [],
@@ -243,12 +243,12 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 98,
+      "total": 100,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 98,
+      "total": 100,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 2414,
@@ -256,9 +256,9 @@
       "pcs_rate": 52.3
     },
     "packing": {
-      "total": 8,
+      "total": 9,
       "done": 3,
-      "rate": 37.5
+      "rate": 33.3
     },
     "uncaged_details": [
       {
@@ -289,7 +289,7 @@
       {
         "containerCode": "RQ-28-03-0900096",
         "poiName": "禅城东方广场店",
-        "qty": 28
+        "qty": 120
       }
     ],
     "unpacked_details": [
@@ -321,21 +321,31 @@
       {
         "containerCode": "RQ-28-03-0900096",
         "poiName": "禅城东方广场店",
-        "qty": 28
+        "qty": 120
       }
     ],
     "shipping": {
-      "total": 2106,
+      "total": 2198,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
-      "multi_pallet_count": 1,
-      "multi_pallet_total": 97,
-      "multi_pallet_rate": 1.0,
+      "multi_pallet_count": 2,
+      "multi_pallet_total": 98,
+      "multi_pallet_rate": 2.0,
       "load_rate": 0.0,
       "multi_pallet_details": [
+        {
+          "skuName": "快乐猴 柔韧面巾纸3层 100抽*20",
+          "poiName": "禅城东方广场店",
+          "containerCount": 2,
+          "containerCodes": [
+            "RQ-28-03-0900003",
+            "RQ-28-03-0900096"
+          ],
+          "qty": 12
+        },
         {
           "skuName": "娃哈哈饮用水596ml*12瓶",
           "poiName": "禅城东方广场店",
@@ -347,7 +357,7 @@
           "qty": 31
         }
       ],
-      "load_rate_unloaded": "76.27%",
+      "load_rate_unloaded": "67.32%",
       "load_rate_loaded": "71.45%",
       "load_rate_shipped": "--",
       "low_load_containers": [
@@ -426,6 +436,15 @@
           "planOutTime": "05-28 20:00"
         },
         {
+          "containerCode": "RQ-28-03-0900096",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "22.57%",
+          "loadingRateVal": 22.57,
+          "skuPcs": "120.000",
+          "skuVolume": "0.447",
+          "planOutTime": "05-28 20:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900105",
           "poiName": "番禺建华汇店",
           "loadingRate": "88.62%",
@@ -444,23 +463,23 @@
           "planOutTime": "05-28 20:00"
         }
       ],
-      "outbound_efficiency": 300.9,
-      "outbound_efficiency_formula": "2106 PCS / 7 人(拣播员)"
+      "outbound_efficiency": 314.0,
+      "outbound_efficiency_formula": "2198 PCS / 7 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 2106,
+        "total": 2198,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 2106,
+        "not_caged": 2198,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
         "cage_rate": 52.3,
         "sowed_picked": 4612
       },
       "sku": {
-        "total": 98,
+        "total": 100,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -487,10 +506,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 75,
-      "in_progress": 4,
-      "done": 170,
-      "total": 249,
+      "not_started": 76,
+      "in_progress": 2,
+      "done": 174,
+      "total": 252,
       "status": "ok"
     }
   },
@@ -555,10 +574,10 @@
       "N冷藏拣播员": 7,
       "N冷藏物资": 1
     },
-    "predicted_efficiency": 140.4,
-    "efficiency_formula": "2106 PCS / 15 人",
-    "outbound_efficiency": 300.9,
-    "outbound_efficiency_formula": "2106 PCS / 7 人(拣播员)",
+    "predicted_efficiency": 146.5,
+    "efficiency_formula": "2198 PCS / 15 人",
+    "outbound_efficiency": 314.0,
+    "outbound_efficiency_formula": "2198 PCS / 7 人(拣播员)",
     "inbound_efficiency_workers": 7,
     "status": "ok"
   }

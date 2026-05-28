@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-28T09:19:10",
+  "timestamp": "2026-05-28T09:23:30",
   "date": "2026-05-28",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 3,
-      "signed": 0,
-      "waiting": 3
+      "signed": 1,
+      "waiting": 2
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 3,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 33.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 900
     },
     "qc": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "pending": 0,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 900,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 2,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 0,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 3,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 33.3
       },
       "pcs": {
         "total": 15,
@@ -72,17 +72,17 @@
       },
       "sku": {
         "total": 6,
-        "done": 0,
-        "rate": 0.0
+        "done": 2,
+        "rate": 33.3
       },
       "supplier": {
         "total": 2,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 50.0,
         "detail": {
           "济南高贝食品有限公司-快乐猴": {
             "plan": 1,
-            "done": 0
+            "done": 1
           },
           "上海大江通泰食品有限公司-快乐猴": {
             "plan": 2,
@@ -94,13 +94,6 @@
     "details": {
       "unreserved": [],
       "unsigned": [
-        {
-          "supplierName": "济南高贝食品有限公司-快乐猴",
-          "billCode": "YY20260526003821",
-          "skuCount": 2,
-          "pcs": 900,
-          "timeSlot": "11:30 - 12:00"
-        },
         {
           "supplierName": "上海大江通泰食品有限公司-快乐猴",
           "billCode": "YY20260519003282",
@@ -116,8 +109,32 @@
           "timeSlot": "16:00 - 16:30"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "济南高贝食品有限公司-快乐猴",
+          "billCode": "YY20260526003821",
+          "signTime": "09:21",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "济南高贝食品有限公司-快乐猴",
+          "skuName": "(原料)快乐猴 猫山王榴莲大福 130g",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "济南高贝食品有限公司-快乐猴",
+          "skuName": "(原料)快乐猴 低糖牛奶绿豆糕(糕点) 180g",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [],
@@ -221,10 +238,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 33,
+      "not_started": 34,
       "in_progress": 0,
       "done": 0,
-      "total": 33,
+      "total": 34,
       "status": "ok"
     }
   },

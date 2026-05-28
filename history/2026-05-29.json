@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-29T00:59:27",
+  "timestamp": "2026-05-29T01:02:27",
   "date": "2026-05-29",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 83,
-      "signed": 0,
-      "waiting": 81
+      "signed": 1,
+      "waiting": 80
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 81,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 1.2,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 762
     },
     "qc": {
-      "total": 0,
+      "total": 4,
       "done": 0,
-      "pending": 0,
+      "pending": 4,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 4,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 762,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 4,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 0,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 81,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 1.2
       },
       "pcs": {
         "total": 31728,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 405,
-        "done": 0,
-        "rate": 0.0
+        "done": 4,
+        "rate": 1.0
       },
       "supplier": {
         "total": 74,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 1.4,
         "detail": {
+          "久泰现代农业有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "上海全苗蔬农业科技发展有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -97,10 +101,6 @@
             "done": 0
           },
           "广东省邻优家农业发展有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "久泰现代农业有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -233,13 +233,6 @@
           "skuCount": 12,
           "pcs": 949,
           "timeSlot": "10:30 - 11:00"
-        },
-        {
-          "supplierName": "久泰现代农业有限公司-快乐猴",
-          "billCode": "YY20260528011453",
-          "skuCount": 4,
-          "pcs": 762,
-          "timeSlot": "13:30 - 14:30"
         },
         {
           "supplierName": "金乡县英格电子商务有限公司-快乐猴",
@@ -548,10 +541,57 @@
           "skuCount": 7,
           "pcs": 286,
           "timeSlot": "16:30 - 17:00"
+        },
+        {
+          "supplierName": "东莞市荣心食品有限公司-快乐猴",
+          "billCode": "YY20260528004679",
+          "skuCount": 4,
+          "pcs": 69,
+          "timeSlot": "15:30 - 16:00"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "久泰现代农业有限公司-快乐猴",
+          "billCode": "YY20260528011453",
+          "signTime": "01:00",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "久泰现代农业有限公司-快乐猴",
+          "skuName": "云南沃柑 1.5kg",
+          "arrivalTime": "13:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "久泰现代农业有限公司-快乐猴",
+          "skuName": "白糖罂荔枝 450g",
+          "arrivalTime": "13:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "久泰现代农业有限公司-快乐猴",
+          "skuName": "秭归夏橙 1kg",
+          "arrivalTime": "13:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "久泰现代农业有限公司-快乐猴",
+          "skuName": "妃子笑荔枝 750g",
+          "arrivalTime": "13:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [],

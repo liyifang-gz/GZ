@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-29T06:59:27",
+  "timestamp": "2026-05-29T07:02:27",
   "date": "2026-05-29",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 83,
-      "signed": 21,
-      "waiting": 60
+      "signed": 22,
+      "waiting": 59
     },
     "ontime": {
       "ontime": 0,
-      "early": 21,
+      "early": 22,
       "late": 0,
       "total": 81,
       "rate": 0.0,
-      "early_rate": 25.9,
+      "early_rate": 27.2,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 20,
-      "done": 16,
-      "rate": 80.0,
-      "pcs_done": 6300,
-      "sign_pcs_done": 10674
+      "total": 21,
+      "done": 17,
+      "rate": 81.0,
+      "pcs_done": 6456,
+      "sign_pcs_done": 10810
     },
     "qc": {
-      "total": 94,
-      "done": 0,
+      "total": 97,
+      "done": 3,
       "pending": 94,
-      "passed": 0,
+      "passed": 3,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
-      "bill_total": 94,
-      "pcs_done": 0,
-      "pcs_passed": 0,
-      "pcs_total": 10674,
+      "rate": 3.1,
+      "bill_done": 3,
+      "bill_total": 97,
+      "pcs_done": 10,
+      "pcs_passed": 10,
+      "pcs_total": 10810,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
-      "sku_total": 94,
-      "sku_rate": 0.0
+      "pcs_rate": 0.1,
+      "sku_done": 3,
+      "sku_total": 97,
+      "sku_rate": 3.1
     },
     "putaway": {
       "total": 0,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 81,
-        "done": 21,
-        "rate": 25.9
+        "done": 22,
+        "rate": 27.2
       },
       "pcs": {
         "total": 31728,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 405,
-        "done": 97,
-        "rate": 24.0
+        "done": 100,
+        "rate": 24.7
       },
       "supplier": {
         "total": 74,
-        "done": 17,
-        "rate": 23.0,
+        "done": 18,
+        "rate": 24.3,
         "detail": {
+          "广东燕塘乳业股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "杭州味全食品有限公司广州第一分公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -153,10 +157,6 @@
             "done": 0
           },
           "珠海市利源农畜产品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "北京宏福国际农业科技有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -552,16 +552,11 @@
       ],
       "unloading": [
         {
-          "supplierName": "杭州味全食品有限公司广州第一分公司-快乐猴",
-          "billCode": "YY20260527000310",
-          "signTime": "06:58",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "杭州味全食品有限公司广州第一分公司-快乐猴",
-          "billCode": "YY20260527000310",
-          "signTime": "06:58",
-          "status": "已签到未卸货"
+          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
+          "billCode": "YY20260527005961",
+          "signTime": "07:01",
+          "unloadStartTime": "07:01",
+          "status": "卸货中"
         },
         {
           "supplierName": "深圳市味中王食品有限公司-快乐猴-自营",
@@ -1202,30 +1197,6 @@
         },
         {
           "seq": 78,
-          "supplierName": "东莞千厨食品有限公司-快乐猴",
-          "skuName": "猪耳猪头肉卤味双拼 205g",
-          "arrivalTime": "10:00",
-          "unloadFinishTime": "06:01",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 79,
-          "supplierName": "东莞千厨食品有限公司-快乐猴",
-          "skuName": "手撕酱板鸭 120g",
-          "arrivalTime": "10:00",
-          "unloadFinishTime": "06:01",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 80,
-          "supplierName": "东莞千厨食品有限公司-快乐猴",
-          "skuName": "盐焗鹌鹑蛋 200g",
-          "arrivalTime": "10:00",
-          "unloadFinishTime": "06:01",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 81,
           "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
           "skuName": "香菇青菜包 340g",
           "arrivalTime": "15:00",
@@ -1233,7 +1204,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 82,
+          "seq": 79,
           "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
           "skuName": "手作葱油花卷 360g",
           "arrivalTime": "15:00",
@@ -1241,7 +1212,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 83,
+          "seq": 80,
           "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
           "skuName": "手作肉多多花卷 300g",
           "arrivalTime": "15:00",
@@ -1249,7 +1220,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 84,
+          "seq": 81,
           "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
           "skuName": "韭菜煎饺 240g",
           "arrivalTime": "15:00",
@@ -1257,7 +1228,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 85,
+          "seq": 82,
           "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
           "skuName": "鲜汁肉包 340g",
           "arrivalTime": "15:00",
@@ -1265,7 +1236,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 86,
+          "seq": 83,
           "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
           "skuName": "广式叉烧包 240g",
           "arrivalTime": "15:00",
@@ -1273,7 +1244,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 87,
+          "seq": 84,
           "supplierName": "深圳市味中王食品有限公司-快乐猴-自营",
           "skuName": "潮汕卤水四拼(含蒜蓉醋) 260g+12g",
           "arrivalTime": "09:30",
@@ -1281,7 +1252,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 88,
+          "seq": 85,
           "supplierName": "上海全苗蔬农业科技发展有限公司-快乐猴",
           "skuName": "松花菜半颗   500g",
           "arrivalTime": "13:00",
@@ -1289,7 +1260,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 89,
+          "seq": 86,
           "supplierName": "上海全苗蔬农业科技发展有限公司-快乐猴",
           "skuName": "去根西兰花 400g",
           "arrivalTime": "13:00",
@@ -1297,7 +1268,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 90,
+          "seq": 87,
           "supplierName": "上海全苗蔬农业科技发展有限公司-快乐猴",
           "skuName": "球生菜 400g",
           "arrivalTime": "13:00",
@@ -1305,7 +1276,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 91,
+          "seq": 88,
           "supplierName": "上海全苗蔬农业科技发展有限公司-快乐猴",
           "skuName": "甜杆西兰花苔 300g",
           "arrivalTime": "13:00",
@@ -1313,31 +1284,74 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 92,
+          "seq": 89,
           "supplierName": "杭州味全食品有限公司广州第一分公司-快乐猴",
           "skuName": "味全每日C100%葡萄汁1.6L",
           "arrivalTime": "09:30",
+          "unloadFinishTime": "07:00",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 90,
+          "supplierName": "杭州味全食品有限公司广州第一分公司-快乐猴",
+          "skuName": "味全每日C 桑葚莓桃复合果汁 300ml",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "07:00",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 91,
+          "supplierName": "杭州味全食品有限公司广州第一分公司-快乐猴",
+          "skuName": "味全生牛乳配方草莓牛奶饮品720ml",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "07:00",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 92,
+          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
+          "skuName": "燕塘 无蔗糖老广州风味发酵乳 180g*6",
+          "arrivalTime": "07:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         },
         {
           "seq": 93,
-          "supplierName": "杭州味全食品有限公司广州第一分公司-快乐猴",
-          "skuName": "味全每日C 桑葚莓桃复合果汁 300ml",
-          "arrivalTime": "09:30",
+          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
+          "skuName": "燕塘 青提味老广州风味发酵乳 180g*6",
+          "arrivalTime": "07:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         },
         {
           "seq": 94,
-          "supplierName": "杭州味全食品有限公司广州第一分公司-快乐猴",
-          "skuName": "味全生牛乳配方草莓牛奶饮品720ml",
-          "arrivalTime": "09:30",
+          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
+          "skuName": "燕塘 牛油果味老广州风味发酵乳 180g*6",
+          "arrivalTime": "07:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "skuName": "猪耳猪头肉卤味双拼 205g",
+          "completeTime": "07:00",
+          "waitingMins": 2
+        },
+        {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "skuName": "手撕酱板鸭 120g",
+          "completeTime": "07:02",
+          "waitingMins": 0
+        },
+        {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "skuName": "盐焗鹌鹑蛋 200g",
+          "completeTime": "07:01",
+          "waitingMins": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -1424,21 +1438,2150 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 0,
+      "plan_pcs": 29843,
       "alloc_pcs": 0,
-      "alloc_rate": 0,
+      "alloc_rate": 0.0,
       "picked_pcs": 0,
       "sow_pcs": 0,
       "sow_rate": 0,
       "ship_pcs": 0,
       "ship_rate": 0,
-      "sku_plan": 0,
+      "sku_plan": 1125,
       "sku_alloc": 0,
       "sku_sow": 0,
       "sku_ship": 0,
-      "total_orders": 0
+      "total_orders": 267
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528488329",
+        "skuNum": 23,
+        "planQty": 1036,
+        "allocQty": 0,
+        "unallocQty": 1036
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497577",
+        "skuNum": 10,
+        "planQty": 979,
+        "allocQty": 0,
+        "unallocQty": 979
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528488331",
+        "skuNum": 23,
+        "planQty": 785,
+        "allocQty": 0,
+        "unallocQty": 785
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497464",
+        "skuNum": 10,
+        "planQty": 783,
+        "allocQty": 0,
+        "unallocQty": 783
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497569",
+        "skuNum": 4,
+        "planQty": 781,
+        "allocQty": 0,
+        "unallocQty": 781
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497579",
+        "skuNum": 4,
+        "planQty": 681,
+        "allocQty": 0,
+        "unallocQty": 681
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497575",
+        "skuNum": 12,
+        "planQty": 680,
+        "allocQty": 0,
+        "unallocQty": 680
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528271486",
+        "skuNum": 16,
+        "planQty": 590,
+        "allocQty": 0,
+        "unallocQty": 590
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497466",
+        "skuNum": 4,
+        "planQty": 555,
+        "allocQty": 0,
+        "unallocQty": 555
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528488330",
+        "skuNum": 23,
+        "planQty": 532,
+        "allocQty": 0,
+        "unallocQty": 532
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497505",
+        "skuNum": 10,
+        "planQty": 524,
+        "allocQty": 0,
+        "unallocQty": 524
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497567",
+        "skuNum": 8,
+        "planQty": 484,
+        "allocQty": 0,
+        "unallocQty": 484
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497459",
+        "skuNum": 12,
+        "planQty": 479,
+        "allocQty": 0,
+        "unallocQty": 479
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497503",
+        "skuNum": 4,
+        "planQty": 440,
+        "allocQty": 0,
+        "unallocQty": 440
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497483",
+        "skuNum": 4,
+        "planQty": 438,
+        "allocQty": 0,
+        "unallocQty": 438
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497497",
+        "skuNum": 12,
+        "planQty": 437,
+        "allocQty": 0,
+        "unallocQty": 437
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497580",
+        "skuNum": 3,
+        "planQty": 404,
+        "allocQty": 0,
+        "unallocQty": 404
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497556",
+        "skuNum": 4,
+        "planQty": 393,
+        "allocQty": 0,
+        "unallocQty": 393
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497478",
+        "skuNum": 3,
+        "planQty": 365,
+        "allocQty": 0,
+        "unallocQty": 365
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497562",
+        "skuNum": 6,
+        "planQty": 357,
+        "allocQty": 0,
+        "unallocQty": 357
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497549",
+        "skuNum": 2,
+        "planQty": 350,
+        "allocQty": 0,
+        "unallocQty": 350
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497504",
+        "skuNum": 4,
+        "planQty": 327,
+        "allocQty": 0,
+        "unallocQty": 327
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497564",
+        "skuNum": 10,
+        "planQty": 320,
+        "allocQty": 0,
+        "unallocQty": 320
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497558",
+        "skuNum": 4,
+        "planQty": 317,
+        "allocQty": 0,
+        "unallocQty": 317
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497572",
+        "skuNum": 4,
+        "planQty": 309,
+        "allocQty": 0,
+        "unallocQty": 309
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497451",
+        "skuNum": 4,
+        "planQty": 292,
+        "allocQty": 0,
+        "unallocQty": 292
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528271470",
+        "skuNum": 14,
+        "planQty": 292,
+        "allocQty": 0,
+        "unallocQty": 292
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528271479",
+        "skuNum": 16,
+        "planQty": 279,
+        "allocQty": 0,
+        "unallocQty": 279
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497507",
+        "skuNum": 6,
+        "planQty": 274,
+        "allocQty": 0,
+        "unallocQty": 274
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497526",
+        "skuNum": 2,
+        "planQty": 274,
+        "allocQty": 0,
+        "unallocQty": 274
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497494",
+        "skuNum": 4,
+        "planQty": 259,
+        "allocQty": 0,
+        "unallocQty": 259
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268495",
+        "skuNum": 3,
+        "planQty": 246,
+        "allocQty": 0,
+        "unallocQty": 246
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497475",
+        "skuNum": 2,
+        "planQty": 243,
+        "allocQty": 0,
+        "unallocQty": 243
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497465",
+        "skuNum": 10,
+        "planQty": 241,
+        "allocQty": 0,
+        "unallocQty": 241
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497563",
+        "skuNum": 5,
+        "planQty": 236,
+        "allocQty": 0,
+        "unallocQty": 236
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497481",
+        "skuNum": 4,
+        "planQty": 219,
+        "allocQty": 0,
+        "unallocQty": 219
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497501",
+        "skuNum": 5,
+        "planQty": 219,
+        "allocQty": 0,
+        "unallocQty": 219
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497463",
+        "skuNum": 6,
+        "planQty": 212,
+        "allocQty": 0,
+        "unallocQty": 212
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497550",
+        "skuNum": 1,
+        "planQty": 208,
+        "allocQty": 0,
+        "unallocQty": 208
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528271468",
+        "skuNum": 7,
+        "planQty": 208,
+        "allocQty": 0,
+        "unallocQty": 208
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528382305",
+        "skuNum": 10,
+        "planQty": 206,
+        "allocQty": 0,
+        "unallocQty": 206
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497523",
+        "skuNum": 8,
+        "planQty": 198,
+        "allocQty": 0,
+        "unallocQty": 198
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497516",
+        "skuNum": 2,
+        "planQty": 196,
+        "allocQty": 0,
+        "unallocQty": 196
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497542",
+        "skuNum": 2,
+        "planQty": 192,
+        "allocQty": 0,
+        "unallocQty": 192
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497467",
+        "skuNum": 8,
+        "planQty": 191,
+        "allocQty": 0,
+        "unallocQty": 191
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497566",
+        "skuNum": 5,
+        "planQty": 190,
+        "allocQty": 0,
+        "unallocQty": 190
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497552",
+        "skuNum": 3,
+        "planQty": 184,
+        "allocQty": 0,
+        "unallocQty": 184
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497490",
+        "skuNum": 2,
+        "planQty": 183,
+        "allocQty": 0,
+        "unallocQty": 183
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528271489",
+        "skuNum": 16,
+        "planQty": 183,
+        "allocQty": 0,
+        "unallocQty": 183
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268540",
+        "skuNum": 5,
+        "planQty": 179,
+        "allocQty": 0,
+        "unallocQty": 179
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497502",
+        "skuNum": 10,
+        "planQty": 176,
+        "allocQty": 0,
+        "unallocQty": 176
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497458",
+        "skuNum": 2,
+        "planQty": 175,
+        "allocQty": 0,
+        "unallocQty": 175
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497578",
+        "skuNum": 4,
+        "planQty": 175,
+        "allocQty": 0,
+        "unallocQty": 175
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497544",
+        "skuNum": 3,
+        "planQty": 175,
+        "allocQty": 0,
+        "unallocQty": 175
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497555",
+        "skuNum": 4,
+        "planQty": 168,
+        "allocQty": 0,
+        "unallocQty": 168
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268498",
+        "skuNum": 5,
+        "planQty": 159,
+        "allocQty": 0,
+        "unallocQty": 159
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497581",
+        "skuNum": 2,
+        "planQty": 157,
+        "allocQty": 0,
+        "unallocQty": 157
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528271467",
+        "skuNum": 7,
+        "planQty": 157,
+        "allocQty": 0,
+        "unallocQty": 157
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497557",
+        "skuNum": 7,
+        "planQty": 154,
+        "allocQty": 0,
+        "unallocQty": 154
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528382326",
+        "skuNum": 13,
+        "planQty": 148,
+        "allocQty": 0,
+        "unallocQty": 148
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497570",
+        "skuNum": 3,
+        "planQty": 144,
+        "allocQty": 0,
+        "unallocQty": 144
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497506",
+        "skuNum": 3,
+        "planQty": 140,
+        "allocQty": 0,
+        "unallocQty": 140
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497455",
+        "skuNum": 2,
+        "planQty": 140,
+        "allocQty": 0,
+        "unallocQty": 140
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528382374",
+        "skuNum": 10,
+        "planQty": 140,
+        "allocQty": 0,
+        "unallocQty": 140
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268579",
+        "skuNum": 3,
+        "planQty": 140,
+        "allocQty": 0,
+        "unallocQty": 140
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528271473",
+        "skuNum": 14,
+        "planQty": 138,
+        "allocQty": 0,
+        "unallocQty": 138
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497518",
+        "skuNum": 4,
+        "planQty": 133,
+        "allocQty": 0,
+        "unallocQty": 133
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528271469",
+        "skuNum": 14,
+        "planQty": 130,
+        "allocQty": 0,
+        "unallocQty": 130
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497515",
+        "skuNum": 4,
+        "planQty": 125,
+        "allocQty": 0,
+        "unallocQty": 125
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497474",
+        "skuNum": 4,
+        "planQty": 125,
+        "allocQty": 0,
+        "unallocQty": 125
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268460",
+        "skuNum": 5,
+        "planQty": 125,
+        "allocQty": 0,
+        "unallocQty": 125
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497472",
+        "skuNum": 4,
+        "planQty": 124,
+        "allocQty": 0,
+        "unallocQty": 124
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497565",
+        "skuNum": 2,
+        "planQty": 122,
+        "allocQty": 0,
+        "unallocQty": 122
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497500",
+        "skuNum": 5,
+        "planQty": 121,
+        "allocQty": 0,
+        "unallocQty": 121
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497535",
+        "skuNum": 5,
+        "planQty": 118,
+        "allocQty": 0,
+        "unallocQty": 118
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497513",
+        "skuNum": 2,
+        "planQty": 116,
+        "allocQty": 0,
+        "unallocQty": 116
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497456",
+        "skuNum": 4,
+        "planQty": 115,
+        "allocQty": 0,
+        "unallocQty": 115
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528271480",
+        "skuNum": 7,
+        "planQty": 114,
+        "allocQty": 0,
+        "unallocQty": 114
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497489",
+        "skuNum": 3,
+        "planQty": 110,
+        "allocQty": 0,
+        "unallocQty": 110
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268459",
+        "skuNum": 9,
+        "planQty": 110,
+        "allocQty": 0,
+        "unallocQty": 110
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497519",
+        "skuNum": 4,
+        "planQty": 109,
+        "allocQty": 0,
+        "unallocQty": 109
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528382315",
+        "skuNum": 6,
+        "planQty": 107,
+        "allocQty": 0,
+        "unallocQty": 107
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497457",
+        "skuNum": 3,
+        "planQty": 106,
+        "allocQty": 0,
+        "unallocQty": 106
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497486",
+        "skuNum": 7,
+        "planQty": 105,
+        "allocQty": 0,
+        "unallocQty": 105
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497574",
+        "skuNum": 3,
+        "planQty": 104,
+        "allocQty": 0,
+        "unallocQty": 104
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497548",
+        "skuNum": 2,
+        "planQty": 104,
+        "allocQty": 0,
+        "unallocQty": 104
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497576",
+        "skuNum": 2,
+        "planQty": 103,
+        "allocQty": 0,
+        "unallocQty": 103
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528382319",
+        "skuNum": 10,
+        "planQty": 102,
+        "allocQty": 0,
+        "unallocQty": 102
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268453",
+        "skuNum": 5,
+        "planQty": 98,
+        "allocQty": 0,
+        "unallocQty": 98
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497541",
+        "skuNum": 4,
+        "planQty": 97,
+        "allocQty": 0,
+        "unallocQty": 97
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497452",
+        "skuNum": 2,
+        "planQty": 97,
+        "allocQty": 0,
+        "unallocQty": 97
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497540",
+        "skuNum": 7,
+        "planQty": 96,
+        "allocQty": 0,
+        "unallocQty": 96
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497453",
+        "skuNum": 2,
+        "planQty": 95,
+        "allocQty": 0,
+        "unallocQty": 95
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497462",
+        "skuNum": 5,
+        "planQty": 94,
+        "allocQty": 0,
+        "unallocQty": 94
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497480",
+        "skuNum": 3,
+        "planQty": 92,
+        "allocQty": 0,
+        "unallocQty": 92
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497499",
+        "skuNum": 4,
+        "planQty": 91,
+        "allocQty": 0,
+        "unallocQty": 91
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497470",
+        "skuNum": 2,
+        "planQty": 91,
+        "allocQty": 0,
+        "unallocQty": 91
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497571",
+        "skuNum": 2,
+        "planQty": 90,
+        "allocQty": 0,
+        "unallocQty": 90
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528271466",
+        "skuNum": 7,
+        "planQty": 90,
+        "allocQty": 0,
+        "unallocQty": 90
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497485",
+        "skuNum": 3,
+        "planQty": 89,
+        "allocQty": 0,
+        "unallocQty": 89
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497493",
+        "skuNum": 2,
+        "planQty": 85,
+        "allocQty": 0,
+        "unallocQty": 85
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268501",
+        "skuNum": 6,
+        "planQty": 83,
+        "allocQty": 0,
+        "unallocQty": 83
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497573",
+        "skuNum": 3,
+        "planQty": 81,
+        "allocQty": 0,
+        "unallocQty": 81
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497479",
+        "skuNum": 1,
+        "planQty": 79,
+        "allocQty": 0,
+        "unallocQty": 79
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528271464",
+        "skuNum": 7,
+        "planQty": 79,
+        "allocQty": 0,
+        "unallocQty": 79
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497534",
+        "skuNum": 3,
+        "planQty": 78,
+        "allocQty": 0,
+        "unallocQty": 78
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497450",
+        "skuNum": 2,
+        "planQty": 77,
+        "allocQty": 0,
+        "unallocQty": 77
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497491",
+        "skuNum": 2,
+        "planQty": 75,
+        "allocQty": 0,
+        "unallocQty": 75
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268575",
+        "skuNum": 3,
+        "planQty": 75,
+        "allocQty": 0,
+        "unallocQty": 75
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497509",
+        "skuNum": 2,
+        "planQty": 72,
+        "allocQty": 0,
+        "unallocQty": 72
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB2026052896587",
+        "skuNum": 2,
+        "planQty": 72,
+        "allocQty": 0,
+        "unallocQty": 72
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528382320",
+        "skuNum": 13,
+        "planQty": 71,
+        "allocQty": 0,
+        "unallocQty": 71
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497473",
+        "skuNum": 3,
+        "planQty": 69,
+        "allocQty": 0,
+        "unallocQty": 69
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497454",
+        "skuNum": 1,
+        "planQty": 67,
+        "allocQty": 0,
+        "unallocQty": 67
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497533",
+        "skuNum": 7,
+        "planQty": 66,
+        "allocQty": 0,
+        "unallocQty": 66
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497532",
+        "skuNum": 2,
+        "planQty": 66,
+        "allocQty": 0,
+        "unallocQty": 66
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497568",
+        "skuNum": 1,
+        "planQty": 64,
+        "allocQty": 0,
+        "unallocQty": 64
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497508",
+        "skuNum": 3,
+        "planQty": 63,
+        "allocQty": 0,
+        "unallocQty": 63
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528382318",
+        "skuNum": 6,
+        "planQty": 63,
+        "allocQty": 0,
+        "unallocQty": 63
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268450",
+        "skuNum": 5,
+        "planQty": 61,
+        "allocQty": 0,
+        "unallocQty": 61
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268456",
+        "skuNum": 9,
+        "planQty": 61,
+        "allocQty": 0,
+        "unallocQty": 61
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497460",
+        "skuNum": 2,
+        "planQty": 60,
+        "allocQty": 0,
+        "unallocQty": 60
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497476",
+        "skuNum": 4,
+        "planQty": 60,
+        "allocQty": 0,
+        "unallocQty": 60
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528382311",
+        "skuNum": 8,
+        "planQty": 60,
+        "allocQty": 0,
+        "unallocQty": 60
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497521",
+        "skuNum": 3,
+        "planQty": 59,
+        "allocQty": 0,
+        "unallocQty": 59
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB2026052896573",
+        "skuNum": 2,
+        "planQty": 59,
+        "allocQty": 0,
+        "unallocQty": 59
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268536",
+        "skuNum": 3,
+        "planQty": 58,
+        "allocQty": 0,
+        "unallocQty": 58
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497546",
+        "skuNum": 1,
+        "planQty": 55,
+        "allocQty": 0,
+        "unallocQty": 55
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268496",
+        "skuNum": 3,
+        "planQty": 55,
+        "allocQty": 0,
+        "unallocQty": 55
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497530",
+        "skuNum": 7,
+        "planQty": 52,
+        "allocQty": 0,
+        "unallocQty": 52
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497543",
+        "skuNum": 1,
+        "planQty": 51,
+        "allocQty": 0,
+        "unallocQty": 51
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497477",
+        "skuNum": 7,
+        "planQty": 50,
+        "allocQty": 0,
+        "unallocQty": 50
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528382325",
+        "skuNum": 13,
+        "planQty": 50,
+        "allocQty": 0,
+        "unallocQty": 50
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528271465",
+        "skuNum": 7,
+        "planQty": 50,
+        "allocQty": 0,
+        "unallocQty": 50
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268539",
+        "skuNum": 9,
+        "planQty": 50,
+        "allocQty": 0,
+        "unallocQty": 50
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497488",
+        "skuNum": 2,
+        "planQty": 48,
+        "allocQty": 0,
+        "unallocQty": 48
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528382310",
+        "skuNum": 5,
+        "planQty": 48,
+        "allocQty": 0,
+        "unallocQty": 48
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB2026052896585",
+        "skuNum": 1,
+        "planQty": 48,
+        "allocQty": 0,
+        "unallocQty": 48
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497547",
+        "skuNum": 4,
+        "planQty": 47,
+        "allocQty": 0,
+        "unallocQty": 47
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268581",
+        "skuNum": 9,
+        "planQty": 47,
+        "allocQty": 0,
+        "unallocQty": 47
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268477",
+        "skuNum": 6,
+        "planQty": 47,
+        "allocQty": 0,
+        "unallocQty": 47
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268458",
+        "skuNum": 6,
+        "planQty": 46,
+        "allocQty": 0,
+        "unallocQty": 46
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497559",
+        "skuNum": 2,
+        "planQty": 44,
+        "allocQty": 0,
+        "unallocQty": 44
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268583",
+        "skuNum": 9,
+        "planQty": 43,
+        "allocQty": 0,
+        "unallocQty": 43
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268544",
+        "skuNum": 9,
+        "planQty": 41,
+        "allocQty": 0,
+        "unallocQty": 41
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497527",
+        "skuNum": 4,
+        "planQty": 40,
+        "allocQty": 0,
+        "unallocQty": 40
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497512",
+        "skuNum": 1,
+        "planQty": 40,
+        "allocQty": 0,
+        "unallocQty": 40
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528271471",
+        "skuNum": 1,
+        "planQty": 40,
+        "allocQty": 0,
+        "unallocQty": 40
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268500",
+        "skuNum": 10,
+        "planQty": 40,
+        "allocQty": 0,
+        "unallocQty": 40
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268492",
+        "skuNum": 5,
+        "planQty": 40,
+        "allocQty": 0,
+        "unallocQty": 40
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268502",
+        "skuNum": 5,
+        "planQty": 38,
+        "allocQty": 0,
+        "unallocQty": 38
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB2026052896579",
+        "skuNum": 2,
+        "planQty": 38,
+        "allocQty": 0,
+        "unallocQty": 38
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497484",
+        "skuNum": 1,
+        "planQty": 37,
+        "allocQty": 0,
+        "unallocQty": 37
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497482",
+        "skuNum": 4,
+        "planQty": 36,
+        "allocQty": 0,
+        "unallocQty": 36
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528382287",
+        "skuNum": 6,
+        "planQty": 36,
+        "allocQty": 0,
+        "unallocQty": 36
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB2026052896575",
+        "skuNum": 1,
+        "planQty": 36,
+        "allocQty": 0,
+        "unallocQty": 36
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497514",
+        "skuNum": 1,
+        "planQty": 35,
+        "allocQty": 0,
+        "unallocQty": 35
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497529",
+        "skuNum": 4,
+        "planQty": 34,
+        "allocQty": 0,
+        "unallocQty": 34
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268538",
+        "skuNum": 3,
+        "planQty": 33,
+        "allocQty": 0,
+        "unallocQty": 33
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497561",
+        "skuNum": 1,
+        "planQty": 31,
+        "allocQty": 0,
+        "unallocQty": 31
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528382294",
+        "skuNum": 8,
+        "planQty": 31,
+        "allocQty": 0,
+        "unallocQty": 31
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268455",
+        "skuNum": 3,
+        "planQty": 31,
+        "allocQty": 0,
+        "unallocQty": 31
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497525",
+        "skuNum": 1,
+        "planQty": 30,
+        "allocQty": 0,
+        "unallocQty": 30
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268462",
+        "skuNum": 10,
+        "planQty": 30,
+        "allocQty": 0,
+        "unallocQty": 30
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260525113651",
+        "skuNum": 1,
+        "planQty": 30,
+        "allocQty": 0,
+        "unallocQty": 30
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497487",
+        "skuNum": 2,
+        "planQty": 29,
+        "allocQty": 0,
+        "unallocQty": 29
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497520",
+        "skuNum": 2,
+        "planQty": 29,
+        "allocQty": 0,
+        "unallocQty": 29
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497545",
+        "skuNum": 1,
+        "planQty": 28,
+        "allocQty": 0,
+        "unallocQty": 28
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528382324",
+        "skuNum": 8,
+        "planQty": 27,
+        "allocQty": 0,
+        "unallocQty": 27
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497517",
+        "skuNum": 3,
+        "planQty": 26,
+        "allocQty": 0,
+        "unallocQty": 26
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497471",
+        "skuNum": 1,
+        "planQty": 26,
+        "allocQty": 0,
+        "unallocQty": 26
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268537",
+        "skuNum": 3,
+        "planQty": 26,
+        "allocQty": 0,
+        "unallocQty": 26
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268494",
+        "skuNum": 4,
+        "planQty": 26,
+        "allocQty": 0,
+        "unallocQty": 26
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497522",
+        "skuNum": 2,
+        "planQty": 25,
+        "allocQty": 0,
+        "unallocQty": 25
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497554",
+        "skuNum": 1,
+        "planQty": 25,
+        "allocQty": 0,
+        "unallocQty": 25
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528382300",
+        "skuNum": 2,
+        "planQty": 25,
+        "allocQty": 0,
+        "unallocQty": 25
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268499",
+        "skuNum": 3,
+        "planQty": 25,
+        "allocQty": 0,
+        "unallocQty": 25
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497553",
+        "skuNum": 2,
+        "planQty": 24,
+        "allocQty": 0,
+        "unallocQty": 24
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497560",
+        "skuNum": 1,
+        "planQty": 23,
+        "allocQty": 0,
+        "unallocQty": 23
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268580",
+        "skuNum": 5,
+        "planQty": 23,
+        "allocQty": 0,
+        "unallocQty": 23
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268524",
+        "skuNum": 3,
+        "planQty": 23,
+        "allocQty": 0,
+        "unallocQty": 23
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497461",
+        "skuNum": 3,
+        "planQty": 22,
+        "allocQty": 0,
+        "unallocQty": 22
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528382331",
+        "skuNum": 5,
+        "planQty": 22,
+        "allocQty": 0,
+        "unallocQty": 22
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528382316",
+        "skuNum": 5,
+        "planQty": 22,
+        "allocQty": 0,
+        "unallocQty": 22
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268533",
+        "skuNum": 1,
+        "planQty": 22,
+        "allocQty": 0,
+        "unallocQty": 22
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497528",
+        "skuNum": 2,
+        "planQty": 21,
+        "allocQty": 0,
+        "unallocQty": 21
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497469",
+        "skuNum": 1,
+        "planQty": 21,
+        "allocQty": 0,
+        "unallocQty": 21
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268545",
+        "skuNum": 5,
+        "planQty": 21,
+        "allocQty": 0,
+        "unallocQty": 21
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268454",
+        "skuNum": 10,
+        "planQty": 21,
+        "allocQty": 0,
+        "unallocQty": 21
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268646",
+        "skuNum": 6,
+        "planQty": 20,
+        "allocQty": 0,
+        "unallocQty": 20
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268624",
+        "skuNum": 6,
+        "planQty": 20,
+        "allocQty": 0,
+        "unallocQty": 20
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497492",
+        "skuNum": 1,
+        "planQty": 19,
+        "allocQty": 0,
+        "unallocQty": 19
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268578",
+        "skuNum": 4,
+        "planQty": 19,
+        "allocQty": 0,
+        "unallocQty": 19
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268572",
+        "skuNum": 3,
+        "planQty": 19,
+        "allocQty": 0,
+        "unallocQty": 19
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528382302",
+        "skuNum": 2,
+        "planQty": 18,
+        "allocQty": 0,
+        "unallocQty": 18
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268620",
+        "skuNum": 2,
+        "planQty": 18,
+        "allocQty": 0,
+        "unallocQty": 18
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268585",
+        "skuNum": 3,
+        "planQty": 18,
+        "allocQty": 0,
+        "unallocQty": 18
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268525",
+        "skuNum": 3,
+        "planQty": 18,
+        "allocQty": 0,
+        "unallocQty": 18
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268542",
+        "skuNum": 3,
+        "planQty": 16,
+        "allocQty": 0,
+        "unallocQty": 16
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497551",
+        "skuNum": 1,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497510",
+        "skuNum": 1,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497531",
+        "skuNum": 1,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497524",
+        "skuNum": 1,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528271461",
+        "skuNum": 1,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268647",
+        "skuNum": 6,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268660",
+        "skuNum": 6,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268535",
+        "skuNum": 4,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260525113644",
+        "skuNum": 1,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497538",
+        "skuNum": 1,
+        "planQty": 14,
+        "allocQty": 0,
+        "unallocQty": 14
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268582",
+        "skuNum": 3,
+        "planQty": 14,
+        "allocQty": 0,
+        "unallocQty": 14
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268574",
+        "skuNum": 3,
+        "planQty": 14,
+        "allocQty": 0,
+        "unallocQty": 14
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497498",
+        "skuNum": 1,
+        "planQty": 13,
+        "allocQty": 0,
+        "unallocQty": 13
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497495",
+        "skuNum": 1,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497539",
+        "skuNum": 1,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB2026052896576",
+        "skuNum": 1,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260527272318",
+        "skuNum": 3,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB2026052499581",
+        "skuNum": 1,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB2026052499562",
+        "skuNum": 1,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB2026052499572",
+        "skuNum": 1,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528271472",
+        "skuNum": 1,
+        "planQty": 11,
+        "allocQty": 0,
+        "unallocQty": 11
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268570",
+        "skuNum": 3,
+        "planQty": 11,
+        "allocQty": 0,
+        "unallocQty": 11
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268491",
+        "skuNum": 3,
+        "planQty": 11,
+        "allocQty": 0,
+        "unallocQty": 11
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497537",
+        "skuNum": 1,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497536",
+        "skuNum": 1,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528382314",
+        "skuNum": 2,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268716",
+        "skuNum": 6,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268679",
+        "skuNum": 2,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497468",
+        "skuNum": 1,
+        "planQty": 9,
+        "allocQty": 0,
+        "unallocQty": 9
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528271463",
+        "skuNum": 1,
+        "planQty": 9,
+        "allocQty": 0,
+        "unallocQty": 9
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268682",
+        "skuNum": 6,
+        "planQty": 9,
+        "allocQty": 0,
+        "unallocQty": 9
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260527272408",
+        "skuNum": 3,
+        "planQty": 9,
+        "allocQty": 0,
+        "unallocQty": 9
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497511",
+        "skuNum": 1,
+        "planQty": 8,
+        "allocQty": 0,
+        "unallocQty": 8
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528318654",
+        "skuNum": 1,
+        "planQty": 8,
+        "allocQty": 0,
+        "unallocQty": 8
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528271462",
+        "skuNum": 1,
+        "planQty": 8,
+        "allocQty": 0,
+        "unallocQty": 8
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268658",
+        "skuNum": 2,
+        "planQty": 8,
+        "allocQty": 0,
+        "unallocQty": 8
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268676",
+        "skuNum": 2,
+        "planQty": 8,
+        "allocQty": 0,
+        "unallocQty": 8
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268644",
+        "skuNum": 2,
+        "planQty": 8,
+        "allocQty": 0,
+        "unallocQty": 8
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528271492",
+        "skuNum": 1,
+        "planQty": 7,
+        "allocQty": 0,
+        "unallocQty": 7
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268645",
+        "skuNum": 2,
+        "planQty": 7,
+        "allocQty": 0,
+        "unallocQty": 7
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268625",
+        "skuNum": 2,
+        "planQty": 7,
+        "allocQty": 0,
+        "unallocQty": 7
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528318652",
+        "skuNum": 1,
+        "planQty": 6,
+        "allocQty": 0,
+        "unallocQty": 6
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268640",
+        "skuNum": 2,
+        "planQty": 6,
+        "allocQty": 0,
+        "unallocQty": 6
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268497",
+        "skuNum": 1,
+        "planQty": 6,
+        "allocQty": 0,
+        "unallocQty": 6
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268457",
+        "skuNum": 1,
+        "planQty": 6,
+        "allocQty": 0,
+        "unallocQty": 6
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528318653",
+        "skuNum": 1,
+        "planQty": 5,
+        "allocQty": 0,
+        "unallocQty": 5
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268715",
+        "skuNum": 2,
+        "planQty": 5,
+        "allocQty": 0,
+        "unallocQty": 5
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268573",
+        "skuNum": 1,
+        "planQty": 5,
+        "allocQty": 0,
+        "unallocQty": 5
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268534",
+        "skuNum": 1,
+        "planQty": 5,
+        "allocQty": 0,
+        "unallocQty": 5
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268622",
+        "skuNum": 3,
+        "planQty": 4,
+        "allocQty": 0,
+        "unallocQty": 4
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268461",
+        "skuNum": 1,
+        "planQty": 4,
+        "allocQty": 0,
+        "unallocQty": 4
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260527272386",
+        "skuNum": 3,
+        "planQty": 4,
+        "allocQty": 0,
+        "unallocQty": 4
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268451",
+        "skuNum": 1,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268452",
+        "skuNum": 1,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268449",
+        "skuNum": 1,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268680",
+        "skuNum": 2,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268678",
+        "skuNum": 3,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268659",
+        "skuNum": 3,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268648",
+        "skuNum": 2,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268681",
+        "skuNum": 1,
+        "planQty": 2,
+        "allocQty": 0,
+        "unallocQty": 2
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268714",
+        "skuNum": 1,
+        "planQty": 2,
+        "allocQty": 0,
+        "unallocQty": 2
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268639",
+        "skuNum": 2,
+        "planQty": 2,
+        "allocQty": 0,
+        "unallocQty": 2
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268641",
+        "skuNum": 1,
+        "planQty": 2,
+        "allocQty": 0,
+        "unallocQty": 2
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497496",
+        "skuNum": 1,
+        "planQty": 1,
+        "allocQty": 0,
+        "unallocQty": 1
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260527272396",
+        "skuNum": 1,
+        "planQty": 1,
+        "allocQty": 0,
+        "unallocQty": 1
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260527272370",
+        "skuNum": 1,
+        "planQty": 1,
+        "allocQty": 0,
+        "unallocQty": 1
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260527272313",
+        "skuNum": 1,
+        "planQty": 1,
+        "allocQty": 0,
+        "unallocQty": 1
+      }
+    ],
     "seeding": {
       "not_started": 0,
       "in_progress": 0,
@@ -1448,21 +3591,2152 @@
     }
   },
   "plan": {
-    "total_orders": 0,
-    "total_pcs": 0,
+    "total_orders": 267,
+    "total_pcs": 29843,
     "alloc_pcs": 0,
-    "alloc_rate": 0,
+    "alloc_rate": 0.0,
     "picked_pcs": 0,
     "sow_pcs": 0,
     "sow_rate": 0,
     "ship_pcs": 0,
     "ship_rate": 0,
-    "sku_plan": 0,
+    "sku_plan": 1125,
     "sku_alloc": 0,
     "sku_sow": 0,
-    "store_count": 0,
-    "by_store": {},
-    "unalloc_details": [],
+    "store_count": 1,
+    "by_store": {
+      "KLH-广州冷藏1仓-GZ0210": 29843.0
+    },
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528488329",
+        "skuNum": 23,
+        "planQty": 1036,
+        "allocQty": 0,
+        "unallocQty": 1036
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497577",
+        "skuNum": 10,
+        "planQty": 979,
+        "allocQty": 0,
+        "unallocQty": 979
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528488331",
+        "skuNum": 23,
+        "planQty": 785,
+        "allocQty": 0,
+        "unallocQty": 785
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497464",
+        "skuNum": 10,
+        "planQty": 783,
+        "allocQty": 0,
+        "unallocQty": 783
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497569",
+        "skuNum": 4,
+        "planQty": 781,
+        "allocQty": 0,
+        "unallocQty": 781
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497579",
+        "skuNum": 4,
+        "planQty": 681,
+        "allocQty": 0,
+        "unallocQty": 681
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497575",
+        "skuNum": 12,
+        "planQty": 680,
+        "allocQty": 0,
+        "unallocQty": 680
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528271486",
+        "skuNum": 16,
+        "planQty": 590,
+        "allocQty": 0,
+        "unallocQty": 590
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497466",
+        "skuNum": 4,
+        "planQty": 555,
+        "allocQty": 0,
+        "unallocQty": 555
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528488330",
+        "skuNum": 23,
+        "planQty": 532,
+        "allocQty": 0,
+        "unallocQty": 532
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497505",
+        "skuNum": 10,
+        "planQty": 524,
+        "allocQty": 0,
+        "unallocQty": 524
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497567",
+        "skuNum": 8,
+        "planQty": 484,
+        "allocQty": 0,
+        "unallocQty": 484
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497459",
+        "skuNum": 12,
+        "planQty": 479,
+        "allocQty": 0,
+        "unallocQty": 479
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497503",
+        "skuNum": 4,
+        "planQty": 440,
+        "allocQty": 0,
+        "unallocQty": 440
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497483",
+        "skuNum": 4,
+        "planQty": 438,
+        "allocQty": 0,
+        "unallocQty": 438
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497497",
+        "skuNum": 12,
+        "planQty": 437,
+        "allocQty": 0,
+        "unallocQty": 437
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497580",
+        "skuNum": 3,
+        "planQty": 404,
+        "allocQty": 0,
+        "unallocQty": 404
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497556",
+        "skuNum": 4,
+        "planQty": 393,
+        "allocQty": 0,
+        "unallocQty": 393
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497478",
+        "skuNum": 3,
+        "planQty": 365,
+        "allocQty": 0,
+        "unallocQty": 365
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497562",
+        "skuNum": 6,
+        "planQty": 357,
+        "allocQty": 0,
+        "unallocQty": 357
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497549",
+        "skuNum": 2,
+        "planQty": 350,
+        "allocQty": 0,
+        "unallocQty": 350
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497504",
+        "skuNum": 4,
+        "planQty": 327,
+        "allocQty": 0,
+        "unallocQty": 327
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497564",
+        "skuNum": 10,
+        "planQty": 320,
+        "allocQty": 0,
+        "unallocQty": 320
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497558",
+        "skuNum": 4,
+        "planQty": 317,
+        "allocQty": 0,
+        "unallocQty": 317
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497572",
+        "skuNum": 4,
+        "planQty": 309,
+        "allocQty": 0,
+        "unallocQty": 309
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497451",
+        "skuNum": 4,
+        "planQty": 292,
+        "allocQty": 0,
+        "unallocQty": 292
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528271470",
+        "skuNum": 14,
+        "planQty": 292,
+        "allocQty": 0,
+        "unallocQty": 292
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528271479",
+        "skuNum": 16,
+        "planQty": 279,
+        "allocQty": 0,
+        "unallocQty": 279
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497507",
+        "skuNum": 6,
+        "planQty": 274,
+        "allocQty": 0,
+        "unallocQty": 274
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497526",
+        "skuNum": 2,
+        "planQty": 274,
+        "allocQty": 0,
+        "unallocQty": 274
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497494",
+        "skuNum": 4,
+        "planQty": 259,
+        "allocQty": 0,
+        "unallocQty": 259
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268495",
+        "skuNum": 3,
+        "planQty": 246,
+        "allocQty": 0,
+        "unallocQty": 246
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497475",
+        "skuNum": 2,
+        "planQty": 243,
+        "allocQty": 0,
+        "unallocQty": 243
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497465",
+        "skuNum": 10,
+        "planQty": 241,
+        "allocQty": 0,
+        "unallocQty": 241
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497563",
+        "skuNum": 5,
+        "planQty": 236,
+        "allocQty": 0,
+        "unallocQty": 236
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497481",
+        "skuNum": 4,
+        "planQty": 219,
+        "allocQty": 0,
+        "unallocQty": 219
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497501",
+        "skuNum": 5,
+        "planQty": 219,
+        "allocQty": 0,
+        "unallocQty": 219
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497463",
+        "skuNum": 6,
+        "planQty": 212,
+        "allocQty": 0,
+        "unallocQty": 212
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497550",
+        "skuNum": 1,
+        "planQty": 208,
+        "allocQty": 0,
+        "unallocQty": 208
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528271468",
+        "skuNum": 7,
+        "planQty": 208,
+        "allocQty": 0,
+        "unallocQty": 208
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528382305",
+        "skuNum": 10,
+        "planQty": 206,
+        "allocQty": 0,
+        "unallocQty": 206
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497523",
+        "skuNum": 8,
+        "planQty": 198,
+        "allocQty": 0,
+        "unallocQty": 198
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497516",
+        "skuNum": 2,
+        "planQty": 196,
+        "allocQty": 0,
+        "unallocQty": 196
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497542",
+        "skuNum": 2,
+        "planQty": 192,
+        "allocQty": 0,
+        "unallocQty": 192
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497467",
+        "skuNum": 8,
+        "planQty": 191,
+        "allocQty": 0,
+        "unallocQty": 191
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497566",
+        "skuNum": 5,
+        "planQty": 190,
+        "allocQty": 0,
+        "unallocQty": 190
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497552",
+        "skuNum": 3,
+        "planQty": 184,
+        "allocQty": 0,
+        "unallocQty": 184
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497490",
+        "skuNum": 2,
+        "planQty": 183,
+        "allocQty": 0,
+        "unallocQty": 183
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528271489",
+        "skuNum": 16,
+        "planQty": 183,
+        "allocQty": 0,
+        "unallocQty": 183
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268540",
+        "skuNum": 5,
+        "planQty": 179,
+        "allocQty": 0,
+        "unallocQty": 179
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497502",
+        "skuNum": 10,
+        "planQty": 176,
+        "allocQty": 0,
+        "unallocQty": 176
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497458",
+        "skuNum": 2,
+        "planQty": 175,
+        "allocQty": 0,
+        "unallocQty": 175
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497578",
+        "skuNum": 4,
+        "planQty": 175,
+        "allocQty": 0,
+        "unallocQty": 175
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497544",
+        "skuNum": 3,
+        "planQty": 175,
+        "allocQty": 0,
+        "unallocQty": 175
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497555",
+        "skuNum": 4,
+        "planQty": 168,
+        "allocQty": 0,
+        "unallocQty": 168
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268498",
+        "skuNum": 5,
+        "planQty": 159,
+        "allocQty": 0,
+        "unallocQty": 159
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497581",
+        "skuNum": 2,
+        "planQty": 157,
+        "allocQty": 0,
+        "unallocQty": 157
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528271467",
+        "skuNum": 7,
+        "planQty": 157,
+        "allocQty": 0,
+        "unallocQty": 157
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497557",
+        "skuNum": 7,
+        "planQty": 154,
+        "allocQty": 0,
+        "unallocQty": 154
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528382326",
+        "skuNum": 13,
+        "planQty": 148,
+        "allocQty": 0,
+        "unallocQty": 148
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497570",
+        "skuNum": 3,
+        "planQty": 144,
+        "allocQty": 0,
+        "unallocQty": 144
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497506",
+        "skuNum": 3,
+        "planQty": 140,
+        "allocQty": 0,
+        "unallocQty": 140
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497455",
+        "skuNum": 2,
+        "planQty": 140,
+        "allocQty": 0,
+        "unallocQty": 140
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528382374",
+        "skuNum": 10,
+        "planQty": 140,
+        "allocQty": 0,
+        "unallocQty": 140
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268579",
+        "skuNum": 3,
+        "planQty": 140,
+        "allocQty": 0,
+        "unallocQty": 140
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528271473",
+        "skuNum": 14,
+        "planQty": 138,
+        "allocQty": 0,
+        "unallocQty": 138
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497518",
+        "skuNum": 4,
+        "planQty": 133,
+        "allocQty": 0,
+        "unallocQty": 133
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528271469",
+        "skuNum": 14,
+        "planQty": 130,
+        "allocQty": 0,
+        "unallocQty": 130
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497515",
+        "skuNum": 4,
+        "planQty": 125,
+        "allocQty": 0,
+        "unallocQty": 125
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497474",
+        "skuNum": 4,
+        "planQty": 125,
+        "allocQty": 0,
+        "unallocQty": 125
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268460",
+        "skuNum": 5,
+        "planQty": 125,
+        "allocQty": 0,
+        "unallocQty": 125
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497472",
+        "skuNum": 4,
+        "planQty": 124,
+        "allocQty": 0,
+        "unallocQty": 124
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497565",
+        "skuNum": 2,
+        "planQty": 122,
+        "allocQty": 0,
+        "unallocQty": 122
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497500",
+        "skuNum": 5,
+        "planQty": 121,
+        "allocQty": 0,
+        "unallocQty": 121
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497535",
+        "skuNum": 5,
+        "planQty": 118,
+        "allocQty": 0,
+        "unallocQty": 118
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497513",
+        "skuNum": 2,
+        "planQty": 116,
+        "allocQty": 0,
+        "unallocQty": 116
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497456",
+        "skuNum": 4,
+        "planQty": 115,
+        "allocQty": 0,
+        "unallocQty": 115
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528271480",
+        "skuNum": 7,
+        "planQty": 114,
+        "allocQty": 0,
+        "unallocQty": 114
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497489",
+        "skuNum": 3,
+        "planQty": 110,
+        "allocQty": 0,
+        "unallocQty": 110
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268459",
+        "skuNum": 9,
+        "planQty": 110,
+        "allocQty": 0,
+        "unallocQty": 110
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497519",
+        "skuNum": 4,
+        "planQty": 109,
+        "allocQty": 0,
+        "unallocQty": 109
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528382315",
+        "skuNum": 6,
+        "planQty": 107,
+        "allocQty": 0,
+        "unallocQty": 107
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497457",
+        "skuNum": 3,
+        "planQty": 106,
+        "allocQty": 0,
+        "unallocQty": 106
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497486",
+        "skuNum": 7,
+        "planQty": 105,
+        "allocQty": 0,
+        "unallocQty": 105
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497574",
+        "skuNum": 3,
+        "planQty": 104,
+        "allocQty": 0,
+        "unallocQty": 104
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497548",
+        "skuNum": 2,
+        "planQty": 104,
+        "allocQty": 0,
+        "unallocQty": 104
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497576",
+        "skuNum": 2,
+        "planQty": 103,
+        "allocQty": 0,
+        "unallocQty": 103
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528382319",
+        "skuNum": 10,
+        "planQty": 102,
+        "allocQty": 0,
+        "unallocQty": 102
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268453",
+        "skuNum": 5,
+        "planQty": 98,
+        "allocQty": 0,
+        "unallocQty": 98
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497541",
+        "skuNum": 4,
+        "planQty": 97,
+        "allocQty": 0,
+        "unallocQty": 97
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497452",
+        "skuNum": 2,
+        "planQty": 97,
+        "allocQty": 0,
+        "unallocQty": 97
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497540",
+        "skuNum": 7,
+        "planQty": 96,
+        "allocQty": 0,
+        "unallocQty": 96
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497453",
+        "skuNum": 2,
+        "planQty": 95,
+        "allocQty": 0,
+        "unallocQty": 95
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497462",
+        "skuNum": 5,
+        "planQty": 94,
+        "allocQty": 0,
+        "unallocQty": 94
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497480",
+        "skuNum": 3,
+        "planQty": 92,
+        "allocQty": 0,
+        "unallocQty": 92
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497499",
+        "skuNum": 4,
+        "planQty": 91,
+        "allocQty": 0,
+        "unallocQty": 91
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497470",
+        "skuNum": 2,
+        "planQty": 91,
+        "allocQty": 0,
+        "unallocQty": 91
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497571",
+        "skuNum": 2,
+        "planQty": 90,
+        "allocQty": 0,
+        "unallocQty": 90
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528271466",
+        "skuNum": 7,
+        "planQty": 90,
+        "allocQty": 0,
+        "unallocQty": 90
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497485",
+        "skuNum": 3,
+        "planQty": 89,
+        "allocQty": 0,
+        "unallocQty": 89
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497493",
+        "skuNum": 2,
+        "planQty": 85,
+        "allocQty": 0,
+        "unallocQty": 85
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268501",
+        "skuNum": 6,
+        "planQty": 83,
+        "allocQty": 0,
+        "unallocQty": 83
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497573",
+        "skuNum": 3,
+        "planQty": 81,
+        "allocQty": 0,
+        "unallocQty": 81
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497479",
+        "skuNum": 1,
+        "planQty": 79,
+        "allocQty": 0,
+        "unallocQty": 79
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528271464",
+        "skuNum": 7,
+        "planQty": 79,
+        "allocQty": 0,
+        "unallocQty": 79
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497534",
+        "skuNum": 3,
+        "planQty": 78,
+        "allocQty": 0,
+        "unallocQty": 78
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497450",
+        "skuNum": 2,
+        "planQty": 77,
+        "allocQty": 0,
+        "unallocQty": 77
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497491",
+        "skuNum": 2,
+        "planQty": 75,
+        "allocQty": 0,
+        "unallocQty": 75
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268575",
+        "skuNum": 3,
+        "planQty": 75,
+        "allocQty": 0,
+        "unallocQty": 75
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497509",
+        "skuNum": 2,
+        "planQty": 72,
+        "allocQty": 0,
+        "unallocQty": 72
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB2026052896587",
+        "skuNum": 2,
+        "planQty": 72,
+        "allocQty": 0,
+        "unallocQty": 72
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528382320",
+        "skuNum": 13,
+        "planQty": 71,
+        "allocQty": 0,
+        "unallocQty": 71
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497473",
+        "skuNum": 3,
+        "planQty": 69,
+        "allocQty": 0,
+        "unallocQty": 69
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497454",
+        "skuNum": 1,
+        "planQty": 67,
+        "allocQty": 0,
+        "unallocQty": 67
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497533",
+        "skuNum": 7,
+        "planQty": 66,
+        "allocQty": 0,
+        "unallocQty": 66
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497532",
+        "skuNum": 2,
+        "planQty": 66,
+        "allocQty": 0,
+        "unallocQty": 66
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497568",
+        "skuNum": 1,
+        "planQty": 64,
+        "allocQty": 0,
+        "unallocQty": 64
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497508",
+        "skuNum": 3,
+        "planQty": 63,
+        "allocQty": 0,
+        "unallocQty": 63
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528382318",
+        "skuNum": 6,
+        "planQty": 63,
+        "allocQty": 0,
+        "unallocQty": 63
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268450",
+        "skuNum": 5,
+        "planQty": 61,
+        "allocQty": 0,
+        "unallocQty": 61
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268456",
+        "skuNum": 9,
+        "planQty": 61,
+        "allocQty": 0,
+        "unallocQty": 61
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497460",
+        "skuNum": 2,
+        "planQty": 60,
+        "allocQty": 0,
+        "unallocQty": 60
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497476",
+        "skuNum": 4,
+        "planQty": 60,
+        "allocQty": 0,
+        "unallocQty": 60
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528382311",
+        "skuNum": 8,
+        "planQty": 60,
+        "allocQty": 0,
+        "unallocQty": 60
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497521",
+        "skuNum": 3,
+        "planQty": 59,
+        "allocQty": 0,
+        "unallocQty": 59
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB2026052896573",
+        "skuNum": 2,
+        "planQty": 59,
+        "allocQty": 0,
+        "unallocQty": 59
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268536",
+        "skuNum": 3,
+        "planQty": 58,
+        "allocQty": 0,
+        "unallocQty": 58
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497546",
+        "skuNum": 1,
+        "planQty": 55,
+        "allocQty": 0,
+        "unallocQty": 55
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268496",
+        "skuNum": 3,
+        "planQty": 55,
+        "allocQty": 0,
+        "unallocQty": 55
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497530",
+        "skuNum": 7,
+        "planQty": 52,
+        "allocQty": 0,
+        "unallocQty": 52
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497543",
+        "skuNum": 1,
+        "planQty": 51,
+        "allocQty": 0,
+        "unallocQty": 51
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497477",
+        "skuNum": 7,
+        "planQty": 50,
+        "allocQty": 0,
+        "unallocQty": 50
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528382325",
+        "skuNum": 13,
+        "planQty": 50,
+        "allocQty": 0,
+        "unallocQty": 50
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528271465",
+        "skuNum": 7,
+        "planQty": 50,
+        "allocQty": 0,
+        "unallocQty": 50
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268539",
+        "skuNum": 9,
+        "planQty": 50,
+        "allocQty": 0,
+        "unallocQty": 50
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497488",
+        "skuNum": 2,
+        "planQty": 48,
+        "allocQty": 0,
+        "unallocQty": 48
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528382310",
+        "skuNum": 5,
+        "planQty": 48,
+        "allocQty": 0,
+        "unallocQty": 48
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB2026052896585",
+        "skuNum": 1,
+        "planQty": 48,
+        "allocQty": 0,
+        "unallocQty": 48
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497547",
+        "skuNum": 4,
+        "planQty": 47,
+        "allocQty": 0,
+        "unallocQty": 47
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268581",
+        "skuNum": 9,
+        "planQty": 47,
+        "allocQty": 0,
+        "unallocQty": 47
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268477",
+        "skuNum": 6,
+        "planQty": 47,
+        "allocQty": 0,
+        "unallocQty": 47
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268458",
+        "skuNum": 6,
+        "planQty": 46,
+        "allocQty": 0,
+        "unallocQty": 46
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497559",
+        "skuNum": 2,
+        "planQty": 44,
+        "allocQty": 0,
+        "unallocQty": 44
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268583",
+        "skuNum": 9,
+        "planQty": 43,
+        "allocQty": 0,
+        "unallocQty": 43
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268544",
+        "skuNum": 9,
+        "planQty": 41,
+        "allocQty": 0,
+        "unallocQty": 41
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497527",
+        "skuNum": 4,
+        "planQty": 40,
+        "allocQty": 0,
+        "unallocQty": 40
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497512",
+        "skuNum": 1,
+        "planQty": 40,
+        "allocQty": 0,
+        "unallocQty": 40
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528271471",
+        "skuNum": 1,
+        "planQty": 40,
+        "allocQty": 0,
+        "unallocQty": 40
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268500",
+        "skuNum": 10,
+        "planQty": 40,
+        "allocQty": 0,
+        "unallocQty": 40
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268492",
+        "skuNum": 5,
+        "planQty": 40,
+        "allocQty": 0,
+        "unallocQty": 40
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268502",
+        "skuNum": 5,
+        "planQty": 38,
+        "allocQty": 0,
+        "unallocQty": 38
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB2026052896579",
+        "skuNum": 2,
+        "planQty": 38,
+        "allocQty": 0,
+        "unallocQty": 38
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497484",
+        "skuNum": 1,
+        "planQty": 37,
+        "allocQty": 0,
+        "unallocQty": 37
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497482",
+        "skuNum": 4,
+        "planQty": 36,
+        "allocQty": 0,
+        "unallocQty": 36
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528382287",
+        "skuNum": 6,
+        "planQty": 36,
+        "allocQty": 0,
+        "unallocQty": 36
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB2026052896575",
+        "skuNum": 1,
+        "planQty": 36,
+        "allocQty": 0,
+        "unallocQty": 36
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497514",
+        "skuNum": 1,
+        "planQty": 35,
+        "allocQty": 0,
+        "unallocQty": 35
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497529",
+        "skuNum": 4,
+        "planQty": 34,
+        "allocQty": 0,
+        "unallocQty": 34
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268538",
+        "skuNum": 3,
+        "planQty": 33,
+        "allocQty": 0,
+        "unallocQty": 33
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497561",
+        "skuNum": 1,
+        "planQty": 31,
+        "allocQty": 0,
+        "unallocQty": 31
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528382294",
+        "skuNum": 8,
+        "planQty": 31,
+        "allocQty": 0,
+        "unallocQty": 31
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268455",
+        "skuNum": 3,
+        "planQty": 31,
+        "allocQty": 0,
+        "unallocQty": 31
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497525",
+        "skuNum": 1,
+        "planQty": 30,
+        "allocQty": 0,
+        "unallocQty": 30
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268462",
+        "skuNum": 10,
+        "planQty": 30,
+        "allocQty": 0,
+        "unallocQty": 30
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260525113651",
+        "skuNum": 1,
+        "planQty": 30,
+        "allocQty": 0,
+        "unallocQty": 30
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497487",
+        "skuNum": 2,
+        "planQty": 29,
+        "allocQty": 0,
+        "unallocQty": 29
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497520",
+        "skuNum": 2,
+        "planQty": 29,
+        "allocQty": 0,
+        "unallocQty": 29
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497545",
+        "skuNum": 1,
+        "planQty": 28,
+        "allocQty": 0,
+        "unallocQty": 28
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528382324",
+        "skuNum": 8,
+        "planQty": 27,
+        "allocQty": 0,
+        "unallocQty": 27
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497517",
+        "skuNum": 3,
+        "planQty": 26,
+        "allocQty": 0,
+        "unallocQty": 26
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497471",
+        "skuNum": 1,
+        "planQty": 26,
+        "allocQty": 0,
+        "unallocQty": 26
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268537",
+        "skuNum": 3,
+        "planQty": 26,
+        "allocQty": 0,
+        "unallocQty": 26
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268494",
+        "skuNum": 4,
+        "planQty": 26,
+        "allocQty": 0,
+        "unallocQty": 26
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497522",
+        "skuNum": 2,
+        "planQty": 25,
+        "allocQty": 0,
+        "unallocQty": 25
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497554",
+        "skuNum": 1,
+        "planQty": 25,
+        "allocQty": 0,
+        "unallocQty": 25
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528382300",
+        "skuNum": 2,
+        "planQty": 25,
+        "allocQty": 0,
+        "unallocQty": 25
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268499",
+        "skuNum": 3,
+        "planQty": 25,
+        "allocQty": 0,
+        "unallocQty": 25
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497553",
+        "skuNum": 2,
+        "planQty": 24,
+        "allocQty": 0,
+        "unallocQty": 24
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497560",
+        "skuNum": 1,
+        "planQty": 23,
+        "allocQty": 0,
+        "unallocQty": 23
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268580",
+        "skuNum": 5,
+        "planQty": 23,
+        "allocQty": 0,
+        "unallocQty": 23
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268524",
+        "skuNum": 3,
+        "planQty": 23,
+        "allocQty": 0,
+        "unallocQty": 23
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497461",
+        "skuNum": 3,
+        "planQty": 22,
+        "allocQty": 0,
+        "unallocQty": 22
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528382331",
+        "skuNum": 5,
+        "planQty": 22,
+        "allocQty": 0,
+        "unallocQty": 22
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528382316",
+        "skuNum": 5,
+        "planQty": 22,
+        "allocQty": 0,
+        "unallocQty": 22
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268533",
+        "skuNum": 1,
+        "planQty": 22,
+        "allocQty": 0,
+        "unallocQty": 22
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497528",
+        "skuNum": 2,
+        "planQty": 21,
+        "allocQty": 0,
+        "unallocQty": 21
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497469",
+        "skuNum": 1,
+        "planQty": 21,
+        "allocQty": 0,
+        "unallocQty": 21
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268545",
+        "skuNum": 5,
+        "planQty": 21,
+        "allocQty": 0,
+        "unallocQty": 21
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268454",
+        "skuNum": 10,
+        "planQty": 21,
+        "allocQty": 0,
+        "unallocQty": 21
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268646",
+        "skuNum": 6,
+        "planQty": 20,
+        "allocQty": 0,
+        "unallocQty": 20
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268624",
+        "skuNum": 6,
+        "planQty": 20,
+        "allocQty": 0,
+        "unallocQty": 20
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497492",
+        "skuNum": 1,
+        "planQty": 19,
+        "allocQty": 0,
+        "unallocQty": 19
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268578",
+        "skuNum": 4,
+        "planQty": 19,
+        "allocQty": 0,
+        "unallocQty": 19
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268572",
+        "skuNum": 3,
+        "planQty": 19,
+        "allocQty": 0,
+        "unallocQty": 19
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528382302",
+        "skuNum": 2,
+        "planQty": 18,
+        "allocQty": 0,
+        "unallocQty": 18
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268620",
+        "skuNum": 2,
+        "planQty": 18,
+        "allocQty": 0,
+        "unallocQty": 18
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268585",
+        "skuNum": 3,
+        "planQty": 18,
+        "allocQty": 0,
+        "unallocQty": 18
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268525",
+        "skuNum": 3,
+        "planQty": 18,
+        "allocQty": 0,
+        "unallocQty": 18
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268542",
+        "skuNum": 3,
+        "planQty": 16,
+        "allocQty": 0,
+        "unallocQty": 16
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497551",
+        "skuNum": 1,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497510",
+        "skuNum": 1,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497531",
+        "skuNum": 1,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497524",
+        "skuNum": 1,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528271461",
+        "skuNum": 1,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268647",
+        "skuNum": 6,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268660",
+        "skuNum": 6,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268535",
+        "skuNum": 4,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260525113644",
+        "skuNum": 1,
+        "planQty": 15,
+        "allocQty": 0,
+        "unallocQty": 15
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497538",
+        "skuNum": 1,
+        "planQty": 14,
+        "allocQty": 0,
+        "unallocQty": 14
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268582",
+        "skuNum": 3,
+        "planQty": 14,
+        "allocQty": 0,
+        "unallocQty": 14
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268574",
+        "skuNum": 3,
+        "planQty": 14,
+        "allocQty": 0,
+        "unallocQty": 14
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497498",
+        "skuNum": 1,
+        "planQty": 13,
+        "allocQty": 0,
+        "unallocQty": 13
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497495",
+        "skuNum": 1,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528497539",
+        "skuNum": 1,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB2026052896576",
+        "skuNum": 1,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260527272318",
+        "skuNum": 3,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB2026052499581",
+        "skuNum": 1,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB2026052499562",
+        "skuNum": 1,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB2026052499572",
+        "skuNum": 1,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528271472",
+        "skuNum": 1,
+        "planQty": 11,
+        "allocQty": 0,
+        "unallocQty": 11
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268570",
+        "skuNum": 3,
+        "planQty": 11,
+        "allocQty": 0,
+        "unallocQty": 11
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268491",
+        "skuNum": 3,
+        "planQty": 11,
+        "allocQty": 0,
+        "unallocQty": 11
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497537",
+        "skuNum": 1,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497536",
+        "skuNum": 1,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528382314",
+        "skuNum": 2,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268716",
+        "skuNum": 6,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268679",
+        "skuNum": 2,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497468",
+        "skuNum": 1,
+        "planQty": 9,
+        "allocQty": 0,
+        "unallocQty": 9
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528271463",
+        "skuNum": 1,
+        "planQty": 9,
+        "allocQty": 0,
+        "unallocQty": 9
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268682",
+        "skuNum": 6,
+        "planQty": 9,
+        "allocQty": 0,
+        "unallocQty": 9
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260527272408",
+        "skuNum": 3,
+        "planQty": 9,
+        "allocQty": 0,
+        "unallocQty": 9
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528497511",
+        "skuNum": 1,
+        "planQty": 8,
+        "allocQty": 0,
+        "unallocQty": 8
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528318654",
+        "skuNum": 1,
+        "planQty": 8,
+        "allocQty": 0,
+        "unallocQty": 8
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528271462",
+        "skuNum": 1,
+        "planQty": 8,
+        "allocQty": 0,
+        "unallocQty": 8
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268658",
+        "skuNum": 2,
+        "planQty": 8,
+        "allocQty": 0,
+        "unallocQty": 8
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268676",
+        "skuNum": 2,
+        "planQty": 8,
+        "allocQty": 0,
+        "unallocQty": 8
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268644",
+        "skuNum": 2,
+        "planQty": 8,
+        "allocQty": 0,
+        "unallocQty": 8
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528271492",
+        "skuNum": 1,
+        "planQty": 7,
+        "allocQty": 0,
+        "unallocQty": 7
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268645",
+        "skuNum": 2,
+        "planQty": 7,
+        "allocQty": 0,
+        "unallocQty": 7
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268625",
+        "skuNum": 2,
+        "planQty": 7,
+        "allocQty": 0,
+        "unallocQty": 7
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528318652",
+        "skuNum": 1,
+        "planQty": 6,
+        "allocQty": 0,
+        "unallocQty": 6
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268640",
+        "skuNum": 2,
+        "planQty": 6,
+        "allocQty": 0,
+        "unallocQty": 6
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268497",
+        "skuNum": 1,
+        "planQty": 6,
+        "allocQty": 0,
+        "unallocQty": 6
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268457",
+        "skuNum": 1,
+        "planQty": 6,
+        "allocQty": 0,
+        "unallocQty": 6
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528318653",
+        "skuNum": 1,
+        "planQty": 5,
+        "allocQty": 0,
+        "unallocQty": 5
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268715",
+        "skuNum": 2,
+        "planQty": 5,
+        "allocQty": 0,
+        "unallocQty": 5
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268573",
+        "skuNum": 1,
+        "planQty": 5,
+        "allocQty": 0,
+        "unallocQty": 5
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268534",
+        "skuNum": 1,
+        "planQty": 5,
+        "allocQty": 0,
+        "unallocQty": 5
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268622",
+        "skuNum": 3,
+        "planQty": 4,
+        "allocQty": 0,
+        "unallocQty": 4
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268461",
+        "skuNum": 1,
+        "planQty": 4,
+        "allocQty": 0,
+        "unallocQty": 4
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260527272386",
+        "skuNum": 3,
+        "planQty": 4,
+        "allocQty": 0,
+        "unallocQty": 4
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268451",
+        "skuNum": 1,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268452",
+        "skuNum": 1,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268449",
+        "skuNum": 1,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268680",
+        "skuNum": 2,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268678",
+        "skuNum": 3,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268659",
+        "skuNum": 3,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268648",
+        "skuNum": 2,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268681",
+        "skuNum": 1,
+        "planQty": 2,
+        "allocQty": 0,
+        "unallocQty": 2
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260528268714",
+        "skuNum": 1,
+        "planQty": 2,
+        "allocQty": 0,
+        "unallocQty": 2
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528268639",
+        "skuNum": 2,
+        "planQty": 2,
+        "allocQty": 0,
+        "unallocQty": 2
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260528268641",
+        "skuNum": 1,
+        "planQty": 2,
+        "allocQty": 0,
+        "unallocQty": 2
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260528497496",
+        "skuNum": 1,
+        "planQty": 1,
+        "allocQty": 0,
+        "unallocQty": 1
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260527272396",
+        "skuNum": 1,
+        "planQty": 1,
+        "allocQty": 0,
+        "unallocQty": 1
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB20260527272370",
+        "skuNum": 1,
+        "planQty": 1,
+        "allocQty": 0,
+        "unallocQty": 1
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB20260527272313",
+        "skuNum": 1,
+        "planQty": 1,
+        "allocQty": 0,
+        "unallocQty": 1
+      }
+    ],
     "status": "ok"
   },
   "attendance": {

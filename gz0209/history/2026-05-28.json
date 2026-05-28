@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-28T11:27:52",
+  "timestamp": "2026-05-28T11:33:48",
   "date": "2026-05-28",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
-      "total": 17,
+      "total": 18,
       "signed": 4,
-      "waiting": 6
+      "waiting": 7
     },
     "ontime": {
       "ontime": 0,
       "early": 4,
       "late": 0,
-      "total": 10,
+      "total": 11,
       "rate": 0.0,
-      "early_rate": 40.0,
+      "early_rate": 36.4,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -25,27 +25,27 @@
     },
     "unload": {
       "total": 4,
-      "done": 1,
-      "rate": 25.0,
-      "pcs_done": 600,
+      "done": 4,
+      "rate": 100.0,
+      "pcs_done": 2274,
       "sign_pcs_done": 2274
     },
     "qc": {
-      "total": 3,
+      "total": 2,
       "done": 0,
-      "pending": 3,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 3,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 1674,
+      "pcs_total": 1074,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 3,
+      "sku_total": 2,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -59,9 +59,9 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 10,
+        "total": 11,
         "done": 4,
-        "rate": 40.0
+        "rate": 36.4
       },
       "pcs": {
         "total": 34794,
@@ -71,20 +71,24 @@
         "recv_rate": 75.0
       },
       "sku": {
-        "total": 15,
+        "total": 18,
         "done": 4,
-        "rate": 26.7
+        "rate": 22.2
       },
       "supplier": {
-        "total": 10,
+        "total": 11,
         "done": 4,
-        "rate": 40.0,
+        "rate": 36.4,
         "detail": {
-          "福建省星玛食品有限公司-快乐猴": {
+          "安徽汉邦日化有限公司": {
             "plan": 1,
             "done": 1
           },
-          "安徽汉邦日化有限公司": {
+          "江华九恒数码科技有限公司": {
+            "plan": 1,
+            "done": 0
+          },
+          "福建省星玛食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -160,6 +164,13 @@
       ],
       "unsigned": [
         {
+          "supplierName": "江华九恒数码科技有限公司",
+          "billCode": "YY20260528002725",
+          "skuCount": 3,
+          "pcs": 50,
+          "timeSlot": "11:30 - 12:00"
+        },
+        {
           "supplierName": "福建省美巧乐食品有限公司",
           "billCode": "YY20260526002674",
           "skuCount": 1,
@@ -202,49 +213,22 @@
           "timeSlot": "15:00 - 16:00"
         }
       ],
-      "unloading": [
-        {
-          "supplierName": "福建省星玛食品有限公司-快乐猴",
-          "billCode": "YY20260526010442",
-          "signTime": "10:37",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "安徽汉邦日化有限公司",
-          "billCode": "YY20260521005515",
-          "signTime": "10:19",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "漳州含羞草食品有限公司-快乐猴-自营",
-          "billCode": "YY20260526003956",
-          "signTime": "10:16",
-          "status": "已签到未卸货"
-        }
-      ],
+      "unloading": [],
       "qc_pending": [
         {
           "seq": 1,
           "supplierName": "漳州含羞草食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 厚切芒果干 100g",
           "arrivalTime": "14:30",
-          "unloadFinishTime": "--",
+          "unloadFinishTime": "11:30",
           "statusLabel": "待质检"
         },
         {
           "seq": 2,
-          "supplierName": "安徽汉邦日化有限公司",
-          "skuName": "快乐猴 厨房清洁卫生湿巾 60片",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
           "supplierName": "福建省星玛食品有限公司-快乐猴",
           "skuName": "快乐猴 香葱苏打饼干 500g",
           "arrivalTime": "14:30",
-          "unloadFinishTime": "--",
+          "unloadFinishTime": "11:30",
           "statusLabel": "待质检"
         }
       ],
@@ -360,10 +344,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 101,
+      "not_started": 102,
       "in_progress": 0,
       "done": 0,
-      "total": 101,
+      "total": 102,
       "status": "ok"
     }
   },

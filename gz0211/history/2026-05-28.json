@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-28T13:33:29",
+  "timestamp": "2026-05-28T13:39:30",
   "date": "2026-05-28",
   "warehouse": "GZ0210",
   "inbound": {
@@ -143,24 +143,36 @@
     },
     "sowing": {
       "total": 53,
-      "done": 53,
-      "rate": 100.0
+      "done": 49,
+      "rate": 92.5
     },
     "caging": {
       "total": 53,
-      "done": 53,
-      "rate": 100.0,
-      "pcs_done": 0,
+      "done": 49,
+      "rate": 92.5,
+      "pcs_done": 770,
       "pcs_total": 820,
-      "pcs_rate": 0.0
+      "pcs_rate": 93.9
     },
     "packing": {
-      "total": 1,
-      "done": 0,
-      "rate": 0.0
+      "total": 2,
+      "done": 1,
+      "rate": 50.0
     },
-    "uncaged_details": [],
-    "unpacked_details": [],
+    "uncaged_details": [
+      {
+        "containerCode": "RQ-05-03-0700103",
+        "poiName": "禅城东方广场店",
+        "qty": 50
+      }
+    ],
+    "unpacked_details": [
+      {
+        "containerCode": "RQ-05-03-0700103",
+        "poiName": "禅城东方广场店",
+        "qty": 50
+      }
+    ],
     "shipping": {
       "total": 820,
       "done": 0,
@@ -171,20 +183,29 @@
       "multi_pallet_count": 0,
       "multi_pallet_total": 53,
       "multi_pallet_rate": 0.0,
-      "load_rate": 100.0,
+      "load_rate": 93.9,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "--",
-      "load_rate_loaded": "100.22%",
+      "load_rate_unloaded": "15.65%",
+      "load_rate_loaded": "84.58%",
       "load_rate_shipped": "--",
       "low_load_containers": [],
       "all_containers_detail": [
         {
           "containerCode": "RQ-05-03-0700102",
           "poiName": "禅城东方广场店",
-          "loadingRate": "100.22%",
-          "loadingRateVal": 100.22,
-          "skuPcs": "820.000",
-          "skuVolume": "1.984",
+          "loadingRate": "84.58%",
+          "loadingRateVal": 84.58,
+          "skuPcs": "770.000",
+          "skuVolume": "1.675",
+          "planOutTime": "05-28 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700103",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "15.65%",
+          "loadingRateVal": 15.65,
+          "skuPcs": "50.000",
+          "skuVolume": "0.310",
           "planOutTime": "05-28 19:00"
         }
       ],
@@ -196,21 +217,21 @@
         "total": 820,
         "picked": 0,
         "sowed": 0,
-        "caged": 820,
-        "not_caged": 0,
+        "caged": 770,
+        "not_caged": 50,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 0.0,
+        "cage_rate": 93.9,
         "sowed_picked": 820
       },
       "sku": {
         "total": 53,
         "picked": 0,
         "sowed": 0,
-        "caged": 53,
+        "caged": 49,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 100.0
+        "cage_rate": 92.5
       }
     },
     "status": "ok",
@@ -231,9 +252,9 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 82,
-      "in_progress": 2,
-      "done": 98,
+      "not_started": 79,
+      "in_progress": 3,
+      "done": 100,
       "total": 182,
       "status": "ok"
     }

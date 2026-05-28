@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-28T14:11:23",
+  "timestamp": "2026-05-28T14:14:23",
   "date": "2026-05-28",
   "warehouse": "GZ0210",
   "inbound": {
@@ -239,13 +239,13 @@
           "supplierName": "漳州含羞草食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 厚切芒果干 100g",
           "completeTime": "12:03",
-          "waitingMins": 128
+          "waitingMins": 131
         },
         {
           "supplierName": "福建省星玛食品有限公司-快乐猴",
           "skuName": "快乐猴 香葱苏打饼干 500g",
           "completeTime": "12:05",
-          "waitingMins": 126
+          "waitingMins": 129
         }
       ],
       "qc_recv_pending": [],
@@ -280,12 +280,12 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 163,
+      "total": 164,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 163,
+      "total": 164,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
@@ -293,7 +293,7 @@
       "pcs_rate": 0.0
     },
     "packing": {
-      "total": 7,
+      "total": 8,
       "done": 0,
       "rate": 0.0
     },
@@ -332,6 +332,11 @@
         "containerCode": "RQ-28-03-0900107",
         "poiName": "番禺建华汇店",
         "qty": 158
+      },
+      {
+        "containerCode": "RQ-28-03-0900105",
+        "poiName": "番禺建华汇店",
+        "qty": 48
       }
     ],
     "unpacked_details": [
@@ -369,21 +374,37 @@
         "containerCode": "RQ-28-03-0900107",
         "poiName": "番禺建华汇店",
         "qty": 158
+      },
+      {
+        "containerCode": "RQ-28-03-0900105",
+        "poiName": "番禺建华汇店",
+        "qty": 48
       }
     ],
     "shipping": {
-      "total": 3176,
+      "total": 3224,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
-      "multi_pallet_count": 0,
+      "multi_pallet_count": 1,
       "multi_pallet_total": 163,
-      "multi_pallet_rate": 0.0,
+      "multi_pallet_rate": 0.6,
       "load_rate": 0.0,
-      "multi_pallet_details": [],
-      "load_rate_unloaded": "60.23%",
+      "multi_pallet_details": [
+        {
+          "skuName": "农夫山泉东方树叶茉莉花茶原味茶饮料900ml",
+          "poiName": "番禺建华汇店",
+          "containerCount": 2,
+          "containerCodes": [
+            "RQ-28-03-0900103",
+            "RQ-28-03-0900105"
+          ],
+          "qty": 60
+        }
+      ],
+      "load_rate_unloaded": "53.11%",
       "load_rate_loaded": "--",
       "load_rate_shipped": "--",
       "low_load_containers": [],
@@ -450,25 +471,34 @@
           "skuPcs": "158.000",
           "skuVolume": "0.294",
           "planOutTime": "05-28 20:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900105",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "3.29%",
+          "loadingRateVal": 3.29,
+          "skuPcs": "48.000",
+          "skuVolume": "0.065",
+          "planOutTime": "05-28 20:00"
         }
       ],
-      "outbound_efficiency": 453.7,
-      "outbound_efficiency_formula": "3176 PCS / 7 人(拣播员)"
+      "outbound_efficiency": 460.6,
+      "outbound_efficiency_formula": "3224 PCS / 7 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 3176,
+        "total": 3224,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 3176,
+        "not_caged": 3224,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
         "cage_rate": 0.0,
         "sowed_picked": 3224
       },
       "sku": {
-        "total": 163,
+        "total": 164,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -495,10 +525,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 73,
+      "not_started": 75,
       "in_progress": 0,
       "done": 123,
-      "total": 196,
+      "total": 198,
       "status": "ok"
     }
   },
@@ -563,10 +593,10 @@
       "N冷藏拣播员": 7,
       "N冷藏物资": 1
     },
-    "predicted_efficiency": 211.7,
-    "efficiency_formula": "3176 PCS / 15 人",
-    "outbound_efficiency": 453.7,
-    "outbound_efficiency_formula": "3176 PCS / 7 人(拣播员)",
+    "predicted_efficiency": 214.9,
+    "efficiency_formula": "3224 PCS / 15 人",
+    "outbound_efficiency": 460.6,
+    "outbound_efficiency_formula": "3224 PCS / 7 人(拣播员)",
     "inbound_efficiency_workers": 7,
     "status": "ok"
   }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-28T16:52:10",
+  "timestamp": "2026-05-28T16:55:10",
   "date": "2026-05-28",
   "warehouse": "GZ0210",
   "inbound": {
@@ -25,28 +25,28 @@
     },
     "unload": {
       "total": 10,
-      "done": 9,
-      "rate": 90.0,
-      "pcs_done": 6404,
+      "done": 10,
+      "rate": 100.0,
+      "pcs_done": 9604,
       "sign_pcs_done": 9604
     },
     "qc": {
-      "total": 4,
+      "total": 3,
       "done": 2,
-      "pending": 2,
+      "pending": 1,
       "passed": 2,
       "rejected": 0,
-      "rate": 50.0,
+      "rate": 66.7,
       "bill_done": 2,
-      "bill_total": 4,
+      "bill_total": 3,
       "pcs_done": 1074,
       "pcs_passed": 1074,
-      "pcs_total": 4274,
+      "pcs_total": 2674,
       "pcs_rejected": 0,
-      "pcs_rate": 25.1,
+      "pcs_rate": 40.2,
       "sku_done": 2,
-      "sku_total": 4,
-      "sku_rate": 50.0
+      "sku_total": 3,
+      "sku_rate": 66.7
     },
     "putaway": {
       "total": 28314,
@@ -159,29 +159,14 @@
         }
       ],
       "unsigned": [],
-      "unloading": [
-        {
-          "supplierName": "山东阳春酒业有限公司-快乐猴",
-          "billCode": "YY20260519011271",
-          "signTime": "15:16",
-          "status": "已签到未卸货"
-        }
-      ],
+      "unloading": [],
       "qc_pending": [
         {
           "seq": 1,
           "supplierName": "山东阳春酒业有限公司-快乐猴",
           "skuName": "快乐猴 百香果精酿啤酒 330ml",
           "arrivalTime": "15:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "山东阳春酒业有限公司-快乐猴",
-          "skuName": "快乐猴 红西柚精酿啤酒 330ml",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "--",
+          "unloadFinishTime": "16:52",
           "statusLabel": "待质检"
         }
       ],
@@ -190,13 +175,13 @@
           "supplierName": "漳州含羞草食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 厚切芒果干 100g",
           "completeTime": "12:03",
-          "waitingMins": 289
+          "waitingMins": 292
         },
         {
           "supplierName": "福建省星玛食品有限公司-快乐猴",
           "skuName": "快乐猴 香葱苏打饼干 500g",
           "completeTime": "12:05",
-          "waitingMins": 287
+          "waitingMins": 290
         }
       ],
       "qc_recv_pending": [],
@@ -231,22 +216,22 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 186,
+      "total": 191,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 186,
+      "total": 191,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 2414,
-      "pcs_total": 6217,
-      "pcs_rate": 38.8
+      "pcs_total": 6381,
+      "pcs_rate": 37.8
     },
     "packing": {
-      "total": 11,
+      "total": 12,
       "done": 3,
-      "rate": 27.3
+      "rate": 25.0
     },
     "uncaged_details": [
       {
@@ -288,6 +273,11 @@
         "containerCode": "RQ-28-03-0900096",
         "poiName": "禅城东方广场店",
         "qty": 176
+      },
+      {
+        "containerCode": "RQ-28-03-0900187",
+        "poiName": "番禺建华汇店",
+        "qty": 164
       }
     ],
     "unpacked_details": [
@@ -330,17 +320,22 @@
         "containerCode": "RQ-28-03-0900096",
         "poiName": "禅城东方广场店",
         "qty": 176
+      },
+      {
+        "containerCode": "RQ-28-03-0900187",
+        "poiName": "番禺建华汇店",
+        "qty": 164
       }
     ],
     "shipping": {
-      "total": 3803,
+      "total": 3967,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 2,
-      "multi_pallet_total": 184,
+      "multi_pallet_total": 189,
       "multi_pallet_rate": 1.1,
       "load_rate": 0.0,
       "multi_pallet_details": [
@@ -365,7 +360,7 @@
           "qty": 31
         }
       ],
-      "load_rate_unloaded": "64.17%",
+      "load_rate_unloaded": "58.05%",
       "load_rate_loaded": "71.45%",
       "load_rate_shipped": "--",
       "low_load_containers": [
@@ -487,25 +482,34 @@
           "skuPcs": "906.000",
           "skuVolume": "1.316",
           "planOutTime": "05-28 20:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900187",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "9.09%",
+          "loadingRateVal": 9.09,
+          "skuPcs": "164.000",
+          "skuVolume": "0.180",
+          "planOutTime": "05-28 20:00"
         }
       ],
-      "outbound_efficiency": 543.3,
-      "outbound_efficiency_formula": "3803 PCS / 7 人(拣播员)"
+      "outbound_efficiency": 566.7,
+      "outbound_efficiency_formula": "3967 PCS / 7 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 3803,
+        "total": 3967,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 3803,
+        "not_caged": 3967,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 38.8,
-        "sowed_picked": 6217
+        "cage_rate": 37.8,
+        "sowed_picked": 6381
       },
       "sku": {
-        "total": 186,
+        "total": 191,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -519,9 +523,9 @@
       "plan_pcs": 7569,
       "alloc_pcs": 7569,
       "alloc_rate": 100.0,
-      "picked_pcs": 6217,
-      "sow_pcs": 6217,
-      "sow_rate": 82.1,
+      "picked_pcs": 6381,
+      "sow_pcs": 6381,
+      "sow_rate": 84.3,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 405,
@@ -532,10 +536,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 61,
+      "not_started": 62,
       "in_progress": 2,
-      "done": 246,
-      "total": 309,
+      "done": 248,
+      "total": 312,
       "status": "ok"
     }
   },
@@ -544,9 +548,9 @@
     "total_pcs": 7569,
     "alloc_pcs": 7569,
     "alloc_rate": 100.0,
-    "picked_pcs": 6217,
-    "sow_pcs": 6217,
-    "sow_rate": 82.1,
+    "picked_pcs": 6381,
+    "sow_pcs": 6381,
+    "sow_rate": 84.3,
     "ship_pcs": 0,
     "ship_rate": 0,
     "sku_plan": 405,
@@ -600,10 +604,10 @@
       "N冷藏拣播员": 7,
       "N冷藏物资": 1
     },
-    "predicted_efficiency": 253.5,
-    "efficiency_formula": "3803 PCS / 15 人",
-    "outbound_efficiency": 543.3,
-    "outbound_efficiency_formula": "3803 PCS / 7 人(拣播员)",
+    "predicted_efficiency": 264.5,
+    "efficiency_formula": "3967 PCS / 15 人",
+    "outbound_efficiency": 566.7,
+    "outbound_efficiency_formula": "3967 PCS / 7 人(拣播员)",
     "inbound_efficiency_workers": 7,
     "status": "ok"
   }

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-28T10:16:42",
+  "timestamp": "2026-05-28T10:22:43",
   "date": "2026-05-28",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 2,
-      "waiting": 8
+      "signed": 3,
+      "waiting": 7
     },
     "ontime": {
       "ontime": 0,
-      "early": 2,
+      "early": 3,
       "late": 0,
       "total": 10,
       "rate": 0.0,
-      "early_rate": 20.0,
+      "early_rate": 30.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 3,
       "done": 1,
-      "rate": 50.0,
+      "rate": 33.3,
       "pcs_done": 600,
-      "sign_pcs_done": 1050
+      "sign_pcs_done": 1650
     },
     "qc": {
-      "total": 1,
+      "total": 2,
       "done": 0,
-      "pending": 1,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 1,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 450,
+      "pcs_total": 1050,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 1,
+      "sku_total": 2,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 10,
-        "done": 2,
-        "rate": 20.0
+        "done": 3,
+        "rate": 30.0
       },
       "pcs": {
         "total": 34794,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 15,
-        "done": 2,
-        "rate": 13.3
+        "done": 3,
+        "rate": 20.0
       },
       "supplier": {
         "total": 10,
-        "done": 2,
-        "rate": 20.0,
+        "done": 3,
+        "rate": 30.0,
         "detail": {
+          "安徽汉邦日化有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "漳州含羞草食品有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -101,10 +105,6 @@
             "done": 0
           },
           "湖南世容纸塑包装有限公司": {
-            "plan": 1,
-            "done": 0
-          },
-          "安徽汉邦日化有限公司": {
             "plan": 1,
             "done": 0
           },
@@ -188,13 +188,6 @@
           "timeSlot": "14:00 - 14:30"
         },
         {
-          "supplierName": "安徽汉邦日化有限公司",
-          "billCode": "YY20260521005515",
-          "skuCount": 1,
-          "pcs": 600,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
           "supplierName": "广州市润江贸易有限公司-快乐猴",
           "billCode": "YY20260521002263",
           "skuCount": 2,
@@ -218,6 +211,12 @@
       ],
       "unloading": [
         {
+          "supplierName": "安徽汉邦日化有限公司",
+          "billCode": "YY20260521005515",
+          "signTime": "10:19",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "漳州含羞草食品有限公司-快乐猴-自营",
           "billCode": "YY20260526003956",
           "signTime": "10:16",
@@ -230,6 +229,14 @@
           "supplierName": "漳州含羞草食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 厚切芒果干 100g",
           "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "安徽汉邦日化有限公司",
+          "skuName": "快乐猴 厨房清洁卫生湿巾 60片",
+          "arrivalTime": "15:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }

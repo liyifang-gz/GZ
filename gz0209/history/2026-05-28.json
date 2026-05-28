@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-28T13:57:34",
+  "timestamp": "2026-05-28T14:05:17",
   "date": "2026-05-28",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 18,
-      "signed": 8,
-      "waiting": 3
+      "signed": 9,
+      "waiting": 2
     },
     "ontime": {
       "ontime": 0,
-      "early": 7,
+      "early": 8,
       "late": 1,
       "total": 11,
       "rate": 0.0,
-      "early_rate": 63.6,
+      "early_rate": 72.7,
       "late_rate": 9.1
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 8,
+      "total": 9,
       "done": 7,
-      "rate": 87.5,
+      "rate": 77.8,
       "pcs_done": 4100,
-      "sign_pcs_done": 5234
+      "sign_pcs_done": 6404
     },
     "qc": {
-      "total": 5,
+      "total": 7,
       "done": 2,
-      "pending": 3,
+      "pending": 5,
       "passed": 2,
       "rejected": 0,
-      "rate": 40.0,
+      "rate": 28.6,
       "bill_done": 2,
-      "bill_total": 5,
+      "bill_total": 7,
       "pcs_done": 1074,
       "pcs_passed": 1074,
-      "pcs_total": 2208,
+      "pcs_total": 3378,
       "pcs_rejected": 0,
-      "pcs_rate": 48.6,
+      "pcs_rate": 31.8,
       "sku_done": 2,
-      "sku_total": 5,
-      "sku_rate": 40.0
+      "sku_total": 7,
+      "sku_rate": 28.6
     },
     "putaway": {
       "total": 28314,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 11,
-        "done": 8,
-        "rate": 72.7
+        "done": 9,
+        "rate": 81.8
       },
       "pcs": {
         "total": 34794,
@@ -72,14 +72,22 @@
       },
       "sku": {
         "total": 18,
-        "done": 13,
-        "rate": 72.2
+        "done": 15,
+        "rate": 83.3
       },
       "supplier": {
         "total": 11,
-        "done": 8,
-        "rate": 72.7,
+        "done": 9,
+        "rate": 81.8,
         "detail": {
+          "安徽汉邦日化有限公司": {
+            "plan": 1,
+            "done": 1
+          },
+          "湖南世容纸塑包装有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "武汉绿禾堂食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -104,19 +112,11 @@
             "plan": 1,
             "done": 1
           },
-          "安徽汉邦日化有限公司": {
-            "plan": 1,
-            "done": 1
-          },
           "湖南智能供应链管理有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
           "上好佳（中国）有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "湖南世容纸塑包装有限公司": {
             "plan": 1,
             "done": 0
           },
@@ -171,13 +171,6 @@
           "timeSlot": "14:00 - 14:30"
         },
         {
-          "supplierName": "湖南世容纸塑包装有限公司",
-          "billCode": "YY20260523004824",
-          "skuCount": 2,
-          "pcs": 1170,
-          "timeSlot": "14:00 - 14:30"
-        },
-        {
           "supplierName": "山东阳春酒业有限公司-快乐猴",
           "billCode": "YY20260519011271",
           "skuCount": 2,
@@ -186,6 +179,12 @@
         }
       ],
       "unloading": [
+        {
+          "supplierName": "湖南世容纸塑包装有限公司",
+          "billCode": "YY20260523004824",
+          "signTime": "13:59",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "武汉绿禾堂食品有限公司-快乐猴",
           "billCode": "YY20260521001991",
@@ -217,6 +216,22 @@
           "arrivalTime": "15:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "湖南世容纸塑包装有限公司",
+          "skuName": "快乐猴 加厚一次性纸杯 100只",
+          "arrivalTime": "14:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "湖南世容纸塑包装有限公司",
+          "skuName": "快乐猴 一次性纸碗 20只",
+          "arrivalTime": "14:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -224,13 +239,13 @@
           "supplierName": "漳州含羞草食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 厚切芒果干 100g",
           "completeTime": "12:03",
-          "waitingMins": 115
+          "waitingMins": 122
         },
         {
           "supplierName": "福建省星玛食品有限公司-快乐猴",
           "skuName": "快乐猴 香葱苏打饼干 500g",
           "completeTime": "12:05",
-          "waitingMins": 112
+          "waitingMins": 120
         }
       ],
       "qc_recv_pending": [],
@@ -442,10 +457,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 64,
-      "in_progress": 4,
-      "done": 116,
-      "total": 184,
+      "not_started": 73,
+      "in_progress": 0,
+      "done": 122,
+      "total": 195,
       "status": "ok"
     }
   },

@@ -1,34 +1,34 @@
 {
-  "timestamp": "2026-05-29T23:57:11",
-  "date": "2026-05-29",
+  "timestamp": "2026-05-30T00:00:11",
+  "date": "2026-05-30",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
-      "total": 1,
-      "signed": 1,
+      "total": 0,
+      "signed": 0,
       "waiting": 0
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 0,
       "late": 0,
-      "total": 1,
-      "rate": 0.0,
-      "early_rate": 100.0,
-      "late_rate": 0.0
+      "total": 0,
+      "rate": 0,
+      "early_rate": 0,
+      "late_rate": 0
     },
     "reserve_progress": {
-      "po_total": 8,
-      "po_reserved": 8,
-      "rate": 100.0,
+      "po_total": 4,
+      "po_reserved": 0,
+      "rate": 0.0,
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 0,
       "done": 0,
-      "rate": 0.0,
+      "rate": 0,
       "pcs_done": 0,
-      "sign_pcs_done": 1000
+      "sign_pcs_done": 0
     },
     "qc": {
       "total": 0,
@@ -49,55 +49,76 @@
       "sku_rate": 0
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
+      "total": 1070,
+      "done": 1070,
+      "rate": 100.0,
+      "sku_total": 5,
+      "sku_done": 5,
+      "sku_rate": 100.0,
       "details": []
     },
     "dimensions": {
       "reserve": {
-        "total": 1,
-        "done": 1,
-        "rate": 100.0
+        "total": 0,
+        "done": 0,
+        "rate": 0
       },
       "pcs": {
+        "total": 2070,
+        "done": 1070,
+        "rate": 51.7,
+        "recv_done": 1070,
+        "recv_rate": 51.7
+      },
+      "sku": {
+        "total": 0,
+        "done": 0,
+        "rate": 0
+      },
+      "supplier": {
         "total": 0,
         "done": 0,
         "rate": 0,
-        "recv_done": 0,
-        "recv_rate": 0
-      },
-      "sku": {
-        "total": 1,
-        "done": 1,
-        "rate": 100.0
-      },
-      "supplier": {
-        "total": 1,
-        "done": 1,
-        "rate": 100.0,
-        "detail": {
-          "汕头市芸美食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          }
-        }
+        "detail": {}
       }
     },
     "details": {
-      "unreserved": [],
-      "unsigned": [],
-      "unloading": [
+      "unreserved": [
         {
-          "supplierName": "汕头市芸美食品有限公司-快乐猴",
-          "billCode": "YY20260527010066",
-          "signTime": "12:26",
-          "status": "已签到未卸货"
+          "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
+          "poNo": "CG202605228973",
+          "skuCount": 3,
+          "pcs": 750,
+          "preArrivalTime": "2026-05-30",
+          "poStatus": "已完成"
+        },
+        {
+          "supplierName": "安徽橡果糯香食品有限公司-快乐猴",
+          "poNo": "CG202605218962",
+          "skuCount": 1,
+          "pcs": 1000,
+          "preArrivalTime": "2026-05-30",
+          "poStatus": "已确认"
+        },
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "poNo": "CG202605217001",
+          "skuCount": 1,
+          "pcs": 20,
+          "preArrivalTime": "2026-05-30",
+          "poStatus": "已完成"
+        },
+        {
+          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
+          "poNo": "CG202605208975",
+          "skuCount": 1,
+          "pcs": 300,
+          "preArrivalTime": "2026-05-30",
+          "poStatus": "已完成"
         }
       ],
+      "unsigned": [],
+      "unloading": [],
       "qc_pending": [],
       "recv_pending": [],
       "qc_recv_pending": [],
@@ -107,9 +128,9 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 0.0,
-      "efficiency_formula": "0 PCS / 7 人",
-      "inbound_schedule": 7
+      "efficiency": 214.0,
+      "efficiency_formula": "1070 PCS / 5 人",
+      "inbound_schedule": 5
     }
   },
   "outbound": {
@@ -136,7 +157,7 @@
       "pcs_rate": 0.0
     },
     "packing": {
-      "total": 6,
+      "total": 0,
       "done": 0,
       "rate": 0.0
     },
@@ -156,64 +177,9 @@
       "multi_pallet_details": [],
       "load_rate_unloaded": "--",
       "load_rate_loaded": "--",
-      "load_rate_shipped": "55.69%",
+      "load_rate_shipped": "--",
       "low_load_containers": [],
-      "all_containers_detail": [
-        {
-          "containerCode": "RQ-05-03-0700341",
-          "poiName": "南海国昌广场店",
-          "loadingRate": "69.78%",
-          "loadingRateVal": 69.78,
-          "skuPcs": "925.000",
-          "skuVolume": "1.382",
-          "planOutTime": "05-29 19:00"
-        },
-        {
-          "containerCode": "RQ-05-03-0700343",
-          "poiName": "南海国昌广场店",
-          "loadingRate": "24.88%",
-          "loadingRateVal": 24.88,
-          "skuPcs": "71.000",
-          "skuVolume": "0.493",
-          "planOutTime": "05-29 19:00"
-        },
-        {
-          "containerCode": "RQ-05-03-0700104",
-          "poiName": "禅城东方广场店",
-          "loadingRate": "89.89%",
-          "loadingRateVal": 89.89,
-          "skuPcs": "1065.000",
-          "skuVolume": "1.780",
-          "planOutTime": "05-29 19:00"
-        },
-        {
-          "containerCode": "RQ-05-03-0700103",
-          "poiName": "禅城东方广场店",
-          "loadingRate": "22.19%",
-          "loadingRateVal": 22.19,
-          "skuPcs": "196.000",
-          "skuVolume": "0.439",
-          "planOutTime": "05-29 19:00"
-        },
-        {
-          "containerCode": "RQ-05-03-0700145",
-          "poiName": "番禺建华汇店",
-          "loadingRate": "78.95%",
-          "loadingRateVal": 78.95,
-          "skuPcs": "1027.000",
-          "skuVolume": "1.563",
-          "planOutTime": "05-29 19:00"
-        },
-        {
-          "containerCode": "RQ-05-03-0700146",
-          "poiName": "番禺建华汇店",
-          "loadingRate": "48.46%",
-          "loadingRateVal": 48.46,
-          "skuPcs": "156.000",
-          "skuVolume": "0.960",
-          "planOutTime": "05-29 19:00"
-        }
-      ],
+      "all_containers_detail": [],
       "outbound_efficiency": 0.0,
       "outbound_efficiency_formula": "0 PCS / 7 人(拣播员)"
     },
@@ -259,8 +225,8 @@
     "seeding": {
       "not_started": 0,
       "in_progress": 0,
-      "done": 388,
-      "total": 389,
+      "done": 0,
+      "total": 0,
       "status": "ok"
     }
   },
@@ -284,9 +250,9 @@
   },
   "attendance": {
     "total_inservice": 15,
-    "schedule": 15,
-    "attendance": 15,
-    "rate": 100.0,
+    "schedule": 13,
+    "attendance": 13,
+    "rate": 86.7,
     "by_job": {
       "N拣播员": {
         "inservice": 7,
@@ -296,9 +262,9 @@
       },
       "N冷藏收退": {
         "inservice": 7,
-        "schedule": 7,
-        "attendance": 7,
-        "rate": 100.0
+        "schedule": 5,
+        "attendance": 5,
+        "rate": 71.4
       },
       "N库维": {
         "inservice": 0,
@@ -319,15 +285,15 @@
       "N冷藏物资": 1
     },
     "by_pos_scheduled": {
-      "N冷藏收退": 7,
+      "N冷藏收退": 5,
       "N冷藏拣播员": 7,
       "N冷藏物资": 1
     },
     "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS / 15 人",
+    "efficiency_formula": "0 PCS / 13 人",
     "outbound_efficiency": 0.0,
     "outbound_efficiency_formula": "0 PCS / 7 人(拣播员)",
-    "inbound_efficiency_workers": 7,
+    "inbound_efficiency_workers": 5,
     "status": "ok"
   }
 }

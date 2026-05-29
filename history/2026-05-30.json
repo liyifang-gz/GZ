@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-30T04:44:38",
+  "timestamp": "2026-05-30T04:47:30",
   "date": "2026-05-30",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 110,
-      "signed": 15,
-      "waiting": 85
+      "signed": 16,
+      "waiting": 84
     },
     "ontime": {
       "ontime": 0,
-      "early": 15,
+      "early": 16,
       "late": 0,
       "total": 100,
       "rate": 0.0,
-      "early_rate": 15.0,
+      "early_rate": 16.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 11,
+      "total": 12,
       "done": 9,
-      "rate": 81.8,
+      "rate": 75.0,
       "pcs_done": 4409,
-      "sign_pcs_done": 4806
+      "sign_pcs_done": 4962
     },
     "qc": {
-      "total": 45,
+      "total": 46,
       "done": 0,
-      "pending": 45,
+      "pending": 46,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 45,
+      "bill_total": 46,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 4706,
+      "pcs_total": 4862,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 41,
+      "sku_total": 42,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 100,
-        "done": 15,
-        "rate": 15.0
+        "done": 16,
+        "rate": 16.0
       },
       "pcs": {
         "total": 30069,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 538,
-        "done": 82,
-        "rate": 15.2
+        "done": 83,
+        "rate": 15.4
       },
       "supplier": {
         "total": 81,
-        "done": 11,
-        "rate": 13.6,
+        "done": 12,
+        "rate": 14.8,
         "detail": {
+          "广州市蒙牛乳业低温奶销售有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "北京硕果多农业科技有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -153,10 +157,6 @@
             "done": 0
           },
           "广州市昌兴农产品有限公司-快乐猴": {
-            "plan": 2,
-            "done": 0
-          },
-          "上海全苗蔬农业科技发展有限公司-快乐猴": {
             "plan": 2,
             "done": 0
           }
@@ -464,13 +464,6 @@
           "timeSlot": "16:00 - 16:30"
         },
         {
-          "supplierName": "广州市蒙牛乳业低温奶销售有限公司-快乐猴",
-          "billCode": "YY20260529006454",
-          "skuCount": 1,
-          "pcs": 156,
-          "timeSlot": "05:00 - 05:30"
-        },
-        {
           "supplierName": "广东牛人食品有限公司-快乐猴",
           "billCode": "YY20260529006354",
           "skuCount": 8,
@@ -532,9 +525,22 @@
           "skuCount": 1,
           "pcs": 8,
           "timeSlot": "11:30 - 12:00"
+        },
+        {
+          "supplierName": "深圳新泉农产品有限公司-快乐猴",
+          "billCode": "YY20260529005158",
+          "skuCount": 1,
+          "pcs": 23,
+          "timeSlot": "13:00 - 13:30"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "广州市蒙牛乳业低温奶销售有限公司-快乐猴",
+          "billCode": "YY20260529006454",
+          "signTime": "04:47",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "北京硕果多农业科技有限公司-快乐猴",
           "billCode": "YY20260529011122",
@@ -907,6 +913,14 @@
           "skuName": "农耕记 鱼香肉丝 410g",
           "arrivalTime": "05:30",
           "unloadFinishTime": "03:58",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 46,
+          "supplierName": "广州市蒙牛乳业低温奶销售有限公司-快乐猴",
+          "skuName": "【醇厚老味】蒙牛 内蒙古原味老酸奶 140g*4",
+          "arrivalTime": "05:00",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],

@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-05-29T15:42:51",
+  "timestamp": "2026-05-29T15:45:52",
   "date": "2026-05-29",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 12,
-      "waiting": 3
+      "signed": 13,
+      "waiting": 2
     },
     "ontime": {
-      "ontime": 2,
+      "ontime": 3,
       "early": 9,
       "late": 1,
       "total": 15,
-      "rate": 13.3,
+      "rate": 20.0,
       "early_rate": 60.0,
       "late_rate": 6.7
     },
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 10,
+      "total": 11,
       "done": 8,
-      "rate": 80.0,
+      "rate": 72.7,
       "pcs_done": 5374,
-      "sign_pcs_done": 55974
+      "sign_pcs_done": 58642
     },
     "qc": {
-      "total": 5,
+      "total": 8,
       "done": 3,
-      "pending": 2,
+      "pending": 5,
       "passed": 3,
       "rejected": 0,
-      "rate": 60.0,
+      "rate": 37.5,
       "bill_done": 3,
-      "bill_total": 5,
+      "bill_total": 8,
       "pcs_done": 2570,
       "pcs_passed": 2570,
-      "pcs_total": 3170,
+      "pcs_total": 5838,
       "pcs_rejected": 0,
-      "pcs_rate": 81.1,
+      "pcs_rate": 44.0,
       "sku_done": 3,
-      "sku_total": 5,
-      "sku_rate": 60.0
+      "sku_total": 8,
+      "sku_rate": 37.5
     },
     "putaway": {
       "total": 15844,
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 15,
-        "done": 12,
-        "rate": 80.0
+        "done": 13,
+        "rate": 86.7
       },
       "pcs": {
         "total": 66244,
@@ -80,14 +80,18 @@
       },
       "sku": {
         "total": 27,
-        "done": 22,
-        "rate": 81.5
+        "done": 25,
+        "rate": 92.6
       },
       "supplier": {
         "total": 13,
-        "done": 10,
-        "rate": 76.9,
+        "done": 11,
+        "rate": 84.6,
         "detail": {
+          "贵州西秀翠宏食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "温州君越制袋有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -127,10 +131,6 @@
           "汕头市素非凡商贸有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "贵州西秀翠宏食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           },
           "广东禅丰供应链管理有限公司-快乐猴": {
             "plan": 1,
@@ -172,13 +172,6 @@
       ],
       "unsigned": [
         {
-          "supplierName": "贵州西秀翠宏食品有限公司-快乐猴",
-          "billCode": "YY20260526008405",
-          "skuCount": 3,
-          "pcs": 2668,
-          "timeSlot": "15:00 - 16:00"
-        },
-        {
           "supplierName": "广东禅丰供应链管理有限公司-快乐猴",
           "billCode": "YY20260526007106",
           "skuCount": 1,
@@ -194,6 +187,12 @@
         }
       ],
       "unloading": [
+        {
+          "supplierName": "贵州西秀翠宏食品有限公司-快乐猴",
+          "billCode": "YY20260526008405",
+          "signTime": "15:44",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "温州君越制袋有限公司-快乐猴",
           "billCode": "YY20260525001865",
@@ -229,6 +228,30 @@
           "arrivalTime": "13:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "贵州西秀翠宏食品有限公司-快乐猴",
+          "skuName": "快乐猴 香辣蘸料 100g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "贵州西秀翠宏食品有限公司-快乐猴",
+          "skuName": "快乐猴 香辣味烧烤料 110g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "贵州西秀翠宏食品有限公司-快乐猴",
+          "skuName": "快乐猴 辣椒面 100g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -236,19 +259,19 @@
           "supplierName": "小熊驾到（山东）食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 新奥尔良风味腌料 35g",
           "completeTime": "17:34",
-          "waitingMins": 1328
+          "waitingMins": 1331
         },
         {
           "supplierName": "上海品厨商贸有限公司-快乐猴",
           "skuName": "展艺红豆沙(水洗)500g",
           "completeTime": "12:30",
-          "waitingMins": 193
+          "waitingMins": 196
         },
         {
           "supplierName": "上海品厨商贸有限公司-快乐猴",
           "skuName": "展艺 熟咸蛋黄 40g",
           "completeTime": "12:31",
-          "waitingMins": 192
+          "waitingMins": 195
         }
       ],
       "qc_recv_pending": [],
@@ -477,10 +500,10 @@
       }
     ],
     "seeding": {
-      "not_started": 78,
-      "in_progress": 2,
-      "done": 189,
-      "total": 269,
+      "not_started": 82,
+      "in_progress": 4,
+      "done": 190,
+      "total": 276,
       "status": "ok"
     }
   },

@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-05-29T16:34:18",
+  "timestamp": "2026-05-29T16:37:18",
   "date": "2026-05-29",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 13,
-      "waiting": 2
+      "signed": 14,
+      "waiting": 1
     },
     "ontime": {
       "ontime": 3,
       "early": 9,
-      "late": 1,
+      "late": 2,
       "total": 15,
       "rate": 20.0,
       "early_rate": 60.0,
-      "late_rate": 6.7
+      "late_rate": 13.3
     },
     "reserve_progress": {
       "po_total": 13,
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 11,
+      "total": 12,
       "done": 9,
-      "rate": 81.8,
+      "rate": 75.0,
       "pcs_done": 8042,
-      "sign_pcs_done": 58642
+      "sign_pcs_done": 59042
     },
     "qc": {
-      "total": 5,
+      "total": 6,
       "done": 3,
-      "pending": 2,
+      "pending": 3,
       "passed": 3,
       "rejected": 0,
-      "rate": 60.0,
+      "rate": 50.0,
       "bill_done": 3,
-      "bill_total": 5,
+      "bill_total": 6,
       "pcs_done": 2570,
       "pcs_passed": 2570,
-      "pcs_total": 3170,
+      "pcs_total": 3570,
       "pcs_rejected": 0,
-      "pcs_rate": 81.1,
+      "pcs_rate": 72.0,
       "sku_done": 3,
-      "sku_total": 5,
-      "sku_rate": 60.0
+      "sku_total": 6,
+      "sku_rate": 50.0
     },
     "putaway": {
       "total": 15844,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 15,
-        "done": 13,
-        "rate": 86.7
+        "done": 14,
+        "rate": 93.3
       },
       "pcs": {
         "total": 66244,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 27,
-        "done": 25,
-        "rate": 92.6
+        "done": 26,
+        "rate": 96.3
       },
       "supplier": {
         "total": 13,
-        "done": 11,
-        "rate": 84.6,
+        "done": 12,
+        "rate": 92.3,
         "detail": {
+          "上海恺臻实业有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "贵州西秀翠宏食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -127,10 +131,6 @@
           "广东禅丰供应链管理有限公司-快乐猴": {
             "plan": 1,
             "done": 0
-          },
-          "上海恺臻实业有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -169,16 +169,15 @@
           "skuCount": 1,
           "pcs": 54,
           "timeSlot": "15:00 - 15:30"
-        },
-        {
-          "supplierName": "上海恺臻实业有限公司-快乐猴-自营",
-          "billCode": "YY20260525002030",
-          "skuCount": 1,
-          "pcs": 400,
-          "timeSlot": "15:30 - 16:00"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "上海恺臻实业有限公司-快乐猴-自营",
+          "billCode": "YY20260525002030",
+          "signTime": "16:37",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "温州君越制袋有限公司-快乐猴",
           "billCode": "YY20260525001865",
@@ -214,6 +213,14 @@
           "arrivalTime": "13:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "上海恺臻实业有限公司-快乐猴-自营",
+          "skuName": "觅踪 蓝色迷你手持风扇 1个",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -221,19 +228,19 @@
           "supplierName": "小熊驾到（山东）食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 新奥尔良风味腌料 35g",
           "completeTime": "17:34",
-          "waitingMins": 1379
+          "waitingMins": 1382
         },
         {
           "supplierName": "上海品厨商贸有限公司-快乐猴",
           "skuName": "展艺红豆沙(水洗)500g",
           "completeTime": "12:30",
-          "waitingMins": 244
+          "waitingMins": 247
         },
         {
           "supplierName": "上海品厨商贸有限公司-快乐猴",
           "skuName": "展艺 熟咸蛋黄 40g",
           "completeTime": "12:31",
-          "waitingMins": 243
+          "waitingMins": 246
         }
       ],
       "qc_recv_pending": [],
@@ -272,9 +279,9 @@
       "pcs_rate": 79.2
     },
     "packing": {
-      "total": 7,
+      "total": 8,
       "done": 5,
-      "rate": 71.4
+      "rate": 62.5
     },
     "uncaged_details": [
       {
@@ -333,7 +340,7 @@
           "qty": 53
         }
       ],
-      "load_rate_unloaded": "11.45%",
+      "load_rate_unloaded": "38.05%",
       "load_rate_loaded": "82.62%",
       "load_rate_shipped": "--",
       "low_load_containers": [
@@ -357,6 +364,15 @@
         }
       ],
       "all_containers_detail": [
+        {
+          "containerCode": "RQ-28-03-0900287",
+          "poiName": "南海国昌广场店",
+          "loadingRate": "91.24%",
+          "loadingRateVal": 91.24,
+          "skuPcs": "727.000",
+          "skuVolume": "1.807",
+          "planOutTime": "05-29 20:00"
+        },
         {
           "containerCode": "RQ-28-03-0900285",
           "poiName": "南海国昌广场店",
@@ -473,9 +489,9 @@
       }
     ],
     "seeding": {
-      "not_started": 26,
-      "in_progress": 5,
-      "done": 263,
+      "not_started": 21,
+      "in_progress": 4,
+      "done": 269,
       "total": 294,
       "status": "ok"
     }

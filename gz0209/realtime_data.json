@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-29T10:40:43",
+  "timestamp": "2026-05-29T10:43:41",
   "date": "2026-05-29",
   "warehouse": "GZ0210",
   "inbound": {
@@ -25,28 +25,28 @@
     },
     "unload": {
       "total": 4,
-      "done": 2,
-      "rate": 50.0,
-      "pcs_done": 2856,
+      "done": 3,
+      "rate": 75.0,
+      "pcs_done": 3024,
       "sign_pcs_done": 3504
     },
     "qc": {
-      "total": 3,
+      "total": 2,
       "done": 1,
-      "pending": 2,
+      "pending": 1,
       "passed": 1,
       "rejected": 0,
-      "rate": 33.3,
+      "rate": 50.0,
       "bill_done": 1,
-      "bill_total": 3,
+      "bill_total": 2,
       "pcs_done": 1920,
       "pcs_passed": 1920,
-      "pcs_total": 2568,
+      "pcs_total": 2400,
       "pcs_rejected": 0,
-      "pcs_rate": 74.8,
+      "pcs_rate": 80.0,
       "sku_done": 1,
-      "sku_total": 3,
-      "sku_rate": 33.3
+      "sku_total": 2,
+      "sku_rate": 50.0
     },
     "putaway": {
       "total": 15576,
@@ -247,12 +247,6 @@
       ],
       "unloading": [
         {
-          "supplierName": "杭州臻沁良品食品有限公司-快乐猴",
-          "billCode": "YY20260527000760",
-          "signTime": "10:36",
-          "status": "已签到未卸货"
-        },
-        {
           "supplierName": "麟珑有鱼（上海）贸易有限公司-快乐猴",
           "billCode": "YY20260527009623",
           "signTime": "09:15",
@@ -267,14 +261,6 @@
           "arrivalTime": "14:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "杭州臻沁良品食品有限公司-快乐猴",
-          "skuName": "快乐猴 山核桃仁 132g",
-          "arrivalTime": "14:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -282,7 +268,7 @@
           "supplierName": "小熊驾到（山东）食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 新奥尔良风味腌料 35g",
           "completeTime": "17:34",
-          "waitingMins": 1026
+          "waitingMins": 1029
         }
       ],
       "qc_recv_pending": [],
@@ -308,20 +294,20 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 4,
+      "total": 5,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 4,
+      "total": 5,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 183,
+      "pcs_total": 216,
       "pcs_rate": 0.0
     },
     "packing": {
-      "total": 1,
+      "total": 2,
       "done": 0,
       "rate": 0.0
     },
@@ -330,6 +316,11 @@
         "containerCode": "RQ-28-03-0900098",
         "poiName": "禅城东方广场店",
         "qty": 183
+      },
+      {
+        "containerCode": "RQ-28-03-0900285",
+        "poiName": "南海国昌广场店",
+        "qty": 33
       }
     ],
     "unpacked_details": [
@@ -337,25 +328,39 @@
         "containerCode": "RQ-28-03-0900098",
         "poiName": "禅城东方广场店",
         "qty": 183
+      },
+      {
+        "containerCode": "RQ-28-03-0900285",
+        "poiName": "南海国昌广场店",
+        "qty": 33
       }
     ],
     "shipping": {
-      "total": 183,
+      "total": 216,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 4,
+      "multi_pallet_total": 5,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "15.60%",
+      "load_rate_unloaded": "10.90%",
       "load_rate_loaded": "--",
       "load_rate_shipped": "--",
       "low_load_containers": [],
       "all_containers_detail": [
+        {
+          "containerCode": "RQ-28-03-0900285",
+          "poiName": "南海国昌广场店",
+          "loadingRate": "6.19%",
+          "loadingRateVal": 6.19,
+          "skuPcs": "33.000",
+          "skuVolume": "0.123",
+          "planOutTime": "05-29 20:00"
+        },
         {
           "containerCode": "RQ-28-03-0900098",
           "poiName": "禅城东方广场店",
@@ -366,23 +371,23 @@
           "planOutTime": "05-29 20:00"
         }
       ],
-      "outbound_efficiency": 26.1,
-      "outbound_efficiency_formula": "183 PCS / 7 人(拣播员)"
+      "outbound_efficiency": 30.9,
+      "outbound_efficiency_formula": "216 PCS / 7 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 183,
+        "total": 216,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 183,
+        "not_caged": 216,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
         "cage_rate": 0.0,
-        "sowed_picked": 183
+        "sowed_picked": 216
       },
       "sku": {
-        "total": 4,
+        "total": 5,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -396,23 +401,23 @@
       "plan_pcs": 216,
       "alloc_pcs": 216,
       "alloc_rate": 100.0,
-      "picked_pcs": 183,
-      "sow_pcs": 183,
-      "sow_rate": 84.7,
+      "picked_pcs": 216,
+      "sow_pcs": 216,
+      "sow_rate": 100.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 5,
       "sku_alloc": 5,
-      "sku_sow": 4,
+      "sku_sow": 5,
       "sku_ship": 0,
       "total_orders": 3
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 103,
+      "not_started": 104,
       "in_progress": 0,
       "done": 0,
-      "total": 103,
+      "total": 104,
       "status": "ok"
     }
   },
@@ -421,14 +426,14 @@
     "total_pcs": 216,
     "alloc_pcs": 216,
     "alloc_rate": 100.0,
-    "picked_pcs": 183,
-    "sow_pcs": 183,
-    "sow_rate": 84.7,
+    "picked_pcs": 216,
+    "sow_pcs": 216,
+    "sow_rate": 100.0,
     "ship_pcs": 0,
     "ship_rate": 0,
     "sku_plan": 5,
     "sku_alloc": 5,
-    "sku_sow": 4,
+    "sku_sow": 5,
     "store_count": 1,
     "by_store": {
       "KLH-广州常温1仓-GZ0209": 216.0
@@ -477,10 +482,10 @@
       "N冷藏拣播员": 7,
       "N冷藏物资": 1
     },
-    "predicted_efficiency": 12.2,
-    "efficiency_formula": "183 PCS / 15 人",
-    "outbound_efficiency": 26.1,
-    "outbound_efficiency_formula": "183 PCS / 7 人(拣播员)",
+    "predicted_efficiency": 14.4,
+    "efficiency_formula": "216 PCS / 15 人",
+    "outbound_efficiency": 30.9,
+    "outbound_efficiency_formula": "216 PCS / 7 人(拣播员)",
     "inbound_efficiency_workers": 7,
     "status": "ok"
   }

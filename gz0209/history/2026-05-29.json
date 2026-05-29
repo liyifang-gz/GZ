@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-05-29T15:28:14",
+  "timestamp": "2026-05-29T15:33:50",
   "date": "2026-05-29",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 11,
-      "waiting": 4
+      "signed": 12,
+      "waiting": 3
     },
     "ontime": {
       "ontime": 2,
       "early": 9,
-      "late": 0,
+      "late": 1,
       "total": 15,
       "rate": 13.3,
       "early_rate": 60.0,
-      "late_rate": 0.0
+      "late_rate": 6.7
     },
     "reserve_progress": {
       "po_total": 13,
@@ -24,11 +24,11 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 9,
+      "total": 10,
       "done": 8,
-      "rate": 88.9,
+      "rate": 80.0,
       "pcs_done": 5374,
-      "sign_pcs_done": 5974
+      "sign_pcs_done": 55974
     },
     "qc": {
       "total": 5,
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 15,
-        "done": 11,
-        "rate": 73.3
+        "done": 12,
+        "rate": 80.0
       },
       "pcs": {
         "total": 66244,
@@ -80,14 +80,18 @@
       },
       "sku": {
         "total": 27,
-        "done": 21,
-        "rate": 77.8
+        "done": 22,
+        "rate": 81.5
       },
       "supplier": {
         "total": 13,
-        "done": 9,
-        "rate": 69.2,
+        "done": 10,
+        "rate": 76.9,
         "detail": {
+          "温州君越制袋有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "湖南麦克普勒供应链集团有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -133,10 +137,6 @@
             "done": 0
           },
           "上海恺臻实业有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
-          "温州君越制袋有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -191,16 +191,15 @@
           "skuCount": 1,
           "pcs": 400,
           "timeSlot": "15:30 - 16:00"
-        },
-        {
-          "supplierName": "温州君越制袋有限公司-快乐猴",
-          "billCode": "YY20260525001865",
-          "skuCount": 1,
-          "pcs": 50000,
-          "timeSlot": "15:00 - 15:30"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "温州君越制袋有限公司-快乐猴",
+          "billCode": "YY20260525001865",
+          "signTime": "15:32",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "东莞市华祥食品有限公司-快乐猴",
           "billCode": "YY20260527007358",
@@ -237,19 +236,19 @@
           "supplierName": "小熊驾到（山东）食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 新奥尔良风味腌料 35g",
           "completeTime": "17:34",
-          "waitingMins": 1313
+          "waitingMins": 1319
         },
         {
           "supplierName": "上海品厨商贸有限公司-快乐猴",
           "skuName": "展艺红豆沙(水洗)500g",
           "completeTime": "12:30",
-          "waitingMins": 178
+          "waitingMins": 184
         },
         {
           "supplierName": "上海品厨商贸有限公司-快乐猴",
           "skuName": "展艺 熟咸蛋黄 40g",
           "completeTime": "12:31",
-          "waitingMins": 177
+          "waitingMins": 183
         }
       ],
       "qc_recv_pending": [],
@@ -499,9 +498,9 @@
       }
     ],
     "seeding": {
-      "not_started": 81,
-      "in_progress": 3,
-      "done": 179,
+      "not_started": 78,
+      "in_progress": 4,
+      "done": 181,
       "total": 263,
       "status": "ok"
     }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-29T10:52:42",
+  "timestamp": "2026-05-29T10:55:43",
   "date": "2026-05-29",
   "warehouse": "GZ0210",
   "inbound": {
@@ -25,28 +25,28 @@
     },
     "unload": {
       "total": 4,
-      "done": 3,
-      "rate": 75.0,
-      "pcs_done": 3024,
+      "done": 4,
+      "rate": 100.0,
+      "pcs_done": 3504,
       "sign_pcs_done": 3504
     },
     "qc": {
-      "total": 2,
+      "total": 1,
       "done": 1,
-      "pending": 1,
+      "pending": 0,
       "passed": 1,
       "rejected": 0,
-      "rate": 50.0,
+      "rate": 100.0,
       "bill_done": 1,
-      "bill_total": 2,
+      "bill_total": 1,
       "pcs_done": 1920,
       "pcs_passed": 1920,
-      "pcs_total": 2400,
+      "pcs_total": 1920,
       "pcs_rejected": 0,
-      "pcs_rate": 80.0,
+      "pcs_rate": 100.0,
       "sku_done": 1,
-      "sku_total": 2,
-      "sku_rate": 50.0
+      "sku_total": 1,
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 15576,
@@ -245,30 +245,14 @@
           "timeSlot": "15:00 - 15:30"
         }
       ],
-      "unloading": [
-        {
-          "supplierName": "麟珑有鱼（上海）贸易有限公司-快乐猴",
-          "billCode": "YY20260527009623",
-          "signTime": "09:15",
-          "status": "已签到未卸货"
-        }
-      ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "麟珑有鱼（上海）贸易有限公司-快乐猴",
-          "skuName": "麟珑茶室 茉莉乌龙茶饮料 1.25L",
-          "arrivalTime": "14:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "unloading": [],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "小熊驾到（山东）食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 新奥尔良风味腌料 35g",
           "completeTime": "17:34",
-          "waitingMins": 1038
+          "waitingMins": 1041
         }
       ],
       "qc_recv_pending": [],
@@ -398,47 +382,65 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 216,
-      "alloc_pcs": 216,
-      "alloc_rate": 100.0,
+      "plan_pcs": 227,
+      "alloc_pcs": 219,
+      "alloc_rate": 96.5,
       "picked_pcs": 216,
       "sow_pcs": 216,
-      "sow_rate": 100.0,
+      "sow_rate": 98.6,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 5,
-      "sku_alloc": 5,
+      "sku_plan": 7,
+      "sku_alloc": 7,
       "sku_sow": 5,
       "sku_ship": 0,
-      "total_orders": 3
+      "total_orders": 4
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB2026052978283",
+        "skuNum": 2,
+        "planQty": 11,
+        "allocQty": 3,
+        "unallocQty": 8
+      }
+    ],
     "seeding": {
-      "not_started": 114,
+      "not_started": 115,
       "in_progress": 0,
       "done": 0,
-      "total": 114,
+      "total": 115,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 3,
-    "total_pcs": 216,
-    "alloc_pcs": 216,
-    "alloc_rate": 100.0,
+    "total_orders": 4,
+    "total_pcs": 227,
+    "alloc_pcs": 219,
+    "alloc_rate": 96.5,
     "picked_pcs": 216,
     "sow_pcs": 216,
-    "sow_rate": 100.0,
+    "sow_rate": 98.6,
     "ship_pcs": 0,
     "ship_rate": 0,
-    "sku_plan": 5,
-    "sku_alloc": 5,
+    "sku_plan": 7,
+    "sku_alloc": 7,
     "sku_sow": 5,
     "store_count": 1,
     "by_store": {
-      "KLH-广州常温1仓-GZ0209": 216.0
+      "KLH-广州常温1仓-GZ0209": 227.0
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB2026052978283",
+        "skuNum": 2,
+        "planQty": 11,
+        "allocQty": 3,
+        "unallocQty": 8
+      }
+    ],
     "status": "ok"
   },
   "attendance": {

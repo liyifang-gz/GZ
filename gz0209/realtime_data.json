@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-30T14:52:09",
+  "timestamp": "2026-05-30T14:55:08",
   "date": "2026-05-30",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 16,
-      "waiting": 1
+      "signed": 17,
+      "waiting": 0
     },
     "ontime": {
       "ontime": 2,
-      "early": 14,
+      "early": 15,
       "late": 0,
       "total": 17,
       "rate": 11.8,
-      "early_rate": 82.4,
+      "early_rate": 88.2,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 13,
-      "done": 12,
-      "rate": 92.3,
-      "pcs_done": 6888,
-      "sign_pcs_done": 7488
+      "total": 14,
+      "done": 13,
+      "rate": 92.9,
+      "pcs_done": 6898,
+      "sign_pcs_done": 7498
     },
     "qc": {
-      "total": 2,
+      "total": 3,
       "done": 0,
-      "pending": 2,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 2,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 600,
+      "pcs_total": 610,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 2,
+      "sku_total": 3,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 17,
-        "done": 16,
-        "rate": 94.1
+        "done": 17,
+        "rate": 100.0
       },
       "pcs": {
         "total": 7694,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 25,
-        "done": 24,
-        "rate": 96.0
+        "done": 25,
+        "rate": 100.0
       },
       "supplier": {
         "total": 12,
-        "done": 11,
-        "rate": 91.7,
+        "done": 12,
+        "rate": 100.0,
         "detail": {
+          "青岛周氏塑料包装有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳市国华正茂贸易有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -123,10 +127,6 @@
           "四川予之贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "青岛周氏塑料包装有限公司": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -150,15 +150,7 @@
           "poStatus": "已完成"
         }
       ],
-      "unsigned": [
-        {
-          "supplierName": "青岛周氏塑料包装有限公司",
-          "billCode": "YY20260526003685",
-          "skuCount": 1,
-          "pcs": 10,
-          "timeSlot": "15:00 - 15:30"
-        }
-      ],
+      "unsigned": [],
       "unloading": [
         {
           "supplierName": "东莞市华祥食品有限公司-快乐猴",
@@ -188,6 +180,14 @@
           "skuName": "双汇玉米热狗肠40g*8根",
           "arrivalTime": "13:00",
           "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "青岛周氏塑料包装有限公司",
+          "skuName": "快乐猴-垃圾袋黑色130*140-特大号300个/包",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "14:54",
           "statusLabel": "待质检"
         }
       ],
@@ -447,10 +447,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 54,
-      "in_progress": 5,
-      "done": 170,
-      "total": 229,
+      "not_started": 53,
+      "in_progress": 6,
+      "done": 173,
+      "total": 232,
       "status": "ok"
     }
   },

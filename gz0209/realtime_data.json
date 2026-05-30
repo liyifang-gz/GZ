@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-30T12:58:28",
+  "timestamp": "2026-05-30T13:03:59",
   "date": "2026-05-30",
   "warehouse": "GZ0210",
   "inbound": {
@@ -80,6 +80,10 @@
         "done": 8,
         "rate": 72.7,
         "detail": {
+          "深圳市荣德润贸易有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "广东燕塘乳业股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -99,10 +103,6 @@
           "深圳市飞临投资有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "深圳市荣德润贸易有限公司-快乐猴": {
-            "plan": 2,
-            "done": 2
           },
           "安徽欧选电子商务有限公司": {
             "plan": 1,
@@ -202,20 +202,20 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 59,
+      "total": 92,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 59,
+      "total": 92,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 1881,
+      "pcs_total": 2608,
       "pcs_rate": 0.0
     },
     "packing": {
-      "total": 3,
+      "total": 4,
       "done": 0,
       "rate": 0.0
     },
@@ -224,6 +224,11 @@
         "containerCode": "RQ-28-03-0900098",
         "poiName": "禅城东方广场店",
         "qty": 1268
+      },
+      {
+        "containerCode": "RQ-28-03-0900063",
+        "poiName": "禅城东方广场店",
+        "qty": 727
       },
       {
         "containerCode": "RQ-28-03-0900099",
@@ -243,6 +248,11 @@
         "qty": 1268
       },
       {
+        "containerCode": "RQ-28-03-0900063",
+        "poiName": "禅城东方广场店",
+        "qty": 727
+      },
+      {
         "containerCode": "RQ-28-03-0900099",
         "poiName": "禅城东方广场店",
         "qty": 601
@@ -254,22 +264,31 @@
       }
     ],
     "shipping": {
-      "total": 1881,
+      "total": 2608,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 59,
+      "multi_pallet_total": 92,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "31.44%",
+      "load_rate_unloaded": "46.59%",
       "load_rate_loaded": "--",
       "load_rate_shipped": "--",
       "low_load_containers": [],
       "all_containers_detail": [
+        {
+          "containerCode": "RQ-28-03-0900063",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "92.06%",
+          "loadingRateVal": 92.06,
+          "skuPcs": "727.000",
+          "skuVolume": "1.823",
+          "planOutTime": "05-30 20:00"
+        },
         {
           "containerCode": "RQ-28-03-0900099",
           "poiName": "禅城东方广场店",
@@ -298,23 +317,23 @@
           "planOutTime": "05-30 20:00"
         }
       ],
-      "outbound_efficiency": 313.5,
-      "outbound_efficiency_formula": "1881 PCS / 6 人(拣播员)"
+      "outbound_efficiency": 434.7,
+      "outbound_efficiency_formula": "2608 PCS / 6 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 1881,
+        "total": 2608,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 1881,
+        "not_caged": 2608,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
         "cage_rate": 0.0,
-        "sowed_picked": 1881
+        "sowed_picked": 2608
       },
       "sku": {
-        "total": 59,
+        "total": 92,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -328,9 +347,9 @@
       "plan_pcs": 21963,
       "alloc_pcs": 21743,
       "alloc_rate": 99.0,
-      "picked_pcs": 1881,
-      "sow_pcs": 1881,
-      "sow_rate": 8.7,
+      "picked_pcs": 2608,
+      "sow_pcs": 2608,
+      "sow_rate": 12.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 447,
@@ -366,9 +385,9 @@
       }
     ],
     "seeding": {
-      "not_started": 101,
-      "in_progress": 2,
-      "done": 83,
+      "not_started": 94,
+      "in_progress": 1,
+      "done": 91,
       "total": 186,
       "status": "ok"
     }
@@ -378,9 +397,9 @@
     "total_pcs": 21963,
     "alloc_pcs": 21743,
     "alloc_rate": 99.0,
-    "picked_pcs": 1881,
-    "sow_pcs": 1881,
-    "sow_rate": 8.7,
+    "picked_pcs": 2608,
+    "sow_pcs": 2608,
+    "sow_rate": 12.0,
     "ship_pcs": 0,
     "ship_rate": 0,
     "sku_plan": 447,
@@ -459,10 +478,10 @@
       "N冷藏拣播员": 6,
       "N冷藏物资": 1
     },
-    "predicted_efficiency": 156.8,
-    "efficiency_formula": "1881 PCS / 12 人",
-    "outbound_efficiency": 313.5,
-    "outbound_efficiency_formula": "1881 PCS / 6 人(拣播员)",
+    "predicted_efficiency": 217.3,
+    "efficiency_formula": "2608 PCS / 12 人",
+    "outbound_efficiency": 434.7,
+    "outbound_efficiency_formula": "2608 PCS / 6 人(拣播员)",
     "inbound_efficiency_workers": 5,
     "status": "ok"
   }

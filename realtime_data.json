@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-31T00:34:36",
+  "timestamp": "2026-05-31T00:37:36",
   "date": "2026-05-31",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 85,
-      "signed": 0,
-      "waiting": 85
+      "signed": 1,
+      "waiting": 84
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 85,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 1.2,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 721
     },
     "qc": {
-      "total": 0,
+      "total": 11,
       "done": 0,
-      "pending": 0,
+      "pending": 11,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 11,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 721,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 11,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 0,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 85,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 1.2
       },
       "pcs": {
         "total": 19037,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 406,
-        "done": 0,
-        "rate": 0.0
+        "done": 11,
+        "rate": 2.7
       },
       "supplier": {
         "total": 70,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 1.4,
         "detail": {
+          "广州市友心农业发展有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳市香蕉姐水果有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
@@ -153,10 +157,6 @@
             "done": 0
           },
           "上海丰楷农业科技有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
-          "深圳市理念供应链管理有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -417,13 +417,6 @@
           "timeSlot": "06:30 - 07:00"
         },
         {
-          "supplierName": "广州市友心农业发展有限公司-快乐猴",
-          "billCode": "YY20260530008084",
-          "skuCount": 11,
-          "pcs": 721,
-          "timeSlot": "16:00 - 16:30"
-        },
-        {
           "supplierName": "中山市宏旷食品有限公司-快乐猴",
           "billCode": "YY20260530007480",
           "skuCount": 13,
@@ -548,10 +541,113 @@
           "skuCount": 1,
           "pcs": 16,
           "timeSlot": "11:30 - 12:00"
+        },
+        {
+          "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
+          "billCode": "YY20260530004172",
+          "skuCount": 2,
+          "pcs": 6,
+          "timeSlot": "05:30 - 06:00"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "广州市友心农业发展有限公司-快乐猴",
+          "billCode": "YY20260530008084",
+          "signTime": "00:36",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "广州市友心农业发展有限公司-快乐猴",
+          "skuName": "上海青苗500g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "广州市友心农业发展有限公司-快乐猴",
+          "skuName": "薄皮青椒 500g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "广州市友心农业发展有限公司-快乐猴",
+          "skuName": "韭黄 400g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "广州市友心农业发展有限公司-快乐猴",
+          "skuName": "螺丝椒 500g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "广州市友心农业发展有限公司-快乐猴",
+          "skuName": "大葱 500g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "广州市友心农业发展有限公司-快乐猴",
+          "skuName": "尖椒 500g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "广州市友心农业发展有限公司-快乐猴",
+          "skuName": "指天椒 100g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "广州市友心农业发展有限公司-快乐猴",
+          "skuName": "蒜苗 250g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 9,
+          "supplierName": "广州市友心农业发展有限公司-快乐猴",
+          "skuName": "香芹  350g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 10,
+          "supplierName": "广州市友心农业发展有限公司-快乐猴",
+          "skuName": "彩椒 550g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 11,
+          "supplierName": "广州市友心农业发展有限公司-快乐猴",
+          "skuName": "芥兰苗 300g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [],

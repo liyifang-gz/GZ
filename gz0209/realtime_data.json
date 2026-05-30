@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-30T16:25:39",
+  "timestamp": "2026-05-30T16:28:40",
   "date": "2026-05-30",
   "warehouse": "GZ0210",
   "inbound": {
@@ -188,7 +188,7 @@
           "supplierName": "青岛周氏塑料包装有限公司",
           "skuName": "快乐猴-垃圾袋黑色130*140-特大号300个/包",
           "completeTime": "15:27",
-          "waitingMins": 58
+          "waitingMins": 61
         }
       ],
       "qc_recv_pending": [],
@@ -214,34 +214,46 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 0,
+      "total": 1,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 0,
+      "total": 1,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 5567,
-      "pcs_total": 14073,
-      "pcs_rate": 39.6
+      "pcs_total": 20073,
+      "pcs_rate": 27.7
     },
     "packing": {
       "total": 9,
       "done": 9,
       "rate": 100.0
     },
-    "uncaged_details": [],
-    "unpacked_details": [],
+    "uncaged_details": [
+      {
+        "containerCode": "RQ-28-03-0900237",
+        "poiName": "南海国昌广场店",
+        "qty": 6000
+      }
+    ],
+    "unpacked_details": [
+      {
+        "containerCode": "RQ-28-03-0900237",
+        "poiName": "南海国昌广场店",
+        "qty": 6000
+      }
+    ],
     "shipping": {
-      "total": 0,
+      "total": 6000,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 0,
+      "multi_pallet_total": 1,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
@@ -387,29 +399,29 @@
           "planOutTime": "05-30 20:00"
         }
       ],
-      "outbound_efficiency": 0.0,
-      "outbound_efficiency_formula": "0 PCS / 6 人(拣播员)"
+      "outbound_efficiency": 1000.0,
+      "outbound_efficiency_formula": "6000 PCS / 6 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 0,
+        "total": 6000,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
-        "cage_rate": 39.6,
-        "sowed_picked": 14073
+        "not_caged": 6000,
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
+        "cage_rate": 27.7,
+        "sowed_picked": 20073
       },
       "sku": {
-        "total": 0,
+        "total": 1,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
-        "cage_rate": 0
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
+        "cage_rate": 0.0
       }
     },
     "status": "ok",
@@ -417,23 +429,23 @@
       "plan_pcs": 21963,
       "alloc_pcs": 21963,
       "alloc_rate": 100.0,
-      "picked_pcs": 14073,
-      "sow_pcs": 14073,
-      "sow_rate": 64.1,
+      "picked_pcs": 20073,
+      "sow_pcs": 20073,
+      "sow_rate": 91.4,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 447,
       "sku_alloc": 447,
-      "sku_sow": 316,
+      "sku_sow": 319,
       "sku_ship": 0,
       "total_orders": 18
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 70,
+      "not_started": 64,
       "in_progress": 4,
-      "done": 263,
-      "total": 337,
+      "done": 271,
+      "total": 339,
       "status": "ok"
     }
   },
@@ -442,14 +454,14 @@
     "total_pcs": 21963,
     "alloc_pcs": 21963,
     "alloc_rate": 100.0,
-    "picked_pcs": 14073,
-    "sow_pcs": 14073,
-    "sow_rate": 64.1,
+    "picked_pcs": 20073,
+    "sow_pcs": 20073,
+    "sow_rate": 91.4,
     "ship_pcs": 0,
     "ship_rate": 0,
     "sku_plan": 447,
     "sku_alloc": 447,
-    "sku_sow": 316,
+    "sku_sow": 319,
     "store_count": 1,
     "by_store": {
       "KLH-广州常温1仓-GZ0209": 21963.0
@@ -498,10 +510,10 @@
       "N冷藏拣播员": 6,
       "N冷藏物资": 1
     },
-    "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS / 12 人",
-    "outbound_efficiency": 0.0,
-    "outbound_efficiency_formula": "0 PCS / 6 人(拣播员)",
+    "predicted_efficiency": 500.0,
+    "efficiency_formula": "6000 PCS / 12 人",
+    "outbound_efficiency": 1000.0,
+    "outbound_efficiency_formula": "6000 PCS / 6 人(拣播员)",
     "inbound_efficiency_workers": 5,
     "status": "ok"
   }

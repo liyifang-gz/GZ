@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-31T03:34:36",
+  "timestamp": "2026-05-31T03:37:36",
   "date": "2026-05-31",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 85,
-      "signed": 10,
-      "waiting": 75
+      "signed": 11,
+      "waiting": 74
     },
     "ontime": {
       "ontime": 0,
-      "early": 10,
+      "early": 11,
       "late": 0,
       "total": 85,
       "rate": 0.0,
-      "early_rate": 11.8,
+      "early_rate": 12.9,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 9,
+      "total": 10,
       "done": 8,
-      "rate": 88.9,
+      "rate": 80.0,
       "pcs_done": 2171,
-      "sign_pcs_done": 2252
+      "sign_pcs_done": 2300
     },
     "qc": {
-      "total": 34,
+      "total": 35,
       "done": 0,
-      "pending": 34,
+      "pending": 35,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 34,
+      "bill_total": 35,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 2252,
+      "pcs_total": 2300,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 33,
+      "sku_total": 34,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 85,
-        "done": 10,
-        "rate": 11.8
+        "done": 11,
+        "rate": 12.9
       },
       "pcs": {
         "total": 19037,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 406,
-        "done": 38,
-        "rate": 9.4
+        "done": 39,
+        "rate": 9.6
       },
       "supplier": {
         "total": 70,
-        "done": 9,
-        "rate": 12.9,
+        "done": 10,
+        "rate": 14.3,
         "detail": {
+          "广州光明乳品有限公司-快乐猴": {
+            "plan": 2,
+            "done": 1
+          },
           "深圳市农耕记智慧科技有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -154,10 +158,6 @@
           },
           "京懋丰园（北京）商贸有限公司-快乐猴": {
             "plan": 2,
-            "done": 0
-          },
-          "北京宏福国际农业科技有限公司-快乐猴": {
-            "plan": 1,
             "done": 0
           }
         }
@@ -552,6 +552,12 @@
       ],
       "unloading": [
         {
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "billCode": "YY20260530003710",
+          "signTime": "03:37",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "金乡县英格电子商务有限公司-快乐猴",
           "billCode": "YY20260530008229",
           "signTime": "03:05",
@@ -829,6 +835,14 @@
           "skuName": "农耕记 鱼香肉丝 410g",
           "arrivalTime": "05:30",
           "unloadFinishTime": "03:31",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 35,
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "skuName": "光明新鲜牧场高品质牛乳950ml",
+          "arrivalTime": "04:00",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],

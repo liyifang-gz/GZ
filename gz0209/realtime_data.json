@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-30T11:46:06",
+  "timestamp": "2026-05-30T11:49:06",
   "date": "2026-05-30",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 14,
-      "signed": 9,
-      "waiting": 5
+      "signed": 10,
+      "waiting": 4
     },
     "ontime": {
       "ontime": 0,
-      "early": 9,
+      "early": 10,
       "late": 0,
       "total": 14,
       "rate": 0.0,
-      "early_rate": 64.3,
+      "early_rate": 71.4,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 7,
+      "total": 8,
       "done": 7,
-      "rate": 100.0,
+      "rate": 87.5,
       "pcs_done": 5156,
-      "sign_pcs_done": 5156
+      "sign_pcs_done": 5256
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 100,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 6712,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 14,
-        "done": 9,
-        "rate": 64.3
+        "done": 10,
+        "rate": 71.4
       },
       "pcs": {
         "total": 7694,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 19,
-        "done": 14,
-        "rate": 73.7
+        "done": 15,
+        "rate": 78.9
       },
       "supplier": {
         "total": 11,
-        "done": 7,
-        "rate": 63.6,
+        "done": 8,
+        "rate": 72.7,
         "detail": {
+          "广东燕塘乳业股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳市飞临投资有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -107,10 +111,6 @@
           "四川予之贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "广东燕塘乳业股份有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           },
           "青岛周氏塑料包装有限公司": {
             "plan": 1,
@@ -148,13 +148,6 @@
       ],
       "unsigned": [
         {
-          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
-          "billCode": "YY20260528002599",
-          "skuCount": 1,
-          "pcs": 100,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
           "supplierName": "青岛周氏塑料包装有限公司",
           "billCode": "YY20260526003685",
           "skuCount": 1,
@@ -183,8 +176,24 @@
           "timeSlot": "15:00 - 15:30"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
+          "billCode": "YY20260528002599",
+          "signTime": "11:49",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
+          "skuName": "燕塘 原味酸奶饮品 250ml*12",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [],
@@ -288,10 +297,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 149,
+      "not_started": 155,
       "in_progress": 0,
       "done": 0,
-      "total": 149,
+      "total": 155,
       "status": "ok"
     }
   },

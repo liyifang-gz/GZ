@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-30T08:24:05",
+  "timestamp": "2026-05-30T08:27:05",
   "date": "2026-05-30",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 14,
-      "signed": 2,
-      "waiting": 12
+      "signed": 5,
+      "waiting": 9
     },
     "ontime": {
       "ontime": 0,
-      "early": 2,
+      "early": 5,
       "late": 0,
       "total": 14,
       "rate": 0.0,
-      "early_rate": 14.3,
+      "early_rate": 35.7,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 4,
       "done": 2,
-      "rate": 100.0,
+      "rate": 50.0,
       "pcs_done": 1500,
-      "sign_pcs_done": 1500
+      "sign_pcs_done": 4404
     },
     "qc": {
-      "total": 0,
+      "total": 3,
       "done": 0,
-      "pending": 0,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 2904,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 2,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 3368,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 14,
-        "done": 2,
-        "rate": 14.3
+        "done": 5,
+        "rate": 35.7
       },
       "pcs": {
         "total": 7694,
@@ -72,14 +72,22 @@
       },
       "sku": {
         "total": 19,
-        "done": 3,
-        "rate": 15.8
+        "done": 8,
+        "rate": 42.1
       },
       "supplier": {
         "total": 11,
-        "done": 2,
-        "rate": 18.2,
+        "done": 4,
+        "rate": 36.4,
         "detail": {
+          "江苏卡姆森饮品有限公司": {
+            "plan": 2,
+            "done": 2
+          },
+          "江苏尚然饮品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "安徽欧选电子商务有限公司": {
             "plan": 1,
             "done": 1
@@ -109,14 +117,6 @@
             "done": 0
           },
           "杭州糕诺电子商务有限公司": {
-            "plan": 1,
-            "done": 0
-          },
-          "江苏卡姆森饮品有限公司": {
-            "plan": 2,
-            "done": 0
-          },
-          "江苏尚然饮品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -197,27 +197,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "江苏卡姆森饮品有限公司",
-          "billCode": "YY20260525004039",
-          "skuCount": 2,
-          "pcs": 1704,
-          "timeSlot": "09:30 - 10:00"
-        },
-        {
-          "supplierName": "江苏卡姆森饮品有限公司",
-          "billCode": "YY20260525004039",
-          "skuCount": 2,
-          "pcs": 1704,
-          "timeSlot": "09:30 - 10:00"
-        },
-        {
-          "supplierName": "江苏尚然饮品有限公司-快乐猴",
-          "billCode": "YY20260525003983",
-          "skuCount": 1,
-          "pcs": 1200,
-          "timeSlot": "09:30 - 10:00"
-        },
-        {
           "supplierName": "深圳市国华正茂贸易有限公司-快乐猴",
           "billCode": "YY20260522001624",
           "skuCount": 1,
@@ -232,8 +211,52 @@
           "timeSlot": "15:00 - 15:30"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "江苏卡姆森饮品有限公司",
+          "billCode": "YY20260525004039",
+          "signTime": "08:26",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "江苏卡姆森饮品有限公司",
+          "billCode": "YY20260525004039",
+          "signTime": "08:26",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "江苏尚然饮品有限公司-快乐猴",
+          "billCode": "YY20260525003983",
+          "signTime": "08:26",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "江苏尚然饮品有限公司-快乐猴",
+          "skuName": "快乐猴 原萃铁观音乌龙茶饮料 1L",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "江苏卡姆森饮品有限公司",
+          "skuName": "快乐猴 茉莉花茶 1L",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "江苏卡姆森饮品有限公司",
+          "skuName": "快乐猴 茉莉花茶 1L",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [],

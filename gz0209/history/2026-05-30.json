@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-30T13:06:59",
+  "timestamp": "2026-05-30T13:09:59",
   "date": "2026-05-30",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
-      "total": 14,
-      "signed": 11,
+      "total": 16,
+      "signed": 13,
       "waiting": 3
     },
     "ontime": {
-      "ontime": 0,
+      "ontime": 2,
       "early": 11,
       "late": 0,
-      "total": 14,
-      "rate": 0.0,
-      "early_rate": 78.6,
+      "total": 16,
+      "rate": 12.5,
+      "early_rate": 68.8,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 9,
+      "total": 10,
       "done": 9,
-      "rate": 100.0,
+      "rate": 90.0,
       "pcs_done": 5328,
-      "sign_pcs_done": 5328
+      "sign_pcs_done": 5928
     },
     "qc": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "pending": 0,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 600,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 2,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 6784,
@@ -67,27 +67,31 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 14,
-        "done": 11,
-        "rate": 78.6
+        "total": 16,
+        "done": 13,
+        "rate": 81.2
       },
       "pcs": {
         "total": 7694,
         "done": 7334,
         "rate": 95.3,
-        "recv_done": 6712,
-        "recv_rate": 87.2
+        "recv_done": 6784,
+        "recv_rate": 88.2
       },
       "sku": {
-        "total": 19,
-        "done": 16,
-        "rate": 84.2
+        "total": 23,
+        "done": 20,
+        "rate": 87.0
       },
       "supplier": {
-        "total": 11,
-        "done": 9,
-        "rate": 81.8,
+        "total": 12,
+        "done": 10,
+        "rate": 83.3,
         "detail": {
+          "东莞市华祥食品有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "杭州糕诺电子商务有限公司": {
             "plan": 1,
             "done": 1
@@ -177,8 +181,38 @@
           "timeSlot": "15:00 - 15:30"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "东莞市华祥食品有限公司-快乐猴",
+          "billCode": "YY20260530003660",
+          "signTime": "13:00",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "东莞市华祥食品有限公司-快乐猴",
+          "billCode": "YY20260530003660",
+          "signTime": "13:00",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "东莞市华祥食品有限公司-快乐猴",
+          "skuName": "双汇马可波罗特级火腿肠50g*5根",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "东莞市华祥食品有限公司-快乐猴",
+          "skuName": "双汇玉米热狗肠40g*8根",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [],
@@ -386,9 +420,9 @@
       }
     ],
     "seeding": {
-      "not_started": 90,
-      "in_progress": 0,
-      "done": 96,
+      "not_started": 84,
+      "in_progress": 2,
+      "done": 100,
       "total": 186,
       "status": "ok"
     }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-30T15:39:30",
+  "timestamp": "2026-05-30T15:42:32",
   "date": "2026-05-30",
   "warehouse": "GZ0210",
   "inbound": {
@@ -49,13 +49,21 @@
       "sku_rate": 33.3
     },
     "putaway": {
-      "total": 6784,
+      "total": 6794,
       "done": 6784,
-      "rate": 100.0,
-      "sku_total": 17,
+      "rate": 99.9,
+      "sku_total": 18,
       "sku_done": 17,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 94.4,
+      "details": [
+        {
+          "poNo": "CG202605250934",
+          "hopePcs": 10,
+          "putPcs": 0,
+          "hopeSku": 1,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +75,8 @@
         "total": 7694,
         "done": 7334,
         "rate": 95.3,
-        "recv_done": 6784,
-        "recv_rate": 88.2
+        "recv_done": 6794,
+        "recv_rate": 88.3
       },
       "sku": {
         "total": 25,
@@ -188,7 +196,7 @@
           "supplierName": "青岛周氏塑料包装有限公司",
           "skuName": "快乐猴-垃圾袋黑色130*140-特大号300个/包",
           "completeTime": "15:27",
-          "waitingMins": 12
+          "waitingMins": 15
         }
       ],
       "qc_recv_pending": [],
@@ -214,22 +222,22 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 134,
+      "total": 172,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 134,
+      "total": 172,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 2738,
-      "pcs_total": 13610,
-      "pcs_rate": 20.1
+      "pcs_total": 14073,
+      "pcs_rate": 19.5
     },
     "packing": {
-      "total": 9,
+      "total": 10,
       "done": 4,
-      "rate": 44.4
+      "rate": 40.0
     },
     "uncaged_details": [
       {
@@ -246,6 +254,11 @@
         "containerCode": "RQ-28-03-0900190",
         "poiName": "番禺建华汇店",
         "qty": 608
+      },
+      {
+        "containerCode": "RQ-28-03-0900166",
+        "poiName": "番禺建华汇店",
+        "qty": 463
       },
       {
         "containerCode": "RQ-28-03-0900194",
@@ -280,6 +293,11 @@
         "qty": 608
       },
       {
+        "containerCode": "RQ-28-03-0900166",
+        "poiName": "番禺建华汇店",
+        "qty": 463
+      },
+      {
         "containerCode": "RQ-28-03-0900194",
         "poiName": "番禺建华汇店",
         "qty": 389
@@ -296,18 +314,18 @@
       }
     ],
     "shipping": {
-      "total": 9872,
+      "total": 10335,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 134,
+      "multi_pallet_total": 172,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "65.83%",
+      "load_rate_unloaded": "61.70%",
       "load_rate_loaded": "68.69%",
       "load_rate_shipped": "--",
       "low_load_containers": [
@@ -413,6 +431,15 @@
           "planOutTime": "05-30 20:00"
         },
         {
+          "containerCode": "RQ-28-03-0900166",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "41.08%",
+          "loadingRateVal": 41.08,
+          "skuPcs": "463.000",
+          "skuVolume": "0.813",
+          "planOutTime": "05-30 20:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900196",
           "poiName": "番禺建华汇店",
           "loadingRate": "32.36%",
@@ -422,23 +449,23 @@
           "planOutTime": "05-30 20:00"
         }
       ],
-      "outbound_efficiency": 1645.3,
-      "outbound_efficiency_formula": "9872 PCS / 6 人(拣播员)"
+      "outbound_efficiency": 1722.5,
+      "outbound_efficiency_formula": "10335 PCS / 6 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 9872,
+        "total": 10335,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 9872,
+        "not_caged": 10335,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 20.1,
-        "sowed_picked": 13610
+        "cage_rate": 19.5,
+        "sowed_picked": 14073
       },
       "sku": {
-        "total": 134,
+        "total": 172,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -452,9 +479,9 @@
       "plan_pcs": 21963,
       "alloc_pcs": 21963,
       "alloc_rate": 100.0,
-      "picked_pcs": 13610,
-      "sow_pcs": 13610,
-      "sow_rate": 62.0,
+      "picked_pcs": 14073,
+      "sow_pcs": 14073,
+      "sow_rate": 64.1,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 447,
@@ -465,10 +492,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 58,
+      "not_started": 56,
       "in_progress": 4,
-      "done": 216,
-      "total": 278,
+      "done": 219,
+      "total": 279,
       "status": "ok"
     }
   },
@@ -477,9 +504,9 @@
     "total_pcs": 21963,
     "alloc_pcs": 21963,
     "alloc_rate": 100.0,
-    "picked_pcs": 13610,
-    "sow_pcs": 13610,
-    "sow_rate": 62.0,
+    "picked_pcs": 14073,
+    "sow_pcs": 14073,
+    "sow_rate": 64.1,
     "ship_pcs": 0,
     "ship_rate": 0,
     "sku_plan": 447,
@@ -533,10 +560,10 @@
       "N冷藏拣播员": 6,
       "N冷藏物资": 1
     },
-    "predicted_efficiency": 822.7,
-    "efficiency_formula": "9872 PCS / 12 人",
-    "outbound_efficiency": 1645.3,
-    "outbound_efficiency_formula": "9872 PCS / 6 人(拣播员)",
+    "predicted_efficiency": 861.2,
+    "efficiency_formula": "10335 PCS / 12 人",
+    "outbound_efficiency": 1722.5,
+    "outbound_efficiency_formula": "10335 PCS / 6 人(拣播员)",
     "inbound_efficiency_workers": 5,
     "status": "ok"
   }

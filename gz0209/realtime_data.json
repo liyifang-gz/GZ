@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-05-30T20:57:16",
+  "timestamp": "2026-05-30T21:00:18",
   "date": "2026-05-30",
   "warehouse": "GZ0210",
   "inbound": {
@@ -31,22 +31,22 @@
       "sign_pcs_done": 7498
     },
     "qc": {
-      "total": 3,
+      "total": 1,
       "done": 1,
-      "pending": 2,
+      "pending": 0,
       "passed": 1,
       "rejected": 0,
-      "rate": 33.3,
+      "rate": 100.0,
       "bill_done": 1,
-      "bill_total": 3,
+      "bill_total": 1,
       "pcs_done": 10,
       "pcs_passed": 10,
-      "pcs_total": 610,
+      "pcs_total": 10,
       "pcs_rejected": 0,
-      "pcs_rate": 1.6,
+      "pcs_rate": 100.0,
       "sku_done": 1,
-      "sku_total": 3,
-      "sku_rate": 33.3
+      "sku_total": 1,
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 6794,
@@ -80,6 +80,10 @@
         "done": 12,
         "rate": 100.0,
         "detail": {
+          "东莞市华祥食品有限公司-快乐猴": {
+            "plan": 3,
+            "done": 3
+          },
           "青岛周氏塑料包装有限公司": {
             "plan": 1,
             "done": 1
@@ -87,10 +91,6 @@
           "深圳市国华正茂贸易有限公司-快乐猴": {
             "plan": 2,
             "done": 2
-          },
-          "东莞市华祥食品有限公司-快乐猴": {
-            "plan": 3,
-            "done": 3
           },
           "杭州糕诺电子商务有限公司": {
             "plan": 1,
@@ -165,30 +165,13 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "东莞市华祥食品有限公司-快乐猴",
-          "skuName": "双汇马可波罗特级火腿肠50g*5根",
-          "arrivalTime": "13:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "东莞市华祥食品有限公司-快乐猴",
-          "skuName": "双汇玉米热狗肠40g*8根",
-          "arrivalTime": "13:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "青岛周氏塑料包装有限公司",
           "skuName": "快乐猴-垃圾袋黑色130*140-特大号300个/包",
           "completeTime": "15:27",
-          "waitingMins": 329
+          "waitingMins": 332
         }
       ],
       "qc_recv_pending": [],

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-31T11:41:12",
+  "timestamp": "2026-05-31T11:50:12",
   "date": "2026-05-31",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 1,
-      "signed": 0,
-      "waiting": 1
+      "signed": 1,
+      "waiting": 0
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 1,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 100.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 1000
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 1000,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 2000,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 1,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 100.0
       },
       "pcs": {
         "total": 3000,
@@ -72,17 +72,17 @@
       },
       "sku": {
         "total": 1,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 100.0
       },
       "supplier": {
         "total": 1,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 100.0,
         "detail": {
           "安徽橡果糯香食品有限公司-快乐猴": {
             "plan": 1,
-            "done": 0
+            "done": 1
           }
         }
       }
@@ -98,17 +98,25 @@
           "poStatus": "已完成"
         }
       ],
-      "unsigned": [
+      "unsigned": [],
+      "unloading": [
         {
           "supplierName": "安徽橡果糯香食品有限公司-快乐猴",
           "billCode": "YY20260530007282",
-          "skuCount": 1,
-          "pcs": 1000,
-          "timeSlot": "14:30 - 15:00"
+          "signTime": "11:45",
+          "status": "已签到未卸货"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "安徽橡果糯香食品有限公司-快乐猴",
+          "skuName": "快乐猴 蒲公英菜团子 600g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [],
@@ -212,10 +220,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 155,
+      "not_started": 164,
       "in_progress": 0,
       "done": 0,
-      "total": 155,
+      "total": 164,
       "status": "ok"
     }
   },

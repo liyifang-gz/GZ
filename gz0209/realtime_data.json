@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-05-31T11:59:18",
+  "timestamp": "2026-05-31T12:09:21",
   "date": "2026-05-31",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 12,
       "signed": 3,
-      "waiting": 8
+      "waiting": 7
     },
     "ontime": {
       "ontime": 0,
       "early": 3,
       "late": 0,
-      "total": 11,
+      "total": 10,
       "rate": 0.0,
-      "early_rate": 27.3,
+      "early_rate": 30.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
       "po_total": 15,
-      "po_reserved": 9,
-      "rate": 60.0,
+      "po_reserved": 8,
+      "rate": 53.3,
       "po_data_ok": true
     },
     "unload": {
@@ -59,40 +59,36 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 11,
+        "total": 10,
         "done": 3,
-        "rate": 27.3
+        "rate": 30.0
       },
       "pcs": {
         "total": 18426,
-        "done": 9730,
-        "rate": 52.8,
+        "done": 8450,
+        "rate": 45.9,
         "recv_done": 11192,
         "recv_rate": 60.7
       },
       "sku": {
-        "total": 26,
+        "total": 24,
         "done": 9,
-        "rate": 34.6
+        "rate": 37.5
       },
       "supplier": {
-        "total": 11,
+        "total": 10,
         "done": 3,
-        "rate": 27.3,
+        "rate": 30.0,
         "detail": {
+          "深圳市金多多食品营销有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "洽洽食品股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
           "广州市捷通兴业贸易有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "高邮三宝食品有限公司": {
-            "plan": 1,
-            "done": 0
-          },
-          "深圳市金多多食品营销有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -138,6 +134,14 @@
           "poStatus": "已完成"
         },
         {
+          "supplierName": "高邮三宝食品有限公司",
+          "poNo": "CG202605264851",
+          "skuCount": 2,
+          "pcs": 1280,
+          "preArrivalTime": "2026-05-31",
+          "poStatus": "已确认"
+        },
+        {
           "supplierName": "武汉绿禾堂食品有限公司-快乐猴",
           "poNo": "CG202605210648",
           "skuCount": 3,
@@ -179,13 +183,6 @@
         }
       ],
       "unsigned": [
-        {
-          "supplierName": "高邮三宝食品有限公司",
-          "billCode": "YY20260531000454",
-          "skuCount": 2,
-          "pcs": 1280,
-          "timeSlot": "15:00 - 15:30"
-        },
         {
           "supplierName": "广州聚艺亭商贸有限公司-快乐猴",
           "billCode": "YY20260530005676",
@@ -252,19 +249,19 @@
           "supplierName": "深圳市金多多食品营销有限公司-快乐猴",
           "skuName": "阿麦斯4D水蜜桃爆汁泳圈摆件软糖24g（约7颗）",
           "completeTime": "08:56",
-          "waitingMins": 182
+          "waitingMins": 192
         },
         {
           "supplierName": "深圳市金多多食品营销有限公司-快乐猴",
           "skuName": "阿麦斯 4D水蜜桃爆汁软糖 24g",
           "completeTime": "08:52",
-          "waitingMins": 186
+          "waitingMins": 197
         },
         {
           "supplierName": "深圳市金多多食品营销有限公司-快乐猴",
           "skuName": "阿麦斯 水蜜桃爆汁软糖 24g",
           "completeTime": "08:54",
-          "waitingMins": 185
+          "waitingMins": 195
         }
       ],
       "qc_recv_pending": [],
@@ -283,8 +280,8 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 2432.5,
-      "efficiency_formula": "9730 PCS / 4 人",
+      "efficiency": 2112.5,
+      "efficiency_formula": "8450 PCS / 4 人",
       "inbound_schedule": 4
     }
   },
@@ -362,47 +359,97 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 16117,
+      "plan_pcs": 25889,
       "alloc_pcs": 16117,
-      "alloc_rate": 100.0,
+      "alloc_rate": 62.3,
       "picked_pcs": 1887,
       "sow_pcs": 1887,
       "sow_rate": 11.7,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 748,
+      "sku_plan": 1255,
       "sku_alloc": 748,
       "sku_sow": 744,
       "sku_ship": 0,
-      "total_orders": 4
+      "total_orders": 7
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB2026053180091",
+        "skuNum": 185,
+        "planQty": 3770,
+        "allocQty": 0,
+        "unallocQty": 3770
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB2026053180096",
+        "skuNum": 182,
+        "planQty": 3651,
+        "allocQty": 0,
+        "unallocQty": 3651
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB2026053180073",
+        "skuNum": 140,
+        "planQty": 2351,
+        "allocQty": 0,
+        "unallocQty": 2351
+      }
+    ],
     "seeding": {
-      "not_started": 174,
-      "in_progress": 0,
-      "done": 0,
-      "total": 174,
+      "not_started": 159,
+      "in_progress": 3,
+      "done": 14,
+      "total": 176,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 4,
-    "total_pcs": 16117,
+    "total_orders": 7,
+    "total_pcs": 25889,
     "alloc_pcs": 16117,
-    "alloc_rate": 100.0,
+    "alloc_rate": 62.3,
     "picked_pcs": 1887,
     "sow_pcs": 1887,
     "sow_rate": 11.7,
     "ship_pcs": 0,
     "ship_rate": 0,
-    "sku_plan": 748,
+    "sku_plan": 1255,
     "sku_alloc": 748,
     "sku_sow": 744,
     "store_count": 1,
     "by_store": {
-      "KLH-广州常温1仓-GZ0209": 16117.0
+      "KLH-广州常温1仓-GZ0209": 25889.0
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB2026053180091",
+        "skuNum": 185,
+        "planQty": 3770,
+        "allocQty": 0,
+        "unallocQty": 3770
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB2026053180096",
+        "skuNum": 182,
+        "planQty": 3651,
+        "allocQty": 0,
+        "unallocQty": 3651
+      },
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB2026053180073",
+        "skuNum": 140,
+        "planQty": 2351,
+        "allocQty": 0,
+        "unallocQty": 2351
+      }
+    ],
     "status": "ok"
   },
   "attendance": {

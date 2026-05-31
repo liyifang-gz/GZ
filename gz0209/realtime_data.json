@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-05-31T09:42:29",
+  "timestamp": "2026-05-31T09:51:29",
   "date": "2026-05-31",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
-      "total": 11,
+      "total": 12,
       "signed": 2,
-      "waiting": 8
+      "waiting": 9
     },
     "ontime": {
       "ontime": 0,
       "early": 2,
       "late": 0,
-      "total": 10,
+      "total": 11,
       "rate": 0.0,
-      "early_rate": 20.0,
+      "early_rate": 18.2,
       "late_rate": 0.0
     },
     "reserve_progress": {
       "po_total": 15,
-      "po_reserved": 8,
-      "rate": 53.3,
+      "po_reserved": 9,
+      "rate": 60.0,
       "po_data_ok": true
     },
     "unload": {
@@ -59,27 +59,31 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 10,
+        "total": 11,
         "done": 2,
-        "rate": 20.0
+        "rate": 18.2
       },
       "pcs": {
         "total": 18426,
-        "done": 8450,
-        "rate": 45.9,
+        "done": 9730,
+        "rate": 52.8,
         "recv_done": 11192,
         "recv_rate": 60.7
       },
       "sku": {
-        "total": 24,
+        "total": 26,
         "done": 8,
-        "rate": 33.3
+        "rate": 30.8
       },
       "supplier": {
-        "total": 10,
+        "total": 11,
         "done": 2,
-        "rate": 20.0,
+        "rate": 18.2,
         "detail": {
+          "高邮三宝食品有限公司": {
+            "plan": 1,
+            "done": 0
+          },
           "深圳市金多多食品营销有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -134,14 +138,6 @@
           "poStatus": "已完成"
         },
         {
-          "supplierName": "高邮三宝食品有限公司",
-          "poNo": "CG202605264851",
-          "skuCount": 2,
-          "pcs": 1280,
-          "preArrivalTime": "2026-05-31",
-          "poStatus": "已确认"
-        },
-        {
           "supplierName": "武汉绿禾堂食品有限公司-快乐猴",
           "poNo": "CG202605210648",
           "skuCount": 3,
@@ -183,6 +179,13 @@
         }
       ],
       "unsigned": [
+        {
+          "supplierName": "高邮三宝食品有限公司",
+          "billCode": "YY20260531000454",
+          "skuCount": 2,
+          "pcs": 1280,
+          "timeSlot": "15:00 - 15:30"
+        },
         {
           "supplierName": "广州聚艺亭商贸有限公司-快乐猴",
           "billCode": "YY20260530005676",
@@ -247,19 +250,19 @@
           "supplierName": "深圳市金多多食品营销有限公司-快乐猴",
           "skuName": "阿麦斯4D水蜜桃爆汁泳圈摆件软糖24g（约7颗）",
           "completeTime": "08:56",
-          "waitingMins": 46
+          "waitingMins": 55
         },
         {
           "supplierName": "深圳市金多多食品营销有限公司-快乐猴",
           "skuName": "阿麦斯 4D水蜜桃爆汁软糖 24g",
           "completeTime": "08:52",
-          "waitingMins": 50
+          "waitingMins": 59
         },
         {
           "supplierName": "深圳市金多多食品营销有限公司-快乐猴",
           "skuName": "阿麦斯 水蜜桃爆汁软糖 24g",
           "completeTime": "08:54",
-          "waitingMins": 48
+          "waitingMins": 57
         }
       ],
       "qc_recv_pending": [],
@@ -278,8 +281,8 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 1690.0,
-      "efficiency_formula": "8450 PCS / 5 人",
+      "efficiency": 1946.0,
+      "efficiency_formula": "9730 PCS / 5 人",
       "inbound_schedule": 5
     }
   },
@@ -373,10 +376,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 46,
+      "not_started": 66,
       "in_progress": 0,
       "done": 0,
-      "total": 46,
+      "total": 66,
       "status": "ok"
     }
   },

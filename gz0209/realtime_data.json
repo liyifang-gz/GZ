@@ -1,52 +1,52 @@
 {
-  "timestamp": "2026-05-31T12:18:23",
+  "timestamp": "2026-05-31T12:27:23",
   "date": "2026-05-31",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
-      "total": 12,
+      "total": 13,
       "signed": 4,
-      "waiting": 6
+      "waiting": 7
     },
     "ontime": {
       "ontime": 0,
       "early": 4,
       "late": 0,
-      "total": 10,
+      "total": 11,
       "rate": 0.0,
-      "early_rate": 40.0,
+      "early_rate": 36.4,
       "late_rate": 0.0
     },
     "reserve_progress": {
-      "po_total": 15,
+      "po_total": 14,
       "po_reserved": 8,
-      "rate": 53.3,
+      "rate": 57.1,
       "po_data_ok": true
     },
     "unload": {
       "total": 4,
-      "done": 3,
-      "rate": 75.0,
-      "pcs_done": 1646,
+      "done": 4,
+      "rate": 100.0,
+      "pcs_done": 1806,
       "sign_pcs_done": 1806
     },
     "qc": {
-      "total": 5,
+      "total": 4,
       "done": 4,
-      "pending": 1,
+      "pending": 0,
       "passed": 4,
       "rejected": 0,
-      "rate": 80.0,
+      "rate": 100.0,
       "bill_done": 4,
-      "bill_total": 5,
+      "bill_total": 4,
       "pcs_done": 1232,
       "pcs_passed": 1232,
-      "pcs_total": 1392,
+      "pcs_total": 1232,
       "pcs_rejected": 0,
-      "pcs_rate": 88.5,
+      "pcs_rate": 100.0,
       "sku_done": 4,
-      "sku_total": 5,
-      "sku_rate": 80.0
+      "sku_total": 4,
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 11192,
@@ -59,36 +59,40 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 10,
+        "total": 11,
         "done": 4,
-        "rate": 40.0
+        "rate": 36.4
       },
       "pcs": {
-        "total": 18426,
+        "total": 17146,
         "done": 8450,
-        "rate": 45.9,
+        "rate": 49.3,
         "recv_done": 11192,
-        "recv_rate": 60.7
+        "recv_rate": 65.3
       },
       "sku": {
-        "total": 24,
+        "total": 26,
         "done": 10,
-        "rate": 41.7
+        "rate": 38.5
       },
       "supplier": {
-        "total": 10,
+        "total": 11,
         "done": 4,
-        "rate": 40.0,
+        "rate": 36.4,
         "detail": {
           "广州聚艺亭商贸有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
-          "深圳市金多多食品营销有限公司-快乐猴": {
+          "高邮三宝食品有限公司": {
+            "plan": 1,
+            "done": 0
+          },
+          "洽洽食品股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
-          "洽洽食品股份有限公司-快乐猴": {
+          "深圳市金多多食品营销有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -134,14 +138,6 @@
           "poStatus": "已完成"
         },
         {
-          "supplierName": "高邮三宝食品有限公司",
-          "poNo": "CG202605264851",
-          "skuCount": 2,
-          "pcs": 1280,
-          "preArrivalTime": "2026-05-31",
-          "poStatus": "已确认"
-        },
-        {
           "supplierName": "武汉绿禾堂食品有限公司-快乐猴",
           "poNo": "CG202605210648",
           "skuCount": 3,
@@ -183,6 +179,13 @@
         }
       ],
       "unsigned": [
+        {
+          "supplierName": "高邮三宝食品有限公司",
+          "billCode": "YY20260531001989",
+          "skuCount": 2,
+          "pcs": 1280,
+          "timeSlot": "14:00 - 14:30"
+        },
         {
           "supplierName": "合肥炫滋电子商务有限公司",
           "billCode": "YY20260529002871",
@@ -226,48 +229,32 @@
           "timeSlot": "15:30 - 16:00"
         }
       ],
-      "unloading": [
-        {
-          "supplierName": "广州聚艺亭商贸有限公司-快乐猴",
-          "billCode": "YY20260530005676",
-          "signTime": "12:15",
-          "status": "已签到未卸货"
-        }
-      ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "广州聚艺亭商贸有限公司-快乐猴",
-          "skuName": "珍珍经典荔枝汽水330ml*6罐",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "unloading": [],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "深圳市金多多食品营销有限公司-快乐猴",
           "skuName": "阿麦斯4D水蜜桃爆汁泳圈摆件软糖24g（约7颗）",
           "completeTime": "08:56",
-          "waitingMins": 201
+          "waitingMins": 210
         },
         {
           "supplierName": "深圳市金多多食品营销有限公司-快乐猴",
           "skuName": "阿麦斯 4D水蜜桃爆汁软糖 24g",
           "completeTime": "08:52",
-          "waitingMins": 206
+          "waitingMins": 215
         },
         {
           "supplierName": "深圳市金多多食品营销有限公司-快乐猴",
           "skuName": "阿麦斯 水蜜桃爆汁软糖 24g",
           "completeTime": "08:54",
-          "waitingMins": 204
+          "waitingMins": 213
         },
         {
           "supplierName": "洽洽食品股份有限公司-快乐猴",
           "skuName": "快乐猴 原味瓜子 500g",
           "completeTime": "12:16",
-          "waitingMins": 2
+          "waitingMins": 11
         }
       ],
       "qc_recv_pending": [],
@@ -366,8 +353,8 @@
     "status": "ok",
     "pool": {
       "plan_pcs": 25889,
-      "alloc_pcs": 25485,
-      "alloc_rate": 98.4,
+      "alloc_pcs": 25521,
+      "alloc_rate": 98.6,
       "picked_pcs": 1887,
       "sow_pcs": 1887,
       "sow_rate": 7.4,
@@ -385,8 +372,8 @@
         "orderNo": "DB2026053180091",
         "skuNum": 185,
         "planQty": 3770,
-        "allocQty": 3538,
-        "unallocQty": 232
+        "allocQty": 3574,
+        "unallocQty": 196
       },
       {
         "receiverName": "快乐猴-禅城东方广场店-018",
@@ -406,18 +393,18 @@
       }
     ],
     "seeding": {
-      "not_started": 152,
-      "in_progress": 4,
-      "done": 33,
-      "total": 189,
+      "not_started": 146,
+      "in_progress": 3,
+      "done": 45,
+      "total": 194,
       "status": "ok"
     }
   },
   "plan": {
     "total_orders": 7,
     "total_pcs": 25889,
-    "alloc_pcs": 25485,
-    "alloc_rate": 98.4,
+    "alloc_pcs": 25521,
+    "alloc_rate": 98.6,
     "picked_pcs": 1887,
     "sow_pcs": 1887,
     "sow_rate": 7.4,
@@ -436,8 +423,8 @@
         "orderNo": "DB2026053180091",
         "skuNum": 185,
         "planQty": 3770,
-        "allocQty": 3538,
-        "unallocQty": 232
+        "allocQty": 3574,
+        "unallocQty": 196
       },
       {
         "receiverName": "快乐猴-禅城东方广场店-018",

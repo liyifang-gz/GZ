@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-01T01:32:50",
+  "timestamp": "2026-06-01T01:35:52",
   "date": "2026-06-01",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 91,
-      "signed": 6,
-      "waiting": 85
+      "signed": 7,
+      "waiting": 84
     },
     "ontime": {
       "ontime": 0,
-      "early": 6,
+      "early": 7,
       "late": 0,
       "total": 91,
       "rate": 0.0,
-      "early_rate": 6.6,
+      "early_rate": 7.7,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 6,
+      "total": 7,
       "done": 6,
-      "rate": 100.0,
+      "rate": 85.7,
       "pcs_done": 3599,
-      "sign_pcs_done": 3599
+      "sign_pcs_done": 3605
     },
     "qc": {
-      "total": 37,
+      "total": 40,
       "done": 0,
-      "pending": 37,
+      "pending": 40,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 37,
+      "bill_total": 40,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 3599,
+      "pcs_total": 3605,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 37,
+      "sku_total": 40,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 91,
-        "done": 6,
-        "rate": 6.6
+        "done": 7,
+        "rate": 7.7
       },
       "pcs": {
         "total": 24371,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 437,
-        "done": 37,
-        "rate": 8.5
+        "done": 40,
+        "rate": 9.2
       },
       "supplier": {
         "total": 81,
-        "done": 6,
-        "rate": 7.4,
+        "done": 7,
+        "rate": 8.6,
         "detail": {
+          "东莞千厨食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广东省邻优家农业发展有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -153,10 +157,6 @@
             "done": 0
           },
           "广州市广懋鲜农业发展有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "佳农食品（上海）有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -558,7 +558,14 @@
           "timeSlot": "17:30 - 18:00"
         }
       ],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "billCode": "YY20260531002789",
+          "signTime": "01:34",
+          "status": "已签到未卸货"
+        }
+      ],
       "qc_pending": [
         {
           "seq": 1,
@@ -854,6 +861,30 @@
           "skuName": "芦笋 350g",
           "arrivalTime": "10:00",
           "unloadFinishTime": "01:16",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 38,
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "skuName": "猪耳猪头肉卤味双拼 205g",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 39,
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "skuName": "手撕酱板鸭 120g",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 40,
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "skuName": "盐焗鹌鹑蛋 200g",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],

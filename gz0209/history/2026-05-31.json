@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-05-31T08:45:14",
+  "timestamp": "2026-05-31T08:54:16",
   "date": "2026-05-31",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 11,
-      "signed": 1,
-      "waiting": 10
+      "signed": 2,
+      "waiting": 9
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 2,
       "late": 0,
       "total": 11,
       "rate": 0.0,
-      "early_rate": 9.1,
+      "early_rate": 18.2,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
-      "done": 1,
+      "total": 2,
+      "done": 2,
       "rate": 100.0,
-      "pcs_done": 432,
-      "sign_pcs_done": 432
+      "pcs_done": 846,
+      "sign_pcs_done": 846
     },
     "qc": {
       "total": 3,
-      "done": 0,
-      "pending": 3,
-      "passed": 0,
+      "done": 2,
+      "pending": 1,
+      "passed": 2,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 66.7,
+      "bill_done": 2,
       "bill_total": 3,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 288,
+      "pcs_passed": 288,
       "pcs_total": 432,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 66.7,
+      "sku_done": 2,
       "sku_total": 3,
-      "sku_rate": 0.0
+      "sku_rate": 66.7
     },
     "putaway": {
       "total": 11192,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 11,
-        "done": 1,
-        "rate": 9.1
+        "done": 2,
+        "rate": 18.2
       },
       "pcs": {
         "total": 18426,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 26,
-        "done": 3,
-        "rate": 11.5
+        "done": 8,
+        "rate": 30.8
       },
       "supplier": {
         "total": 11,
-        "done": 1,
-        "rate": 9.1,
+        "done": 2,
+        "rate": 18.2,
         "detail": {
+          "广州市捷通兴业贸易有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳市金多多食品营销有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -109,10 +113,6 @@
             "done": 0
           },
           "高邮三宝食品有限公司": {
-            "plan": 1,
-            "done": 0
-          },
-          "广州市捷通兴业贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -229,13 +229,6 @@
           "timeSlot": "15:00 - 15:30"
         },
         {
-          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
-          "billCode": "YY20260527009668",
-          "skuCount": 5,
-          "pcs": 414,
-          "timeSlot": "09:00 - 09:30"
-        },
-        {
           "supplierName": "上海迦麦商贸有限公司-快乐猴",
           "billCode": "YY20260527006041",
           "skuCount": 1,
@@ -258,26 +251,23 @@
           "skuName": "阿麦斯4D水蜜桃爆汁泳圈摆件软糖24g（约7颗）",
           "arrivalTime": "10:30",
           "unloadFinishTime": "08:44",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "深圳市金多多食品营销有限公司-快乐猴",
-          "skuName": "阿麦斯 4D水蜜桃爆汁软糖 24g",
-          "arrivalTime": "10:30",
-          "unloadFinishTime": "08:44",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
-          "supplierName": "深圳市金多多食品营销有限公司-快乐猴",
-          "skuName": "阿麦斯 水蜜桃爆汁软糖 24g",
-          "arrivalTime": "10:30",
-          "unloadFinishTime": "08:44",
-          "statusLabel": "待质检"
+          "statusLabel": "首次进行中"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "深圳市金多多食品营销有限公司-快乐猴",
+          "skuName": "阿麦斯 4D水蜜桃爆汁软糖 24g",
+          "completeTime": "08:52",
+          "waitingMins": 1
+        },
+        {
+          "supplierName": "深圳市金多多食品营销有限公司-快乐猴",
+          "skuName": "阿麦斯 水蜜桃爆汁软糖 24g",
+          "completeTime": "08:54",
+          "waitingMins": 0
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [
         {
@@ -389,10 +379,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 14,
+      "not_started": 28,
       "in_progress": 0,
       "done": 0,
-      "total": 14,
+      "total": 28,
       "status": "ok"
     }
   },

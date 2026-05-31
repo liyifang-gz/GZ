@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-01T03:16:02",
+  "timestamp": "2026-06-01T03:19:01",
   "date": "2026-06-01",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 91,
-      "signed": 7,
-      "waiting": 84
+      "signed": 8,
+      "waiting": 83
     },
     "ontime": {
       "ontime": 0,
-      "early": 7,
+      "early": 8,
       "late": 0,
       "total": 91,
       "rate": 0.0,
-      "early_rate": 7.7,
+      "early_rate": 8.8,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 7,
+      "total": 8,
       "done": 7,
-      "rate": 100.0,
+      "rate": 87.5,
       "pcs_done": 3605,
-      "sign_pcs_done": 3605
+      "sign_pcs_done": 3766
     },
     "qc": {
-      "total": 40,
+      "total": 42,
       "done": 0,
-      "pending": 40,
+      "pending": 42,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 40,
+      "bill_total": 42,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 3605,
+      "pcs_total": 3766,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 40,
+      "sku_total": 42,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 91,
-        "done": 7,
-        "rate": 7.7
+        "done": 8,
+        "rate": 8.8
       },
       "pcs": {
         "total": 24371,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 437,
-        "done": 40,
-        "rate": 9.2
+        "done": 42,
+        "rate": 9.6
       },
       "supplier": {
         "total": 81,
-        "done": 7,
-        "rate": 8.6,
+        "done": 8,
+        "rate": 9.9,
         "detail": {
+          "汶上县富鑫种植农民专业合作社-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "东莞千厨食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -149,10 +153,6 @@
             "done": 0
           },
           "北京沃千里贸易有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "汶上县富鑫种植农民专业合作社-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -283,13 +283,6 @@
           "skuCount": 6,
           "pcs": 245,
           "timeSlot": "11:30 - 12:00"
-        },
-        {
-          "supplierName": "汶上县富鑫种植农民专业合作社-快乐猴",
-          "billCode": "YY20260531006631",
-          "skuCount": 2,
-          "pcs": 161,
-          "timeSlot": "14:30 - 15:00"
         },
         {
           "supplierName": "广州市广懋鲜农业发展有限公司-快乐猴",
@@ -556,9 +549,23 @@
           "skuCount": 7,
           "pcs": 37,
           "timeSlot": "17:30 - 18:00"
+        },
+        {
+          "supplierName": "广州尚好菜食品有限公司-快乐猴",
+          "billCode": "YY20260531002897",
+          "skuCount": 14,
+          "pcs": 326,
+          "timeSlot": "17:30 - 18:00"
         }
       ],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "汶上县富鑫种植农民专业合作社-快乐猴",
+          "billCode": "YY20260531006631",
+          "signTime": "03:18",
+          "status": "已签到未卸货"
+        }
+      ],
       "qc_pending": [
         {
           "seq": 1,
@@ -878,6 +885,22 @@
           "skuName": "盐焗鹌鹑蛋 200g",
           "arrivalTime": "10:00",
           "unloadFinishTime": "01:38",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 41,
+          "supplierName": "汶上县富鑫种植农民专业合作社-快乐猴",
+          "skuName": "小黄姜 500g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 42,
+          "supplierName": "汶上县富鑫种植农民专业合作社-快乐猴",
+          "skuName": "老姜  500g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],

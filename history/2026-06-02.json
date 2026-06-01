@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-02T00:02:31",
+  "timestamp": "2026-06-02T00:12:31",
   "date": "2026-06-02",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 80,
-      "signed": 3,
-      "waiting": 77
+      "signed": 4,
+      "waiting": 76
     },
     "ontime": {
       "ontime": 0,
-      "early": 3,
+      "early": 4,
       "late": 0,
       "total": 80,
       "rate": 0.0,
-      "early_rate": 3.8,
+      "early_rate": 5.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 3,
-      "done": 1,
-      "rate": 33.3,
-      "pcs_done": 40,
-      "sign_pcs_done": 1749
+      "total": 4,
+      "done": 2,
+      "rate": 50.0,
+      "pcs_done": 475,
+      "sign_pcs_done": 2184
     },
     "qc": {
-      "total": 16,
+      "total": 19,
       "done": 1,
-      "pending": 15,
+      "pending": 18,
       "passed": 1,
       "rejected": 0,
-      "rate": 6.2,
+      "rate": 5.3,
       "bill_done": 1,
-      "bill_total": 16,
+      "bill_total": 19,
       "pcs_done": 40,
       "pcs_passed": 40,
-      "pcs_total": 1749,
+      "pcs_total": 2184,
       "pcs_rejected": 0,
-      "pcs_rate": 2.3,
+      "pcs_rate": 1.8,
       "sku_done": 1,
-      "sku_total": 16,
-      "sku_rate": 6.2
+      "sku_total": 19,
+      "sku_rate": 5.3
     },
     "putaway": {
       "total": 40,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 80,
-        "done": 3,
-        "rate": 3.8
+        "done": 4,
+        "rate": 5.0
       },
       "pcs": {
         "total": 26421,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 396,
-        "done": 16,
-        "rate": 4.0
+        "done": 19,
+        "rate": 4.8
       },
       "supplier": {
         "total": 73,
-        "done": 3,
-        "rate": 4.1,
+        "done": 4,
+        "rate": 5.5,
         "detail": {
+          "久泰现代农业有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州市友心农业发展有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -93,10 +97,6 @@
             "done": 0
           },
           "佳农食品（上海）有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "久泰现代农业有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -227,13 +227,6 @@
           "billCode": "YY20260601011161",
           "skuCount": 3,
           "pcs": 190,
-          "timeSlot": "14:00 - 14:30"
-        },
-        {
-          "supplierName": "久泰现代农业有限公司-快乐猴",
-          "billCode": "YY20260601010952",
-          "skuCount": 3,
-          "pcs": 435,
           "timeSlot": "14:00 - 14:30"
         },
         {
@@ -564,6 +557,13 @@
           "skuCount": 8,
           "pcs": 179,
           "timeSlot": "14:00 - 14:30"
+        },
+        {
+          "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
+          "billCode": "YY20260601005045",
+          "skuCount": 2,
+          "pcs": 5,
+          "timeSlot": "05:30 - 06:00"
         }
       ],
       "unloading": [
@@ -700,6 +700,30 @@
           "arrivalTime": "15:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 16,
+          "supplierName": "久泰现代农业有限公司-快乐猴",
+          "skuName": "云南沃柑 1.5kg",
+          "arrivalTime": "14:00",
+          "unloadFinishTime": "00:09",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 17,
+          "supplierName": "久泰现代农业有限公司-快乐猴",
+          "skuName": "秭归夏橙 1kg",
+          "arrivalTime": "14:00",
+          "unloadFinishTime": "00:09",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 18,
+          "supplierName": "久泰现代农业有限公司-快乐猴",
+          "skuName": "妃子笑荔枝 750g",
+          "arrivalTime": "14:00",
+          "unloadFinishTime": "00:09",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -707,7 +731,7 @@
           "supplierName": "嘀潮（深圳）网络科技有限公司-快乐猴",
           "skuName": "潮迹 潮汕墨鱼丸 150g",
           "completeTime": "12:21",
-          "waitingMins": 701
+          "waitingMins": 711
         }
       ],
       "qc_recv_pending": [],

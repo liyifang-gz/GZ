@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-02T03:12:30",
+  "timestamp": "2026-06-02T03:22:31",
   "date": "2026-06-02",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 81,
-      "signed": 8,
-      "waiting": 73
+      "signed": 11,
+      "waiting": 70
     },
     "ontime": {
       "ontime": 0,
-      "early": 8,
+      "early": 11,
       "late": 0,
       "total": 81,
       "rate": 0.0,
-      "early_rate": 9.9,
+      "early_rate": 13.6,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 8,
-      "done": 8,
-      "rate": 100.0,
-      "pcs_done": 4141,
-      "sign_pcs_done": 4141
+      "total": 11,
+      "done": 10,
+      "rate": 90.9,
+      "pcs_done": 4285,
+      "sign_pcs_done": 4554
     },
     "qc": {
-      "total": 42,
+      "total": 46,
       "done": 1,
-      "pending": 41,
+      "pending": 45,
       "passed": 1,
       "rejected": 0,
-      "rate": 2.4,
+      "rate": 2.2,
       "bill_done": 1,
-      "bill_total": 42,
+      "bill_total": 46,
       "pcs_done": 40,
       "pcs_passed": 40,
-      "pcs_total": 4141,
+      "pcs_total": 4554,
       "pcs_rejected": 0,
-      "pcs_rate": 1.0,
+      "pcs_rate": 0.9,
       "sku_done": 1,
-      "sku_total": 42,
-      "sku_rate": 2.4
+      "sku_total": 46,
+      "sku_rate": 2.2
     },
     "putaway": {
       "total": 40,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 81,
-        "done": 8,
-        "rate": 9.9
+        "done": 11,
+        "rate": 13.6
       },
       "pcs": {
         "total": 26421,
@@ -72,14 +72,22 @@
       },
       "sku": {
         "total": 400,
-        "done": 42,
-        "rate": 10.5
+        "done": 46,
+        "rate": 11.5
       },
       "supplier": {
         "total": 74,
-        "done": 8,
-        "rate": 10.8,
+        "done": 10,
+        "rate": 13.5,
         "detail": {
+          "金乡县英格电子商务有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "广州光明乳品有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "广东省邻优家农业发展有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -144,19 +152,11 @@
             "plan": 1,
             "done": 0
           },
-          "金乡县英格电子商务有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
           "上海易食科技有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
           "上海丰楷农业科技有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
-          "东莞鲜通天下供应链管理有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -268,13 +268,6 @@
           "billCode": "YY20260601010717",
           "skuCount": 5,
           "pcs": 255,
-          "timeSlot": "14:30 - 15:00"
-        },
-        {
-          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
-          "billCode": "YY20260601010699",
-          "skuCount": 2,
-          "pcs": 269,
           "timeSlot": "14:30 - 15:00"
         },
         {
@@ -556,9 +549,23 @@
           "skuCount": 4,
           "pcs": 128,
           "timeSlot": "17:30 - 18:00"
+        },
+        {
+          "supplierName": "湖北农发零号食品有限公司-快乐猴",
+          "billCode": "YY20260601004886",
+          "skuCount": 7,
+          "pcs": 155,
+          "timeSlot": "17:00 - 17:30"
         }
       ],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
+          "billCode": "YY20260601010699",
+          "signTime": "03:15",
+          "status": "已签到未卸货"
+        }
+      ],
       "qc_pending": [
         {
           "seq": 1,
@@ -887,6 +894,38 @@
           "arrivalTime": "10:30",
           "unloadFinishTime": "02:44",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 42,
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "skuName": "光明优倍5.0g乳蛋白高钙超鲜纳滤牛乳780ml",
+          "arrivalTime": "04:00",
+          "unloadFinishTime": "03:18",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 43,
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "skuName": "光明新鲜牧场高品质牛乳950ml",
+          "arrivalTime": "04:00",
+          "unloadFinishTime": "03:18",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 44,
+          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
+          "skuName": "紫皮大蒜  500g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 45,
+          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
+          "skuName": "独头蒜 200g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -894,7 +933,7 @@
           "supplierName": "嘀潮（深圳）网络科技有限公司-快乐猴",
           "skuName": "潮迹 潮汕墨鱼丸 150g",
           "completeTime": "12:21",
-          "waitingMins": 891
+          "waitingMins": 901
         }
       ],
       "qc_recv_pending": [],

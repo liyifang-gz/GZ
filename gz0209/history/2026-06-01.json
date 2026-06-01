@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-01T13:13:22",
+  "timestamp": "2026-06-01T13:19:14",
   "date": "2026-06-01",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 24,
-      "signed": 10,
-      "waiting": 7
+      "signed": 11,
+      "waiting": 6
     },
     "ontime": {
       "ontime": 0,
-      "early": 10,
+      "early": 11,
       "late": 0,
       "total": 17,
       "rate": 0.0,
-      "early_rate": 58.8,
+      "early_rate": 64.7,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 8,
+      "total": 9,
       "done": 2,
-      "rate": 25.0,
+      "rate": 22.2,
       "pcs_done": 356,
-      "sign_pcs_done": 5910
+      "sign_pcs_done": 6510
     },
     "qc": {
-      "total": 15,
+      "total": 16,
       "done": 0,
-      "pending": 15,
+      "pending": 16,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 15,
+      "bill_total": 16,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 5554,
+      "pcs_total": 6154,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 13,
+      "sku_total": 14,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 17,
-        "done": 10,
-        "rate": 58.8
+        "done": 11,
+        "rate": 64.7
       },
       "pcs": {
         "total": 7960,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 37,
-        "done": 26,
-        "rate": 70.3
+        "done": 27,
+        "rate": 73.0
       },
       "supplier": {
         "total": 12,
-        "done": 6,
-        "rate": 50.0,
+        "done": 7,
+        "rate": 58.3,
         "detail": {
+          "广州齐佑宝商贸有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州同超贸易有限公司-快乐猴": {
             "plan": 2,
             "done": 0
@@ -115,10 +119,6 @@
           "汕头市素非凡商贸有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "广州齐佑宝商贸有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           },
           "四川创调电子商务有限公司-快乐猴": {
             "plan": 1,
@@ -188,13 +188,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "广州齐佑宝商贸有限公司-快乐猴",
-          "billCode": "YY20260528006015",
-          "skuCount": 1,
-          "pcs": 600,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
           "supplierName": "四川创调电子商务有限公司-快乐猴",
           "billCode": "YY20260527002522",
           "skuCount": 2,
@@ -210,6 +203,12 @@
         }
       ],
       "unloading": [
+        {
+          "supplierName": "广州齐佑宝商贸有限公司-快乐猴",
+          "billCode": "YY20260528006015",
+          "signTime": "13:14",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "东莞市睿致商贸有限公司-快乐猴",
           "billCode": "YY20260529005386",
@@ -371,6 +370,14 @@
           "supplierName": "东莞市睿致商贸有限公司-快乐猴",
           "skuName": "金龙鱼 精炼一级大豆油 5L",
           "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 16,
+          "supplierName": "广州齐佑宝商贸有限公司-快乐猴",
+          "skuName": "康师傅香辣牛肉拌面碗面127g",
+          "arrivalTime": "15:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
@@ -753,9 +760,9 @@
     "unalloc_details": [],
     "seeding": {
       "not_started": 108,
-      "in_progress": 0,
-      "done": 77,
-      "total": 185,
+      "in_progress": 1,
+      "done": 80,
+      "total": 189,
       "status": "ok"
     }
   },

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-02T06:32:37",
+  "timestamp": "2026-06-02T06:37:36",
   "date": "2026-06-02",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 81,
-      "signed": 19,
-      "waiting": 62
+      "signed": 20,
+      "waiting": 61
     },
     "ontime": {
       "ontime": 0,
-      "early": 19,
+      "early": 20,
       "late": 0,
       "total": 81,
       "rate": 0.0,
-      "early_rate": 23.5,
+      "early_rate": 24.7,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 19,
-      "done": 16,
-      "rate": 84.2,
-      "pcs_done": 4945,
-      "sign_pcs_done": 5627
+      "total": 20,
+      "done": 17,
+      "rate": 85.0,
+      "pcs_done": 5098,
+      "sign_pcs_done": 5780
     },
     "qc": {
-      "total": 72,
+      "total": 78,
       "done": 1,
-      "pending": 71,
+      "pending": 77,
       "passed": 1,
       "rejected": 0,
-      "rate": 1.4,
+      "rate": 1.3,
       "bill_done": 1,
-      "bill_total": 72,
+      "bill_total": 78,
       "pcs_done": 40,
       "pcs_passed": 40,
-      "pcs_total": 5627,
+      "pcs_total": 5780,
       "pcs_rejected": 0,
       "pcs_rate": 0.7,
       "sku_done": 1,
-      "sku_total": 72,
-      "sku_rate": 1.4
+      "sku_total": 78,
+      "sku_rate": 1.3
     },
     "putaway": {
       "total": 40,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 81,
-        "done": 19,
-        "rate": 23.5
+        "done": 20,
+        "rate": 24.7
       },
       "pcs": {
         "total": 26421,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 400,
-        "done": 72,
-        "rate": 18.0
+        "done": 78,
+        "rate": 19.5
       },
       "supplier": {
         "total": 74,
-        "done": 16,
-        "rate": 21.6,
+        "done": 17,
+        "rate": 23.0,
         "detail": {
+          "津园食品（广东）有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳市大程鑫农业开发有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -153,10 +157,6 @@
             "done": 0
           },
           "珠海市利源农畜产品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "北京沃千里贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -544,18 +544,18 @@
           "timeSlot": "18:00 - 18:30"
         },
         {
-          "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
-          "billCode": "YY20260601004180",
-          "skuCount": 6,
-          "pcs": 153,
-          "timeSlot": "15:00 - 15:30"
-        },
-        {
           "supplierName": "清远清鑫食品有限公司-快乐猴",
           "billCode": "YY20260601004138",
           "skuCount": 7,
           "pcs": 42,
           "timeSlot": "17:30 - 18:00"
+        },
+        {
+          "supplierName": "广州香满楼乳业有限公司-快乐猴",
+          "billCode": "YY20260601003402",
+          "skuCount": 2,
+          "pcs": 21,
+          "timeSlot": "18:30 - 19:00"
         }
       ],
       "unloading": [
@@ -563,13 +563,15 @@
           "supplierName": "深圳市大程鑫农业开发有限公司-快乐猴",
           "billCode": "YY20260601010717",
           "signTime": "06:29",
-          "status": "已签到未卸货"
+          "unloadStartTime": "06:34",
+          "status": "卸货中"
         },
         {
           "supplierName": "深圳禾顺农业有限公司-快乐猴",
           "billCode": "YY20260601010671",
           "signTime": "06:29",
-          "status": "已签到未卸货"
+          "unloadStartTime": "06:35",
+          "status": "卸货中"
         },
         {
           "supplierName": "金乡县英格电子商务有限公司-快乐猴",
@@ -1146,6 +1148,54 @@
           "arrivalTime": "14:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 72,
+          "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
+          "skuName": "香菇青菜包 340g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "06:35",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 73,
+          "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
+          "skuName": "手作葱油花卷 360g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "06:35",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 74,
+          "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
+          "skuName": "手作肉多多花卷 300g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "06:35",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 75,
+          "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
+          "skuName": "韭菜煎饺 240g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "06:35",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 76,
+          "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
+          "skuName": "鲜汁肉包 340g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "06:35",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 77,
+          "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
+          "skuName": "广式叉烧包 240g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "06:35",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -1153,7 +1203,7 @@
           "supplierName": "嘀潮（深圳）网络科技有限公司-快乐猴",
           "skuName": "潮迹 潮汕墨鱼丸 150g",
           "completeTime": "12:21",
-          "waitingMins": 1091
+          "waitingMins": 1096
         }
       ],
       "qc_recv_pending": [],

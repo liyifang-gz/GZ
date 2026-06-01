@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-01T14:59:34",
+  "timestamp": "2026-06-01T15:01:29",
   "date": "2026-06-01",
   "warehouse": "GZ0210",
   "inbound": {
@@ -161,13 +161,13 @@
           "supplierName": "蚌埠大成食品有限公司-快乐猴",
           "skuName": "快乐猴 奥尔良风味十翅一桶 450g",
           "completeTime": "12:18",
-          "waitingMins": 161
+          "waitingMins": 163
         },
         {
           "supplierName": "德州市金彩凤食品有限公司-快乐猴",
           "skuName": "快乐猴 奥尔良鸡肉包 640g",
           "completeTime": "14:12",
-          "waitingMins": 47
+          "waitingMins": 49
         }
       ],
       "qc_recv_pending": [],
@@ -193,38 +193,50 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 124,
+      "total": 140,
       "done": 124,
-      "rate": 100.0
+      "rate": 88.6
     },
     "caging": {
-      "total": 124,
+      "total": 140,
       "done": 124,
-      "rate": 100.0,
+      "rate": 88.6,
       "pcs_done": 2174,
-      "pcs_total": 2174,
-      "pcs_rate": 100.0
+      "pcs_total": 2364,
+      "pcs_rate": 92.0
     },
     "packing": {
-      "total": 3,
+      "total": 4,
       "done": 3,
-      "rate": 100.0
+      "rate": 75.0
     },
-    "uncaged_details": [],
-    "unpacked_details": [],
+    "uncaged_details": [
+      {
+        "containerCode": "RQ-05-03-0700530",
+        "poiName": "番禺建华汇店",
+        "qty": 190
+      }
+    ],
+    "unpacked_details": [
+      {
+        "containerCode": "RQ-05-03-0700530",
+        "poiName": "番禺建华汇店",
+        "qty": 190
+      }
+    ],
     "shipping": {
-      "total": 2174,
+      "total": 2364,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 124,
+      "multi_pallet_total": 140,
       "multi_pallet_rate": 0.0,
-      "load_rate": 100.0,
+      "load_rate": 92.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "--",
+      "load_rate_unloaded": "37.25%",
       "load_rate_loaded": "71.34%",
       "load_rate_shipped": "--",
       "low_load_containers": [
@@ -274,31 +286,40 @@
           "skuPcs": "977.000",
           "skuVolume": "1.585",
           "planOutTime": "06-01 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700530",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "37.25%",
+          "loadingRateVal": 37.25,
+          "skuPcs": "170.000",
+          "skuVolume": "0.738",
+          "planOutTime": "06-01 19:00"
         }
       ],
-      "outbound_efficiency": 1087.0,
-      "outbound_efficiency_formula": "2174 PCS / 2 人(拣播员)"
+      "outbound_efficiency": 1182.0,
+      "outbound_efficiency_formula": "2364 PCS / 2 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 2174,
+        "total": 2364,
         "picked": 0,
         "sowed": 0,
         "caged": 2174,
-        "not_caged": 0,
+        "not_caged": 190,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 100.0,
-        "sowed_picked": 2174
+        "cage_rate": 92.0,
+        "sowed_picked": 2364
       },
       "sku": {
-        "total": 124,
+        "total": 140,
         "picked": 0,
         "sowed": 0,
         "caged": 124,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 100.0
+        "cage_rate": 88.6
       }
     },
     "status": "ok",
@@ -306,9 +327,9 @@
       "plan_pcs": 2400,
       "alloc_pcs": 2400,
       "alloc_rate": 100.0,
-      "picked_pcs": 2344,
-      "sow_pcs": 2174,
-      "sow_rate": 90.6,
+      "picked_pcs": 2364,
+      "sow_pcs": 2364,
+      "sow_rate": 98.5,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 142,
@@ -319,10 +340,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 65,
+      "not_started": 68,
       "in_progress": 0,
-      "done": 167,
-      "total": 232,
+      "done": 168,
+      "total": 236,
       "status": "ok"
     }
   },
@@ -331,9 +352,9 @@
     "total_pcs": 2400,
     "alloc_pcs": 2400,
     "alloc_rate": 100.0,
-    "picked_pcs": 2344,
-    "sow_pcs": 2174,
-    "sow_rate": 90.6,
+    "picked_pcs": 2364,
+    "sow_pcs": 2364,
+    "sow_rate": 98.5,
     "ship_pcs": 0,
     "ship_rate": 0,
     "sku_plan": 142,
@@ -365,10 +386,10 @@
     "by_pos_scheduled": {
       "N冷冻高叉司机": 2
     },
-    "predicted_efficiency": 1087.0,
-    "efficiency_formula": "2174 PCS / 2 人",
-    "outbound_efficiency": 1087.0,
-    "outbound_efficiency_formula": "2174 PCS / 2 人(拣播员)",
+    "predicted_efficiency": 1182.0,
+    "efficiency_formula": "2364 PCS / 2 人",
+    "outbound_efficiency": 1182.0,
+    "outbound_efficiency_formula": "2364 PCS / 2 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

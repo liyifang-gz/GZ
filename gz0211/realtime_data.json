@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-01T09:05:16",
+  "timestamp": "2026-06-01T09:11:50",
   "date": "2026-06-01",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 6,
-      "signed": 0,
-      "waiting": 5
+      "signed": 1,
+      "waiting": 4
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 5,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 20.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 100
     },
     "qc": {
-      "total": 0,
+      "total": 6,
       "done": 0,
-      "pending": 0,
+      "pending": 6,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 6,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 100,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 6,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 0,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 5,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 20.0
       },
       "pcs": {
         "total": 380,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 10,
-        "done": 0,
-        "rate": 0.0
+        "done": 6,
+        "rate": 60.0
       },
       "supplier": {
         "total": 5,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 20.0,
         "detail": {
+          "苏州瑷玛森食品有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "杭州众点食品科技有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -89,10 +93,6 @@
             "done": 0
           },
           "蚌埠大成食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "苏州瑷玛森食品有限公司": {
             "plan": 1,
             "done": 0
           },
@@ -128,13 +128,6 @@
           "timeSlot": "11:30 - 12:00"
         },
         {
-          "supplierName": "苏州瑷玛森食品有限公司",
-          "billCode": "YY20260529010214",
-          "skuCount": 6,
-          "pcs": 100,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
           "supplierName": "德州市金彩凤食品有限公司-快乐猴",
           "billCode": "YY20260528008030",
           "skuCount": 1,
@@ -142,8 +135,64 @@
           "timeSlot": "16:00 - 16:30"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "billCode": "YY20260529010214",
+          "signTime": "09:07",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "法式奶香片6kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "蝴蝶酥10.8kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "核桃马里奥面包4.2kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "芝心岩焗吐司10.2kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "丹麦奶酥菠萝包（面包）9.12kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "(原料)蒜香法棍 8kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [],
@@ -247,10 +296,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 32,
+      "not_started": 44,
       "in_progress": 0,
       "done": 0,
-      "total": 32,
+      "total": 44,
       "status": "ok"
     }
   },

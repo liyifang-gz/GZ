@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-01T14:07:55",
+  "timestamp": "2026-06-01T14:13:59",
   "date": "2026-06-01",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 2,
-      "done": 1,
-      "pending": 1,
-      "passed": 1,
+      "done": 2,
+      "pending": 0,
+      "passed": 2,
       "rejected": 0,
-      "rate": 50.0,
-      "bill_done": 1,
+      "rate": 100.0,
+      "bill_done": 2,
       "bill_total": 2,
-      "pcs_done": 500,
-      "pcs_passed": 500,
+      "pcs_done": 1100,
+      "pcs_passed": 1100,
       "pcs_total": 1100,
       "pcs_rejected": 0,
-      "pcs_rate": 45.5,
-      "sku_done": 1,
+      "pcs_rate": 100.0,
+      "sku_done": 2,
       "sku_total": 2,
-      "sku_rate": 50.0
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 100,
@@ -148,22 +148,19 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "德州市金彩凤食品有限公司-快乐猴",
-          "skuName": "快乐猴 奥尔良鸡肉包 640g",
-          "arrivalTime": "16:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "蚌埠大成食品有限公司-快乐猴",
           "skuName": "快乐猴 奥尔良风味十翅一桶 450g",
           "completeTime": "12:18",
-          "waitingMins": 109
+          "waitingMins": 116
+        },
+        {
+          "supplierName": "德州市金彩凤食品有限公司-快乐猴",
+          "skuName": "快乐猴 奥尔良鸡肉包 640g",
+          "completeTime": "14:12",
+          "waitingMins": 2
         }
       ],
       "qc_recv_pending": [],
@@ -309,10 +306,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 70,
+      "not_started": 74,
       "in_progress": 0,
       "done": 119,
-      "total": 189,
+      "total": 193,
       "status": "ok"
     }
   },

@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-06-01T11:34:16",
+  "timestamp": "2026-06-01T11:43:16",
   "date": "2026-06-01",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 6,
-      "signed": 1,
-      "waiting": 4
+      "signed": 2,
+      "waiting": 3
     },
     "ontime": {
-      "ontime": 0,
+      "ontime": 1,
       "early": 1,
       "late": 0,
       "total": 5,
-      "rate": 0.0,
+      "rate": 20.0,
       "early_rate": 20.0,
       "late_rate": 0.0
     },
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 100
+      "sign_pcs_done": 600
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 500,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 100,
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 5,
-        "done": 1,
-        "rate": 20.0
+        "done": 2,
+        "rate": 40.0
       },
       "pcs": {
         "total": 380,
@@ -80,14 +80,18 @@
       },
       "sku": {
         "total": 10,
-        "done": 6,
-        "rate": 60.0
+        "done": 7,
+        "rate": 70.0
       },
       "supplier": {
         "total": 5,
-        "done": 1,
-        "rate": 20.0,
+        "done": 2,
+        "rate": 40.0,
         "detail": {
+          "蚌埠大成食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "苏州瑷玛森食品有限公司": {
             "plan": 1,
             "done": 1
@@ -97,10 +101,6 @@
             "done": 0
           },
           "北京花花食界食品科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "蚌埠大成食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -129,13 +129,6 @@
           "timeSlot": "16:00 - 16:30"
         },
         {
-          "supplierName": "蚌埠大成食品有限公司-快乐猴",
-          "billCode": "YY20260531001114",
-          "skuCount": 1,
-          "pcs": 500,
-          "timeSlot": "11:30 - 12:00"
-        },
-        {
           "supplierName": "德州市金彩凤食品有限公司-快乐猴",
           "billCode": "YY20260528008030",
           "skuCount": 1,
@@ -145,13 +138,28 @@
       ],
       "unloading": [
         {
+          "supplierName": "蚌埠大成食品有限公司-快乐猴",
+          "billCode": "YY20260531001114",
+          "signTime": "11:42",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "苏州瑷玛森食品有限公司",
           "billCode": "YY20260529010214",
           "signTime": "09:07",
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "蚌埠大成食品有限公司-快乐猴",
+          "skuName": "快乐猴 奥尔良风味十翅一桶 450g",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [],
@@ -255,10 +263,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 127,
+      "not_started": 129,
       "in_progress": 0,
       "done": 0,
-      "total": 127,
+      "total": 129,
       "status": "ok"
     }
   },

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-01T15:24:36",
+  "timestamp": "2026-06-01T15:30:39",
   "date": "2026-06-01",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 5,
-      "done": 0,
-      "pending": 5,
-      "passed": 0,
+      "done": 2,
+      "pending": 3,
+      "passed": 2,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 40.0,
+      "bill_done": 2,
       "bill_total": 5,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 50,
+      "pcs_passed": 50,
       "pcs_total": 1600,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 3.1,
+      "sku_done": 2,
       "sku_total": 5,
-      "sku_rate": 0.0
+      "sku_rate": 40.0
     },
     "putaway": {
       "total": 3172,
@@ -230,22 +230,6 @@
         },
         {
           "seq": 3,
-          "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
-          "skuName": "新包材-贴纸-一无花果",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "15:10",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 4,
-          "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
-          "skuName": "新包材-贴纸-一口酥",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "15:10",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 5,
           "supplierName": "东莞市睿致商贸有限公司-快乐猴",
           "skuName": "海天金标蚝油625g",
           "arrivalTime": "15:30",
@@ -253,7 +237,20 @@
           "statusLabel": "待质检"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
+          "skuName": "新包材-贴纸-一无花果",
+          "completeTime": "15:29",
+          "waitingMins": 1
+        },
+        {
+          "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
+          "skuName": "新包材-贴纸-一口酥",
+          "completeTime": "15:30",
+          "waitingMins": 0
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -637,10 +634,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 44,
-      "in_progress": 0,
-      "done": 212,
-      "total": 256,
+      "not_started": 45,
+      "in_progress": 1,
+      "done": 215,
+      "total": 261,
       "status": "ok"
     }
   },

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-01T10:51:49",
+  "timestamp": "2026-06-01T11:03:57",
   "date": "2026-06-01",
   "warehouse": "GZ0210",
   "inbound": {
@@ -31,31 +31,39 @@
       "sign_pcs_done": 100
     },
     "qc": {
-      "total": 6,
-      "done": 0,
-      "pending": 6,
-      "passed": 0,
-      "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
-      "bill_total": 6,
-      "pcs_done": 0,
-      "pcs_passed": 0,
-      "pcs_total": 100,
-      "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
-      "sku_total": 6,
-      "sku_rate": 0.0
-    },
-    "putaway": {
       "total": 0,
       "done": 0,
+      "pending": 0,
+      "passed": 0,
+      "rejected": 0,
       "rate": 0,
-      "sku_total": 0,
+      "bill_done": 0,
+      "bill_total": 0,
+      "pcs_done": 0,
+      "pcs_passed": 0,
+      "pcs_total": 0,
+      "pcs_rejected": 0,
+      "pcs_rate": 0,
       "sku_done": 0,
-      "sku_rate": 0,
-      "details": []
+      "sku_total": 0,
+      "sku_rate": 0
+    },
+    "putaway": {
+      "total": 100,
+      "done": 0,
+      "rate": 0.0,
+      "sku_total": 7,
+      "sku_done": 0,
+      "sku_rate": 0.0,
+      "details": [
+        {
+          "poNo": "CG202605208976",
+          "hopePcs": 100,
+          "putPcs": 0,
+          "hopeSku": 7,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +75,8 @@
         "total": 380,
         "done": 380,
         "rate": 100.0,
-        "recv_done": 380,
-        "recv_rate": 100.0
+        "recv_done": 100,
+        "recv_rate": 26.3
       },
       "sku": {
         "total": 10,
@@ -143,56 +151,7 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "苏州瑷玛森食品有限公司",
-          "skuName": "法式奶香片6kg",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "苏州瑷玛森食品有限公司",
-          "skuName": "蝴蝶酥10.8kg",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
-          "supplierName": "苏州瑷玛森食品有限公司",
-          "skuName": "核桃马里奥面包4.2kg",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 4,
-          "supplierName": "苏州瑷玛森食品有限公司",
-          "skuName": "芝心岩焗吐司10.2kg",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 5,
-          "supplierName": "苏州瑷玛森食品有限公司",
-          "skuName": "丹麦奶酥菠萝包（面包）9.12kg",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 6,
-          "supplierName": "苏州瑷玛森食品有限公司",
-          "skuName": "(原料)蒜香法棍 8kg",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [],
@@ -296,10 +255,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 64,
+      "not_started": 89,
       "in_progress": 0,
       "done": 0,
-      "total": 64,
+      "total": 89,
       "status": "ok"
     }
   },

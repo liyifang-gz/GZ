@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-02T00:42:32",
+  "timestamp": "2026-06-02T00:52:32",
   "date": "2026-06-02",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 81,
-      "signed": 4,
-      "waiting": 77
+      "signed": 6,
+      "waiting": 75
     },
     "ontime": {
       "ontime": 0,
-      "early": 4,
+      "early": 6,
       "late": 0,
       "total": 81,
       "rate": 0.0,
-      "early_rate": 4.9,
+      "early_rate": 7.4,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 4,
+      "total": 6,
       "done": 2,
-      "rate": 50.0,
+      "rate": 33.3,
       "pcs_done": 475,
-      "sign_pcs_done": 2184
+      "sign_pcs_done": 3144
     },
     "qc": {
-      "total": 19,
+      "total": 25,
       "done": 1,
-      "pending": 18,
+      "pending": 24,
       "passed": 1,
       "rejected": 0,
-      "rate": 5.3,
+      "rate": 4.0,
       "bill_done": 1,
-      "bill_total": 19,
+      "bill_total": 25,
       "pcs_done": 40,
       "pcs_passed": 40,
-      "pcs_total": 2184,
+      "pcs_total": 3144,
       "pcs_rejected": 0,
-      "pcs_rate": 1.8,
+      "pcs_rate": 1.3,
       "sku_done": 1,
-      "sku_total": 19,
-      "sku_rate": 5.3
+      "sku_total": 25,
+      "sku_rate": 4.0
     },
     "putaway": {
       "total": 40,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 81,
-        "done": 4,
-        "rate": 4.9
+        "done": 6,
+        "rate": 7.4
       },
       "pcs": {
         "total": 26421,
@@ -72,14 +72,22 @@
       },
       "sku": {
         "total": 400,
-        "done": 19,
-        "rate": 4.8
+        "done": 25,
+        "rate": 6.2
       },
       "supplier": {
         "total": 74,
-        "done": 4,
-        "rate": 5.4,
+        "done": 6,
+        "rate": 8.1,
         "detail": {
+          "广州华富东农产品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "成都绥粤绿色蔬菜有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "上海全苗蔬农业科技发展有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -148,15 +156,7 @@
             "plan": 1,
             "done": 0
           },
-          "广州华富东农产品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
           "深圳禾顺农业有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "深圳市理念供应链管理有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -306,13 +306,6 @@
           "timeSlot": "14:00 - 14:30"
         },
         {
-          "supplierName": "广州华富东农产品有限公司-快乐猴",
-          "billCode": "YY20260601010674",
-          "skuCount": 3,
-          "pcs": 431,
-          "timeSlot": "14:30 - 15:00"
-        },
-        {
           "supplierName": "深圳禾顺农业有限公司-快乐猴",
           "billCode": "YY20260601010671",
           "skuCount": 3,
@@ -360,13 +353,6 @@
           "skuCount": 5,
           "pcs": 64,
           "timeSlot": "14:00 - 14:30"
-        },
-        {
-          "supplierName": "成都绥粤绿色蔬菜有限公司-快乐猴",
-          "billCode": "YY20260601010646",
-          "skuCount": 3,
-          "pcs": 529,
-          "timeSlot": "09:00 - 09:30"
         },
         {
           "supplierName": "京懋丰园（北京）商贸有限公司-快乐猴",
@@ -556,9 +542,35 @@
           "skuCount": 8,
           "pcs": 179,
           "timeSlot": "14:00 - 14:30"
+        },
+        {
+          "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
+          "billCode": "YY20260601005045",
+          "skuCount": 2,
+          "pcs": 5,
+          "timeSlot": "05:30 - 06:00"
+        },
+        {
+          "supplierName": "广州尚好菜食品有限公司-快乐猴",
+          "billCode": "YY20260601004897",
+          "skuCount": 14,
+          "pcs": 242,
+          "timeSlot": "17:30 - 18:00"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "广州华富东农产品有限公司-快乐猴",
+          "billCode": "YY20260601010674",
+          "signTime": "00:52",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "成都绥粤绿色蔬菜有限公司-快乐猴",
+          "billCode": "YY20260601010646",
+          "signTime": "00:52",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
           "billCode": "YY20260601010641",
@@ -716,6 +728,54 @@
           "arrivalTime": "14:00",
           "unloadFinishTime": "00:09",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 19,
+          "supplierName": "成都绥粤绿色蔬菜有限公司-快乐猴",
+          "skuName": "贝贝南瓜  1kg",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 20,
+          "supplierName": "成都绥粤绿色蔬菜有限公司-快乐猴",
+          "skuName": "鲜切南瓜 500g",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 21,
+          "supplierName": "成都绥粤绿色蔬菜有限公司-快乐猴",
+          "skuName": "鲜切冬瓜 600g",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 22,
+          "supplierName": "广州华富东农产品有限公司-快乐猴",
+          "skuName": "甜玉米约1kg",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 23,
+          "supplierName": "广州华富东农产品有限公司-快乐猴",
+          "skuName": "花糯玉米 600g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 24,
+          "supplierName": "广州华富东农产品有限公司-快乐猴",
+          "skuName": "金银水果玉米 600g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -723,7 +783,7 @@
           "supplierName": "嘀潮（深圳）网络科技有限公司-快乐猴",
           "skuName": "潮迹 潮汕墨鱼丸 150g",
           "completeTime": "12:21",
-          "waitingMins": 741
+          "waitingMins": 751
         }
       ],
       "qc_recv_pending": [],

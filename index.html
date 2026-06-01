@@ -1,6 +1,14 @@
 <!DOCTYPE html>
 <html lang="zh-CN">
-
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>实时监控看板 · GZ广州三仓</title>
+</head>
+<body>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
         body {
@@ -1702,7 +1710,10 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       return m + ":" + String(sec).padStart(2, "0");
     }
 
+    let _silentRefreshing = false;
     async function silentRefresh() {
+      if (_silentRefreshing) return;  // 防并发：上次还没完成就不再触发
+      _silentRefreshing = true;
       try {
         const resp = await fetchWithRetry(getDataUrl(), getDataUrlBak(), 2);
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
@@ -1716,6 +1727,8 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
         }
       } catch (e) {
         // 静默失败，不打扰用户
+      } finally {
+        _silentRefreshing = false;
       }
     }
 
@@ -1822,4 +1835,5 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
     startCountdown();
 })();
 </script>
+</body>
 </html>

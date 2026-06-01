@@ -1833,6 +1833,24 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       });
     }
 
+    // ── 自动检测 HTML 新版本，有更新时自动 reload（解决 GitHub Pages CDN 缓存问题）──
+    let _htmlVersion = null;
+    async function checkHtmlVersion() {
+      try {
+        const resp = await fetch(location.href, { method: 'HEAD', cache: 'no-store' });
+        const etag = resp.headers.get('etag') || resp.headers.get('last-modified') || '';
+        if (_htmlVersion === null) {
+          _htmlVersion = etag;
+        } else if (etag && etag !== _htmlVersion) {
+          console.log('[AUTO-RELOAD] HTML 有新版本，自动刷新页面...');
+          location.reload(true);
+        }
+      } catch (e) { /* 网络问题，忽略 */ }
+    }
+    // 每5分钟检测一次 HTML 是否有新版本
+    setInterval(checkHtmlVersion, 5 * 60 * 1000);
+    checkHtmlVersion();  // 启动时先记录当前版本
+
     // 初始化
     loadData();
     startCountdown();

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-01T14:00:47",
+  "timestamp": "2026-06-01T14:08:02",
   "date": "2026-06-01",
   "warehouse": "GZ0210",
   "inbound": {
@@ -406,38 +406,50 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 91,
+      "total": 92,
       "done": 91,
-      "rate": 100.0
+      "rate": 98.9
     },
     "caging": {
-      "total": 91,
+      "total": 92,
       "done": 91,
-      "rate": 100.0,
+      "rate": 98.9,
       "pcs_done": 5478,
-      "pcs_total": 16077,
-      "pcs_rate": 34.1
+      "pcs_total": 16101,
+      "pcs_rate": 34.0
     },
     "packing": {
-      "total": 16,
+      "total": 17,
       "done": 5,
-      "rate": 31.2
+      "rate": 29.4
     },
-    "uncaged_details": [],
-    "unpacked_details": [],
+    "uncaged_details": [
+      {
+        "containerCode": "RQ-28-03-0900075",
+        "poiName": "禅城东方广场店",
+        "qty": 24
+      }
+    ],
+    "unpacked_details": [
+      {
+        "containerCode": "RQ-28-03-0900075",
+        "poiName": "禅城东方广场店",
+        "qty": 24
+      }
+    ],
     "shipping": {
-      "total": 1805,
+      "total": 1829,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 91,
+      "multi_pallet_total": 92,
       "multi_pallet_rate": 0.0,
-      "load_rate": 100.0,
+      "load_rate": 98.7,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "--",
+      "load_rate_unloaded": "0.66%",
       "load_rate_loaded": "95.39%",
       "load_rate_shipped": "92.95%",
       "low_load_containers": [
@@ -504,6 +516,15 @@
           "loadingRateVal": 44.29,
           "skuPcs": "521.000",
           "skuVolume": "0.877",
+          "planOutTime": "06-01 20:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900075",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "0.66%",
+          "loadingRateVal": 0.66,
+          "skuPcs": "24.000",
+          "skuVolume": "0.013",
           "planOutTime": "06-01 20:00"
         },
         {
@@ -606,29 +627,29 @@
           "planOutTime": "06-01 20:00"
         }
       ],
-      "outbound_efficiency": 451.2,
-      "outbound_efficiency_formula": "1805 PCS / 4 人(拣播员)"
+      "outbound_efficiency": 457.2,
+      "outbound_efficiency_formula": "1829 PCS / 4 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 1805,
+        "total": 1829,
         "picked": 0,
         "sowed": 0,
         "caged": 1805,
-        "not_caged": 0,
+        "not_caged": 24,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 34.1,
-        "sowed_picked": 16077
+        "cage_rate": 34.0,
+        "sowed_picked": 16101
       },
       "sku": {
-        "total": 91,
+        "total": 92,
         "picked": 0,
         "sowed": 0,
         "caged": 91,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 100.0
+        "cage_rate": 98.9
       }
     },
     "status": "ok",
@@ -636,23 +657,23 @@
       "plan_pcs": 26165,
       "alloc_pcs": 26165,
       "alloc_rate": 100.0,
-      "picked_pcs": 16077,
-      "sow_pcs": 16077,
-      "sow_rate": 61.4,
+      "picked_pcs": 16101,
+      "sow_pcs": 16101,
+      "sow_rate": 61.5,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 1274,
       "sku_alloc": 1274,
-      "sku_sow": 744,
+      "sku_sow": 745,
       "sku_ship": 0,
       "total_orders": 19
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 78,
-      "in_progress": 1,
-      "done": 110,
-      "total": 189,
+      "not_started": 71,
+      "in_progress": 0,
+      "done": 119,
+      "total": 190,
       "status": "ok"
     }
   },
@@ -661,14 +682,14 @@
     "total_pcs": 26165,
     "alloc_pcs": 26165,
     "alloc_rate": 100.0,
-    "picked_pcs": 16077,
-    "sow_pcs": 16077,
-    "sow_rate": 61.4,
+    "picked_pcs": 16101,
+    "sow_pcs": 16101,
+    "sow_rate": 61.5,
     "ship_pcs": 0,
     "ship_rate": 0,
     "sku_plan": 1274,
     "sku_alloc": 1274,
-    "sku_sow": 744,
+    "sku_sow": 745,
     "store_count": 1,
     "by_store": {
       "KLH-广州常温1仓-GZ0209": 26165.0
@@ -716,10 +737,10 @@
       "N冷藏收退": 4,
       "N冷藏拣播员": 4
     },
-    "predicted_efficiency": 225.6,
-    "efficiency_formula": "1805 PCS / 8 人",
-    "outbound_efficiency": 451.2,
-    "outbound_efficiency_formula": "1805 PCS / 4 人(拣播员)",
+    "predicted_efficiency": 228.6,
+    "efficiency_formula": "1829 PCS / 8 人",
+    "outbound_efficiency": 457.2,
+    "outbound_efficiency_formula": "1829 PCS / 4 人(拣播员)",
     "inbound_efficiency_workers": 4,
     "status": "ok"
   }

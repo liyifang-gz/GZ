@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-01T12:12:20",
+  "timestamp": "2026-06-01T12:21:20",
   "date": "2026-06-01",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 1,
-      "done": 0,
-      "pending": 1,
-      "passed": 0,
+      "done": 1,
+      "pending": 0,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 100.0,
+      "bill_done": 1,
       "bill_total": 1,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 500,
+      "pcs_passed": 500,
       "pcs_total": 500,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 100.0,
+      "sku_done": 1,
       "sku_total": 1,
-      "sku_rate": 0.0
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 100,
@@ -150,17 +150,15 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
+      "qc_pending": [],
+      "recv_pending": [
         {
-          "seq": 1,
           "supplierName": "蚌埠大成食品有限公司-快乐猴",
           "skuName": "快乐猴 奥尔良风味十翅一桶 450g",
-          "arrivalTime": "11:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
+          "completeTime": "12:18",
+          "waitingMins": 3
         }
       ],
-      "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -288,10 +286,10 @@
       }
     ],
     "seeding": {
-      "not_started": 137,
+      "not_started": 133,
       "in_progress": 3,
-      "done": 1,
-      "total": 141,
+      "done": 9,
+      "total": 145,
       "status": "ok"
     }
   },

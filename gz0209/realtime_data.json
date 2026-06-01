@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-01T08:42:31",
+  "timestamp": "2026-06-01T08:51:45",
   "date": "2026-06-01",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 19,
-      "signed": 3,
-      "waiting": 11
+      "signed": 4,
+      "waiting": 10
     },
     "ontime": {
       "ontime": 0,
-      "early": 3,
+      "early": 4,
       "late": 0,
       "total": 14,
       "rate": 0.0,
-      "early_rate": 21.4,
+      "early_rate": 28.6,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 3,
       "done": 2,
-      "rate": 100.0,
+      "rate": 66.7,
       "pcs_done": 356,
-      "sign_pcs_done": 356
+      "sign_pcs_done": 1490
     },
     "qc": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "pending": 0,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 1134,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 2,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 2908,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 14,
-        "done": 3,
-        "rate": 21.4
+        "done": 4,
+        "rate": 28.6
       },
       "pcs": {
         "total": 7960,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 31,
-        "done": 5,
-        "rate": 16.1
+        "done": 7,
+        "rate": 22.6
       },
       "supplier": {
         "total": 10,
-        "done": 2,
-        "rate": 20.0,
+        "done": 3,
+        "rate": 30.0,
         "detail": {
+          "福克斯食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "鲜上榜乳业（广州）有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -109,10 +113,6 @@
             "done": 0
           },
           "厦门江鲁食品科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "福克斯食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -231,13 +231,6 @@
           "timeSlot": "14:30 - 15:00"
         },
         {
-          "supplierName": "福克斯食品有限公司-快乐猴",
-          "billCode": "YY20260522000633",
-          "skuCount": 2,
-          "pcs": 1134,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
           "supplierName": "湖北吉利食品有限公司-快乐猴-自营",
           "billCode": "YY20260519010199",
           "skuCount": 1,
@@ -245,8 +238,32 @@
           "timeSlot": "15:30 - 16:00"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "福克斯食品有限公司-快乐猴",
+          "billCode": "YY20260522000633",
+          "signTime": "08:50",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "福克斯食品有限公司-快乐猴",
+          "skuName": "快乐猴 白胡椒粉 40g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "福克斯食品有限公司-快乐猴",
+          "skuName": "快乐猴 黑胡椒粉 40g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [],
@@ -524,10 +541,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 19,
+      "not_started": 29,
       "in_progress": 0,
       "done": 0,
-      "total": 19,
+      "total": 29,
       "status": "ok"
     }
   },

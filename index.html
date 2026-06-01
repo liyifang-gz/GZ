@@ -1599,10 +1599,29 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
     }
 
     // 当前仓配置
+    // 每个仓配置主 URL（raw.githubusercontent.com）和备用 URL（jsDelivr CDN）
     const WAREHOUSES = {
-      'gz0210': { name: 'GZ0210 冷藏', dataUrl: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/realtime_data.json',         historyDir: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/history/' },
-      'gz0211': { name: 'GZ0211 冷冻', dataUrl: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0211/realtime_data.json',   historyDir: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0211/history/' },
-      'gz0209': { name: 'GZ0209 常温', dataUrl: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0209/realtime_data.json',   historyDir: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0209/history/' },
+      'gz0210': {
+        name: 'GZ0210 冷藏',
+        dataUrl:     'https://raw.githubusercontent.com/liyifang-gz/GZ/main/realtime_data.json',
+        dataUrlBak:  'https://cdn.jsdelivr.net/gh/liyifang-gz/GZ@main/realtime_data.json',
+        historyDir:  'https://raw.githubusercontent.com/liyifang-gz/GZ/main/history/',
+        historyDirBak: 'https://cdn.jsdelivr.net/gh/liyifang-gz/GZ@main/history/',
+      },
+      'gz0211': {
+        name: 'GZ0211 冷冻',
+        dataUrl:     'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0211/realtime_data.json',
+        dataUrlBak:  'https://cdn.jsdelivr.net/gh/liyifang-gz/GZ@main/gz0211/realtime_data.json',
+        historyDir:  'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0211/history/',
+        historyDirBak: 'https://cdn.jsdelivr.net/gh/liyifang-gz/GZ@main/gz0211/history/',
+      },
+      'gz0209': {
+        name: 'GZ0209 常温',
+        dataUrl:     'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0209/realtime_data.json',
+        dataUrlBak:  'https://cdn.jsdelivr.net/gh/liyifang-gz/GZ@main/gz0209/realtime_data.json',
+        historyDir:  'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0209/history/',
+        historyDirBak: 'https://cdn.jsdelivr.net/gh/liyifang-gz/GZ@main/gz0209/history/',
+      },
     };
     function getCurrentWarehouse() {
       const sel = document.getElementById('warehouse-select');
@@ -1611,29 +1630,67 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
     function getDataUrl() {
       return WAREHOUSES[getCurrentWarehouse()].dataUrl;
     }
+    function getDataUrlBak() {
+      return WAREHOUSES[getCurrentWarehouse()].dataUrlBak;
+    }
     function getHistoryDir() {
       return WAREHOUSES[getCurrentWarehouse()].historyDir;
     }
+    function getHistoryDirBak() {
+      return WAREHOUSES[getCurrentWarehouse()].historyDirBak;
+    }
+
+    // ── fetchWithRetry：主 URL 失败时自动切换备用 CDN，最多重试 2 次 ──
+    async function fetchWithRetry(primaryUrl, backupUrl, retries, timeoutMs) {
+      timeoutMs = timeoutMs || 8000;
+      const urls = [primaryUrl, backupUrl, primaryUrl];  // 主→备→主 再试一次
+      let lastErr;
+      for (let i = 0; i < Math.min(retries + 1, urls.length); i++) {
+        const url = urls[i];
+        const isBak = url === backupUrl;
+        try {
+          const ctrl = new AbortController();
+          const tid = setTimeout(() => ctrl.abort(), timeoutMs);
+          const resp = await fetch(url + (url.indexOf('?') === -1 ? '?' : '&') + 't=' + Date.now(),
+            { cache: 'no-store', signal: ctrl.signal });
+          clearTimeout(tid);
+          if (!resp.ok) throw new Error('HTTP ' + resp.status);
+          if (isBak) console.warn('[CDN-FALLBACK] 使用备用 CDN:', url);
+          return resp;
+        } catch (e) {
+          lastErr = e;
+          if (i < retries) {
+            const delay = isBak ? 1500 : 800;
+            await new Promise(function(r) { setTimeout(r, delay); });
+          }
+        }
+      }
+      throw lastErr;
+    }
 
     async function loadData() {
+      const utEl = document.getElementById('update-time');
       try {
-        const resp = await fetch(getDataUrl() + "?t=" + Date.now(), {cache: "no-store"});
-          if (!resp.ok) {
-            const wh = getCurrentWarehouse();
-            if (wh !== 'gz0210' && resp.status === 404) {
-              const whName = WAREHOUSES[wh].name;
-              document.getElementById("update-time").textContent = `⏳ ${whName} 看板建设中，敬请期待`;
-              return;
-            }
-            throw new Error("HTTP " + resp.status);
+        const wh = getCurrentWarehouse();
+        utEl.textContent = '加载中…';
+        const resp = await fetchWithRetry(getDataUrl(), getDataUrlBak(), 2);
+        if (!resp.ok) {
+          if (wh !== 'gz0210' && resp.status === 404) {
+            utEl.textContent = `⏳ ${WAREHOUSES[wh].name} 看板建设中，敬请期待`;
+            return;
           }
-          const data = await resp.json();
-          window._latestData = data;
-          renderData(data);
-          initDateSelect(data);  // async，后台探测历史文件，不阻塞主渲染
-          countdown = 30;
+          throw new Error('HTTP ' + resp.status);
+        }
+        const data = await resp.json();
+        window._latestData = data;
+        renderData(data);
+        initDateSelect(data);  // async，后台探测历史文件，不阻塞主渲染
+        countdown = 30;
       } catch (e) {
-        document.getElementById("update-time").textContent = "加载失败: " + e.message;
+        const isNetwork = e.name === 'AbortError' || e.message === 'Failed to fetch' || e.name === 'TypeError';
+        utEl.textContent = isNetwork
+          ? '⚠️ 网络波动，请点击「立即刷新」重试'
+          : '加载失败: ' + e.message;
       }
     }
 
@@ -1645,8 +1702,8 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
 
     async function silentRefresh() {
       try {
-        const resp = await fetch(getDataUrl() + "?t=" + Date.now(), {cache: "no-store"});
-        if (!resp.ok) throw new Error("HTTP " + resp.status);
+        const resp = await fetchWithRetry(getDataUrl(), getDataUrlBak(), 2);
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
         const data = await resp.json();
         // 只在今天模式下更新数据（历史模式不覆盖）
         const sel = document.getElementById('date-select');
@@ -1681,8 +1738,9 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       // 清空旧选项（保留"今天"）
       while (sel.options.length > 1) sel.remove(1);
 
-      // 探测过去14天是否有历史快照
+      // 探测过去14天是否有历史快照（主 CDN 失败自动切备用）
       const histDir = getHistoryDir();
+      const histDirBak = getHistoryDirBak();
       const today = new Date();
       const availDates = [];
       for (let i = 1; i <= 14; i++) {
@@ -1690,8 +1748,9 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
         d.setDate(today.getDate() - i);
         const dateStr = d.toISOString().slice(0, 10);
         try {
-          const r = await fetch(`${histDir}${dateStr}.json`, { method: 'HEAD' });
-          if (r.ok) availDates.push(dateStr);
+          let r = await fetch(`${histDir}${dateStr}.json`, { method: 'HEAD' }).catch(() => null);
+          if (!r || !r.ok) r = await fetch(`${histDirBak}${dateStr}.json`, { method: 'HEAD' }).catch(() => null);
+          if (r && r.ok) availDates.push(dateStr);
         } catch (e) { /* 文件不存在，跳过 */ }
       }
 
@@ -1714,9 +1773,13 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
           const ut = document.getElementById('update-time');
           if (ut && window._latestData) ut.textContent = '更新于 ' + (window._latestData.timestamp || '').slice(11, 16);
         } else {
-          // 加载历史快照
+          // 加载历史快照（主 CDN 失败自动切备用）
           try {
-            const resp = await fetch(`${histDir}${selectedDate}.json?t=` + Date.now(), {cache: "no-store"});
+            const resp = await fetchWithRetry(
+              `${histDir}${selectedDate}.json`,
+              `${histDirBak}${selectedDate}.json`,
+              2
+            );
             if (!resp.ok) throw new Error('HTTP ' + resp.status);
             const snap = await resp.json();
             renderData(snap);

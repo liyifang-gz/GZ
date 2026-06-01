@@ -1512,13 +1512,14 @@ putawayBarPct = pcsRate;
           <td style="text-align:center;font-weight:600;color:${rateColor}">${rateStr}</td>
         </tr>`;
       }
-const totalRate = totalInservice > 0 ? Math.round((actual / totalInservice) * 100) : 0;
-const totalRateStr = totalInservice > 0 ? totalRate + "%" : "--";
+// 合计行用 by_job 明细加总，与表格行保持一致（不用 total_inservice/actual，避免含安防等非核心岗位）
+const totalRate = sumInservice > 0 ? Math.round((sumAttendance / sumInservice) * 100) : 0;
+const totalRateStr = sumInservice > 0 ? totalRate + "%" : "--";
 const totalRateColor = totalRate >= 80 ? "#10b981" : totalRate >= 60 ? "#f59e0b" : "#ef4444";
 tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
 <td style="font-weight:600">合计</td>
-<td style="text-align:center;font-weight:700;color:#2196f3">${totalInservice}</td>
-<td style="text-align:center;font-weight:700;color:#2196f3">${actual}</td>
+<td style="text-align:center;font-weight:700;color:#2196f3">${sumInservice}</td>
+<td style="text-align:center;font-weight:700;color:#2196f3">${sumAttendance}</td>
 <td style="text-align:center;font-weight:700;color:${totalRateColor}">${totalRateStr}</td>
 </tr>`;
     }

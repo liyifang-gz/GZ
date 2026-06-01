@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-01T13:36:40",
+  "timestamp": "2026-06-01T13:42:41",
   "date": "2026-06-01",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 6,
-      "signed": 2,
-      "waiting": 3
+      "signed": 4,
+      "waiting": 1
     },
     "ontime": {
       "ontime": 1,
-      "early": 1,
+      "early": 3,
       "late": 0,
       "total": 5,
       "rate": 20.0,
-      "early_rate": 20.0,
+      "early_rate": 60.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 4,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 600
+      "sign_pcs_done": 1320
     },
     "qc": {
-      "total": 1,
+      "total": 3,
       "done": 1,
-      "pending": 0,
+      "pending": 2,
       "passed": 1,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 33.3,
       "bill_done": 1,
-      "bill_total": 1,
+      "bill_total": 3,
       "pcs_done": 500,
       "pcs_passed": 500,
-      "pcs_total": 500,
+      "pcs_total": 1220,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 41.0,
       "sku_done": 1,
-      "sku_total": 1,
-      "sku_rate": 100.0
+      "sku_total": 3,
+      "sku_rate": 33.3
     },
     "putaway": {
       "total": 100,
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 5,
-        "done": 2,
-        "rate": 40.0
+        "done": 4,
+        "rate": 80.0
       },
       "pcs": {
         "total": 380,
@@ -80,14 +80,22 @@
       },
       "sku": {
         "total": 10,
-        "done": 7,
-        "rate": 70.0
+        "done": 9,
+        "rate": 90.0
       },
       "supplier": {
         "total": 5,
-        "done": 2,
-        "rate": 40.0,
+        "done": 4,
+        "rate": 80.0,
         "detail": {
+          "北京花花食界食品科技有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "德州市金彩凤食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "苏州瑷玛森食品有限公司": {
             "plan": 1,
             "done": 1
@@ -97,14 +105,6 @@
             "done": 1
           },
           "杭州众点食品科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "北京花花食界食品科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "德州市金彩凤食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -120,23 +120,21 @@
           "skuCount": 1,
           "pcs": 280,
           "timeSlot": "16:00 - 16:30"
-        },
+        }
+      ],
+      "unloading": [
         {
           "supplierName": "北京花花食界食品科技有限公司-快乐猴",
           "billCode": "YY20260531001590",
-          "skuCount": 1,
-          "pcs": 120,
-          "timeSlot": "16:00 - 16:30"
+          "signTime": "13:41",
+          "status": "已签到未卸货"
         },
         {
           "supplierName": "德州市金彩凤食品有限公司-快乐猴",
           "billCode": "YY20260528008030",
-          "skuCount": 1,
-          "pcs": 600,
-          "timeSlot": "16:00 - 16:30"
-        }
-      ],
-      "unloading": [
+          "signTime": "13:41",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
           "billCode": "YY20260529010214",
@@ -150,13 +148,30 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "德州市金彩凤食品有限公司-快乐猴",
+          "skuName": "快乐猴 奥尔良鸡肉包 640g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "北京花花食界食品科技有限公司-快乐猴",
+          "skuName": "华仔爸爸 牛肉芝士薄饼 200g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "蚌埠大成食品有限公司-快乐猴",
           "skuName": "快乐猴 奥尔良风味十翅一桶 450g",
           "completeTime": "12:18",
-          "waitingMins": 78
+          "waitingMins": 84
         }
       ],
       "qc_recv_pending": [],
@@ -261,9 +276,9 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 104,
-      "in_progress": 1,
-      "done": 84,
+      "not_started": 96,
+      "in_progress": 3,
+      "done": 90,
       "total": 189,
       "status": "ok"
     }

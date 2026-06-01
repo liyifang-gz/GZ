@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-01T18:01:58",
+  "timestamp": "2026-06-01T18:12:24",
   "date": "2026-06-01",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 6,
-      "done": 3,
-      "pending": 3,
-      "passed": 3,
+      "done": 4,
+      "pending": 2,
+      "passed": 4,
       "rejected": 0,
-      "rate": 50.0,
-      "bill_done": 3,
+      "rate": 66.7,
+      "bill_done": 4,
       "bill_total": 6,
-      "pcs_done": 320,
-      "pcs_passed": 320,
+      "pcs_done": 620,
+      "pcs_passed": 620,
       "pcs_total": 1900,
       "pcs_rejected": 0,
-      "pcs_rate": 16.8,
-      "sku_done": 3,
+      "pcs_rate": 32.6,
+      "sku_done": 4,
       "sku_total": 6,
-      "sku_rate": 50.0
+      "sku_rate": 66.7
     },
     "putaway": {
       "total": 6334,
@@ -80,6 +80,10 @@
         "done": 11,
         "rate": 91.7,
         "detail": {
+          "湖北吉利食品有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "广州齐佑宝商贸有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -87,10 +91,6 @@
           "东莞市睿致商贸有限公司-快乐猴": {
             "plan": 4,
             "done": 4
-          },
-          "湖北吉利食品有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 1
           },
           "四川创调电子商务有限公司-快乐猴": {
             "plan": 1,
@@ -191,14 +191,6 @@
           "arrivalTime": "14:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
-          "supplierName": "湖北吉利食品有限公司-快乐猴-自营",
-          "skuName": "快乐猴 焦糖味爆米花 180g",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "17:35",
-          "statusLabel": "首次进行中"
         }
       ],
       "recv_pending": [
@@ -206,19 +198,25 @@
           "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
           "skuName": "新包材-贴纸-一无花果",
           "completeTime": "15:29",
-          "waitingMins": 152
+          "waitingMins": 163
         },
         {
           "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
           "skuName": "新包材-贴纸-一口酥",
           "completeTime": "15:30",
-          "waitingMins": 151
+          "waitingMins": 162
         },
         {
           "supplierName": "东莞市睿致商贸有限公司-快乐猴",
           "skuName": "海天金标蚝油625g",
           "completeTime": "15:54",
-          "waitingMins": 127
+          "waitingMins": 138
+        },
+        {
+          "supplierName": "湖北吉利食品有限公司-快乐猴-自营",
+          "skuName": "快乐猴 焦糖味爆米花 180g",
+          "completeTime": "18:02",
+          "waitingMins": 10
         }
       ],
       "qc_recv_pending": [],
@@ -261,24 +259,29 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 3,
+      "total": 42,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 3,
+      "total": 42,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 7637,
-      "pcs_total": 7679,
-      "pcs_rate": 99.5
+      "pcs_total": 8454,
+      "pcs_rate": 90.3
     },
     "packing": {
-      "total": 28,
+      "total": 29,
       "done": 11,
-      "rate": 39.3
+      "rate": 37.9
     },
     "uncaged_details": [
+      {
+        "containerCode": "RQ-28-03-0900232",
+        "poiName": "南海国昌广场店",
+        "qty": 775
+      },
       {
         "containerCode": "RQ-28-03-0900230",
         "poiName": "南海国昌广场店",
@@ -287,24 +290,29 @@
     ],
     "unpacked_details": [
       {
+        "containerCode": "RQ-28-03-0900232",
+        "poiName": "南海国昌广场店",
+        "qty": 775
+      },
+      {
         "containerCode": "RQ-28-03-0900230",
         "poiName": "南海国昌广场店",
         "qty": 42
       }
     ],
     "shipping": {
-      "total": 42,
+      "total": 817,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 3,
+      "multi_pallet_total": 42,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "9.82%",
+      "load_rate_unloaded": "46.03%",
       "load_rate_loaded": "81.12%",
       "load_rate_shipped": "93.72%",
       "low_load_containers": [
@@ -337,6 +345,15 @@
         }
       ],
       "all_containers_detail": [
+        {
+          "containerCode": "RQ-28-03-0900232",
+          "poiName": "南海国昌广场店",
+          "loadingRate": "82.25%",
+          "loadingRateVal": 82.25,
+          "skuPcs": "775.000",
+          "skuVolume": "1.629",
+          "planOutTime": "06-01 20:00"
+        },
         {
           "containerCode": "RQ-28-03-0900230",
           "poiName": "南海国昌广场店",
@@ -590,23 +607,23 @@
           "planOutTime": "06-01 20:00"
         }
       ],
-      "outbound_efficiency": 14.0,
-      "outbound_efficiency_formula": "42 PCS / 3 人(拣播员)"
+      "outbound_efficiency": 272.3,
+      "outbound_efficiency_formula": "817 PCS / 3 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 42,
+        "total": 817,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 42,
+        "not_caged": 817,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 99.5,
-        "sowed_picked": 7679
+        "cage_rate": 90.3,
+        "sowed_picked": 8454
       },
       "sku": {
-        "total": 3,
+        "total": 42,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -621,13 +638,13 @@
       "alloc_pcs": 24084,
       "alloc_rate": 93.9,
       "picked_pcs": 8454,
-      "sow_pcs": 7679,
-      "sow_rate": 31.9,
+      "sow_pcs": 8454,
+      "sow_rate": 35.1,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 934,
       "sku_alloc": 934,
-      "sku_sow": 395,
+      "sku_sow": 532,
       "sku_ship": 0,
       "total_orders": 27
     },
@@ -642,10 +659,10 @@
       }
     ],
     "seeding": {
-      "not_started": 96,
-      "in_progress": 1,
-      "done": 274,
-      "total": 371,
+      "not_started": 94,
+      "in_progress": 3,
+      "done": 291,
+      "total": 388,
       "status": "ok"
     }
   },
@@ -655,13 +672,13 @@
     "alloc_pcs": 24084,
     "alloc_rate": 93.9,
     "picked_pcs": 8454,
-    "sow_pcs": 7679,
-    "sow_rate": 31.9,
+    "sow_pcs": 8454,
+    "sow_rate": 35.1,
     "ship_pcs": 0,
     "ship_rate": 0,
     "sku_plan": 934,
     "sku_alloc": 934,
-    "sku_sow": 395,
+    "sku_sow": 532,
     "store_count": 1,
     "by_store": {
       "KLH-广州常温1仓-GZ0209": 25651.0
@@ -719,10 +736,10 @@
       "N常温收退": 2,
       "N常温高叉司机": 2
     },
-    "predicted_efficiency": 4.2,
-    "efficiency_formula": "42 PCS / 10 人",
-    "outbound_efficiency": 14.0,
-    "outbound_efficiency_formula": "42 PCS / 3 人(拣播员)",
+    "predicted_efficiency": 81.7,
+    "efficiency_formula": "817 PCS / 10 人",
+    "outbound_efficiency": 272.3,
+    "outbound_efficiency_formula": "817 PCS / 3 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

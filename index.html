@@ -1489,10 +1489,11 @@ putawayBarPct = pcsRate;
       document.getElementById("att-productivity").textContent = productivity > 0 ? fmt(productivity) : "--";
 
       // 分岗位表格（4列：岗位、在职、出勤、出勤率）
+      // 动态读取 by_job 的实际 key，不硬编码岗位名（各仓岗位不同）
       const tbody = document.getElementById("job-tbody");
       tbody.innerHTML = "";
       const byJob = att.by_job || {};
-      const jobOrder = ["N拣播员", "N冷藏收退", "N库维", "N物资"];
+      const jobOrder = Object.keys(byJob);
       let sumInservice = 0;
       let sumAttendance = 0;
       for (const name of jobOrder) {

@@ -1092,16 +1092,16 @@ let countdownTimer;
     if (planDetailBtn && planDetailBtn.addEventListener)
       planDetailBtn.addEventListener("click", () => toggleDetail("plan-detail"));
 
-    // 刷新按钮
+    // 刷新按钮 — 用 loadData()（有加载提示+错误提示），不用静默刷新
     const refreshBtn = document.getElementById("refresh-btn");
     if (refreshBtn) {
       refreshBtn.addEventListener("click", () => {
         refreshBtn.disabled = true;
         refreshBtn.textContent = "⏳ 刷新中...";
-        silentRefresh().then(() => {
+        loadData().then(() => {
           refreshBtn.disabled = false;
           refreshBtn.textContent = "🔄 立即刷新";
-          countdown = 30;
+          startCountdown();
         });
       });
     }
@@ -1714,8 +1714,10 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
     async function silentRefresh() {
       if (_silentRefreshing) return;  // 防并发：上次还没完成就不再触发
       _silentRefreshing = true;
+      const utEl = document.getElementById('update-time');
       try {
-        const resp = await fetchWithRetry(getDataUrl(), getDataUrlBak(), 2);
+        // 超时 15s，给网络更多时间
+        const resp = await fetchWithRetry(getDataUrl(), getDataUrlBak(), 2, 15000);
         if (!resp.ok) throw new Error('HTTP ' + resp.status);
         const data = await resp.json();
         // 只在今天模式下更新数据（历史模式不覆盖）
@@ -1726,7 +1728,8 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
           renderData(data);
         }
       } catch (e) {
-        // 静默失败，不打扰用户
+        // 失败时显示警告，不再静默吞掉
+        if (utEl) utEl.textContent = '⚠️ 自动刷新失败，请点击「立即刷新」重试';
       } finally {
         _silentRefreshing = false;
       }

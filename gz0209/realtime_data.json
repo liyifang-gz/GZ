@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-01T17:25:41",
+  "timestamp": "2026-06-01T17:34:41",
   "date": "2026-06-01",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 24,
-      "signed": 15,
-      "waiting": 2
+      "signed": 16,
+      "waiting": 1
     },
     "ontime": {
       "ontime": 2,
       "early": 12,
-      "late": 1,
+      "late": 2,
       "total": 17,
       "rate": 11.8,
       "early_rate": 70.6,
-      "late_rate": 5.9
+      "late_rate": 11.8
     },
     "reserve_progress": {
       "po_total": 19,
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 12,
+      "total": 13,
       "done": 11,
-      "rate": 91.7,
+      "rate": 84.6,
       "pcs_done": 5813,
-      "sign_pcs_done": 7093
+      "sign_pcs_done": 7393
     },
     "qc": {
-      "total": 5,
+      "total": 6,
       "done": 3,
-      "pending": 2,
+      "pending": 3,
       "passed": 3,
       "rejected": 0,
-      "rate": 60.0,
+      "rate": 50.0,
       "bill_done": 3,
-      "bill_total": 5,
+      "bill_total": 6,
       "pcs_done": 320,
       "pcs_passed": 320,
-      "pcs_total": 1600,
+      "pcs_total": 1900,
       "pcs_rejected": 0,
-      "pcs_rate": 20.0,
+      "pcs_rate": 16.8,
       "sku_done": 3,
-      "sku_total": 5,
-      "sku_rate": 60.0
+      "sku_total": 6,
+      "sku_rate": 50.0
     },
     "putaway": {
       "total": 6334,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 17,
-        "done": 15,
-        "rate": 88.2
+        "done": 16,
+        "rate": 94.1
       },
       "pcs": {
         "total": 7960,
@@ -72,14 +72,26 @@
       },
       "sku": {
         "total": 37,
-        "done": 34,
-        "rate": 91.9
+        "done": 35,
+        "rate": 94.6
       },
       "supplier": {
         "total": 12,
-        "done": 10,
-        "rate": 83.3,
+        "done": 11,
+        "rate": 91.7,
         "detail": {
+          "湖北吉利食品有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
+          "四川创调电子商务有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "福克斯食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "厦门江鲁食品科技有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -99,18 +111,6 @@
           "广州齐佑宝商贸有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "四川创调电子商务有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "福克斯食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "湖北吉利食品有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
           },
           "深圳蒙牛液体奶销售有限公司-快乐猴": {
             "plan": 1,
@@ -160,13 +160,6 @@
       ],
       "unsigned": [
         {
-          "supplierName": "湖北吉利食品有限公司-快乐猴-自营",
-          "billCode": "YY20260601002763",
-          "skuCount": 1,
-          "pcs": 300,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
           "supplierName": "深圳蒙牛液体奶销售有限公司-快乐猴",
           "billCode": "YY20260601002683",
           "skuCount": 2,
@@ -175,6 +168,12 @@
         }
       ],
       "unloading": [
+        {
+          "supplierName": "湖北吉利食品有限公司-快乐猴-自营",
+          "billCode": "YY20260601002763",
+          "signTime": "17:34",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "高邮三宝食品有限公司",
           "billCode": "YY20260531004186",
@@ -198,6 +197,14 @@
           "arrivalTime": "14:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "湖北吉利食品有限公司-快乐猴-自营",
+          "skuName": "快乐猴 焦糖味爆米花 180g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -205,19 +212,19 @@
           "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
           "skuName": "新包材-贴纸-一无花果",
           "completeTime": "15:29",
-          "waitingMins": 116
+          "waitingMins": 125
         },
         {
           "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
           "skuName": "新包材-贴纸-一口酥",
           "completeTime": "15:30",
-          "waitingMins": 115
+          "waitingMins": 124
         },
         {
           "supplierName": "东莞市睿致商贸有限公司-快乐猴",
           "skuName": "海天金标蚝油625g",
           "completeTime": "15:54",
-          "waitingMins": 91
+          "waitingMins": 100
         }
       ],
       "qc_recv_pending": [],
@@ -659,10 +666,10 @@
       }
     ],
     "seeding": {
-      "not_started": 53,
+      "not_started": 59,
       "in_progress": 0,
       "done": 273,
-      "total": 326,
+      "total": 332,
       "status": "ok"
     }
   },

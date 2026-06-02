@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-02T16:33:21",
+  "timestamp": "2026-06-02T16:38:21",
   "date": "2026-06-02",
   "warehouse": "GZ0210",
   "inbound": {
@@ -31,31 +31,39 @@
       "sign_pcs_done": 2980
     },
     "qc": {
-      "total": 1,
+      "total": 0,
       "done": 0,
-      "pending": 1,
+      "pending": 0,
       "passed": 0,
       "rejected": 0,
-      "rate": 0.0,
+      "rate": 0,
       "bill_done": 0,
-      "bill_total": 1,
+      "bill_total": 0,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 280,
+      "pcs_total": 0,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
+      "pcs_rate": 0,
       "sku_done": 0,
-      "sku_total": 1,
-      "sku_rate": 0.0
+      "sku_total": 0,
+      "sku_rate": 0
     },
     "putaway": {
-      "total": 600,
+      "total": 800,
       "done": 600,
-      "rate": 100.0,
-      "sku_total": 2,
+      "rate": 75.0,
+      "sku_total": 3,
       "sku_done": 2,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 66.7,
+      "details": [
+        {
+          "poNo": "CG202606016849",
+          "hopePcs": 200,
+          "putPcs": 0,
+          "hopeSku": 1,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +75,8 @@
         "total": 880,
         "done": 880,
         "rate": 100.0,
-        "recv_done": 600,
-        "recv_rate": 68.2
+        "recv_done": 800,
+        "recv_rate": 90.9
       },
       "sku": {
         "total": 3,
@@ -112,19 +120,19 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "杭州众点食品科技有限公司-快乐猴",
-          "skuName": "德华 原味酸奶口味雪糕 70g*10",
-          "arrivalTime": "16:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [],
       "qc_recv_pending": [],
-      "recv_diff": [],
+      "recv_diff": [
+        {
+          "supplierName": "杭州众点食品科技有限公司-快乐猴",
+          "skuName": "德华 原味酸奶口味雪糕 70g*10",
+          "purchaseQty": 280,
+          "recvQty": 200,
+          "diffQty": -80,
+          "poNo": "CG202606016849"
+        }
+      ],
       "qc_rejected": [],
       "duplicate_reserve": []
     },
@@ -272,10 +280,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 32,
-      "in_progress": 3,
-      "done": 281,
-      "total": 316,
+      "not_started": 36,
+      "in_progress": 2,
+      "done": 284,
+      "total": 322,
       "status": "ok"
     }
   },

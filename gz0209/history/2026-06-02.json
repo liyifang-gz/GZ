@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-02T15:48:28",
+  "timestamp": "2026-06-02T15:53:27",
   "date": "2026-06-02",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 20,
-      "signed": 12,
-      "waiting": 2
+      "signed": 14,
+      "waiting": 0
     },
     "ontime": {
       "ontime": 0,
       "early": 11,
-      "late": 1,
+      "late": 3,
       "total": 14,
       "rate": 0.0,
       "early_rate": 78.6,
-      "late_rate": 7.1
+      "late_rate": 21.4
     },
     "reserve_progress": {
       "po_total": 13,
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 10,
+      "total": 11,
       "done": 9,
-      "rate": 90.0,
+      "rate": 81.8,
       "pcs_done": 5874,
-      "sign_pcs_done": 6874
+      "sign_pcs_done": 8614
     },
     "qc": {
-      "total": 5,
-      "done": 2,
-      "pending": 3,
-      "passed": 2,
+      "total": 7,
+      "done": 3,
+      "pending": 4,
+      "passed": 3,
       "rejected": 0,
-      "rate": 40.0,
-      "bill_done": 2,
-      "bill_total": 5,
-      "pcs_done": 1280,
-      "pcs_passed": 1280,
-      "pcs_total": 3458,
+      "rate": 42.9,
+      "bill_done": 3,
+      "bill_total": 7,
+      "pcs_done": 2108,
+      "pcs_passed": 2108,
+      "pcs_total": 5198,
       "pcs_rejected": 0,
-      "pcs_rate": 37.0,
-      "sku_done": 2,
-      "sku_total": 5,
-      "sku_rate": 40.0
+      "pcs_rate": 40.6,
+      "sku_done": 3,
+      "sku_total": 7,
+      "sku_rate": 42.9
     },
     "putaway": {
       "total": 2751,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 14,
-        "done": 12,
-        "rate": 85.7
+        "done": 14,
+        "rate": 100.0
       },
       "pcs": {
         "total": 6044,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 24,
-        "done": 20,
-        "rate": 83.3
+        "done": 24,
+        "rate": 100.0
       },
       "supplier": {
         "total": 10,
-        "done": 9,
-        "rate": 90.0,
+        "done": 10,
+        "rate": 100.0,
         "detail": {
+          "货多多世纪贸易（广州）有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "仲景食品股份有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -115,10 +119,6 @@
           "广州市凤安贸易有限公司-快乐猴": {
             "plan": 2,
             "done": 2
-          },
-          "货多多世纪贸易（广州）有限公司-快乐猴": {
-            "plan": 2,
-            "done": 0
           }
         }
       }
@@ -150,23 +150,20 @@
           "poStatus": "已完成"
         }
       ],
-      "unsigned": [
+      "unsigned": [],
+      "unloading": [
         {
           "supplierName": "货多多世纪贸易（广州）有限公司-快乐猴",
           "billCode": "YY20260602003082",
-          "skuCount": 2,
-          "pcs": 1740,
-          "timeSlot": "14:30 - 15:00"
+          "signTime": "15:49",
+          "status": "已签到未卸货"
         },
         {
           "supplierName": "货多多世纪贸易（广州）有限公司-快乐猴",
           "billCode": "YY20260602003082",
-          "skuCount": 2,
-          "pcs": 1740,
-          "timeSlot": "14:30 - 15:00"
-        }
-      ],
-      "unloading": [
+          "signTime": "15:49",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "广东金胜晖食品有限公司-快乐猴",
           "billCode": "YY20260528008584",
@@ -182,21 +179,29 @@
           "skuName": "马克圣奇奥 五折防紫外线伞 1把",
           "arrivalTime": "15:30",
           "unloadFinishTime": "14:28",
-          "statusLabel": "待质检"
+          "statusLabel": "首次进行中"
         },
         {
           "seq": 2,
-          "supplierName": "北京田园盛态食品贸易有限公司房山分公司-快乐猴",
-          "skuName": "快乐猴 布朗尼脆片 60g",
+          "supplierName": "广东金胜晖食品有限公司-快乐猴",
+          "skuName": "快乐猴 象牙香粘米 5kg",
           "arrivalTime": "15:30",
-          "unloadFinishTime": "15:26",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         },
         {
           "seq": 3,
-          "supplierName": "广东金胜晖食品有限公司-快乐猴",
-          "skuName": "快乐猴 象牙香粘米 5kg",
-          "arrivalTime": "15:30",
+          "supplierName": "货多多世纪贸易（广州）有限公司-快乐猴",
+          "skuName": "六神 花露水 195ml",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "货多多世纪贸易（广州）有限公司-快乐猴",
+          "skuName": "爱家沁心柠檬固体清香剂70g",
+          "arrivalTime": "14:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
@@ -206,13 +211,19 @@
           "supplierName": "高邮三宝食品有限公司",
           "skuName": "三宝 高邮咸鸭蛋6枚 330g",
           "completeTime": "13:34",
-          "waitingMins": 134
+          "waitingMins": 139
         },
         {
           "supplierName": "高邮三宝食品有限公司",
           "skuName": "三宝 高邮薄盐咸鸭蛋6枚 420g",
           "completeTime": "13:36",
-          "waitingMins": 132
+          "waitingMins": 137
+        },
+        {
+          "supplierName": "北京田园盛态食品贸易有限公司房山分公司-快乐猴",
+          "skuName": "快乐猴 布朗尼脆片 60g",
+          "completeTime": "15:51",
+          "waitingMins": 2
         }
       ],
       "qc_recv_pending": [],
@@ -247,22 +258,22 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 437,
-      "done": 16,
-      "rate": 3.7
+      "total": 470,
+      "done": 0,
+      "rate": 0.0
     },
     "caging": {
-      "total": 437,
-      "done": 16,
-      "rate": 3.7,
-      "pcs_done": 4944,
-      "pcs_total": 20370,
-      "pcs_rate": 24.3
+      "total": 470,
+      "done": 0,
+      "rate": 0.0,
+      "pcs_done": 5740,
+      "pcs_total": 21092,
+      "pcs_rate": 27.2
     },
     "packing": {
-      "total": 34,
-      "done": 10,
-      "rate": 29.4
+      "total": 35,
+      "done": 11,
+      "rate": 31.4
     },
     "uncaged_details": [
       {
@@ -341,6 +352,16 @@
         "qty": 424
       },
       {
+        "containerCode": "RQ-28-03-0900181",
+        "poiName": "番禺建华汇店",
+        "qty": 326
+      },
+      {
+        "containerCode": "RQ-28-03-0900154",
+        "poiName": "番禺建华汇店",
+        "qty": 312
+      },
+      {
         "containerCode": "RQ-28-03-0900348",
         "poiName": "海珠星汇广场店",
         "qty": 312
@@ -379,6 +400,11 @@
         "containerCode": "RQ-28-03-0900356",
         "poiName": "海珠星汇广场店",
         "qty": 89
+      },
+      {
+        "containerCode": "RQ-28-03-0900347",
+        "poiName": "海珠星汇广场店",
+        "qty": 84
       },
       {
         "containerCode": "RQ-28-03-0900175",
@@ -463,6 +489,16 @@
         "qty": 424
       },
       {
+        "containerCode": "RQ-28-03-0900181",
+        "poiName": "番禺建华汇店",
+        "qty": 326
+      },
+      {
+        "containerCode": "RQ-28-03-0900154",
+        "poiName": "番禺建华汇店",
+        "qty": 312
+      },
+      {
         "containerCode": "RQ-28-03-0900348",
         "poiName": "海珠星汇广场店",
         "qty": 312
@@ -503,43 +539,47 @@
         "qty": 89
       },
       {
+        "containerCode": "RQ-28-03-0900347",
+        "poiName": "海珠星汇广场店",
+        "qty": 84
+      },
+      {
         "containerCode": "RQ-28-03-0900175",
         "poiName": "番禺建华汇店",
         "qty": 1
       }
     ],
     "shipping": {
-      "total": 15202,
+      "total": 15128,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
-      "multi_pallet_count": 10,
-      "multi_pallet_total": 423,
-      "multi_pallet_rate": 2.4,
-      "load_rate": 5.2,
+      "multi_pallet_count": 9,
+      "multi_pallet_total": 458,
+      "multi_pallet_rate": 2.0,
+      "load_rate": 0.0,
       "multi_pallet_details": [
         {
-          "skuName": "娃哈哈AD钙奶220g*4瓶（整组销售）",
-          "poiName": "海珠星汇广场店",
-          "containerCount": 3,
+          "skuName": "天地壹号 苹果醋饮料 330ml*6",
+          "poiName": "番禺建华汇店",
+          "containerCount": 2,
           "containerCodes": [
-            "RQ-28-03-0900345",
-            "RQ-28-03-0900379",
-            "RQ-28-03-0900380"
+            "RQ-28-03-0900179",
+            "RQ-28-03-0900181"
           ],
-          "qty": 444
+          "qty": 4
         },
         {
-          "skuName": "快乐猴 有芯卫生纸 200g*10",
+          "skuName": "娃哈哈AD钙奶220g*4瓶（整组销售）",
           "poiName": "海珠星汇广场店",
           "containerCount": 2,
           "containerCodes": [
             "RQ-28-03-0900345",
-            "RQ-28-03-0900379"
+            "RQ-28-03-0900380"
           ],
-          "qty": 114
+          "qty": 306
         },
         {
           "skuName": "可口可乐1.25L+美汁源果粒橙1.25L",
@@ -602,16 +642,6 @@
           "qty": 44
         },
         {
-          "skuName": "快乐猴 苹果干 110g",
-          "poiName": "海珠星汇广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900379",
-            "RQ-28-03-0900380"
-          ],
-          "qty": 210
-        },
-        {
           "skuName": "快乐猴 柔韧面巾纸3层 100抽*20",
           "poiName": "海珠星汇广场店",
           "containerCount": 2,
@@ -622,8 +652,8 @@
           "qty": 200
         }
       ],
-      "load_rate_unloaded": "77.41%",
-      "load_rate_loaded": "79.23%",
+      "load_rate_unloaded": "72.82%",
+      "load_rate_loaded": "83.45%",
       "load_rate_shipped": "--",
       "low_load_containers": [
         {
@@ -673,6 +703,15 @@
         }
       ],
       "all_containers_detail": [
+        {
+          "containerCode": "RQ-28-03-0900379",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "125.62%",
+          "loadingRateVal": 125.62,
+          "skuPcs": "796.000",
+          "skuVolume": "2.487",
+          "planOutTime": "06-02 20:00"
+        },
         {
           "containerCode": "RQ-28-03-0900371",
           "poiName": "海珠星汇广场店",
@@ -734,15 +773,6 @@
           "loadingRateVal": 44.9,
           "skuPcs": "132.000",
           "skuVolume": "0.889",
-          "planOutTime": "06-02 20:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900379",
-          "poiName": "海珠星汇广场店",
-          "loadingRate": "125.62%",
-          "loadingRateVal": 125.62,
-          "skuPcs": "796.000",
-          "skuVolume": "2.487",
           "planOutTime": "06-02 20:00"
         },
         {
@@ -917,6 +947,15 @@
           "planOutTime": "06-02 20:00"
         },
         {
+          "containerCode": "RQ-28-03-0900347",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "15.40%",
+          "loadingRateVal": 15.4,
+          "skuPcs": "84.000",
+          "skuVolume": "0.305",
+          "planOutTime": "06-02 20:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900356",
           "poiName": "海珠星汇广场店",
           "loadingRate": "9.66%",
@@ -980,29 +1019,29 @@
           "planOutTime": "06-02 20:00"
         }
       ],
-      "outbound_efficiency": 3800.5,
-      "outbound_efficiency_formula": "15202 PCS / 4 人(拣播员)"
+      "outbound_efficiency": 3782.0,
+      "outbound_efficiency_formula": "15128 PCS / 4 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 15202,
+        "total": 15128,
         "picked": 0,
         "sowed": 0,
-        "caged": 796,
-        "not_caged": 14406,
+        "caged": 0,
+        "not_caged": 15128,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 24.3,
-        "sowed_picked": 20370
+        "cage_rate": 27.2,
+        "sowed_picked": 21092
       },
       "sku": {
-        "total": 437,
+        "total": 470,
         "picked": 0,
         "sowed": 0,
-        "caged": 16,
+        "caged": 0,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 3.7
+        "cage_rate": 0.0
       }
     },
     "status": "ok",
@@ -1010,9 +1049,9 @@
       "plan_pcs": 43315,
       "alloc_pcs": 43295,
       "alloc_rate": 100.0,
-      "picked_pcs": 20370,
-      "sow_pcs": 20370,
-      "sow_rate": 47.0,
+      "picked_pcs": 21092,
+      "sow_pcs": 21092,
+      "sow_rate": 48.7,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 1536,
@@ -1032,10 +1071,10 @@
       }
     ],
     "seeding": {
-      "not_started": 50,
-      "in_progress": 3,
-      "done": 235,
-      "total": 288,
+      "not_started": 52,
+      "in_progress": 5,
+      "done": 238,
+      "total": 295,
       "status": "ok"
     }
   },
@@ -1044,9 +1083,9 @@
     "total_pcs": 43315,
     "alloc_pcs": 43295,
     "alloc_rate": 100.0,
-    "picked_pcs": 20370,
-    "sow_pcs": 20370,
-    "sow_rate": 47.0,
+    "picked_pcs": 21092,
+    "sow_pcs": 21092,
+    "sow_rate": 48.7,
     "ship_pcs": 0,
     "ship_rate": 0,
     "sku_plan": 1536,
@@ -1109,10 +1148,10 @@
       "N常温收退": 2,
       "N常温高叉司机": 2
     },
-    "predicted_efficiency": 1382.0,
-    "efficiency_formula": "15202 PCS / 11 人",
-    "outbound_efficiency": 3800.5,
-    "outbound_efficiency_formula": "15202 PCS / 4 人(拣播员)",
+    "predicted_efficiency": 1375.3,
+    "efficiency_formula": "15128 PCS / 11 人",
+    "outbound_efficiency": 3782.0,
+    "outbound_efficiency_formula": "15128 PCS / 4 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

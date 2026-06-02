@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-02T11:38:03",
+  "timestamp": "2026-06-02T11:42:22",
   "date": "2026-06-02",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 18,
-      "signed": 2,
-      "waiting": 11
+      "signed": 3,
+      "waiting": 10
     },
     "ontime": {
       "ontime": 0,
       "early": 2,
-      "late": 0,
+      "late": 1,
       "total": 13,
       "rate": 0.0,
       "early_rate": 15.4,
-      "late_rate": 0.0
+      "late_rate": 7.7
     },
     "reserve_progress": {
       "po_total": 55,
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
-      "done": 1,
+      "total": 2,
+      "done": 2,
       "rate": 100.0,
-      "pcs_done": 1695,
-      "sign_pcs_done": 1695
+      "pcs_done": 2975,
+      "sign_pcs_done": 2975
     },
     "qc": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "pending": 0,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 1280,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 2,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 0,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 13,
-        "done": 2,
-        "rate": 15.4
+        "done": 3,
+        "rate": 23.1
       },
       "pcs": {
         "total": 0,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 21,
-        "done": 6,
-        "rate": 28.6
+        "done": 8,
+        "rate": 38.1
       },
       "supplier": {
         "total": 10,
-        "done": 1,
-        "rate": 10.0,
+        "done": 2,
+        "rate": 20.0,
         "detail": {
+          "高邮三宝食品有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "仲景食品股份有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -87,10 +91,6 @@
           "广州市凤安贸易有限公司-快乐猴": {
             "plan": 2,
             "done": 2
-          },
-          "高邮三宝食品有限公司": {
-            "plan": 1,
-            "done": 0
           },
           "货多多世纪贸易（广州）有限公司-快乐猴": {
             "plan": 2,
@@ -132,13 +132,6 @@
           "skuCount": 1,
           "pcs": 150,
           "timeSlot": "15:30 - 16:00"
-        },
-        {
-          "supplierName": "高邮三宝食品有限公司",
-          "billCode": "YY20260602003201",
-          "skuCount": 2,
-          "pcs": 1280,
-          "timeSlot": "11:00 - 11:30"
         },
         {
           "supplierName": "货多多世纪贸易（广州）有限公司-快乐猴",
@@ -205,7 +198,24 @@
         }
       ],
       "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "高邮三宝食品有限公司",
+          "skuName": "三宝 高邮咸鸭蛋6枚 330g",
+          "arrivalTime": "11:00",
+          "unloadFinishTime": "11:41",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "高邮三宝食品有限公司",
+          "skuName": "三宝 高邮薄盐咸鸭蛋6枚 420g",
+          "arrivalTime": "11:00",
+          "unloadFinishTime": "11:41",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [],
@@ -230,16 +240,16 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 206,
+      "total": 212,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 206,
+      "total": 212,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 7421,
+      "pcs_total": 7600,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -289,6 +299,11 @@
         "qty": 424
       },
       {
+        "containerCode": "RQ-28-03-0900365",
+        "poiName": "海珠星汇广场店",
+        "qty": 371
+      },
+      {
         "containerCode": "RQ-28-03-0900361",
         "poiName": "海珠星汇广场店",
         "qty": 220
@@ -302,11 +317,6 @@
         "containerCode": "RQ-28-03-0900363",
         "poiName": "海珠星汇广场店",
         "qty": 212
-      },
-      {
-        "containerCode": "RQ-28-03-0900365",
-        "poiName": "海珠星汇广场店",
-        "qty": 192
       },
       {
         "containerCode": "RQ-28-03-0900374",
@@ -366,6 +376,11 @@
         "qty": 424
       },
       {
+        "containerCode": "RQ-28-03-0900365",
+        "poiName": "海珠星汇广场店",
+        "qty": 371
+      },
+      {
         "containerCode": "RQ-28-03-0900361",
         "poiName": "海珠星汇广场店",
         "qty": 220
@@ -379,11 +394,6 @@
         "containerCode": "RQ-28-03-0900363",
         "poiName": "海珠星汇广场店",
         "qty": 212
-      },
-      {
-        "containerCode": "RQ-28-03-0900365",
-        "poiName": "海珠星汇广场店",
-        "qty": 192
       },
       {
         "containerCode": "RQ-28-03-0900374",
@@ -402,14 +412,14 @@
       }
     ],
     "shipping": {
-      "total": 7421,
+      "total": 7600,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 1,
-      "multi_pallet_total": 202,
+      "multi_pallet_total": 208,
       "multi_pallet_rate": 0.5,
       "load_rate": 0.0,
       "multi_pallet_details": [
@@ -424,7 +434,7 @@
           "qty": 200
         }
       ],
-      "load_rate_unloaded": "74.38%",
+      "load_rate_unloaded": "75.84%",
       "load_rate_loaded": "--",
       "load_rate_shipped": "--",
       "low_load_containers": [],
@@ -520,6 +530,15 @@
           "planOutTime": "06-02 20:00"
         },
         {
+          "containerCode": "RQ-28-03-0900365",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "66.23%",
+          "loadingRateVal": 66.23,
+          "skuPcs": "371.000",
+          "skuVolume": "1.311",
+          "planOutTime": "06-02 20:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900368",
           "poiName": "海珠星汇广场店",
           "loadingRate": "60.55%",
@@ -538,15 +557,6 @@
           "planOutTime": "06-02 20:00"
         },
         {
-          "containerCode": "RQ-28-03-0900365",
-          "poiName": "海珠星汇广场店",
-          "loadingRate": "45.87%",
-          "loadingRateVal": 45.87,
-          "skuPcs": "192.000",
-          "skuVolume": "0.908",
-          "planOutTime": "06-02 20:00"
-        },
-        {
           "containerCode": "RQ-28-03-0900363",
           "poiName": "海珠星汇广场店",
           "loadingRate": "22.53%",
@@ -557,22 +567,22 @@
         }
       ],
       "outbound_efficiency": 0.0,
-      "outbound_efficiency_formula": "7421 PCS / 0 人(拣播员)"
+      "outbound_efficiency_formula": "7600 PCS / 0 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 7421,
+        "total": 7600,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 7421,
+        "not_caged": 7600,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
         "cage_rate": 0.0,
-        "sowed_picked": 7421
+        "sowed_picked": 7600
       },
       "sku": {
-        "total": 206,
+        "total": 212,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -586,9 +596,9 @@
       "plan_pcs": 36419,
       "alloc_pcs": 35501,
       "alloc_rate": 97.5,
-      "picked_pcs": 7421,
-      "sow_pcs": 7421,
-      "sow_rate": 20.9,
+      "picked_pcs": 7600,
+      "sow_pcs": 7600,
+      "sow_rate": 21.4,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 1171,
@@ -616,10 +626,10 @@
       }
     ],
     "seeding": {
-      "not_started": 127,
+      "not_started": 135,
       "in_progress": 0,
       "done": 0,
-      "total": 127,
+      "total": 135,
       "status": "ok"
     }
   },
@@ -628,9 +638,9 @@
     "total_pcs": 36419,
     "alloc_pcs": 35501,
     "alloc_rate": 97.5,
-    "picked_pcs": 7421,
-    "sow_pcs": 7421,
-    "sow_rate": 20.9,
+    "picked_pcs": 7600,
+    "sow_pcs": 7600,
+    "sow_rate": 21.4,
     "ship_pcs": 0,
     "ship_rate": 0,
     "sku_plan": 1171,
@@ -688,9 +698,9 @@
     "by_pos_total": {},
     "by_pos_scheduled": {},
     "predicted_efficiency": 0.0,
-    "efficiency_formula": "7421 PCS / 0 人",
+    "efficiency_formula": "7600 PCS / 0 人",
     "outbound_efficiency": 0.0,
-    "outbound_efficiency_formula": "7421 PCS / 0 人(拣播员)",
+    "outbound_efficiency_formula": "7600 PCS / 0 人(拣播员)",
     "inbound_efficiency_workers": 0,
     "status": "ok"
   }

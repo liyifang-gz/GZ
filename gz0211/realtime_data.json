@@ -1,34 +1,34 @@
 {
-  "timestamp": "2026-06-02T23:56:44",
-  "date": "2026-06-02",
+  "timestamp": "2026-06-03T00:01:36",
+  "date": "2026-06-03",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 3,
-      "signed": 3,
-      "waiting": 0
+      "signed": 0,
+      "waiting": 2
     },
     "ontime": {
       "ontime": 0,
-      "early": 3,
+      "early": 0,
       "late": 0,
-      "total": 3,
+      "total": 2,
       "rate": 0.0,
-      "early_rate": 100.0,
+      "early_rate": 0.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
-      "po_total": 2,
-      "po_reserved": 2,
-      "rate": 100.0,
+      "po_total": 4,
+      "po_reserved": 3,
+      "rate": 75.0,
       "po_data_ok": true
     },
     "unload": {
-      "total": 3,
-      "done": 1,
-      "rate": 33.3,
-      "pcs_done": 300,
-      "sign_pcs_done": 2980
+      "total": 0,
+      "done": 0,
+      "rate": 0,
+      "pcs_done": 0,
+      "sign_pcs_done": 0
     },
     "qc": {
       "total": 0,
@@ -49,8 +49,8 @@
       "sku_rate": 0
     },
     "putaway": {
-      "total": 800,
-      "done": 800,
+      "total": 1820,
+      "done": 1820,
       "rate": 100.0,
       "sku_total": 3,
       "sku_done": 3,
@@ -59,79 +59,77 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 3,
-        "done": 3,
-        "rate": 100.0
+        "total": 2,
+        "done": 0,
+        "rate": 0.0
       },
       "pcs": {
-        "total": 880,
-        "done": 880,
-        "rate": 100.0,
-        "recv_done": 800,
-        "recv_rate": 90.9
+        "total": 3800,
+        "done": 2600,
+        "rate": 68.4,
+        "recv_done": 1820,
+        "recv_rate": 47.9
       },
       "sku": {
         "total": 3,
-        "done": 3,
-        "rate": 100.0
+        "done": 0,
+        "rate": 0.0
       },
       "supplier": {
-        "total": 3,
-        "done": 3,
-        "rate": 100.0,
+        "total": 2,
+        "done": 0,
+        "rate": 0.0,
         "detail": {
-          "杭州众点食品科技有限公司-快乐猴": {
+          "荣成市鸿耀水产捕捞有限公司": {
             "plan": 1,
-            "done": 1
+            "done": 0
           },
-          "广州有林贸易有限公司-快乐猴": {
+          "安徽易达润食品科技有限责任公司-快乐猴": {
             "plan": 1,
-            "done": 1
-          },
-          "广州运通贸易发展有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
+            "done": 0
           }
         }
       }
     },
     "details": {
-      "unreserved": [],
-      "unsigned": [],
-      "unloading": [
+      "unreserved": [
         {
-          "supplierName": "杭州众点食品科技有限公司-快乐猴",
-          "billCode": "YY20260601010970",
-          "signTime": "15:30",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "广州运通贸易发展有限公司-快乐猴",
-          "billCode": "YY20260601011096",
-          "signTime": "10:25",
-          "status": "已签到未卸货"
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "poNo": "CG202605139135",
+          "skuCount": 1,
+          "pcs": 1200,
+          "preArrivalTime": "2026-06-03",
+          "poStatus": "已完成"
         }
       ],
+      "unsigned": [
+        {
+          "supplierName": "荣成市鸿耀水产捕捞有限公司",
+          "billCode": "YY20260602006136",
+          "skuCount": 2,
+          "pcs": 754,
+          "timeSlot": "15:00 - 15:30"
+        },
+        {
+          "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
+          "billCode": "YY20260529004607",
+          "skuCount": 1,
+          "pcs": 1980,
+          "timeSlot": "15:30 - 16:30"
+        }
+      ],
+      "unloading": [],
       "qc_pending": [],
       "recv_pending": [],
       "qc_recv_pending": [],
-      "recv_diff": [
-        {
-          "supplierName": "杭州众点食品科技有限公司-快乐猴",
-          "skuName": "德华 原味酸奶口味雪糕 70g*10",
-          "purchaseQty": 280,
-          "recvQty": 200,
-          "diffQty": -80,
-          "poNo": "CG202606016849"
-        }
-      ],
+      "recv_diff": [],
       "qc_rejected": [],
       "duplicate_reserve": []
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 440.0,
-      "efficiency_formula": "880 PCS / 2 人",
+      "efficiency": 1300.0,
+      "efficiency_formula": "2600 PCS / 2 人",
       "inbound_schedule": 2
     }
   },
@@ -159,7 +157,7 @@
       "pcs_rate": 0.0
     },
     "packing": {
-      "total": 3,
+      "total": 0,
       "done": 0,
       "rate": 0.0
     },
@@ -179,37 +177,9 @@
       "multi_pallet_details": [],
       "load_rate_unloaded": "--",
       "load_rate_loaded": "--",
-      "load_rate_shipped": "65.41%",
+      "load_rate_shipped": "--",
       "low_load_containers": [],
-      "all_containers_detail": [
-        {
-          "containerCode": "RQ-05-03-0700720",
-          "poiName": "禅城东方广场店",
-          "loadingRate": "67.45%",
-          "loadingRateVal": 67.45,
-          "skuPcs": "751.000",
-          "skuVolume": "1.335",
-          "planOutTime": "06-02 19:00"
-        },
-        {
-          "containerCode": "RQ-05-03-0700534",
-          "poiName": "番禺建华汇店",
-          "loadingRate": "78.11%",
-          "loadingRateVal": 78.11,
-          "skuPcs": "699.000",
-          "skuVolume": "1.547",
-          "planOutTime": "06-02 19:00"
-        },
-        {
-          "containerCode": "RQ-05-03-0700810",
-          "poiName": "南海国昌广场店",
-          "loadingRate": "50.66%",
-          "loadingRateVal": 50.66,
-          "skuPcs": "432.000",
-          "skuVolume": "1.003",
-          "planOutTime": "06-02 19:00"
-        }
-      ],
+      "all_containers_detail": [],
       "outbound_efficiency": 0.0,
       "outbound_efficiency_formula": "0 PCS / 2 人(拣播员)"
     },
@@ -255,8 +225,8 @@
     "seeding": {
       "not_started": 0,
       "in_progress": 0,
-      "done": 408,
-      "total": 408,
+      "done": 0,
+      "total": 0,
       "status": "ok"
     }
   },

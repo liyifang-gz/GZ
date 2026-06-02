@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-02T15:03:25",
+  "timestamp": "2026-06-02T15:08:25",
   "date": "2026-06-02",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 20,
-      "signed": 6,
-      "waiting": 8
+      "signed": 11,
+      "waiting": 3
     },
     "ontime": {
       "ontime": 0,
-      "early": 5,
+      "early": 10,
       "late": 1,
       "total": 14,
       "rate": 0.0,
-      "early_rate": 35.7,
+      "early_rate": 71.4,
       "late_rate": 7.1
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 5,
+      "total": 9,
       "done": 5,
-      "rate": 100.0,
+      "rate": 55.6,
       "pcs_done": 4116,
-      "sign_pcs_done": 4116
+      "sign_pcs_done": 5874
     },
     "qc": {
-      "total": 3,
+      "total": 8,
       "done": 2,
-      "pending": 1,
+      "pending": 6,
       "passed": 2,
       "rejected": 0,
-      "rate": 66.7,
+      "rate": 25.0,
       "bill_done": 2,
-      "bill_total": 3,
+      "bill_total": 8,
       "pcs_done": 1280,
       "pcs_passed": 1280,
-      "pcs_total": 1630,
+      "pcs_total": 3388,
       "pcs_rejected": 0,
-      "pcs_rate": 78.5,
+      "pcs_rate": 37.8,
       "sku_done": 2,
-      "sku_total": 3,
-      "sku_rate": 66.7
+      "sku_total": 6,
+      "sku_rate": 33.3
     },
     "putaway": {
       "total": 2751,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 14,
-        "done": 6,
-        "rate": 42.9
+        "done": 11,
+        "rate": 78.6
       },
       "pcs": {
         "total": 6044,
@@ -72,14 +72,26 @@
       },
       "sku": {
         "total": 24,
-        "done": 12,
-        "rate": 50.0
+        "done": 19,
+        "rate": 79.2
       },
       "supplier": {
         "total": 10,
-        "done": 5,
-        "rate": 50.0,
+        "done": 8,
+        "rate": 80.0,
         "detail": {
+          "中山市明润商贸有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
+          "北京田园盛态食品贸易有限公司房山分公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "仲景食品股份有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "杭州圣奇奥伞业有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -100,20 +112,8 @@
             "plan": 2,
             "done": 2
           },
-          "仲景食品股份有限公司-快乐猴": {
-            "plan": 2,
-            "done": 0
-          },
           "货多多世纪贸易（广州）有限公司-快乐猴": {
             "plan": 2,
-            "done": 0
-          },
-          "中山市明润商贸有限公司-快乐猴": {
-            "plan": 2,
-            "done": 0
-          },
-          "北京田园盛态食品贸易有限公司房山分公司-快乐猴": {
-            "plan": 1,
             "done": 0
           },
           "广东金胜晖食品有限公司-快乐猴": {
@@ -152,20 +152,6 @@
       ],
       "unsigned": [
         {
-          "supplierName": "仲景食品股份有限公司-快乐猴",
-          "billCode": "YY20260602004474",
-          "skuCount": 2,
-          "pcs": 165,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
-          "supplierName": "仲景食品股份有限公司-快乐猴",
-          "billCode": "YY20260602004474",
-          "skuCount": 2,
-          "pcs": 165,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
           "supplierName": "货多多世纪贸易（广州）有限公司-快乐猴",
           "billCode": "YY20260602003082",
           "skuCount": 2,
@@ -178,27 +164,6 @@
           "skuCount": 2,
           "pcs": 1740,
           "timeSlot": "14:30 - 15:00"
-        },
-        {
-          "supplierName": "中山市明润商贸有限公司-快乐猴",
-          "billCode": "YY20260601009690",
-          "skuCount": 1,
-          "pcs": 315,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
-          "supplierName": "中山市明润商贸有限公司-快乐猴",
-          "billCode": "YY20260601002532",
-          "skuCount": 1,
-          "pcs": 450,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
-          "supplierName": "北京田园盛态食品贸易有限公司房山分公司-快乐猴",
-          "billCode": "YY20260529001709",
-          "skuCount": 1,
-          "pcs": 828,
-          "timeSlot": "15:30 - 16:00"
         },
         {
           "supplierName": "广东金胜晖食品有限公司-快乐猴",
@@ -208,7 +173,40 @@
           "timeSlot": "15:30 - 16:00"
         }
       ],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "中山市明润商贸有限公司-快乐猴",
+          "billCode": "YY20260601009690",
+          "signTime": "15:06",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "中山市明润商贸有限公司-快乐猴",
+          "billCode": "YY20260601002532",
+          "signTime": "15:06",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "北京田园盛态食品贸易有限公司房山分公司-快乐猴",
+          "billCode": "YY20260529001709",
+          "signTime": "15:05",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "仲景食品股份有限公司-快乐猴",
+          "billCode": "YY20260602004474",
+          "signTime": "15:04",
+          "unloadStartTime": "15:06",
+          "status": "卸货中"
+        },
+        {
+          "supplierName": "仲景食品股份有限公司-快乐猴",
+          "billCode": "YY20260602004474",
+          "signTime": "15:04",
+          "unloadStartTime": "15:06",
+          "status": "卸货中"
+        }
+      ],
       "qc_pending": [
         {
           "seq": 1,
@@ -217,6 +215,46 @@
           "arrivalTime": "15:30",
           "unloadFinishTime": "14:28",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "仲景食品股份有限公司-快乐猴",
+          "skuName": "仲景 招牌香菇酱 168g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "仲景食品股份有限公司-快乐猴",
+          "skuName": "仲景 招牌香菇酱 168g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "北京田园盛态食品贸易有限公司房山分公司-快乐猴",
+          "skuName": "快乐猴 布朗尼脆片 60g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "中山市明润商贸有限公司-快乐猴",
+          "skuName": "【喝奶做公益】旺仔牛奶125ml*4盒",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "中山市明润商贸有限公司-快乐猴",
+          "skuName": "【喝奶做公益】旺仔牛奶125ml*4盒",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -224,13 +262,13 @@
           "supplierName": "高邮三宝食品有限公司",
           "skuName": "三宝 高邮咸鸭蛋6枚 330g",
           "completeTime": "13:34",
-          "waitingMins": 88
+          "waitingMins": 94
         },
         {
           "supplierName": "高邮三宝食品有限公司",
           "skuName": "三宝 高邮薄盐咸鸭蛋6枚 420g",
           "completeTime": "13:36",
-          "waitingMins": 87
+          "waitingMins": 92
         }
       ],
       "qc_recv_pending": [],
@@ -918,10 +956,10 @@
       }
     ],
     "seeding": {
-      "not_started": 70,
-      "in_progress": 4,
-      "done": 184,
-      "total": 258,
+      "not_started": 67,
+      "in_progress": 3,
+      "done": 196,
+      "total": 266,
       "status": "ok"
     }
   },

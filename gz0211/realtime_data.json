@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-02T10:22:52",
+  "timestamp": "2026-06-02T10:27:52",
   "date": "2026-06-02",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 3,
-      "signed": 0,
-      "waiting": 3
+      "signed": 1,
+      "waiting": 2
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 3,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 33.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 2400
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 2400,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 0,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 3,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 33.3
       },
       "pcs": {
         "total": 0,
@@ -72,17 +72,17 @@
       },
       "sku": {
         "total": 3,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 33.3
       },
       "supplier": {
         "total": 3,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 33.3,
         "detail": {
           "广州运通贸易发展有限公司-快乐猴": {
             "plan": 1,
-            "done": 0
+            "done": 1
           },
           "杭州众点食品科技有限公司-快乐猴": {
             "plan": 1,
@@ -99,13 +99,6 @@
       "unreserved": [],
       "unsigned": [
         {
-          "supplierName": "广州运通贸易发展有限公司-快乐猴",
-          "billCode": "YY20260601011096",
-          "skuCount": 1,
-          "pcs": 2400,
-          "timeSlot": "11:30 - 12:30"
-        },
-        {
           "supplierName": "杭州众点食品科技有限公司-快乐猴",
           "billCode": "YY20260601010970",
           "skuCount": 1,
@@ -120,8 +113,24 @@
           "timeSlot": "13:00 - 13:30"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "广州运通贸易发展有限公司-快乐猴",
+          "billCode": "YY20260601011096",
+          "signTime": "10:25",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "广州运通贸易发展有限公司-快乐猴",
+          "skuName": "礼拜天红豆糯米方糕雪糕70g",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [],
@@ -225,10 +234,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 94,
+      "not_started": 97,
       "in_progress": 0,
       "done": 0,
-      "total": 94,
+      "total": 97,
       "status": "ok"
     }
   },

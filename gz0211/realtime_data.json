@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-02T12:11:53",
+  "timestamp": "2026-06-02T12:42:04",
   "date": "2026-06-02",
   "warehouse": "GZ0210",
   "inbound": {
@@ -18,9 +18,9 @@
       "late_rate": 0.0
     },
     "reserve_progress": {
-      "po_total": 10,
-      "po_reserved": 9,
-      "rate": 90.0,
+      "po_total": 2,
+      "po_reserved": 2,
+      "rate": 100.0,
       "po_data_ok": true
     },
     "unload": {
@@ -49,12 +49,12 @@
       "sku_rate": 0
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
+      "total": 600,
+      "done": 600,
+      "rate": 100.0,
+      "sku_total": 2,
+      "sku_done": 2,
+      "sku_rate": 100.0,
       "details": []
     },
     "dimensions": {
@@ -64,11 +64,11 @@
         "rate": 66.7
       },
       "pcs": {
-        "total": 0,
-        "done": 0,
-        "rate": 0,
-        "recv_done": 0,
-        "recv_rate": 0
+        "total": 880,
+        "done": 880,
+        "rate": 100.0,
+        "recv_done": 600,
+        "recv_rate": 68.2
       },
       "sku": {
         "total": 3,
@@ -123,9 +123,9 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 0.0,
-      "efficiency_formula": "0 PCS / 0 人",
-      "inbound_schedule": 0
+      "efficiency": 440.0,
+      "efficiency_formula": "880 PCS / 2 人",
+      "inbound_schedule": 2
     }
   },
   "outbound": {
@@ -176,7 +176,7 @@
       "low_load_containers": [],
       "all_containers_detail": [],
       "outbound_efficiency": 0.0,
-      "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)"
+      "outbound_efficiency_formula": "0 PCS / 2 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
@@ -243,10 +243,10 @@
       }
     ],
     "seeding": {
-      "not_started": 132,
-      "in_progress": 4,
-      "done": 2,
-      "total": 138,
+      "not_started": 116,
+      "in_progress": 2,
+      "done": 38,
+      "total": 156,
       "status": "ok"
     }
   },
@@ -296,25 +296,29 @@
     "status": "ok"
   },
   "attendance": {
-    "total_inservice": 0,
-    "schedule": 0,
-    "attendance": 0,
-    "rate": 0,
+    "total_inservice": 2,
+    "schedule": 2,
+    "attendance": 2,
+    "rate": 100.0,
     "by_job": {
       "N高叉司机": {
-        "inservice": 0,
-        "schedule": 0,
-        "attendance": 0,
-        "rate": 0
+        "inservice": 2,
+        "schedule": 2,
+        "attendance": 2,
+        "rate": 100.0
       }
     },
-    "by_pos_total": {},
-    "by_pos_scheduled": {},
+    "by_pos_total": {
+      "N冷冻高叉司机": 2
+    },
+    "by_pos_scheduled": {
+      "N冷冻高叉司机": 2
+    },
     "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS / 0 人",
+    "efficiency_formula": "0 PCS / 2 人",
     "outbound_efficiency": 0.0,
-    "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)",
-    "inbound_efficiency_workers": 0,
+    "outbound_efficiency_formula": "0 PCS / 2 人(拣播员)",
+    "inbound_efficiency_workers": 2,
     "status": "ok"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-02T14:23:00",
+  "timestamp": "2026-06-02T14:28:00",
   "date": "2026-06-02",
   "warehouse": "GZ0210",
   "inbound": {
@@ -140,37 +140,27 @@
     },
     "sowing": {
       "total": 109,
-      "done": 0,
-      "rate": 0.0
+      "done": 67,
+      "rate": 61.5
     },
     "caging": {
       "total": 109,
-      "done": 0,
-      "rate": 0.0,
-      "pcs_done": 0,
+      "done": 67,
+      "rate": 61.5,
+      "pcs_done": 1131,
       "pcs_total": 1882,
-      "pcs_rate": 0.0
+      "pcs_rate": 60.1
     },
     "packing": {
       "total": 3,
-      "done": 0,
-      "rate": 0.0
+      "done": 2,
+      "rate": 66.7
     },
     "uncaged_details": [
       {
         "containerCode": "RQ-05-03-0700720",
         "poiName": "禅城东方广场店",
         "qty": 751
-      },
-      {
-        "containerCode": "RQ-05-03-0700534",
-        "poiName": "番禺建华汇店",
-        "qty": 699
-      },
-      {
-        "containerCode": "RQ-05-03-0700810",
-        "poiName": "南海国昌广场店",
-        "qty": 432
       }
     ],
     "unpacked_details": [
@@ -178,16 +168,6 @@
         "containerCode": "RQ-05-03-0700720",
         "poiName": "禅城东方广场店",
         "qty": 751
-      },
-      {
-        "containerCode": "RQ-05-03-0700534",
-        "poiName": "番禺建华汇店",
-        "qty": 699
-      },
-      {
-        "containerCode": "RQ-05-03-0700810",
-        "poiName": "南海国昌广场店",
-        "qty": 432
       }
     ],
     "shipping": {
@@ -200,12 +180,22 @@
       "multi_pallet_count": 0,
       "multi_pallet_total": 109,
       "multi_pallet_rate": 0.0,
-      "load_rate": 0.0,
+      "load_rate": 60.1,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "65.41%",
-      "load_rate_loaded": "--",
+      "load_rate_unloaded": "67.45%",
+      "load_rate_loaded": "64.39%",
       "load_rate_shipped": "--",
-      "low_load_containers": [],
+      "low_load_containers": [
+        {
+          "containerCode": "RQ-05-03-0700810",
+          "poiName": "南海国昌广场店",
+          "loadingRate": "50.66%",
+          "loadingRateVal": 50.66,
+          "skuPcs": "432.000",
+          "skuVolume": "1.003",
+          "planOutTime": "06-02 19:00"
+        }
+      ],
       "all_containers_detail": [
         {
           "containerCode": "RQ-05-03-0700720",
@@ -243,21 +233,21 @@
         "total": 1882,
         "picked": 0,
         "sowed": 0,
-        "caged": 0,
-        "not_caged": 1882,
+        "caged": 1131,
+        "not_caged": 751,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 0.0,
+        "cage_rate": 60.1,
         "sowed_picked": 1882
       },
       "sku": {
         "total": 109,
         "picked": 0,
         "sowed": 0,
-        "caged": 0,
+        "caged": 67,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 0.0
+        "cage_rate": 61.5
       }
     },
     "status": "ok",
@@ -279,9 +269,9 @@
     "unalloc_details": [],
     "seeding": {
       "not_started": 87,
-      "in_progress": 2,
-      "done": 116,
-      "total": 205,
+      "in_progress": 4,
+      "done": 119,
+      "total": 210,
       "status": "ok"
     }
   },

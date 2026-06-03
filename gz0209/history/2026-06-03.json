@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-03T13:41:17",
+  "timestamp": "2026-06-03T13:43:32",
   "date": "2026-06-03",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 8,
-      "waiting": 4
+      "signed": 10,
+      "waiting": 2
     },
     "ontime": {
       "ontime": 0,
-      "early": 8,
+      "early": 10,
       "late": 0,
       "total": 12,
       "rate": 0.0,
-      "early_rate": 66.7,
+      "early_rate": 83.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 8,
+      "total": 9,
       "done": 8,
-      "rate": 100.0,
+      "rate": 88.9,
       "pcs_done": 6904,
-      "sign_pcs_done": 6904
+      "sign_pcs_done": 7624
     },
     "qc": {
-      "total": 7,
+      "total": 9,
       "done": 7,
-      "pending": 0,
+      "pending": 2,
       "passed": 7,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 77.8,
       "bill_done": 7,
-      "bill_total": 7,
+      "bill_total": 9,
       "pcs_done": 3504,
       "pcs_passed": 3504,
-      "pcs_total": 3504,
+      "pcs_total": 4224,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 83.0,
       "sku_done": 7,
-      "sku_total": 7,
-      "sku_rate": 100.0
+      "sku_total": 8,
+      "sku_rate": 87.5
     },
     "putaway": {
       "total": 7956,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 12,
-        "done": 8,
-        "rate": 66.7
+        "done": 10,
+        "rate": 83.3
       },
       "pcs": {
         "total": 9161,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 22,
-        "done": 12,
-        "rate": 54.5
+        "done": 16,
+        "rate": 72.7
       },
       "supplier": {
         "total": 11,
-        "done": 8,
-        "rate": 72.7,
+        "done": 9,
+        "rate": 81.8,
         "detail": {
+          "翠昇（广东）食品供应链有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "广西中柳食品科技有限公司": {
             "plan": 1,
             "done": 1
@@ -114,10 +118,6 @@
           },
           "武汉铭德昌印务股份有限公司-快乐猴": {
             "plan": 1,
-            "done": 0
-          },
-          "翠昇（广东）食品供应链有限公司-快乐猴": {
-            "plan": 2,
             "done": 0
           },
           "杭州沐屋贸易有限公司": {
@@ -155,20 +155,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "翠昇（广东）食品供应链有限公司-快乐猴",
-          "billCode": "YY20260601001576",
-          "skuCount": 2,
-          "pcs": 720,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
-          "supplierName": "翠昇（广东）食品供应链有限公司-快乐猴",
-          "billCode": "YY20260601001576",
-          "skuCount": 2,
-          "pcs": 720,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
           "supplierName": "杭州沐屋贸易有限公司",
           "billCode": "YY20260529006382",
           "skuCount": 1,
@@ -176,53 +162,94 @@
           "timeSlot": "15:30 - 16:00"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "翠昇（广东）食品供应链有限公司-快乐猴",
+          "billCode": "YY20260601001576",
+          "signTime": "13:41",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "翠昇（广东）食品供应链有限公司-快乐猴",
+          "billCode": "YY20260601001576",
+          "signTime": "13:41",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "翠昇（广东）食品供应链有限公司-快乐猴",
+          "skuName": "王老吉 凉茶植物饮料 310ml",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "翠昇（广东）食品供应链有限公司-快乐猴",
+          "skuName": "王老吉 凉茶植物饮料 310ml",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "晋江力绿食品有限公司-快乐猴",
           "skuName": "快乐猴 竹盐烤海苔 30g",
           "completeTime": "11:17",
-          "waitingMins": 144
+          "waitingMins": 146
         },
         {
           "supplierName": "晋江力绿食品有限公司-快乐猴",
           "skuName": "快乐猴 原味拌饭海苔 70g",
           "completeTime": "10:06",
-          "waitingMins": 214
+          "waitingMins": 217
         },
         {
           "supplierName": "广东正慈食品有限公司-快乐猴",
           "skuName": "乐达学糖 捶捶乐糖果 25g",
           "completeTime": "10:15",
-          "waitingMins": 206
+          "waitingMins": 208
         },
         {
           "supplierName": "广东正慈食品有限公司-快乐猴",
           "skuName": "乐达学糖   风扇糖果  3g",
           "completeTime": "11:56",
-          "waitingMins": 105
+          "waitingMins": 107
         },
         {
           "supplierName": "广东珠江桥生物科技股份有限公司-快乐猴",
           "skuName": "快乐猴 鱼生寿司酱油 200ml",
           "completeTime": "13:00",
-          "waitingMins": 41
+          "waitingMins": 43
         },
         {
           "supplierName": "广州市新风彩品牌管理有限公司-快乐猴",
           "skuName": "锐澳微醺冰萃葡萄风味果冻起泡鸡尾酒(预调酒)250ml",
           "completeTime": "13:04",
-          "waitingMins": 37
+          "waitingMins": 39
         },
         {
           "supplierName": "广州市新风彩品牌管理有限公司-快乐猴",
           "skuName": "锐澳微醺桂香青梅风味果冻鸡尾酒(预调酒)250ml",
           "completeTime": "13:05",
-          "waitingMins": 36
+          "waitingMins": 38
         }
       ],
       "signed_not_recv": [
+        {
+          "supplierName": "翠昇（广东）食品供应链有限公司-快乐猴",
+          "poNo": "CG202605276155",
+          "reserveBillCode": "YY20260601001576",
+          "skuId": "975492",
+          "skuName": "王老吉 凉茶植物饮料 310ml",
+          "purchaseQty": 240,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
         {
           "supplierName": "东莞市华祥食品有限公司-快乐猴",
           "poNo": "CG202605265059",
@@ -232,7 +259,7 @@
           "purchaseQty": 200,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 2
         }
       ],
       "qc_recv_pending": [],
@@ -675,9 +702,9 @@
       }
     ],
     "seeding": {
-      "not_started": 112,
-      "in_progress": 2,
-      "done": 128,
+      "not_started": 109,
+      "in_progress": 4,
+      "done": 129,
       "total": 242,
       "status": "ok"
     }

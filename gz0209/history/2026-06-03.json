@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-03T08:46:40",
+  "timestamp": "2026-06-03T08:51:41",
   "date": "2026-06-03",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 2,
-      "waiting": 10
+      "signed": 3,
+      "waiting": 9
     },
     "ontime": {
       "ontime": 0,
-      "early": 2,
+      "early": 3,
       "late": 0,
       "total": 12,
       "rate": 0.0,
-      "early_rate": 16.7,
+      "early_rate": 25.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 3,
       "done": 2,
-      "rate": 100.0,
+      "rate": 66.7,
       "pcs_done": 1200,
-      "sign_pcs_done": 1200
+      "sign_pcs_done": 3300
     },
     "qc": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "pending": 0,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 2100,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 2,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 5532,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 12,
-        "done": 2,
-        "rate": 16.7
+        "done": 3,
+        "rate": 25.0
       },
       "pcs": {
         "total": 9161,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 22,
-        "done": 3,
-        "rate": 13.6
+        "done": 5,
+        "rate": 22.7
       },
       "supplier": {
         "total": 11,
-        "done": 2,
-        "rate": 18.2,
+        "done": 3,
+        "rate": 27.3,
         "detail": {
+          "晋江力绿食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "中山市明润商贸有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -110,10 +114,6 @@
           },
           "翠昇（广东）食品供应链有限公司-快乐猴": {
             "plan": 2,
-            "done": 0
-          },
-          "晋江力绿食品有限公司-快乐猴": {
-            "plan": 1,
             "done": 0
           },
           "杭州沐屋贸易有限公司": {
@@ -197,13 +197,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "晋江力绿食品有限公司-快乐猴",
-          "billCode": "YY20260529007165",
-          "skuCount": 2,
-          "pcs": 2100,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
           "supplierName": "杭州沐屋贸易有限公司",
           "billCode": "YY20260529006382",
           "skuCount": 1,
@@ -218,8 +211,32 @@
           "timeSlot": "15:30 - 16:00"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "晋江力绿食品有限公司-快乐猴",
+          "billCode": "YY20260529007165",
+          "signTime": "08:50",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "晋江力绿食品有限公司-快乐猴",
+          "skuName": "快乐猴 竹盐烤海苔 30g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "晋江力绿食品有限公司-快乐猴",
+          "skuName": "快乐猴 原味拌饭海苔 70g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "qc_recv_pending": [],
       "recv_diff": [

@@ -1007,6 +1007,7 @@ let countdownTimer;
               {key:'poNo',            label:'采购单号'},
               {key:'reserveBillCode', label:'预约单号'},
               {key:'skuName',         label:'商品名称'},
+              {key:'skuId',           label:'SKU ID'},
               {key:'purchaseQty',     label:'采购数量', num:true},
               {key:'recvQty',         label:'实收数量', num:true},
               {key:'diffQty',         label:'差异数量', num:true,
@@ -1020,7 +1021,7 @@ let countdownTimer;
               if (!tbl) return;
               var foot = document.createElement('tfoot');
               foot.innerHTML = '<tr style="font-weight:600;background:#f3f4f6;border-top:2px solid #d1d5db;">' +
-                '<td colspan="5" style="text-align:right;padding-right:8px;">合计</td>' +
+                '<td colspan="6" style="text-align:right;padding-right:8px;">合计</td>' +
                 '<td>' + _snrTotalPurchase + '</td>' +
                 '<td>' + _snrTotalRecv + '</td>' +
                 '<td style="color:#ef4444">' + _snrTotalDiff + '</td>' +

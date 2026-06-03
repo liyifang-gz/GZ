@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-04T02:03:04",
+  "timestamp": "2026-06-04T02:06:04",
   "date": "2026-06-04",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 93,
-      "signed": 2,
-      "waiting": 89
+      "signed": 3,
+      "waiting": 88
     },
     "ontime": {
       "ontime": 0,
-      "early": 2,
+      "early": 3,
       "late": 0,
       "total": 91,
       "rate": 0.0,
-      "early_rate": 2.2,
+      "early_rate": 3.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 3,
       "done": 2,
-      "rate": 100.0,
+      "rate": 66.7,
       "pcs_done": 1855,
-      "sign_pcs_done": 1855
+      "sign_pcs_done": 2463
     },
     "qc": {
-      "total": 13,
+      "total": 16,
       "done": 0,
-      "pending": 13,
+      "pending": 16,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 13,
+      "bill_total": 16,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 1855,
+      "pcs_total": 2463,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 13,
+      "sku_total": 16,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 91,
-        "done": 2,
-        "rate": 2.2
+        "done": 3,
+        "rate": 3.3
       },
       "pcs": {
         "total": 39160,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 486,
-        "done": 13,
-        "rate": 2.7
+        "done": 16,
+        "rate": 3.3
       },
       "supplier": {
         "total": 80,
-        "done": 2,
-        "rate": 2.5,
+        "done": 3,
+        "rate": 3.8,
         "detail": {
+          "广州华富东农产品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州市友心农业发展有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -109,10 +113,6 @@
             "done": 0
           },
           "金乡县英格电子商务有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "广州华富东农产品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -254,13 +254,6 @@
           "billCode": "YY20260603011014",
           "skuCount": 2,
           "pcs": 482,
-          "timeSlot": "13:00 - 13:30"
-        },
-        {
-          "supplierName": "广州华富东农产品有限公司-快乐猴",
-          "billCode": "YY20260603010982",
-          "skuCount": 3,
-          "pcs": 608,
           "timeSlot": "13:00 - 13:30"
         },
         {
@@ -556,9 +549,23 @@
           "skuCount": 4,
           "pcs": 262,
           "timeSlot": "16:30 - 17:00"
+        },
+        {
+          "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
+          "billCode": "YY20260603005327",
+          "skuCount": 2,
+          "pcs": 8,
+          "timeSlot": "05:30 - 06:00"
         }
       ],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "广州华富东农产品有限公司-快乐猴",
+          "billCode": "YY20260603010982",
+          "signTime": "02:05",
+          "status": "已签到未卸货"
+        }
+      ],
       "qc_pending": [
         {
           "seq": 1,
@@ -663,10 +670,45 @@
           "arrivalTime": "13:30",
           "unloadFinishTime": "00:43",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 14,
+          "supplierName": "广州华富东农产品有限公司-快乐猴",
+          "skuName": "甜玉米约1kg",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 15,
+          "supplierName": "广州华富东农产品有限公司-快乐猴",
+          "skuName": "花糯玉米 600g",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 16,
+          "supplierName": "广州华富东农产品有限公司-快乐猴",
+          "skuName": "金银水果玉米 600g",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
       "signed_not_recv": [
+        {
+          "supplierName": "广州华富东农产品有限公司-快乐猴",
+          "poNo": "CG2026060310180",
+          "reserveBillCode": "YY20260603010982",
+          "skuId": "1360749",
+          "skuName": "甜玉米约1kg",
+          "purchaseQty": 488,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
         {
           "supplierName": "久泰现代农业有限公司-快乐猴",
           "poNo": "CG202606039446",
@@ -676,7 +718,7 @@
           "purchaseQty": 442,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 2
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -687,7 +729,7 @@
           "purchaseQty": 236,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 3
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -698,7 +740,7 @@
           "purchaseQty": 214,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
+          "seq": 4
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -709,7 +751,7 @@
           "purchaseQty": 162,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 5
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -720,7 +762,7 @@
           "purchaseQty": 143,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 6
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -731,7 +773,7 @@
           "purchaseQty": 134,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 6
+          "seq": 7
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -742,7 +784,7 @@
           "purchaseQty": 88,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 8
         },
         {
           "supplierName": "久泰现代农业有限公司-快乐猴",
@@ -753,7 +795,7 @@
           "purchaseQty": 84,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 9
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -764,7 +806,18 @@
           "purchaseQty": 82,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 10
+        },
+        {
+          "supplierName": "广州华富东农产品有限公司-快乐猴",
+          "poNo": "CG2026060310180",
+          "reserveBillCode": "YY20260603010982",
+          "skuId": "1476000",
+          "skuName": "金银水果玉米 600g",
+          "purchaseQty": 78,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 11
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -775,7 +828,7 @@
           "purchaseQty": 78,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 10
+          "seq": 12
         },
         {
           "supplierName": "久泰现代农业有限公司-快乐猴",
@@ -786,7 +839,7 @@
           "purchaseQty": 72,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 11
+          "seq": 13
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -797,7 +850,7 @@
           "purchaseQty": 69,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 12
+          "seq": 14
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -808,7 +861,18 @@
           "purchaseQty": 51,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 13
+          "seq": 15
+        },
+        {
+          "supplierName": "广州华富东农产品有限公司-快乐猴",
+          "poNo": "CG2026060310180",
+          "reserveBillCode": "YY20260603010982",
+          "skuId": "1474859",
+          "skuName": "花糯玉米 600g",
+          "purchaseQty": 42,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 16
         }
       ],
       "qc_recv_pending": [],

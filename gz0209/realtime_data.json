@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-03T11:48:13",
+  "timestamp": "2026-06-03T11:54:29",
   "date": "2026-06-03",
   "warehouse": "GZ0210",
   "inbound": {
@@ -203,7 +203,8 @@
           "supplierName": "广西中柳食品科技有限公司",
           "billCode": "YY20260602001981",
           "signTime": "11:47",
-          "status": "已签到未卸货"
+          "unloadStartTime": "11:50",
+          "status": "卸货中"
         }
       ],
       "qc_pending": [
@@ -229,19 +230,19 @@
           "supplierName": "晋江力绿食品有限公司-快乐猴",
           "skuName": "快乐猴 竹盐烤海苔 30g",
           "completeTime": "11:17",
-          "waitingMins": 31
+          "waitingMins": 37
         },
         {
           "supplierName": "晋江力绿食品有限公司-快乐猴",
           "skuName": "快乐猴 原味拌饭海苔 70g",
           "completeTime": "10:06",
-          "waitingMins": 101
+          "waitingMins": 108
         },
         {
           "supplierName": "广东正慈食品有限公司-快乐猴",
           "skuName": "乐达学糖 捶捶乐糖果 25g",
           "completeTime": "10:15",
-          "waitingMins": 93
+          "waitingMins": 99
         }
       ],
       "qc_recv_pending": [],
@@ -276,12 +277,12 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 80,
+      "total": 100,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 80,
+      "total": 100,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
@@ -315,6 +316,11 @@
         "qty": 969
       },
       {
+        "containerCode": "RQ-28-03-0900489",
+        "poiName": "越秀越富广场店",
+        "qty": 945
+      },
+      {
         "containerCode": "RQ-28-03-0900486",
         "poiName": "越秀越富广场店",
         "qty": 888
@@ -333,11 +339,6 @@
         "containerCode": "RQ-28-03-0900491",
         "poiName": "越秀越富广场店",
         "qty": 784
-      },
-      {
-        "containerCode": "RQ-28-03-0900489",
-        "poiName": "越秀越富广场店",
-        "qty": 517
       },
       {
         "containerCode": "RQ-28-03-0900345",
@@ -367,6 +368,11 @@
         "qty": 969
       },
       {
+        "containerCode": "RQ-28-03-0900489",
+        "poiName": "越秀越富广场店",
+        "qty": 945
+      },
+      {
         "containerCode": "RQ-28-03-0900486",
         "poiName": "越秀越富广场店",
         "qty": 888
@@ -387,26 +393,21 @@
         "qty": 784
       },
       {
-        "containerCode": "RQ-28-03-0900489",
-        "poiName": "越秀越富广场店",
-        "qty": 517
-      },
-      {
         "containerCode": "RQ-28-03-0900345",
         "poiName": "海珠星汇广场店",
         "qty": 464
       }
     ],
     "shipping": {
-      "total": 13284,
+      "total": 13712,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 2,
-      "multi_pallet_total": 77,
-      "multi_pallet_rate": 2.6,
+      "multi_pallet_total": 97,
+      "multi_pallet_rate": 2.1,
       "load_rate": 0.0,
       "multi_pallet_details": [
         {
@@ -431,7 +432,7 @@
           "qty": 1946
         }
       ],
-      "load_rate_unloaded": "93.23%",
+      "load_rate_unloaded": "97.64%",
       "load_rate_loaded": "--",
       "load_rate_shipped": "91.58%",
       "low_load_containers": [],
@@ -443,6 +444,15 @@
           "loadingRateVal": 207.0,
           "skuPcs": "3300.000",
           "skuVolume": "4.099",
+          "planOutTime": "06-03 20:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900489",
+          "poiName": "越秀越富广场店",
+          "loadingRate": "100.72%",
+          "loadingRateVal": 100.72,
+          "skuPcs": "945.000",
+          "skuVolume": "1.994",
           "planOutTime": "06-03 20:00"
         },
         {
@@ -479,15 +489,6 @@
           "loadingRateVal": 65.57,
           "skuPcs": "784.000",
           "skuVolume": "1.298",
-          "planOutTime": "06-03 20:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900489",
-          "poiName": "越秀越富广场店",
-          "loadingRate": "56.57%",
-          "loadingRateVal": 56.57,
-          "skuPcs": "517.000",
-          "skuVolume": "1.120",
           "planOutTime": "06-03 20:00"
         },
         {
@@ -581,23 +582,23 @@
           "planOutTime": "06-03 20:00"
         }
       ],
-      "outbound_efficiency": 3321.0,
-      "outbound_efficiency_formula": "13284 PCS / 4 人(拣播员)"
+      "outbound_efficiency": 3428.0,
+      "outbound_efficiency_formula": "13712 PCS / 4 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 13284,
+        "total": 13712,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 13284,
+        "not_caged": 13712,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
         "cage_rate": 0.0,
         "sowed_picked": 1000
       },
       "sku": {
-        "total": 80,
+        "total": 100,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -624,10 +625,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 174,
+      "not_started": 176,
       "in_progress": 0,
       "done": 0,
-      "total": 174,
+      "total": 176,
       "status": "ok"
     }
   },
@@ -692,10 +693,10 @@
       "N常温收退": 2,
       "N常温高叉司机": 2
     },
-    "predicted_efficiency": 1207.6,
-    "efficiency_formula": "13284 PCS / 11 人",
-    "outbound_efficiency": 3321.0,
-    "outbound_efficiency_formula": "13284 PCS / 4 人(拣播员)",
+    "predicted_efficiency": 1246.5,
+    "efficiency_formula": "13712 PCS / 11 人",
+    "outbound_efficiency": 3428.0,
+    "outbound_efficiency_formula": "13712 PCS / 4 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

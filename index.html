@@ -1007,9 +1007,11 @@ let countdownTimer;
               {key:'skuName',         label:'商品名称'},
               {key:'purchaseQty',     label:'采购数量', num:true},
               {key:'recvQty',         label:'实收数量', num:true},
+              {key:'diffQty',         label:'差异数量', num:true,
+               render: function(r){ var d=(r.purchaseQty||0)-(r.recvQty||0); return d>0?'<span style="color:#ef4444;font-weight:600">'+d+'</span>':'<span style="color:#6b7280">'+d+'</span>'; }},
               {key:'hasQc',           label:'是否质检',
                render: function(r){ return r.hasQc ? '<span style="color:#10b981">✔ 是</span>' : '<span style="color:#6b7280">— 否</span>'; }}
-            ], key, 'purchaseQty', doRender);
+            ], key, 'diffQty', doRender);
           }
           html += '<div style="font-size:11px;font-weight:600;color:#374151;margin:10px 0 4px;">收货差异（' + diffList.length + ' 条）</div>';
           if (diffList.length === 0) {

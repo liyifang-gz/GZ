@@ -1669,6 +1669,20 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       renderPlan(data.plan);
       renderTransport(data.transport);
       renderAttendance(data.attendance);
+      // 车辆装载率：取 TMS 已装车托盘装载率（运输中状态）
+      const planLoadEl = document.getElementById('plan-load-rate');
+      if (planLoadEl) {
+        const shipped = ((data.outbound||{}).kpi||{}).load_rate_shipped || '--';
+        planLoadEl.textContent = shipped;
+        const pct = parseFloat((shipped||'').replace('%','')) || 0;
+        if (pct > 0) {
+          planLoadEl.style.color = pct < 60 ? '#ff9966' : '#10b981';
+          planLoadEl.parentElement.querySelector('.unit').innerHTML = '车辆装载率<br><span style="font-size:9px;color:#6b7280">已装车口径</span>';
+        } else {
+          planLoadEl.style.color = '#bbb';
+          planLoadEl.parentElement.querySelector('.unit').innerHTML = '车辆装载率<br><span style="font-size:9px;color:#bbb">(装车后显示)</span>';
+        }
+      }
     }
 
     // 当前仓配置

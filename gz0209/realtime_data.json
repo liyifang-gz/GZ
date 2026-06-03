@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-03T12:13:54",
+  "timestamp": "2026-06-03T12:22:58",
   "date": "2026-06-03",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 6,
-      "waiting": 6
+      "signed": 7,
+      "waiting": 5
     },
     "ontime": {
       "ontime": 0,
-      "early": 6,
+      "early": 7,
       "late": 0,
       "total": 12,
       "rate": 0.0,
-      "early_rate": 50.0,
+      "early_rate": 58.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 6,
+      "total": 7,
       "done": 6,
-      "rate": 100.0,
+      "rate": 85.7,
       "pcs_done": 5824,
-      "sign_pcs_done": 5824
+      "sign_pcs_done": 6424
     },
     "qc": {
-      "total": 4,
+      "total": 5,
       "done": 4,
-      "pending": 0,
+      "pending": 1,
       "passed": 4,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 80.0,
       "bill_done": 4,
-      "bill_total": 4,
+      "bill_total": 5,
       "pcs_done": 2424,
       "pcs_passed": 2424,
-      "pcs_total": 2424,
+      "pcs_total": 3024,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 80.2,
       "sku_done": 4,
-      "sku_total": 4,
-      "sku_rate": 100.0
+      "sku_total": 5,
+      "sku_rate": 80.0
     },
     "putaway": {
       "total": 7812,
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 12,
-        "done": 6,
-        "rate": 50.0
+        "done": 7,
+        "rate": 58.3
       },
       "pcs": {
         "total": 9161,
@@ -80,14 +80,18 @@
       },
       "sku": {
         "total": 22,
-        "done": 9,
-        "rate": 40.9
+        "done": 10,
+        "rate": 45.5
       },
       "supplier": {
         "total": 11,
-        "done": 6,
-        "rate": 54.5,
+        "done": 7,
+        "rate": 63.6,
         "detail": {
+          "广东珠江桥生物科技股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广西中柳食品科技有限公司": {
             "plan": 1,
             "done": 1
@@ -111,10 +115,6 @@
           "广州宸宇商贸有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "广东珠江桥生物科技股份有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           },
           "广州市新风彩品牌管理有限公司-快乐猴": {
             "plan": 1,
@@ -156,13 +156,6 @@
       ],
       "unsigned": [
         {
-          "supplierName": "广东珠江桥生物科技股份有限公司-快乐猴",
-          "billCode": "YY20260602006735",
-          "skuCount": 1,
-          "pcs": 600,
-          "timeSlot": "15:00 - 15:30"
-        },
-        {
           "supplierName": "广州市新风彩品牌管理有限公司-快乐猴",
           "billCode": "YY20260601006401",
           "skuCount": 2,
@@ -198,32 +191,49 @@
           "timeSlot": "15:30 - 16:00"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "广东珠江桥生物科技股份有限公司-快乐猴",
+          "billCode": "YY20260602006735",
+          "signTime": "12:19",
+          "unloadStartTime": "12:22",
+          "status": "卸货中"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "广东珠江桥生物科技股份有限公司-快乐猴",
+          "skuName": "快乐猴 鱼生寿司酱油 200ml",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "晋江力绿食品有限公司-快乐猴",
           "skuName": "快乐猴 竹盐烤海苔 30g",
           "completeTime": "11:17",
-          "waitingMins": 56
+          "waitingMins": 65
         },
         {
           "supplierName": "晋江力绿食品有限公司-快乐猴",
           "skuName": "快乐猴 原味拌饭海苔 70g",
           "completeTime": "10:06",
-          "waitingMins": 127
+          "waitingMins": 136
         },
         {
           "supplierName": "广东正慈食品有限公司-快乐猴",
           "skuName": "乐达学糖 捶捶乐糖果 25g",
           "completeTime": "10:15",
-          "waitingMins": 118
+          "waitingMins": 127
         },
         {
           "supplierName": "广东正慈食品有限公司-快乐猴",
           "skuName": "乐达学糖   风扇糖果  3g",
           "completeTime": "11:56",
-          "waitingMins": 18
+          "waitingMins": 27
         }
       ],
       "qc_recv_pending": [],
@@ -258,12 +268,12 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 101,
+      "total": 102,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 101,
+      "total": 102,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
@@ -271,7 +281,7 @@
       "pcs_rate": 0.0
     },
     "packing": {
-      "total": 16,
+      "total": 17,
       "done": 0,
       "rate": 0.0
     },
@@ -290,6 +300,11 @@
         "containerCode": "RQ-28-03-0900349",
         "poiName": "海珠星汇广场店",
         "qty": 1890
+      },
+      {
+        "containerCode": "RQ-28-03-0900351",
+        "poiName": "海珠星汇广场店",
+        "qty": 1008
       },
       {
         "containerCode": "RQ-28-03-0900499",
@@ -344,6 +359,11 @@
         "qty": 1890
       },
       {
+        "containerCode": "RQ-28-03-0900351",
+        "poiName": "海珠星汇广场店",
+        "qty": 1008
+      },
+      {
         "containerCode": "RQ-28-03-0900499",
         "poiName": "越秀越富广场店",
         "qty": 969
@@ -380,7 +400,7 @@
       }
     ],
     "shipping": {
-      "total": 14304,
+      "total": 15312,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
@@ -393,6 +413,17 @@
       "multi_pallet_details": [
         {
           "skuName": "快乐猴 去皮去核枣 100g",
+          "poiName": "海珠星汇广场店",
+          "containerCount": 3,
+          "containerCodes": [
+            "RQ-28-03-0900345",
+            "RQ-28-03-0900349",
+            "RQ-28-03-0900351"
+          ],
+          "qty": 2954
+        },
+        {
+          "skuName": "快乐猴 去皮去核枣 100g",
           "poiName": "越秀越富广场店",
           "containerCount": 3,
           "containerCodes": [
@@ -401,19 +432,9 @@
             "RQ-28-03-0900491"
           ],
           "qty": 2548
-        },
-        {
-          "skuName": "快乐猴 去皮去核枣 100g",
-          "poiName": "海珠星汇广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900345",
-            "RQ-28-03-0900349"
-          ],
-          "qty": 1946
         }
       ],
-      "load_rate_unloaded": "101.36%",
+      "load_rate_unloaded": "99.81%",
       "load_rate_loaded": "--",
       "load_rate_shipped": "91.58%",
       "low_load_containers": [],
@@ -500,6 +521,15 @@
           "planOutTime": "06-03 20:00"
         },
         {
+          "containerCode": "RQ-28-03-0900351",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "84.31%",
+          "loadingRateVal": 84.31,
+          "skuPcs": "1008.000",
+          "skuVolume": "1.669",
+          "planOutTime": "06-03 20:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900345",
           "poiName": "海珠星汇广场店",
           "loadingRate": "17.86%",
@@ -563,23 +593,23 @@
           "planOutTime": "06-03 20:00"
         }
       ],
-      "outbound_efficiency": 3576.0,
-      "outbound_efficiency_formula": "14304 PCS / 4 人(拣播员)"
+      "outbound_efficiency": 3828.0,
+      "outbound_efficiency_formula": "15312 PCS / 4 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 14304,
+        "total": 15312,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 14304,
+        "not_caged": 15312,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
         "cage_rate": 0.0,
         "sowed_picked": 1000
       },
       "sku": {
-        "total": 101,
+        "total": 102,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -606,10 +636,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 172,
-      "in_progress": 6,
-      "done": 2,
-      "total": 180,
+      "not_started": 161,
+      "in_progress": 4,
+      "done": 18,
+      "total": 183,
       "status": "ok"
     }
   },
@@ -674,10 +704,10 @@
       "N常温收退": 2,
       "N常温高叉司机": 2
     },
-    "predicted_efficiency": 1300.4,
-    "efficiency_formula": "14304 PCS / 11 人",
-    "outbound_efficiency": 3576.0,
-    "outbound_efficiency_formula": "14304 PCS / 4 人(拣播员)",
+    "predicted_efficiency": 1392.0,
+    "efficiency_formula": "15312 PCS / 11 人",
+    "outbound_efficiency": 3828.0,
+    "outbound_efficiency_formula": "15312 PCS / 4 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

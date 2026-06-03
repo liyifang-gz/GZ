@@ -999,6 +999,8 @@ let countdownTimer;
           if (signedNotRecvList.length === 0) {
             html += '<p style="color:#10b981;font-size:12px;">✅ 全部已收货</p>';
           } else {
+            var _snrTotalPurchase = 0, _snrTotalRecv = 0, _snrTotalDiff = 0;
+            signedNotRecvList.forEach(function(r){ _snrTotalPurchase += r.purchaseQty||0; _snrTotalRecv += r.recvQty||0; _snrTotalDiff += (r.purchaseQty||0)-(r.recvQty||0); });
             html += renderInbTable('inb-recv-tbl', signedNotRecvList, [
               {key:'seq',             label:'序号', num:true},
               {key:'supplierName',    label:'商家名称'},
@@ -1012,6 +1014,19 @@ let countdownTimer;
               {key:'hasQc',           label:'是否质检',
                render: function(r){ return r.hasQc ? '<span style="color:#10b981">✔ 是</span>' : '<span style="color:#6b7280">— 否</span>'; }}
             ], key, 'diffQty', doRender);
+            // 合计行（表格渲染后插入）
+            setTimeout(function(){
+              var tbl = document.getElementById('inb-recv-tbl');
+              if (!tbl) return;
+              var foot = document.createElement('tfoot');
+              foot.innerHTML = '<tr style="font-weight:600;background:#f3f4f6;border-top:2px solid #d1d5db;">' +
+                '<td colspan="5" style="text-align:right;padding-right:8px;">合计</td>' +
+                '<td>' + _snrTotalPurchase + '</td>' +
+                '<td>' + _snrTotalRecv + '</td>' +
+                '<td style="color:#ef4444">' + _snrTotalDiff + '</td>' +
+                '<td></td></tr>';
+              tbl.appendChild(foot);
+            }, 60);
           }
           html += '<div style="font-size:11px;font-weight:600;color:#374151;margin:10px 0 4px;">收货差异（' + diffList.length + ' 条）</div>';
           if (diffList.length === 0) {

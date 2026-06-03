@@ -800,6 +800,9 @@ let countdownTimer;
       }).join('');
       var trs = sorted.map(function(r) {
         return '<tr>' + cols.map(function(c) {
+          if (c.render) {
+            return '<td>' + c.render(r) + '</td>';
+          }
           var v = r[c.key]; if (v === undefined || v === null) v = '--';
           var s = c.style ? ' style="' + (typeof c.style === 'function' ? c.style(r) : c.style) + '"' : '';
           return '<td' + s + '>' + v + '</td>';
@@ -880,12 +883,12 @@ let countdownTimer;
         unsigned: '未签到预约单',
         unloading: '已签到未卸货',
         qc_pending: '未质检明细',
-        recv_pending: '已质检未收货',
+        recv_pending: '已签到未收货',
         putaway: '未上架明细'
       };
-      // 收货明细用新口径(qc_recv_pending)计数，其余用list.length
+      // 收货明细用已签到未收货口径计数，其余用list.length
       const titleCount = key === 'recv_pending'
-        ? ((details && details.qc_recv_pending) || []).length
+        ? ((details && details.signed_not_recv) || []).length
         : key === 'putaway'
           ? ((currentData && currentData.inbound && currentData.inbound.putaway ? currentData.inbound.putaway.details : null) || []).length
           : list.length;
@@ -988,20 +991,25 @@ let countdownTimer;
           }
 
         } else if (key === 'recv_pending') {
-          // ── 收货弹窗：已质检未收货 + 收货差异（均可排序） ──
-          const pendingList = (details && details.qc_recv_pending) || list;
+          // ── 收货弹窗：已签到未收货 + 收货差异（均可排序） ──
+          const signedNotRecvList = (details && details.signed_not_recv) || [];
           const diffList = (details && details.recv_diff) || [];
-          html = '<div style="font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">已质检未收货（' + pendingList.length + ' 条）</div>';
-          html += '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">口径：质检合格（result=合格）且 PMS 未收货的采购单级明细。质检PCS与收货PCS存在口径差异（质检用计划到货量，收货用实收量），不代表有未收货货品。</div>';
-          if (pendingList.length === 0) {
+          html = '<div style="font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">已签到未收货（' + signedNotRecvList.length + ' 条）</div>';
+          html += '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">口径：已签到预约单且 PMS 采购单未完全收货（status≠2）的 SKU 明细。</div>';
+          if (signedNotRecvList.length === 0) {
             html += '<p style="color:#10b981;font-size:12px;">✅ 全部已收货</p>';
           } else {
-            html += renderInbTable('inb-recv-tbl', pendingList, [
-              {key:'supplierName',   label:'供应商'},
-              {key:'skuName',        label:'商品名称'},
-              {key:'qcCompleteTime', label:'质检完成时间'},
-              {key:'waitingMins',    label:'等待(分)', num:true}
-            ], key, 'waitingMins', doRender);
+            html += renderInbTable('inb-recv-tbl', signedNotRecvList, [
+              {key:'seq',             label:'序号', num:true},
+              {key:'supplierName',    label:'商家名称'},
+              {key:'poNo',            label:'采购单号'},
+              {key:'reserveBillCode', label:'预约单号'},
+              {key:'skuName',         label:'商品名称'},
+              {key:'purchaseQty',     label:'采购数量', num:true},
+              {key:'recvQty',         label:'实收数量', num:true},
+              {key:'hasQc',           label:'是否质检',
+               render: function(r){ return r.hasQc ? '<span style="color:#10b981">✔ 是</span>' : '<span style="color:#6b7280">— 否</span>'; }}
+            ], key, 'purchaseQty', doRender);
           }
           html += '<div style="font-size:11px;font-weight:600;color:#374151;margin:10px 0 4px;">收货差异（' + diffList.length + ' 条）</div>';
           if (diffList.length === 0) {

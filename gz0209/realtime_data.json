@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-03T10:03:02",
+  "timestamp": "2026-06-03T10:08:04",
   "date": "2026-06-03",
   "warehouse": "GZ0210",
   "inbound": {
@@ -25,28 +25,28 @@
     },
     "unload": {
       "total": 4,
-      "done": 3,
-      "rate": 75.0,
-      "pcs_done": 3300,
+      "done": 4,
+      "rate": 100.0,
+      "pcs_done": 3624,
       "sign_pcs_done": 3624
     },
     "qc": {
       "total": 4,
-      "done": 0,
-      "pending": 4,
-      "passed": 0,
+      "done": 1,
+      "pending": 3,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 25.0,
+      "bill_done": 1,
       "bill_total": 4,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 900,
+      "pcs_passed": 900,
       "pcs_total": 2424,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 37.1,
+      "sku_done": 1,
       "sku_total": 4,
-      "sku_rate": 0.0
+      "sku_rate": 25.0
     },
     "putaway": {
       "total": 5532,
@@ -204,15 +204,7 @@
           "timeSlot": "15:30 - 16:00"
         }
       ],
-      "unloading": [
-        {
-          "supplierName": "广东正慈食品有限公司-快乐猴",
-          "billCode": "YY20260528007183",
-          "signTime": "09:56",
-          "unloadStartTime": "10:03",
-          "status": "卸货中"
-        }
-      ],
+      "unloading": [],
       "qc_pending": [
         {
           "seq": 1,
@@ -224,30 +216,29 @@
         },
         {
           "seq": 2,
-          "supplierName": "晋江力绿食品有限公司-快乐猴",
-          "skuName": "快乐猴 原味拌饭海苔 70g",
+          "supplierName": "广东正慈食品有限公司-快乐猴",
+          "skuName": "乐达学糖 捶捶乐糖果 25g",
           "arrivalTime": "15:30",
-          "unloadFinishTime": "09:22",
+          "unloadFinishTime": "10:03",
           "statusLabel": "待质检"
         },
         {
           "seq": 3,
           "supplierName": "广东正慈食品有限公司-快乐猴",
-          "skuName": "乐达学糖 捶捶乐糖果 25g",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 4,
-          "supplierName": "广东正慈食品有限公司-快乐猴",
           "skuName": "乐达学糖   风扇糖果  3g",
           "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
+          "unloadFinishTime": "10:03",
           "statusLabel": "待质检"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "晋江力绿食品有限公司-快乐猴",
+          "skuName": "快乐猴 原味拌饭海苔 70g",
+          "completeTime": "10:06",
+          "waitingMins": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [
         {
@@ -445,10 +436,10 @@
       }
     ],
     "seeding": {
-      "not_started": 78,
+      "not_started": 91,
       "in_progress": 0,
       "done": 0,
-      "total": 78,
+      "total": 91,
       "status": "ok"
     }
   },

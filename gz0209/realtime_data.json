@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-06-03T15:48:07",
+  "timestamp": "2026-06-03T15:51:06",
   "date": "2026-06-03",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 11,
-      "waiting": 1
+      "signed": 12,
+      "waiting": 0
     },
     "ontime": {
-      "ontime": 0,
+      "ontime": 1,
       "early": 11,
       "late": 0,
       "total": 12,
-      "rate": 0.0,
+      "rate": 8.3,
       "early_rate": 91.7,
       "late_rate": 0.0
     },
@@ -24,62 +24,81 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 10,
+      "total": 11,
       "done": 10,
-      "rate": 100.0,
+      "rate": 90.9,
       "pcs_done": 7864,
-      "sign_pcs_done": 7864
+      "sign_pcs_done": 7916
     },
     "qc": {
-      "total": 7,
+      "total": 12,
       "done": 7,
-      "pending": 0,
+      "pending": 5,
       "passed": 7,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 58.3,
       "bill_done": 7,
-      "bill_total": 7,
+      "bill_total": 12,
       "pcs_done": 3504,
       "pcs_passed": 3504,
-      "pcs_total": 3504,
+      "pcs_total": 3556,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 98.5,
       "sku_done": 7,
-      "sku_total": 7,
-      "sku_rate": 100.0
+      "sku_total": 12,
+      "sku_rate": 58.3
     },
     "putaway": {
-      "total": 7956,
+      "total": 8676,
       "done": 7956,
-      "rate": 100.0,
-      "sku_total": 24,
+      "rate": 91.7,
+      "sku_total": 26,
       "sku_done": 24,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 92.3,
+      "details": [
+        {
+          "poNo": "CG202605295661",
+          "hopePcs": 480,
+          "putPcs": 0,
+          "hopeSku": 1,
+          "putSku": 0
+        },
+        {
+          "poNo": "CG202605276155",
+          "hopePcs": 240,
+          "putPcs": 0,
+          "hopeSku": 1,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
         "total": 12,
-        "done": 11,
-        "rate": 91.7
+        "done": 12,
+        "rate": 100.0
       },
       "pcs": {
         "total": 9161,
         "done": 8154,
         "rate": 89.0,
-        "recv_done": 7956,
-        "recv_rate": 86.8
+        "recv_done": 8676,
+        "recv_rate": 94.7
       },
       "sku": {
         "total": 22,
-        "done": 17,
-        "rate": 77.3
+        "done": 22,
+        "rate": 100.0
       },
       "supplier": {
         "total": 11,
-        "done": 10,
-        "rate": 90.9,
+        "done": 11,
+        "rate": 100.0,
         "detail": {
+          "武汉铭德昌印务股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "翠昇（广东）食品供应链有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -119,10 +138,6 @@
           "广州宸宇商贸有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "武汉铭德昌印务股份有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -146,73 +161,102 @@
           "poStatus": "已完成"
         }
       ],
-      "unsigned": [
+      "unsigned": [],
+      "unloading": [
         {
           "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
           "billCode": "YY20260601004764",
-          "skuCount": 5,
-          "pcs": 52,
-          "timeSlot": "15:30 - 16:00"
+          "signTime": "15:50",
+          "status": "已签到未卸货"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
+          "skuName": "新包材-贴纸-进口黄油大羊角",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
+          "skuName": "新包材-贴纸-厚酥蛋挞",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
+          "skuName": "新包材-贴纸-黑芝麻原味麻薯",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
+          "skuName": "新包材-贴纸-蝴蝶酥",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
+          "skuName": "新包材-贴纸-现烤蒜香法棍",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "晋江力绿食品有限公司-快乐猴",
           "skuName": "快乐猴 竹盐烤海苔 30g",
           "completeTime": "11:17",
-          "waitingMins": 271
+          "waitingMins": 274
         },
         {
           "supplierName": "晋江力绿食品有限公司-快乐猴",
           "skuName": "快乐猴 原味拌饭海苔 70g",
           "completeTime": "10:06",
-          "waitingMins": 341
+          "waitingMins": 344
         },
         {
           "supplierName": "广东正慈食品有限公司-快乐猴",
           "skuName": "乐达学糖 捶捶乐糖果 25g",
           "completeTime": "10:15",
-          "waitingMins": 332
+          "waitingMins": 335
         },
         {
           "supplierName": "广东正慈食品有限公司-快乐猴",
           "skuName": "乐达学糖   风扇糖果  3g",
           "completeTime": "11:56",
-          "waitingMins": 232
+          "waitingMins": 235
         },
         {
           "supplierName": "广东珠江桥生物科技股份有限公司-快乐猴",
           "skuName": "快乐猴 鱼生寿司酱油 200ml",
           "completeTime": "13:00",
-          "waitingMins": 167
+          "waitingMins": 170
         },
         {
           "supplierName": "广州市新风彩品牌管理有限公司-快乐猴",
           "skuName": "锐澳微醺冰萃葡萄风味果冻起泡鸡尾酒(预调酒)250ml",
           "completeTime": "13:04",
-          "waitingMins": 164
+          "waitingMins": 167
         },
         {
           "supplierName": "广州市新风彩品牌管理有限公司-快乐猴",
           "skuName": "锐澳微醺桂香青梅风味果冻鸡尾酒(预调酒)250ml",
           "completeTime": "13:05",
-          "waitingMins": 162
+          "waitingMins": 165
         }
       ],
       "signed_not_recv": [
-        {
-          "supplierName": "翠昇（广东）食品供应链有限公司-快乐猴",
-          "poNo": "CG202605276155",
-          "reserveBillCode": "YY20260601001576",
-          "skuId": "975492",
-          "skuName": "王老吉 凉茶植物饮料 310ml",
-          "purchaseQty": 240,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 1
-        },
         {
           "supplierName": "杭州沐屋贸易有限公司",
           "poNo": "CG202605294794",
@@ -222,7 +266,7 @@
           "purchaseQty": 240,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 1
         },
         {
           "supplierName": "东莞市华祥食品有限公司-快乐猴",
@@ -233,7 +277,62 @@
           "purchaseQty": 200,
           "recvQty": 0,
           "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
+          "poNo": "CG2026052010155",
+          "reserveBillCode": "YY20260601004764",
+          "skuId": "1407642",
+          "skuName": "新包材-贴纸-厚酥蛋挞",
+          "purchaseQty": 40,
+          "recvQty": 0,
+          "hasQc": false,
           "seq": 3
+        },
+        {
+          "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
+          "poNo": "CG2026052010155",
+          "reserveBillCode": "YY20260601004764",
+          "skuId": "1407006",
+          "skuName": "新包材-贴纸-进口黄油大羊角",
+          "purchaseQty": 5,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
+          "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
+          "poNo": "CG2026052010155",
+          "reserveBillCode": "YY20260601004764",
+          "skuId": "1407771",
+          "skuName": "新包材-贴纸-黑芝麻原味麻薯",
+          "purchaseQty": 4,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
+          "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
+          "poNo": "CG2026052010155",
+          "reserveBillCode": "YY20260601004764",
+          "skuId": "1446802",
+          "skuName": "新包材-贴纸-现烤蒜香法棍",
+          "purchaseQty": 2,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
+        },
+        {
+          "supplierName": "武汉铭德昌印务股份有限公司-快乐猴",
+          "poNo": "CG2026052010155",
+          "reserveBillCode": "YY20260601004764",
+          "skuId": "1407930",
+          "skuName": "新包材-贴纸-蝴蝶酥",
+          "purchaseQty": 1,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
         }
       ],
       "qc_recv_pending": [],
@@ -794,8 +893,8 @@
     "seeding": {
       "not_started": 56,
       "in_progress": 4,
-      "done": 256,
-      "total": 316,
+      "done": 260,
+      "total": 320,
       "status": "ok"
     }
   },

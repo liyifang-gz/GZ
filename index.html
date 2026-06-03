@@ -1521,7 +1521,13 @@ putawayBarPct = pcsRate;
         const pct = (rate * 100).toFixed(1) + '%';
         el.textContent = pct;
         el.style.color = rate >= 0.5 ? '#10b981' : '#f59e0b';
-        el.parentElement.querySelector('.unit').innerHTML = `串点率<br><span style="font-size:9px;color:#6b7280">${serial}/发运${total}车</span>`;
+        const tb = transport.temp_breakdown || {};
+        const cold = tb['冷藏'] || 0;
+        const frozen = tb['冷冻'] || 0;
+        const normal = tb['常温'] || 0;
+        const tempStr = `冷藏${cold} 冷冻${frozen} 常温${normal}`;
+        el.parentElement.querySelector('.unit').innerHTML =
+          `串点率<br><span style="font-size:9px;color:#6b7280">${serial}串/${total}车</span><br><span style="font-size:8px;color:#9ca3af">${tempStr}</span>`;
       }
     }
 

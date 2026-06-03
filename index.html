@@ -1506,6 +1506,25 @@ putawayBarPct = pcsRate;
       }
     }
 
+    function renderTransport(transport) {
+      if (!transport) return;
+      const el = document.getElementById('plan-route-rate');
+      if (!el) return;
+      const rate = transport.serial_rate;
+      const total = transport.total_depart || 0;
+      const serial = transport.serial_count || 0;
+      if (rate === null || rate === undefined || transport.status === 'no_cookie') {
+        el.textContent = '--';
+        el.style.color = '#bbb';
+        el.parentElement.querySelector('.unit').innerHTML = '串点率<br><span style="font-size:9px;color:#bbb">(接入中)</span>';
+      } else {
+        const pct = (rate * 100).toFixed(1) + '%';
+        el.textContent = pct;
+        el.style.color = rate >= 0.5 ? '#10b981' : '#f59e0b';
+        el.parentElement.querySelector('.unit').innerHTML = `串点率<br><span style="font-size:9px;color:#6b7280">${serial}/发运${total}车</span>`;
+      }
+    }
+
     function renderAttendance(att) {
       if (!att) return;
       const totalInservice = att.total_inservice || 0;
@@ -1642,6 +1661,7 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       renderInbound(data.inbound);
       renderOutbound(data.outbound);
       renderPlan(data.plan);
+      renderTransport(data.transport);
       renderAttendance(data.attendance);
     }
 

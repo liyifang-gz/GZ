@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-03T11:58:41",
+  "timestamp": "2026-06-03T12:04:00",
   "date": "2026-06-03",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 2,
-      "done": 0,
-      "pending": 2,
-      "passed": 0,
+      "done": 1,
+      "pending": 1,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 50.0,
+      "bill_done": 1,
       "bill_total": 2,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 520,
+      "pcs_passed": 520,
       "pcs_total": 754,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 69.0,
+      "sku_done": 1,
       "sku_total": 2,
-      "sku_rate": 0.0
+      "sku_rate": 50.0
     },
     "putaway": {
       "total": 1820,
@@ -119,18 +119,17 @@
           "skuName": "南美白虾仁 500g",
           "arrivalTime": "15:00",
           "unloadFinishTime": "11:48",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "荣成市鸿耀水产捕捞有限公司",
-          "skuName": "杂色花蛤肉 500g",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "11:48",
-          "statusLabel": "待质检"
+          "statusLabel": "首次进行中"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "荣成市鸿耀水产捕捞有限公司",
+          "skuName": "杂色花蛤肉 500g",
+          "completeTime": "12:02",
+          "waitingMins": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -233,10 +232,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 178,
+      "not_started": 179,
       "in_progress": 0,
       "done": 0,
-      "total": 178,
+      "total": 179,
       "status": "ok"
     }
   },

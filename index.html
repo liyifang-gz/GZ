@@ -589,21 +589,24 @@
                 🚚 运输
                 <span class="badge badge-blue" id="plan-badge">--</span>
             </div>
+            <!-- 第一行：计划件数 / 约车建议 / 装载率 / 温度达成 / 到站准时率 -->
             <div class="kpi-row">
-                <div class="kpi"><div class="number" id="plan-orders">--</div><div class="unit">订单数</div></div>
                 <div class="kpi"><div class="number" id="plan-pcs">--</div><div class="unit">计划件数</div></div>
-                <div class="kpi"><div class="number" id="plan-stores">--</div><div class="unit">门店数</div></div>
-            </div>
-            <span class="detail-btn" id="plan-detail-btn">门店分布 ▸</span>
-            <div class="detail-panel" id="plan-detail"></div>
-            <div style="margin-top:10px; padding-top:8px; border-top:1px solid #f0f0f0;">
-                <div style="font-size:11px;color:#bbb;margin-bottom:6px;">运输实时数据接入中，当前展示明日配送计划</div>
-                <div class="kpi-row">
-                    <div class="kpi"><div class="number" style="font-size:14px;color:#bbb">--</div><div class="unit" style="color:#bbb">车次数<br><span style="font-size:9px;">(接入中)</span></div></div>
-                    <div class="kpi"><div class="number" style="font-size:14px;color:#bbb">--</div><div class="unit" style="color:#bbb">到站数<br><span style="font-size:9px;">(接入中)</span></div></div>
-                    <div class="kpi"><div class="number" style="font-size:14px;color:#bbb">--</div><div class="unit" style="color:#bbb">温度达成<br><span style="font-size:9px;">(接入中)</span></div></div>
-                    <div class="kpi"><div class="number" style="font-size:14px;color:#bbb">--</div><div class="unit" style="color:#bbb">到站准时率<br><span style="font-size:9px;">(接入中)</span></div></div>
+                <div class="kpi" style="cursor:pointer" onclick="toggleDetail('plan-vehicle-detail')">
+                    <div class="number" id="plan-vehicle-suggest" style="color:#f59e0b">--</div>
+                    <div class="unit">约车建议数 <span style="font-size:9px;color:#93c5fd">▾</span></div>
                 </div>
+                <div class="kpi"><div class="number" id="plan-load-rate" style="color:#bbb">--</div><div class="unit" style="color:#bbb">车辆装载率<br><span style="font-size:9px;">(接入中)</span></div></div>
+                <div class="kpi"><div class="number" id="plan-temp-rate" style="color:#bbb">--</div><div class="unit" style="color:#bbb">温度达成<br><span style="font-size:9px;">(接入中)</span></div></div>
+                <div class="kpi"><div class="number" id="plan-ontime-rate" style="color:#bbb">--</div><div class="unit" style="color:#bbb">到站准时率<br><span style="font-size:9px;">(接入中)</span></div></div>
+            </div>
+            <!-- 约车建议门店详情（可折叠） -->
+            <div class="detail-panel" id="plan-vehicle-detail" style="display:none"></div>
+            <!-- 第二行：计划车次 / 已发车次 / 到站车次 -->
+            <div class="kpi-row" style="margin-top:8px;padding-top:8px;border-top:1px solid #f0f0f0;">
+                <div class="kpi"><div class="number" id="plan-trip-total" style="color:#bbb">--</div><div class="unit" style="color:#bbb">计划车次<br><span style="font-size:9px;">(接入中)</span></div></div>
+                <div class="kpi"><div class="number" id="plan-trip-depart" style="color:#bbb">--</div><div class="unit" style="color:#bbb">已发车次<br><span style="font-size:9px;">(接入中)</span></div></div>
+                <div class="kpi"><div class="number" id="plan-trip-arrive" style="color:#bbb">--</div><div class="unit" style="color:#bbb">到站车次<br><span style="font-size:9px;">(接入中)</span></div></div>
             </div>
         </div>
 
@@ -1114,9 +1117,7 @@ let countdownTimer;
     if (inboundDetailBtn && inboundDetailBtn.addEventListener)
       inboundDetailBtn.addEventListener("click", () => toggleDetail("inbound-detail"));
 
-    const planDetailBtn = document.getElementById("plan-detail-btn");
-    if (planDetailBtn && planDetailBtn.addEventListener)
-      planDetailBtn.addEventListener("click", () => toggleDetail("plan-detail"));
+    // plan-detail-btn 已移除，约车建议点击由 onclick 内联处理
 
     // 刷新按钮 — 用 loadData()（有加载提示+错误提示），不用静默刷新
     const refreshBtn = document.getElementById("refresh-btn");
@@ -1479,19 +1480,28 @@ putawayBarPct = pcsRate;
 
     function renderPlan(plan) {
       if (!plan) return;
-      document.getElementById("plan-orders").textContent = fmt(plan.total_orders);
-      document.getElementById("plan-pcs").textContent = fmt(plan.total_pcs);
-      document.getElementById("plan-stores").textContent = fmt(plan.store_count);
+      const planPcs = plan.total_pcs || 0;
+      // 第一行 KPI
+      document.getElementById("plan-pcs").textContent = fmt(planPcs);
       document.getElementById("plan-badge").textContent =
-        plan.total_pcs > 0 ? fmt(plan.total_pcs) + "件" : "暂无";
+        planPcs > 0 ? fmt(planPcs) + "件" : "暂无";
 
+      // 约车建议数：ceil(件数 / 600 / 6)
+      const PCS_PER_PALLET = 600, PALLETS_PER_CAR = 6;
+      const suggestCars = planPcs > 0 ? Math.ceil(planPcs / PCS_PER_PALLET / PALLETS_PER_CAR) : 0;
+      document.getElementById("plan-vehicle-suggest").textContent = suggestCars > 0 ? suggestCars + " 车" : "--";
+
+      // 门店约车建议详情（点击展开）
       if (plan.by_store && Object.keys(plan.by_store).length > 0) {
-        let html = "<table><tr><th>门店</th><th>件数</th></tr>";
+        let html = '<table><tr><th>门店</th><th>件数</th><th>托数</th><th>建议车数</th></tr>';
         for (const [s, p] of Object.entries(plan.by_store)) {
-          html += `<tr><td>${s}</td><td>${fmt(p)}</td></tr>`;
+          const pallets = (p / PCS_PER_PALLET).toFixed(1);
+          const cars = (p / PCS_PER_PALLET / PALLETS_PER_CAR).toFixed(2);
+          html += `<tr><td>${s}</td><td>${fmt(p)}</td><td>${pallets}</td><td>${cars}</td></tr>`;
         }
-        html += "</table>";
-        document.getElementById("plan-detail").innerHTML = html;
+        html += `<tr style="font-weight:600;background:#f3f4f6;border-top:2px solid #d1d5db;"><td>合计</td><td>${fmt(planPcs)}</td><td>${(planPcs/PCS_PER_PALLET).toFixed(1)}</td><td>${suggestCars}</td></tr>`;
+        html += '</table>';
+        document.getElementById("plan-vehicle-detail").innerHTML = html;
       }
     }
 

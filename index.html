@@ -1690,21 +1690,24 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       'gz0210': {
         name: 'GZ0210 冷藏',
         dataUrl:     'https://liyifang-gz.github.io/GZ/realtime_data.json',
-        dataUrlBak:  'https://raw.githubusercontent.com/liyifang-gz/GZ/main/realtime_data.json',
+        dataUrlBak:  'https://cdn.jsdelivr.net/gh/liyifang-gz/GZ@main/realtime_data.json',
+        dataUrlBak2: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/realtime_data.json',
         historyDir:  'https://liyifang-gz.github.io/GZ/history/',
         historyDirBak: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/history/',
       },
       'gz0211': {
         name: 'GZ0211 冷冻',
         dataUrl:     'https://liyifang-gz.github.io/GZ/gz0211/realtime_data.json',
-        dataUrlBak:  'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0211/realtime_data.json',
+        dataUrlBak:  'https://cdn.jsdelivr.net/gh/liyifang-gz/GZ@main/gz0211/realtime_data.json',
+        dataUrlBak2: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0211/realtime_data.json',
         historyDir:  'https://liyifang-gz.github.io/GZ/gz0211/history/',
         historyDirBak: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0211/history/',
       },
       'gz0209': {
         name: 'GZ0209 常温',
         dataUrl:     'https://liyifang-gz.github.io/GZ/gz0209/realtime_data.json',
-        dataUrlBak:  'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0209/realtime_data.json',
+        dataUrlBak:  'https://cdn.jsdelivr.net/gh/liyifang-gz/GZ@main/gz0209/realtime_data.json',
+        dataUrlBak2: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0209/realtime_data.json',
         historyDir:  'https://liyifang-gz.github.io/GZ/gz0209/history/',
         historyDirBak: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0209/history/',
       },
@@ -1719,6 +1722,9 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
     function getDataUrlBak() {
       return WAREHOUSES[getCurrentWarehouse()].dataUrlBak;
     }
+    function getDataUrlBak2() {
+      return WAREHOUSES[getCurrentWarehouse()].dataUrlBak2;
+    }
     function getHistoryDir() {
       return WAREHOUSES[getCurrentWarehouse()].historyDir;
     }
@@ -1726,14 +1732,15 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       return WAREHOUSES[getCurrentWarehouse()].historyDirBak;
     }
 
-    // ── fetchWithRetry：主 URL 失败时自动切换备用 CDN，最多重试 2 次 ──
-    async function fetchWithRetry(primaryUrl, backupUrl, retries, timeoutMs) {
+    // ── fetchWithRetry：三源备用（主→jsDelivr→raw.githubusercontent）──
+    async function fetchWithRetry(primaryUrl, backupUrl, retries, timeoutMs, backup2Url) {
       timeoutMs = timeoutMs || 8000;
-      const urls = [primaryUrl, backupUrl, primaryUrl];  // 主→备→主 再试一次
+      // 三源陈列：GitHub Pages → jsDelivr → raw.githubusercontent.com
+      const bak2 = backup2Url || getDataUrlBak2();
+      const urls = [primaryUrl, backupUrl, bak2];
       let lastErr;
-      for (let i = 0; i < Math.min(retries + 1, urls.length); i++) {
+      for (let i = 0; i < urls.length; i++) {
         const url = urls[i];
-        const isBak = url === backupUrl;
         try {
           const ctrl = new AbortController();
           const tid = setTimeout(() => ctrl.abort(), timeoutMs);
@@ -1741,13 +1748,12 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
             { cache: 'no-store', signal: ctrl.signal });
           clearTimeout(tid);
           if (!resp.ok) throw new Error('HTTP ' + resp.status);
-          if (isBak) console.warn('[CDN-FALLBACK] 使用备用 CDN:', url);
+          if (i > 0) console.warn('[CDN-FALLBACK] 切换到备用源' + i + ':', url);
           return resp;
         } catch (e) {
           lastErr = e;
-          if (i < retries) {
-            const delay = isBak ? 1500 : 800;
-            await new Promise(function(r) { setTimeout(r, delay); });
+          if (i < urls.length - 1) {
+            await new Promise(function(r) { setTimeout(r, 800); });
           }
         }
       }

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-03T11:08:01",
+  "timestamp": "2026-06-03T11:13:05",
   "date": "2026-06-03",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 4,
-      "waiting": 8
+      "signed": 5,
+      "waiting": 7
     },
     "ontime": {
       "ontime": 0,
-      "early": 4,
+      "early": 5,
       "late": 0,
       "total": 12,
       "rate": 0.0,
-      "early_rate": 33.3,
+      "early_rate": 41.7,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,11 +24,11 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 4,
-      "done": 4,
+      "total": 5,
+      "done": 5,
       "rate": 100.0,
-      "pcs_done": 3624,
-      "sign_pcs_done": 3624
+      "pcs_done": 3824,
+      "sign_pcs_done": 3824
     },
     "qc": {
       "total": 4,
@@ -49,37 +49,49 @@
       "sku_rate": 50.0
     },
     "putaway": {
-      "total": 5532,
+      "total": 6432,
       "done": 5532,
-      "rate": 100.0,
-      "sku_total": 17,
+      "rate": 86.0,
+      "sku_total": 21,
       "sku_done": 17,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 81.0,
+      "details": [
+        {
+          "poNo": "CG202605221520",
+          "hopePcs": 900,
+          "putPcs": 0,
+          "hopeSku": 4,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
         "total": 12,
-        "done": 4,
-        "rate": 33.3
+        "done": 5,
+        "rate": 41.7
       },
       "pcs": {
         "total": 9161,
         "done": 8154,
         "rate": 89.0,
-        "recv_done": 5532,
-        "recv_rate": 60.4
+        "recv_done": 6432,
+        "recv_rate": 70.2
       },
       "sku": {
         "total": 22,
-        "done": 7,
-        "rate": 31.8
+        "done": 8,
+        "rate": 36.4
       },
       "supplier": {
         "total": 11,
-        "done": 4,
-        "rate": 36.4,
+        "done": 5,
+        "rate": 45.5,
         "detail": {
+          "东莞市华祥食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "晋江力绿食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -97,10 +109,6 @@
             "done": 1
           },
           "广东珠江桥生物科技股份有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "东莞市华祥食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -155,13 +163,6 @@
           "timeSlot": "15:00 - 15:30"
         },
         {
-          "supplierName": "东莞市华祥食品有限公司-快乐猴",
-          "billCode": "YY20260602002556",
-          "skuCount": 1,
-          "pcs": 200,
-          "timeSlot": "13:30 - 14:00"
-        },
-        {
           "supplierName": "广西中柳食品科技有限公司",
           "billCode": "YY20260602001981",
           "skuCount": 1,
@@ -212,7 +213,7 @@
           "skuName": "快乐猴 竹盐烤海苔 30g",
           "arrivalTime": "15:30",
           "unloadFinishTime": "09:22",
-          "statusLabel": "待质检"
+          "statusLabel": "首次进行中"
         },
         {
           "seq": 2,
@@ -228,13 +229,13 @@
           "supplierName": "晋江力绿食品有限公司-快乐猴",
           "skuName": "快乐猴 原味拌饭海苔 70g",
           "completeTime": "10:06",
-          "waitingMins": 61
+          "waitingMins": 66
         },
         {
           "supplierName": "广东正慈食品有限公司-快乐猴",
           "skuName": "乐达学糖 捶捶乐糖果 25g",
           "completeTime": "10:15",
-          "waitingMins": 52
+          "waitingMins": 57
         }
       ],
       "qc_recv_pending": [],
@@ -531,10 +532,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 135,
+      "not_started": 143,
       "in_progress": 0,
       "done": 0,
-      "total": 135,
+      "total": 143,
       "status": "ok"
     }
   },

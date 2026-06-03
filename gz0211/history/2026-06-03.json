@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-03T13:10:41",
+  "timestamp": "2026-06-03T13:13:39",
   "date": "2026-06-03",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 3,
-      "signed": 1,
-      "waiting": 1
+      "signed": 2,
+      "waiting": 0
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 2,
       "late": 0,
       "total": 2,
       "rate": 0.0,
-      "early_rate": 50.0,
+      "early_rate": 100.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 1,
-      "rate": 100.0,
+      "rate": 50.0,
       "pcs_done": 754,
-      "sign_pcs_done": 754
+      "sign_pcs_done": 2734
     },
     "qc": {
-      "total": 2,
+      "total": 3,
       "done": 2,
-      "pending": 0,
+      "pending": 1,
       "passed": 2,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 66.7,
       "bill_done": 2,
-      "bill_total": 2,
+      "bill_total": 3,
       "pcs_done": 754,
       "pcs_passed": 754,
-      "pcs_total": 754,
+      "pcs_total": 2734,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 27.6,
       "sku_done": 2,
-      "sku_total": 2,
-      "sku_rate": 100.0
+      "sku_total": 3,
+      "sku_rate": 66.7
     },
     "putaway": {
       "total": 1820,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 2,
-        "done": 1,
-        "rate": 50.0
+        "done": 2,
+        "rate": 100.0
       },
       "pcs": {
         "total": 3800,
@@ -72,21 +72,21 @@
       },
       "sku": {
         "total": 3,
-        "done": 2,
-        "rate": 66.7
+        "done": 3,
+        "rate": 100.0
       },
       "supplier": {
         "total": 2,
-        "done": 1,
-        "rate": 50.0,
+        "done": 2,
+        "rate": 100.0,
         "detail": {
-          "荣成市鸿耀水产捕捞有限公司": {
+          "安徽易达润食品科技有限责任公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
-          "安徽易达润食品科技有限责任公司-快乐猴": {
+          "荣成市鸿耀水产捕捞有限公司": {
             "plan": 1,
-            "done": 0
+            "done": 1
           }
         }
       }
@@ -102,29 +102,37 @@
           "poStatus": "已完成"
         }
       ],
-      "unsigned": [
+      "unsigned": [],
+      "unloading": [
         {
           "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
           "billCode": "YY20260529004607",
-          "skuCount": 1,
-          "pcs": 1980,
-          "timeSlot": "15:30 - 16:30"
+          "signTime": "13:11",
+          "status": "已签到未卸货"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
+          "skuName": "快乐猴 萌猴雪糕 65g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "荣成市鸿耀水产捕捞有限公司",
           "skuName": "南美白虾仁 500g",
           "completeTime": "12:04",
-          "waitingMins": 66
+          "waitingMins": 69
         },
         {
           "supplierName": "荣成市鸿耀水产捕捞有限公司",
           "skuName": "杂色花蛤肉 500g",
           "completeTime": "12:02",
-          "waitingMins": 68
+          "waitingMins": 71
         }
       ],
       "signed_not_recv": [],
@@ -230,9 +238,9 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 112,
-      "in_progress": 5,
-      "done": 107,
+      "not_started": 109,
+      "in_progress": 4,
+      "done": 111,
       "total": 224,
       "status": "ok"
     }

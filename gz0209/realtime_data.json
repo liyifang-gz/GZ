@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-03T09:57:51",
+  "timestamp": "2026-06-03T10:03:02",
   "date": "2026-06-03",
   "warehouse": "GZ0210",
   "inbound": {
@@ -209,7 +209,8 @@
           "supplierName": "广东正慈食品有限公司-快乐猴",
           "billCode": "YY20260528007183",
           "signTime": "09:56",
-          "status": "已签到未卸货"
+          "unloadStartTime": "10:03",
+          "status": "卸货中"
         }
       ],
       "qc_pending": [
@@ -280,74 +281,34 @@
     },
     "sowing": {
       "total": 286,
-      "done": 0,
-      "rate": 0.0
+      "done": 247,
+      "rate": 86.4
     },
     "caging": {
       "total": 286,
-      "done": 0,
-      "rate": 0.0,
-      "pcs_done": 1454,
+      "done": 247,
+      "rate": 86.4,
+      "pcs_done": 6043,
       "pcs_total": 7012,
-      "pcs_rate": 20.7
+      "pcs_rate": 86.2
     },
     "packing": {
       "total": 6,
-      "done": 1,
-      "rate": 16.7
+      "done": 5,
+      "rate": 83.3
     },
     "uncaged_details": [
-      {
-        "containerCode": "RQ-28-03-0900495",
-        "poiName": "越秀越富广场店",
-        "qty": 1737
-      },
-      {
-        "containerCode": "RQ-28-03-0900494",
-        "poiName": "越秀越富广场店",
-        "qty": 1031
-      },
       {
         "containerCode": "RQ-28-03-0900499",
         "poiName": "越秀越富广场店",
         "qty": 969
-      },
-      {
-        "containerCode": "RQ-28-03-0900500",
-        "poiName": "越秀越富广场店",
-        "qty": 915
-      },
-      {
-        "containerCode": "RQ-28-03-0900498",
-        "poiName": "越秀越富广场店",
-        "qty": 906
       }
     ],
     "unpacked_details": [
       {
-        "containerCode": "RQ-28-03-0900495",
-        "poiName": "越秀越富广场店",
-        "qty": 1737
-      },
-      {
-        "containerCode": "RQ-28-03-0900494",
-        "poiName": "越秀越富广场店",
-        "qty": 1031
-      },
-      {
         "containerCode": "RQ-28-03-0900499",
         "poiName": "越秀越富广场店",
         "qty": 969
-      },
-      {
-        "containerCode": "RQ-28-03-0900500",
-        "poiName": "越秀越富广场店",
-        "qty": 915
-      },
-      {
-        "containerCode": "RQ-28-03-0900498",
-        "poiName": "越秀越富广场店",
-        "qty": 906
       }
     ],
     "shipping": {
@@ -360,12 +321,22 @@
       "multi_pallet_count": 0,
       "multi_pallet_total": 286,
       "multi_pallet_rate": 0.0,
-      "load_rate": 0.0,
+      "load_rate": 82.6,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "83.13%",
-      "load_rate_loaded": "116.49%",
+      "load_rate_unloaded": "81.13%",
+      "load_rate_loaded": "90.20%",
       "load_rate_shipped": "--",
-      "low_load_containers": [],
+      "low_load_containers": [
+        {
+          "containerCode": "RQ-28-03-0900494",
+          "poiName": "越秀越富广场店",
+          "loadingRate": "71.62%",
+          "loadingRateVal": 71.62,
+          "skuPcs": "1031.000",
+          "skuVolume": "1.418",
+          "planOutTime": "06-03 20:00"
+        }
+      ],
       "all_containers_detail": [
         {
           "containerCode": "RQ-28-03-0900497",
@@ -395,15 +366,6 @@
           "planOutTime": "06-03 20:00"
         },
         {
-          "containerCode": "RQ-28-03-0900499",
-          "poiName": "越秀越富广场店",
-          "loadingRate": "81.13%",
-          "loadingRateVal": 81.13,
-          "skuPcs": "969.000",
-          "skuVolume": "1.606",
-          "planOutTime": "06-03 20:00"
-        },
-        {
           "containerCode": "RQ-28-03-0900498",
           "poiName": "越秀越富广场店",
           "loadingRate": "79.50%",
@@ -420,6 +382,15 @@
           "skuPcs": "1031.000",
           "skuVolume": "1.418",
           "planOutTime": "06-03 20:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900499",
+          "poiName": "越秀越富广场店",
+          "loadingRate": "81.13%",
+          "loadingRateVal": 81.13,
+          "skuPcs": "969.000",
+          "skuVolume": "1.606",
+          "planOutTime": "06-03 20:00"
         }
       ],
       "outbound_efficiency": 1389.5,
@@ -430,21 +401,21 @@
         "total": 5558,
         "picked": 0,
         "sowed": 0,
-        "caged": 0,
-        "not_caged": 5558,
+        "caged": 4589,
+        "not_caged": 969,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 20.7,
+        "cage_rate": 86.2,
         "sowed_picked": 7012
       },
       "sku": {
         "total": 286,
         "picked": 0,
         "sowed": 0,
-        "caged": 0,
+        "caged": 247,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 0.0
+        "cage_rate": 86.4
       }
     },
     "status": "ok",
@@ -484,8 +455,8 @@
   "plan": {
     "total_orders": 8,
     "total_pcs": 3118,
-    "alloc_pcs": 84,
-    "alloc_rate": 2.7,
+    "alloc_pcs": 118,
+    "alloc_rate": 3.8,
     "picked_pcs": 0,
     "sow_pcs": 0,
     "sow_rate": 0.0,
@@ -504,32 +475,16 @@
         "orderNo": "DB20260602317475",
         "skuNum": 3,
         "planQty": 1503,
-        "allocQty": 1,
-        "unallocQty": 1502
+        "allocQty": 3,
+        "unallocQty": 1500
       },
       {
         "receiverName": "快乐猴-海珠星汇广场店-034",
         "orderNo": "DB20260602295123",
         "skuNum": 3,
         "planQty": 1503,
-        "allocQty": 1,
-        "unallocQty": 1502
-      },
-      {
-        "receiverName": "快乐猴-越秀越富广场店-031",
-        "orderNo": "DB20260602324509",
-        "skuNum": 10,
-        "planQty": 43,
-        "allocQty": 28,
-        "unallocQty": 15
-      },
-      {
-        "receiverName": "快乐猴-海珠星汇广场店-034",
-        "orderNo": "DB20260602304408",
-        "skuNum": 8,
-        "planQty": 33,
-        "allocQty": 18,
-        "unallocQty": 15
+        "allocQty": 3,
+        "unallocQty": 1500
       }
     ],
     "status": "ok"

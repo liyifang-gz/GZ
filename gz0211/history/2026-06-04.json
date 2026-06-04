@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-04T16:34:34",
+  "timestamp": "2026-06-04T16:40:04",
   "date": "2026-06-04",
   "warehouse": "GZ0210",
   "inbound": {
@@ -125,46 +125,24 @@
     },
     "sowing": {
       "total": 413,
-      "done": 372,
-      "rate": 90.1
+      "done": 413,
+      "rate": 100.0
     },
     "caging": {
       "total": 413,
-      "done": 372,
-      "rate": 90.1,
-      "pcs_done": 12223,
+      "done": 413,
+      "rate": 100.0,
+      "pcs_done": 12732,
       "pcs_total": 12732,
-      "pcs_rate": 96.0
+      "pcs_rate": 100.0
     },
     "packing": {
       "total": 16,
-      "done": 14,
-      "rate": 87.5
+      "done": 16,
+      "rate": 100.0
     },
-    "uncaged_details": [
-      {
-        "containerCode": "RQ-05-03-0700726",
-        "poiName": "禅城东方广场店",
-        "qty": 489
-      },
-      {
-        "containerCode": "RQ-05-03-0700663",
-        "poiName": "海珠星汇广场店",
-        "qty": 20
-      }
-    ],
-    "unpacked_details": [
-      {
-        "containerCode": "RQ-05-03-0700726",
-        "poiName": "禅城东方广场店",
-        "qty": 489
-      },
-      {
-        "containerCode": "RQ-05-03-0700663",
-        "poiName": "海珠星汇广场店",
-        "qty": 20
-      }
-    ],
+    "uncaged_details": [],
+    "unpacked_details": [],
     "shipping": {
       "total": 12732,
       "done": 0,
@@ -175,7 +153,7 @@
       "multi_pallet_count": 5,
       "multi_pallet_total": 404,
       "multi_pallet_rate": 1.2,
-      "load_rate": 96.0,
+      "load_rate": 100.0,
       "multi_pallet_details": [
         {
           "skuName": "快乐猴 手工老面黑猪肉小笼包 350g(14只)",
@@ -228,10 +206,20 @@
           "qty": 120
         }
       ],
-      "load_rate_unloaded": "64.97%",
-      "load_rate_loaded": "88.09%",
+      "load_rate_unloaded": "--",
+      "load_rate_loaded": "85.20%",
       "load_rate_shipped": "--",
-      "low_load_containers": [],
+      "low_load_containers": [
+        {
+          "containerCode": "RQ-05-03-0700663",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "54.12%",
+          "loadingRateVal": 54.12,
+          "skuPcs": "20.000",
+          "skuVolume": "1.072",
+          "planOutTime": "06-04 19:00"
+        }
+      ],
       "all_containers_detail": [
         {
           "containerCode": "RQ-05-03-0700659",
@@ -386,21 +374,21 @@
         "total": 12732,
         "picked": 0,
         "sowed": 0,
-        "caged": 12223,
-        "not_caged": 509,
+        "caged": 12732,
+        "not_caged": 0,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 96.0,
+        "cage_rate": 100.0,
         "sowed_picked": 12732
       },
       "sku": {
         "total": 413,
         "picked": 0,
         "sowed": 0,
-        "caged": 372,
+        "caged": 413,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 90.1
+        "cage_rate": 100.0
       }
     },
     "status": "ok",
@@ -421,10 +409,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 67,
-      "in_progress": 3,
-      "done": 253,
-      "total": 323,
+      "not_started": 59,
+      "in_progress": 8,
+      "done": 258,
+      "total": 325,
       "status": "ok"
     }
   },
@@ -449,15 +437,15 @@
     "status": "ok"
   },
   "transport": {
-    "serial_count": 1,
-    "total_depart": 2,
-    "serial_rate": 0.5,
+    "serial_count": 2,
+    "total_depart": 3,
+    "serial_rate": 0.6667,
     "trip_total": null,
     "trip_depart": null,
     "trip_arrive": null,
     "status": "ok",
     "temp_breakdown": {
-      "冷藏": 2,
+      "冷藏": 3,
       "冷冻": 0,
       "常温": 0
     },

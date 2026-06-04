@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-05T04:46:58",
+  "timestamp": "2026-06-05T04:49:43",
   "date": "2026-06-05",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 86,
-      "signed": 13,
-      "waiting": 73
+      "signed": 14,
+      "waiting": 72
     },
     "ontime": {
       "ontime": 0,
-      "early": 13,
+      "early": 14,
       "late": 0,
       "total": 86,
       "rate": 0.0,
-      "early_rate": 15.1,
+      "early_rate": 16.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 13,
+      "total": 14,
       "done": 13,
-      "rate": 100.0,
+      "rate": 92.9,
       "pcs_done": 5478,
-      "sign_pcs_done": 5478
+      "sign_pcs_done": 5742
     },
     "qc": {
-      "total": 44,
+      "total": 46,
       "done": 0,
-      "pending": 44,
+      "pending": 46,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 44,
+      "bill_total": 46,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 5478,
+      "pcs_total": 5742,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 44,
+      "sku_total": 46,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 86,
-        "done": 13,
-        "rate": 15.1
+        "done": 14,
+        "rate": 16.3
       },
       "pcs": {
         "total": 37561,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 439,
-        "done": 44,
-        "rate": 10.0
+        "done": 46,
+        "rate": 10.5
       },
       "supplier": {
         "total": 76,
-        "done": 10,
-        "rate": 13.2,
+        "done": 11,
+        "rate": 14.5,
         "detail": {
+          "金乡县英格电子商务有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "上海全苗蔬农业科技发展有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -133,10 +137,6 @@
             "done": 0
           },
           "珠海市利源农畜产品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "金乡县英格电子商务有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -241,13 +241,6 @@
           "skuCount": 23,
           "pcs": 2476,
           "timeSlot": "13:30 - 14:00"
-        },
-        {
-          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
-          "billCode": "YY20260604010550",
-          "skuCount": 2,
-          "pcs": 264,
-          "timeSlot": "14:30 - 15:00"
         },
         {
           "supplierName": "太谷县晋利川农业开发有限公司-快乐猴-自营",
@@ -556,9 +549,23 @@
           "skuCount": 4,
           "pcs": 82,
           "timeSlot": "15:30 - 16:00"
+        },
+        {
+          "supplierName": "福州洪福食品有限公司-快乐猴-自营",
+          "billCode": "YY20260604004485",
+          "skuCount": 1,
+          "pcs": 22,
+          "timeSlot": "16:30 - 17:00"
         }
       ],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
+          "billCode": "YY20260604010550",
+          "signTime": "04:48",
+          "status": "已签到未卸货"
+        }
+      ],
       "qc_pending": [
         {
           "seq": 1,
@@ -911,6 +918,22 @@
           "arrivalTime": "14:00",
           "unloadFinishTime": "04:40",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 45,
+          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
+          "skuName": "紫皮大蒜  500g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 46,
+          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
+          "skuName": "独头蒜 200g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -993,6 +1016,17 @@
           "seq": 7
         },
         {
+          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
+          "poNo": "CG202606049724",
+          "reserveBillCode": "YY20260604010550",
+          "skuId": "1058745",
+          "skuName": "紫皮大蒜  500g",
+          "purchaseQty": 227,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 8
+        },
+        {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
           "poNo": "CG202606049731",
           "reserveBillCode": "YY20260604010370",
@@ -1001,7 +1035,7 @@
           "purchaseQty": 218,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 9
         },
         {
           "supplierName": "汶上县富鑫种植农民专业合作社-快乐猴",
@@ -1012,7 +1046,7 @@
           "purchaseQty": 214,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 10
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -1023,7 +1057,7 @@
           "purchaseQty": 196,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 10
+          "seq": 11
         },
         {
           "supplierName": "成都绥粤绿色蔬菜有限公司-快乐猴",
@@ -1034,7 +1068,7 @@
           "purchaseQty": 154,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 11
+          "seq": 12
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -1045,7 +1079,7 @@
           "purchaseQty": 154,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 12
+          "seq": 13
         },
         {
           "supplierName": "广州市白云区松洲中芬果菜经营部-快乐猴",
@@ -1056,7 +1090,7 @@
           "purchaseQty": 130,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 13
+          "seq": 14
         },
         {
           "supplierName": "广州华富东农产品有限公司-快乐猴",
@@ -1067,7 +1101,7 @@
           "purchaseQty": 123,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 14
+          "seq": 15
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -1078,7 +1112,7 @@
           "purchaseQty": 122,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 15
+          "seq": 16
         },
         {
           "supplierName": "广州市白云区松洲中芬果菜经营部-快乐猴",
@@ -1089,7 +1123,7 @@
           "purchaseQty": 121,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 16
+          "seq": 17
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -1100,7 +1134,7 @@
           "purchaseQty": 117,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 17
+          "seq": 18
         },
         {
           "supplierName": "久泰现代农业有限公司-快乐猴",
@@ -1111,7 +1145,7 @@
           "purchaseQty": 115,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 18
+          "seq": 19
         },
         {
           "supplierName": "久泰现代农业有限公司-快乐猴",
@@ -1122,7 +1156,7 @@
           "purchaseQty": 112,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 19
+          "seq": 20
         },
         {
           "supplierName": "成都绥粤绿色蔬菜有限公司-快乐猴",
@@ -1133,7 +1167,7 @@
           "purchaseQty": 106,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 20
+          "seq": 21
         },
         {
           "supplierName": "上海全苗蔬农业科技发展有限公司-快乐猴",
@@ -1144,7 +1178,7 @@
           "purchaseQty": 102,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 21
+          "seq": 22
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -1155,7 +1189,7 @@
           "purchaseQty": 95,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 22
+          "seq": 23
         },
         {
           "supplierName": "广州市白云区松洲中芬果菜经营部-快乐猴",
@@ -1166,7 +1200,7 @@
           "purchaseQty": 88,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 23
+          "seq": 24
         },
         {
           "supplierName": "广州华富东农产品有限公司-快乐猴",
@@ -1177,7 +1211,7 @@
           "purchaseQty": 75,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 24
+          "seq": 25
         },
         {
           "supplierName": "上海全苗蔬农业科技发展有限公司-快乐猴",
@@ -1188,7 +1222,7 @@
           "purchaseQty": 74,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 25
+          "seq": 26
         },
         {
           "supplierName": "汶上县富鑫种植农民专业合作社-快乐猴",
@@ -1199,7 +1233,7 @@
           "purchaseQty": 69,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 26
+          "seq": 27
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -1210,7 +1244,7 @@
           "purchaseQty": 63,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 27
+          "seq": 28
         },
         {
           "supplierName": "广州光明乳品有限公司-快乐猴",
@@ -1221,7 +1255,7 @@
           "purchaseQty": 60,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 28
+          "seq": 29
         },
         {
           "supplierName": "上海全苗蔬农业科技发展有限公司-快乐猴",
@@ -1232,7 +1266,7 @@
           "purchaseQty": 47,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 29
+          "seq": 30
         },
         {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
@@ -1243,7 +1277,18 @@
           "purchaseQty": 46,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 30
+          "seq": 31
+        },
+        {
+          "supplierName": "金乡县英格电子商务有限公司-快乐猴",
+          "poNo": "CG202606049724",
+          "reserveBillCode": "YY20260604010550",
+          "skuId": "1373841",
+          "skuName": "独头蒜 200g",
+          "purchaseQty": 37,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 32
         },
         {
           "supplierName": "广州光明乳品有限公司-快乐猴",
@@ -1254,7 +1299,7 @@
           "purchaseQty": 27,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 31
+          "seq": 33
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1265,7 +1310,7 @@
           "purchaseQty": 13,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 32
+          "seq": 34
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1276,7 +1321,7 @@
           "purchaseQty": 11,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 33
+          "seq": 35
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1287,7 +1332,7 @@
           "purchaseQty": 11,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 34
+          "seq": 36
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1298,7 +1343,7 @@
           "purchaseQty": 10,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 35
+          "seq": 37
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1309,7 +1354,7 @@
           "purchaseQty": 9,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 36
+          "seq": 38
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1320,7 +1365,7 @@
           "purchaseQty": 9,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 37
+          "seq": 39
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1331,7 +1376,7 @@
           "purchaseQty": 8,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 38
+          "seq": 40
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1342,7 +1387,7 @@
           "purchaseQty": 7,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 39
+          "seq": 41
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1353,7 +1398,7 @@
           "purchaseQty": 7,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 40
+          "seq": 42
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1364,7 +1409,7 @@
           "purchaseQty": 6,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 41
+          "seq": 43
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1375,7 +1420,7 @@
           "purchaseQty": 5,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 42
+          "seq": 44
         },
         {
           "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
@@ -1386,7 +1431,7 @@
           "purchaseQty": 4,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 43
+          "seq": 45
         },
         {
           "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
@@ -1397,7 +1442,7 @@
           "purchaseQty": 1,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 44
+          "seq": 46
         }
       ],
       "qc_recv_pending": [],

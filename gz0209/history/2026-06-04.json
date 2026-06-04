@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-04T08:48:25",
+  "timestamp": "2026-06-04T08:51:26",
   "date": "2026-06-04",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 28,
-      "signed": 1,
-      "waiting": 24
+      "signed": 2,
+      "waiting": 23
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 2,
       "late": 0,
       "total": 25,
       "rate": 0.0,
-      "early_rate": 4.0,
+      "early_rate": 8.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
-      "done": 1,
+      "total": 2,
+      "done": 2,
       "rate": 100.0,
-      "pcs_done": 3288,
-      "sign_pcs_done": 3288
+      "pcs_done": 4008,
+      "sign_pcs_done": 4008
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 720,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 3323,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 25,
-        "done": 1,
-        "rate": 4.0
+        "done": 2,
+        "rate": 8.0
       },
       "pcs": {
         "total": 34874,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 48,
-        "done": 3,
-        "rate": 6.2
+        "done": 4,
+        "rate": 8.3
       },
       "supplier": {
         "total": 20,
-        "done": 1,
-        "rate": 5.0,
+        "done": 2,
+        "rate": 10.0,
         "detail": {
+          "开平市国腾食品有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "东莞市建文洗涤用品有限公司": {
             "plan": 1,
             "done": 1
@@ -105,10 +109,6 @@
             "done": 0
           },
           "广州霖磐贸易有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "开平市国腾食品有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
           },
@@ -270,13 +270,6 @@
           "timeSlot": "11:00 - 12:30"
         },
         {
-          "supplierName": "开平市国腾食品有限公司-快乐猴-自营",
-          "billCode": "YY20260602003228",
-          "skuCount": 1,
-          "pcs": 720,
-          "timeSlot": "11:00 - 11:30"
-        },
-        {
           "supplierName": "广东省广盐集团股份有限公司-快乐猴",
           "billCode": "YY20260602000749",
           "skuCount": 2,
@@ -369,9 +362,30 @@
         }
       ],
       "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "开平市国腾食品有限公司-快乐猴-自营",
+          "skuName": "松花皮蛋6枚 330g",
+          "arrivalTime": "11:00",
+          "unloadFinishTime": "08:50",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "开平市国腾食品有限公司-快乐猴-自营",
+          "poNo": "CG2026060111850",
+          "reserveBillCode": "YY20260602003228",
+          "skuId": "1032860",
+          "skuName": "松花皮蛋6枚 330g",
+          "purchaseQty": 720,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],

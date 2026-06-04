@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-04T10:47:43",
+  "timestamp": "2026-06-04T10:50:48",
   "date": "2026-06-04",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 2,
-      "signed": 0,
-      "waiting": 1
+      "signed": 1,
+      "waiting": 0
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 1,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 100.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 384
     },
     "qc": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "pending": 0,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 384,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 2,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 1054,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 1,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 100.0
       },
       "pcs": {
         "total": 1054,
@@ -72,36 +72,75 @@
       },
       "sku": {
         "total": 2,
-        "done": 0,
-        "rate": 0.0
+        "done": 2,
+        "rate": 100.0
       },
       "supplier": {
         "total": 1,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 100.0,
         "detail": {
           "广州市美口佳食品有限公司-快乐猴": {
             "plan": 1,
-            "done": 0
+            "done": 1
           }
         }
       }
     },
     "details": {
       "unreserved": [],
-      "unsigned": [
+      "unsigned": [],
+      "unloading": [
         {
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "billCode": "YY20260602000538",
-          "skuCount": 2,
-          "pcs": 384,
-          "timeSlot": "15:00 - 15:30"
+          "signTime": "10:48",
+          "status": "已签到未卸货"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "广州市美口佳食品有限公司-快乐猴",
+          "skuName": "美丰 绿豆沙冰棍 70g*6",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "广州市美口佳食品有限公司-快乐猴",
+          "skuName": "美丰 玉米香雪糕 65g*4",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "广州市美口佳食品有限公司-快乐猴",
+          "poNo": "CG2026060115604",
+          "reserveBillCode": "YY20260602000538",
+          "skuId": "216223",
+          "skuName": "美丰 绿豆沙冰棍 70g*6",
+          "purchaseQty": 300,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "广州市美口佳食品有限公司-快乐猴",
+          "poNo": "CG2026060115604",
+          "reserveBillCode": "YY20260602000538",
+          "skuId": "617804",
+          "skuName": "美丰 玉米香雪糕 65g*4",
+          "purchaseQty": 84,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -314,10 +353,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 108,
+      "not_started": 110,
       "in_progress": 0,
       "done": 0,
-      "total": 108,
+      "total": 110,
       "status": "ok"
     }
   },

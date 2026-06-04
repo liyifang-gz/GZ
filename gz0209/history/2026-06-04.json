@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-04T10:07:50",
+  "timestamp": "2026-06-04T10:12:56",
   "date": "2026-06-04",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 28,
-      "signed": 6,
-      "waiting": 19
+      "signed": 7,
+      "waiting": 18
     },
     "ontime": {
       "ontime": 0,
-      "early": 6,
+      "early": 7,
       "late": 0,
       "total": 25,
       "rate": 0.0,
-      "early_rate": 24.0,
+      "early_rate": 28.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,73 +24,81 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 4,
+      "total": 5,
       "done": 4,
-      "rate": 100.0,
+      "rate": 80.0,
       "pcs_done": 6630,
-      "sign_pcs_done": 6630
+      "sign_pcs_done": 7070
     },
     "qc": {
-      "total": 1,
+      "total": 3,
       "done": 1,
-      "pending": 0,
+      "pending": 2,
       "passed": 1,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 33.3,
       "bill_done": 1,
-      "bill_total": 1,
+      "bill_total": 3,
       "pcs_done": 720,
       "pcs_passed": 720,
-      "pcs_total": 720,
+      "pcs_total": 1160,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 62.1,
       "sku_done": 1,
-      "sku_total": 1,
-      "sku_rate": 100.0
+      "sku_total": 3,
+      "sku_rate": 33.3
     },
     "putaway": {
-      "total": 3323,
+      "total": 4043,
       "done": 3323,
-      "rate": 100.0,
-      "sku_total": 11,
+      "rate": 82.2,
+      "sku_total": 12,
       "sku_done": 11,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 91.7,
+      "details": [
+        {
+          "poNo": "CG2026060111850",
+          "hopePcs": 720,
+          "putPcs": 0,
+          "hopeSku": 1,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
         "total": 25,
-        "done": 6,
-        "rate": 24.0
+        "done": 7,
+        "rate": 28.0
       },
       "pcs": {
         "total": 34874,
         "done": 33193,
         "rate": 95.2,
-        "recv_done": 3323,
-        "recv_rate": 9.5
+        "recv_done": 4043,
+        "recv_rate": 11.6
       },
       "sku": {
         "total": 48,
-        "done": 17,
-        "rate": 35.4
+        "done": 19,
+        "rate": 39.6
       },
       "supplier": {
         "total": 20,
         "done": 4,
         "rate": 20.0,
         "detail": {
+          "开平市国腾食品有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "上海塞翁福农业发展有限公司-快乐猴": {
             "plan": 2,
-            "done": 1
+            "done": 2
           },
           "深圳市永益华贸易有限公司-快乐猴": {
             "plan": 3,
             "done": 3
-          },
-          "开平市国腾食品有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 1
           },
           "东莞市建文洗涤用品有限公司": {
             "plan": 1,
@@ -312,13 +320,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "上海塞翁福农业发展有限公司-快乐猴",
-          "billCode": "YY20260521005571",
-          "skuCount": 2,
-          "pcs": 440,
-          "timeSlot": "14:00 - 14:30"
-        },
-        {
           "supplierName": "海宁博鸿食品有限公司-快乐猴",
           "billCode": "YY20260521001857",
           "skuCount": 2,
@@ -333,28 +334,42 @@
           "timeSlot": "15:00 - 15:30"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "上海塞翁福农业发展有限公司-快乐猴",
+          "billCode": "YY20260521005571",
+          "signTime": "10:10",
+          "unloadStartTime": "10:12",
+          "status": "卸货中"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "上海塞翁福农业发展有限公司-快乐猴",
+          "skuName": "快乐猴 舟山虾皮 90g",
+          "arrivalTime": "14:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "上海塞翁福农业发展有限公司-快乐猴",
+          "skuName": "快乐猴 云南贡菜干 50g",
+          "arrivalTime": "14:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "开平市国腾食品有限公司-快乐猴-自营",
           "skuName": "松花皮蛋6枚 330g",
           "completeTime": "09:49",
-          "waitingMins": 18
+          "waitingMins": 23
         }
       ],
       "signed_not_recv": [
-        {
-          "supplierName": "开平市国腾食品有限公司-快乐猴-自营",
-          "poNo": "CG2026060111850",
-          "reserveBillCode": "YY20260602003228",
-          "skuId": "1032860",
-          "skuName": "松花皮蛋6枚 330g",
-          "purchaseQty": 720,
-          "recvQty": 0,
-          "hasQc": true,
-          "seq": 1
-        },
         {
           "supplierName": "上海塞翁福农业发展有限公司-快乐猴",
           "poNo": "CG202605215782",
@@ -362,6 +377,17 @@
           "skuId": "1306722",
           "skuName": "快乐猴 东北黑木耳 100g",
           "purchaseQty": 420,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "上海塞翁福农业发展有限公司-快乐猴",
+          "poNo": "CG202605208991",
+          "reserveBillCode": "YY20260521005571",
+          "skuId": "1338746",
+          "skuName": "快乐猴 舟山虾皮 90g",
+          "purchaseQty": 280,
           "recvQty": 0,
           "hasQc": false,
           "seq": 2
@@ -390,6 +416,17 @@
         },
         {
           "supplierName": "上海塞翁福农业发展有限公司-快乐猴",
+          "poNo": "CG202605208991",
+          "reserveBillCode": "YY20260521005571",
+          "skuId": "1340926",
+          "skuName": "快乐猴 云南贡菜干 50g",
+          "purchaseQty": 160,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
+          "supplierName": "上海塞翁福农业发展有限公司-快乐猴",
           "poNo": "CG202605215782",
           "reserveBillCode": "YY20260521006782",
           "skuId": "1330235",
@@ -397,7 +434,7 @@
           "purchaseQty": 120,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 6
         }
       ],
       "qc_recv_pending": [],

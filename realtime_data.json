@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-05T03:28:46",
+  "timestamp": "2026-06-05T03:31:44",
   "date": "2026-06-05",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 86,
-      "signed": 5,
-      "waiting": 81
+      "signed": 7,
+      "waiting": 79
     },
     "ontime": {
       "ontime": 0,
-      "early": 5,
+      "early": 7,
       "late": 0,
       "total": 86,
       "rate": 0.0,
-      "early_rate": 5.8,
+      "early_rate": 8.1,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 5,
+      "total": 7,
       "done": 5,
-      "rate": 100.0,
+      "rate": 71.4,
       "pcs_done": 4480,
-      "sign_pcs_done": 4480
+      "sign_pcs_done": 4567
     },
     "qc": {
-      "total": 23,
+      "total": 25,
       "done": 0,
-      "pending": 23,
+      "pending": 25,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 23,
+      "bill_total": 25,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 4480,
+      "pcs_total": 4567,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 23,
+      "sku_total": 25,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 86,
-        "done": 5,
-        "rate": 5.8
+        "done": 7,
+        "rate": 8.1
       },
       "pcs": {
         "total": 37561,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 439,
-        "done": 23,
-        "rate": 5.2
+        "done": 25,
+        "rate": 5.7
       },
       "supplier": {
         "total": 76,
-        "done": 5,
-        "rate": 6.6,
+        "done": 6,
+        "rate": 7.9,
         "detail": {
+          "广州光明乳品有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "上海全苗蔬农业科技发展有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -153,10 +157,6 @@
             "done": 0
           },
           "广州市昌兴农产品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "深圳市理念供应链管理有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -558,7 +558,20 @@
           "timeSlot": "16:00 - 16:30"
         }
       ],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "billCode": "YY20260528005973",
+          "signTime": "03:29",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "billCode": "YY20260604003796",
+          "signTime": "03:29",
+          "status": "已签到未卸货"
+        }
+      ],
       "qc_pending": [
         {
           "seq": 1,
@@ -742,6 +755,22 @@
           "skuName": "金银水果玉米 600g",
           "arrivalTime": "15:30",
           "unloadFinishTime": "02:06",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 24,
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "skuName": "光明新鲜牧场高品质牛乳950ml",
+          "arrivalTime": "04:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 25,
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "skuName": "光明 红枣益生菌风味发酵乳 100g*8",
+          "arrivalTime": "04:00",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],
@@ -990,6 +1019,17 @@
           "seq": 22
         },
         {
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "poNo": "CG202606042228",
+          "reserveBillCode": "YY20260604003796",
+          "skuId": "56404",
+          "skuName": "光明新鲜牧场高品质牛乳950ml",
+          "purchaseQty": 60,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 23
+        },
+        {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
           "poNo": "CG202606049731",
           "reserveBillCode": "YY20260604010370",
@@ -998,7 +1038,18 @@
           "purchaseQty": 46,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 23
+          "seq": 24
+        },
+        {
+          "supplierName": "广州光明乳品有限公司-快乐猴",
+          "poNo": "CG202605280774",
+          "reserveBillCode": "YY20260528005973",
+          "skuId": "820563",
+          "skuName": "光明 红枣益生菌风味发酵乳 100g*8",
+          "purchaseQty": 27,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 25
         }
       ],
       "qc_recv_pending": [],

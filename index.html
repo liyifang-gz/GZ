@@ -1481,10 +1481,9 @@ putawayBarPct = pcsRate;
     function renderPlan(plan) {
       if (!plan) return;
       const planPcs = plan.total_pcs || 0;
-      // 第一行 KPI
-      document.getElementById("plan-pcs").textContent = fmt(planPcs);
-      document.getElementById("plan-badge").textContent =
-        planPcs > 0 ? fmt(planPcs) + "件" : "暂无";
+      // plan-badge：运输 card 标题 badge，显示计划件数
+      const planBadgeEl = document.getElementById("plan-badge");
+      if (planBadgeEl) planBadgeEl.textContent = planPcs > 0 ? fmt(planPcs) + "件" : "暂无";
 
       // 约车建议数：ceil(件数 / 600 / 6)
       const PCS_PER_PALLET = 600, PALLETS_PER_CAR = 6;

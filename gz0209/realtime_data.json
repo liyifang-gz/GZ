@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-06-04T10:23:48",
+  "timestamp": "2026-06-04T10:34:08",
   "date": "2026-06-04",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 28,
-      "signed": 7,
-      "waiting": 18
+      "signed": 10,
+      "waiting": 15
     },
     "ontime": {
-      "ontime": 0,
+      "ontime": 3,
       "early": 7,
       "late": 0,
       "total": 25,
-      "rate": 0.0,
+      "rate": 12.0,
       "early_rate": 28.0,
       "late_rate": 0.0
     },
@@ -24,37 +24,37 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 5,
+      "total": 6,
       "done": 5,
-      "rate": 100.0,
+      "rate": 83.3,
       "pcs_done": 7070,
-      "sign_pcs_done": 7070
+      "sign_pcs_done": 15005
     },
     "qc": {
-      "total": 1,
+      "total": 4,
       "done": 1,
-      "pending": 0,
+      "pending": 3,
       "passed": 1,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 25.0,
       "bill_done": 1,
-      "bill_total": 1,
+      "bill_total": 4,
       "pcs_done": 720,
       "pcs_passed": 720,
-      "pcs_total": 720,
+      "pcs_total": 8655,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 8.3,
       "sku_done": 1,
-      "sku_total": 1,
-      "sku_rate": 100.0
+      "sku_total": 4,
+      "sku_rate": 25.0
     },
     "putaway": {
       "total": 5413,
-      "done": 3323,
-      "rate": 61.4,
+      "done": 3443,
+      "rate": 63.6,
       "sku_total": 18,
-      "sku_done": 11,
-      "sku_rate": 61.1,
+      "sku_done": 12,
+      "sku_rate": 66.7,
       "details": [
         {
           "poNo": "CG2026060111850",
@@ -66,9 +66,9 @@
         {
           "poNo": "CG202605215782",
           "hopePcs": 930,
-          "putPcs": 0,
+          "putPcs": 120,
           "hopeSku": 4,
-          "putSku": 0
+          "putSku": 1
         },
         {
           "poNo": "CG202605208991",
@@ -82,8 +82,8 @@
     "dimensions": {
       "reserve": {
         "total": 25,
-        "done": 7,
-        "rate": 28.0
+        "done": 10,
+        "rate": 40.0
       },
       "pcs": {
         "total": 34874,
@@ -94,14 +94,18 @@
       },
       "sku": {
         "total": 48,
-        "done": 19,
-        "rate": 39.6
+        "done": 28,
+        "rate": 58.3
       },
       "supplier": {
         "total": 20,
-        "done": 4,
-        "rate": 20.0,
+        "done": 5,
+        "rate": 25.0,
         "detail": {
+          "广州华景商贸有限责任公司-快乐猴": {
+            "plan": 3,
+            "done": 3
+          },
           "上海塞翁福农业发展有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -128,10 +132,6 @@
           },
           "东莞市赢卓商贸有限公司-快乐猴-自营": {
             "plan": 1,
-            "done": 0
-          },
-          "广州华景商贸有限责任公司-快乐猴": {
-            "plan": 3,
             "done": 0
           },
           "广州霖磐贸易有限公司-快乐猴": {
@@ -243,27 +243,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "广州华景商贸有限责任公司-快乐猴",
-          "billCode": "YY20260603001683",
-          "skuCount": 3,
-          "pcs": 7935,
-          "timeSlot": "10:00 - 16:00"
-        },
-        {
-          "supplierName": "广州华景商贸有限责任公司-快乐猴",
-          "billCode": "YY20260603001683",
-          "skuCount": 3,
-          "pcs": 7935,
-          "timeSlot": "10:00 - 16:00"
-        },
-        {
-          "supplierName": "广州华景商贸有限责任公司-快乐猴",
-          "billCode": "YY20260603001683",
-          "skuCount": 3,
-          "pcs": 7935,
-          "timeSlot": "10:00 - 16:00"
-        },
-        {
           "supplierName": "广州霖磐贸易有限公司-快乐猴",
           "billCode": "YY20260602008373",
           "skuCount": 1,
@@ -348,17 +327,73 @@
           "timeSlot": "15:00 - 15:30"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "广州华景商贸有限责任公司-快乐猴",
+          "billCode": "YY20260603001683",
+          "signTime": "10:24",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "广州华景商贸有限责任公司-快乐猴",
+          "billCode": "YY20260603001683",
+          "signTime": "10:24",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "广州华景商贸有限责任公司-快乐猴",
+          "billCode": "YY20260603001683",
+          "signTime": "10:24",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "广州华景商贸有限责任公司-快乐猴",
+          "skuName": "娃哈哈爽歪歪营养酸奶饮品200g*4瓶",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "广州华景商贸有限责任公司-快乐猴",
+          "skuName": "娃哈哈 营养快线原味水果牛奶饮品 500g",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "广州华景商贸有限责任公司-快乐猴",
+          "skuName": "娃哈哈AD钙奶220g*4瓶（整组销售）",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "开平市国腾食品有限公司-快乐猴-自营",
           "skuName": "松花皮蛋6枚 330g",
           "completeTime": "09:49",
-          "waitingMins": 34
+          "waitingMins": 45
         }
       ],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "广州华景商贸有限责任公司-快乐猴",
+          "poNo": "CG202605280764",
+          "reserveBillCode": "YY20260603001683",
+          "skuId": "235294",
+          "skuName": "娃哈哈爽歪歪营养酸奶饮品200g*4瓶",
+          "purchaseQty": 60,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -523,10 +558,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 91,
+      "not_started": 105,
       "in_progress": 0,
       "done": 0,
-      "total": 91,
+      "total": 105,
       "status": "ok"
     }
   },

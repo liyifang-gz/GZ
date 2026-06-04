@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-04T09:48:38",
+  "timestamp": "2026-06-04T09:51:38",
   "date": "2026-06-04",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 5,
-      "done": 0,
-      "pending": 5,
-      "passed": 0,
+      "done": 1,
+      "pending": 4,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 20.0,
+      "bill_done": 1,
       "bill_total": 5,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 720,
+      "pcs_passed": 720,
       "pcs_total": 1650,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 43.6,
+      "sku_done": 1,
       "sku_total": 5,
-      "sku_rate": 0.0
+      "sku_rate": 20.0
     },
     "putaway": {
       "total": 3323,
@@ -338,20 +338,13 @@
           "supplierName": "上海塞翁福农业发展有限公司-快乐猴",
           "billCode": "YY20260521006782",
           "signTime": "09:46",
-          "status": "已签到未卸货"
+          "unloadStartTime": "09:50",
+          "status": "卸货中"
         }
       ],
       "qc_pending": [
         {
           "seq": 1,
-          "supplierName": "开平市国腾食品有限公司-快乐猴-自营",
-          "skuName": "松花皮蛋6枚 330g",
-          "arrivalTime": "11:00",
-          "unloadFinishTime": "08:50",
-          "statusLabel": "首次进行中"
-        },
-        {
-          "seq": 2,
           "supplierName": "上海塞翁福农业发展有限公司-快乐猴",
           "skuName": "快乐猴 香菇 100g",
           "arrivalTime": "14:00",
@@ -359,7 +352,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 3,
+          "seq": 2,
           "supplierName": "上海塞翁福农业发展有限公司-快乐猴",
           "skuName": "快乐猴 东北黑木耳 100g",
           "arrivalTime": "14:00",
@@ -367,7 +360,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 4,
+          "seq": 3,
           "supplierName": "上海塞翁福农业发展有限公司-快乐猴",
           "skuName": "快乐猴 什锦菌菇汤料 50g",
           "arrivalTime": "14:00",
@@ -375,7 +368,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 5,
+          "seq": 4,
           "supplierName": "上海塞翁福农业发展有限公司-快乐猴",
           "skuName": "快乐猴 磨皮莲子 150g",
           "arrivalTime": "14:00",
@@ -383,7 +376,14 @@
           "statusLabel": "待质检"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "开平市国腾食品有限公司-快乐猴-自营",
+          "skuName": "松花皮蛋6枚 330g",
+          "completeTime": "09:49",
+          "waitingMins": 2
+        }
+      ],
       "signed_not_recv": [
         {
           "supplierName": "开平市国腾食品有限公司-快乐猴-自营",
@@ -393,7 +393,7 @@
           "skuName": "松花皮蛋6枚 330g",
           "purchaseQty": 720,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 1
         },
         {
@@ -590,11 +590,11 @@
     "status": "ok",
     "pool": {
       "plan_pcs": 6748,
-      "alloc_pcs": 6718,
-      "alloc_rate": 99.6,
+      "alloc_pcs": 6748,
+      "alloc_rate": 100.0,
       "picked_pcs": 3142,
       "sow_pcs": 3142,
-      "sow_rate": 46.8,
+      "sow_rate": 46.6,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 35,
@@ -603,32 +603,23 @@
       "sku_ship": 0,
       "total_orders": 12
     },
-    "unalloc_details": [
-      {
-        "receiverName": "快乐猴-南海国昌广场店-023",
-        "orderNo": "DB20260603502930",
-        "skuNum": 4,
-        "planQty": 126,
-        "allocQty": 96,
-        "unallocQty": 30
-      }
-    ],
+    "unalloc_details": [],
     "seeding": {
-      "not_started": 71,
+      "not_started": 76,
       "in_progress": 0,
       "done": 0,
-      "total": 71,
+      "total": 76,
       "status": "ok"
     }
   },
   "plan": {
     "total_orders": 12,
     "total_pcs": 6748,
-    "alloc_pcs": 6718,
-    "alloc_rate": 99.6,
+    "alloc_pcs": 6748,
+    "alloc_rate": 100.0,
     "picked_pcs": 3142,
     "sow_pcs": 3142,
-    "sow_rate": 46.8,
+    "sow_rate": 46.6,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 35,
@@ -638,16 +629,7 @@
     "by_store": {
       "KLH-广州常温1仓-GZ0209": 6748.0
     },
-    "unalloc_details": [
-      {
-        "receiverName": "快乐猴-南海国昌广场店-023",
-        "orderNo": "DB20260603502930",
-        "skuNum": 4,
-        "planQty": 126,
-        "allocQty": 96,
-        "unallocQty": 30
-      }
-    ],
+    "unalloc_details": [],
     "status": "ok"
   },
   "transport": {

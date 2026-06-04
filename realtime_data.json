@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-06-05T07:20:54",
+  "timestamp": "2026-06-05T07:23:54",
   "date": "2026-06-05",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
-      "total": 86,
+      "total": 87,
       "signed": 21,
-      "waiting": 65
+      "waiting": 66
     },
     "ontime": {
       "ontime": 0,
       "early": 21,
       "late": 0,
-      "total": 86,
+      "total": 87,
       "rate": 0.0,
-      "early_rate": 24.4,
+      "early_rate": 24.1,
       "late_rate": 0.0
     },
     "reserve_progress": {
       "po_total": 91,
-      "po_reserved": 86,
-      "rate": 94.5,
+      "po_reserved": 87,
+      "rate": 95.6,
       "po_data_ok": true
     },
     "unload": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 71,
-      "done": 7,
-      "pending": 64,
-      "passed": 7,
+      "done": 8,
+      "pending": 63,
+      "passed": 8,
       "rejected": 0,
-      "rate": 9.9,
-      "bill_done": 7,
+      "rate": 11.3,
+      "bill_done": 8,
       "bill_total": 71,
-      "pcs_done": 170,
-      "pcs_passed": 170,
+      "pcs_done": 210,
+      "pcs_passed": 210,
       "pcs_total": 7607,
       "pcs_rejected": 0,
-      "pcs_rate": 2.2,
-      "sku_done": 7,
+      "pcs_rate": 2.8,
+      "sku_done": 8,
       "sku_total": 71,
-      "sku_rate": 9.9
+      "sku_rate": 11.3
     },
     "putaway": {
       "total": 0,
@@ -59,27 +59,31 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 86,
+        "total": 87,
         "done": 21,
-        "rate": 24.4
+        "rate": 24.1
       },
       "pcs": {
         "total": 37561,
-        "done": 35755,
-        "rate": 95.2,
+        "done": 36185,
+        "rate": 96.3,
         "recv_done": 37561,
         "recv_rate": 100.0
       },
       "sku": {
-        "total": 439,
+        "total": 442,
         "done": 71,
-        "rate": 16.2
+        "rate": 16.1
       },
       "supplier": {
-        "total": 76,
+        "total": 77,
         "done": 18,
-        "rate": 23.7,
+        "rate": 23.4,
         "detail": {
+          "深圳市鑫鸿泰果蔬有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 0
+          },
           "广州光明乳品有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -155,10 +159,6 @@
           "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴": {
             "plan": 2,
             "done": 0
-          },
-          "深圳市一二三农产品投资有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -170,14 +170,6 @@
           "poNo": "CG202606049002",
           "skuCount": 3,
           "pcs": 20,
-          "preArrivalTime": "2026-06-05",
-          "poStatus": "待确认"
-        },
-        {
-          "supplierName": "深圳市鑫鸿泰果蔬有限公司-快乐猴-自营",
-          "poNo": "CG202606048837",
-          "skuCount": 3,
-          "pcs": 430,
           "preArrivalTime": "2026-06-05",
           "poStatus": "待确认"
         },
@@ -207,6 +199,13 @@
         }
       ],
       "unsigned": [
+        {
+          "supplierName": "深圳市鑫鸿泰果蔬有限公司-快乐猴-自营",
+          "billCode": "YY20260605000421",
+          "skuCount": 3,
+          "pcs": 430,
+          "timeSlot": "14:00 - 14:30"
+        },
         {
           "supplierName": "广州市江丰实业翁源有限公司翁源家禽食品加工厂-快乐猴",
           "billCode": "YY20260604010954",
@@ -549,13 +548,6 @@
           "skuCount": 1,
           "pcs": 26,
           "timeSlot": "17:00 - 17:30"
-        },
-        {
-          "supplierName": "清远清鑫食品有限公司-快乐猴",
-          "billCode": "YY20260604004326",
-          "skuCount": 7,
-          "pcs": 91,
-          "timeSlot": "17:30 - 18:00"
         }
       ],
       "unloading": [
@@ -843,7 +835,7 @@
           "skuName": "红油麻酱凉皮 370g",
           "arrivalTime": "04:30",
           "unloadFinishTime": "04:08",
-          "statusLabel": "待质检"
+          "statusLabel": "首次进行中"
         },
         {
           "seq": 35,
@@ -1076,14 +1068,6 @@
           "arrivalTime": "07:30",
           "unloadFinishTime": "07:03",
           "statusLabel": "待质检"
-        },
-        {
-          "seq": 64,
-          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
-          "skuName": "燕塘 青提味老广州风味发酵乳 180g*6",
-          "arrivalTime": "07:30",
-          "unloadFinishTime": "07:03",
-          "statusLabel": "首次进行中"
         }
       ],
       "recv_pending": [
@@ -1091,43 +1075,49 @@
           "supplierName": "东莞千厨食品有限公司-快乐猴",
           "skuName": "五香猪肝 150g",
           "completeTime": "07:10",
-          "waitingMins": 11
+          "waitingMins": 14
         },
         {
           "supplierName": "东莞千厨食品有限公司-快乐猴",
           "skuName": "猪耳猪头肉卤味双拼 205g",
           "completeTime": "07:09",
-          "waitingMins": 12
+          "waitingMins": 15
         },
         {
           "supplierName": "东莞千厨食品有限公司-快乐猴",
           "skuName": "手撕酱板鸭 120g",
           "completeTime": "07:11",
-          "waitingMins": 10
+          "waitingMins": 13
         },
         {
           "supplierName": "东莞千厨食品有限公司-快乐猴",
           "skuName": "盐焗鹌鹑蛋 200g",
           "completeTime": "07:12",
-          "waitingMins": 8
+          "waitingMins": 11
         },
         {
           "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
           "skuName": "燕塘 无蔗糖老广州风味发酵乳 180g*6",
           "completeTime": "07:19",
-          "waitingMins": 2
+          "waitingMins": 5
+        },
+        {
+          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
+          "skuName": "燕塘 青提味老广州风味发酵乳 180g*6",
+          "completeTime": "07:23",
+          "waitingMins": 0
         },
         {
           "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
           "skuName": "燕塘 牛油果味老广州风味发酵乳 180g*6",
           "completeTime": "07:20",
-          "waitingMins": 0
+          "waitingMins": 3
         },
         {
           "supplierName": "深圳新泉农产品有限公司-快乐猴",
           "skuName": "鲜散养130天文昌鸡切块 450g",
           "completeTime": "07:14",
-          "waitingMins": 6
+          "waitingMins": 9
         }
       ],
       "signed_not_recv": [
@@ -1645,7 +1635,7 @@
           "skuName": "燕塘 青提味老广州风味发酵乳 180g*6",
           "purchaseQty": 40,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 47
         },
         {
@@ -1920,8 +1910,8 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 7151.0,
-      "efficiency_formula": "35755 PCS / 5 人",
+      "efficiency": 7237.0,
+      "efficiency_formula": "36185 PCS / 5 人",
       "inbound_schedule": 5
     }
   },

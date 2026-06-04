@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-04T11:12:38",
+  "timestamp": "2026-06-04T11:15:39",
   "date": "2026-06-04",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 28,
-      "signed": 11,
-      "waiting": 14
+      "signed": 13,
+      "waiting": 12
     },
     "ontime": {
       "ontime": 3,
-      "early": 8,
+      "early": 10,
       "late": 0,
       "total": 25,
       "rate": 12.0,
-      "early_rate": 32.0,
+      "early_rate": 40.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 7,
+      "total": 9,
       "done": 5,
-      "rate": 71.4,
+      "rate": 55.6,
       "pcs_done": 7070,
-      "sign_pcs_done": 16205
+      "sign_pcs_done": 17565
     },
     "qc": {
-      "total": 5,
+      "total": 8,
       "done": 1,
-      "pending": 4,
+      "pending": 7,
       "passed": 1,
       "rejected": 0,
-      "rate": 20.0,
+      "rate": 12.5,
       "bill_done": 1,
-      "bill_total": 5,
+      "bill_total": 8,
       "pcs_done": 720,
       "pcs_passed": 720,
-      "pcs_total": 9855,
+      "pcs_total": 11215,
       "pcs_rejected": 0,
-      "pcs_rate": 7.3,
+      "pcs_rate": 6.4,
       "sku_done": 1,
-      "sku_total": 5,
-      "sku_rate": 20.0
+      "sku_total": 8,
+      "sku_rate": 12.5
     },
     "putaway": {
       "total": 5413,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 25,
-        "done": 11,
-        "rate": 44.0
+        "done": 13,
+        "rate": 52.0
       },
       "pcs": {
         "total": 34874,
@@ -72,14 +72,22 @@
       },
       "sku": {
         "total": 48,
-        "done": 29,
-        "rate": 60.4
+        "done": 32,
+        "rate": 66.7
       },
       "supplier": {
         "total": 20,
-        "done": 6,
-        "rate": 30.0,
+        "done": 8,
+        "rate": 40.0,
         "detail": {
+          "福建皓大工贸有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "深圳市尚古堂食品发展有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州东旺国际贸易有限公司": {
             "plan": 1,
             "done": 1
@@ -120,10 +128,6 @@
             "plan": 1,
             "done": 0
           },
-          "福建皓大工贸有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
           "泰州市成央记食品制造有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -153,10 +157,6 @@
             "done": 0
           },
           "海宁博鸿食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "深圳市尚古堂食品发展有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -228,13 +228,6 @@
           "timeSlot": "11:30 - 12:30"
         },
         {
-          "supplierName": "福建皓大工贸有限公司-快乐猴",
-          "billCode": "YY20260601005374",
-          "skuCount": 2,
-          "pcs": 380,
-          "timeSlot": "12:30 - 13:00"
-        },
-        {
           "supplierName": "泰州市成央记食品制造有限公司-快乐猴",
           "billCode": "YY20260601002648",
           "skuCount": 1,
@@ -289,16 +282,21 @@
           "skuCount": 2,
           "pcs": 1560,
           "timeSlot": "15:30 - 16:00"
+        }
+      ],
+      "unloading": [
+        {
+          "supplierName": "福建皓大工贸有限公司-快乐猴",
+          "billCode": "YY20260601005374",
+          "signTime": "11:15",
+          "status": "已签到未卸货"
         },
         {
           "supplierName": "深圳市尚古堂食品发展有限公司-快乐猴",
           "billCode": "YY20260520010109",
-          "skuCount": 1,
-          "pcs": 980,
-          "timeSlot": "15:00 - 15:30"
-        }
-      ],
-      "unloading": [
+          "signTime": "11:15",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "广州东旺国际贸易有限公司",
           "billCode": "YY20260603008063",
@@ -357,6 +355,30 @@
           "arrivalTime": "15:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "深圳市尚古堂食品发展有限公司-快乐猴",
+          "skuName": "快乐猴 石屏腐竹 280g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "福建皓大工贸有限公司-快乐猴",
+          "skuName": "快乐猴 海带板200g",
+          "arrivalTime": "12:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "福建皓大工贸有限公司-快乐猴",
+          "skuName": "快乐猴 海带丝16g*5",
+          "arrivalTime": "12:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -364,7 +386,7 @@
           "supplierName": "开平市国腾食品有限公司-快乐猴-自营",
           "skuName": "松花皮蛋6枚 330g",
           "completeTime": "09:49",
-          "waitingMins": 83
+          "waitingMins": 86
         }
       ],
       "signed_not_recv": [
@@ -380,6 +402,39 @@
           "seq": 1
         },
         {
+          "supplierName": "深圳市尚古堂食品发展有限公司-快乐猴",
+          "poNo": "CG202605208988",
+          "reserveBillCode": "YY20260520010109",
+          "skuId": "1299759",
+          "skuName": "快乐猴 石屏腐竹 280g",
+          "purchaseQty": 980,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "福建皓大工贸有限公司-快乐猴",
+          "poNo": "CG202605208984",
+          "reserveBillCode": "YY20260601005374",
+          "skuId": "1122952",
+          "skuName": "快乐猴 海带丝16g*5",
+          "purchaseQty": 240,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
+          "supplierName": "福建皓大工贸有限公司-快乐猴",
+          "poNo": "CG202605208984",
+          "reserveBillCode": "YY20260601005374",
+          "skuId": "1122874",
+          "skuName": "快乐猴 海带板200g",
+          "purchaseQty": 140,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
           "supplierName": "广州华景商贸有限责任公司-快乐猴",
           "poNo": "CG202605280764",
           "reserveBillCode": "YY20260603001683",
@@ -388,7 +443,7 @@
           "purchaseQty": 60,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 5
         }
       ],
       "qc_recv_pending": [],
@@ -544,10 +599,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 111,
+      "not_started": 113,
       "in_progress": 0,
       "done": 0,
-      "total": 111,
+      "total": 113,
       "status": "ok"
     }
   },

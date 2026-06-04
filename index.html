@@ -1760,6 +1760,22 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
       throw lastErr;
     }
 
+    const CACHE_KEY_PREFIX = 'gz_realtime_cache_';
+    function getCacheKey() { return CACHE_KEY_PREFIX + getCurrentWarehouse(); }
+    function saveCache(data) {
+      try { localStorage.setItem(getCacheKey(), JSON.stringify({ts: Date.now(), data: data})); } catch(e) {}
+    }
+    function loadCache() {
+      try {
+        const raw = localStorage.getItem(getCacheKey());
+        if (!raw) return null;
+        const obj = JSON.parse(raw);
+        // 缓存有效期 4 小时
+        if (Date.now() - obj.ts > 4 * 3600 * 1000) return null;
+        return obj.data;
+      } catch(e) { return null; }
+    }
+
     async function loadData() {
       const utEl = document.getElementById('update-time');
       try {
@@ -1775,14 +1791,23 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
         }
         const data = await resp.json();
         window._latestData = data;
+        saveCache(data);  // 存缓存
         renderData(data);
         initDateSelect(data);  // async，后台探测历史文件，不阻塞主渲染
         countdown = 30;
       } catch (e) {
         const isNetwork = e.name === 'AbortError' || e.message === 'Failed to fetch' || e.name === 'TypeError';
-        utEl.textContent = isNetwork
-          ? '⚠️ 网络波动，请点击「立即刷新」重试'
-          : '加载失败: ' + e.message;
+        // 网络波动时先用缓存渲染，再显示提示
+        const cached = loadCache();
+        if (isNetwork && cached) {
+          window._latestData = cached;
+          renderData(cached);
+          utEl.textContent = '⚠️ 网络波动，显示缓存数据（' + (cached.timestamp || '').slice(11,16) + '），点击「立即刷新」重试';
+        } else {
+          utEl.textContent = isNetwork
+            ? '⚠️ 网络波动，请点击「立即刷新」重试'
+            : '加载失败: ' + e.message;
+        }
       }
     }
 
@@ -1810,8 +1835,8 @@ tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
           renderData(data);
         }
       } catch (e) {
-        // 失败时显示警告，不再静默吞掉
-        if (utEl) utEl.textContent = '⚠️ 自动刷新失败，请点击「立即刷新」重试';
+        // 失败时静默（不打断当前渲染内容），仅更新时间提示
+        if (utEl) utEl.textContent = '⚠️ 自动刷新失败，显示上次数据';
       } finally {
         _silentRefreshing = false;
       }

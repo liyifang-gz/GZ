@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-05T03:55:45",
+  "timestamp": "2026-06-05T03:58:46",
   "date": "2026-06-05",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 86,
-      "signed": 7,
-      "waiting": 79
+      "signed": 10,
+      "waiting": 76
     },
     "ontime": {
       "ontime": 0,
-      "early": 7,
+      "early": 10,
       "late": 0,
       "total": 86,
       "rate": 0.0,
-      "early_rate": 8.1,
+      "early_rate": 11.6,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 7,
+      "total": 10,
       "done": 7,
-      "rate": 100.0,
+      "rate": 70.0,
       "pcs_done": 4567,
-      "sign_pcs_done": 4567
+      "sign_pcs_done": 4663
     },
     "qc": {
-      "total": 25,
+      "total": 36,
       "done": 0,
-      "pending": 25,
+      "pending": 36,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 25,
+      "bill_total": 36,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 4567,
+      "pcs_total": 4663,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 25,
+      "sku_total": 36,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 86,
-        "done": 7,
-        "rate": 8.1
+        "done": 10,
+        "rate": 11.6
       },
       "pcs": {
         "total": 37561,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 439,
-        "done": 25,
-        "rate": 5.7
+        "done": 36,
+        "rate": 8.2
       },
       "supplier": {
         "total": 76,
-        "done": 6,
-        "rate": 7.9,
+        "done": 7,
+        "rate": 9.2,
         "detail": {
+          "佛山市轩宝食品有限公司-快乐猴": {
+            "plan": 3,
+            "done": 3
+          },
           "广州光明乳品有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -153,10 +157,6 @@
             "done": 0
           },
           "佳农食品（上海）有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "广州市昌兴农产品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -544,21 +544,40 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
-          "billCode": "YY20260604004790",
-          "skuCount": 2,
-          "pcs": 22,
-          "timeSlot": "04:30 - 05:00"
-        },
-        {
           "supplierName": "广州泉润食品有限公司-快乐猴",
           "billCode": "YY20260604004778",
           "skuCount": 6,
           "pcs": 1013,
           "timeSlot": "16:00 - 16:30"
+        },
+        {
+          "supplierName": "福建省嘎嘎黄小鸭食品有限公司-快乐猴",
+          "billCode": "YY20260604004728",
+          "skuCount": 4,
+          "pcs": 78,
+          "timeSlot": "16:30 - 17:00"
         }
       ],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "billCode": "YY20260604004761",
+          "signTime": "03:56",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "billCode": "YY20260604004775",
+          "signTime": "03:56",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "billCode": "YY20260604004790",
+          "signTime": "03:56",
+          "status": "已签到未卸货"
+        }
+      ],
       "qc_pending": [
         {
           "seq": 1,
@@ -758,6 +777,94 @@
           "skuName": "光明 红枣益生菌风味发酵乳 100g*8",
           "arrivalTime": "04:00",
           "unloadFinishTime": "03:33",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 26,
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "skuName": "青花椒烤鱼 1.415kg",
+          "arrivalTime": "04:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 27,
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "skuName": "潮汕风味牛肉丸火锅 1.23kg",
+          "arrivalTime": "04:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 28,
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "skuName": "土豆泥红肠沙拉 250g",
+          "arrivalTime": "04:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 29,
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "skuName": "日式混合蔬菜沙拉 200g",
+          "arrivalTime": "04:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 30,
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "skuName": "海陆空蔬菜混合沙拉 250g",
+          "arrivalTime": "04:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 31,
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "skuName": "鸡胸肉凯撒沙拉 270g",
+          "arrivalTime": "04:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 32,
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "skuName": "奥尔良风味烤鸡腿排大口饭团 180g",
+          "arrivalTime": "04:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 33,
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "skuName": "多彩什锦寿司拼盘 410g",
+          "arrivalTime": "04:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 34,
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "skuName": "红油麻酱凉皮 370g",
+          "arrivalTime": "04:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 35,
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "skuName": "反卷寿司拼盘 220g",
+          "arrivalTime": "04:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 36,
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "skuName": "红油麻酱凉面 370g",
+          "arrivalTime": "04:30",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],
@@ -1037,6 +1144,127 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 25
+        },
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "poNo": "CG202606043781",
+          "reserveBillCode": "YY20260604004790",
+          "skuId": "1405147",
+          "skuName": "青花椒烤鱼 1.415kg",
+          "purchaseQty": 13,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 26
+        },
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "poNo": "CG202606043791",
+          "reserveBillCode": "YY20260604004761",
+          "skuId": "1405405",
+          "skuName": "奥尔良风味烤鸡腿排大口饭团 180g",
+          "purchaseQty": 11,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 27
+        },
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "poNo": "CG202606043787",
+          "reserveBillCode": "YY20260604004775",
+          "skuId": "1406474",
+          "skuName": "日式混合蔬菜沙拉 200g",
+          "purchaseQty": 11,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 28
+        },
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "poNo": "CG202606043791",
+          "reserveBillCode": "YY20260604004761",
+          "skuId": "1421039",
+          "skuName": "反卷寿司拼盘 220g",
+          "purchaseQty": 10,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 29
+        },
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "poNo": "CG202606043787",
+          "reserveBillCode": "YY20260604004775",
+          "skuId": "1406364",
+          "skuName": "土豆泥红肠沙拉 250g",
+          "purchaseQty": 9,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 30
+        },
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "poNo": "CG202606043781",
+          "reserveBillCode": "YY20260604004790",
+          "skuId": "1405333",
+          "skuName": "潮汕风味牛肉丸火锅 1.23kg",
+          "purchaseQty": 9,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 31
+        },
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "poNo": "CG202606043787",
+          "reserveBillCode": "YY20260604004775",
+          "skuId": "1406723",
+          "skuName": "海陆空蔬菜混合沙拉 250g",
+          "purchaseQty": 8,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 32
+        },
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "poNo": "CG202606043791",
+          "reserveBillCode": "YY20260604004761",
+          "skuId": "1406331",
+          "skuName": "多彩什锦寿司拼盘 410g",
+          "purchaseQty": 7,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 33
+        },
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "poNo": "CG202606043787",
+          "reserveBillCode": "YY20260604004775",
+          "skuId": "1473767",
+          "skuName": "鸡胸肉凯撒沙拉 270g",
+          "purchaseQty": 7,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 34
+        },
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "poNo": "CG202606043791",
+          "reserveBillCode": "YY20260604004761",
+          "skuId": "1487075",
+          "skuName": "红油麻酱凉面 370g",
+          "purchaseQty": 6,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 35
+        },
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "poNo": "CG202606043791",
+          "reserveBillCode": "YY20260604004761",
+          "skuId": "1407084",
+          "skuName": "红油麻酱凉皮 370g",
+          "purchaseQty": 5,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 36
         }
       ],
       "qc_recv_pending": [],

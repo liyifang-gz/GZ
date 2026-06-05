@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- v20260605-4 -->
+<!-- v20260605-5 -->
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -1504,7 +1504,7 @@ putawayBarPct = pcsRate;
       // 约车建议🔍按鈕：有数据才显示
       const vehicleBtn = document.getElementById('vehicle-detail-btn');
       if (vehicleBtn) {
-        if (suggestCars > 0) { vehicleBtn.style.opacity = ''; vehicleBtn.style.pointerEvents = 'auto'; }
+        if (suggestCars > 0) { vehicleBtn.style.opacity = '1'; vehicleBtn.style.pointerEvents = 'auto'; }
         else { vehicleBtn.style.opacity = '0'; vehicleBtn.style.pointerEvents = 'none'; }
       }
 
@@ -1545,7 +1545,7 @@ putawayBarPct = pcsRate;
           const pct = (tRate * 100).toFixed(1) + '%';
           tempEl.textContent = pct;
           tempEl.style.color = tRate >= 0.95 ? '#10b981' : tRate >= 0.85 ? '#f59e0b' : '#ef4444';
-          if (tempBtn) { tempBtn.style.opacity = ''; tempBtn.style.pointerEvents = 'auto'; }
+          if (tempBtn) { tempBtn.style.opacity = '1'; tempBtn.style.pointerEvents = 'auto'; }
           const tempSub = document.getElementById('temp-detail-sub');
           if (tempSub) tempSub.textContent = `${tQual}合格/${tTotal}车${tAbnormal.length > 0 ? ' ⚠️' + tAbnormal.length + '车异常' : ''}`;
           // 异常车辆明细面板

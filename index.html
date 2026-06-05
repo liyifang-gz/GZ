@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- v20260605-5 -->
+<!-- v20260605-6 -->
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -680,14 +680,14 @@ let countdownTimer;
     }
 
     function toggleDetail(id) {
+      console.log('[toggleDetail] called with id=', id);
       const el = document.getElementById(id);
-      if (!el) return;
-      // 内联 style 优先级高于 class，直接切换 display
-      if (el.style.display === 'none' || el.style.display === '') {
-        el.style.display = 'block';
-      } else {
-        el.style.display = 'none';
-      }
+      if (!el) { console.log('[toggleDetail] element not found:', id); return; }
+      console.log('[toggleDetail] current display=', el.style.display, 'computed=', window.getComputedStyle(el).display);
+      // 判断当前是否可见（用 computedStyle，因为 CSS class 也可能隐藏）
+      const isHidden = window.getComputedStyle(el).display === 'none';
+      el.style.display = isHidden ? 'block' : 'none';
+      console.log('[toggleDetail] set display to', el.style.display);
     }
 
     // ===== 出库明细弹窗（分配/关笼/组盘）=====

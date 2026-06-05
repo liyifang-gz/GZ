@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-05T14:58:34",
+  "timestamp": "2026-06-05T15:05:37",
   "date": "2026-06-05",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 3,
       "signed": 1,
-      "waiting": 1
+      "waiting": 0
     },
     "ontime": {
       "ontime": 0,
       "early": 1,
       "late": 0,
-      "total": 2,
+      "total": 1,
       "rate": 0.0,
-      "early_rate": 50.0,
+      "early_rate": 100.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -59,9 +59,9 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 2,
+        "total": 1,
         "done": 1,
-        "rate": 50.0
+        "rate": 100.0
       },
       "pcs": {
         "total": 3812,
@@ -71,22 +71,18 @@
         "recv_rate": 63.0
       },
       "sku": {
-        "total": 2,
+        "total": 1,
         "done": 1,
-        "rate": 50.0
+        "rate": 100.0
       },
       "supplier": {
-        "total": 2,
+        "total": 1,
         "done": 1,
-        "rate": 50.0,
+        "rate": 100.0,
         "detail": {
           "郯城瑞发德食品加工有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
-          },
-          "海霸王（汕头）食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -118,15 +114,7 @@
           "poStatus": "已完成"
         }
       ],
-      "unsigned": [
-        {
-          "supplierName": "海霸王（汕头）食品有限公司-快乐猴",
-          "billCode": "YY20260603001785",
-          "skuCount": 1,
-          "pcs": 400,
-          "timeSlot": "16:00 - 16:30"
-        }
-      ],
+      "unsigned": [],
       "unloading": [],
       "qc_pending": [],
       "recv_pending": [],
@@ -155,33 +143,23 @@
     },
     "sowing": {
       "total": 128,
-      "done": 48,
-      "rate": 37.5
+      "done": 121,
+      "rate": 94.5
     },
     "caging": {
       "total": 128,
-      "done": 48,
-      "rate": 37.5,
-      "pcs_done": 875,
+      "done": 121,
+      "rate": 94.5,
+      "pcs_done": 2500,
       "pcs_total": 2653,
-      "pcs_rate": 33.0
+      "pcs_rate": 94.2
     },
     "packing": {
       "total": 5,
-      "done": 1,
-      "rate": 20.0
+      "done": 3,
+      "rate": 60.0
     },
     "uncaged_details": [
-      {
-        "containerCode": "RQ-05-03-0700548",
-        "poiName": "番禺建华汇店",
-        "qty": 1272
-      },
-      {
-        "containerCode": "RQ-05-03-0700550",
-        "poiName": "番禺建华汇店",
-        "qty": 353
-      },
       {
         "containerCode": "RQ-05-03-0700730",
         "poiName": "禅城东方广场店",
@@ -194,16 +172,6 @@
       }
     ],
     "unpacked_details": [
-      {
-        "containerCode": "RQ-05-03-0700548",
-        "poiName": "番禺建华汇店",
-        "qty": 1272
-      },
-      {
-        "containerCode": "RQ-05-03-0700550",
-        "poiName": "番禺建华汇店",
-        "qty": 353
-      },
       {
         "containerCode": "RQ-05-03-0700730",
         "poiName": "禅城东方广场店",
@@ -225,10 +193,10 @@
       "multi_pallet_count": 0,
       "multi_pallet_total": 128,
       "multi_pallet_rate": 0.0,
-      "load_rate": 33.0,
+      "load_rate": 94.2,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "46.83%",
-      "load_rate_loaded": "85.08%",
+      "load_rate_unloaded": "7.85%",
+      "load_rate_loaded": "85.57%",
       "load_rate_shipped": "--",
       "low_load_containers": [],
       "all_containers_detail": [
@@ -286,21 +254,21 @@
         "total": 2653,
         "picked": 0,
         "sowed": 0,
-        "caged": 875,
-        "not_caged": 1778,
+        "caged": 2500,
+        "not_caged": 153,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 33.0,
+        "cage_rate": 94.2,
         "sowed_picked": 2653
       },
       "sku": {
         "total": 128,
         "picked": 0,
         "sowed": 0,
-        "caged": 48,
+        "caged": 121,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 37.5
+        "cage_rate": 94.5
       }
     },
     "status": "ok",
@@ -321,10 +289,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 77,
+      "not_started": 73,
       "in_progress": 3,
-      "done": 152,
-      "total": 232,
+      "done": 159,
+      "total": 235,
       "status": "ok"
     }
   },

@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- v20260605-11 -->
+<!-- v20260605-12 -->
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -1511,17 +1511,28 @@ putawayBarPct = pcsRate;
         else { vehicleBtn.style.display = 'none'; vehicleBtn.style.pointerEvents = 'none'; }
       }
 
-      // 门店约车建议详情（点击展开）
+      // 门店约车建议详情（点击展开）—— 格式参考 YC1
       if (plan.by_store && Object.keys(plan.by_store).length > 0) {
-        let html = '<table><tr><th>门店</th><th>件数</th><th>托数</th><th>建议车数</th></tr>';
-        for (const [s, p] of Object.entries(plan.by_store)) {
-          const pallets = (p / PCS_PER_PALLET).toFixed(1);
-          const cars = (p / PCS_PER_PALLET / PALLETS_PER_CAR).toFixed(2);
-          html += `<tr><td>${s}</td><td>${fmt(p)}</td><td>${pallets}</td><td>${cars}</td></tr>`;
+        // 每门店独立计算托数（向上取整）和建议车辆（向上取整），不足1托按1托
+        let totalCars = 0;
+        const storeRows = Object.entries(plan.by_store).map(([s, p]) => {
+          const rawPallets = p / PCS_PER_PALLET;
+          const pallets = Math.max(1, Math.ceil(rawPallets));  // 不足1托按1托
+          const cars = Math.ceil(pallets / PALLETS_PER_CAR);
+          totalCars += cars;
+          return { s, p, pallets, cars };
+        });
+        let html = '<table><tr><th style="text-align:left">门店</th><th>件数</th><th>托数</th><th>建议车辆</th></tr>';
+        for (const { s, p, pallets, cars } of storeRows) {
+          html += `<tr><td>${s}</td><td style="text-align:right">${fmt(p)}</td><td style="text-align:right">${pallets}</td><td style="text-align:right;color:#f59e0b;font-weight:600">${cars} 辆</td></tr>`;
         }
-        html += `<tr style="font-weight:600;background:#f3f4f6;border-top:2px solid #d1d5db;"><td>合计</td><td>${fmt(planPcs)}</td><td>${(planPcs/PCS_PER_PALLET).toFixed(1)}</td><td>${suggestCars}</td></tr>`;
+        const totalPallets = Math.round(planPcs / PCS_PER_PALLET);
+        html += `<tr style="font-weight:600;background:#f3f4f6;border-top:2px solid #d1d5db;"><td>合计</td><td style="text-align:right">${fmt(planPcs)}</td><td style="text-align:right">${totalPallets}</td><td style="text-align:right;color:#f59e0b">${totalCars} 辆</td></tr>`;
+        html += `<tr><td colspan="4" style="font-size:10px;color:#9ca3af;padding-top:4px">口径：每门店独立向上取整 · ${PCS_PER_PALLET}件/托 · ${PALLETS_PER_CAR}托/车</td></tr>`;
         html += '</table>';
         document.getElementById("plan-vehicle-detail").innerHTML = html;
+        // 同步更新顶部合计车辆数（按门店独立取整后的总和）
+        document.getElementById("plan-vehicle-suggest").textContent = totalCars + " 车";
       }
     }
 

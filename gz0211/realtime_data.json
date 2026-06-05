@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-06-06T04:58:30",
+  "timestamp": "2026-06-06T05:03:36",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
-      "total": 0,
+      "total": 10,
       "signed": 0,
-      "waiting": 0
+      "waiting": 7
     },
     "ontime": {
       "ontime": 0,
       "early": 0,
       "late": 0,
-      "total": 0,
-      "rate": 0,
-      "early_rate": 0,
-      "late_rate": 0
+      "total": 7,
+      "rate": 0.0,
+      "early_rate": 0.0,
+      "late_rate": 0.0
     },
     "reserve_progress": {
-      "po_total": 0,
-      "po_reserved": 0,
-      "rate": 0,
+      "po_total": 3,
+      "po_reserved": 3,
+      "rate": 100.0,
       "po_data_ok": true
     },
     "unload": {
@@ -49,42 +49,117 @@
       "sku_rate": 0
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
+      "total": 444,
+      "done": 444,
+      "rate": 100.0,
+      "sku_total": 3,
+      "sku_done": 3,
+      "sku_rate": 100.0,
       "details": []
     },
     "dimensions": {
       "reserve": {
-        "total": 0,
+        "total": 7,
         "done": 0,
-        "rate": 0
+        "rate": 0.0
       },
       "pcs": {
-        "total": 0,
-        "done": 0,
-        "rate": 0,
-        "recv_done": 0,
-        "recv_rate": 0
+        "total": 936,
+        "done": 936,
+        "rate": 100.0,
+        "recv_done": 444,
+        "recv_rate": 47.4
       },
       "sku": {
-        "total": 0,
+        "total": 13,
         "done": 0,
-        "rate": 0
+        "rate": 0.0
       },
       "supplier": {
-        "total": 0,
+        "total": 6,
         "done": 0,
-        "rate": 0,
-        "detail": {}
+        "rate": 0.0,
+        "detail": {
+          "深圳市鲜百汇食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 0
+          },
+          "海霸王（汕头）食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 0
+          },
+          "三全食品股份有限公司-快乐猴": {
+            "plan": 2,
+            "done": 0
+          },
+          "广州赛味谦食品有限公司": {
+            "plan": 1,
+            "done": 0
+          },
+          "广州市艺奇雪贸易有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 0
+          },
+          "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 0
+          }
+        }
       }
     },
     "details": {
       "unreserved": [],
-      "unsigned": [],
+      "unsigned": [
+        {
+          "supplierName": "深圳市鲜百汇食品有限公司-快乐猴",
+          "billCode": "YY20260605007499",
+          "skuCount": 1,
+          "pcs": 300,
+          "timeSlot": "14:30 - 15:00"
+        },
+        {
+          "supplierName": "海霸王（汕头）食品有限公司-快乐猴",
+          "billCode": "YY20260605006563",
+          "skuCount": 1,
+          "pcs": 400,
+          "timeSlot": "16:00 - 16:30"
+        },
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "billCode": "YY20260605002011",
+          "skuCount": 3,
+          "pcs": 210,
+          "timeSlot": "16:00 - 16:30"
+        },
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "billCode": "YY20260605002011",
+          "skuCount": 3,
+          "pcs": 210,
+          "timeSlot": "16:00 - 16:30"
+        },
+        {
+          "supplierName": "广州赛味谦食品有限公司",
+          "billCode": "YY20260604005840",
+          "skuCount": 2,
+          "pcs": 492,
+          "timeSlot": "15:30 - 16:00"
+        },
+        {
+          "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
+          "billCode": "YY20260603009650",
+          "skuCount": 2,
+          "pcs": 1200,
+          "timeSlot": "10:30 - 11:00"
+        },
+        {
+          "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
+          "billCode": "YY20260602000963",
+          "skuCount": 1,
+          "pcs": 800,
+          "timeSlot": "14:30 - 15:00"
+        }
+      ],
       "unloading": [],
       "qc_pending": [],
       "recv_pending": [],
@@ -96,8 +171,8 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 0.0,
-      "efficiency_formula": "0 PCS / 2 人",
+      "efficiency": 468.0,
+      "efficiency_formula": "936 PCS / 2 人",
       "inbound_schedule": 2
     }
   },

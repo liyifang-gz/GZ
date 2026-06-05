@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- v20260605-8 -->
+<!-- v20260605-9 -->
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -680,15 +680,12 @@ let countdownTimer;
     }
 
     function toggleDetail(id) {
-      console.log('[toggleDetail] called with id=', id);
       const el = document.getElementById(id);
-      if (!el) { console.log('[toggleDetail] element not found:', id); return; }
-      console.log('[toggleDetail] current display=', el.style.display, 'computed=', window.getComputedStyle(el).display);
-      // 判断当前是否可见（用 computedStyle，因为 CSS class 也可能隐藏）
+      if (!el) return;
       const isHidden = window.getComputedStyle(el).display === 'none';
       el.style.display = isHidden ? 'block' : 'none';
-      console.log('[toggleDetail] set display to', el.style.display);
     }
+    window.toggleDetail = toggleDetail;  // 暴露到全局，供 onclick 属性调用
 
     // ===== 出库明细弹窗（分配/关笼/组盘）=====
     // 出库明细：可排序表格渲染

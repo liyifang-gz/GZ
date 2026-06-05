@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-05T09:54:33",
+  "timestamp": "2026-06-05T09:57:30",
   "date": "2026-06-05",
   "warehouse": "GZ0210",
   "inbound": {
@@ -25,37 +25,45 @@
     },
     "unload": {
       "total": 5,
-      "done": 3,
-      "rate": 60.0,
-      "pcs_done": 4360,
+      "done": 4,
+      "rate": 80.0,
+      "pcs_done": 34960,
       "sign_pcs_done": 44960
     },
     "qc": {
       "total": 6,
-      "done": 1,
-      "pending": 5,
-      "passed": 1,
+      "done": 3,
+      "pending": 3,
+      "passed": 3,
       "rejected": 0,
-      "rate": 16.7,
-      "bill_done": 1,
+      "rate": 50.0,
+      "bill_done": 3,
       "bill_total": 6,
-      "pcs_done": 1020,
-      "pcs_passed": 1020,
+      "pcs_done": 3010,
+      "pcs_passed": 3010,
       "pcs_total": 44600,
       "pcs_rejected": 0,
-      "pcs_rate": 2.3,
-      "sku_done": 1,
+      "pcs_rate": 6.7,
+      "sku_done": 3,
       "sku_total": 6,
-      "sku_rate": 16.7
+      "sku_rate": 50.0
     },
     "putaway": {
-      "total": 10940,
+      "total": 12960,
       "done": 10940,
-      "rate": 100.0,
-      "sku_total": 12,
+      "rate": 84.4,
+      "sku_total": 14,
       "sku_done": 12,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 85.7,
+      "details": [
+        {
+          "poNo": "CG202605286790",
+          "hopePcs": 2020,
+          "putPcs": 0,
+          "hopeSku": 2,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +75,8 @@
         "total": 56490,
         "done": 55680,
         "rate": 98.6,
-        "recv_done": 10940,
-        "recv_rate": 19.4
+        "recv_done": 12960,
+        "recv_rate": 22.9
       },
       "sku": {
         "total": 37,
@@ -218,13 +226,6 @@
       "unloading": [
         {
           "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
-          "billCode": "YY20260521007097",
-          "signTime": "09:32",
-          "unloadStartTime": "09:33",
-          "status": "卸货中"
-        },
-        {
-          "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
           "billCode": "YY20260530001249",
           "signTime": "09:25",
           "status": "已签到未卸货"
@@ -233,14 +234,6 @@
       "qc_pending": [
         {
           "seq": 1,
-          "supplierName": "北京匠造芊成商贸有限公司-快乐猴-自营",
-          "skuName": "快乐猴 青芥辣 43g",
-          "arrivalTime": "09:30",
-          "unloadFinishTime": "09:19",
-          "statusLabel": "首次进行中"
-        },
-        {
-          "seq": 2,
           "supplierName": "芭菲生物科技(江苏)有限公司-快乐猴",
           "skuName": "快乐猴 红枣枸杞水 500mL",
           "arrivalTime": "09:00",
@@ -248,15 +241,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 3,
-          "supplierName": "芭菲生物科技(江苏)有限公司-快乐猴",
-          "skuName": "快乐猴 陈皮山楂水 500mL",
-          "arrivalTime": "09:00",
-          "unloadFinishTime": "09:26",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 4,
+          "seq": 2,
           "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
           "skuName": "新包材-盒子-热出提手盒",
           "arrivalTime": "11:00",
@@ -264,11 +249,11 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 5,
+          "seq": 3,
           "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
           "skuName": "新包材-塑盒-蛋挞盒",
           "arrivalTime": "11:00",
-          "unloadFinishTime": "--",
+          "unloadFinishTime": "09:55",
           "statusLabel": "待质检"
         }
       ],
@@ -277,7 +262,19 @@
           "supplierName": "北京匠造芊成商贸有限公司-快乐猴-自营",
           "skuName": "快乐猴 原味浓香咖喱 100g",
           "completeTime": "09:53",
-          "waitingMins": 1
+          "waitingMins": 4
+        },
+        {
+          "supplierName": "北京匠造芊成商贸有限公司-快乐猴-自营",
+          "skuName": "快乐猴 青芥辣 43g",
+          "completeTime": "09:55",
+          "waitingMins": 2
+        },
+        {
+          "supplierName": "芭菲生物科技(江苏)有限公司-快乐猴",
+          "skuName": "快乐猴 陈皮山楂水 500mL",
+          "completeTime": "09:57",
+          "waitingMins": 0
         }
       ],
       "signed_not_recv": [
@@ -304,28 +301,6 @@
           "seq": 2
         },
         {
-          "supplierName": "北京匠造芊成商贸有限公司-快乐猴-自营",
-          "poNo": "CG202605286790",
-          "reserveBillCode": "YY20260529004602",
-          "skuId": "1478078",
-          "skuName": "快乐猴 原味浓香咖喱 100g",
-          "purchaseQty": 1020,
-          "recvQty": 0,
-          "hasQc": true,
-          "seq": 3
-        },
-        {
-          "supplierName": "北京匠造芊成商贸有限公司-快乐猴-自营",
-          "poNo": "CG202605286790",
-          "reserveBillCode": "YY20260529004602",
-          "skuId": "1478540",
-          "skuName": "快乐猴 青芥辣 43g",
-          "purchaseQty": 1000,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 4
-        },
-        {
           "supplierName": "芭菲生物科技(江苏)有限公司-快乐猴",
           "poNo": "CG202605291287",
           "reserveBillCode": "YY20260530001571",
@@ -334,7 +309,7 @@
           "purchaseQty": 990,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 3
         },
         {
           "supplierName": "芭菲生物科技(江苏)有限公司-快乐猴",
@@ -344,8 +319,8 @@
           "skuName": "快乐猴 陈皮山楂水 500mL",
           "purchaseQty": 990,
           "recvQty": 0,
-          "hasQc": false,
-          "seq": 6
+          "hasQc": true,
+          "seq": 4
         },
         {
           "supplierName": "广州市领恒商贸有限公司-快乐猴",
@@ -356,7 +331,7 @@
           "purchaseQty": 360,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 5
         }
       ],
       "qc_recv_pending": [],
@@ -706,10 +681,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 54,
+      "not_started": 57,
       "in_progress": 0,
       "done": 0,
-      "total": 54,
+      "total": 57,
       "status": "ok"
     }
   },

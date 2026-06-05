@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- v20260605-10 -->
+<!-- v20260605-11 -->
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -235,6 +235,9 @@
             line-height: 1;
         }
         .progress-row-wrap:hover .inb-detail-trigger { opacity: 1; }
+        /* 运输模块 KPI 格 hover 显示🔍 */
+        .transport-kpi-hover { position: relative; }
+        .transport-kpi-hover:hover .inb-detail-trigger { opacity: 1; }
 
         /* 弹窗升级样式 */
         .modal-card {
@@ -592,14 +595,14 @@
             </div>
             <!-- 第一行：计划件数 / 约车建议 / 装载率 / 温度达成 / 到站准时率 -->
             <div class="kpi-row">
-                <div class="kpi" id="vehicle-kpi" style="cursor:default">
+                <div class="kpi transport-kpi-hover" id="vehicle-kpi">
                     <div class="number" id="plan-vehicle-suggest" style="color:#f59e0b">--</div>
-                    <div class="unit">约车建议数 <span id="vehicle-detail-btn" style="display:none;cursor:pointer;font-size:13px" onclick="toggleDetail('plan-vehicle-detail')">🔍</span></div>
+                    <div class="unit">约车建议数 <button class="inb-detail-trigger" id="vehicle-detail-btn" style="display:none" onclick="toggleDetail('plan-vehicle-detail')">🔍</button></div>
                 </div>
                 <div class="kpi"><div class="number" id="plan-load-rate" style="color:#bbb">--</div><div class="unit" style="color:#bbb">车辆装载率<br><span style="font-size:9px;">(接入中)</span></div></div>
-                <div class="kpi" id="temp-kpi" style="cursor:default">
+                <div class="kpi transport-kpi-hover" id="temp-kpi">
                     <div class="number" id="plan-temp-rate" style="color:#bbb">--</div>
-                    <div class="unit" id="plan-temp-unit">温度达成 <span id="temp-detail-btn" style="display:none;cursor:pointer;font-size:13px" onclick="toggleDetail('temp-achieve-detail')">🔍</span><br><span id="temp-detail-sub" style="font-size:9px;color:#bbb">(接入中)</span></div>
+                    <div class="unit" id="plan-temp-unit">温度达成 <button class="inb-detail-trigger" id="temp-detail-btn" style="display:none" onclick="toggleDetail('temp-achieve-detail')">🔍</button><br><span id="temp-detail-sub" style="font-size:9px;color:#bbb">(接入中)</span></div>
                 </div>
                 <div class="kpi"><div class="number" id="plan-ontime-rate" style="color:#bbb">--</div><div class="unit" style="color:#bbb">到站准时率<br><span style="font-size:9px;">(接入中)</span></div></div>
             </div>
@@ -1503,7 +1506,9 @@ putawayBarPct = pcsRate;
       // 约车建议🔍按鈕：有数据才显示
       const vehicleBtn = document.getElementById('vehicle-detail-btn');
       if (vehicleBtn) {
-        vehicleBtn.style.display = suggestCars > 0 ? 'inline' : 'none';
+        // 有数据：移除display隐藏，opacity由CSS hover控制；无数据：隐藏且禁用点击
+        if (suggestCars > 0) { vehicleBtn.style.display = ''; vehicleBtn.style.pointerEvents = 'auto'; }
+        else { vehicleBtn.style.display = 'none'; vehicleBtn.style.pointerEvents = 'none'; }
       }
 
       // 门店约车建议详情（点击展开）
@@ -1536,14 +1541,14 @@ putawayBarPct = pcsRate;
         if (tRate === null || tRate === undefined || transport.temp_status === 'no_tab') {
           tempEl.textContent = '--';
           tempEl.style.color = '#bbb';
-          if (tempBtn) { tempBtn.style.display = 'none'; }
+          if (tempBtn) { tempBtn.style.display = 'none'; tempBtn.style.pointerEvents = 'none'; }
           const tempSub = document.getElementById('temp-detail-sub');
           if (tempSub) tempSub.textContent = '(接入中)';
         } else {
           const pct = (tRate * 100).toFixed(1) + '%';
           tempEl.textContent = pct;
           tempEl.style.color = tRate >= 0.95 ? '#10b981' : tRate >= 0.85 ? '#f59e0b' : '#ef4444';
-          if (tempBtn) { tempBtn.style.display = 'inline'; }
+          if (tempBtn) { tempBtn.style.display = ''; tempBtn.style.pointerEvents = 'auto'; }
           const tempSub = document.getElementById('temp-detail-sub');
           if (tempSub) tempSub.textContent = `${tQual}合格/${tTotal}车${tAbnormal.length > 0 ? ' ⚠️' + tAbnormal.length + '车异常' : ''}`;
           // 异常车辆明细面板

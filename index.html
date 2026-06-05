@@ -591,9 +591,9 @@
             </div>
             <!-- 第一行：计划件数 / 约车建议 / 装载率 / 温度达成 / 到站准时率 -->
             <div class="kpi-row">
-                <div class="kpi" style="cursor:pointer" onclick="toggleDetail('plan-vehicle-detail')">
+                <div class="kpi" style="cursor:pointer" onclick="toggleDetail('plan-vehicle-detail')" title="点击查看门店明细">
                     <div class="number" id="plan-vehicle-suggest" style="color:#f59e0b">--</div>
-                    <div class="unit">约车建议数 <span style="font-size:9px;color:#93c5fd">▾</span></div>
+                    <div class="unit">约车建议数 <span id="vehicle-detail-arrow" style="font-size:9px;color:#93c5fd">🔍</span></div>
                 </div>
                 <div class="kpi"><div class="number" id="plan-load-rate" style="color:#bbb">--</div><div class="unit" style="color:#bbb">车辆装载率<br><span style="font-size:9px;">(接入中)</span></div></div>
                 <div class="kpi" style="cursor:pointer" onclick="toggleDetail('temp-achieve-detail')">
@@ -680,7 +680,13 @@ let countdownTimer;
 
     function toggleDetail(id) {
       const el = document.getElementById(id);
-      if (el) el.classList.toggle("show");
+      if (!el) return;
+      // 内联 style 优先级高于 class，直接切换 display
+      if (el.style.display === 'none' || el.style.display === '') {
+        el.style.display = 'block';
+      } else {
+        el.style.display = 'none';
+      }
     }
 
     // ===== 出库明细弹窗（分配/关笼/组盘）=====
@@ -1529,7 +1535,7 @@ putawayBarPct = pcsRate;
           const pct = (tRate * 100).toFixed(1) + '%';
           tempEl.textContent = pct;
           tempEl.style.color = tRate >= 0.95 ? '#10b981' : tRate >= 0.85 ? '#f59e0b' : '#ef4444';
-          if (tempUnit) tempUnit.innerHTML = `温度达成 <span style="font-size:9px;color:#93c5fd">${tAbnormal.length > 0 ? '🔍⯆' : ''}</span><br><span style="font-size:9px;color:#6b7280">${tQual}合格/${tTotal}车</span>`;
+          if (tempUnit) tempUnit.innerHTML = `温度达成 <span style="font-size:9px;color:#93c5fd">🔍</span><br><span style="font-size:9px;color:#6b7280">${tQual}合格/${tTotal}车${tAbnormal.length > 0 ? ' ⚠️' + tAbnormal.length + '车异常' : ''}</span>`;
           // 异常车辆明细面板
           const detailEl = document.getElementById('temp-achieve-detail');
           if (detailEl) {

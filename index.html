@@ -631,7 +631,7 @@
                 <div class="kpi"><div class="number" id="att-rate">--%</div><div class="unit">出勤率</div></div>
                 <div class="kpi">
                     <div class="number" id="att-productivity">--</div>
-                    <div class="unit">单仓人效<br><span style="font-size:9px;color:#bbb">出库/出勤</span></div>
+                    <div class="unit">单仓人效<br><span style="font-size:9px;color:#bbb">播种/出勤</span></div>
                 </div>
             </div>
 <!-- 分岗位 -->
@@ -1630,14 +1630,14 @@ putawayBarPct = pcsRate;
         document.getElementById("att-badge").className = "badge badge-gray";
       }
 
-      // 单仓人效 = 出库计划量(plan_pcs) / 全仓出勤人数
-      const outboundPlanPcs =
+      // 单仓人效 = 播种件数(sow_pcs) / 当天出勤人数
+      const sowPcs =
         (currentData &&
           currentData.outbound &&
           currentData.outbound.pool &&
-          currentData.outbound.pool.plan_pcs) ||
+          currentData.outbound.pool.sow_pcs) ||
         0;
-      const productivity = actual > 0 && outboundPlanPcs > 0 ? Math.round(outboundPlanPcs / actual) : 0;
+      const productivity = actual > 0 && sowPcs > 0 ? Math.round(sowPcs / actual) : 0;
       document.getElementById("att-productivity").textContent = productivity > 0 ? fmt(productivity) : "--";
 
       // 分岗位表格（4列：岗位、在职、出勤、出勤率）

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-05T09:30:30",
+  "timestamp": "2026-06-05T09:34:52",
   "date": "2026-06-05",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 19,
-      "signed": 3,
-      "waiting": 11
+      "signed": 4,
+      "waiting": 10
     },
     "ontime": {
       "ontime": 0,
-      "early": 3,
+      "early": 4,
       "late": 0,
       "total": 14,
       "rate": 0.0,
-      "early_rate": 21.4,
+      "early_rate": 28.6,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 3,
+      "total": 4,
       "done": 2,
-      "rate": 66.7,
+      "rate": 50.0,
       "pcs_done": 4000,
-      "sign_pcs_done": 14000
+      "sign_pcs_done": 44600
     },
     "qc": {
-      "total": 5,
+      "total": 6,
       "done": 0,
-      "pending": 5,
+      "pending": 6,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 5,
+      "bill_total": 6,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 14000,
+      "pcs_total": 44600,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 5,
+      "sku_total": 6,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 14,
-        "done": 3,
-        "rate": 21.4
+        "done": 4,
+        "rate": 28.6
       },
       "pcs": {
         "total": 56490,
@@ -72,8 +72,8 @@
       },
       "sku": {
         "total": 37,
-        "done": 5,
-        "rate": 13.5
+        "done": 6,
+        "rate": 16.2
       },
       "supplier": {
         "total": 12,
@@ -82,7 +82,7 @@
         "detail": {
           "长菁（浙江）新材料有限公司-快乐猴-自营": {
             "plan": 2,
-            "done": 1
+            "done": 2
           },
           "芭菲生物科技(江苏)有限公司-快乐猴": {
             "plan": 1,
@@ -220,16 +220,16 @@
           "skuCount": 1,
           "pcs": 600,
           "timeSlot": "15:30 - 16:00"
-        },
-        {
-          "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
-          "billCode": "YY20260521007097",
-          "skuCount": 1,
-          "pcs": 30600,
-          "timeSlot": "11:00 - 16:00"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
+          "billCode": "YY20260521007097",
+          "signTime": "09:32",
+          "unloadStartTime": "09:33",
+          "status": "卸货中"
+        },
         {
           "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
           "billCode": "YY20260530001249",
@@ -277,10 +277,29 @@
           "arrivalTime": "11:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
+          "skuName": "新包材-塑盒-蛋挞盒",
+          "arrivalTime": "11:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
       "signed_not_recv": [
+        {
+          "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
+          "poNo": "CG2026052010159",
+          "reserveBillCode": "YY20260521007097",
+          "skuId": "1444515",
+          "skuName": "新包材-塑盒-蛋挞盒",
+          "purchaseQty": 30600,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
         {
           "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
           "poNo": "CG2026052810256",
@@ -290,7 +309,7 @@
           "purchaseQty": 10000,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 2
         },
         {
           "supplierName": "北京匠造芊成商贸有限公司-快乐猴-自营",
@@ -301,7 +320,7 @@
           "purchaseQty": 1020,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 3
         },
         {
           "supplierName": "北京匠造芊成商贸有限公司-快乐猴-自营",
@@ -312,7 +331,7 @@
           "purchaseQty": 1000,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
+          "seq": 4
         },
         {
           "supplierName": "芭菲生物科技(江苏)有限公司-快乐猴",
@@ -323,7 +342,7 @@
           "purchaseQty": 990,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 5
         },
         {
           "supplierName": "芭菲生物科技(江苏)有限公司-快乐猴",
@@ -334,7 +353,7 @@
           "purchaseQty": 990,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 6
         }
       ],
       "qc_recv_pending": [],
@@ -684,10 +703,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 41,
+      "not_started": 46,
       "in_progress": 0,
       "done": 0,
-      "total": 41,
+      "total": 46,
       "status": "ok"
     }
   },

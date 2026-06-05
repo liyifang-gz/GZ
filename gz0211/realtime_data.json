@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-05T10:30:25",
+  "timestamp": "2026-06-05T10:36:21",
   "date": "2026-06-05",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 3,
-      "signed": 0,
-      "waiting": 3
+      "signed": 1,
+      "waiting": 2
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 3,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 33.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 60
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 60,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 2400,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 3,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 33.3
       },
       "pcs": {
         "total": 3812,
@@ -72,23 +72,23 @@
       },
       "sku": {
         "total": 3,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 33.3
       },
       "supplier": {
         "total": 3,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 33.3,
         "detail": {
+          "郯城瑞发德食品加工有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "广州冰力达食品有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
           },
           "海霸王（汕头）食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "郯城瑞发德食品加工有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
           }
@@ -136,19 +136,41 @@
           "skuCount": 1,
           "pcs": 400,
           "timeSlot": "16:00 - 16:30"
-        },
+        }
+      ],
+      "unloading": [
         {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
           "billCode": "YY20260531004127",
-          "skuCount": 1,
-          "pcs": 60,
-          "timeSlot": "16:00 - 16:30"
+          "signTime": "10:35",
+          "unloadStartTime": "10:35",
+          "status": "卸货中"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "skuName": "(原料)奥尔良全腿 10kg",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "poNo": "CG202605208974",
+          "reserveBillCode": "YY20260531004127",
+          "skuId": "1439185",
+          "skuName": "(原料)奥尔良全腿 10kg",
+          "purchaseQty": 60,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -251,10 +273,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 97,
+      "not_started": 100,
       "in_progress": 0,
       "done": 0,
-      "total": 97,
+      "total": 100,
       "status": "ok"
     }
   },

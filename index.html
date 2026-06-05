@@ -596,11 +596,16 @@
                     <div class="unit">约车建议数 <span style="font-size:9px;color:#93c5fd">▾</span></div>
                 </div>
                 <div class="kpi"><div class="number" id="plan-load-rate" style="color:#bbb">--</div><div class="unit" style="color:#bbb">车辆装载率<br><span style="font-size:9px;">(接入中)</span></div></div>
-                <div class="kpi"><div class="number" id="plan-temp-rate" style="color:#bbb">--</div><div class="unit" style="color:#bbb">温度达成<br><span style="font-size:9px;">(接入中)</span></div></div>
+                <div class="kpi" style="cursor:pointer" onclick="toggleDetail('temp-achieve-detail')">
+                    <div class="number" id="plan-temp-rate" style="color:#bbb">--</div>
+                    <div class="unit" id="plan-temp-unit">温度达成 <span style="font-size:9px;color:#93c5fd" id="temp-detail-arrow"></span></div>
+                </div>
                 <div class="kpi"><div class="number" id="plan-ontime-rate" style="color:#bbb">--</div><div class="unit" style="color:#bbb">到站准时率<br><span style="font-size:9px;">(接入中)</span></div></div>
             </div>
             <!-- 约车建议门店详情（可折叠） -->
             <div class="detail-panel" id="plan-vehicle-detail" style="display:none"></div>
+            <!-- 温度达成不合格车辆明细（可折叠） -->
+            <div class="detail-panel" id="temp-achieve-detail" style="display:none"></div>
             <!-- 第二行：计划车次 / 已发车次 / 到站车次 / 串点率 -->
             <div class="kpi-row" style="margin-top:8px;padding-top:8px;border-top:1px solid #f0f0f0;">
                 <div class="kpi"><div class="number" id="plan-trip-total" style="color:#bbb">--</div><div class="unit" style="color:#bbb">计划车次<br><span style="font-size:9px;">(接入中)</span></div></div>
@@ -1506,6 +1511,53 @@ putawayBarPct = pcsRate;
 
     function renderTransport(transport) {
       if (!transport) return;
+
+      // 温度达成渲染
+      const tempEl = document.getElementById('plan-temp-rate');
+      const tempUnit = document.getElementById('plan-temp-unit');
+      const tempArrow = document.getElementById('temp-detail-arrow');
+      if (tempEl) {
+        const tRate = transport.temp_rate;
+        const tTotal = transport.temp_total || 0;
+        const tQual  = transport.temp_qualified || 0;
+        const tAbnormal = transport.temp_abnormal || [];
+        if (tRate === null || tRate === undefined || transport.temp_status === 'no_tab') {
+          tempEl.textContent = '--';
+          tempEl.style.color = '#bbb';
+          if (tempUnit) tempUnit.innerHTML = '温度达成<br><span style="font-size:9px;color:#bbb">(接入中)</span>';
+        } else {
+          const pct = (tRate * 100).toFixed(1) + '%';
+          tempEl.textContent = pct;
+          tempEl.style.color = tRate >= 0.95 ? '#10b981' : tRate >= 0.85 ? '#f59e0b' : '#ef4444';
+          if (tempUnit) tempUnit.innerHTML = `温度达成 <span style="font-size:9px;color:#93c5fd">${tAbnormal.length > 0 ? '🔍⯆' : ''}</span><br><span style="font-size:9px;color:#6b7280">${tQual}合格/${tTotal}车</span>`;
+          // 异常车辆明细面板
+          const detailEl = document.getElementById('temp-achieve-detail');
+          if (detailEl) {
+            if (tAbnormal.length === 0) {
+              detailEl.innerHTML = '<div style="padding:8px;color:#10b981;font-size:12px">✅ 所有运输中车辆温度均合格</div>';
+            } else {
+              let html = `<div style="font-size:11px;color:#6b7280;padding:4px 0 6px">不合格车辆 ${tAbnormal.length} 辆：</div>`;
+              html += '<table style="width:100%;border-collapse:collapse;font-size:11px">';
+              html += '<tr style="background:#f9fafb"><th style="text-align:left;padding:3px 4px">车牌</th><th>司机</th><th>车型</th><th>预冷</th><th>到站</th><th>累计异常</th><th>持续异常</th></tr>';
+              tAbnormal.forEach(function(v) {
+                const mark = (s) => s === '不合格' ? `<span style="color:#ef4444">${s}</span>` : s;
+                html += `<tr style="border-bottom:1px solid #f0f0f0">`;
+                html += `<td style="padding:3px 4px">${v.licensePlate}</td>`;
+                html += `<td style="padding:3px 4px">${v.driverName}</td>`;
+                html += `<td style="padding:3px 4px">${v.tempLevel}</td>`;
+                html += `<td style="padding:3px 4px;text-align:center">${mark(v.preCool)}</td>`;
+                html += `<td style="padding:3px 4px;text-align:center">${mark(v.arrivalPoi)}</td>`;
+                html += `<td style="padding:3px 4px;text-align:center">${mark(v.accumulation)}</td>`;
+                html += `<td style="padding:3px 4px;text-align:center">${mark(v.duration)}</td>`;
+                html += '</tr>';
+              });
+              html += '</table>';
+              detailEl.innerHTML = html;
+            }
+          }
+        }
+      }
+
       const el = document.getElementById('plan-route-rate');
       if (!el) return;
       const rate = transport.serial_rate;

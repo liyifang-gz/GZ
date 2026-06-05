@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-05T10:00:31",
+  "timestamp": "2026-06-05T10:05:05",
   "date": "2026-06-05",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 19,
-      "signed": 5,
-      "waiting": 9
+      "signed": 8,
+      "waiting": 6
     },
     "ontime": {
-      "ontime": 0,
+      "ontime": 2,
       "early": 5,
-      "late": 0,
+      "late": 1,
       "total": 14,
-      "rate": 0.0,
+      "rate": 14.3,
       "early_rate": 35.7,
-      "late_rate": 0.0
+      "late_rate": 7.1
     },
     "reserve_progress": {
       "po_total": 16,
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 5,
+      "total": 7,
       "done": 5,
-      "rate": 100.0,
+      "rate": 71.4,
       "pcs_done": 44960,
-      "sign_pcs_done": 44960
+      "sign_pcs_done": 53000
     },
     "qc": {
-      "total": 6,
+      "total": 18,
       "done": 4,
-      "pending": 2,
+      "pending": 14,
       "passed": 4,
       "rejected": 0,
-      "rate": 66.7,
+      "rate": 22.2,
       "bill_done": 4,
-      "bill_total": 6,
+      "bill_total": 18,
       "pcs_done": 4000,
       "pcs_passed": 4000,
-      "pcs_total": 44600,
+      "pcs_total": 52640,
       "pcs_rejected": 0,
-      "pcs_rate": 9.0,
+      "pcs_rate": 7.6,
       "sku_done": 4,
-      "sku_total": 6,
-      "sku_rate": 66.7
+      "sku_total": 17,
+      "sku_rate": 23.5
     },
     "putaway": {
       "total": 12960,
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 14,
-        "done": 5,
-        "rate": 35.7
+        "done": 8,
+        "rate": 57.1
       },
       "pcs": {
         "total": 56490,
@@ -80,14 +80,26 @@
       },
       "sku": {
         "total": 37,
-        "done": 7,
-        "rate": 18.9
+        "done": 30,
+        "rate": 81.1
       },
       "supplier": {
         "total": 12,
-        "done": 4,
-        "rate": 33.3,
+        "done": 6,
+        "rate": 50.0,
         "detail": {
+          "沈阳康奉堡农业发展有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
+          "芭菲生物科技(江苏)有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "霞浦源之初工贸有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "北京匠造芊成商贸有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -99,10 +111,6 @@
           "长菁（浙江）新材料有限公司-快乐猴-自营": {
             "plan": 2,
             "done": 2
-          },
-          "芭菲生物科技(江苏)有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
           },
           "柳州市星选食品科技有限公司-快乐猴-自营": {
             "plan": 1,
@@ -122,14 +130,6 @@
           },
           "广东健力宝股份有限公司-快乐猴": {
             "plan": 1,
-            "done": 0
-          },
-          "霞浦源之初工贸有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "沈阳康奉堡农业发展有限公司-快乐猴": {
-            "plan": 2,
             "done": 0
           },
           "好运来（福建）食品有限公司-快乐猴": {
@@ -195,27 +195,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "霞浦源之初工贸有限公司-快乐猴",
-          "billCode": "YY20260529004649",
-          "skuCount": 1,
-          "pcs": 1050,
-          "timeSlot": "09:30 - 10:00"
-        },
-        {
-          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
-          "billCode": "YY20260529000384",
-          "skuCount": 11,
-          "pcs": 6990,
-          "timeSlot": "10:00 - 16:00"
-        },
-        {
-          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
-          "billCode": "YY20260529000384",
-          "skuCount": 11,
-          "pcs": 6990,
-          "timeSlot": "10:00 - 16:00"
-        },
-        {
           "supplierName": "好运来（福建）食品有限公司-快乐猴",
           "billCode": "YY20260528000434",
           "skuCount": 1,
@@ -223,7 +202,26 @@
           "timeSlot": "15:30 - 16:00"
         }
       ],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "billCode": "YY20260529000384",
+          "signTime": "10:03",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "billCode": "YY20260529000384",
+          "signTime": "10:03",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "霞浦源之初工贸有限公司-快乐猴",
+          "billCode": "YY20260529004649",
+          "signTime": "10:01",
+          "status": "已签到未卸货"
+        }
+      ],
       "qc_pending": [
         {
           "seq": 1,
@@ -240,6 +238,102 @@
           "arrivalTime": "11:00",
           "unloadFinishTime": "09:55",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "霞浦源之初工贸有限公司-快乐猴",
+          "skuName": "快乐猴 有机霞浦紫菜 50g",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "skuName": "快乐猴 东北红小豆 1kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "skuName": "快乐猴 贵州小薏仁米 500g",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "skuName": "快乐猴 内蒙出油黄小米 1kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "skuName": "快乐猴 东北黄豆 1kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "skuName": "快乐猴 熟白芝麻 200g",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 9,
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "skuName": "快乐猴 东北赤小豆 1kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 10,
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "skuName": "快乐猴 东北圆糯米 1kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 11,
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "skuName": "快乐猴 三色糙米 1kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 12,
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "skuName": "快乐猴 绿豆 1kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 13,
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "skuName": "快乐猴 东北黑米 1kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 14,
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "skuName": "快乐猴 绿豆 1kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -247,25 +341,25 @@
           "supplierName": "北京匠造芊成商贸有限公司-快乐猴-自营",
           "skuName": "快乐猴 原味浓香咖喱 100g",
           "completeTime": "09:53",
-          "waitingMins": 7
+          "waitingMins": 12
         },
         {
           "supplierName": "北京匠造芊成商贸有限公司-快乐猴-自营",
           "skuName": "快乐猴 青芥辣 43g",
           "completeTime": "09:55",
-          "waitingMins": 5
+          "waitingMins": 10
         },
         {
           "supplierName": "芭菲生物科技(江苏)有限公司-快乐猴",
           "skuName": "快乐猴 红枣枸杞水 500mL",
           "completeTime": "09:59",
-          "waitingMins": 1
+          "waitingMins": 5
         },
         {
           "supplierName": "芭菲生物科技(江苏)有限公司-快乐猴",
           "skuName": "快乐猴 陈皮山楂水 500mL",
           "completeTime": "09:57",
-          "waitingMins": 3
+          "waitingMins": 8
         }
       ],
       "signed_not_recv": [
@@ -292,6 +386,28 @@
           "seq": 2
         },
         {
+          "supplierName": "霞浦源之初工贸有限公司-快乐猴",
+          "poNo": "CG202605208986",
+          "reserveBillCode": "YY20260529004649",
+          "skuId": "1123220",
+          "skuName": "快乐猴 有机霞浦紫菜 50g",
+          "purchaseQty": 1050,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "poNo": "CG202605288993",
+          "reserveBillCode": "YY20260529000384",
+          "skuId": "1140505",
+          "skuName": "快乐猴 东北圆糯米 1kg",
+          "purchaseQty": 1000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
           "supplierName": "芭菲生物科技(江苏)有限公司-快乐猴",
           "poNo": "CG202605291287",
           "reserveBillCode": "YY20260530001571",
@@ -300,7 +416,7 @@
           "purchaseQty": 990,
           "recvQty": 0,
           "hasQc": true,
-          "seq": 3
+          "seq": 5
         },
         {
           "supplierName": "芭菲生物科技(江苏)有限公司-快乐猴",
@@ -311,7 +427,62 @@
           "purchaseQty": 990,
           "recvQty": 0,
           "hasQc": true,
-          "seq": 4
+          "seq": 6
+        },
+        {
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "poNo": "CG202605288993",
+          "reserveBillCode": "YY20260529000384",
+          "skuId": "1140816",
+          "skuName": "快乐猴 三色糙米 1kg",
+          "purchaseQty": 900,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
+        },
+        {
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "poNo": "CG202605288993",
+          "reserveBillCode": "YY20260529000384",
+          "skuId": "1121994",
+          "skuName": "快乐猴 内蒙出油黄小米 1kg",
+          "purchaseQty": 760,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 8
+        },
+        {
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "poNo": "CG202605288993",
+          "reserveBillCode": "YY20260529000384",
+          "skuId": "1121978",
+          "skuName": "快乐猴 贵州小薏仁米 500g",
+          "purchaseQty": 640,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 9
+        },
+        {
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "poNo": "CG202605288993",
+          "reserveBillCode": "YY20260529000384",
+          "skuId": "1122441",
+          "skuName": "快乐猴 熟白芝麻 200g",
+          "purchaseQty": 550,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 10
+        },
+        {
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "poNo": "CG202605288993",
+          "reserveBillCode": "YY20260529000384",
+          "skuId": "1141230",
+          "skuName": "快乐猴 绿豆 1kg",
+          "purchaseQty": 500,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 11
         },
         {
           "supplierName": "广州市领恒商贸有限公司-快乐猴",
@@ -322,7 +493,51 @@
           "purchaseQty": 360,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 12
+        },
+        {
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "poNo": "CG202605288993",
+          "reserveBillCode": "YY20260529000384",
+          "skuId": "1121098",
+          "skuName": "快乐猴 东北红小豆 1kg",
+          "purchaseQty": 320,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 13
+        },
+        {
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "poNo": "CG202605288993",
+          "reserveBillCode": "YY20260529000384",
+          "skuId": "1122167",
+          "skuName": "快乐猴 东北黄豆 1kg",
+          "purchaseQty": 140,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 14
+        },
+        {
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "poNo": "CG202605288993",
+          "reserveBillCode": "YY20260529000384",
+          "skuId": "1123666",
+          "skuName": "快乐猴 东北赤小豆 1kg",
+          "purchaseQty": 100,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 15
+        },
+        {
+          "supplierName": "沈阳康奉堡农业发展有限公司-快乐猴",
+          "poNo": "CG202605288993",
+          "reserveBillCode": "YY20260529000384",
+          "skuId": "1141283",
+          "skuName": "快乐猴 东北黑米 1kg",
+          "purchaseQty": 80,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 16
         }
       ],
       "qc_recv_pending": [],
@@ -672,10 +887,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 68,
+      "not_started": 80,
       "in_progress": 0,
       "done": 0,
-      "total": 68,
+      "total": 80,
       "status": "ok"
     }
   },

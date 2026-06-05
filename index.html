@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<!-- v20260605-9 -->
+<!-- v20260605-10 -->
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8">
@@ -655,6 +655,14 @@ GZ0210 广州冷藏1仓 · 每5分钟自动刷新
 </div>
 
 <script>
+// onclick全局函数（必须在IIFE外定义，否则onclick属性调用报undefined）
+function toggleDetail(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var isHidden = window.getComputedStyle(el).display === 'none';
+  el.style.display = isHidden ? 'block' : 'none';
+}
+
 (function() {
 let countdownTimer;
     let countdown = 30;
@@ -679,13 +687,7 @@ let countdownTimer;
       if (currentData) renderOutbound(currentData.outbound);
     }
 
-    function toggleDetail(id) {
-      const el = document.getElementById(id);
-      if (!el) return;
-      const isHidden = window.getComputedStyle(el).display === 'none';
-      el.style.display = isHidden ? 'block' : 'none';
-    }
-    window.toggleDetail = toggleDetail;  // 暴露到全局，供 onclick 属性调用
+    // toggleDetail 已在IIFE外定义为全局函数
 
     // ===== 出库明细弹窗（分配/关笼/组盘）=====
     // 出库明细：可排序表格渲染

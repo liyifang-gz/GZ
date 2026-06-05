@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-05T09:34:46",
+  "timestamp": "2026-06-05T09:37:45",
   "date": "2026-06-05",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
-      "total": 3,
+      "total": 0,
       "signed": 0,
-      "waiting": 3
+      "waiting": 0
     },
     "ontime": {
       "ontime": 0,
       "early": 0,
       "late": 0,
-      "total": 3,
-      "rate": 0.0,
-      "early_rate": 0.0,
-      "late_rate": 0.0
+      "total": 0,
+      "rate": 0,
+      "early_rate": 0,
+      "late_rate": 0
     },
     "reserve_progress": {
       "po_total": 3,
@@ -49,19 +49,19 @@
       "sku_rate": 0
     },
     "putaway": {
-      "total": 2400,
-      "done": 2400,
-      "rate": 100.0,
-      "sku_total": 1,
-      "sku_done": 1,
-      "sku_rate": 100.0,
+      "total": 0,
+      "done": 0,
+      "rate": 0,
+      "sku_total": 0,
+      "sku_done": 0,
+      "sku_rate": 0,
       "details": []
     },
     "dimensions": {
       "reserve": {
-        "total": 3,
+        "total": 0,
         "done": 0,
-        "rate": 0.0
+        "rate": 0
       },
       "pcs": {
         "total": 3812,
@@ -71,28 +71,15 @@
         "recv_rate": 63.0
       },
       "sku": {
-        "total": 3,
+        "total": 0,
         "done": 0,
-        "rate": 0.0
+        "rate": 0
       },
       "supplier": {
-        "total": 3,
+        "total": 0,
         "done": 0,
-        "rate": 0.0,
-        "detail": {
-          "广州冰力达食品有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
-          "海霸王（汕头）食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "郯城瑞发德食品加工有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          }
-        }
+        "rate": 0,
+        "detail": {}
       }
     },
     "details": {
@@ -122,43 +109,23 @@
           "poStatus": "已完成"
         }
       ],
-      "unsigned": [
-        {
-          "supplierName": "广州冰力达食品有限公司-快乐猴-自营",
-          "billCode": "YY20260603004827",
-          "skuCount": 1,
-          "pcs": 2400,
-          "timeSlot": "15:00 - 16:00"
-        },
-        {
-          "supplierName": "海霸王（汕头）食品有限公司-快乐猴",
-          "billCode": "YY20260603001785",
-          "skuCount": 1,
-          "pcs": 400,
-          "timeSlot": "16:00 - 16:30"
-        },
-        {
-          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
-          "billCode": "YY20260531004127",
-          "skuCount": 1,
-          "pcs": 60,
-          "timeSlot": "16:00 - 16:30"
-        }
-      ],
+      "unsigned": [],
       "unloading": [],
       "qc_pending": [],
       "recv_pending": [],
       "signed_not_recv": [],
       "qc_recv_pending": [],
       "recv_diff": [],
-      "qc_rejected": [],
+      "qc_rejected": {
+        "error": "[Errno 99] Cannot assign requested address"
+      },
       "duplicate_reserve": []
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 2400.0,
-      "efficiency_formula": "2400 PCS / 1 人",
-      "inbound_schedule": 1
+      "efficiency": 0.0,
+      "efficiency_formula": "2400 PCS / 0 人",
+      "inbound_schedule": 0
     }
   },
   "outbound": {
@@ -208,8 +175,8 @@
       "load_rate_shipped": "--",
       "low_load_containers": [],
       "all_containers_detail": [],
-      "outbound_efficiency": 0.0,
-      "outbound_efficiency_formula": "0 PCS / 1 人(拣播员)"
+      "outbound_efficiency": 0,
+      "outbound_efficiency_formula": "--"
     },
     "dimensions": {
       "pcs": {
@@ -251,10 +218,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 46,
+      "not_started": 0,
       "in_progress": 0,
       "done": 0,
-      "total": 46,
+      "total": 0,
       "status": "ok"
     }
   },
@@ -283,38 +250,15 @@
     "trip_total": null,
     "trip_depart": null,
     "trip_arrive": null,
-    "status": "ok",
-    "temp_breakdown": {
-      "冷藏": 0,
-      "冷冻": 0,
-      "常温": 0
-    },
-    "all_count": 0
+    "status": "no_cookie"
   },
   "attendance": {
-    "total_inservice": 2,
-    "schedule": 1,
-    "attendance": 1,
-    "rate": 50.0,
-    "by_job": {
-      "N高叉司机": {
-        "inservice": 2,
-        "schedule": 1,
-        "attendance": 1,
-        "rate": 50.0
-      }
-    },
-    "by_pos_total": {
-      "N冷冻高叉司机": 2
-    },
-    "by_pos_scheduled": {
-      "N冷冻高叉司机": 1
-    },
-    "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS / 1 人",
-    "outbound_efficiency": 0.0,
-    "outbound_efficiency_formula": "0 PCS / 1 人(拣播员)",
-    "inbound_efficiency_workers": 1,
-    "status": "ok"
+    "schedule": 0,
+    "attendance": 0,
+    "rate": 0,
+    "by_job": {},
+    "predicted_efficiency": 0,
+    "status": "error",
+    "error": "mm tab not found"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-05T09:51:33",
+  "timestamp": "2026-06-05T09:54:33",
   "date": "2026-06-05",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 6,
-      "done": 0,
-      "pending": 6,
-      "passed": 0,
+      "done": 1,
+      "pending": 5,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 16.7,
+      "bill_done": 1,
       "bill_total": 6,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 1020,
+      "pcs_passed": 1020,
       "pcs_total": 44600,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 2.3,
+      "sku_done": 1,
       "sku_total": 6,
-      "sku_rate": 0.0
+      "sku_rate": 16.7
     },
     "putaway": {
       "total": 10940,
@@ -80,6 +80,10 @@
         "done": 4,
         "rate": 33.3,
         "detail": {
+          "北京匠造芊成商贸有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "广州市领恒商贸有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -89,10 +93,6 @@
             "done": 2
           },
           "芭菲生物科技(江苏)有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "北京匠造芊成商贸有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
           },
@@ -234,21 +234,13 @@
         {
           "seq": 1,
           "supplierName": "北京匠造芊成商贸有限公司-快乐猴-自营",
-          "skuName": "快乐猴 原味浓香咖喱 100g",
+          "skuName": "快乐猴 青芥辣 43g",
           "arrivalTime": "09:30",
           "unloadFinishTime": "09:19",
           "statusLabel": "首次进行中"
         },
         {
           "seq": 2,
-          "supplierName": "北京匠造芊成商贸有限公司-快乐猴-自营",
-          "skuName": "快乐猴 青芥辣 43g",
-          "arrivalTime": "09:30",
-          "unloadFinishTime": "09:19",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
           "supplierName": "芭菲生物科技(江苏)有限公司-快乐猴",
           "skuName": "快乐猴 红枣枸杞水 500mL",
           "arrivalTime": "09:00",
@@ -256,7 +248,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 4,
+          "seq": 3,
           "supplierName": "芭菲生物科技(江苏)有限公司-快乐猴",
           "skuName": "快乐猴 陈皮山楂水 500mL",
           "arrivalTime": "09:00",
@@ -264,7 +256,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 5,
+          "seq": 4,
           "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
           "skuName": "新包材-盒子-热出提手盒",
           "arrivalTime": "11:00",
@@ -272,7 +264,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 6,
+          "seq": 5,
           "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
           "skuName": "新包材-塑盒-蛋挞盒",
           "arrivalTime": "11:00",
@@ -280,7 +272,14 @@
           "statusLabel": "待质检"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "北京匠造芊成商贸有限公司-快乐猴-自营",
+          "skuName": "快乐猴 原味浓香咖喱 100g",
+          "completeTime": "09:53",
+          "waitingMins": 1
+        }
+      ],
       "signed_not_recv": [
         {
           "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
@@ -312,7 +311,7 @@
           "skuName": "快乐猴 原味浓香咖喱 100g",
           "purchaseQty": 1020,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 3
         },
         {
@@ -707,10 +706,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 51,
+      "not_started": 54,
       "in_progress": 0,
       "done": 0,
-      "total": 51,
+      "total": 54,
       "status": "ok"
     }
   },

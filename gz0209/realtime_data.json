@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-05T11:14:35",
+  "timestamp": "2026-06-05T11:17:35",
   "date": "2026-06-05",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
-      "total": 19,
+      "total": 21,
       "signed": 8,
-      "waiting": 6
+      "waiting": 8
     },
     "ontime": {
       "ontime": 2,
       "early": 5,
       "late": 1,
-      "total": 14,
-      "rate": 14.3,
-      "early_rate": 35.7,
-      "late_rate": 7.1
+      "total": 16,
+      "rate": 12.5,
+      "early_rate": 31.2,
+      "late_rate": 6.2
     },
     "reserve_progress": {
       "po_total": 16,
@@ -74,9 +74,9 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 14,
+        "total": 16,
         "done": 8,
-        "rate": 57.1
+        "rate": 50.0
       },
       "pcs": {
         "total": 56490,
@@ -86,15 +86,19 @@
         "recv_rate": 80.6
       },
       "sku": {
-        "total": 37,
+        "total": 45,
         "done": 30,
-        "rate": 81.1
+        "rate": 66.7
       },
       "supplier": {
-        "total": 12,
+        "total": 13,
         "done": 6,
-        "rate": 50.0,
+        "rate": 46.2,
         "detail": {
+          "江苏尚然饮品有限公司-快乐猴": {
+            "plan": 2,
+            "done": 0
+          },
           "长菁（浙江）新材料有限公司-快乐猴-自营": {
             "plan": 2,
             "done": 2
@@ -166,6 +170,20 @@
         }
       ],
       "unsigned": [
+        {
+          "supplierName": "江苏尚然饮品有限公司-快乐猴",
+          "billCode": "YY20260605002715",
+          "skuCount": 4,
+          "pcs": 5196,
+          "timeSlot": "13:00 - 14:00"
+        },
+        {
+          "supplierName": "江苏尚然饮品有限公司-快乐猴",
+          "billCode": "YY20260605002715",
+          "skuCount": 4,
+          "pcs": 5196,
+          "timeSlot": "13:00 - 14:00"
+        },
         {
           "supplierName": "柳州市星选食品科技有限公司-快乐猴-自营",
           "billCode": "YY20260603010671",
@@ -332,37 +350,37 @@
           "supplierName": "北京匠造芊成商贸有限公司-快乐猴-自营",
           "skuName": "快乐猴 原味浓香咖喱 100g",
           "completeTime": "09:53",
-          "waitingMins": 81
+          "waitingMins": 84
         },
         {
           "supplierName": "北京匠造芊成商贸有限公司-快乐猴-自营",
           "skuName": "快乐猴 青芥辣 43g",
           "completeTime": "09:55",
-          "waitingMins": 79
+          "waitingMins": 82
         },
         {
           "supplierName": "芭菲生物科技(江苏)有限公司-快乐猴",
           "skuName": "快乐猴 红枣枸杞水 500mL",
           "completeTime": "09:59",
-          "waitingMins": 75
+          "waitingMins": 78
         },
         {
           "supplierName": "芭菲生物科技(江苏)有限公司-快乐猴",
           "skuName": "快乐猴 陈皮山楂水 500mL",
           "completeTime": "09:57",
-          "waitingMins": 78
+          "waitingMins": 81
         },
         {
           "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
           "skuName": "新包材-盒子-热出提手盒",
           "completeTime": "10:52",
-          "waitingMins": 22
+          "waitingMins": 25
         },
         {
           "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
           "skuName": "新包材-塑盒-蛋挞盒",
           "completeTime": "10:53",
-          "waitingMins": 21
+          "waitingMins": 24
         }
       ],
       "signed_not_recv": [
@@ -839,21 +857,46 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 19232,
+      "plan_pcs": 19316,
       "alloc_pcs": 19232,
-      "alloc_rate": 100.0,
+      "alloc_rate": 99.6,
       "picked_pcs": 10782,
       "sow_pcs": 10782,
       "sow_rate": 56.1,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 362,
+      "sku_plan": 366,
       "sku_alloc": 362,
       "sku_sow": 329,
       "sku_ship": 0,
-      "total_orders": 10
+      "total_orders": 13
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB2026060587222",
+        "skuNum": 1,
+        "planQty": 40,
+        "allocQty": 0,
+        "unallocQty": 40
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB2026060587215",
+        "skuNum": 2,
+        "planQty": 34,
+        "allocQty": 0,
+        "unallocQty": 34
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB2026060587217",
+        "skuNum": 1,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      }
+    ],
     "seeding": {
       "not_started": 121,
       "in_progress": 0,
@@ -863,23 +906,48 @@
     }
   },
   "plan": {
-    "total_orders": 10,
-    "total_pcs": 19232,
+    "total_orders": 13,
+    "total_pcs": 19316,
     "alloc_pcs": 19232,
-    "alloc_rate": 100.0,
+    "alloc_rate": 99.6,
     "picked_pcs": 10782,
     "sow_pcs": 10782,
     "sow_rate": 56.1,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 362,
+    "sku_plan": 366,
     "sku_alloc": 362,
     "sku_sow": 329,
     "store_count": 1,
     "by_store": {
-      "KLH-广州常温1仓-GZ0209": 19232.0
+      "KLH-广州常温1仓-GZ0209": 19316.0
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-南海国昌广场店-023",
+        "orderNo": "DB2026060587222",
+        "skuNum": 1,
+        "planQty": 40,
+        "allocQty": 0,
+        "unallocQty": 40
+      },
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB2026060587215",
+        "skuNum": 2,
+        "planQty": 34,
+        "allocQty": 0,
+        "unallocQty": 34
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB2026060587217",
+        "skuNum": 1,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      }
+    ],
     "status": "ok"
   },
   "transport": {

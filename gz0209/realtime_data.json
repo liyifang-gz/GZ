@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-06T10:28:00",
+  "timestamp": "2026-06-06T10:30:41",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 18,
-      "signed": 0,
-      "waiting": 17
+      "signed": 1,
+      "waiting": 16
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 17,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 5.9,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 1000
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 1000,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 17294,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 17,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 5.9
       },
       "pcs": {
         "total": 35166,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 23,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 4.3
       },
       "supplier": {
         "total": 16,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 6.2,
         "detail": {
+          "安徽美代食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "好运来（福建）食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -137,10 +141,6 @@
             "done": 0
           },
           "广州美迅信息技术有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "安徽美代食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -293,19 +293,41 @@
           "skuCount": 1,
           "pcs": 350,
           "timeSlot": "15:30 - 16:00"
-        },
+        }
+      ],
+      "unloading": [
         {
           "supplierName": "安徽美代食品有限公司-快乐猴",
           "billCode": "YY20260526010793",
-          "skuCount": 1,
-          "pcs": 1000,
-          "timeSlot": "11:00 - 11:30"
+          "signTime": "10:29",
+          "unloadStartTime": "10:30",
+          "status": "卸货中"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "安徽美代食品有限公司-快乐猴",
+          "skuName": "快乐猴 奶盐味日式小圆饼 350g",
+          "arrivalTime": "11:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "安徽美代食品有限公司-快乐猴",
+          "poNo": "CG202605268836",
+          "reserveBillCode": "YY20260526010793",
+          "skuId": "1408866",
+          "skuName": "快乐猴 奶盐味日式小圆饼 350g",
+          "purchaseQty": 1000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -553,10 +575,10 @@
       }
     ],
     "seeding": {
-      "not_started": 79,
+      "not_started": 81,
       "in_progress": 0,
       "done": 0,
-      "total": 79,
+      "total": 81,
       "status": "ok"
     }
   },

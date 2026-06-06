@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-06T19:10:49",
+  "timestamp": "2026-06-06T19:15:06",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
@@ -50,20 +50,12 @@
     },
     "putaway": {
       "total": 21834,
-      "done": 20834,
-      "rate": 95.4,
+      "done": 21834,
+      "rate": 100.0,
       "sku_total": 32,
-      "sku_done": 31,
-      "sku_rate": 96.9,
-      "details": [
-        {
-          "poNo": "CG2026060211021",
-          "hopePcs": 1000,
-          "putPcs": 0,
-          "hopeSku": 1,
-          "putSku": 0
-        }
-      ]
+      "sku_done": 32,
+      "sku_rate": 100.0,
+      "details": []
     },
     "dimensions": {
       "reserve": {
@@ -268,13 +260,13 @@
           "supplierName": "粮心优品（广东）供应链管理有限公司-快乐猴",
           "skuName": "粮心一号 全麦精酿啤酒 500ml",
           "completeTime": "11:52",
-          "waitingMins": 439
+          "waitingMins": 443
         },
         {
           "supplierName": "安徽溜溜梅销售有限公司-快乐猴-自营",
           "skuName": "溜溜梅 梅冻电解质冰沙200g",
           "completeTime": "11:57",
-          "waitingMins": 434
+          "waitingMins": 438
         }
       ],
       "signed_not_recv": [
@@ -401,28 +393,38 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 2,
+      "total": 4,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 2,
+      "total": 4,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 7330,
-      "pcs_total": 37958,
-      "pcs_rate": 19.3
+      "pcs_total": 57958,
+      "pcs_rate": 12.6
     },
     "packing": {
       "total": 16,
-      "done": 14,
-      "rate": 87.5
+      "done": 12,
+      "rate": 75.0
     },
     "uncaged_details": [
+      {
+        "containerCode": "RQ-28-03-0900334",
+        "poiName": "海珠星汇广场店",
+        "qty": 12000
+      },
       {
         "containerCode": "RQ-28-03-0900437",
         "poiName": "越秀越富广场店",
         "qty": 12000
+      },
+      {
+        "containerCode": "RQ-28-03-0900328",
+        "poiName": "海珠星汇广场店",
+        "qty": 8000
       },
       {
         "containerCode": "RQ-28-03-0900468",
@@ -432,9 +434,19 @@
     ],
     "unpacked_details": [
       {
+        "containerCode": "RQ-28-03-0900334",
+        "poiName": "海珠星汇广场店",
+        "qty": 12000
+      },
+      {
         "containerCode": "RQ-28-03-0900437",
         "poiName": "越秀越富广场店",
         "qty": 12000
+      },
+      {
+        "containerCode": "RQ-28-03-0900328",
+        "poiName": "海珠星汇广场店",
+        "qty": 8000
       },
       {
         "containerCode": "RQ-28-03-0900468",
@@ -443,17 +455,27 @@
       }
     ],
     "shipping": {
-      "total": 20000,
+      "total": 40000,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
-      "multi_pallet_count": 1,
-      "multi_pallet_total": 1,
+      "multi_pallet_count": 2,
+      "multi_pallet_total": 2,
       "multi_pallet_rate": 100.0,
       "load_rate": 0.0,
       "multi_pallet_details": [
+        {
+          "skuName": "快乐猴-购物袋 1个",
+          "poiName": "海珠星汇广场店",
+          "containerCount": 2,
+          "containerCodes": [
+            "RQ-28-03-0900328",
+            "RQ-28-03-0900334"
+          ],
+          "qty": 20000
+        },
         {
           "skuName": "快乐猴-购物袋 1个",
           "poiName": "越秀越富广场店",
@@ -661,23 +683,23 @@
           "planOutTime": "06-06 20:00"
         }
       ],
-      "outbound_efficiency": 6666.7,
-      "outbound_efficiency_formula": "20000 PCS / 3 人(拣播员)"
+      "outbound_efficiency": 13333.3,
+      "outbound_efficiency_formula": "40000 PCS / 3 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 20000,
+        "total": 40000,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 20000,
+        "not_caged": 40000,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 19.3,
-        "sowed_picked": 37958
+        "cage_rate": 12.6,
+        "sowed_picked": 57958
       },
       "sku": {
-        "total": 2,
+        "total": 4,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -691,22 +713,22 @@
       "plan_pcs": 66953,
       "alloc_pcs": 66953,
       "alloc_rate": 100.0,
-      "picked_pcs": 37958,
-      "sow_pcs": 37958,
-      "sow_rate": 56.7,
+      "picked_pcs": 57958,
+      "sow_pcs": 57958,
+      "sow_rate": 86.6,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 545,
       "sku_alloc": 545,
-      "sku_sow": 484,
+      "sku_sow": 488,
       "sku_ship": 0,
       "total_orders": 29
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 19,
-      "in_progress": 2,
-      "done": 366,
+      "not_started": 14,
+      "in_progress": 5,
+      "done": 368,
       "total": 387,
       "status": "ok"
     }
@@ -716,14 +738,14 @@
     "total_pcs": 66953,
     "alloc_pcs": 66953,
     "alloc_rate": 100.0,
-    "picked_pcs": 37958,
-    "sow_pcs": 37958,
-    "sow_rate": 56.7,
+    "picked_pcs": 57958,
+    "sow_pcs": 57958,
+    "sow_rate": 86.6,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 545,
     "sku_alloc": 545,
-    "sku_sow": 484,
+    "sku_sow": 488,
     "store_count": 5,
     "by_store": {
       "快乐猴-海珠星汇广场店-034": 28995.0,
@@ -795,10 +817,10 @@
       "N常温收退": 2,
       "N常温高叉司机": 1
     },
-    "predicted_efficiency": 4744.8,
-    "efficiency_formula": "37958 PCS(播种) / 8 人",
-    "outbound_efficiency": 6666.7,
-    "outbound_efficiency_formula": "20000 PCS / 3 人(拣播员)",
+    "predicted_efficiency": 7244.8,
+    "efficiency_formula": "57958 PCS(播种) / 8 人",
+    "outbound_efficiency": 13333.3,
+    "outbound_efficiency_formula": "40000 PCS / 3 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

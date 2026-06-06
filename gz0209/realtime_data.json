@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-06T20:59:02",
+  "timestamp": "2026-06-06T21:04:22",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,30 +32,38 @@
     },
     "qc": {
       "total": 6,
-      "done": 4,
-      "pending": 2,
-      "passed": 4,
+      "done": 6,
+      "pending": 0,
+      "passed": 6,
       "rejected": 0,
-      "rate": 66.7,
-      "bill_done": 4,
+      "rate": 100.0,
+      "bill_done": 6,
       "bill_total": 6,
-      "pcs_done": 3972,
-      "pcs_passed": 3972,
+      "pcs_done": 6468,
+      "pcs_passed": 6468,
       "pcs_total": 6468,
       "pcs_rejected": 0,
-      "pcs_rate": 61.4,
-      "sku_done": 4,
+      "pcs_rate": 100.0,
+      "sku_done": 6,
       "sku_total": 6,
-      "sku_rate": 66.7
+      "sku_rate": 100.0
     },
     "putaway": {
-      "total": 21834,
+      "total": 26586,
       "done": 21834,
-      "rate": 100.0,
-      "sku_total": 32,
+      "rate": 82.1,
+      "sku_total": 35,
       "sku_done": 32,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 91.4,
+      "details": [
+        {
+          "poNo": "CG202605302720",
+          "hopePcs": 4752,
+          "putPcs": 0,
+          "hopeSku": 3,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +75,8 @@
         "total": 34896,
         "done": 34044,
         "rate": 97.6,
-        "recv_done": 21834,
-        "recv_rate": 62.6
+        "recv_done": 26586,
+        "recv_rate": 76.2
       },
       "sku": {
         "total": 21,
@@ -80,6 +88,10 @@
         "done": 12,
         "rate": 85.7,
         "detail": {
+          "江苏仙之宝食品有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "广州尚源网络科技有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -121,10 +133,6 @@
             "done": 1
           },
           "粮心优品（广东）供应链管理有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "江苏仙之宝食品有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
           },
@@ -175,62 +183,46 @@
         }
       ],
       "unloading": [],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "江苏仙之宝食品有限公司-快乐猴-自营",
-          "skuName": "快乐猴 水蜜桃味吸吸果汁果冻 150g",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "20:48",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "江苏仙之宝食品有限公司-快乐猴-自营",
-          "skuName": "快乐猴 香橙味吸吸果汁果冻 150g",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "20:48",
-          "statusLabel": "首次进行中"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "粮心优品（广东）供应链管理有限公司-快乐猴",
           "skuName": "粮心一号 全麦精酿啤酒 500ml",
           "completeTime": "11:52",
-          "waitingMins": 547
+          "waitingMins": 552
         },
         {
           "supplierName": "安徽溜溜梅销售有限公司-快乐猴-自营",
           "skuName": "溜溜梅 梅冻电解质冰沙200g",
           "completeTime": "11:57",
-          "waitingMins": 542
+          "waitingMins": 547
+        },
+        {
+          "supplierName": "江苏仙之宝食品有限公司-快乐猴-自营",
+          "skuName": "快乐猴 水蜜桃味吸吸果汁果冻 150g",
+          "completeTime": "21:01",
+          "waitingMins": 3
         },
         {
           "supplierName": "江苏仙之宝食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 葡萄味吸吸果汁果冻 150g",
           "completeTime": "20:56",
-          "waitingMins": 2
+          "waitingMins": 8
+        },
+        {
+          "supplierName": "江苏仙之宝食品有限公司-快乐猴-自营",
+          "skuName": "快乐猴 香橙味吸吸果汁果冻 150g",
+          "completeTime": "20:59",
+          "waitingMins": 5
         },
         {
           "supplierName": "广州尚源网络科技有限公司-快乐猴",
           "skuName": "可口可乐1.25L+美汁源果粒橙1.25L",
           "completeTime": "20:15",
-          "waitingMins": 44
+          "waitingMins": 49
         }
       ],
       "signed_not_recv": [
-        {
-          "supplierName": "江苏仙之宝食品有限公司-快乐猴-自营",
-          "poNo": "CG202605302720",
-          "reserveBillCode": "YY20260530004756",
-          "skuId": "1484986",
-          "skuName": "快乐猴 葡萄味吸吸果汁果冻 150g",
-          "purchaseQty": 2256,
-          "recvQty": 0,
-          "hasQc": true,
-          "seq": 1
-        },
         {
           "supplierName": "江苏光明天成米业有限公司-快乐猴",
           "poNo": "CG2026051911093",
@@ -240,29 +232,7 @@
           "purchaseQty": 2000,
           "recvQty": 1992,
           "hasQc": false,
-          "seq": 2
-        },
-        {
-          "supplierName": "江苏仙之宝食品有限公司-快乐猴-自营",
-          "poNo": "CG202605302720",
-          "reserveBillCode": "YY20260530004756",
-          "skuId": "1484894",
-          "skuName": "快乐猴 水蜜桃味吸吸果汁果冻 150g",
-          "purchaseQty": 1248,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 3
-        },
-        {
-          "supplierName": "江苏仙之宝食品有限公司-快乐猴-自营",
-          "poNo": "CG202605302720",
-          "reserveBillCode": "YY20260530004756",
-          "skuId": "1485213",
-          "skuName": "快乐猴 香橙味吸吸果汁果冻 150g",
-          "purchaseQty": 1248,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 4
+          "seq": 1
         }
       ],
       "qc_recv_pending": [],
@@ -617,9 +587,9 @@
     "unalloc_details": [],
     "seeding": {
       "not_started": 0,
-      "in_progress": 1,
+      "in_progress": 2,
       "done": 405,
-      "total": 406,
+      "total": 407,
       "status": "ok"
     }
   },
@@ -659,7 +629,7 @@
       "冷冻": 0,
       "常温": 1
     },
-    "all_count": 9,
+    "all_count": 11,
     "temp_rate": null,
     "temp_qualified": 0,
     "temp_total": 0,

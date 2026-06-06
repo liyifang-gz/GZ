@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-06T11:10:22",
+  "timestamp": "2026-06-06T11:14:30",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 18,
-      "signed": 3,
-      "waiting": 14
+      "signed": 4,
+      "waiting": 13
     },
     "ontime": {
       "ontime": 0,
-      "early": 3,
+      "early": 4,
       "late": 0,
       "total": 17,
       "rate": 0.0,
-      "early_rate": 17.6,
+      "early_rate": 23.5,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 3,
+      "total": 4,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 3816
+      "sign_pcs_done": 4356
     },
     "qc": {
-      "total": 3,
+      "total": 4,
       "done": 0,
-      "pending": 3,
+      "pending": 4,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 3,
+      "bill_total": 4,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 3816,
+      "pcs_total": 4356,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 3,
+      "sku_total": 4,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 17,
-        "done": 3,
-        "rate": 17.6
+        "done": 4,
+        "rate": 23.5
       },
       "pcs": {
         "total": 35166,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 23,
-        "done": 3,
-        "rate": 13.0
+        "done": 4,
+        "rate": 17.4
       },
       "supplier": {
         "total": 16,
-        "done": 3,
-        "rate": 18.8,
+        "done": 4,
+        "rate": 25.0,
         "detail": {
+          "安徽溜溜梅销售有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "粮心优品（广东）供应链管理有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -126,10 +130,6 @@
           },
           "广州创策贸易有限公司-快乐猴": {
             "plan": 2,
-            "done": 0
-          },
-          "安徽溜溜梅销售有限公司-快乐猴-自营": {
-            "plan": 1,
             "done": 0
           },
           "广州尚源网络科技有限公司-快乐猴": {
@@ -253,13 +253,6 @@
           "timeSlot": "12:00 - 12:30"
         },
         {
-          "supplierName": "安徽溜溜梅销售有限公司-快乐猴-自营",
-          "billCode": "YY20260602002172",
-          "skuCount": 1,
-          "pcs": 540,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
           "supplierName": "广州尚源网络科技有限公司-快乐猴",
           "billCode": "YY20260601008717",
           "skuCount": 5,
@@ -282,6 +275,12 @@
         }
       ],
       "unloading": [
+        {
+          "supplierName": "安徽溜溜梅销售有限公司-快乐猴-自营",
+          "billCode": "YY20260602002172",
+          "signTime": "11:12",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "粮心优品（广东）供应链管理有限公司-快乐猴",
           "billCode": "YY20260605006658",
@@ -327,6 +326,14 @@
           "arrivalTime": "14:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "安徽溜溜梅销售有限公司-快乐猴-自营",
+          "skuName": "溜溜梅 梅冻电解质冰沙200g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -363,6 +370,17 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 3
+        },
+        {
+          "supplierName": "安徽溜溜梅销售有限公司-快乐猴-自营",
+          "poNo": "CG2026060113906",
+          "reserveBillCode": "YY20260602002172",
+          "skuId": "1482843",
+          "skuName": "溜溜梅 梅冻电解质冰沙200g",
+          "purchaseQty": 540,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
         }
       ],
       "qc_recv_pending": [],

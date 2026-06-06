@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-06T14:54:23",
+  "timestamp": "2026-06-06T14:57:40",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 19,
-      "signed": 9,
-      "waiting": 8
+      "signed": 10,
+      "waiting": 7
     },
     "ontime": {
       "ontime": 0,
       "early": 9,
-      "late": 0,
+      "late": 1,
       "total": 17,
       "rate": 0.0,
       "early_rate": 52.9,
-      "late_rate": 0.0
+      "late_rate": 5.9
     },
     "reserve_progress": {
       "po_total": 15,
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 9,
-      "done": 3,
-      "rate": 33.3,
-      "pcs_done": 2356,
-      "sign_pcs_done": 11394
+      "total": 10,
+      "done": 5,
+      "rate": 50.0,
+      "pcs_done": 2956,
+      "sign_pcs_done": 11644
     },
     "qc": {
-      "total": 10,
+      "total": 9,
       "done": 2,
-      "pending": 8,
+      "pending": 7,
       "passed": 2,
       "rejected": 0,
-      "rate": 20.0,
+      "rate": 22.2,
       "bill_done": 2,
-      "bill_total": 10,
+      "bill_total": 9,
       "pcs_done": 1356,
       "pcs_passed": 1356,
-      "pcs_total": 10394,
+      "pcs_total": 10044,
       "pcs_rejected": 0,
-      "pcs_rate": 13.0,
+      "pcs_rate": 13.5,
       "sku_done": 2,
-      "sku_total": 10,
-      "sku_rate": 20.0
+      "sku_total": 9,
+      "sku_rate": 22.2
     },
     "putaway": {
       "total": 17834,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 17,
-        "done": 9,
-        "rate": 52.9
+        "done": 10,
+        "rate": 58.8
       },
       "pcs": {
         "total": 34986,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 23,
-        "done": 11,
-        "rate": 47.8
+        "done": 12,
+        "rate": 52.2
       },
       "supplier": {
         "total": 16,
-        "done": 9,
-        "rate": 56.2,
+        "done": 10,
+        "rate": 62.5,
         "detail": {
+          "北京尚品致源科技发展有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州美迅信息技术有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -125,10 +129,6 @@
             "done": 0
           },
           "安庆一枝梅化工有限责任公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "北京尚品致源科技发展有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -196,13 +196,6 @@
           "timeSlot": "14:30 - 15:00"
         },
         {
-          "supplierName": "北京尚品致源科技发展有限公司-快乐猴",
-          "billCode": "YY20260603000804",
-          "skuCount": 1,
-          "pcs": 250,
-          "timeSlot": "14:00 - 14:30"
-        },
-        {
           "supplierName": "上海本甄农业发展有限公司-快乐猴-自营",
           "billCode": "YY20260602003479",
           "skuCount": 1,
@@ -232,12 +225,6 @@
         }
       ],
       "unloading": [
-        {
-          "supplierName": "广州美迅信息技术有限公司-快乐猴",
-          "billCode": "YY20260527001936",
-          "signTime": "14:53",
-          "status": "已签到未卸货"
-        },
         {
           "supplierName": "江苏仙之宝食品有限公司-快乐猴-自营",
           "billCode": "YY20260530004756",
@@ -326,14 +313,6 @@
           "arrivalTime": "15:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
-        },
-        {
-          "seq": 8,
-          "supplierName": "广州美迅信息技术有限公司-快乐猴",
-          "skuName": "皇上皇 富丰腊肠 150g",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -341,13 +320,13 @@
           "supplierName": "粮心优品（广东）供应链管理有限公司-快乐猴",
           "skuName": "粮心一号 全麦精酿啤酒 500ml",
           "completeTime": "11:52",
-          "waitingMins": 182
+          "waitingMins": 186
         },
         {
           "supplierName": "安徽溜溜梅销售有限公司-快乐猴-自营",
           "skuName": "溜溜梅 梅冻电解质冰沙200g",
           "completeTime": "11:57",
-          "waitingMins": 177
+          "waitingMins": 180
         }
       ],
       "signed_not_recv": [
@@ -438,6 +417,17 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 8
+        },
+        {
+          "supplierName": "北京尚品致源科技发展有限公司-快乐猴",
+          "poNo": "CG2026060111756",
+          "reserveBillCode": "YY20260603000804",
+          "skuId": "846159",
+          "skuName": "牧果人乌梅条80g",
+          "purchaseQty": 250,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 9
         }
       ],
       "qc_recv_pending": [],
@@ -753,9 +743,9 @@
       }
     ],
     "seeding": {
-      "not_started": 60,
-      "in_progress": 3,
-      "done": 165,
+      "not_started": 59,
+      "in_progress": 2,
+      "done": 167,
       "total": 228,
       "status": "ok"
     }

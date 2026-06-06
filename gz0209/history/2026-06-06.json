@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-06T10:56:23",
+  "timestamp": "2026-06-06T10:59:10",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 18,
-      "signed": 1,
-      "waiting": 16
+      "signed": 2,
+      "waiting": 15
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 2,
       "late": 0,
       "total": 17,
       "rate": 0.0,
-      "early_rate": 5.9,
+      "early_rate": 11.8,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 1000
+      "sign_pcs_done": 3000
     },
     "qc": {
-      "total": 1,
+      "total": 2,
       "done": 0,
-      "pending": 1,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 1,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 1000,
+      "pcs_total": 3000,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 1,
+      "sku_total": 2,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 17,
-        "done": 1,
-        "rate": 5.9
+        "done": 2,
+        "rate": 11.8
       },
       "pcs": {
         "total": 35166,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 23,
-        "done": 1,
-        "rate": 4.3
+        "done": 2,
+        "rate": 8.7
       },
       "supplier": {
         "total": 16,
-        "done": 1,
-        "rate": 6.2,
+        "done": 2,
+        "rate": 12.5,
         "detail": {
+          "江苏光明天成米业有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "安徽美代食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -97,10 +101,6 @@
             "done": 0
           },
           "广州霖磐贸易有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "江苏光明天成米业有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -211,13 +211,6 @@
           "timeSlot": "14:30 - 15:00"
         },
         {
-          "supplierName": "江苏光明天成米业有限公司-快乐猴",
-          "billCode": "YY20260604008741",
-          "skuCount": 1,
-          "pcs": 2000,
-          "timeSlot": "14:00 - 14:30"
-        },
-        {
           "supplierName": "安庆一枝梅化工有限责任公司-快乐猴",
           "billCode": "YY20260604002783",
           "skuCount": 1,
@@ -297,6 +290,12 @@
       ],
       "unloading": [
         {
+          "supplierName": "江苏光明天成米业有限公司-快乐猴",
+          "billCode": "YY20260604008741",
+          "signTime": "10:57",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "安徽美代食品有限公司-快乐猴",
           "billCode": "YY20260526010793",
           "signTime": "10:29",
@@ -312,10 +311,29 @@
           "arrivalTime": "11:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "江苏光明天成米业有限公司-快乐猴",
+          "skuName": "快乐猴 丝苗米 5kg",
+          "arrivalTime": "14:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
       "signed_not_recv": [
+        {
+          "supplierName": "江苏光明天成米业有限公司-快乐猴",
+          "poNo": "CG2026051911093",
+          "reserveBillCode": "YY20260604008741",
+          "skuId": "1140804",
+          "skuName": "快乐猴 丝苗米 5kg",
+          "purchaseQty": 2000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
         {
           "supplierName": "安徽美代食品有限公司-快乐猴",
           "poNo": "CG202605268836",
@@ -325,7 +343,7 @@
           "purchaseQty": 1000,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 2
         }
       ],
       "qc_recv_pending": [],

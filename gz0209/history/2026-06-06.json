@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-06T13:18:06",
+  "timestamp": "2026-06-06T13:22:04",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
@@ -318,13 +318,13 @@
           "supplierName": "粮心优品（广东）供应链管理有限公司-快乐猴",
           "skuName": "粮心一号 全麦精酿啤酒 500ml",
           "completeTime": "11:52",
-          "waitingMins": 86
+          "waitingMins": 90
         },
         {
           "supplierName": "安徽溜溜梅销售有限公司-快乐猴-自营",
           "skuName": "溜溜梅 梅冻电解质冰沙200g",
           "completeTime": "11:57",
-          "waitingMins": 81
+          "waitingMins": 85
         }
       ],
       "signed_not_recv": [
@@ -396,29 +396,24 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 108,
+      "total": 67,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 108,
+      "total": 67,
       "done": 0,
       "rate": 0.0,
-      "pcs_done": 0,
-      "pcs_total": 2894,
-      "pcs_rate": 0.0
+      "pcs_done": 1056,
+      "pcs_total": 2899,
+      "pcs_rate": 36.4
     },
     "packing": {
-      "total": 5,
-      "done": 0,
-      "rate": 0.0
+      "total": 6,
+      "done": 1,
+      "rate": 16.7
     },
     "uncaged_details": [
-      {
-        "containerCode": "RQ-28-03-0900059",
-        "poiName": "禅城东方广场店",
-        "qty": 1056
-      },
       {
         "containerCode": "RQ-28-03-0900057",
         "poiName": "禅城东方广场店",
@@ -438,15 +433,15 @@
         "containerCode": "RQ-28-03-0900130",
         "poiName": "番禺建华汇店",
         "qty": 20
+      },
+      {
+        "containerCode": "RQ-28-03-0900064",
+        "poiName": "禅城东方广场店",
+        "qty": 5
       }
     ],
     "unpacked_details": [
       {
-        "containerCode": "RQ-28-03-0900059",
-        "poiName": "禅城东方广场店",
-        "qty": 1056
-      },
-      {
         "containerCode": "RQ-28-03-0900057",
         "poiName": "禅城东方广场店",
         "qty": 920
@@ -465,34 +460,29 @@
         "containerCode": "RQ-28-03-0900130",
         "poiName": "番禺建华汇店",
         "qty": 20
+      },
+      {
+        "containerCode": "RQ-28-03-0900064",
+        "poiName": "禅城东方广场店",
+        "qty": 5
       }
     ],
     "shipping": {
-      "total": 2894,
+      "total": 1843,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 108,
+      "multi_pallet_total": 67,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "49.72%",
-      "load_rate_loaded": "--",
+      "load_rate_unloaded": "35.83%",
+      "load_rate_loaded": "72.13%",
       "load_rate_shipped": "--",
-      "low_load_containers": [],
-      "all_containers_detail": [
-        {
-          "containerCode": "RQ-28-03-0900057",
-          "poiName": "禅城东方广场店",
-          "loadingRate": "80.69%",
-          "loadingRateVal": 80.69,
-          "skuPcs": "920.000",
-          "skuVolume": "1.598",
-          "planOutTime": "06-06 20:00"
-        },
+      "low_load_containers": [
         {
           "containerCode": "RQ-28-03-0900059",
           "poiName": "禅城东方广场店",
@@ -500,6 +490,26 @@
           "loadingRateVal": 72.13,
           "skuPcs": "1056.000",
           "skuVolume": "1.428",
+          "planOutTime": "06-06 20:00"
+        }
+      ],
+      "all_containers_detail": [
+        {
+          "containerCode": "RQ-28-03-0900059",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "72.13%",
+          "loadingRateVal": 72.13,
+          "skuPcs": "1056.000",
+          "skuVolume": "1.428",
+          "planOutTime": "06-06 20:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900057",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "80.69%",
+          "loadingRateVal": 80.69,
+          "skuPcs": "920.000",
+          "skuVolume": "1.598",
           "planOutTime": "06-06 20:00"
         },
         {
@@ -521,6 +531,15 @@
           "planOutTime": "06-06 20:00"
         },
         {
+          "containerCode": "RQ-28-03-0900064",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "2.66%",
+          "loadingRateVal": 2.66,
+          "skuPcs": "5.000",
+          "skuVolume": "0.053",
+          "planOutTime": "06-06 20:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900130",
           "poiName": "番禺建华汇店",
           "loadingRate": "0.50%",
@@ -530,23 +549,23 @@
           "planOutTime": "06-06 20:00"
         }
       ],
-      "outbound_efficiency": 964.7,
-      "outbound_efficiency_formula": "2894 PCS / 3 人(拣播员)"
+      "outbound_efficiency": 614.3,
+      "outbound_efficiency_formula": "1843 PCS / 3 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 2894,
+        "total": 1843,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 2894,
+        "not_caged": 1843,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 0.0,
-        "sowed_picked": 2894
+        "cage_rate": 36.4,
+        "sowed_picked": 2899
       },
       "sku": {
-        "total": 108,
+        "total": 67,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -560,9 +579,9 @@
       "plan_pcs": 71145,
       "alloc_pcs": 12204,
       "alloc_rate": 17.2,
-      "picked_pcs": 2894,
-      "sow_pcs": 2894,
-      "sow_rate": 23.7,
+      "picked_pcs": 2899,
+      "sow_pcs": 2899,
+      "sow_rate": 23.8,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 558,
@@ -766,10 +785,10 @@
       }
     ],
     "seeding": {
-      "not_started": 59,
-      "in_progress": 4,
-      "done": 108,
-      "total": 171,
+      "not_started": 57,
+      "in_progress": 6,
+      "done": 111,
+      "total": 174,
       "status": "ok"
     }
   },
@@ -778,9 +797,9 @@
     "total_pcs": 71145,
     "alloc_pcs": 12204,
     "alloc_rate": 17.2,
-    "picked_pcs": 2894,
-    "sow_pcs": 2894,
-    "sow_rate": 23.7,
+    "picked_pcs": 2899,
+    "sow_pcs": 2899,
+    "sow_rate": 23.8,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 558,
@@ -1050,10 +1069,10 @@
       "N常温收退": 2,
       "N常温高叉司机": 1
     },
-    "predicted_efficiency": 361.8,
-    "efficiency_formula": "2894 PCS(播种) / 8 人",
-    "outbound_efficiency": 964.7,
-    "outbound_efficiency_formula": "2894 PCS / 3 人(拣播员)",
+    "predicted_efficiency": 362.4,
+    "efficiency_formula": "2899 PCS(播种) / 8 人",
+    "outbound_efficiency": 614.3,
+    "outbound_efficiency_formula": "1843 PCS / 3 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

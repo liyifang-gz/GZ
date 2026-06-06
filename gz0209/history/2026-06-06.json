@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-06T18:00:51",
+  "timestamp": "2026-06-06T18:08:51",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
@@ -25,37 +25,45 @@
     },
     "unload": {
       "total": 12,
-      "done": 8,
-      "rate": 66.7,
-      "pcs_done": 5892,
+      "done": 10,
+      "rate": 83.3,
+      "pcs_done": 8292,
       "sign_pcs_done": 14044
     },
     "qc": {
-      "total": 8,
+      "total": 6,
       "done": 2,
-      "pending": 6,
+      "pending": 4,
       "passed": 2,
       "rejected": 0,
-      "rate": 25.0,
+      "rate": 33.3,
       "bill_done": 2,
-      "bill_total": 8,
+      "bill_total": 6,
       "pcs_done": 1356,
       "pcs_passed": 1356,
-      "pcs_total": 9508,
+      "pcs_total": 7108,
       "pcs_rejected": 0,
-      "pcs_rate": 14.3,
+      "pcs_rate": 19.1,
       "sku_done": 2,
-      "sku_total": 7,
-      "sku_rate": 28.6
+      "sku_total": 6,
+      "sku_rate": 33.3
     },
     "putaway": {
-      "total": 18434,
+      "total": 19394,
       "done": 18434,
-      "rate": 100.0,
-      "sku_total": 27,
+      "rate": 95.1,
+      "sku_total": 29,
       "sku_done": 27,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 93.1,
+      "details": [
+        {
+          "poNo": "CG202605295792",
+          "hopePcs": 960,
+          "putPcs": 0,
+          "hopeSku": 2,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +75,8 @@
         "total": 34896,
         "done": 34044,
         "rate": 97.6,
-        "recv_done": 18434,
-        "recv_rate": 52.8
+        "recv_done": 19394,
+        "recv_rate": 55.6
       },
       "sku": {
         "total": 21,
@@ -80,6 +88,10 @@
         "done": 11,
         "rate": 78.6,
         "detail": {
+          "广州创策贸易有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "好运来（福建）食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -95,10 +107,6 @@
           "北京尚品致源科技发展有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "广州创策贸易有限公司-快乐猴": {
-            "plan": 2,
-            "done": 2
           },
           "江苏光明天成米业有限公司-快乐猴": {
             "plan": 1,
@@ -183,18 +191,6 @@
       ],
       "unloading": [
         {
-          "supplierName": "广州创策贸易有限公司-快乐猴",
-          "billCode": "YY20260602003049",
-          "signTime": "16:44",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "广州创策贸易有限公司-快乐猴",
-          "billCode": "YY20260602003064",
-          "signTime": "16:44",
-          "status": "已签到未卸货"
-        },
-        {
           "supplierName": "江苏仙之宝食品有限公司-快乐猴-自营",
           "billCode": "YY20260530004756",
           "signTime": "13:30",
@@ -240,22 +236,6 @@
           "arrivalTime": "15:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
-        },
-        {
-          "seq": 5,
-          "supplierName": "广州创策贸易有限公司-快乐猴",
-          "skuName": "康师傅柠檬味冰红茶1L",
-          "arrivalTime": "12:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 6,
-          "supplierName": "广州创策贸易有限公司-快乐猴",
-          "skuName": "康师傅柠檬味冰红茶1L",
-          "arrivalTime": "12:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -263,13 +243,13 @@
           "supplierName": "粮心优品（广东）供应链管理有限公司-快乐猴",
           "skuName": "粮心一号 全麦精酿啤酒 500ml",
           "completeTime": "11:52",
-          "waitingMins": 369
+          "waitingMins": 377
         },
         {
           "supplierName": "安徽溜溜梅销售有限公司-快乐猴-自营",
           "skuName": "溜溜梅 梅冻电解质冰沙200g",
           "completeTime": "11:57",
-          "waitingMins": 364
+          "waitingMins": 372
         }
       ],
       "signed_not_recv": [
@@ -338,17 +318,6 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 6
-        },
-        {
-          "supplierName": "广州创策贸易有限公司-快乐猴",
-          "poNo": "CG202605295792",
-          "reserveBillCode": "YY20260602003064",
-          "skuId": "18357",
-          "skuName": "康师傅柠檬味冰红茶1L",
-          "purchaseQty": 960,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 7
         }
       ],
       "qc_recv_pending": [],
@@ -626,10 +595,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 64,
-      "in_progress": 4,
-      "done": 280,
-      "total": 348,
+      "not_started": 61,
+      "in_progress": 6,
+      "done": 288,
+      "total": 355,
       "status": "ok"
     }
   },

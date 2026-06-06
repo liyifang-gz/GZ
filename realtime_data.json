@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-07T00:02:59",
+  "timestamp": "2026-06-07T00:08:48",
   "date": "2026-06-07",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 84,
-      "signed": 0,
-      "waiting": 82
+      "signed": 1,
+      "waiting": 81
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 82,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 1.2,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "pcs_done": 0,
-      "sign_pcs_done": 0
+      "total": 1,
+      "done": 1,
+      "rate": 100.0,
+      "pcs_done": 99,
+      "sign_pcs_done": 99
     },
     "qc": {
-      "total": 0,
+      "total": 3,
       "done": 0,
-      "pending": 0,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 99,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 3,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 0,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 82,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 1.2
       },
       "pcs": {
         "total": 15071,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 408,
-        "done": 0,
-        "rate": 0.0
+        "done": 3,
+        "rate": 0.7
       },
       "supplier": {
         "total": 71,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 1.4,
         "detail": {
+          "久泰现代农业有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳市一二三农产品投资有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -97,10 +101,6 @@
             "done": 0
           },
           "太谷县晋利川农业开发有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
-          "久泰现代农业有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -232,13 +232,6 @@
           "billCode": "YY20260606008550",
           "skuCount": 1,
           "pcs": 121,
-          "timeSlot": "15:00 - 15:30"
-        },
-        {
-          "supplierName": "久泰现代农业有限公司-快乐猴",
-          "billCode": "YY20260606008377",
-          "skuCount": 3,
-          "pcs": 99,
           "timeSlot": "15:00 - 15:30"
         },
         {
@@ -548,12 +541,78 @@
           "skuCount": 6,
           "pcs": 490,
           "timeSlot": "17:00 - 17:30"
+        },
+        {
+          "supplierName": "广东爱健康农牧集团有限公司-快乐猴",
+          "billCode": "YY20260606003834",
+          "skuCount": 1,
+          "pcs": 16,
+          "timeSlot": "11:30 - 12:00"
         }
       ],
       "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "久泰现代农业有限公司-快乐猴",
+          "skuName": "云南沃柑 1.5kg",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "00:05",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "久泰现代农业有限公司-快乐猴",
+          "skuName": "秭归夏橙 1kg",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "00:05",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "久泰现代农业有限公司-快乐猴",
+          "skuName": "妃子笑荔枝 750g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "00:05",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "久泰现代农业有限公司-快乐猴",
+          "poNo": "CG202606067136",
+          "reserveBillCode": "YY20260606008377",
+          "skuId": "1475108",
+          "skuName": "妃子笑荔枝 750g",
+          "purchaseQty": 91,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "久泰现代农业有限公司-快乐猴",
+          "poNo": "CG202606067136",
+          "reserveBillCode": "YY20260606008377",
+          "skuId": "1389174",
+          "skuName": "云南沃柑 1.5kg",
+          "purchaseQty": 4,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "久泰现代农业有限公司-快乐猴",
+          "poNo": "CG202606067136",
+          "reserveBillCode": "YY20260606008377",
+          "skuId": "1460446",
+          "skuName": "秭归夏橙 1kg",
+          "purchaseQty": 4,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],

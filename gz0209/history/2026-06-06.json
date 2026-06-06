@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-06T11:50:09",
+  "timestamp": "2026-06-06T11:53:08",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 3,
-      "done": 0,
-      "pending": 3,
-      "passed": 0,
+      "done": 1,
+      "pending": 2,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 33.3,
+      "bill_done": 1,
       "bill_total": 3,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 816,
+      "pcs_passed": 816,
       "pcs_total": 3356,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 24.3,
+      "sku_done": 1,
       "sku_total": 3,
-      "sku_rate": 0.0
+      "sku_rate": 33.3
     },
     "putaway": {
       "total": 17294,
@@ -293,22 +293,21 @@
         },
         {
           "seq": 2,
-          "supplierName": "粮心优品（广东）供应链管理有限公司-快乐猴",
-          "skuName": "粮心一号 全麦精酿啤酒 500ml",
-          "arrivalTime": "14:00",
-          "unloadFinishTime": "11:31",
-          "statusLabel": "首次进行中"
-        },
-        {
-          "seq": 3,
           "supplierName": "安徽溜溜梅销售有限公司-快乐猴-自营",
           "skuName": "溜溜梅 梅冻电解质冰沙200g",
           "arrivalTime": "15:30",
           "unloadFinishTime": "11:31",
-          "statusLabel": "待质检"
+          "statusLabel": "首次进行中"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "粮心优品（广东）供应链管理有限公司-快乐猴",
+          "skuName": "粮心一号 全麦精酿啤酒 500ml",
+          "completeTime": "11:52",
+          "waitingMins": 1
+        }
+      ],
       "signed_not_recv": [
         {
           "supplierName": "江苏光明天成米业有限公司-快乐猴",
@@ -329,7 +328,7 @@
           "skuName": "粮心一号 全麦精酿啤酒 500ml",
           "purchaseQty": 816,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 2
         },
         {
@@ -615,10 +614,10 @@
       }
     ],
     "seeding": {
-      "not_started": 106,
+      "not_started": 116,
       "in_progress": 0,
       "done": 0,
-      "total": 106,
+      "total": 116,
       "status": "ok"
     }
   },

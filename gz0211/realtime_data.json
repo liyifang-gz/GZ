@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-06T09:56:45",
+  "timestamp": "2026-06-06T09:59:44",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 10,
-      "signed": 0,
-      "waiting": 7
+      "signed": 1,
+      "waiting": 6
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 7,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 14.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 1200
     },
     "qc": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "pending": 0,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 1200,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 2,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 444,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 7,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 14.3
       },
       "pcs": {
         "total": 936,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 13,
-        "done": 0,
-        "rate": 0.0
+        "done": 2,
+        "rate": 15.4
       },
       "supplier": {
         "total": 6,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 16.7,
         "detail": {
+          "广州市艺奇雪贸易有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳市鲜百汇食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -93,10 +97,6 @@
             "done": 0
           },
           "广州赛味谦食品有限公司": {
-            "plan": 1,
-            "done": 0
-          },
-          "广州市艺奇雪贸易有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
           },
@@ -146,13 +146,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
-          "billCode": "YY20260603009650",
-          "skuCount": 2,
-          "pcs": 1200,
-          "timeSlot": "10:30 - 11:00"
-        },
-        {
           "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
           "billCode": "YY20260602000963",
           "skuCount": 1,
@@ -160,10 +153,57 @@
           "timeSlot": "14:30 - 15:00"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
+          "billCode": "YY20260603009650",
+          "signTime": "09:59",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
+          "skuName": "阿尔卑斯 碧根果焦糖海盐味脆皮冰淇淋 60g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
+          "skuName": "天淇 巧仁派对雪糕 240g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
+          "poNo": "CG202606034811",
+          "reserveBillCode": "YY20260603009650",
+          "skuId": "1473790",
+          "skuName": "阿尔卑斯 碧根果焦糖海盐味脆皮冰淇淋 60g",
+          "purchaseQty": 600,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
+          "poNo": "CG202606034811",
+          "reserveBillCode": "YY20260603009650",
+          "skuId": "1485660",
+          "skuName": "天淇 巧仁派对雪糕 240g",
+          "purchaseQty": 600,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -369,10 +409,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 45,
+      "not_started": 46,
       "in_progress": 0,
       "done": 0,
-      "total": 45,
+      "total": 46,
       "status": "ok"
     }
   },

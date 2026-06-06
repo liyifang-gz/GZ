@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-06T11:29:11",
+  "timestamp": "2026-06-06T11:34:53",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
@@ -25,27 +25,27 @@
     },
     "unload": {
       "total": 4,
-      "done": 0,
-      "rate": 0.0,
-      "pcs_done": 0,
+      "done": 3,
+      "rate": 75.0,
+      "pcs_done": 2356,
       "sign_pcs_done": 4356
     },
     "qc": {
-      "total": 4,
+      "total": 3,
       "done": 0,
-      "pending": 4,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 4,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 4356,
+      "pcs_total": 3356,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 4,
+      "sku_total": 3,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -276,44 +276,15 @@
       ],
       "unloading": [
         {
-          "supplierName": "安徽溜溜梅销售有限公司-快乐猴-自营",
-          "billCode": "YY20260602002172",
-          "signTime": "11:12",
-          "unloadStartTime": "11:20",
-          "status": "卸货中"
-        },
-        {
-          "supplierName": "粮心优品（广东）供应链管理有限公司-快乐猴",
-          "billCode": "YY20260605006658",
-          "signTime": "11:10",
-          "unloadStartTime": "11:10",
-          "status": "卸货中"
-        },
-        {
           "supplierName": "江苏光明天成米业有限公司-快乐猴",
           "billCode": "YY20260604008741",
           "signTime": "10:57",
           "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "安徽美代食品有限公司-快乐猴",
-          "billCode": "YY20260526010793",
-          "signTime": "10:29",
-          "unloadStartTime": "10:30",
-          "status": "卸货中"
         }
       ],
       "qc_pending": [
         {
           "seq": 1,
-          "supplierName": "安徽美代食品有限公司-快乐猴",
-          "skuName": "快乐猴 奶盐味日式小圆饼 350g",
-          "arrivalTime": "11:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
           "supplierName": "江苏光明天成米业有限公司-快乐猴",
           "skuName": "快乐猴 丝苗米 5kg",
           "arrivalTime": "14:00",
@@ -321,19 +292,19 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 3,
+          "seq": 2,
           "supplierName": "粮心优品（广东）供应链管理有限公司-快乐猴",
           "skuName": "粮心一号 全麦精酿啤酒 500ml",
           "arrivalTime": "14:00",
-          "unloadFinishTime": "--",
+          "unloadFinishTime": "11:31",
           "statusLabel": "待质检"
         },
         {
-          "seq": 4,
+          "seq": 3,
           "supplierName": "安徽溜溜梅销售有限公司-快乐猴-自营",
           "skuName": "溜溜梅 梅冻电解质冰沙200g",
           "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
+          "unloadFinishTime": "11:31",
           "statusLabel": "待质检"
         }
       ],
@@ -470,7 +441,7 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 62299,
+      "plan_pcs": 62459,
       "alloc_pcs": 3936,
       "alloc_rate": 6.3,
       "picked_pcs": 0,
@@ -478,11 +449,11 @@
       "sow_rate": 0.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 116,
+      "sku_plan": 118,
       "sku_alloc": 110,
       "sku_sow": 0,
       "sku_ship": 0,
-      "total_orders": 24
+      "total_orders": 25
     },
     "unalloc_details": [
       {
@@ -583,6 +554,14 @@
       },
       {
         "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB2026060678960",
+        "skuNum": 2,
+        "planQty": 160,
+        "allocQty": 0,
+        "unallocQty": 160
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
         "orderNo": "DB2026060676001",
         "skuNum": 4,
         "planQty": 420,
@@ -655,16 +634,16 @@
       }
     ],
     "seeding": {
-      "not_started": 98,
+      "not_started": 104,
       "in_progress": 0,
       "done": 0,
-      "total": 98,
+      "total": 104,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 24,
-    "total_pcs": 62299,
+    "total_orders": 25,
+    "total_pcs": 62459,
     "alloc_pcs": 3936,
     "alloc_rate": 6.3,
     "picked_pcs": 0,
@@ -672,7 +651,7 @@
     "sow_rate": 0.0,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 116,
+    "sku_plan": 118,
     "sku_alloc": 110,
     "sku_sow": 0,
     "store_count": 5,
@@ -680,7 +659,7 @@
       "快乐猴-海珠星汇广场店-034": 28753.0,
       "快乐猴-越秀越富广场店-031": 20204.0,
       "快乐猴-番禺建华汇店-019": 6052.0,
-      "快乐猴-禅城东方广场店-018": 3783.0,
+      "快乐猴-禅城东方广场店-018": 3943.0,
       "快乐猴-南海国昌广场店-023": 3507.0
     },
     "unalloc_details": [
@@ -779,6 +758,14 @@
         "planQty": 360,
         "allocQty": 120,
         "unallocQty": 240
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB2026060678960",
+        "skuNum": 2,
+        "planQty": 160,
+        "allocQty": 0,
+        "unallocQty": 160
       },
       {
         "receiverName": "快乐猴-禅城东方广场店-018",

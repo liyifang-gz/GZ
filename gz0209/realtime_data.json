@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-06T12:58:41",
+  "timestamp": "2026-06-06T13:05:40",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 18,
-      "signed": 4,
-      "waiting": 13
+      "signed": 6,
+      "waiting": 11
     },
     "ontime": {
       "ontime": 0,
-      "early": 4,
+      "early": 6,
       "late": 0,
       "total": 17,
       "rate": 0.0,
-      "early_rate": 23.5,
+      "early_rate": 35.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 4,
+      "total": 6,
       "done": 3,
-      "rate": 75.0,
+      "rate": 50.0,
       "pcs_done": 2356,
-      "sign_pcs_done": 4356
+      "sign_pcs_done": 5292
     },
     "qc": {
-      "total": 3,
+      "total": 5,
       "done": 2,
-      "pending": 1,
+      "pending": 3,
       "passed": 2,
       "rejected": 0,
-      "rate": 66.7,
+      "rate": 40.0,
       "bill_done": 2,
-      "bill_total": 3,
+      "bill_total": 5,
       "pcs_done": 1356,
       "pcs_passed": 1356,
-      "pcs_total": 3356,
+      "pcs_total": 4292,
       "pcs_rejected": 0,
-      "pcs_rate": 40.4,
+      "pcs_rate": 31.6,
       "sku_done": 2,
-      "sku_total": 3,
-      "sku_rate": 66.7
+      "sku_total": 5,
+      "sku_rate": 40.0
     },
     "putaway": {
       "total": 17834,
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 17,
-        "done": 4,
-        "rate": 23.5
+        "done": 6,
+        "rate": 35.3
       },
       "pcs": {
         "total": 34986,
@@ -80,14 +80,22 @@
       },
       "sku": {
         "total": 23,
-        "done": 4,
-        "rate": 17.4
+        "done": 6,
+        "rate": 26.1
       },
       "supplier": {
         "total": 16,
-        "done": 4,
-        "rate": 25.0,
+        "done": 6,
+        "rate": 37.5,
         "detail": {
+          "重庆伴侣食品有限公司": {
+            "plan": 1,
+            "done": 1
+          },
+          "好运来（福建）食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "安徽溜溜梅销售有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -104,10 +112,6 @@
             "plan": 1,
             "done": 1
           },
-          "好运来（福建）食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
           "三全食品股份有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -121,10 +125,6 @@
             "done": 0
           },
           "北京尚品致源科技发展有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "重庆伴侣食品有限公司": {
             "plan": 1,
             "done": 0
           },
@@ -176,13 +176,6 @@
       ],
       "unsigned": [
         {
-          "supplierName": "好运来（福建）食品有限公司-快乐猴",
-          "billCode": "YY20260605008022",
-          "skuCount": 1,
-          "pcs": 600,
-          "timeSlot": "14:00 - 14:30"
-        },
-        {
           "supplierName": "江苏卡姆森饮品有限公司",
           "billCode": "YY20260605005754",
           "skuCount": 1,
@@ -216,13 +209,6 @@
           "skuCount": 1,
           "pcs": 250,
           "timeSlot": "14:00 - 14:30"
-        },
-        {
-          "supplierName": "重庆伴侣食品有限公司",
-          "billCode": "YY20260602008099",
-          "skuCount": 1,
-          "pcs": 336,
-          "timeSlot": "14:30 - 15:00"
         },
         {
           "supplierName": "安徽属梨食品有限公司-快乐猴",
@@ -276,6 +262,18 @@
       ],
       "unloading": [
         {
+          "supplierName": "重庆伴侣食品有限公司",
+          "billCode": "YY20260602008099",
+          "signTime": "13:05",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "好运来（福建）食品有限公司-快乐猴",
+          "billCode": "YY20260605008022",
+          "signTime": "13:03",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "江苏光明天成米业有限公司-快乐猴",
           "billCode": "YY20260604008741",
           "signTime": "10:57",
@@ -290,6 +288,22 @@
           "arrivalTime": "14:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "好运来（福建）食品有限公司-快乐猴",
+          "skuName": "快乐猴 黄油华夫饼 300g",
+          "arrivalTime": "14:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "重庆伴侣食品有限公司",
+          "skuName": "桥头 伴侣专家老火锅底料 208g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -297,13 +311,13 @@
           "supplierName": "粮心优品（广东）供应链管理有限公司-快乐猴",
           "skuName": "粮心一号 全麦精酿啤酒 500ml",
           "completeTime": "11:52",
-          "waitingMins": 67
+          "waitingMins": 74
         },
         {
           "supplierName": "安徽溜溜梅销售有限公司-快乐猴-自营",
           "skuName": "溜溜梅 梅冻电解质冰沙200g",
           "completeTime": "11:57",
-          "waitingMins": 61
+          "waitingMins": 68
         }
       ],
       "signed_not_recv": [
@@ -317,6 +331,28 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 1
+        },
+        {
+          "supplierName": "好运来（福建）食品有限公司-快乐猴",
+          "poNo": "CG202606056049",
+          "reserveBillCode": "YY20260605008022",
+          "skuId": "1441106",
+          "skuName": "快乐猴 黄油华夫饼 300g",
+          "purchaseQty": 600,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "重庆伴侣食品有限公司",
+          "poNo": "CG2026060112331",
+          "reserveBillCode": "YY20260602008099",
+          "skuId": "1132761",
+          "skuName": "桥头 伴侣专家老火锅底料 208g",
+          "purchaseQty": 336,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
         }
       ],
       "qc_recv_pending": [],
@@ -504,7 +540,7 @@
     "status": "ok",
     "pool": {
       "plan_pcs": 71145,
-      "alloc_pcs": 12162,
+      "alloc_pcs": 12180,
       "alloc_rate": 17.1,
       "picked_pcs": 2894,
       "sow_pcs": 2894,
@@ -603,16 +639,16 @@
         "orderNo": "DB2026060688995",
         "skuNum": 144,
         "planQty": 2701,
-        "allocQty": 2344,
-        "unallocQty": 357
+        "allocQty": 2350,
+        "unallocQty": 351
       },
       {
         "receiverName": "快乐猴-禅城东方广场店-018",
         "orderNo": "DB2026060688997",
         "skuNum": 158,
         "planQty": 3202,
-        "allocQty": 2861,
-        "unallocQty": 341
+        "allocQty": 2873,
+        "unallocQty": 329
       },
       {
         "receiverName": "快乐猴-番禺建华汇店-019",
@@ -712,17 +748,17 @@
       }
     ],
     "seeding": {
-      "not_started": 48,
-      "in_progress": 2,
-      "done": 88,
-      "total": 138,
+      "not_started": 62,
+      "in_progress": 4,
+      "done": 98,
+      "total": 164,
       "status": "ok"
     }
   },
   "plan": {
     "total_orders": 33,
     "total_pcs": 71145,
-    "alloc_pcs": 12162,
+    "alloc_pcs": 12180,
     "alloc_rate": 17.1,
     "picked_pcs": 2894,
     "sow_pcs": 2894,
@@ -826,16 +862,16 @@
         "orderNo": "DB2026060688995",
         "skuNum": 144,
         "planQty": 2701,
-        "allocQty": 2344,
-        "unallocQty": 357
+        "allocQty": 2350,
+        "unallocQty": 351
       },
       {
         "receiverName": "快乐猴-禅城东方广场店-018",
         "orderNo": "DB2026060688997",
         "skuNum": 158,
         "planQty": 3202,
-        "allocQty": 2861,
-        "unallocQty": 341
+        "allocQty": 2873,
+        "unallocQty": 329
       },
       {
         "receiverName": "快乐猴-番禺建华汇店-019",

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-06T07:57:04",
+  "timestamp": "2026-06-06T08:04:39",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
@@ -196,8 +196,8 @@
       "done": 242,
       "rate": 100.0,
       "pcs_done": 7436,
-      "pcs_total": 0,
-      "pcs_rate": 0.0
+      "pcs_total": 7370,
+      "pcs_rate": 100.0
     },
     "packing": {
       "total": 9,
@@ -338,8 +338,8 @@
         "not_caged": 0,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 0.0,
-        "sowed_picked": 0
+        "cage_rate": 100.0,
+        "sowed_picked": 7370
       },
       "sku": {
         "total": 242,
@@ -353,21 +353,30 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 0,
-      "alloc_pcs": 0,
-      "alloc_rate": 0,
-      "picked_pcs": 0,
-      "sow_pcs": 0,
-      "sow_rate": 0,
+      "plan_pcs": 7679,
+      "alloc_pcs": 7370,
+      "alloc_rate": 96.0,
+      "picked_pcs": 7370,
+      "sow_pcs": 7370,
+      "sow_rate": 100.0,
       "ship_pcs": 0,
-      "ship_rate": 0,
-      "sku_plan": 0,
-      "sku_alloc": 0,
-      "sku_sow": 0,
+      "ship_rate": 0.0,
+      "sku_plan": 242,
+      "sku_alloc": 234,
+      "sku_sow": 234,
       "sku_ship": 0,
-      "total_orders": 0
+      "total_orders": 4
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-越秀越富广场店-031",
+        "orderNo": "DB20260604498298",
+        "skuNum": 8,
+        "planQty": 309,
+        "allocQty": 0,
+        "unallocQty": 309
+      }
+    ],
     "seeding": {
       "not_started": 9,
       "in_progress": 0,
@@ -377,21 +386,32 @@
     }
   },
   "plan": {
-    "total_orders": 0,
-    "total_pcs": 0,
-    "alloc_pcs": 0,
-    "alloc_rate": 0,
-    "picked_pcs": 0,
-    "sow_pcs": 0,
-    "sow_rate": 0,
+    "total_orders": 4,
+    "total_pcs": 7679,
+    "alloc_pcs": 7370,
+    "alloc_rate": 96.0,
+    "picked_pcs": 7370,
+    "sow_pcs": 7370,
+    "sow_rate": 100.0,
     "ship_pcs": 0,
-    "ship_rate": 0,
-    "sku_plan": 0,
-    "sku_alloc": 0,
-    "sku_sow": 0,
-    "store_count": 0,
-    "by_store": {},
-    "unalloc_details": [],
+    "ship_rate": 0.0,
+    "sku_plan": 242,
+    "sku_alloc": 234,
+    "sku_sow": 234,
+    "store_count": 1,
+    "by_store": {
+      "快乐猴-越秀越富广场店-031": 7679.0
+    },
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-越秀越富广场店-031",
+        "orderNo": "DB20260604498298",
+        "skuNum": 8,
+        "planQty": 309,
+        "allocQty": 0,
+        "unallocQty": 309
+      }
+    ],
     "status": "ok"
   },
   "transport": {
@@ -433,8 +453,8 @@
     "by_pos_scheduled": {
       "N冷冻高叉司机": 2
     },
-    "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS(播种) / 2 人",
+    "predicted_efficiency": 3685.0,
+    "efficiency_formula": "7370 PCS(播种) / 2 人",
     "outbound_efficiency": 3718.0,
     "outbound_efficiency_formula": "7436 PCS / 2 人(拣播员)",
     "inbound_efficiency_workers": 2,

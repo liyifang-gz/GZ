@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-07T06:33:17",
+  "timestamp": "2026-06-07T06:38:48",
   "date": "2026-06-07",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 85,
-      "signed": 16,
-      "waiting": 67
+      "signed": 17,
+      "waiting": 66
     },
     "ontime": {
       "ontime": 0,
-      "early": 16,
+      "early": 17,
       "late": 0,
       "total": 83,
       "rate": 0.0,
-      "early_rate": 19.3,
+      "early_rate": 20.5,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 16,
+      "total": 17,
       "done": 13,
-      "rate": 81.2,
+      "rate": 76.5,
       "pcs_done": 1947,
-      "sign_pcs_done": 2375
+      "sign_pcs_done": 2390
     },
     "qc": {
-      "total": 56,
+      "total": 60,
       "done": 0,
-      "pending": 56,
+      "pending": 60,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 56,
+      "bill_total": 60,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 2375,
+      "pcs_total": 2390,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 56,
+      "sku_total": 60,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 83,
-        "done": 16,
-        "rate": 19.3
+        "done": 17,
+        "rate": 20.5
       },
       "pcs": {
         "total": 15071,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 412,
-        "done": 56,
-        "rate": 13.6
+        "done": 60,
+        "rate": 14.6
       },
       "supplier": {
         "total": 72,
-        "done": 12,
-        "rate": 16.7,
+        "done": 13,
+        "rate": 18.1,
         "detail": {
+          "东莞千厨食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "津园食品（广东）有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -153,10 +157,6 @@
             "done": 0
           },
           "山东兴业源现代农业发展有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "北京沃千里贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -500,13 +500,6 @@
           "timeSlot": "10:00 - 10:30"
         },
         {
-          "supplierName": "东莞千厨食品有限公司-快乐猴",
-          "billCode": "YY20260606003678",
-          "skuCount": 4,
-          "pcs": 15,
-          "timeSlot": "10:00 - 10:30"
-        },
-        {
           "supplierName": "深圳市新鼎食品开发有限公司-快乐猴",
           "billCode": "YY20260606003662",
           "skuCount": 1,
@@ -540,9 +533,22 @@
           "skuCount": 4,
           "pcs": 49,
           "timeSlot": "11:30 - 12:00"
+        },
+        {
+          "supplierName": "深圳市山有有农产品开发有限公司-快乐猴",
+          "billCode": "YY20260606003532",
+          "skuCount": 2,
+          "pcs": 8,
+          "timeSlot": "10:00 - 10:30"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "billCode": "YY20260606003678",
+          "signTime": "06:37",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "汶上县富鑫种植农民专业合作社-快乐猴",
           "billCode": "YY20260606008227",
@@ -1010,6 +1016,38 @@
           "arrivalTime": "15:00",
           "unloadFinishTime": "05:55",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 57,
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "skuName": "五香猪肝 150g",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 58,
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "skuName": "猪耳猪头肉卤味双拼 205g",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 59,
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "skuName": "手撕酱板鸭 120g",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 60,
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "skuName": "盐焗鹌鹑蛋 200g",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -1444,6 +1482,17 @@
           "seq": 39
         },
         {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "poNo": "CG202606062844",
+          "reserveBillCode": "YY20260606003678",
+          "skuId": "1116601",
+          "skuName": "五香猪肝 150g",
+          "purchaseQty": 9,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 40
+        },
+        {
           "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
           "poNo": "CG202606062850",
           "reserveBillCode": "YY20260606003486",
@@ -1452,7 +1501,7 @@
           "purchaseQty": 9,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 40
+          "seq": 41
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1463,7 +1512,7 @@
           "purchaseQty": 9,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 41
+          "seq": 42
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1474,7 +1523,7 @@
           "purchaseQty": 9,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 42
+          "seq": 43
         },
         {
           "supplierName": "津园食品（广东）有限公司-快乐猴-自营",
@@ -1485,7 +1534,7 @@
           "purchaseQty": 8,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 43
+          "seq": 44
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1496,7 +1545,7 @@
           "purchaseQty": 8,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 44
+          "seq": 45
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1507,7 +1556,7 @@
           "purchaseQty": 8,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 45
+          "seq": 46
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1518,7 +1567,7 @@
           "purchaseQty": 8,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 46
+          "seq": 47
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1529,7 +1578,7 @@
           "purchaseQty": 7,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 47
+          "seq": 48
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1540,7 +1589,7 @@
           "purchaseQty": 6,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 48
+          "seq": 49
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1551,7 +1600,7 @@
           "purchaseQty": 6,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 49
+          "seq": 50
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1562,7 +1611,7 @@
           "purchaseQty": 5,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 50
+          "seq": 51
         },
         {
           "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
@@ -1573,7 +1622,7 @@
           "purchaseQty": 4,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 51
+          "seq": 52
         },
         {
           "supplierName": "久泰现代农业有限公司-快乐猴",
@@ -1584,7 +1633,7 @@
           "purchaseQty": 4,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 52
+          "seq": 53
         },
         {
           "supplierName": "久泰现代农业有限公司-快乐猴",
@@ -1595,7 +1644,18 @@
           "purchaseQty": 4,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 53
+          "seq": 54
+        },
+        {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "poNo": "CG202606062844",
+          "reserveBillCode": "YY20260606003678",
+          "skuId": "1129770",
+          "skuName": "猪耳猪头肉卤味双拼 205g",
+          "purchaseQty": 3,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 55
         },
         {
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
@@ -1606,7 +1666,18 @@
           "purchaseQty": 3,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 54
+          "seq": 56
+        },
+        {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "poNo": "CG202606062844",
+          "reserveBillCode": "YY20260606003678",
+          "skuId": "1404565",
+          "skuName": "手撕酱板鸭 120g",
+          "purchaseQty": 2,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 57
         },
         {
           "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
@@ -1617,7 +1688,18 @@
           "purchaseQty": 2,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 55
+          "seq": 58
+        },
+        {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "poNo": "CG202606062844",
+          "reserveBillCode": "YY20260606003678",
+          "skuId": "1404790",
+          "skuName": "盐焗鹌鹑蛋 200g",
+          "purchaseQty": 1,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 59
         },
         {
           "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
@@ -1628,7 +1710,7 @@
           "purchaseQty": 1,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 56
+          "seq": 60
         }
       ],
       "qc_recv_pending": [],
@@ -1755,9 +1837,9 @@
     "sku_sow": 0,
     "store_count": 4,
     "by_store": {
-      "快乐猴-番禺建华汇店-019": 6731.0,
-      "快乐猴-禅城东方广场店-018": 4364.0,
-      "快乐猴-南海国昌广场店-023": 3340.0,
+      "快乐猴-番禺建华汇店-019": 6728.0,
+      "快乐猴-禅城东方广场店-018": 4365.0,
+      "快乐猴-南海国昌广场店-023": 3342.0,
       "嘀潮（深圳）网络科技有限公司-快乐猴": 40.0
     },
     "unalloc_details": [],

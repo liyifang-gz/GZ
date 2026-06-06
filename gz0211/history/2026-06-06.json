@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-06T11:46:44",
+  "timestamp": "2026-06-06T11:49:46",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 2,
-      "done": 1,
-      "pending": 1,
-      "passed": 1,
+      "done": 2,
+      "pending": 0,
+      "passed": 2,
       "rejected": 0,
-      "rate": 50.0,
-      "bill_done": 1,
+      "rate": 100.0,
+      "bill_done": 2,
       "bill_total": 2,
-      "pcs_done": 600,
-      "pcs_passed": 600,
+      "pcs_done": 900,
+      "pcs_passed": 900,
       "pcs_total": 900,
       "pcs_rejected": 0,
-      "pcs_rate": 66.7,
-      "sku_done": 1,
+      "pcs_rate": 100.0,
+      "sku_done": 2,
       "sku_total": 2,
-      "sku_rate": 50.0
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 444,
@@ -152,22 +152,19 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "深圳市鲜百汇食品有限公司-快乐猴",
-          "skuName": "海氏力 鲜冻海捕带鱼 1kg",
-          "arrivalTime": "14:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "首次进行中"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
           "skuName": "天淇 巧仁派对雪糕 240g",
           "completeTime": "10:21",
-          "waitingMins": 85
+          "waitingMins": 88
+        },
+        {
+          "supplierName": "深圳市鲜百汇食品有限公司-快乐猴",
+          "skuName": "海氏力 鲜冻海捕带鱼 1kg",
+          "completeTime": "11:48",
+          "waitingMins": 1
         }
       ],
       "signed_not_recv": [
@@ -179,7 +176,7 @@
           "skuName": "海氏力 鲜冻海捕带鱼 1kg",
           "purchaseQty": 300,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 1
         }
       ],

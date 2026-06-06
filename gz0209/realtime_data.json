@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-06T18:18:19",
+  "timestamp": "2026-06-06T18:21:19",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 19,
-      "signed": 12,
-      "waiting": 3
+      "signed": 13,
+      "waiting": 2
     },
     "ontime": {
       "ontime": 0,
       "early": 9,
-      "late": 3,
+      "late": 4,
       "total": 15,
       "rate": 0.0,
       "early_rate": 60.0,
-      "late_rate": 20.0
+      "late_rate": 26.7
     },
     "reserve_progress": {
       "po_total": 14,
@@ -24,59 +24,44 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 12,
+      "total": 13,
       "done": 10,
-      "rate": 83.3,
+      "rate": 76.9,
       "pcs_done": 8292,
-      "sign_pcs_done": 14044
+      "sign_pcs_done": 15804
     },
     "qc": {
-      "total": 6,
+      "total": 11,
       "done": 2,
-      "pending": 4,
+      "pending": 9,
       "passed": 2,
       "rejected": 0,
-      "rate": 33.3,
+      "rate": 18.2,
       "bill_done": 2,
-      "bill_total": 6,
+      "bill_total": 11,
       "pcs_done": 1356,
       "pcs_passed": 1356,
-      "pcs_total": 7108,
+      "pcs_total": 8868,
       "pcs_rejected": 0,
-      "pcs_rate": 19.1,
+      "pcs_rate": 15.3,
       "sku_done": 2,
-      "sku_total": 6,
-      "sku_rate": 33.3
+      "sku_total": 11,
+      "sku_rate": 18.2
     },
     "putaway": {
       "total": 20834,
-      "done": 18434,
-      "rate": 88.5,
+      "done": 20834,
+      "rate": 100.0,
       "sku_total": 31,
-      "sku_done": 27,
-      "sku_rate": 87.1,
-      "details": [
-        {
-          "poNo": "CG202605295792",
-          "hopePcs": 960,
-          "putPcs": 0,
-          "hopeSku": 2,
-          "putSku": 0
-        },
-        {
-          "poNo": "CG202605295791",
-          "hopePcs": 1440,
-          "putPcs": 0,
-          "hopeSku": 2,
-          "putSku": 0
-        }
-      ]
+      "sku_done": 31,
+      "sku_rate": 100.0,
+      "details": []
     },
     "dimensions": {
       "reserve": {
         "total": 15,
-        "done": 12,
-        "rate": 80.0
+        "done": 13,
+        "rate": 86.7
       },
       "pcs": {
         "total": 34896,
@@ -87,14 +72,18 @@
       },
       "sku": {
         "total": 21,
-        "done": 14,
-        "rate": 66.7
+        "done": 19,
+        "rate": 90.5
       },
       "supplier": {
         "total": 14,
-        "done": 11,
-        "rate": 78.6,
+        "done": 12,
+        "rate": 85.7,
         "detail": {
+          "广州尚源网络科技有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州创策贸易有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -146,10 +135,6 @@
           "上海本甄农业发展有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
-          },
-          "广州尚源网络科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -187,16 +172,15 @@
           "skuCount": 1,
           "pcs": 300,
           "timeSlot": "14:30 - 15:00"
-        },
-        {
-          "supplierName": "广州尚源网络科技有限公司-快乐猴",
-          "billCode": "YY20260601008717",
-          "skuCount": 5,
-          "pcs": 1760,
-          "timeSlot": "15:30 - 16:00"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "广州尚源网络科技有限公司-快乐猴",
+          "billCode": "YY20260601008717",
+          "signTime": "18:20",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "江苏仙之宝食品有限公司-快乐猴-自营",
           "billCode": "YY20260530004756",
@@ -243,6 +227,46 @@
           "arrivalTime": "15:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "广州尚源网络科技有限公司-快乐猴",
+          "skuName": "可口可乐 无糖零度汽水 500ml",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "广州尚源网络科技有限公司-快乐猴",
+          "skuName": "美汁源 果粒橙 1.25L",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "广州尚源网络科技有限公司-快乐猴",
+          "skuName": "雪碧清爽柠檬味汽水500ml",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "广州尚源网络科技有限公司-快乐猴",
+          "skuName": "芬达橙味汽水330ml*6",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 9,
+          "supplierName": "广州尚源网络科技有限公司-快乐猴",
+          "skuName": "可口可乐1.25L+美汁源果粒橙1.25L",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -250,13 +274,13 @@
           "supplierName": "粮心优品（广东）供应链管理有限公司-快乐猴",
           "skuName": "粮心一号 全麦精酿啤酒 500ml",
           "completeTime": "11:52",
-          "waitingMins": 386
+          "waitingMins": 389
         },
         {
           "supplierName": "安徽溜溜梅销售有限公司-快乐猴-自营",
           "skuName": "溜溜梅 梅冻电解质冰沙200g",
           "completeTime": "11:57",
-          "waitingMins": 381
+          "waitingMins": 384
         }
       ],
       "signed_not_recv": [
@@ -314,6 +338,61 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 5
+        },
+        {
+          "supplierName": "广州尚源网络科技有限公司-快乐猴",
+          "poNo": "CG202606019033",
+          "reserveBillCode": "YY20260601008717",
+          "skuId": "413",
+          "skuName": "可口可乐 无糖零度汽水 500ml",
+          "purchaseQty": 600,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
+        },
+        {
+          "supplierName": "广州尚源网络科技有限公司-快乐猴",
+          "poNo": "CG202606019033",
+          "reserveBillCode": "YY20260601008717",
+          "skuId": "18287",
+          "skuName": "雪碧清爽柠檬味汽水500ml",
+          "purchaseQty": 600,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
+        },
+        {
+          "supplierName": "广州尚源网络科技有限公司-快乐猴",
+          "poNo": "CG202606019033",
+          "reserveBillCode": "YY20260601008717",
+          "skuId": "214295",
+          "skuName": "可口可乐1.25L+美汁源果粒橙1.25L",
+          "purchaseQty": 360,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 8
+        },
+        {
+          "supplierName": "广州尚源网络科技有限公司-快乐猴",
+          "poNo": "CG202606019033",
+          "reserveBillCode": "YY20260601008717",
+          "skuId": "1231",
+          "skuName": "美汁源 果粒橙 1.25L",
+          "purchaseQty": 120,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 9
+        },
+        {
+          "supplierName": "广州尚源网络科技有限公司-快乐猴",
+          "poNo": "CG202606019033",
+          "reserveBillCode": "YY20260601008717",
+          "skuId": "61007",
+          "skuName": "芬达橙味汽水330ml*6",
+          "purchaseQty": 80,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 10
         }
       ],
       "qc_recv_pending": [],
@@ -591,9 +670,9 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 52,
-      "in_progress": 4,
-      "done": 301,
+      "not_started": 48,
+      "in_progress": 5,
+      "done": 304,
       "total": 357,
       "status": "ok"
     }

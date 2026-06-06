@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-06T09:59:44",
+  "timestamp": "2026-06-06T10:05:11",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 10,
-      "signed": 1,
-      "waiting": 6
+      "signed": 3,
+      "waiting": 4
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 3,
       "late": 0,
       "total": 7,
       "rate": 0.0,
-      "early_rate": 14.3,
+      "early_rate": 42.9,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 1200
+      "sign_pcs_done": 1410
     },
     "qc": {
-      "total": 2,
+      "total": 5,
       "done": 0,
-      "pending": 2,
+      "pending": 5,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 2,
+      "bill_total": 5,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 1200,
+      "pcs_total": 1410,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 2,
+      "sku_total": 4,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 7,
-        "done": 1,
-        "rate": 14.3
+        "done": 3,
+        "rate": 42.9
       },
       "pcs": {
         "total": 936,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 13,
-        "done": 2,
-        "rate": 15.4
+        "done": 8,
+        "rate": 61.5
       },
       "supplier": {
         "total": 6,
-        "done": 1,
-        "rate": 16.7,
+        "done": 2,
+        "rate": 33.3,
         "detail": {
+          "三全食品股份有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "广州市艺奇雪贸易有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -90,10 +94,6 @@
           },
           "海霸王（汕头）食品有限公司-快乐猴": {
             "plan": 1,
-            "done": 0
-          },
-          "三全食品股份有限公司-快乐猴": {
-            "plan": 2,
             "done": 0
           },
           "广州赛味谦食品有限公司": {
@@ -125,20 +125,6 @@
           "timeSlot": "16:00 - 16:30"
         },
         {
-          "supplierName": "三全食品股份有限公司-快乐猴",
-          "billCode": "YY20260605002011",
-          "skuCount": 3,
-          "pcs": 210,
-          "timeSlot": "16:00 - 16:30"
-        },
-        {
-          "supplierName": "三全食品股份有限公司-快乐猴",
-          "billCode": "YY20260605002011",
-          "skuCount": 3,
-          "pcs": 210,
-          "timeSlot": "16:00 - 16:30"
-        },
-        {
           "supplierName": "广州赛味谦食品有限公司",
           "billCode": "YY20260604005840",
           "skuCount": 2,
@@ -154,6 +140,18 @@
         }
       ],
       "unloading": [
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "billCode": "YY20260605002011",
+          "signTime": "10:03",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "billCode": "YY20260605002011",
+          "signTime": "10:03",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
           "billCode": "YY20260603009650",
@@ -175,6 +173,30 @@
           "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
           "skuName": "天淇 巧仁派对雪糕 240g",
           "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "skuName": "三全龙舟粽板栗猪肉粽750g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "skuName": "三全 龙舟粽网兜豆沙粽 455g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "skuName": "三全 龙舟粽网兜豆沙粽 455g",
+          "arrivalTime": "16:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
@@ -202,6 +224,28 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 2
+        },
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "poNo": "CG202606035729",
+          "reserveBillCode": "YY20260605002011",
+          "skuId": "112306",
+          "skuName": "三全龙舟粽板栗猪肉粽750g",
+          "purchaseQty": 110,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "poNo": "CG202606035729",
+          "reserveBillCode": "YY20260605002011",
+          "skuId": "696923",
+          "skuName": "三全 龙舟粽网兜豆沙粽 455g",
+          "purchaseQty": 80,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
         }
       ],
       "qc_recv_pending": [],
@@ -236,7 +280,7 @@
       "done": 242,
       "rate": 100.0,
       "pcs_done": 7436,
-      "pcs_total": 7370,
+      "pcs_total": 7436,
       "pcs_rate": 100.0
     },
     "packing": {
@@ -379,7 +423,7 @@
         "pick_rate": 0.0,
         "sow_rate": 0.0,
         "cage_rate": 100.0,
-        "sowed_picked": 7370
+        "sowed_picked": 7436
       },
       "sku": {
         "total": 242,
@@ -393,45 +437,45 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 7679,
-      "alloc_pcs": 7679,
+      "plan_pcs": 7745,
+      "alloc_pcs": 7745,
       "alloc_rate": 100.0,
-      "picked_pcs": 7370,
-      "sow_pcs": 7370,
+      "picked_pcs": 7436,
+      "sow_pcs": 7436,
       "sow_rate": 96.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 242,
-      "sku_alloc": 242,
-      "sku_sow": 234,
+      "sku_plan": 245,
+      "sku_alloc": 245,
+      "sku_sow": 237,
       "sku_ship": 0,
-      "total_orders": 4
+      "total_orders": 5
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 46,
+      "not_started": 50,
       "in_progress": 0,
       "done": 0,
-      "total": 46,
+      "total": 50,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 4,
-    "total_pcs": 7679,
-    "alloc_pcs": 7679,
+    "total_orders": 5,
+    "total_pcs": 7745,
+    "alloc_pcs": 7745,
     "alloc_rate": 100.0,
-    "picked_pcs": 7370,
-    "sow_pcs": 7370,
+    "picked_pcs": 7436,
+    "sow_pcs": 7436,
     "sow_rate": 96.0,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 242,
-    "sku_alloc": 242,
-    "sku_sow": 234,
+    "sku_plan": 245,
+    "sku_alloc": 245,
+    "sku_sow": 237,
     "store_count": 1,
     "by_store": {
-      "快乐猴-越秀越富广场店-031": 7679.0
+      "快乐猴-越秀越富广场店-031": 7745.0
     },
     "unalloc_details": [],
     "status": "ok"
@@ -475,8 +519,8 @@
     "by_pos_scheduled": {
       "N冷冻高叉司机": 2
     },
-    "predicted_efficiency": 3685.0,
-    "efficiency_formula": "7370 PCS(播种) / 2 人",
+    "predicted_efficiency": 3718.0,
+    "efficiency_formula": "7436 PCS(播种) / 2 人",
     "outbound_efficiency": 3718.0,
     "outbound_efficiency_formula": "7436 PCS / 2 人(拣播员)",
     "inbound_efficiency_workers": 2,

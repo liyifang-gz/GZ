@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-06T10:20:39",
+  "timestamp": "2026-06-06T10:23:40",
   "date": "2026-06-06",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 1,
-      "done": 0,
-      "pending": 1,
-      "passed": 0,
+      "done": 1,
+      "pending": 0,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 100.0,
+      "bill_done": 1,
       "bill_total": 1,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 600,
+      "pcs_passed": 600,
       "pcs_total": 600,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 100.0,
+      "sku_done": 1,
       "sku_total": 1,
-      "sku_rate": 0.0
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 444,
@@ -153,17 +153,15 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
+      "qc_pending": [],
+      "recv_pending": [
         {
-          "seq": 1,
           "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
           "skuName": "天淇 巧仁派对雪糕 240g",
-          "arrivalTime": "10:30",
-          "unloadFinishTime": "10:14",
-          "statusLabel": "首次进行中"
+          "completeTime": "10:21",
+          "waitingMins": 2
         }
       ],
-      "recv_pending": [],
       "signed_not_recv": [
         {
           "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
@@ -184,7 +182,7 @@
           "skuName": "天淇 巧仁派对雪糕 240g",
           "purchaseQty": 600,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 2
         },
         {
@@ -415,10 +413,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 78,
+      "not_started": 79,
       "in_progress": 0,
       "done": 0,
-      "total": 78,
+      "total": 79,
       "status": "ok"
     }
   },

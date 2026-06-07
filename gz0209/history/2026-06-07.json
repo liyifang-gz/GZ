@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-07T09:58:59",
+  "timestamp": "2026-06-07T10:04:32",
   "date": "2026-06-07",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 5,
-      "waiting": 6
+      "signed": 6,
+      "waiting": 5
     },
     "ontime": {
       "ontime": 0,
-      "early": 5,
+      "early": 6,
       "late": 0,
       "total": 11,
       "rate": 0.0,
-      "early_rate": 45.5,
+      "early_rate": 54.5,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 5,
+      "total": 6,
       "done": 2,
-      "rate": 40.0,
+      "rate": 33.3,
       "pcs_done": 984,
-      "sign_pcs_done": 27134
+      "sign_pcs_done": 27914
     },
     "qc": {
-      "total": 7,
+      "total": 9,
       "done": 0,
-      "pending": 7,
+      "pending": 9,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 7,
+      "bill_total": 9,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 26150,
+      "pcs_total": 26930,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 7,
+      "sku_total": 9,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 11,
-        "done": 5,
-        "rate": 45.5
+        "done": 6,
+        "rate": 54.5
       },
       "pcs": {
         "total": 22712,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 22,
-        "done": 9,
-        "rate": 40.9
+        "done": 11,
+        "rate": 50.0
       },
       "supplier": {
         "total": 11,
-        "done": 5,
-        "rate": 45.5,
+        "done": 6,
+        "rate": 54.5,
         "detail": {
+          "广州宸宇商贸有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "浙江美生日化用品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -113,10 +117,6 @@
             "done": 0
           },
           "重庆辣媳妇德宝食品有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
-          "广州宸宇商贸有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -191,13 +191,6 @@
           "timeSlot": "14:30 - 15:00"
         },
         {
-          "supplierName": "广州宸宇商贸有限公司-快乐猴",
-          "billCode": "YY20260604002682",
-          "skuCount": 2,
-          "pcs": 780,
-          "timeSlot": "11:00 - 11:30"
-        },
-        {
           "supplierName": "杭州七方杯饮料有限公司-快乐猴-自营",
           "billCode": "YY20260603002275",
           "skuCount": 1,
@@ -206,6 +199,12 @@
         }
       ],
       "unloading": [
+        {
+          "supplierName": "广州宸宇商贸有限公司-快乐猴",
+          "billCode": "YY20260604002682",
+          "signTime": "10:04",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "孝感华冠饮料有限公司-快乐猴",
           "billCode": "YY20260601005705",
@@ -280,6 +279,22 @@
           "supplierName": "孝感华冠饮料有限公司-快乐猴",
           "skuName": "快乐猴 劲爽苏打汽水 330ml*4",
           "arrivalTime": "13:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "广州宸宇商贸有限公司-快乐猴",
+          "skuName": "白象汤好喝老母鸡汤面110g*5袋",
+          "arrivalTime": "11:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 9,
+          "supplierName": "广州宸宇商贸有限公司-快乐猴",
+          "skuName": "白象 汤好喝招牌猪骨汤面 105.5g*5",
+          "arrivalTime": "11:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
@@ -364,6 +379,17 @@
           "seq": 7
         },
         {
+          "supplierName": "广州宸宇商贸有限公司-快乐猴",
+          "poNo": "CG202606019047",
+          "reserveBillCode": "YY20260604002682",
+          "skuId": "79972",
+          "skuName": "白象 汤好喝招牌猪骨汤面 105.5g*5",
+          "purchaseQty": 540,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 8
+        },
+        {
           "supplierName": "浙江美生日化用品有限公司-快乐猴",
           "poNo": "CG202605275558",
           "reserveBillCode": "YY20260601007726",
@@ -372,7 +398,18 @@
           "purchaseQty": 504,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 9
+        },
+        {
+          "supplierName": "广州宸宇商贸有限公司-快乐猴",
+          "poNo": "CG202606019047",
+          "reserveBillCode": "YY20260604002682",
+          "skuId": "76564",
+          "skuName": "白象汤好喝老母鸡汤面110g*5袋",
+          "purchaseQty": 240,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 10
         }
       ],
       "qc_recv_pending": [],
@@ -526,7 +563,7 @@
       "冷冻": 0,
       "常温": 0
     },
-    "all_count": 0,
+    "all_count": 1,
     "temp_rate": null,
     "temp_qualified": 0,
     "temp_total": 0,

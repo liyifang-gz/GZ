@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-07T10:58:45",
+  "timestamp": "2026-06-07T11:05:32",
   "date": "2026-06-07",
   "warehouse": "GZ0210",
   "inbound": {
@@ -49,13 +49,21 @@
       "sku_rate": 100.0
     },
     "putaway": {
-      "total": 0,
+      "total": 2400,
       "done": 0,
-      "rate": 0,
-      "sku_total": 0,
+      "rate": 0.0,
+      "sku_total": 2,
       "sku_done": 0,
-      "sku_rate": 0,
-      "details": []
+      "sku_rate": 0.0,
+      "details": [
+        {
+          "poNo": "CG202605295598",
+          "hopePcs": 2400,
+          "putPcs": 0,
+          "hopeSku": 2,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +75,8 @@
         "total": 3400,
         "done": 2400,
         "rate": 70.6,
-        "recv_done": 3400,
-        "recv_rate": 100.0
+        "recv_done": 2400,
+        "recv_rate": 70.6
       },
       "sku": {
         "total": 6,
@@ -80,15 +88,11 @@
         "done": 5,
         "rate": 100.0,
         "detail": {
-          "三全食品股份有限公司-快乐猴": {
+          "广州运通贸易发展有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
           "祐康（杭州）食品制造有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "广州运通贸易发展有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -97,6 +101,10 @@
             "done": 1
           },
           "广州冰力达食品有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
+          "三全食品股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           }
@@ -129,7 +137,7 @@
           "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
           "skuName": "祐康 纯巧兹巧克力味脆皮冰淇淋 390g",
           "completeTime": "10:58",
-          "waitingMins": 0
+          "waitingMins": 7
         }
       ],
       "signed_not_recv": [
@@ -145,17 +153,6 @@
           "seq": 1
         },
         {
-          "supplierName": "广州冰力达食品有限公司-快乐猴-自营",
-          "poNo": "CG202605295598",
-          "reserveBillCode": "YY20260605012141",
-          "skuId": "1121919",
-          "skuName": "快乐猴 食用冰杯 160g",
-          "purchaseQty": 2400,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 2
-        },
-        {
           "supplierName": "广州运通贸易发展有限公司-快乐猴",
           "poNo": "CG2026060210319",
           "reserveBillCode": "YY20260605012291",
@@ -164,29 +161,7 @@
           "purchaseQty": 2160,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
-        },
-        {
-          "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
-          "poNo": "CG202606010785",
-          "reserveBillCode": "YY20260606004680",
-          "skuId": "1483352",
-          "skuName": "红宝石 东北奶糕 325g",
-          "purchaseQty": 800,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 4
-        },
-        {
-          "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
-          "poNo": "CG2026060114765",
-          "reserveBillCode": "YY20260602002688",
-          "skuId": "1482617",
-          "skuName": "祐康 纯巧兹巧克力味脆皮冰淇淋 390g",
-          "purchaseQty": 600,
-          "recvQty": 0,
-          "hasQc": true,
-          "seq": 5
+          "seq": 2
         }
       ],
       "qc_recv_pending": [],
@@ -291,10 +266,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 118,
+      "not_started": 120,
       "in_progress": 0,
       "done": 0,
-      "total": 118,
+      "total": 120,
       "status": "ok"
     }
   },

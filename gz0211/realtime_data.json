@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-07T09:48:57",
+  "timestamp": "2026-06-07T09:51:57",
   "date": "2026-06-07",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 6,
-      "signed": 0,
-      "waiting": 5
+      "signed": 2,
+      "waiting": 3
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 2,
       "late": 0,
       "total": 5,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 40.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 3200
     },
     "qc": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "pending": 0,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 3200,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 2,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 0,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 5,
-        "done": 0,
-        "rate": 0.0
+        "done": 2,
+        "rate": 40.0
       },
       "pcs": {
         "total": 3400,
@@ -72,27 +72,27 @@
       },
       "sku": {
         "total": 6,
-        "done": 0,
-        "rate": 0.0
+        "done": 2,
+        "rate": 33.3
       },
       "supplier": {
         "total": 5,
-        "done": 0,
-        "rate": 0.0,
+        "done": 2,
+        "rate": 40.0,
         "detail": {
           "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营": {
             "plan": 1,
-            "done": 0
+            "done": 1
+          },
+          "广州冰力达食品有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
           },
           "三全食品股份有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
           "广州运通贸易发展有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "广州冰力达食品有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
           },
@@ -116,13 +116,6 @@
       ],
       "unsigned": [
         {
-          "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
-          "billCode": "YY20260606004680",
-          "skuCount": 1,
-          "pcs": 800,
-          "timeSlot": "15:00 - 15:30"
-        },
-        {
           "supplierName": "三全食品股份有限公司-快乐猴",
           "billCode": "YY20260606000607",
           "skuCount": 1,
@@ -135,13 +128,6 @@
           "skuCount": 2,
           "pcs": 5360,
           "timeSlot": "11:30 - 14:00"
-        },
-        {
-          "supplierName": "广州冰力达食品有限公司-快乐猴-自营",
-          "billCode": "YY20260605012141",
-          "skuCount": 1,
-          "pcs": 2400,
-          "timeSlot": "15:30 - 16:30"
         },
         {
           "supplierName": "海霸王（汕头）食品有限公司-快乐猴",
@@ -158,10 +144,63 @@
           "timeSlot": "14:30 - 15:00"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
+          "billCode": "YY20260606004680",
+          "signTime": "09:50",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "广州冰力达食品有限公司-快乐猴-自营",
+          "billCode": "YY20260605012141",
+          "signTime": "09:50",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "广州冰力达食品有限公司-快乐猴-自营",
+          "skuName": "快乐猴 食用冰杯 160g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
+          "skuName": "红宝石 东北奶糕 325g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "广州冰力达食品有限公司-快乐猴-自营",
+          "poNo": "CG202605295598",
+          "reserveBillCode": "YY20260605012141",
+          "skuId": "1121919",
+          "skuName": "快乐猴 食用冰杯 160g",
+          "purchaseQty": 2400,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
+          "poNo": "CG202606010785",
+          "reserveBillCode": "YY20260606004680",
+          "skuId": "1483352",
+          "skuName": "红宝石 东北奶糕 325g",
+          "purchaseQty": 800,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -264,10 +303,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 74,
+      "not_started": 76,
       "in_progress": 0,
       "done": 0,
-      "total": 74,
+      "total": 76,
       "status": "ok"
     }
   },

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-07T13:28:27",
+  "timestamp": "2026-06-07T13:31:28",
   "date": "2026-06-07",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 8,
-      "waiting": 3
+      "signed": 9,
+      "waiting": 2
     },
     "ontime": {
       "ontime": 0,
-      "early": 7,
+      "early": 8,
       "late": 1,
       "total": 11,
       "rate": 0.0,
-      "early_rate": 63.6,
+      "early_rate": 72.7,
       "late_rate": 9.1
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 8,
+      "total": 9,
       "done": 6,
-      "rate": 75.0,
+      "rate": 66.7,
       "pcs_done": 7946,
-      "sign_pcs_done": 28676
+      "sign_pcs_done": 29576
     },
     "qc": {
-      "total": 10,
+      "total": 11,
       "done": 0,
-      "pending": 10,
+      "pending": 11,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 10,
+      "bill_total": 11,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 20730,
+      "pcs_total": 21630,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 10,
+      "sku_total": 11,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 11,
-        "done": 8,
-        "rate": 72.7
+        "done": 9,
+        "rate": 81.8
       },
       "pcs": {
         "total": 22712,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 22,
-        "done": 19,
-        "rate": 86.4
+        "done": 20,
+        "rate": 90.9
       },
       "supplier": {
         "total": 11,
-        "done": 8,
-        "rate": 72.7,
+        "done": 9,
+        "rate": 81.8,
         "detail": {
+          "杭州七方杯饮料有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "浙江群鹿新材料股份有限公司": {
             "plan": 1,
             "done": 1
@@ -117,10 +121,6 @@
             "done": 0
           },
           "重庆辣媳妇德宝食品有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
-          "杭州七方杯饮料有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
           }
@@ -168,16 +168,15 @@
           "skuCount": 1,
           "pcs": 990,
           "timeSlot": "15:30 - 16:00"
-        },
-        {
-          "supplierName": "杭州七方杯饮料有限公司-快乐猴-自营",
-          "billCode": "YY20260603002275",
-          "skuCount": 1,
-          "pcs": 900,
-          "timeSlot": "15:30 - 16:00"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "杭州七方杯饮料有限公司-快乐猴-自营",
+          "billCode": "YY20260603002275",
+          "signTime": "13:31",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "浙江群鹿新材料股份有限公司",
           "billCode": "YY20260606005638",
@@ -273,6 +272,14 @@
           "arrivalTime": "12:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 11,
+          "supplierName": "杭州七方杯饮料有限公司-快乐猴-自营",
+          "skuName": "快乐猴 100%三柚复合果汁 1L",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -322,6 +329,17 @@
           "seq": 4
         },
         {
+          "supplierName": "杭州七方杯饮料有限公司-快乐猴-自营",
+          "poNo": "CG202606025276",
+          "reserveBillCode": "YY20260603002275",
+          "skuId": "1408902",
+          "skuName": "快乐猴 100%三柚复合果汁 1L",
+          "purchaseQty": 900,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
           "supplierName": "广州宸宇商贸有限公司-快乐猴",
           "poNo": "CG202606019047",
           "reserveBillCode": "YY20260604002682",
@@ -330,7 +348,7 @@
           "purchaseQty": 540,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 6
         },
         {
           "supplierName": "广州市万缘实业有限公司-快乐猴",
@@ -341,7 +359,7 @@
           "purchaseQty": 510,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 6
+          "seq": 7
         },
         {
           "supplierName": "广州宸宇商贸有限公司-快乐猴",
@@ -352,7 +370,7 @@
           "purchaseQty": 240,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 8
         },
         {
           "supplierName": "浙江群鹿新材料股份有限公司",
@@ -363,7 +381,7 @@
           "purchaseQty": 100,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 9
         },
         {
           "supplierName": "广州市万缘实业有限公司-快乐猴",
@@ -374,7 +392,7 @@
           "purchaseQty": 72,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 10
         },
         {
           "supplierName": "浙江群鹿新材料股份有限公司",
@@ -385,7 +403,7 @@
           "purchaseQty": 40,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 10
+          "seq": 11
         },
         {
           "supplierName": "浙江群鹿新材料股份有限公司",
@@ -396,7 +414,7 @@
           "purchaseQty": 15,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 11
+          "seq": 12
         },
         {
           "supplierName": "浙江群鹿新材料股份有限公司",
@@ -407,7 +425,7 @@
           "purchaseQty": 10,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 12
+          "seq": 13
         },
         {
           "supplierName": "浙江群鹿新材料股份有限公司",
@@ -418,7 +436,7 @@
           "purchaseQty": 10,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 13
+          "seq": 14
         },
         {
           "supplierName": "浙江群鹿新材料股份有限公司",
@@ -429,7 +447,7 @@
           "purchaseQty": 5,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 14
+          "seq": 15
         }
       ],
       "qc_recv_pending": [],
@@ -685,9 +703,9 @@
       }
     ],
     "seeding": {
-      "not_started": 117,
-      "in_progress": 2,
-      "done": 99,
+      "not_started": 114,
+      "in_progress": 4,
+      "done": 100,
       "total": 218,
       "status": "ok"
     }

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-07T08:43:59",
+  "timestamp": "2026-06-07T08:47:00",
   "date": "2026-06-07",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 1,
-      "waiting": 10
+      "signed": 2,
+      "waiting": 9
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 2,
       "late": 0,
       "total": 11,
       "rate": 0.0,
-      "early_rate": 9.1,
+      "early_rate": 18.2,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 1,
-      "rate": 100.0,
+      "rate": 50.0,
       "pcs_done": 480,
-      "sign_pcs_done": 480
+      "sign_pcs_done": 21030
     },
     "qc": {
-      "total": 0,
+      "total": 4,
       "done": 0,
-      "pending": 0,
+      "pending": 4,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 4,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 20550,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 4,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 14218,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 11,
-        "done": 1,
-        "rate": 9.1
+        "done": 2,
+        "rate": 18.2
       },
       "pcs": {
         "total": 22712,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 22,
-        "done": 1,
-        "rate": 4.5
+        "done": 5,
+        "rate": 22.7
       },
       "supplier": {
         "total": 11,
-        "done": 1,
-        "rate": 9.1,
+        "done": 2,
+        "rate": 18.2,
         "detail": {
+          "东莞市赢卓商贸有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "安徽属梨食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -89,10 +93,6 @@
             "done": 0
           },
           "广州市万缘实业有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "东莞市赢卓商贸有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
           },
@@ -170,13 +170,6 @@
           "timeSlot": "12:00 - 12:30"
         },
         {
-          "supplierName": "东莞市赢卓商贸有限公司-快乐猴-自营",
-          "billCode": "YY20260605008818",
-          "skuCount": 4,
-          "pcs": 20550,
-          "timeSlot": "12:30 - 16:00"
-        },
-        {
           "supplierName": "广州市汇城贸易有限公司-快乐猴",
           "billCode": "YY20260605007800",
           "skuCount": 1,
@@ -233,10 +226,95 @@
           "timeSlot": "10:00 - 11:00"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "东莞市赢卓商贸有限公司-快乐猴-自营",
+          "billCode": "YY20260605008818",
+          "signTime": "08:46",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "东莞市赢卓商贸有限公司-快乐猴-自营",
+          "skuName": "农夫山泉 西柚味尖叫 550ml",
+          "arrivalTime": "12:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "东莞市赢卓商贸有限公司-快乐猴-自营",
+          "skuName": "农夫山泉东方树叶茉莉花茶原味茶饮料900ml",
+          "arrivalTime": "12:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "东莞市赢卓商贸有限公司-快乐猴-自营",
+          "skuName": "农夫山泉东方树叶青柑普洱复合茶饮料900ml",
+          "arrivalTime": "12:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "东莞市赢卓商贸有限公司-快乐猴-自营",
+          "skuName": "农夫山泉东方树叶陈皮白茶复合茶饮料500ml",
+          "arrivalTime": "12:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "东莞市赢卓商贸有限公司-快乐猴-自营",
+          "poNo": "CG202606044317",
+          "reserveBillCode": "YY20260605008818",
+          "skuId": "1088",
+          "skuName": "农夫山泉 西柚味尖叫 550ml",
+          "purchaseQty": 9000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "东莞市赢卓商贸有限公司-快乐猴-自营",
+          "poNo": "CG202606044317",
+          "reserveBillCode": "YY20260605008818",
+          "skuId": "390014",
+          "skuName": "农夫山泉东方树叶茉莉花茶原味茶饮料900ml",
+          "purchaseQty": 6000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "东莞市赢卓商贸有限公司-快乐猴-自营",
+          "poNo": "CG202606044317",
+          "reserveBillCode": "YY20260605008818",
+          "skuId": "390079",
+          "skuName": "农夫山泉东方树叶青柑普洱复合茶饮料900ml",
+          "purchaseQty": 3600,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
+          "supplierName": "东莞市赢卓商贸有限公司-快乐猴-自营",
+          "poNo": "CG202606044317",
+          "reserveBillCode": "YY20260605008818",
+          "skuId": "1069674",
+          "skuName": "农夫山泉东方树叶陈皮白茶复合茶饮料500ml",
+          "purchaseQty": 1950,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [
         {

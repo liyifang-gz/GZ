@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-07T09:40:19",
+  "timestamp": "2026-06-07T09:43:20",
   "date": "2026-06-07",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 4,
-      "waiting": 7
+      "signed": 5,
+      "waiting": 6
     },
     "ontime": {
       "ontime": 0,
-      "early": 4,
+      "early": 5,
       "late": 0,
       "total": 11,
       "rate": 0.0,
-      "early_rate": 36.4,
+      "early_rate": 45.5,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 4,
+      "total": 5,
       "done": 1,
-      "rate": 25.0,
+      "rate": 20.0,
       "pcs_done": 480,
-      "sign_pcs_done": 26630
+      "sign_pcs_done": 27134
     },
     "qc": {
-      "total": 7,
+      "total": 8,
       "done": 0,
-      "pending": 7,
+      "pending": 8,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 7,
+      "bill_total": 8,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 26150,
+      "pcs_total": 26654,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 7,
+      "sku_total": 8,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 11,
-        "done": 4,
-        "rate": 36.4
+        "done": 5,
+        "rate": 45.5
       },
       "pcs": {
         "total": 22712,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 22,
-        "done": 8,
-        "rate": 36.4
+        "done": 9,
+        "rate": 40.9
       },
       "supplier": {
         "total": 11,
-        "done": 4,
-        "rate": 36.4,
+        "done": 5,
+        "rate": 45.5,
         "detail": {
+          "浙江美生日化用品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "孝感华冠饮料有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -117,10 +121,6 @@
             "done": 0
           },
           "杭州七方杯饮料有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
-          "浙江美生日化用品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -203,16 +203,15 @@
           "skuCount": 1,
           "pcs": 900,
           "timeSlot": "15:30 - 16:00"
-        },
-        {
-          "supplierName": "浙江美生日化用品有限公司-快乐猴",
-          "billCode": "YY20260601007726",
-          "skuCount": 1,
-          "pcs": 504,
-          "timeSlot": "15:30 - 16:00"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "浙江美生日化用品有限公司-快乐猴",
+          "billCode": "YY20260601007726",
+          "signTime": "09:41",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "孝感华冠饮料有限公司-快乐猴",
           "billCode": "YY20260601005705",
@@ -287,6 +286,14 @@
           "supplierName": "孝感华冠饮料有限公司-快乐猴",
           "skuName": "快乐猴 劲爽苏打汽水 330ml*4",
           "arrivalTime": "13:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "浙江美生日化用品有限公司-快乐猴",
+          "skuName": "快乐猴 活氧爆炸盐 1kg",
+          "arrivalTime": "15:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
@@ -369,6 +376,17 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 7
+        },
+        {
+          "supplierName": "浙江美生日化用品有限公司-快乐猴",
+          "poNo": "CG202605275558",
+          "reserveBillCode": "YY20260601007726",
+          "skuId": "1310344",
+          "skuName": "快乐猴 活氧爆炸盐 1kg",
+          "purchaseQty": 504,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 8
         }
       ],
       "qc_recv_pending": [],
@@ -482,10 +500,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 63,
+      "not_started": 68,
       "in_progress": 0,
       "done": 0,
-      "total": 63,
+      "total": 68,
       "status": "ok"
     }
   },

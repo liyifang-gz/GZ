@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-08T15:38:58",
+  "timestamp": "2026-06-08T15:42:17",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
@@ -49,13 +49,21 @@
       "sku_rate": 18.2
     },
     "putaway": {
-      "total": 16129,
+      "total": 16219,
       "done": 16129,
-      "rate": 100.0,
-      "sku_total": 21,
+      "rate": 99.4,
+      "sku_total": 22,
       "sku_done": 21,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 95.5,
+      "details": [
+        {
+          "poNo": "CG202606064074",
+          "hopePcs": 90,
+          "putPcs": 0,
+          "hopeSku": 1,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +75,8 @@
         "total": 20145,
         "done": 8585,
         "rate": 42.6,
-        "recv_done": 16129,
-        "recv_rate": 80.1
+        "recv_done": 16219,
+        "recv_rate": 80.5
       },
       "sku": {
         "total": 83,
@@ -333,19 +341,19 @@
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
           "skuName": "广合腐乳微辣300g",
           "completeTime": "11:59",
-          "waitingMins": 219
+          "waitingMins": 223
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
           "skuName": "广合腐乳微辣300g",
           "completeTime": "11:59",
-          "waitingMins": 219
+          "waitingMins": 223
         },
         {
           "supplierName": "广州市柏顿电子商务有限公司",
           "skuName": "快乐猴-一次性鸭货手套（5000双/箱）",
           "completeTime": "12:35",
-          "waitingMins": 184
+          "waitingMins": 187
         }
       ],
       "signed_not_recv": [
@@ -405,17 +413,6 @@
           "seq": 5
         },
         {
-          "supplierName": "三全食品股份有限公司-快乐猴",
-          "poNo": "CG202606064074",
-          "reserveBillCode": "YY20260607001518",
-          "skuId": "1461651",
-          "skuName": "三全 大黄米八宝五色杂粮粽 200g",
-          "purchaseQty": 90,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 6
-        },
-        {
           "supplierName": "江华九恒数码科技有限公司",
           "poNo": "CG202606058725",
           "reserveBillCode": "YY20260608006097",
@@ -424,7 +421,7 @@
           "purchaseQty": 34,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 6
         },
         {
           "supplierName": "广州市柏顿电子商务有限公司",
@@ -435,7 +432,7 @@
           "purchaseQty": 15,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 7
         },
         {
           "supplierName": "广州市柏顿电子商务有限公司",
@@ -446,7 +443,7 @@
           "purchaseQty": 10,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 8
         }
       ],
       "qc_recv_pending": [],
@@ -504,28 +501,33 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 8,
+      "total": 43,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 8,
+      "total": 43,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 4562,
-      "pcs_total": 4692,
-      "pcs_rate": 97.2
+      "pcs_total": 5527,
+      "pcs_rate": 82.5
     },
     "packing": {
-      "total": 8,
+      "total": 9,
       "done": 6,
-      "rate": 75.0
+      "rate": 66.7
     },
     "uncaged_details": [
       {
+        "containerCode": "RQ-28-03-0900144",
+        "poiName": "番禺建华汇店",
+        "qty": 811
+      },
+      {
         "containerCode": "RQ-28-03-0900129",
         "poiName": "番禺建华汇店",
-        "qty": 102
+        "qty": 126
       },
       {
         "containerCode": "RQ-28-03-0900248",
@@ -535,9 +537,14 @@
     ],
     "unpacked_details": [
       {
+        "containerCode": "RQ-28-03-0900144",
+        "poiName": "番禺建华汇店",
+        "qty": 811
+      },
+      {
         "containerCode": "RQ-28-03-0900129",
         "poiName": "番禺建华汇店",
-        "qty": 102
+        "qty": 126
       },
       {
         "containerCode": "RQ-28-03-0900248",
@@ -546,18 +553,18 @@
       }
     ],
     "shipping": {
-      "total": 130,
+      "total": 965,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 8,
+      "multi_pallet_total": 43,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "27.96%",
+      "load_rate_unloaded": "43.20%",
       "load_rate_loaded": "76.30%",
       "load_rate_shipped": "--",
       "low_load_containers": [
@@ -645,32 +652,41 @@
           "planOutTime": "06-08 20:00"
         },
         {
+          "containerCode": "RQ-28-03-0900144",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "72.73%",
+          "loadingRateVal": 72.73,
+          "skuPcs": "811.000",
+          "skuVolume": "1.440",
+          "planOutTime": "06-08 20:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900129",
           "poiName": "番禺建华汇店",
-          "loadingRate": "49.90%",
-          "loadingRateVal": 49.9,
-          "skuPcs": "102.000",
-          "skuVolume": "0.988",
+          "loadingRate": "50.85%",
+          "loadingRateVal": 50.85,
+          "skuPcs": "126.000",
+          "skuVolume": "1.007",
           "planOutTime": "06-08 20:00"
         }
       ],
-      "outbound_efficiency": 65.0,
-      "outbound_efficiency_formula": "130 PCS / 2 人(拣播员)"
+      "outbound_efficiency": 482.5,
+      "outbound_efficiency_formula": "965 PCS / 2 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 130,
+        "total": 965,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 130,
+        "not_caged": 965,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 97.2,
-        "sowed_picked": 4692
+        "cage_rate": 82.5,
+        "sowed_picked": 5527
       },
       "sku": {
-        "total": 8,
+        "total": 43,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -684,9 +700,9 @@
       "plan_pcs": 7676,
       "alloc_pcs": 7676,
       "alloc_rate": 100.0,
-      "picked_pcs": 4692,
-      "sow_pcs": 4692,
-      "sow_rate": 61.1,
+      "picked_pcs": 5527,
+      "sow_pcs": 5527,
+      "sow_rate": 72.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 436,
@@ -697,10 +713,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 94,
-      "in_progress": 5,
-      "done": 176,
-      "total": 275,
+      "not_started": 90,
+      "in_progress": 3,
+      "done": 183,
+      "total": 276,
       "status": "ok"
     }
   },
@@ -709,9 +725,9 @@
     "total_pcs": 7676,
     "alloc_pcs": 7676,
     "alloc_rate": 100.0,
-    "picked_pcs": 4692,
-    "sow_pcs": 4692,
-    "sow_rate": 61.1,
+    "picked_pcs": 5527,
+    "sow_pcs": 5527,
+    "sow_rate": 72.0,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 436,
@@ -789,10 +805,10 @@
       "N常温收退": 1,
       "N常温高叉司机": 2
     },
-    "predicted_efficiency": 586.5,
-    "efficiency_formula": "4692 PCS(播种) / 8 人",
-    "outbound_efficiency": 65.0,
-    "outbound_efficiency_formula": "130 PCS / 2 人(拣播员)",
+    "predicted_efficiency": 690.9,
+    "efficiency_formula": "5527 PCS(播种) / 8 人",
+    "outbound_efficiency": 482.5,
+    "outbound_efficiency_formula": "965 PCS / 2 人(拣播员)",
     "inbound_efficiency_workers": 1,
     "status": "ok"
   }

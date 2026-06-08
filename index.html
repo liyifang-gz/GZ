@@ -613,7 +613,7 @@
             <!-- 第二行：计划车次 / 已发车次 / 到站车次 / 串点率 -->
             <div class="kpi-row" style="margin-top:8px;padding-top:8px;border-top:1px solid #f0f0f0;">
                 <div class="kpi transport-kpi-hover" id="trip-kpi"><div class="number" id="plan-trip-total" style="color:#bbb">--</div><div class="unit" style="color:#bbb" id="trip-unit">计划车次<br><span style="font-size:9px;">(请稍候)</span></div></div>
-                <div class="kpi"><div class="number" id="plan-trip-depart" style="color:#bbb">--</div><div class="unit" style="color:#bbb">已发车次<br><span style="font-size:9px;">(接入中)</span></div></div>
+                <div class="kpi transport-kpi-hover" id="depart-kpi"><div class="number" id="plan-trip-depart" style="color:#bbb">--</div><div class="unit" style="color:#bbb" id="depart-unit">已发车次<br><span style="font-size:9px;">(请稍候)</span></div></div>
                 <div class="kpi"><div class="number" id="plan-trip-arrive" style="color:#bbb">--</div><div class="unit" style="color:#bbb">到站车次<br><span style="font-size:9px;">(接入中)</span></div></div>
                 <div class="kpi"><div class="number" id="plan-route-rate" style="color:#bbb">--</div><div class="unit" style="color:#bbb">串点率<br><span style="font-size:9px;">(接入中)</span></div></div>
             </div>
@@ -1649,6 +1649,66 @@ putawayBarPct = pcsRate;
           if (tripUnit) {
             tripUnit.style.color = '#bbb';
             tripUnit.innerHTML = '计划车次<br><span style="font-size:9px;">(暂无数据)</span>';
+          }
+        }
+      }
+
+      // 已发车次渲染
+      const departTotalEl = document.getElementById('plan-trip-depart');
+      if (departTotalEl) {
+        const dt = transport.departed_trips;
+        if (dt && dt.total > 0) {
+          departTotalEl.textContent = dt.total;
+          departTotalEl.style.color = '#10b981';
+          const departUnit = departTotalEl.parentElement.querySelector('.unit');
+          if (departUnit) {
+            departUnit.style.color = '';
+            departUnit.innerHTML = '已发车次 <button class="inb-detail-trigger" id="depart-detail-btn" onclick="toggleDetail(\'depart-store-detail\')">🔍</button>';
+            departUnit.querySelector('#depart-detail-btn').style.display = 'inline-block';
+          }
+          let departDetail = document.getElementById('depart-store-detail');
+          if (!departDetail) {
+            departDetail = document.createElement('div');
+            departDetail.id = 'depart-store-detail';
+            departDetail.className = 'detail-panel';
+            departDetail.style.display = 'none';
+            const departRow = departTotalEl.closest('.kpi-row');
+            if (departRow && departRow.parentElement) {
+              departRow.parentElement.insertBefore(departDetail, departRow.nextSibling);
+            }
+          }
+          const dDetails = dt.details || [];
+          const thStyle = 'text-align:left;padding:4px 8px;background:#f9fafb;font-weight:600;white-space:nowrap';
+          const tdStyle = 'padding:4px 8px;border-bottom:1px solid #f0f0f0;white-space:nowrap';
+          let dHtml = `<div style="font-size:11px;color:#888;margin-bottom:6px">运输中 ${dt.total} 条运单</div>`;
+          dHtml += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
+          dHtml += `<tr><th style="${thStyle}">运单号</th><th style="${thStyle}">门店</th><th style="${thStyle}">首个装货大仓</th><th style="${thStyle}">承运商</th></tr>`;
+          if (dDetails.length > 0) {
+            dDetails.forEach(function(row) {
+              dHtml += `<tr>
+                <td style="${tdStyle};color:#10b981;font-family:monospace">${row.waybillCode||'--'}</td>
+                <td style="${tdStyle}">${row.store||'--'}</td>
+                <td style="${tdStyle}">${row.firstLadingPoiName||'--'}</td>
+                <td style="${tdStyle}">${row.carrierName||'--'}</td>
+              </tr>`;
+            });
+          } else {
+            const allStores = ['禅城东方广场店','番禺建华汇店','南海国昌广场店'];
+            allStores.forEach(function(s) {
+              const cnt = (dt.by_store||{})[s];
+              if (cnt > 0) dHtml += `<tr><td style="${tdStyle}" colspan="3">${s}</td><td style="${tdStyle};color:#10b981">${cnt}车</td></tr>`;
+            });
+          }
+          dHtml += `<tr style="background:#f9fafb"><td style="padding:4px 8px;font-weight:600" colspan="3">合计</td><td style="padding:4px 8px;font-weight:600;color:#10b981">${dt.total} 车</td></tr>`;
+          dHtml += '</table>';
+          departDetail.innerHTML = dHtml;
+        } else {
+          departTotalEl.textContent = dt ? '0' : '--';
+          departTotalEl.style.color = '#bbb';
+          const departUnit = departTotalEl.parentElement.querySelector('.unit');
+          if (departUnit) {
+            departUnit.style.color = '#bbb';
+            departUnit.innerHTML = '已发车次<br><span style="font-size:9px;">(暂无运输中)</span>';
           }
         }
       }

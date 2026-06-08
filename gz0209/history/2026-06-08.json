@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-08T15:16:22",
+  "timestamp": "2026-06-08T15:19:22",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
-      "total": 30,
+      "total": 32,
       "signed": 20,
-      "waiting": 5
+      "waiting": 7
     },
     "ontime": {
       "ontime": 2,
       "early": 18,
       "late": 0,
-      "total": 25,
-      "rate": 8.0,
-      "early_rate": 72.0,
+      "total": 27,
+      "rate": 7.4,
+      "early_rate": 66.7,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -49,16 +49,23 @@
       "sku_rate": 22.2
     },
     "putaway": {
-      "total": 15989,
+      "total": 16129,
       "done": 15893,
-      "rate": 99.4,
-      "sku_total": 20,
+      "rate": 98.5,
+      "sku_total": 21,
       "sku_done": 19,
-      "sku_rate": 95.0,
+      "sku_rate": 90.5,
       "details": [
         {
           "poNo": "CG202606060721",
           "hopePcs": 96,
+          "putPcs": 0,
+          "hopeSku": 1,
+          "putSku": 0
+        },
+        {
+          "poNo": "CG2026060115362",
+          "hopePcs": 140,
           "putPcs": 0,
           "hopeSku": 1,
           "putSku": 0
@@ -67,27 +74,31 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 25,
+        "total": 27,
         "done": 20,
-        "rate": 80.0
+        "rate": 74.1
       },
       "pcs": {
         "total": 20145,
         "done": 8585,
         "rate": 42.6,
-        "recv_done": 15989,
-        "recv_rate": 79.4
+        "recv_done": 16129,
+        "recv_rate": 80.1
       },
       "sku": {
-        "total": 79,
+        "total": 83,
         "done": 69,
-        "rate": 87.3
+        "rate": 83.1
       },
       "supplier": {
-        "total": 20,
+        "total": 21,
         "done": 16,
-        "rate": 80.0,
+        "rate": 76.2,
         "detail": {
+          "江华九恒数码科技有限公司": {
+            "plan": 2,
+            "done": 0
+          },
           "深圳市彬昱程电子商务有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -163,10 +174,6 @@
           "温州君越制袋有限公司-快乐猴": {
             "plan": 1,
             "done": 0
-          },
-          "广州信必达供应链管理有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -199,6 +206,20 @@
         }
       ],
       "unsigned": [
+        {
+          "supplierName": "江华九恒数码科技有限公司",
+          "billCode": "YY20260608006097",
+          "skuCount": 2,
+          "pcs": 64,
+          "timeSlot": "15:30 - 16:00"
+        },
+        {
+          "supplierName": "江华九恒数码科技有限公司",
+          "billCode": "YY20260608006097",
+          "skuCount": 2,
+          "pcs": 64,
+          "timeSlot": "15:30 - 16:00"
+        },
         {
           "supplierName": "三全食品股份有限公司-快乐猴",
           "billCode": "YY20260607001518",
@@ -320,19 +341,19 @@
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
           "skuName": "广合腐乳微辣300g",
           "completeTime": "11:59",
-          "waitingMins": 197
+          "waitingMins": 200
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
           "skuName": "广合腐乳微辣300g",
           "completeTime": "11:59",
-          "waitingMins": 197
+          "waitingMins": 200
         },
         {
           "supplierName": "广州市柏顿电子商务有限公司",
           "skuName": "快乐猴-一次性鸭货手套（5000双/箱）",
           "completeTime": "12:35",
-          "waitingMins": 161
+          "waitingMins": 164
         }
       ],
       "signed_not_recv": [
@@ -392,28 +413,6 @@
           "seq": 5
         },
         {
-          "supplierName": "深圳市彬昱程电子商务有限公司-快乐猴",
-          "poNo": "CG202606026670",
-          "reserveBillCode": "YY20260606000921",
-          "skuId": "433044",
-          "skuName": "广州酒家蛋黄肉粽200g(2只)",
-          "purchaseQty": 200,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 6
-        },
-        {
-          "supplierName": "深圳市彬昱程电子商务有限公司-快乐猴",
-          "poNo": "CG202606026670",
-          "reserveBillCode": "YY20260606000921",
-          "skuId": "433206",
-          "skuName": "广州酒家栗子肉粽200g(2只)",
-          "purchaseQty": 120,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 7
-        },
-        {
           "supplierName": "广州市柏顿电子商务有限公司",
           "poNo": "CG202606031049",
           "reserveBillCode": "YY20260603005760",
@@ -422,7 +421,7 @@
           "purchaseQty": 15,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 6
         },
         {
           "supplierName": "广州市柏顿电子商务有限公司",
@@ -433,7 +432,7 @@
           "purchaseQty": 10,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 7
         }
       ],
       "qc_recv_pending": [],
@@ -675,10 +674,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 109,
-      "in_progress": 3,
-      "done": 141,
-      "total": 253,
+      "not_started": 110,
+      "in_progress": 2,
+      "done": 143,
+      "total": 255,
       "status": "ok"
     }
   },

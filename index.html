@@ -1601,7 +1601,7 @@ putawayBarPct = pcsRate;
           if (tripUnit) {
             tripUnit.style.color = '';
             tripUnit.innerHTML = '计划车次 <button class="inb-detail-trigger" id="trip-detail-btn" onclick="toggleDetail(\'trip-store-detail\')">🔍</button>';
-            tripUnit.querySelector('#trip-detail-btn').style.opacity = '1';
+            // 不手动设 opacity，交给 CSS .transport-kpi-hover:hover 控制
             tripUnit.querySelector('#trip-detail-btn').style.display = 'inline-block';
           }
           // 渲染门店明细弹窗

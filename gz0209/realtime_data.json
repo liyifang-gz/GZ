@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-08T08:46:56",
+  "timestamp": "2026-06-08T08:49:57",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 29,
-      "signed": 0,
-      "waiting": 24
+      "signed": 2,
+      "waiting": 22
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 2,
       "late": 0,
       "total": 24,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 8.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 2994
     },
     "qc": {
-      "total": 0,
+      "total": 14,
       "done": 0,
-      "pending": 0,
+      "pending": 14,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 14,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 2994,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 13,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 15302,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 24,
-        "done": 0,
-        "rate": 0.0
+        "done": 2,
+        "rate": 8.3
       },
       "pcs": {
         "total": 20145,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 78,
-        "done": 0,
-        "rate": 0.0
+        "done": 28,
+        "rate": 35.9
       },
       "supplier": {
         "total": 19,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 5.3,
         "detail": {
+          "广州市捷通兴业贸易有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "广州顺中宜商贸有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -101,10 +105,6 @@
             "done": 0
           },
           "深圳市彬昱程电子商务有限公司-快乐猴": {
-            "plan": 2,
-            "done": 0
-          },
-          "广州市捷通兴业贸易有限公司-快乐猴": {
             "plan": 2,
             "done": 0
           },
@@ -252,20 +252,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
-          "billCode": "YY20260605009989",
-          "skuCount": 14,
-          "pcs": 2994,
-          "timeSlot": "09:00 - 09:30"
-        },
-        {
-          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
-          "billCode": "YY20260605009989",
-          "skuCount": 14,
-          "pcs": 2994,
-          "timeSlot": "09:00 - 09:30"
-        },
-        {
           "supplierName": "温州君越制袋有限公司-快乐猴",
           "billCode": "YY20260605009883",
           "skuCount": 1,
@@ -364,10 +350,269 @@
           "timeSlot": "15:00 - 15:30"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "billCode": "YY20260605009989",
+          "signTime": "08:49",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "billCode": "YY20260605009989",
+          "signTime": "08:49",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "skuName": "丘比 香甜味沙拉酱 200g",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "skuName": "李锦记 蒸鱼豉油 410ml",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "skuName": "李锦记 叉烧酱 240g",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "skuName": "凤球唛 鱼露 340ml",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "skuName": "味事达 味极鲜酱油 760ml",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "skuName": "丘比草莓果酱170g",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "skuName": "阳帆 阳江豆豉 160g",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "skuName": "致美斋 添丁甜醋 510ml",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 9,
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "skuName": "广合腐乳微辣300g",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 10,
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "skuName": "丘比焙煎芝麻口味沙拉汁(卡路里减半)200ml",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 11,
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "skuName": "亨氏蛋黄沙拉酱200克",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 12,
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "skuName": "李锦记薄盐生抽促销装500ml*2瓶",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 13,
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "skuName": "广合腐乳微辣300g",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 14,
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "skuName": "亨氏 番茄沙司 240g",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "poNo": "CG2026060112304",
+          "reserveBillCode": "YY20260605009989",
+          "skuId": "21641",
+          "skuName": "阳帆 阳江豆豉 160g",
+          "purchaseQty": 660,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "poNo": "CG2026060112304",
+          "reserveBillCode": "YY20260605009989",
+          "skuId": "19722",
+          "skuName": "味事达 味极鲜酱油 760ml",
+          "purchaseQty": 480,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "poNo": "CG2026060112304",
+          "reserveBillCode": "YY20260605009989",
+          "skuId": "475366",
+          "skuName": "广合腐乳微辣300g",
+          "purchaseQty": 360,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "poNo": "CG2026060112304",
+          "reserveBillCode": "YY20260605009989",
+          "skuId": "562396",
+          "skuName": "李锦记薄盐生抽促销装500ml*2瓶",
+          "purchaseQty": 330,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "poNo": "CG2026060112304",
+          "reserveBillCode": "YY20260605009989",
+          "skuId": "1584",
+          "skuName": "李锦记 蒸鱼豉油 410ml",
+          "purchaseQty": 240,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "poNo": "CG2026060112304",
+          "reserveBillCode": "YY20260605009989",
+          "skuId": "5227",
+          "skuName": "凤球唛 鱼露 340ml",
+          "purchaseQty": 144,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
+        },
+        {
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "poNo": "CG2026060112304",
+          "reserveBillCode": "YY20260605009989",
+          "skuId": "19965",
+          "skuName": "丘比草莓果酱170g",
+          "purchaseQty": 120,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
+        },
+        {
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "poNo": "CG2026060112304",
+          "reserveBillCode": "YY20260605009989",
+          "skuId": "95392",
+          "skuName": "致美斋 添丁甜醋 510ml",
+          "purchaseQty": 96,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 8
+        },
+        {
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "poNo": "CG2026060112304",
+          "reserveBillCode": "YY20260605009989",
+          "skuId": "502083",
+          "skuName": "亨氏蛋黄沙拉酱200克",
+          "purchaseQty": 96,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 9
+        },
+        {
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "poNo": "CG2026060112304",
+          "reserveBillCode": "YY20260605009989",
+          "skuId": "978",
+          "skuName": "丘比 香甜味沙拉酱 200g",
+          "purchaseQty": 72,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 10
+        },
+        {
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "poNo": "CG2026060112304",
+          "reserveBillCode": "YY20260605009989",
+          "skuId": "1591",
+          "skuName": "李锦记 叉烧酱 240g",
+          "purchaseQty": 36,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 11
+        },
+        {
+          "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
+          "poNo": "CG2026060112304",
+          "reserveBillCode": "YY20260605009989",
+          "skuId": "497513",
+          "skuName": "丘比焙煎芝麻口味沙拉汁(卡路里减半)200ml",
+          "purchaseQty": 24,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 12
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -530,9 +775,9 @@
   },
   "attendance": {
     "total_inservice": 11,
-    "schedule": 7,
-    "attendance": 7,
-    "rate": 63.6,
+    "schedule": 8,
+    "attendance": 8,
+    "rate": 72.7,
     "by_job": {
       "N拣播员": {
         "inservice": 4,
@@ -554,14 +799,15 @@
       }
     },
     "by_pos_total": {
+      "仓库安防员": 1,
       "N常温拣播员": 4,
       "N用工": 1,
       "N安防组长": 1,
       "N常温收退": 2,
-      "N常温高叉司机": 2,
-      "仓库安防员": 1
+      "N常温高叉司机": 2
     },
     "by_pos_scheduled": {
+      "仓库安防员": 1,
       "N常温拣播员": 2,
       "N用工": 1,
       "N安防组长": 1,
@@ -569,7 +815,7 @@
       "N常温高叉司机": 2
     },
     "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS(播种) / 7 人",
+    "efficiency_formula": "0 PCS(播种) / 8 人",
     "outbound_efficiency": 0.0,
     "outbound_efficiency_formula": "0 PCS / 2 人(拣播员)",
     "inbound_efficiency_workers": 1,

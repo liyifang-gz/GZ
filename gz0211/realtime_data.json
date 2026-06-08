@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-08T09:49:37",
+  "timestamp": "2026-06-08T09:52:35",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 13,
-      "signed": 2,
-      "waiting": 9
+      "signed": 4,
+      "waiting": 7
     },
     "ontime": {
       "ontime": 0,
-      "early": 2,
+      "early": 4,
       "late": 0,
       "total": 11,
       "rate": 0.0,
-      "early_rate": 18.2,
+      "early_rate": 36.4,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 1,
-      "rate": 100.0,
+      "rate": 50.0,
       "pcs_done": 960,
-      "sign_pcs_done": 960
+      "sign_pcs_done": 1102
     },
     "qc": {
-      "total": 2,
+      "total": 5,
       "done": 0,
-      "pending": 2,
+      "pending": 5,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 2,
+      "bill_total": 5,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 960,
+      "pcs_total": 1102,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 2,
+      "sku_total": 4,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 11,
-        "done": 2,
-        "rate": 18.2
+        "done": 4,
+        "rate": 36.4
       },
       "pcs": {
         "total": 4926,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 27,
-        "done": 4,
-        "rate": 14.8
+        "done": 10,
+        "rate": 37.0
       },
       "supplier": {
         "total": 8,
-        "done": 1,
-        "rate": 12.5,
+        "done": 2,
+        "rate": 25.0,
         "detail": {
+          "山东新立信食品科技有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "上海馥松食品科技有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -102,10 +106,6 @@
           },
           "上海倍特食品有限公司-快乐猴": {
             "plan": 1,
-            "done": 0
-          },
-          "山东新立信食品科技有限公司-快乐猴": {
-            "plan": 2,
             "done": 0
           },
           "山东龙大美食股份有限公司-快乐猴": {
@@ -161,20 +161,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "山东新立信食品科技有限公司-快乐猴",
-          "billCode": "YY20260602003698",
-          "skuCount": 3,
-          "pcs": 142,
-          "timeSlot": "16:00 - 16:30"
-        },
-        {
-          "supplierName": "山东新立信食品科技有限公司-快乐猴",
-          "billCode": "YY20260602003698",
-          "skuCount": 3,
-          "pcs": 142,
-          "timeSlot": "16:00 - 16:30"
-        },
-        {
           "supplierName": "山东龙大美食股份有限公司-快乐猴",
           "billCode": "YY20260602002927",
           "skuCount": 1,
@@ -182,7 +168,20 @@
           "timeSlot": "14:00 - 14:30"
         }
       ],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "山东新立信食品科技有限公司-快乐猴",
+          "billCode": "YY20260602003698",
+          "signTime": "09:50",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "山东新立信食品科技有限公司-快乐猴",
+          "billCode": "YY20260602003698",
+          "signTime": "09:50",
+          "status": "已签到未卸货"
+        }
+      ],
       "qc_pending": [
         {
           "seq": 1,
@@ -199,6 +198,30 @@
           "arrivalTime": "10:00",
           "unloadFinishTime": "09:34",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "山东新立信食品科技有限公司-快乐猴",
+          "skuName": "快乐猴 奥尔良烤鸡 10.5kg",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "山东新立信食品科技有限公司-快乐猴",
+          "skuName": "(原材料)快乐猴 椒香柠檬手枪腿 10kg",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "山东新立信食品科技有限公司-快乐猴",
+          "skuName": "快乐猴 奥尔良烤鸡 10.5kg",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -213,6 +236,28 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 1
+        },
+        {
+          "supplierName": "山东新立信食品科技有限公司-快乐猴",
+          "poNo": "CG2026060115590",
+          "reserveBillCode": "YY20260602003698",
+          "skuId": "1227012",
+          "skuName": "快乐猴 奥尔良烤鸡 10.5kg",
+          "purchaseQty": 96,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "山东新立信食品科技有限公司-快乐猴",
+          "poNo": "CG2026060115590",
+          "reserveBillCode": "YY20260602003698",
+          "skuId": "1228699",
+          "skuName": "(原材料)快乐猴 椒香柠檬手枪腿 10kg",
+          "purchaseQty": 9,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
         }
       ],
       "qc_recv_pending": [],
@@ -317,10 +362,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 72,
+      "not_started": 73,
       "in_progress": 0,
       "done": 0,
-      "total": 72,
+      "total": 73,
       "status": "ok"
     }
   },

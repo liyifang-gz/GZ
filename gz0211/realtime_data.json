@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-08T10:53:20",
+  "timestamp": "2026-06-08T10:56:37",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 13,
-      "signed": 9,
-      "waiting": 2
+      "signed": 10,
+      "waiting": 1
     },
     "ontime": {
       "ontime": 0,
-      "early": 9,
+      "early": 10,
       "late": 0,
       "total": 11,
       "rate": 0.0,
-      "early_rate": 81.8,
+      "early_rate": 90.9,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 6,
+      "total": 7,
       "done": 2,
-      "rate": 33.3,
+      "rate": 28.6,
       "pcs_done": 1102,
-      "sign_pcs_done": 2394
+      "sign_pcs_done": 3444
     },
     "qc": {
-      "total": 5,
+      "total": 9,
       "done": 0,
-      "pending": 5,
+      "pending": 9,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 5,
+      "bill_total": 9,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 1292,
+      "pcs_total": 2342,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 4,
+      "sku_total": 8,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -82,8 +82,8 @@
     "dimensions": {
       "reserve": {
         "total": 11,
-        "done": 9,
-        "rate": 81.8
+        "done": 10,
+        "rate": 90.9
       },
       "pcs": {
         "total": 5926,
@@ -94,14 +94,18 @@
       },
       "sku": {
         "total": 27,
-        "done": 17,
-        "rate": 63.0
+        "done": 21,
+        "rate": 77.8
       },
       "supplier": {
         "total": 8,
-        "done": 6,
-        "rate": 75.0,
+        "done": 7,
+        "rate": 87.5,
         "detail": {
+          "山东胜农食品有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "福建圣农食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -129,10 +133,6 @@
           "深圳市金禧康食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
-          },
-          "山东胜农食品有限公司": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -155,16 +155,15 @@
           "skuCount": 6,
           "pcs": 794,
           "timeSlot": "11:30 - 12:00"
-        },
-        {
-          "supplierName": "山东胜农食品有限公司",
-          "billCode": "YY20260604002546",
-          "skuCount": 4,
-          "pcs": 1050,
-          "timeSlot": "16:00 - 16:30"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "billCode": "YY20260604002546",
+          "signTime": "10:55",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "福建圣农食品有限公司-快乐猴",
           "billCode": "YY20260605007868",
@@ -236,6 +235,38 @@
           "arrivalTime": "15:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡翅根 1kg",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡琵琶腿 1kg",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡翅尖 1kg",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 9,
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡翅中  1kg",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -263,6 +294,39 @@
           "seq": 2
         },
         {
+          "supplierName": "山东胜农食品有限公司",
+          "poNo": "CG2026060115605",
+          "reserveBillCode": "YY20260604002546",
+          "skuId": "1125781",
+          "skuName": "单冻鸡翅中  1kg",
+          "purchaseQty": 310,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "poNo": "CG2026060115605",
+          "reserveBillCode": "YY20260604002546",
+          "skuId": "1124266",
+          "skuName": "单冻鸡翅根 1kg",
+          "purchaseQty": 290,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "poNo": "CG2026060115605",
+          "reserveBillCode": "YY20260604002546",
+          "skuId": "1124796",
+          "skuName": "单冻鸡琵琶腿 1kg",
+          "purchaseQty": 290,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
           "supplierName": "福建圣农食品有限公司-快乐猴",
           "poNo": "CG202606054564",
           "reserveBillCode": "YY20260605007868",
@@ -271,7 +335,18 @@
           "purchaseQty": 200,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
+          "seq": 6
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "poNo": "CG2026060115605",
+          "reserveBillCode": "YY20260604002546",
+          "skuId": "1125171",
+          "skuName": "单冻鸡翅尖 1kg",
+          "purchaseQty": 160,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
         },
         {
           "supplierName": "山东美佳集团有限公司-快乐猴",
@@ -282,7 +357,7 @@
           "purchaseQty": 10,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 8
         }
       ],
       "qc_recv_pending": [],

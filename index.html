@@ -612,7 +612,7 @@
             <div class="detail-panel" id="temp-achieve-detail" style="display:none"></div>
             <!-- 第二行：计划车次 / 已发车次 / 到站车次 / 串点率 -->
             <div class="kpi-row" style="margin-top:8px;padding-top:8px;border-top:1px solid #f0f0f0;">
-                <div class="kpi"><div class="number" id="plan-trip-total" style="color:#bbb">--</div><div class="unit" style="color:#bbb">计划车次<br><span style="font-size:9px;">(接入中)</span></div></div>
+                <div class="kpi transport-kpi-hover" id="trip-kpi"><div class="number" id="plan-trip-total" style="color:#bbb">--</div><div class="unit" style="color:#bbb" id="trip-unit">计划车次<br><span style="font-size:9px;">(请稍候)</span></div></div>
                 <div class="kpi"><div class="number" id="plan-trip-depart" style="color:#bbb">--</div><div class="unit" style="color:#bbb">已发车次<br><span style="font-size:9px;">(接入中)</span></div></div>
                 <div class="kpi"><div class="number" id="plan-trip-arrive" style="color:#bbb">--</div><div class="unit" style="color:#bbb">到站车次<br><span style="font-size:9px;">(接入中)</span></div></div>
                 <div class="kpi"><div class="number" id="plan-route-rate" style="color:#bbb">--</div><div class="unit" style="color:#bbb">串点率<br><span style="font-size:9px;">(接入中)</span></div></div>
@@ -1586,6 +1586,56 @@ putawayBarPct = pcsRate;
               html += '</table>';
               detailEl.innerHTML = html;
             }
+          }
+        }
+      }
+
+      // 计划车次渲染（芥末 QMS wayBill 三门店）
+      const tripTotalEl = document.getElementById('plan-trip-total');
+      if (tripTotalEl) {
+        const pt = transport.planned_trips;
+        if (pt && pt.total > 0) {
+          tripTotalEl.textContent = pt.total;
+          tripTotalEl.style.color = '#3b82f6';
+          const tripUnit = tripTotalEl.parentElement.querySelector('.unit');
+          if (tripUnit) {
+            tripUnit.style.color = '';
+            tripUnit.innerHTML = '计划车次 <button class="inb-detail-trigger" id="trip-detail-btn" onclick="toggleDetail(\'trip-store-detail\')">🔍</button>';
+            tripUnit.querySelector('#trip-detail-btn').style.opacity = '1';
+            tripUnit.querySelector('#trip-detail-btn').style.display = 'inline-block';
+          }
+          // 渲染门店明细弹窗
+          let tripDetail = document.getElementById('trip-store-detail');
+          if (!tripDetail) {
+            tripDetail = document.createElement('div');
+            tripDetail.id = 'trip-store-detail';
+            tripDetail.className = 'detail-panel';
+            tripDetail.style.display = 'none';
+            const tripRow = tripTotalEl.closest('.kpi-row');
+            if (tripRow && tripRow.parentElement) {
+              tripRow.parentElement.insertBefore(tripDetail, tripRow.nextSibling);
+            }
+          }
+          const byStore = pt.by_store || {};
+          let storeHtml = '<table style="width:100%;border-collapse:collapse;font-size:12px">';
+          storeHtml += '<tr style="background:#f9fafb"><th style="text-align:left;padding:4px 6px">门店</th><th style="text-align:right;padding:4px 6px">计划车次</th></tr>';
+          const allStores = ['禅城东方广场店','番禺建华汇店','南海国昌广场店'];
+          allStores.forEach(function(s) {
+            const cnt = byStore[s];
+            if (cnt !== undefined && cnt > 0) {
+              storeHtml += `<tr style="border-bottom:1px solid #f0f0f0"><td style="padding:4px 6px">${s}</td><td style="text-align:right;padding:4px 6px;font-weight:600;color:#3b82f6">${cnt}</td></tr>`;
+            }
+          });
+          storeHtml += `<tr style="background:#f9fafb"><td style="padding:4px 6px;font-weight:600">合计</td><td style="text-align:right;padding:4px 6px;font-weight:600;color:#3b82f6">${pt.total}</td></tr>`;
+          storeHtml += '</table>';
+          tripDetail.innerHTML = storeHtml;
+        } else {
+          tripTotalEl.textContent = pt ? '0' : '--';
+          tripTotalEl.style.color = '#bbb';
+          const tripUnit = tripTotalEl.parentElement.querySelector('.unit');
+          if (tripUnit) {
+            tripUnit.style.color = '#bbb';
+            tripUnit.innerHTML = '计划车次<br><span style="font-size:9px;">(暂无数据)</span>';
           }
         }
       }

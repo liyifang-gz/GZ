@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-08T09:34:34",
+  "timestamp": "2026-06-08T09:37:36",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 29,
-      "signed": 2,
-      "waiting": 22
+      "signed": 3,
+      "waiting": 21
     },
     "ontime": {
       "ontime": 0,
-      "early": 2,
+      "early": 3,
       "late": 0,
       "total": 24,
       "rate": 0.0,
-      "early_rate": 8.3,
+      "early_rate": 12.5,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 2994
+      "sign_pcs_done": 3294
     },
     "qc": {
-      "total": 14,
+      "total": 15,
       "done": 0,
-      "pending": 14,
+      "pending": 15,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 14,
+      "bill_total": 15,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 2994,
+      "pcs_total": 3294,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 13,
+      "sku_total": 14,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 24,
-        "done": 2,
-        "rate": 8.3
+        "done": 3,
+        "rate": 12.5
       },
       "pcs": {
         "total": 20145,
@@ -72,23 +72,23 @@
       },
       "sku": {
         "total": 78,
-        "done": 28,
-        "rate": 35.9
+        "done": 29,
+        "rate": 37.2
       },
       "supplier": {
         "total": 19,
-        "done": 1,
-        "rate": 5.3,
+        "done": 2,
+        "rate": 10.5,
         "detail": {
+          "上海本甄农业发展有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "广州市捷通兴业贸易有限公司-快乐猴": {
             "plan": 2,
             "done": 2
           },
           "广州顺中宜商贸有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "上海本甄农业发展有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
           },
@@ -200,13 +200,6 @@
           "billCode": "YY20260608000295",
           "skuCount": 3,
           "pcs": 740,
-          "timeSlot": "14:30 - 15:00"
-        },
-        {
-          "supplierName": "上海本甄农业发展有限公司-快乐猴-自营",
-          "billCode": "YY20260607003702",
-          "skuCount": 1,
-          "pcs": 300,
           "timeSlot": "14:30 - 15:00"
         },
         {
@@ -352,6 +345,12 @@
       ],
       "unloading": [
         {
+          "supplierName": "上海本甄农业发展有限公司-快乐猴-自营",
+          "billCode": "YY20260607003702",
+          "signTime": "09:35",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
           "billCode": "YY20260605009989",
           "signTime": "08:49",
@@ -476,6 +475,14 @@
           "arrivalTime": "09:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 15,
+          "supplierName": "上海本甄农业发展有限公司-快乐猴-自营",
+          "skuName": "快乐猴 冻干蜂蜜柠檬片 55g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -525,6 +532,17 @@
           "seq": 4
         },
         {
+          "supplierName": "上海本甄农业发展有限公司-快乐猴-自营",
+          "poNo": "CG202606073334",
+          "reserveBillCode": "YY20260607003702",
+          "skuId": "1478757",
+          "skuName": "快乐猴 冻干蜂蜜柠檬片 55g",
+          "purchaseQty": 300,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
           "poNo": "CG2026060112304",
           "reserveBillCode": "YY20260605009989",
@@ -533,7 +551,7 @@
           "purchaseQty": 240,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 6
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
@@ -544,7 +562,7 @@
           "purchaseQty": 144,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 6
+          "seq": 7
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
@@ -555,7 +573,7 @@
           "purchaseQty": 120,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 8
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
@@ -566,7 +584,7 @@
           "purchaseQty": 96,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 9
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
@@ -577,7 +595,7 @@
           "purchaseQty": 96,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 10
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
@@ -588,7 +606,7 @@
           "purchaseQty": 72,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 10
+          "seq": 11
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
@@ -599,7 +617,7 @@
           "purchaseQty": 36,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 11
+          "seq": 12
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
@@ -610,7 +628,7 @@
           "purchaseQty": 24,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 12
+          "seq": 13
         }
       ],
       "qc_recv_pending": [],
@@ -725,10 +743,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 56,
+      "not_started": 58,
       "in_progress": 0,
       "done": 0,
-      "total": 56,
+      "total": 58,
       "status": "ok"
     }
   },

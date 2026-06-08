@@ -1616,17 +1616,30 @@ putawayBarPct = pcsRate;
               tripRow.parentElement.insertBefore(tripDetail, tripRow.nextSibling);
             }
           }
-          const byStore = pt.by_store || {};
-          let storeHtml = '<table style="width:100%;border-collapse:collapse;font-size:12px">';
-          storeHtml += '<tr style="background:#f9fafb"><th style="text-align:left;padding:4px 6px">门店</th><th style="text-align:right;padding:4px 6px">计划车次</th></tr>';
-          const allStores = ['禅城东方广场店','番禺建华汇店','南海国昌广场店'];
-          allStores.forEach(function(s) {
-            const cnt = byStore[s];
-            if (cnt !== undefined && cnt > 0) {
-              storeHtml += `<tr style="border-bottom:1px solid #f0f0f0"><td style="padding:4px 6px">${s}</td><td style="text-align:right;padding:4px 6px;font-weight:600;color:#3b82f6">${cnt}</td></tr>`;
-            }
-          });
-          storeHtml += `<tr style="background:#f9fafb"><td style="padding:4px 6px;font-weight:600">合计</td><td style="text-align:right;padding:4px 6px;font-weight:600;color:#3b82f6">${pt.total}</td></tr>`;
+          const details = pt.details || [];
+          const thStyle = 'text-align:left;padding:4px 8px;background:#f9fafb;font-weight:600;white-space:nowrap';
+          const tdStyle = 'padding:4px 8px;border-bottom:1px solid #f0f0f0;white-space:nowrap';
+          let storeHtml = `<div style="font-size:11px;color:#888;margin-bottom:6px">共 ${pt.total} 条运单</div>`;
+          storeHtml += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
+          storeHtml += `<tr><th style="${thStyle}">运单号</th><th style="${thStyle}">门店</th><th style="${thStyle}">首个装货大仓</th><th style="${thStyle}">承运商</th></tr>`;
+          if (details.length > 0) {
+            details.forEach(function(row) {
+              storeHtml += `<tr>
+                <td style="${tdStyle};color:#3b82f6;font-family:monospace">${row.waybillCode||'--'}</td>
+                <td style="${tdStyle}">${row.store||'--'}</td>
+                <td style="${tdStyle}">${row.firstLadingPoiName||'--'}</td>
+                <td style="${tdStyle}">${row.carrierName||'--'}</td>
+              </tr>`;
+            });
+          } else {
+            // 无明细时按门店汇总展示
+            const allStores = ['禅城东方广场店','番禺建华汇店','南海国昌广场店'];
+            allStores.forEach(function(s) {
+              const cnt = (pt.by_store||{})[s];
+              if (cnt > 0) storeHtml += `<tr><td style="${tdStyle}" colspan="3">${s}</td><td style="${tdStyle};color:#3b82f6">${cnt}车</td></tr>`;
+            });
+          }
+          storeHtml += `<tr style="background:#f9fafb"><td style="padding:4px 8px;font-weight:600" colspan="3">合计</td><td style="padding:4px 8px;font-weight:600;color:#3b82f6">${pt.total} 车</td></tr>`;
           storeHtml += '</table>';
           tripDetail.innerHTML = storeHtml;
         } else {

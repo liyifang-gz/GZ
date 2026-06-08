@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-08T11:15:22",
+  "timestamp": "2026-06-08T11:18:22",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 30,
-      "signed": 8,
-      "waiting": 17
+      "signed": 11,
+      "waiting": 14
     },
     "ontime": {
-      "ontime": 1,
-      "early": 7,
+      "ontime": 2,
+      "early": 9,
       "late": 0,
       "total": 25,
-      "rate": 4.0,
-      "early_rate": 28.0,
+      "rate": 8.0,
+      "early_rate": 36.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 6,
+      "total": 9,
       "done": 5,
-      "rate": 83.3,
+      "rate": 55.6,
       "pcs_done": 10640,
-      "sign_pcs_done": 12716
+      "sign_pcs_done": 17830
     },
     "qc": {
-      "total": 5,
+      "total": 9,
       "done": 0,
-      "pending": 5,
+      "pending": 9,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 5,
+      "bill_total": 9,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 2676,
+      "pcs_total": 7790,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 4,
+      "sku_total": 8,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 25,
-        "done": 8,
-        "rate": 32.0
+        "done": 11,
+        "rate": 44.0
       },
       "pcs": {
         "total": 20145,
@@ -72,14 +72,26 @@
       },
       "sku": {
         "total": 79,
-        "done": 50,
-        "rate": 63.3
+        "done": 54,
+        "rate": 68.4
       },
       "supplier": {
         "total": 20,
-        "done": 6,
-        "rate": 30.0,
+        "done": 9,
+        "rate": 45.0,
         "detail": {
+          "上海泰盛万联达供应链有限公司": {
+            "plan": 1,
+            "done": 1
+          },
+          "深圳红杉食品有限公司": {
+            "plan": 1,
+            "done": 1
+          },
+          "合肥醉滑网络科技有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "东莞市广垦嘉益粮油有限公司": {
             "plan": 1,
             "done": 1
@@ -116,10 +128,6 @@
             "plan": 2,
             "done": 0
           },
-          "合肥醉滑网络科技有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
           "深圳市彬昱程电子商务有限公司-快乐猴": {
             "plan": 2,
             "done": 0
@@ -136,19 +144,11 @@
             "plan": 1,
             "done": 0
           },
-          "上海泰盛万联达供应链有限公司": {
-            "plan": 1,
-            "done": 0
-          },
           "山东乐利事食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
           "杭州糕诺电子商务有限公司": {
-            "plan": 1,
-            "done": 0
-          },
-          "深圳红杉食品有限公司": {
             "plan": 1,
             "done": 0
           },
@@ -220,13 +220,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "合肥醉滑网络科技有限公司-快乐猴-自营",
-          "billCode": "YY20260606003246",
-          "skuCount": 1,
-          "pcs": 96,
-          "timeSlot": "13:00 - 13:30"
-        },
-        {
           "supplierName": "深圳市彬昱程电子商务有限公司-快乐猴",
           "billCode": "YY20260606000921",
           "skuCount": 3,
@@ -262,13 +255,6 @@
           "timeSlot": "13:30 - 15:00"
         },
         {
-          "supplierName": "上海泰盛万联达供应链有限公司",
-          "billCode": "YY20260604002809",
-          "skuCount": 1,
-          "pcs": 4668,
-          "timeSlot": "11:00 - 12:30"
-        },
-        {
           "supplierName": "山东乐利事食品有限公司-快乐猴",
           "billCode": "YY20260604002388",
           "skuCount": 2,
@@ -280,13 +266,6 @@
           "billCode": "YY20260604000147",
           "skuCount": 1,
           "pcs": 720,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
-          "supplierName": "深圳红杉食品有限公司",
-          "billCode": "YY20260603006186",
-          "skuCount": 2,
-          "pcs": 350,
           "timeSlot": "15:30 - 16:00"
         },
         {
@@ -313,10 +292,29 @@
       ],
       "unloading": [
         {
+          "supplierName": "上海泰盛万联达供应链有限公司",
+          "billCode": "YY20260604002809",
+          "signTime": "11:16",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "深圳红杉食品有限公司",
+          "billCode": "YY20260603006186",
+          "signTime": "11:16",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "合肥醉滑网络科技有限公司-快乐猴-自营",
+          "billCode": "YY20260606003246",
+          "signTime": "11:15",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "东莞市广垦嘉益粮油有限公司",
           "billCode": "YY20260603001979",
           "signTime": "11:07",
-          "status": "已签到未卸货"
+          "unloadStartTime": "11:15",
+          "status": "卸货中"
         }
       ],
       "qc_pending": [
@@ -359,10 +357,53 @@
           "arrivalTime": "11:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "合肥醉滑网络科技有限公司-快乐猴-自营",
+          "skuName": "雀巢 脆脆鲨巧克力口味威化饼干 446.4g",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "深圳红杉食品有限公司",
+          "skuName": "快乐猴 特优级宁夏红枸杞 120g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "深圳红杉食品有限公司",
+          "skuName": "快乐猴 云南羊肚菌 20g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 9,
+          "supplierName": "上海泰盛万联达供应链有限公司",
+          "skuName": "快乐猴 柔韧面巾纸3层 100抽*20",
+          "arrivalTime": "11:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
       "signed_not_recv": [
+        {
+          "supplierName": "上海泰盛万联达供应链有限公司",
+          "poNo": "CG202606018834",
+          "reserveBillCode": "YY20260604002809",
+          "skuId": "1122924",
+          "skuName": "快乐猴 柔韧面巾纸3层 100抽*20",
+          "purchaseQty": 4668,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
         {
           "supplierName": "东莞市广垦嘉益粮油有限公司",
           "poNo": "CG202606010544",
@@ -372,7 +413,7 @@
           "purchaseQty": 1596,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 2
         },
         {
           "supplierName": "东莞市广垦嘉益粮油有限公司",
@@ -383,7 +424,7 @@
           "purchaseQty": 400,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 3
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
@@ -394,7 +435,40 @@
           "purchaseQty": 360,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
+          "seq": 4
+        },
+        {
+          "supplierName": "深圳红杉食品有限公司",
+          "poNo": "CG2026052610085",
+          "reserveBillCode": "YY20260603006186",
+          "skuId": "1306129",
+          "skuName": "快乐猴 特优级宁夏红枸杞 120g",
+          "purchaseQty": 200,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
+          "supplierName": "深圳红杉食品有限公司",
+          "poNo": "CG2026052610085",
+          "reserveBillCode": "YY20260603006186",
+          "skuId": "1306944",
+          "skuName": "快乐猴 云南羊肚菌 20g",
+          "purchaseQty": 150,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
+        },
+        {
+          "supplierName": "合肥醉滑网络科技有限公司-快乐猴-自营",
+          "poNo": "CG202606060721",
+          "reserveBillCode": "YY20260606003246",
+          "skuId": "218393",
+          "skuName": "雀巢 脆脆鲨巧克力口味威化饼干 446.4g",
+          "purchaseQty": 96,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
         },
         {
           "supplierName": "东莞市广垦嘉益粮油有限公司",
@@ -405,7 +479,7 @@
           "purchaseQty": 80,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 8
         }
       ],
       "qc_recv_pending": [],
@@ -537,10 +611,10 @@
       }
     ],
     "seeding": {
-      "not_started": 121,
+      "not_started": 125,
       "in_progress": 0,
       "done": 0,
-      "total": 121,
+      "total": 125,
       "status": "ok"
     }
   },

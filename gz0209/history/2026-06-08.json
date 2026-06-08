@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-08T13:16:36",
+  "timestamp": "2026-06-08T13:19:36",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 30,
-      "signed": 15,
-      "waiting": 10
+      "signed": 16,
+      "waiting": 9
     },
     "ontime": {
       "ontime": 2,
-      "early": 13,
+      "early": 14,
       "late": 0,
       "total": 25,
       "rate": 8.0,
-      "early_rate": 52.0,
+      "early_rate": 56.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 13,
-      "done": 8,
-      "rate": 61.5,
-      "pcs_done": 10936,
-      "sign_pcs_done": 21046
+      "total": 14,
+      "done": 9,
+      "rate": 64.3,
+      "pcs_done": 13012,
+      "sign_pcs_done": 31046
     },
     "qc": {
-      "total": 12,
+      "total": 10,
       "done": 3,
-      "pending": 9,
+      "pending": 7,
       "passed": 3,
       "rejected": 0,
-      "rate": 25.0,
+      "rate": 30.0,
       "bill_done": 3,
-      "bill_total": 12,
+      "bill_total": 10,
       "pcs_done": 605,
       "pcs_passed": 605,
-      "pcs_total": 10715,
+      "pcs_total": 18639,
       "pcs_rejected": 0,
-      "pcs_rate": 5.6,
+      "pcs_rate": 3.2,
       "sku_done": 2,
-      "sku_total": 11,
-      "sku_rate": 18.2
+      "sku_total": 9,
+      "sku_rate": 22.2
     },
     "putaway": {
       "total": 15893,
@@ -75,8 +75,8 @@
     "dimensions": {
       "reserve": {
         "total": 25,
-        "done": 15,
-        "rate": 60.0
+        "done": 16,
+        "rate": 64.0
       },
       "pcs": {
         "total": 20145,
@@ -87,14 +87,18 @@
       },
       "sku": {
         "total": 79,
-        "done": 59,
-        "rate": 74.7
+        "done": 60,
+        "rate": 75.9
       },
       "supplier": {
         "total": 20,
-        "done": 13,
-        "rate": 65.0,
+        "done": 14,
+        "rate": 70.0,
         "detail": {
+          "杭州勤诚塑料包装材料有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "山东乐利事食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -160,10 +164,6 @@
             "done": 0
           },
           "温州君越制袋有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "杭州勤诚塑料包装材料有限公司": {
             "plan": 1,
             "done": 0
           },
@@ -249,13 +249,6 @@
           "timeSlot": "15:00 - 15:30"
         },
         {
-          "supplierName": "杭州勤诚塑料包装材料有限公司",
-          "billCode": "YY20260605000523",
-          "skuCount": 1,
-          "pcs": 10000,
-          "timeSlot": "13:30 - 15:00"
-        },
-        {
           "supplierName": "杭州糕诺电子商务有限公司",
           "billCode": "YY20260604000147",
           "skuCount": 1,
@@ -279,6 +272,13 @@
       ],
       "unloading": [
         {
+          "supplierName": "杭州勤诚塑料包装材料有限公司",
+          "billCode": "YY20260605000523",
+          "signTime": "13:18",
+          "unloadStartTime": "13:18",
+          "status": "卸货中"
+        },
+        {
           "supplierName": "山东乐利事食品有限公司-快乐猴",
           "billCode": "YY20260604002388",
           "signTime": "13:12",
@@ -288,7 +288,8 @@
           "supplierName": "上海泰盛万联达供应链有限公司",
           "billCode": "YY20260604002809",
           "signTime": "11:16",
-          "status": "已签到未卸货"
+          "unloadStartTime": "13:19",
+          "status": "卸货中"
         },
         {
           "supplierName": "深圳红杉食品有限公司",
@@ -301,42 +302,11 @@
           "billCode": "YY20260606003246",
           "signTime": "11:15",
           "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "东莞市广垦嘉益粮油有限公司",
-          "billCode": "YY20260603001979",
-          "signTime": "11:07",
-          "unloadStartTime": "11:15",
-          "status": "卸货中"
         }
       ],
       "qc_pending": [
         {
           "seq": 1,
-          "supplierName": "东莞市广垦嘉益粮油有限公司",
-          "skuName": "快乐猴 压榨一级浓香花生油 5L",
-          "arrivalTime": "11:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "东莞市广垦嘉益粮油有限公司",
-          "skuName": "快乐猴 非转基因玉米胚芽油 5L",
-          "arrivalTime": "11:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
-          "supplierName": "东莞市广垦嘉益粮油有限公司",
-          "skuName": "快乐猴 压榨一级浓香花生油 1.8L",
-          "arrivalTime": "11:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 4,
           "supplierName": "合肥醉滑网络科技有限公司-快乐猴-自营",
           "skuName": "雀巢 脆脆鲨巧克力口味威化饼干 446.4g",
           "arrivalTime": "13:00",
@@ -344,7 +314,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 5,
+          "seq": 2,
           "supplierName": "深圳红杉食品有限公司",
           "skuName": "快乐猴 特优级宁夏红枸杞 120g",
           "arrivalTime": "15:30",
@@ -352,7 +322,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 6,
+          "seq": 3,
           "supplierName": "深圳红杉食品有限公司",
           "skuName": "快乐猴 云南羊肚菌 20g",
           "arrivalTime": "15:30",
@@ -360,7 +330,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 7,
+          "seq": 4,
           "supplierName": "上海泰盛万联达供应链有限公司",
           "skuName": "快乐猴 柔韧面巾纸3层 100抽*20",
           "arrivalTime": "11:00",
@@ -368,7 +338,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 8,
+          "seq": 5,
           "supplierName": "山东乐利事食品有限公司-快乐猴",
           "skuName": "快乐猴 黄瓜味原切薯片 75g",
           "arrivalTime": "15:00",
@@ -376,10 +346,18 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 9,
+          "seq": 6,
           "supplierName": "山东乐利事食品有限公司-快乐猴",
           "skuName": "快乐猴 红烩味原切薯片 75g",
           "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "杭州勤诚塑料包装材料有限公司",
+          "skuName": "快乐猴一次性保温袋(35+4)*45cm",
+          "arrivalTime": "13:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
@@ -389,22 +367,33 @@
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
           "skuName": "广合腐乳微辣300g",
           "completeTime": "11:59",
-          "waitingMins": 77
+          "waitingMins": 80
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
           "skuName": "广合腐乳微辣300g",
           "completeTime": "11:59",
-          "waitingMins": 77
+          "waitingMins": 80
         },
         {
           "supplierName": "广州市柏顿电子商务有限公司",
           "skuName": "快乐猴-一次性鸭货手套（5000双/箱）",
           "completeTime": "12:35",
-          "waitingMins": 41
+          "waitingMins": 44
         }
       ],
       "signed_not_recv": [
+        {
+          "supplierName": "杭州勤诚塑料包装材料有限公司",
+          "poNo": "CG202606030859",
+          "reserveBillCode": "YY20260605000523",
+          "skuId": "1417080",
+          "skuName": "快乐猴一次性保温袋(35+4)*45cm",
+          "purchaseQty": 10000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
         {
           "supplierName": "上海泰盛万联达供应链有限公司",
           "poNo": "CG202606018834",
@@ -414,7 +403,7 @@
           "purchaseQty": 4668,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 2
         },
         {
           "supplierName": "东莞市广垦嘉益粮油有限公司",
@@ -425,7 +414,7 @@
           "purchaseQty": 1596,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 3
         },
         {
           "supplierName": "山东乐利事食品有限公司-快乐猴",
@@ -436,7 +425,7 @@
           "purchaseQty": 1480,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
+          "seq": 4
         },
         {
           "supplierName": "山东乐利事食品有限公司-快乐猴",
@@ -447,7 +436,7 @@
           "purchaseQty": 1440,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 5
         },
         {
           "supplierName": "东莞市广垦嘉益粮油有限公司",
@@ -458,7 +447,7 @@
           "purchaseQty": 400,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 6
         },
         {
           "supplierName": "深圳红杉食品有限公司",
@@ -469,7 +458,7 @@
           "purchaseQty": 200,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 6
+          "seq": 7
         },
         {
           "supplierName": "深圳红杉食品有限公司",
@@ -480,7 +469,7 @@
           "purchaseQty": 150,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 8
         },
         {
           "supplierName": "合肥醉滑网络科技有限公司-快乐猴-自营",
@@ -491,7 +480,7 @@
           "purchaseQty": 96,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 9
         },
         {
           "supplierName": "东莞市广垦嘉益粮油有限公司",
@@ -502,7 +491,7 @@
           "purchaseQty": 80,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 10
         },
         {
           "supplierName": "广州市柏顿电子商务有限公司",
@@ -513,7 +502,7 @@
           "purchaseQty": 15,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 10
+          "seq": 11
         },
         {
           "supplierName": "广州市柏顿电子商务有限公司",
@@ -524,7 +513,7 @@
           "purchaseQty": 10,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 11
+          "seq": 12
         }
       ],
       "qc_recv_pending": [],
@@ -743,9 +732,9 @@
       }
     ],
     "seeding": {
-      "not_started": 115,
+      "not_started": 112,
       "in_progress": 1,
-      "done": 64,
+      "done": 67,
       "total": 180,
       "status": "ok"
     }

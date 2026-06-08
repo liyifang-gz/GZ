@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-06-08T09:55:59",
+  "timestamp": "2026-06-08T10:01:26",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 30,
-      "signed": 3,
-      "waiting": 22
+      "signed": 4,
+      "waiting": 21
     },
     "ontime": {
-      "ontime": 0,
+      "ontime": 1,
       "early": 3,
       "late": 0,
       "total": 25,
-      "rate": 0.0,
+      "rate": 4.0,
       "early_rate": 12.0,
       "late_rate": 0.0
     },
@@ -24,11 +24,11 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
-      "done": 1,
-      "rate": 50.0,
-      "pcs_done": 2994,
-      "sign_pcs_done": 3294
+      "total": 3,
+      "done": 2,
+      "rate": 66.7,
+      "pcs_done": 3294,
+      "sign_pcs_done": 8094
     },
     "qc": {
       "total": 3,
@@ -41,7 +41,7 @@
       "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 900,
+      "pcs_total": 5400,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
@@ -49,37 +49,53 @@
       "sku_rate": 0.0
     },
     "putaway": {
-      "total": 15302,
+      "total": 15602,
       "done": 15302,
-      "rate": 100.0,
-      "sku_total": 16,
+      "rate": 98.1,
+      "sku_total": 17,
       "sku_done": 16,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 94.1,
+      "details": [
+        {
+          "poNo": "CG202606073334",
+          "hopePcs": 300,
+          "putPcs": 0,
+          "hopeSku": 1,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
         "total": 25,
-        "done": 3,
-        "rate": 12.0
+        "done": 4,
+        "rate": 16.0
       },
       "pcs": {
         "total": 20145,
         "done": 8585,
         "rate": 42.6,
-        "recv_done": 15302,
-        "recv_rate": 76.0
+        "recv_done": 15602,
+        "recv_rate": 77.4
       },
       "sku": {
         "total": 79,
-        "done": 29,
-        "rate": 36.7
+        "done": 30,
+        "rate": 38.0
       },
       "supplier": {
         "total": 20,
-        "done": 2,
-        "rate": 10.0,
+        "done": 3,
+        "rate": 15.0,
         "detail": {
+          "华润怡宝饮料（中国）有限公司华南分公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "上海本甄农业发展有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "广州市捷通兴业贸易有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -87,10 +103,6 @@
           "广州同超贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 0
-          },
-          "上海本甄农业发展有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 1
           },
           "广州顺中宜商贸有限公司-快乐猴": {
             "plan": 1,
@@ -121,10 +133,6 @@
             "done": 0
           },
           "杭州勤诚塑料包装材料有限公司": {
-            "plan": 1,
-            "done": 0
-          },
-          "华润怡宝饮料（中国）有限公司华南分公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -269,13 +277,6 @@
           "timeSlot": "13:30 - 15:00"
         },
         {
-          "supplierName": "华润怡宝饮料（中国）有限公司华南分公司-快乐猴",
-          "billCode": "YY20260604006130",
-          "skuCount": 1,
-          "pcs": 4800,
-          "timeSlot": "09:30 - 10:30"
-        },
-        {
           "supplierName": "上海泰盛万联达供应链有限公司",
           "billCode": "YY20260604002809",
           "skuCount": 1,
@@ -348,9 +349,9 @@
       ],
       "unloading": [
         {
-          "supplierName": "上海本甄农业发展有限公司-快乐猴-自营",
-          "billCode": "YY20260607003702",
-          "signTime": "09:35",
+          "supplierName": "华润怡宝饮料（中国）有限公司华南分公司-快乐猴",
+          "billCode": "YY20260604006130",
+          "signTime": "09:58",
           "status": "已签到未卸货"
         }
       ],
@@ -373,15 +374,26 @@
         },
         {
           "seq": 3,
-          "supplierName": "上海本甄农业发展有限公司-快乐猴-自营",
-          "skuName": "快乐猴 冻干蜂蜜柠檬片 55g",
-          "arrivalTime": "14:30",
+          "supplierName": "华润怡宝饮料（中国）有限公司华南分公司-快乐猴",
+          "skuName": "怡宝纯净水555ml",
+          "arrivalTime": "09:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
       "signed_not_recv": [
+        {
+          "supplierName": "华润怡宝饮料（中国）有限公司华南分公司-快乐猴",
+          "poNo": "CG202606045038",
+          "reserveBillCode": "YY20260604006130",
+          "skuId": "1272",
+          "skuName": "怡宝纯净水555ml",
+          "purchaseQty": 4800,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
           "poNo": "CG2026060112304",
@@ -391,7 +403,7 @@
           "purchaseQty": 660,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 2
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
@@ -400,17 +412,6 @@
           "skuId": "475366",
           "skuName": "广合腐乳微辣300g",
           "purchaseQty": 360,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 2
-        },
-        {
-          "supplierName": "上海本甄农业发展有限公司-快乐猴-自营",
-          "poNo": "CG202606073334",
-          "reserveBillCode": "YY20260607003702",
-          "skuId": "1478757",
-          "skuName": "快乐猴 冻干蜂蜜柠檬片 55g",
-          "purchaseQty": 300,
           "recvQty": 0,
           "hasQc": false,
           "seq": 3
@@ -561,10 +562,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 75,
+      "not_started": 78,
       "in_progress": 0,
       "done": 0,
-      "total": 75,
+      "total": 78,
       "status": "ok"
     }
   },

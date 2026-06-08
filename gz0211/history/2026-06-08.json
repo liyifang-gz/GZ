@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-08T12:37:22",
+  "timestamp": "2026-06-08T12:40:22",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 13,
-      "signed": 10,
-      "waiting": 1
+      "signed": 11,
+      "waiting": 0
     },
     "ontime": {
       "ontime": 0,
       "early": 10,
-      "late": 0,
+      "late": 1,
       "total": 11,
       "rate": 0.0,
       "early_rate": 90.9,
-      "late_rate": 0.0
+      "late_rate": 9.1
     },
     "reserve_progress": {
       "po_total": 13,
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 7,
+      "total": 8,
       "done": 7,
-      "rate": 100.0,
+      "rate": 87.5,
       "pcs_done": 3444,
-      "sign_pcs_done": 3444
+      "sign_pcs_done": 4238
     },
     "qc": {
-      "total": 5,
+      "total": 11,
       "done": 5,
-      "pending": 0,
+      "pending": 6,
       "passed": 5,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 45.5,
       "bill_done": 5,
-      "bill_total": 5,
+      "bill_total": 11,
       "pcs_done": 1525,
       "pcs_passed": 1525,
-      "pcs_total": 1525,
+      "pcs_total": 2319,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 65.8,
       "sku_done": 5,
-      "sku_total": 5,
-      "sku_rate": 100.0
+      "sku_total": 11,
+      "sku_rate": 45.5
     },
     "putaway": {
       "total": 4122,
@@ -96,8 +96,8 @@
     "dimensions": {
       "reserve": {
         "total": 11,
-        "done": 10,
-        "rate": 90.9
+        "done": 11,
+        "rate": 100.0
       },
       "pcs": {
         "total": 5926,
@@ -108,14 +108,18 @@
       },
       "sku": {
         "total": 27,
-        "done": 21,
-        "rate": 77.8
+        "done": 27,
+        "rate": 100.0
       },
       "supplier": {
         "total": 8,
-        "done": 7,
-        "rate": 87.5,
+        "done": 8,
+        "rate": 100.0,
         "detail": {
+          "深圳市金禧康食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "上海馥松食品科技有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -143,10 +147,6 @@
           "山东新立信食品科技有限公司-快乐猴": {
             "plan": 2,
             "done": 2
-          },
-          "深圳市金禧康食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -162,47 +162,95 @@
           "poStatus": "待确认"
         }
       ],
-      "unsigned": [
+      "unsigned": [],
+      "unloading": [
         {
           "supplierName": "深圳市金禧康食品有限公司-快乐猴",
           "billCode": "YY20260605002143",
-          "skuCount": 6,
-          "pcs": 794,
-          "timeSlot": "11:30 - 12:00"
+          "signTime": "12:39",
+          "status": "已签到未卸货"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "skuName": "蒙牛 绿色心情绿莎莎雪糕 70g*8",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "skuName": "蒙牛优牧布丁雪糕40g*20支",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "skuName": "蒙牛 冰+蓝莓酸奶口味棒冰 70g*6",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "skuName": "蒙牛随变经典香草口味冰淇淋75g*5支",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "skuName": "蒙牛酷爱纯脆香芋味脆皮雪糕65g*5支",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "skuName": "蒙牛纯！牛奶味冰淇淋65g*5支",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "上海倍特食品有限公司-快乐猴",
           "skuName": "冷冻南美白虾 500g",
           "completeTime": "11:23",
-          "waitingMins": 74
+          "waitingMins": 77
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅根 1kg",
           "completeTime": "12:04",
-          "waitingMins": 33
+          "waitingMins": 36
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡琵琶腿 1kg",
           "completeTime": "12:03",
-          "waitingMins": 34
+          "waitingMins": 37
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅尖 1kg",
           "completeTime": "12:06",
-          "waitingMins": 31
+          "waitingMins": 34
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅中  1kg",
           "completeTime": "12:02",
-          "waitingMins": 35
+          "waitingMins": 38
         }
       ],
       "signed_not_recv": [
@@ -216,6 +264,72 @@
           "recvQty": 300,
           "hasQc": true,
           "seq": 1
+        },
+        {
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "poNo": "CG2026060115596",
+          "reserveBillCode": "YY20260605002143",
+          "skuId": "55970",
+          "skuName": "蒙牛优牧布丁雪糕40g*20支",
+          "purchaseQty": 236,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "poNo": "CG2026060115596",
+          "reserveBillCode": "YY20260605002143",
+          "skuId": "77711",
+          "skuName": "蒙牛 冰+蓝莓酸奶口味棒冰 70g*6",
+          "purchaseQty": 174,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "poNo": "CG2026060115596",
+          "reserveBillCode": "YY20260605002143",
+          "skuId": "1032379",
+          "skuName": "蒙牛酷爱纯脆香芋味脆皮雪糕65g*5支",
+          "purchaseQty": 132,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "poNo": "CG2026060115596",
+          "reserveBillCode": "YY20260605002143",
+          "skuId": "53014",
+          "skuName": "蒙牛 绿色心情绿莎莎雪糕 70g*8",
+          "purchaseQty": 108,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "poNo": "CG2026060115596",
+          "reserveBillCode": "YY20260605002143",
+          "skuId": "1366299",
+          "skuName": "蒙牛纯！牛奶味冰淇淋65g*5支",
+          "purchaseQty": 102,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
+        },
+        {
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "poNo": "CG2026060115596",
+          "reserveBillCode": "YY20260605002143",
+          "skuId": "107372",
+          "skuName": "蒙牛随变经典香草口味冰淇淋75g*5支",
+          "purchaseQty": 42,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
         }
       ],
       "qc_recv_pending": [],
@@ -259,7 +373,7 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 2543,
+      "pcs_total": 2559,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -299,7 +413,7 @@
         "pick_rate": 0,
         "sow_rate": 0,
         "cage_rate": 0.0,
-        "sowed_picked": 2543
+        "sowed_picked": 2559
       },
       "sku": {
         "total": 0,
@@ -314,15 +428,15 @@
     "status": "ok",
     "pool": {
       "plan_pcs": 2759,
-      "alloc_pcs": 2543,
-      "alloc_rate": 92.2,
+      "alloc_pcs": 2559,
+      "alloc_rate": 92.8,
       "picked_pcs": 0,
       "sow_pcs": 0,
       "sow_rate": 0.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 122,
-      "sku_alloc": 120,
+      "sku_alloc": 121,
       "sku_sow": 0,
       "sku_ship": 0,
       "total_orders": 6
@@ -359,20 +473,12 @@
         "planQty": 32,
         "allocQty": 0,
         "unallocQty": 32
-      },
-      {
-        "receiverName": "快乐猴-禅城东方广场店-018",
-        "orderNo": "DB20260608238743",
-        "skuNum": 1,
-        "planQty": 16,
-        "allocQty": 0,
-        "unallocQty": 16
       }
     ],
     "seeding": {
-      "not_started": 143,
-      "in_progress": 3,
-      "done": 27,
+      "not_started": 140,
+      "in_progress": 4,
+      "done": 29,
       "total": 173,
       "status": "ok"
     }
@@ -380,15 +486,15 @@
   "plan": {
     "total_orders": 6,
     "total_pcs": 2759,
-    "alloc_pcs": 2543,
-    "alloc_rate": 92.2,
+    "alloc_pcs": 2559,
+    "alloc_rate": 92.8,
     "picked_pcs": 0,
     "sow_pcs": 0,
     "sow_rate": 0.0,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 122,
-    "sku_alloc": 120,
+    "sku_alloc": 121,
     "sku_sow": 0,
     "store_count": 3,
     "by_store": {
@@ -428,14 +534,6 @@
         "planQty": 32,
         "allocQty": 0,
         "unallocQty": 32
-      },
-      {
-        "receiverName": "快乐猴-禅城东方广场店-018",
-        "orderNo": "DB20260608238743",
-        "skuNum": 1,
-        "planQty": 16,
-        "allocQty": 0,
-        "unallocQty": 16
       }
     ],
     "status": "ok"

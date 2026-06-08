@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-08T11:21:00",
+  "timestamp": "2026-06-08T11:24:00",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 5,
-      "done": 0,
-      "pending": 5,
-      "passed": 0,
+      "done": 1,
+      "pending": 4,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 20.0,
+      "bill_done": 1,
       "bill_total": 5,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 475,
+      "pcs_passed": 475,
       "pcs_total": 1525,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 31.1,
+      "sku_done": 1,
       "sku_total": 5,
-      "sku_rate": 0.0
+      "sku_rate": 20.0
     },
     "putaway": {
       "total": 2607,
@@ -102,11 +102,15 @@
         "done": 7,
         "rate": 87.5,
         "detail": {
-          "山东胜农食品有限公司": {
+          "山东美佳集团有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
+          "福建圣农食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
-          "福建圣农食品有限公司-快乐猴": {
+          "山东胜农食品有限公司": {
             "plan": 1,
             "done": 1
           },
@@ -115,10 +119,6 @@
             "done": 1
           },
           "山东新立信食品科技有限公司-快乐猴": {
-            "plan": 2,
-            "done": 2
-          },
-          "山东美佳集团有限公司-快乐猴": {
             "plan": 2,
             "done": 2
           },
@@ -168,14 +168,6 @@
       "qc_pending": [
         {
           "seq": 1,
-          "supplierName": "上海倍特食品有限公司-快乐猴",
-          "skuName": "冷冻南美白虾 500g",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "11:01",
-          "statusLabel": "首次进行中"
-        },
-        {
-          "seq": 2,
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅根 1kg",
           "arrivalTime": "16:00",
@@ -183,7 +175,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 3,
+          "seq": 2,
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡琵琶腿 1kg",
           "arrivalTime": "16:00",
@@ -191,7 +183,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 4,
+          "seq": 3,
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅尖 1kg",
           "arrivalTime": "16:00",
@@ -199,7 +191,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 5,
+          "seq": 4,
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅中  1kg",
           "arrivalTime": "16:00",
@@ -207,7 +199,14 @@
           "statusLabel": "待质检"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "上海倍特食品有限公司-快乐猴",
+          "skuName": "冷冻南美白虾 500g",
+          "completeTime": "11:23",
+          "waitingMins": 0
+        }
+      ],
       "signed_not_recv": [
         {
           "supplierName": "山东龙大美食股份有限公司-快乐猴",
@@ -228,7 +227,7 @@
           "skuName": "冷冻南美白虾 500g",
           "purchaseQty": 475,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 2
         },
         {
@@ -265,17 +264,6 @@
           "seq": 5
         },
         {
-          "supplierName": "福建圣农食品有限公司-快乐猴",
-          "poNo": "CG202606054564",
-          "reserveBillCode": "YY20260605007868",
-          "skuId": "1292610",
-          "skuName": "圣农孜然味脆爽掌中宝200g",
-          "purchaseQty": 200,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 6
-        },
-        {
           "supplierName": "山东胜农食品有限公司",
           "poNo": "CG2026060115605",
           "reserveBillCode": "YY20260604002546",
@@ -284,18 +272,7 @@
           "purchaseQty": 160,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
-        },
-        {
-          "supplierName": "山东美佳集团有限公司-快乐猴",
-          "poNo": "CG202606027769",
-          "reserveBillCode": "YY20260603000379",
-          "skuId": "1360003",
-          "skuName": "(原料)快乐猴 盐烤青花鱼  2.2kg*5",
-          "purchaseQty": 10,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 8
+          "seq": 6
         }
       ],
       "qc_recv_pending": [],
@@ -400,10 +377,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 125,
+      "not_started": 127,
       "in_progress": 0,
       "done": 0,
-      "total": 125,
+      "total": 127,
       "status": "ok"
     }
   },

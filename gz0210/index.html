@@ -1,0 +1,2175 @@
+<!DOCTYPE html>
+<!-- v20260605-13 -->
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <meta http-equiv="Pragma" content="no-cache">
+  <meta http-equiv="Expires" content="0">
+  <title>实时监控看板 · GZ广州三仓</title>
+</head>
+<body>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: #f0f2f5;
+            color: #333;
+            min-height: 100vh;
+            padding: 12px;
+        }
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 12px 16px;
+            background: white;
+            border-radius: 8px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .header h1 { font-size: 16px; font-weight: 600; color: #1a1a1a; }
+        .header .meta { font-size: 12px; color: #999; }
+        .header-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+            gap: 4px;
+        }
+        .countdown-hint {
+            font-size: 11px;
+            color: #bbb;
+        }
+        .header .refresh-btn {
+            padding: 5px 10px;
+            border: 1px solid #1976d2;
+            border-radius: 4px;
+            background: white;
+            cursor: pointer;
+            font-size: 12px;
+            color: #1976d2;
+            font-weight: 500;
+            transition: background 0.15s;
+        }
+        .header .refresh-btn:hover { background: #e3f0ff; }
+        .header .refresh-btn:active { background: #bbdefb; }
+        .header .refresh-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+            border-color: #ddd;
+            color: #999;
+        }
+        .date-select {
+            padding: 4px 8px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #333;
+            background: white;
+            cursor: pointer;
+            outline: none;
+        }
+        .date-select:focus { border-color: #2196f3; }
+        .warehouse-select {
+            padding: 4px 8px;
+            border: 1px solid #2196f3;
+            border-radius: 4px;
+            font-size: 12px;
+            color: #1565c0;
+            background: #e3f2fd;
+            cursor: pointer;
+            outline: none;
+            font-weight: 600;
+        }
+        .warehouse-select:focus { border-color: #1565c0; }
+        .header-left { flex: 1; }
+
+        /* 总进度条 */
+        .pipeline {
+            background: white;
+            border-radius: 8px;
+            padding: 16px;
+            margin-bottom: 12px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .pipeline-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 12px;
+        }
+        .pipeline-header h3 { font-size: 13px; color: #666; }
+        .pipeline-header .dim-label { font-size: 11px; color: #2196f3; font-weight: 500; }
+        .pipeline-flow {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            flex-wrap: nowrap;
+            overflow-x: auto;
+            gap: 2px;
+        }
+        .pipeline-node {
+            text-align: center;
+            flex: 1;
+            min-width: 50px;
+        }
+        .pipeline-node .icon {
+            width: 32px;
+            height: 32px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 3px;
+            font-size: 14px;
+        }
+        .pipeline-node .icon.green { background: #e8f5e9; color: #4caf50; }
+        .pipeline-node .icon.blue { background: #e3f2fd; color: #2196f3; }
+        .pipeline-node .icon.orange { background: #fff3e0; color: #ff9800; }
+        .pipeline-node .label { font-size: 10px; color: #666; }
+        .pipeline-node .value { font-size: 12px; font-weight: 600; color: #333; }
+        .pipeline-arrow { color: #ccc; font-size: 12px; }
+
+        /* 模块卡片 */
+        .modules { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+        @media (max-width: 600px) { .modules { grid-template-columns: 1fr; } }
+        .card {
+            background: white;
+            border-radius: 8px;
+            padding: 14px;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.08);
+        }
+        .card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        .card-title {
+            font-size: 13px;
+            font-weight: 600;
+            color: #333;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+        .card-title .badge {
+            font-size: 10px;
+            padding: 2px 6px;
+            border-radius: 10px;
+            color: white;
+            font-weight: 500;
+        }
+        .badge-green { background: #4caf50; }
+        .badge-blue { background: #2196f3; }
+        .badge-orange { background: #ff9800; }
+        .badge-purple { background: #9c27b0; }
+        .badge-red { background: #f44336; }
+
+        /* 维度切换 */
+        .dim-switch {
+            display: flex;
+            gap: 0;
+            border: 1px solid #e0e0e0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        .dim-switch .dim-btn {
+            padding: 3px 8px;
+            font-size: 10px;
+            border: none;
+            background: white;
+            cursor: pointer;
+            color: #666;
+            border-right: 1px solid #e0e0e0;
+        }
+        .dim-switch .dim-btn:last-child { border-right: none; }
+        .dim-switch .dim-btn.active {
+            background: #2196f3;
+            color: white;
+        }
+
+        /* 进度条 */
+        .progress-item { margin-bottom: 8px; }
+        .progress-item:last-child { margin-bottom: 0; }
+        .progress-label {
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            font-size: 12px;
+            margin-bottom: 3px;
+        }
+        .progress-label .name { color: #666; min-width: 28px; flex-shrink: 0; }
+        .progress-label .val { color: #334155; font-weight: 500; }
+        .progress-bar {
+            height: 6px;
+            background: #f0f0f0;
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        .progress-bar .fill {
+            height: 100%;
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+        .fill-teal { background: linear-gradient(90deg, #26c6da, #00838f); }
+        .fill-green { background: linear-gradient(90deg, #66bb6a, #43a047); }
+        .fill-blue { background: linear-gradient(90deg, #42a5f5, #1e88e5); }
+        .fill-orange { background: linear-gradient(90deg, #ffa726, #f57c00); }
+        .fill-purple { background: linear-gradient(90deg, #ab47bc, #7b1fa2); }
+
+        /* 进度条行悬停明细按钮 */
+        .progress-row-wrap { position: relative; }
+        .progress-row-wrap .progress-label { position: relative; }
+        .inb-detail-trigger {
+            border: none;
+            background: none;
+            cursor: pointer;
+            font-size: 13px;
+            padding: 0 2px;
+            margin-left: 4px;
+            opacity: 0;
+            transition: opacity 0.18s;
+            vertical-align: middle;
+            line-height: 1;
+        }
+        .progress-row-wrap:hover .inb-detail-trigger { opacity: 1; }
+        /* 运输模块 KPI 格 hover 显示🔍 */
+        .transport-kpi-hover { position: relative; }
+        .transport-kpi-hover:hover .inb-detail-trigger { opacity: 1; }
+
+        /* 弹窗升级样式 */
+        .modal-card {
+            background: #fff;
+            margin: 40px auto;
+            max-width: 900px;
+            border-radius: 12px;
+            box-shadow: 0 8px 32px rgba(0,0,0,0.18), 0 2px 8px rgba(0,0,0,0.10);
+            overflow: hidden;
+            position: relative;
+        }
+        .modal-header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            background: #f8fafc;
+            border-bottom: 1px solid #e2e8f0;
+            padding: 14px 18px;
+        }
+        .modal-header h3 {
+            margin: 0;
+            font-size: 15px;
+            font-weight: 600;
+            color: #1e293b;
+        }
+        .modal-close-btn {
+            background: none;
+            border: none;
+            font-size: 20px;
+            cursor: pointer;
+            color: #64748b;
+            line-height: 1;
+            padding: 2px 4px;
+            border-radius: 4px;
+            transition: background 0.15s, color 0.15s;
+        }
+        .modal-close-btn:hover { background: #e2e8f0; color: #1e293b; }
+        .modal-body-wrap {
+            max-height: 60vh;
+            overflow-y: auto;
+            padding: 18px 18px 20px;
+        }
+        .modal-empty {
+            color: #94a3b8;
+            font-size: 13px;
+            text-align: center;
+            padding: 32px 0;
+        }
+        .modal-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 12px;
+        }
+        .modal-table thead th {
+            background: #f1f5f9;
+            padding: 8px 10px;
+            border-bottom: 2px solid #e2e8f0;
+            text-align: left;
+            font-weight: 600;
+            color: #475569;
+            white-space: nowrap;
+        }
+        .modal-table tbody td {
+            padding: 7px 10px;
+            border-bottom: 1px solid #f1f5f9;
+            color: #334155;
+        }
+        .modal-table tbody tr:nth-child(even) td { background: #f8fafc; }
+        .modal-table tbody tr:last-child td { border-bottom: none; }
+        .modal-table tbody tr:hover td { background: #eff6ff; }
+
+        /* KPI */
+        .kpi-row { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 8px; }
+        .kpi {
+            flex: 1;
+            min-width: 60px;
+            text-align: center;
+            padding: 6px 4px;
+            background: #f8f9fa;
+            border-radius: 6px;
+        }
+        .kpi .number { font-size: 16px; font-weight: 700; color: #1a1a1a; }
+        .kpi .unit { font-size: 10px; color: #999; margin-top: 1px; }
+
+        /* 分岗位表格 */
+        .job-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 11px;
+            margin-top: 8px;
+        }
+        .job-table th, .job-table td {
+            padding: 4px 6px;
+            text-align: center;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        .job-table th { color: #999; font-weight: 500; background: #f8f9fa; }
+        .job-table .highlight { color: #2196f3; font-weight: 600; }
+
+        /* 人效 - 轻量样式 */
+        .eff-formula { font-size: 10px; color: #bbb; margin-top: 1px; }
+
+        /* 详情 */
+        .detail-btn {
+            display: inline-block;
+            font-size: 11px;
+            color: #2196f3;
+            cursor: pointer;
+            margin-top: 6px;
+        }
+        .detail-panel {
+            display: none;
+            margin-top: 8px;
+            padding: 8px;
+            background: #f8f9fa;
+            border-radius: 6px;
+            font-size: 11px;
+            max-height: 200px;
+            overflow-y: auto;
+        }
+        .detail-panel.show { display: block; }
+        .detail-panel table { width: 100%; border-collapse: collapse; }
+        .detail-panel th, .detail-panel td {
+            padding: 3px 6px;
+            text-align: left;
+            border-bottom: 1px solid #eee;
+        }
+        .detail-panel th { color: #999; font-weight: 500; }
+
+        .footer {
+            text-align: center;
+            padding: 12px;
+            font-size: 11px;
+            color: #bbb;
+        }
+    </style>
+
+    <div class="header">
+        <div class="header-left">
+            <h1>🏭 实时监控看板</h1>
+            <div class="meta" id="update-time">加载中...</div>
+        </div>
+        <div class="header-right">
+            <div style="display:flex;align-items:center;gap:8px;">
+                <select class="warehouse-select" id="warehouse-select">
+                    <option value="gz0210">🧊 GZ0210 冷藏</option>
+                    <option value="gz0211">❄️ GZ0211 冷冻</option>
+                    <option value="gz0209">🌡️ GZ0209 常温</option>
+                </select>
+                <select class="date-select" id="date-select">
+                    <option value="">今天</option>
+                </select>
+                <button class="refresh-btn" id="refresh-btn">🔄 立即刷新</button>
+            </div>
+            <div class="countdown-hint">数据自动更新 <span id="auto-countdown">0:30</span></div>
+        </div>
+    </div>
+
+    <!-- 总进度（PCS维度） -->
+    <div class="pipeline">
+        <div class="pipeline-header">
+            <h3>履约进度总览</h3>
+            <span class="dim-label">📦 PCS 维度</span>
+        </div>
+        <div class="pipeline-flow">
+            <div class="pipeline-node"><div class="icon green">📋</div><div class="value" id="p-sign">--</div><div class="label">签到</div></div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-node"><div class="icon green">🚛</div><div class="value" id="p-unload">--</div><div class="label">卸货</div></div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-node"><div class="icon blue">🔍</div><div class="value" id="p-qc">--</div><div class="label">质检</div></div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-node"><div class="icon blue">📦</div><div class="value" id="p-recv">--</div><div class="label">收货</div></div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-node"><div class="icon blue">🏷️</div><div class="value" id="p-putaway">--</div><div class="label">上架</div></div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-node"><div class="icon orange">📋</div><div class="value" id="p-alloc">--</div><div class="label">分配</div></div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-node"><div class="icon orange">🌱</div><div class="value" id="p-sow">--</div><div class="label">播种</div></div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-node"><div class="icon orange">🔒</div><div class="value" id="p-cage">--</div><div class="label">关笼</div></div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-node"><div class="icon orange">🧩</div><div class="value" id="p-pack">--</div><div class="label">组盘</div></div>
+            <div class="pipeline-arrow">→</div>
+            <div class="pipeline-node"><div class="icon blue">🚚</div><div class="value" id="p-ship">--</div><div class="label">发运</div></div>
+        </div>
+    </div>
+
+    <div class="modules">
+        <!-- 入库 -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    📥 入库
+                    <span class="badge badge-green" id="inbound-badge">--</span>
+                </div>
+                <div class="dim-switch">
+                    <button class="dim-btn active" data-dim="pcs" data-type="inbound">PCS</button>
+                    <button class="dim-btn" data-dim="sku" data-type="inbound">SKU</button>
+                    <button class="dim-btn" data-dim="reserve" data-type="inbound">预约单</button>
+                    <button class="dim-btn" data-dim="supplier" data-type="inbound">供应商</button>
+                </div>
+            </div>
+            <!-- KPI 行在上 -->
+            <div class="kpi-row">
+                <div class="kpi"><div class="number" id="inb-total">--</div><div class="unit" id="inb-total-label">总件数</div></div>
+                <div class="kpi"><div class="number" id="inb-done">--</div><div class="unit" id="inb-done-label">已收货件</div></div>
+                <div class="kpi"><div class="number" id="inb-rate">--%</div><div class="unit">完成率</div></div>
+                <div class="kpi">
+                    <div class="number" id="inb-ontime-rate">--%</div>
+                    <div class="unit">签到准时率</div>
+                    <div id="inb-ontime-sub" style="font-size:10px;color:#888;margin-top:3px;line-height:1.5;display:none">
+                        <span>早到 <span id="inb-early-rate" style="color:#f59e0b">--%</span></span>
+                        <span style="margin-left:6px">迟到 <span id="inb-late-rate" style="color:#ef4444">--%</span></span>
+                    </div>
+                </div>
+                <div class="kpi"><div class="number" id="inb-efficiency">--</div><div class="unit">入库效率<br><span style="font-size:9px;color:#bbb">PCS/人</span></div></div>
+            </div>
+            <!-- 进度条在下 -->
+            <div id="inbound-content" style="margin-top:10px">
+                <div class="progress-row-wrap">
+                <div class="progress-item">
+                    <div class="progress-label"><span class="name">预约</span><span class="val" id="inb-reserve-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('unreserved')">🔍</button></div>
+                    <div class="progress-bar"><div class="fill fill-teal" id="inb-reserve-bar" style="width:0%"></div></div>
+                </div>
+                </div>
+                <div class="progress-row-wrap">
+                <div class="progress-item">
+                    <div class="progress-label"><span class="name">签到</span><span class="val" id="inb-sign-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('unsigned')">🔍</button></div>
+                    <div class="progress-bar"><div class="fill fill-green" id="inb-sign-bar" style="width:0%"></div></div>
+                </div>
+                </div>
+                <div class="progress-row-wrap">
+                <div class="progress-item">
+                    <div class="progress-label"><span class="name">卸货</span><span class="val" id="inb-unload-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('unloading')">🔍</button></div>
+                    <div class="progress-bar"><div class="fill fill-green" id="inb-unload-bar" style="width:0%"></div></div>
+                </div>
+                </div>
+                <div class="progress-row-wrap">
+                <div class="progress-item">
+                    <div class="progress-label"><span class="name">质检</span><span class="val" id="inb-qc-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('qc_pending')">🔍</button></div>
+                    <div class="progress-bar"><div class="fill fill-blue" id="inb-qc-bar" style="width:0%"></div></div>
+                </div>
+                </div>
+                <div class="progress-row-wrap">
+                <div class="progress-item">
+                    <div class="progress-label"><span class="name">收货</span><span class="val" id="inb-recv-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('recv_pending')">🔍</button></div>
+                    <div class="progress-bar"><div class="fill fill-blue" id="inb-recv-bar" style="width:0%"></div></div>
+                </div>
+                </div>
+                <div class="progress-item">
+                  <div style="position:relative" class="progress-row-wrap">
+                    <div class="progress-label"><span class="name">上架</span><span class="val" id="inb-putaway-val">--</span><button class="inb-detail-trigger" onclick="showInboundDetail('putaway')">🔍</button></div>
+                  </div>
+                    <div class="progress-bar"><div class="fill fill-purple" id="inb-putaway-bar" style="width:0%"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 出库 -->
+        <div class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    📤 出库
+                    <span class="badge badge-orange" id="outbound-badge">--</span>
+                </div>
+                <div class="dim-switch">
+                    <button class="dim-btn active" data-dim="pcs" data-type="outbound">PCS</button>
+                    <button class="dim-btn" data-dim="sku" data-type="outbound">SKU</button>
+                </div>
+            </div>
+            <!-- 出库 KPI 行在上 -->
+            <div class="kpi-row">
+                <div class="kpi">
+                    <div class="number" id="out-plan-pcs">--</div>
+                    <div class="unit">出库量<br><span style="font-size:9px;color:#bbb">计划件数</span></div>
+                </div>
+                <div class="kpi progress-row-wrap">
+                    <div style="display:flex;align-items:center;gap:4px">
+                        <span class="number" id="out-multi-pallet">--</span>
+                        <button class="inb-detail-trigger" id="out-multi-pallet-btn" onclick="showObDetail('multi_pallet')" style="opacity:0;pointer-events:none">🔍</button>
+                    </div>
+                    <div class="unit">一品多托</div>
+                </div>
+                <div class="kpi progress-row-wrap" style="min-width:120px">
+                    <div style="display:flex;flex-direction:column;gap:2px;align-items:flex-start">
+                        <div style="display:flex;align-items:baseline;gap:4px">
+                            <span style="font-size:10px;color:#aaa;white-space:nowrap">未装笼</span>
+                            <span class="number" id="out-load-rate-unloaded" style="font-size:16px">--</span>
+                        </div>
+                        <div style="display:flex;align-items:baseline;gap:4px">
+                            <span style="font-size:10px;color:#aaa;white-space:nowrap">已装笼</span>
+                            <span class="number" id="out-load-rate-loaded" style="font-size:16px">--</span>
+                            <button class="inb-detail-trigger" id="out-load-rate-btn" onclick="showObDetail('low_load')" style="opacity:0;pointer-events:none">🔍</button>
+                        </div>
+                    </div>
+                    <div class="unit">托盘装载率</div>
+                </div>
+                <div class="kpi">
+                    <div class="number" id="out-efficiency">--</div>
+                    <div class="unit">出库效率<br><span style="font-size:9px;color:#bbb">PCS/人</span></div>
+                </div>
+            </div>
+            <!-- 播种任务进度（任务数维度，2026-05-25 新增） -->
+            <div id="seeding-tasks-row" style="display:flex;gap:8px;margin:8px 0 4px 0;padding:8px 10px;background:rgba(255,165,0,0.08);border-radius:8px;border:1px solid rgba(255,165,0,0.2)">
+                <div style="font-size:11px;color:#aaa;align-self:center;margin-right:4px;white-space:nowrap">🌱 播种任务</div>
+                <div style="display:flex;gap:12px;flex:1;justify-content:space-around">
+                    <div style="text-align:center">
+                        <div style="font-size:18px;font-weight:700;color:#ff9966" id="seed-not-started">--</div>
+                        <div style="font-size:10px;color:#aaa">待开始</div>
+                    </div>
+                    <div style="text-align:center">
+                        <div style="font-size:18px;font-weight:700;color:#ffcc44" id="seed-in-progress">--</div>
+                        <div style="font-size:10px;color:#aaa">播种中</div>
+                    </div>
+                    <div style="text-align:center">
+                        <div style="font-size:18px;font-weight:700;color:#55cc88" id="seed-done">--</div>
+                        <div style="font-size:10px;color:#aaa">已完成</div>
+                    </div>
+                    <div style="text-align:center">
+                        <div style="font-size:18px;font-weight:700;color:#ccc" id="seed-total">--</div>
+                        <div style="font-size:10px;color:#aaa">合计</div>
+                    </div>
+                </div>
+            </div>
+            <!-- 出库进度条：分配→播种→关笼→组盘→发运 -->
+            <div id="outbound-content" style="margin-top:10px">
+                <div class="progress-item progress-row-wrap">
+                    <div class="progress-label"><span class="name">分配</span><span class="val" id="out-alloc-val">--</span><button class="inb-detail-trigger" onclick="showOutboundDetail('unalloc')" title="未分配明细">🔍</button></div>
+                    <div class="progress-bar"><div class="fill fill-orange" id="out-alloc-bar" style="width:0%"></div></div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-label"><span class="name">播种</span><span class="val" id="out-sow-val">--</span></div>
+                    <div class="progress-bar"><div class="fill fill-orange" id="out-sow-bar" style="width:0%"></div></div>
+                </div>
+                <div class="progress-item progress-row-wrap">
+                    <div class="progress-label"><span class="name">关笼</span><span class="val" id="out-cage-val">--</span><button class="inb-detail-trigger" onclick="showOutboundDetail('uncaged')" title="未装笼明细">🔍</button></div>
+                    <div class="progress-bar"><div class="fill fill-orange" id="out-cage-bar" style="width:0%"></div></div>
+                </div>
+                <div class="progress-item progress-row-wrap">
+                    <div class="progress-label"><span class="name">组盘</span><span class="val" id="out-pack-val" style="color:#bbb">--/-- (暂未接入)</span><button class="inb-detail-trigger" onclick="showOutboundDetail('unpacked')" title="未组盘明细">🔍</button></div>
+                    <div class="progress-bar"><div class="fill fill-purple" id="out-pack-bar" style="width:0%"></div></div>
+                </div>
+                <div class="progress-item">
+                    <div class="progress-label"><span class="name">发运</span><span class="val" id="out-ship-val" style="color:#bbb">--</span></div>
+                    <div class="progress-bar"><div class="fill fill-blue" id="out-ship-bar" style="width:0%"></div></div>
+                </div>
+            </div>
+        </div>
+
+        <!-- 运输/计划 -->
+        <div class="card">
+            <div class="card-title">
+                🚚 运输
+                <span class="badge badge-blue" id="plan-badge">--</span>
+            </div>
+            <!-- 第一行：计划件数 / 约车建议 / 装载率 / 温度达成 / 到站准时率 -->
+            <div class="kpi-row">
+                <div class="kpi transport-kpi-hover" id="vehicle-kpi">
+                    <div class="number" id="plan-vehicle-suggest" style="color:#f59e0b">--</div>
+                    <div class="unit">约车建议数 <button class="inb-detail-trigger" id="vehicle-detail-btn" style="display:none" onclick="toggleDetail('plan-vehicle-detail')">🔍</button></div>
+                </div>
+                <div class="kpi"><div class="number" id="plan-load-rate" style="color:#bbb">--</div><div class="unit" style="color:#bbb">车辆装载率<br><span style="font-size:9px;">(接入中)</span></div></div>
+                <div class="kpi transport-kpi-hover" id="temp-kpi">
+                    <div class="number" id="plan-temp-rate" style="color:#bbb">--</div>
+                    <div class="unit" id="plan-temp-unit">温度达成 <button class="inb-detail-trigger" id="temp-detail-btn" style="display:none" onclick="toggleDetail('temp-achieve-detail')">🔍</button><br><span id="temp-detail-sub" style="font-size:9px;color:#bbb">(接入中)</span></div>
+                </div>
+                <div class="kpi"><div class="number" id="plan-ontime-rate" style="color:#bbb">--</div><div class="unit" style="color:#bbb">到站准时率<br><span style="font-size:9px;">(接入中)</span></div></div>
+            </div>
+            <!-- 约车建议门店详情（可折叠） -->
+            <div class="detail-panel" id="plan-vehicle-detail" style="display:none"></div>
+            <!-- 温度达成不合格车辆明细（可折叠） -->
+            <div class="detail-panel" id="temp-achieve-detail" style="display:none"></div>
+            <!-- 第二行：计划车次 / 已发车次 / 到站车次 / 串点率 -->
+            <div class="kpi-row" style="margin-top:8px;padding-top:8px;border-top:1px solid #f0f0f0;">
+                <div class="kpi transport-kpi-hover" id="trip-kpi"><div class="number" id="plan-trip-total" style="color:#bbb">--</div><div class="unit" style="color:#bbb" id="trip-unit">计划车次<br><span style="font-size:9px;">(请稍候)</span></div></div>
+                <div class="kpi transport-kpi-hover" id="depart-kpi"><div class="number" id="plan-trip-depart" style="color:#bbb">--</div><div class="unit" style="color:#bbb" id="depart-unit">已发车次<br><span style="font-size:9px;">(请稍候)</span></div></div>
+                <div class="kpi"><div class="number" id="plan-trip-arrive" style="color:#bbb">--</div><div class="unit" style="color:#bbb">到站车次<br><span style="font-size:9px;">(接入中)</span></div></div>
+                <div class="kpi"><div class="number" id="plan-route-rate" style="color:#bbb">--</div><div class="unit" style="color:#bbb">串点率<br><span style="font-size:9px;">(接入中)</span></div></div>
+            </div>
+        </div>
+
+        <!-- 员工出勤 -->
+        <div class="card">
+            <div class="card-title">
+                👥 员工出勤
+                <span class="badge badge-purple" id="att-badge">--</span>
+            </div>
+            <div class="kpi-row">
+                <div class="kpi"><div class="number" id="att-schedule">--</div><div class="unit">在职总人数</div></div>
+                <div class="kpi"><div class="number" id="att-actual">--</div><div class="unit">出勤</div></div>
+                <div class="kpi"><div class="number" id="att-rate">--%</div><div class="unit">出勤率</div></div>
+                <div class="kpi">
+                    <div class="number" id="att-productivity">--</div>
+                    <div class="unit">单仓人效<br><span style="font-size:9px;color:#bbb">播种/出勤</span></div>
+                </div>
+            </div>
+<!-- 分岗位 -->
+            <table class="job-table" id="job-table">
+                <thead><tr><th>岗位</th><th style="text-align:center">在职</th><th style="text-align:center">出勤</th><th style="text-align:center">出勤率</th></tr></thead>
+                <tbody id="job-tbody"></tbody>
+            </table>
+        </div>
+    </div>
+
+<div class="footer">
+GZ0210 广州冷藏1仓 · 每5分钟自动刷新
+</div>
+
+<!-- 入库明细弹窗 -->
+<div id="detail-modal" style="display:none;position:fixed;inset:0;background:rgba(0,0,0,0.5);z-index:9999;overflow:auto">
+  <div class="modal-card">
+    <div class="modal-header">
+      <h3 id="modal-title"></h3>
+      <button class="modal-close-btn" onclick="document.getElementById('detail-modal').style.display='none'">✕</button>
+    </div>
+    <div class="modal-body-wrap" id="modal-body"></div>
+  </div>
+</div>
+
+<script>
+// onclick全局函数（必须在IIFE外定义，否则onclick属性调用报undefined）
+function toggleDetail(id) {
+  var el = document.getElementById(id);
+  if (!el) return;
+  var isHidden = window.getComputedStyle(el).display === 'none';
+  el.style.display = isHidden ? 'block' : 'none';
+}
+
+(function() {
+let countdownTimer;
+    let countdown = 30;
+    let currentData = null;
+    let inboundDim = "pcs";
+    let outboundDim = "pcs";
+
+    function fmt(n) {
+      return n == null ? "--" : n.toLocaleString();
+    }
+    function pct(n, d) {
+      return d > 0 ? Math.round((n / d) * 100) : 0;
+    }
+
+    function switchInboundDim(dim) {
+      inboundDim = dim;
+      if (currentData) renderInbound(currentData.inbound);
+    }
+
+    function switchOutboundDim(dim) {
+      outboundDim = dim;
+      if (currentData) renderOutbound(currentData.outbound);
+    }
+
+    // toggleDetail 已在IIFE外定义为全局函数
+
+    // ===== 出库明细弹窗（分配/关笼/组盘）=====
+    // 出库明细：可排序表格渲染
+    var _obDetailSort = { type: '', key: '', asc: true };
+
+    function renderObTable(type, list, cols, emptyMsg) {
+      var bodyEl = document.getElementById('modal-body');
+      if (!list.length) { bodyEl.innerHTML = '<p class="modal-empty">' + emptyMsg + '</p>'; return; }
+      var sk = _obDetailSort.key || cols[0].key;
+      var sa = _obDetailSort.asc;
+      var sorted = list.slice().sort(function(a, b) {
+        var va = a[sk], vb = b[sk];
+        var isNum = typeof va === 'number' || (typeof va === 'string' && !isNaN(parseFloat(va)));
+        var cmp = isNum ? (parseFloat(va||0) - parseFloat(vb||0)) : String(va||'').localeCompare(String(vb||''), 'zh-CN');
+        return sa ? cmp : -cmp;
+      });
+      var thStyle = 'cursor:pointer;user-select:none;white-space:nowrap';
+      var ths = cols.map(function(c) {
+        var arrow = c.key === sk ? (sa ? ' ↑' : ' ↓') : ' ↕';
+        return '<th style="' + thStyle + '" data-obsort="' + c.key + '">' + c.label + '<span style="color:#93c5fd;font-size:10px">' + arrow + '</span></th>';
+      }).join('');
+      var trs = sorted.map(function(r) {
+        return '<tr>' + cols.map(function(c) {
+          var v = r[c.key];
+          if (v === undefined || v === null) v = '--';
+          var style = c.style ? ' style="' + c.style + '"' : '';
+          if (c.key === 'unallocQty') style = ' style="color:#e53e3e;font-weight:600"';
+          return '<td' + style + '>' + v + '</td>';
+        }).join('') + '</tr>';
+      }).join('');
+      bodyEl.innerHTML = '<table class="modal-table" id="ob-detail-table"><thead><tr>' + ths + '</tr></thead><tbody>' + trs + '</tbody></table>';
+      // 绑定表头点击排序
+      var tbl = document.getElementById('ob-detail-table');
+      tbl && tbl.querySelectorAll('th[data-obsort]').forEach(function(th) {
+        th.addEventListener('click', function() {
+          var k = this.getAttribute('data-obsort');
+          if (_obDetailSort.key === k) { _obDetailSort.asc = !_obDetailSort.asc; }
+          else { _obDetailSort.key = k; _obDetailSort.asc = true; }
+          renderObTable(type, list, cols, emptyMsg);
+        });
+      });
+    }
+
+    async function showOutboundDetail(type) {
+      // 优先用缓存，没有就重新 fetch
+      let data = currentData;
+      if (!data) {
+        try {
+          const resp = await fetch(getDataUrl() + '?t=' + Date.now(), {cache: 'no-store'});
+          data = await resp.json();
+          currentData = data;
+        } catch(e) {
+          alert('数据加载失败: ' + e.message);
+          return;
+        }
+      }
+      const ob = data.outbound;
+      if (!ob) { alert('暂无出库数据'); return; }
+      const modal = document.getElementById('detail-modal');
+      const titleEl = document.getElementById('modal-title');
+
+      // 重置排序状态（切换弹窗类型时）
+      if (_obDetailSort.type !== type) {
+        _obDetailSort = { type: type, key: '', asc: true };
+      }
+
+      if (type === 'unalloc') {
+        const list = ob.unalloc_details || [];
+        titleEl.textContent = '未分配明细（' + list.length + ' 条出库单）';
+        renderObTable(type, list, [
+          { key: 'receiverName', label: '收货方' },
+          { key: 'orderNo',      label: '出库单号', style: 'font-size:11px' },
+          { key: 'skuNum',       label: 'SKU种数' },
+          { key: 'planQty',      label: '计划量' },
+          { key: 'allocQty',     label: '已分配' },
+          { key: 'unallocQty',   label: '未分配' }
+        ], '暂无未分配出库单');
+      } else if (type === 'uncaged') {
+        const list = ob.uncaged_details || [];
+        titleEl.textContent = '未装笼明细（' + list.length + ' 个周转箱）';
+        renderObTable(type, list, [
+          { key: 'containerCode', label: '周转箱码', style: 'font-size:11px' },
+          { key: 'poiName',       label: '收货方' },
+          { key: 'qty',           label: '件数' }
+        ], '🎉 全部已装笼');
+      } else if (type === 'unpacked') {
+        const list = ob.unpacked_details || [];
+        titleEl.textContent = '未组盘明细（' + list.length + ' 个笼车）';
+        renderObTable(type, list, [
+          { key: 'containerCode', label: '笼车码', style: 'font-size:11px' },
+          { key: 'poiName',       label: '收货方' },
+          { key: 'qty',           label: '件数' }
+        ], '🎉 全部已组盘');
+      }
+
+      modal.style.display = 'block';
+    }
+
+    // ===== 入库弹窗通用排序表格 =====
+    // 每个弹窗 key 独立维护排序状态，切换弹窗不互相影响
+    var _inbSort = {};  // key -> { sortKey, sortAsc }
+    function _inbSortState(key, defaultKey) {
+      if (!_inbSort[key]) _inbSort[key] = { sortKey: defaultKey, sortAsc: true };
+      return _inbSort[key];
+    }
+    // 渲染一张可排序表格，并绑定表头点击事件（事件委托，自动重渲染）
+    // tableId: DOM id；rows: 数据数组；cols: [{key,label,style?,num?}]；
+    // stateKey: 排序状态 key（同 showInboundDetail 的 key）；defaultSortKey: 初始排序列
+    function renderInbTable(tableId, rows, cols, stateKey, defaultSortKey, renderWrapper) {
+      var st = _inbSortState(stateKey, defaultSortKey || cols[0].key);
+      var sorted = rows.slice().sort(function(a, b) {
+        var va = a[st.sortKey], vb = b[st.sortKey];
+        var isNum = (cols.find(function(c){return c.key===st.sortKey;})||{}).num
+          || typeof va === 'number' || (typeof va === 'string' && va !== '' && !isNaN(parseFloat(va)));
+        var cmp = isNum ? (parseFloat(va||0) - parseFloat(vb||0))
+                        : String(va||'').localeCompare(String(vb||''), 'zh-CN');
+        return st.sortAsc ? cmp : -cmp;
+      });
+      var thStyle = 'cursor:pointer;user-select:none;white-space:nowrap';
+      var ths = cols.map(function(c) {
+        var arrow = c.key === st.sortKey ? (st.sortAsc ? ' ↑' : ' ↓') : ' ↕';
+        return '<th style="' + thStyle + '" data-inbsort="' + c.key + '">' + c.label +
+          '<span style="color:#93c5fd;font-size:10px">' + arrow + '</span></th>';
+      }).join('');
+      var trs = sorted.map(function(r) {
+        return '<tr>' + cols.map(function(c) {
+          if (c.render) {
+            return '<td>' + c.render(r) + '</td>';
+          }
+          var v = r[c.key]; if (v === undefined || v === null) v = '--';
+          var s = c.style ? ' style="' + (typeof c.style === 'function' ? c.style(r) : c.style) + '"' : '';
+          return '<td' + s + '>' + v + '</td>';
+        }).join('') + '</tr>';
+      }).join('');
+      var tbl = '<table class="modal-table" id="' + tableId + '"><thead><tr>' + ths + '</tr></thead><tbody>' + trs + '</tbody></table>';
+      // 绑定点击：50ms 后找到 DOM 再绑
+      setTimeout(function() {
+        var el = document.getElementById(tableId);
+        if (!el) return;
+        el.querySelectorAll('th[data-inbsort]').forEach(function(th) {
+          th.addEventListener('click', function() {
+            var k = th.getAttribute('data-inbsort');
+            if (st.sortKey === k) { st.sortAsc = !st.sortAsc; } else { st.sortKey = k; st.sortAsc = true; }
+            // 重新渲染整个弹窗 body（由 renderWrapper 负责）
+            if (renderWrapper) renderWrapper();
+          });
+        });
+      }, 50);
+      return tbl;
+    }
+
+    // ── 出库弹窗：一品多托 & 装载率<75%笼 ──
+    function showObDetail(type) {
+      let title = '', html = '';
+      const fmt = n => isNaN(n) ? n : Number(n).toLocaleString();
+
+      if (type === 'multi_pallet') {
+        const list = window._multiPalletDetails || [];
+        title = `一品多托明细（${list.length} 条）`;
+        if (list.length === 0) {
+          html = '<p style="color:#10b981;font-size:12px;">✅ 无一品多托</p>';
+        } else {
+          html += '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">同一 SKU 同一门店出现在多个笼中（按笼数降序）</div>';
+          html += renderInbTable('ob-multi-tbl', list, [
+            {key:'skuName',        label:'商品名称'},
+            {key:'poiName',        label:'门店'},
+            {key:'containerCount', label:'笼数', num:true},
+            {key:'qty',            label:'计划件数', num:true},
+          ], 'multi_pallet', 'containerCount', (tbl) => tbl);
+        }
+      } else if (type === 'low_load') {
+        const list = window._lowLoadContainers || [];
+        const all  = window._allContainersDetail || [];
+        title = `已装笼装载率明细（未达75%：${list.length} 笼 / 已装笼 ${all.length} 笼）`;
+        if (list.length === 0 && all.length === 0) {
+          html = '<p style="color:#888;font-size:12px;">⏳ 暂无已装笼数据，装笼完成后展示</p>';
+        } else if (list.length === 0) {
+          html = '<p style="color:#10b981;font-size:12px;">✅ 已装笼中暂没有低于75%装载率的明细</p>';
+        } else {
+          html += '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">口径：TMS 已装笼二级容器装载率（SKU体积/满托容积），仅显示未达75%的笼，按装载率升序</div>';
+          html += renderInbTable('ob-load-tbl', list, [
+            {key:'containerCode', label:'笼号'},
+            {key:'poiName',       label:'门店'},
+            {key:'loadingRate',   label:'装载率'},
+            {key:'skuPcs',        label:'件数', num:true},
+            {key:'skuVolume',     label:'体积(m³)', num:true},
+            {key:'planOutTime',   label:'计划出库'},
+          ], 'low_load', 'loadingRateVal', (tbl) => tbl);
+        }
+      }
+
+      document.getElementById("modal-title").textContent = title;
+      document.getElementById("modal-body").innerHTML = html;
+      document.getElementById("detail-modal").style.display = "flex";
+      if (typeof _inbSort !== 'undefined' && _inbSort[type + '_init'] !== true) {
+        _inbSort[type + '_init'] = true;
+      }
+    }
+    window.showObDetail = showObDetail;
+
+    function showInboundDetail(key) {
+      const details = currentData && currentData.inbound && currentData.inbound.details
+        ? currentData.inbound.details : null;
+      const list = details ? (details[key] || []) : [];
+      const titles = {
+        unreserved: '未预约采购单',
+        unsigned: '未签到预约单',
+        unloading: '已签到未卸货',
+        qc_pending: '未质检明细',
+        recv_pending: '已签到未收货',
+        putaway: '未上架明细'
+      };
+      // 收货明细用已签到未收货口径计数，其余用list.length
+      const titleCount = key === 'recv_pending'
+        ? ((details && details.signed_not_recv) || []).length
+        : key === 'putaway'
+          ? ((currentData && currentData.inbound && currentData.inbound.putaway ? currentData.inbound.putaway.details : null) || []).length
+          : list.length;
+      document.getElementById('modal-title').textContent =
+        (titles[key] || key) + '（' + titleCount + '条）';
+
+      // 各弹窗的渲染函数（供排序点击后重渲染调用）
+      function doRender() {
+        var html = '';
+
+        if (key === 'unreserved') {
+          // ── 未预约采购单（可排序） ──
+          var dupList = (details && details.duplicate_reserve) || [];
+          html = '<h4 style="margin:0 0 8px;font-size:13px;color:#374151">未预约采购单（' + list.length + '条）</h4>';
+          if (list.length === 0) {
+            html += '<p class="modal-empty">暂无未预约采购单</p>';
+          } else {
+            // 预先填好备注字段（渲染前）
+            list.forEach(function(r){ r._remark = '有采购单无预约'; });
+            html += renderInbTable('inb-unreserved-tbl', list, [
+              {key:'supplierName',   label:'供应商'},
+              {key:'poNo',           label:'采购单号'},
+              {key:'skuCount',       label:'SKU数', num:true},
+              {key:'pcs',            label:'采购数量', num:true},
+              {key:'preArrivalTime', label:'预计到货日'},
+              {key:'poStatus',       label:'采购单状态'},
+              {key:'_remark',        label:'备注', style:'color:#f59e0b;font-weight:500'}
+            ], 'unreserved', 'pcs', doRender);
+          }
+          html += '<h4 style="margin:16px 0 8px;font-size:13px;color:#374151">重复预约采购单（' + dupList.length + '条）<span style="font-size:11px;color:#6b7280;font-weight:normal;margin-left:6px">同一采购单关联多个预约单</span></h4>';
+          if (dupList.length === 0) {
+            html += '<p class="modal-empty">暂无重复预约</p>';
+          } else {
+            // 重复预约是嵌套结构，展平后排序
+            var dupRows = [];
+            dupList.forEach(function(r) {
+              var skuRows = r.skus || [], billCodes = r.reserveBillCodes || [];
+              var perBill = (skuRows.length > 0 && billCodes.length > 0) ? Math.ceil(skuRows.length / billCodes.length) : 1;
+              if (skuRows.length === 0) {
+                dupRows.push({poNo:r.poNo, billCode:billCodes.join(' / '), skuCode:'--', skuName:'--', quantity:'--'});
+              } else {
+                skuRows.forEach(function(s, idx) {
+                  var billIdx = Math.min(Math.floor(idx / perBill), billCodes.length - 1);
+                  dupRows.push({poNo: idx===0?r.poNo:'', billCode:billCodes[billIdx]||'--',
+                    skuCode:s.skuCode||s.skuId||'--', skuName:s.skuName||'--', quantity:s.quantity!=null?s.quantity:'--'});
+                });
+              }
+            });
+            html += renderInbTable('inb-dup-tbl', dupRows, [
+              {key:'poNo',      label:'采购单号'},
+              {key:'billCode',  label:'预约单号', style:'color:#ef4444;font-size:11px'},
+              {key:'skuCode',   label:'SKUID'},
+              {key:'skuName',   label:'商品名称'},
+              {key:'quantity',  label:'预约数量', num:true}
+            ], 'unreserved_dup', 'poNo', doRender);
+          }
+
+        } else if (key === 'unsigned') {
+          // ── 未签到预约单（可排序） ──
+          html = renderInbTable('inb-unsigned-tbl', list, [
+            {key:'supplierName', label:'供应商'},
+            {key:'billCode',     label:'预约单号'},
+            {key:'skuCount',     label:'SKU数', num:true},
+            {key:'pcs',          label:'采购数量', num:true},
+            {key:'timeSlot',     label:'预约送货时段'}
+          ], key, 'pcs', doRender);
+
+        } else if (key === 'unloading') {
+          // ── 已签到未卸货（可排序） ──
+          html = renderInbTable('inb-unloading-tbl', list, [
+            {key:'supplierName', label:'供应商'},
+            {key:'billCode',     label:'预约单号'},
+            {key:'signTime',     label:'签到时间'}
+          ], key, 'signTime', doRender);
+
+        } else if (key === 'qc_pending') {
+          // ── 质检弹窗：拒收 + 未质检任务（均可排序） ──
+          var rejList = (details && details.qc_rejected) || [];
+          html = '<div style="font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">拒收明细（' + rejList.length + ' 条）</div>';
+          if (rejList.length === 0) {
+            html += '<p style="color:#10b981;font-size:12px;">✅ 暂无拒收</p>';
+          } else {
+            html += renderInbTable('inb-rej-tbl', rejList, [
+              {key:'supplierName', label:'商家名称'},
+              {key:'skuName',      label:'商品名称'},
+              {key:'skuId',        label:'SKU ID'},
+              {key:'pcs',          label:'数量', num:true}
+            ], 'qc_rejected', 'pcs', doRender);
+          }
+          html += '<div style="margin-top:14px;font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">未质检任务（' + list.length + ' 条）</div>';
+          if (list.length === 0) {
+            html += '<p class="modal-empty">✅ 暂无未质检任务</p>';
+          } else {
+            html += renderInbTable('inb-qc-tbl', list, [
+              {key:'supplierName', label:'供应商'},
+              {key:'skuName',      label:'商品名称'},
+              {key:'arrivalTime',  label:'到货时间'},
+              {key:'statusLabel',  label:'质检状态'}
+            ], key, 'arrivalTime', doRender);
+          }
+
+        } else if (key === 'recv_pending') {
+          // ── 收货弹窗：已签到未收货 + 收货差异（均可排序） ──
+          const signedNotRecvList = (details && details.signed_not_recv) || [];
+          const diffList = (details && details.recv_diff) || [];
+          html = '<div style="font-size:11px;font-weight:600;color:#374151;margin-bottom:4px;">已签到未收货（' + signedNotRecvList.length + ' 条）</div>';
+          html += '<div style="font-size:11px;color:#6b7280;margin-bottom:6px;">口径：已签到预约单且 PMS 采购单未完全收货（status≠2）的 SKU 明细。</div>';
+          if (signedNotRecvList.length === 0) {
+            html += '<p style="color:#10b981;font-size:12px;">✅ 全部已收货</p>';
+          } else {
+            var _snrTotalPurchase = 0, _snrTotalRecv = 0, _snrTotalDiff = 0;
+            signedNotRecvList.forEach(function(r){ _snrTotalPurchase += r.purchaseQty||0; _snrTotalRecv += r.recvQty||0; _snrTotalDiff += (r.purchaseQty||0)-(r.recvQty||0); });
+            html += renderInbTable('inb-recv-tbl', signedNotRecvList, [
+              {key:'seq',             label:'序号', num:true},
+              {key:'supplierName',    label:'商家名称'},
+              {key:'poNo',            label:'采购单号'},
+              {key:'reserveBillCode', label:'预约单号'},
+              {key:'skuName',         label:'商品名称'},
+              {key:'skuId',           label:'SKU ID'},
+              {key:'purchaseQty',     label:'采购数量', num:true},
+              {key:'recvQty',         label:'实收数量', num:true},
+              {key:'diffQty',         label:'差异数量', num:true,
+               render: function(r){ var d=(r.purchaseQty||0)-(r.recvQty||0); return d>0?'<span style="color:#ef4444;font-weight:600">'+d+'</span>':'<span style="color:#6b7280">'+d+'</span>'; }},
+              {key:'hasQc',           label:'是否质检',
+               render: function(r){ return r.hasQc ? '<span style="color:#10b981">✔ 是</span>' : '<span style="color:#6b7280">— 否</span>'; }}
+            ], key, 'diffQty', doRender);
+            // 合计行（表格渲染后插入）
+            setTimeout(function(){
+              var tbl = document.getElementById('inb-recv-tbl');
+              if (!tbl) return;
+              var foot = document.createElement('tfoot');
+              foot.innerHTML = '<tr style="font-weight:600;background:#f3f4f6;border-top:2px solid #d1d5db;">' +
+                '<td colspan="6" style="text-align:right;padding-right:8px;">合计</td>' +
+                '<td>' + _snrTotalPurchase + '</td>' +
+                '<td>' + _snrTotalRecv + '</td>' +
+                '<td style="color:#ef4444">' + _snrTotalDiff + '</td>' +
+                '<td></td></tr>';
+              tbl.appendChild(foot);
+            }, 60);
+          }
+          html += '<div style="font-size:11px;font-weight:600;color:#374151;margin:10px 0 4px;">收货差异（' + diffList.length + ' 条）</div>';
+          if (diffList.length === 0) {
+            html += '<p style="color:#10b981;font-size:12px;">✅ 无差异</p>';
+          } else {
+            // 计算合计行数据（排序不影响合计，预先算好）
+            var totalPurchase = 0, totalRecv = 0, totalDiff = 0;
+            diffList.forEach(function(r){ totalPurchase += r.purchaseQty||0; totalRecv += r.recvQty||0; totalDiff += r.diffQty||0; });
+            var totalCls = totalDiff > 0 ? 'color:#ef4444' : totalDiff < 0 ? 'color:#f59e0b' : 'color:#6b7280';
+            var totalSign = totalDiff > 0 ? '+' : '';
+            html += renderInbTable('inb-diff-tbl', diffList, [
+              {key:'supplierName', label:'供应商'},
+              {key:'skuName',      label:'商品名称'},
+              {key:'purchaseQty',  label:'采购', num:true},
+              {key:'recvQty',      label:'实收', num:true},
+              {key:'diffQty',      label:'差异', num:true,
+               style: function(r){ return r.diffQty > 0 ? 'color:#ef4444' : 'color:#f59e0b'; }}
+            ], 'recv_diff', 'diffQty', doRender);
+            // 在表格后追加合计行（插入 DOM 后）
+            setTimeout(function(){
+              var tbl = document.getElementById('inb-diff-tbl');
+              if (!tbl) return;
+              var foot = document.createElement('tfoot');
+              foot.innerHTML = '<tr style="font-weight:600;background:#f3f4f6;border-top:2px solid #d1d5db;">' +
+                '<td colspan="2" style="text-align:right;padding-right:8px;">合计</td>' +
+                '<td>' + totalPurchase + '</td><td>' + totalRecv + '</td>' +
+                '<td style="' + totalCls + '">' + totalSign + totalDiff + '</td></tr>';
+              tbl.appendChild(foot);
+            }, 60);
+          }
+
+        } else if (key === 'putaway') {
+          // ── 未上架明细（可排序） ──
+          var items = (currentData && currentData.inbound && currentData.inbound.putaway
+            ? currentData.inbound.putaway.details : null) || [];
+          if (!items.length) {
+            html = '<p class="modal-empty">✅ 暂无未上架采购单</p>';
+          } else {
+            // 预先计算派生字段
+            items.forEach(function(x){
+              x._pendingPcs = (x.hopePcs||0) - (x.putPcs||0);
+              x._pendingSku = (x.hopeSku||0) - (x.putSku||0);
+            });
+            html = renderInbTable('inb-putaway-tbl', items, [
+              {key:'poNo',        label:'采购单号'},
+              {key:'hopeSku',     label:'应上架SKU数', num:true},
+              {key:'putSku',      label:'已上架SKU数', num:true},
+              {key:'hopePcs',     label:'应上架数量', num:true},
+              {key:'putPcs',      label:'已上架数量', num:true},
+              {key:'_pendingPcs', label:'未上架数量', num:true, style:'color:#ef4444;font-weight:600'}
+            ], key, '_pendingPcs', doRender);
+          }
+        }
+
+        document.getElementById('modal-body').innerHTML = html;
+        // 预约弹窗：备注字段预填（重渲染后再填一次）
+        if (key === 'unreserved') {
+          list.forEach(function(r){ r._remark = '有采购单无预约'; });
+        }
+      }
+
+      doRender();
+      document.getElementById('detail-modal').style.display = 'block';
+    }
+    window.showInboundDetail = showInboundDetail;
+    window.showOutboundDetail = showOutboundDetail;
+
+    // 维度切换按钮事件
+    document.querySelectorAll(".dim-btn").forEach((btn) => {
+      btn.addEventListener("click", function () {
+        const dim = this.dataset.dim;
+        const type = this.dataset.type;
+        this.closest(".dim-switch")
+          .querySelectorAll(".dim-btn")
+          .forEach((b) => b.classList.remove("active"));
+        this.classList.add("active");
+        if (type === "inbound") switchInboundDim(dim);
+        else if (type === "outbound") switchOutboundDim(dim);
+      });
+    });
+
+    // 详情按钮事件
+    const inboundDetailBtn = document.getElementById("inbound-detail-btn");
+    if (inboundDetailBtn && inboundDetailBtn.addEventListener)
+      inboundDetailBtn.addEventListener("click", () => toggleDetail("inbound-detail"));
+
+    // plan-detail-btn 已移除，约车建议点击由 onclick 内联处理
+
+    // 刷新按钮 — 用 loadData()（有加载提示+错误提示），不用静默刷新
+    const refreshBtn = document.getElementById("refresh-btn");
+    if (refreshBtn) {
+      refreshBtn.addEventListener("click", () => {
+        refreshBtn.disabled = true;
+        refreshBtn.textContent = "⏳ 刷新中...";
+        loadData().then(() => {
+          refreshBtn.disabled = false;
+          refreshBtn.textContent = "🔄 立即刷新";
+          startCountdown();
+        });
+      });
+    }
+
+    function renderInbound(inb) {
+      if (!inb) return;
+      const reserve = inb.reserve || {};
+      const unload = inb.unload || {};
+      const qc = inb.qc || {};
+      const putaway = inb.putaway || {};
+      const dims = inb.dimensions || {};
+      const d = dims[inboundDim] || {};
+
+      const unitLabels = { pcs: "件", sku: "SKU", reserve: "单", supplier: "供应商" };
+      const unit = unitLabels[inboundDim] || "";
+
+      const rp = inb.reserve_progress || {};
+      const reserveDim = dims.reserve || {};
+      const reserveProgRate = rp.rate || 0;
+      const signRate = reserveDim.rate || 0;
+      const unloadRate = unload.rate || 0;
+      const qcRate = qc.rate || 0;
+
+      const dimTotal = d.total || 0;
+      const dimDone = d.done || 0;
+
+      // 预约进度
+      let reserveVal, reserveBarPct;
+      if (inboundDim === "reserve") {
+        reserveVal =
+          rp.po_total > 0
+            ? `${fmt(rp.po_reserved)}/${fmt(rp.po_total)} 单 (${reserveProgRate}%)`
+            : `${fmt(reserveDim.total || 0)} 单 (预约)`;
+        reserveBarPct = reserveProgRate;
+      } else {
+        const reservedQty = dimDone;
+        const reserveRate = d.rate || 0;
+        reserveVal = `${fmt(reservedQty)}/${fmt(dimTotal)} ${unit} (${reserveRate}%)`;
+        reserveBarPct = reserveRate;
+      }
+      document.getElementById("inb-reserve-val").textContent = reserveVal;
+      document.getElementById("inb-reserve-bar").style.width = Math.min(reserveBarPct, 100) + "%";
+
+      // 签到进度
+      // 口径（2026-05-26 升级）：分子 = sign_pcs_done（本次预约数量真实值），分母 = 已预约PCS（dimDone）不变
+      // sign_pcs_done = 所有已签到预约单 skus[].reserveQuantity 之和（芥末「本次预约数量」字段）
+      const signPcsDoneInb = unload.sign_pcs_done || 0;
+      let signVal, signBarPct;
+      if (inboundDim === "reserve") {
+        signVal = `${fmt(reserveDim.done)}/${fmt(reserveDim.total)} 单 (${signRate}%)`;
+        signBarPct = signRate;
+      } else {
+        signBarPct = dimDone > 0 ? Math.round(signPcsDoneInb / dimDone * 100 * 10) / 10 : 0;
+        signVal = `${fmt(signPcsDoneInb)}/${fmt(dimDone)} ${unit} (${signBarPct}%)`;
+      }
+      document.getElementById("inb-sign-val").textContent = signVal;
+      document.getElementById("inb-sign-bar").style.width = Math.min(signBarPct, 100) + "%";
+
+      // 卸货进度
+      // 口径（2026-05-26 修复）：
+      //   分子 = unload.pcs_done（已卸货PCS，signPcs之和）真实值，禁止推算
+      //   分母 = unload.sign_pcs_done（已签到PCS，reserveQuantity之和）真实值，禁止推算
+      const unloadedPcsDone = unload.pcs_done || 0;
+      const signedPcsDone = unload.sign_pcs_done || 0;
+      let unloadVal, unloadBarPct;
+      if (inboundDim === "reserve") {
+        unloadVal = `${fmt(unload.done)}/${fmt(unload.total)} 单 (${unloadRate}%)`;
+        unloadBarPct = unloadRate;
+      } else {
+        unloadBarPct = signedPcsDone > 0 ? Math.round(unloadedPcsDone / signedPcsDone * 100 * 10) / 10 : 0;
+        unloadVal = `${fmt(unloadedPcsDone)}/${fmt(signedPcsDone)} ${unit} (${unloadBarPct}%)`;
+      }
+      document.getElementById("inb-unload-val").textContent = unloadVal;
+      document.getElementById("inb-unload-bar").style.width = unloadBarPct + "%";
+
+// 质检进度（任务/SKU/PCS 三维度均使用真实字段，用户 2026-05-22 确认口径）
+const qcExtra = qc.rejected > 0 ? ` ⚠️${qc.rejected}不合格` : "";
+let qcVal, qcBarPct;
+if (inboundDim === "sku") {
+const skuTotal = qc.sku_total || 0;
+const skuDone  = qc.sku_done  || 0;
+const skuRate  = skuTotal > 0 ? Math.round(skuDone / skuTotal * 100) : 0;
+qcVal     = `${fmt(skuDone)}/${fmt(skuTotal)} SKU (${skuRate}%)${qcExtra}`;
+qcBarPct  = skuRate;
+} else if (inboundDim === "reserve") {
+qcVal     = `${fmt(qc.bill_done || qc.done)}/${fmt(qc.bill_total || qc.total)} 单 (${qcRate}%)${qcExtra}`;
+qcBarPct  = qcRate;
+} else {
+// PCS 维度（默认）：分子用合格量 pcs_passed（2026-05-26 用户确认）
+// 逻辑：货到→质检→合格→收货，质检行应显示合格量，与收货量对齐
+// qc.pcs_passed = status=2 AND result=5（合格）的 specialRecvQuantity 之和
+// qc.pcs_total  = 有效质检任务总量（排除status=3/9）
+const qcPcsDone  = qc.pcs_passed != null ? qc.pcs_passed : null;  // 合格量
+const qcPcsTotal = qc.pcs_total  != null ? qc.pcs_total  : null;
+const qcPcsRate  = (qcPcsDone != null && qcPcsTotal > 0) ? Math.round(qcPcsDone / qcPcsTotal * 100) : (qc.pcs_rate || 0);
+qcVal     = qcPcsDone != null
+  ? `${fmt(qcPcsDone)}/${fmt(qcPcsTotal)} 件 (${qcPcsRate}%)${qcExtra}`
+  : `-- 件${qcExtra}`;
+qcBarPct  = qcPcsRate;
+}
+      document.getElementById("inb-qc-val").textContent = qcVal;
+      document.getElementById("inb-qc-bar").style.width = qcBarPct + "%";
+
+      // 收货进度：使用独立的 recv_done/recv_rate 字段（status=2用合同量，status=7用WIS实收量）
+      let recvVal, recvBarPct;
+      if (inboundDim === 'reserve') {
+        recvVal = `${fmt(d.done)}/${fmt(d.total)} 单`;
+        recvBarPct = d.rate || 0;
+      } else {
+        const recvDone = d.recv_done != null ? d.recv_done : dimDone;
+        const recvRate = d.recv_rate != null ? d.recv_rate : (d.rate || 0);
+        recvVal = `${fmt(recvDone)}/${fmt(dimTotal)} ${unit} (${recvRate}%)`;
+        recvBarPct = recvRate;
+      }
+      document.getElementById("inb-recv-val").textContent = recvVal;
+      document.getElementById("inb-recv-bar").style.width = Math.min(recvBarPct, 100) + "%";
+
+// putaway v2: uses real hopeQuantity/putQuantity data
+// 上架进度（使用真实上架任务数据：hopeQuantity/putQuantity & hopeCount/putCount）
+let putawayVal, putawayBarPct;
+if (inboundDim === 'sku') {
+const skuTotal = putaway.sku_total || 0;
+const skuDone  = putaway.sku_done  || 0;
+const skuRate  = skuTotal > 0 ? Math.round(skuDone / skuTotal * 100) : 0;
+putawayVal   = `${fmt(skuDone)}/${fmt(skuTotal)} SKU (${skuRate}%)`;
+putawayBarPct = skuRate;
+} else if (inboundDim === 'reserve') {
+const putawayRate = putaway.rate || 0;
+putawayVal   = `${fmt(putaway.done)}/${fmt(putaway.total)} PCS (${putawayRate}%)`;
+putawayBarPct = putawayRate;
+} else {
+// PCS 维度（默认）：直接使用真实 hopeQuantity/putQuantity
+const pcsTotal = putaway.total || 0;
+const pcsDone  = putaway.done  || 0;
+const pcsRate  = putaway.rate  || 0;
+putawayVal   = `${fmt(pcsDone)}/${fmt(pcsTotal)} 件 (${pcsRate}%)`;
+putawayBarPct = pcsRate;
+}
+      document.getElementById("inb-putaway-val").textContent = putawayVal;
+      document.getElementById("inb-putaway-bar").style.width = putawayBarPct + "%";
+
+      // KPI
+      // 口径（2026-05-24 用户确认）：「已收货件」= 实收PCS（recv_done），不是已预约PCS（done）
+      document.getElementById("inb-total").textContent = fmt(dimTotal);
+      const recvDoneKpi = (dims.pcs && dims.pcs.recv_done != null) ? dims.pcs.recv_done : dimDone;
+      document.getElementById("inb-done").textContent = inboundDim === "pcs" ? fmt(recvDoneKpi) : fmt(dimDone);
+      document.getElementById("inb-rate").textContent = (d.rate || 0) + "%";
+      const labels = { pcs: "总件数", sku: "总SKU数", reserve: "总预约单", supplier: "总供应商" };
+      const doneLabels = { pcs: "已收货件", sku: "已收货SKU", reserve: "已签到单", supplier: "已完成" };
+      document.getElementById("inb-total-label").textContent = labels[inboundDim] || "总量";
+      document.getElementById("inb-done-label").textContent = doneLabels[inboundDim] || "已完成";
+
+      // 签到准时率
+      const ontimeData = inb.ontime || {};
+      const ontimeRate = ontimeData.rate || 0;
+      const ontimeEl = document.getElementById("inb-ontime-rate");
+      if (ontimeEl) {
+        ontimeEl.textContent = ontimeData.total > 0 ? ontimeRate + "%" : "--";
+        ontimeEl.style.color = ontimeRate >= 90 ? "#10b981" : ontimeRate >= 70 ? "#f59e0b" : "#ef4444";
+      }
+      const subEl = document.getElementById("inb-ontime-sub");
+      if (subEl && ontimeData.total > 0) {
+        subEl.style.display = "block";
+        const earlyEl = document.getElementById("inb-early-rate");
+        const lateEl  = document.getElementById("inb-late-rate");
+        if (earlyEl) earlyEl.textContent = (ontimeData.early_rate != null ? ontimeData.early_rate + "%" : "--");
+        if (lateEl)  lateEl.textContent  = (ontimeData.late_rate  != null ? ontimeData.late_rate  + "%" : "--");
+      }
+
+      // 入库效率 = 实收PCS / N冷藏收退出勤（inbound_efficiency_workers=7人）
+      // 口径（2026-05-24 用户确认）：分子=recv_done(实收PCS)，分母=inbound_efficiency_workers，不是全仓出勤
+      const inbEff = (inb.kpi && inb.kpi.efficiency) || 0;
+      const inbRecvDone = (inb.dimensions && inb.dimensions.pcs && inb.dimensions.pcs.recv_done) || 0;
+      const inbWorkers = (currentData && currentData.attendance && currentData.attendance.inbound_efficiency_workers) || 0;
+      const calcInbEff = inbWorkers > 0 && inbRecvDone > 0 ? Math.round(inbRecvDone / inbWorkers) : inbEff;
+      document.getElementById("inb-efficiency").textContent = calcInbEff > 0 ? calcInbEff : "--";
+
+      // badge
+      const overallRate = Math.min(signRate, unloadRate || signRate, qcRate || signRate);
+      document.getElementById("inbound-badge").textContent = overallRate >= 90 ? "接近完成" : "进行中";
+      document.getElementById("inbound-badge").className =
+        "badge " + (overallRate >= 90 ? "badge-green" : "badge-orange");
+
+      // 供应商明细
+      if (inboundDim === "supplier" && d.detail) {
+        let html = "<table><tr><th>供应商</th><th>计划</th><th>完成</th></tr>";
+        for (const [name, info] of Object.entries(d.detail)) {
+          html += `<tr><td>${name}</td><td>${fmt(info.plan)}</td><td>${fmt(info.done)}</td></tr>`;
+        }
+        html += "</table>";
+        document.getElementById("inbound-detail").innerHTML = html;
+      }
+    }
+
+    function renderOutbound(out) {
+      if (!out) return;
+      const dims = out.dimensions || {};
+      const d = dims[outboundDim] || {};
+      const picking = out.picking || {};
+      const sowing = out.sowing || {};
+      const caging = out.caging || {};
+      const packing = out.packing || {};
+      const shipping = out.shipping || {};
+      const kpi = out.kpi || {};
+      const pool = out.pool || {};  // 今日生产订单池数据（分配进度）
+      const seeding = out.seeding || {};  // 播种任务（任务数维度，2026-05-25）
+
+      const total = d.total || 0;
+
+      // 播种任务进度（任务数维度）
+      if (seeding.total > 0 || seeding.not_started >= 0) {
+        document.getElementById("seed-not-started").textContent = seeding.not_started ?? "--";
+        document.getElementById("seed-in-progress").textContent = seeding.in_progress ?? "--";
+        document.getElementById("seed-done").textContent = seeding.done ?? "--";
+        document.getElementById("seed-total").textContent = seeding.total ?? "--";
+      }
+
+      // 出库量 KPI（来自生产订单池 planQuantity，口径：芥末出库管理→生产订单池→计划数量）
+      const planPcs = pool.plan_pcs || 0;
+      document.getElementById("out-plan-pcs").textContent = planPcs > 0 ? fmt(planPcs) : (total > 0 ? fmt(total) : "--");
+
+      // ── 分配/播种/发运进度（来自生产订单池，2026-05-25 口径升级）──
+      // PCS维度：分配=分配数量/计划数量；播种=播种数量/分配数量；发运=发运数量/分配数量
+      // SKU维度：skuNum 累加（单据级商品种类数）
+      const allocPcs  = pool.alloc_pcs  || 0;
+      const sowPcs    = pool.sow_pcs    || 0;
+      const shipPcs   = pool.ship_pcs   || 0;
+      const skuPlan   = pool.sku_plan   || 0;
+      const skuAlloc  = pool.sku_alloc  || 0;
+      const skuSow    = pool.sku_sow    || 0;
+
+      const isPcs = (outboundDim === "pcs");
+
+      // 分配进度
+      const allocDenom = planPcs || total;
+      const allocRate  = allocDenom > 0 ? Math.round(allocPcs / allocDenom * 100 * 10) / 10 : (pool.alloc_rate || 0);
+      if (isPcs) {
+        document.getElementById("out-alloc-val").textContent = allocDenom > 0
+          ? `${fmt(allocPcs)}/${fmt(allocDenom)} PCS (${allocRate}%)`
+          : "--";
+      } else {
+        document.getElementById("out-alloc-val").textContent = skuPlan > 0
+          ? `${fmt(skuAlloc)}/${fmt(skuPlan)} 种 (${allocDenom>0?allocRate:0}%)`
+          : "--";
+      }
+      document.getElementById("out-alloc-bar").style.width = allocRate + "%";
+
+      // 播种进度（= sowQuantity / allocatedQuantity）
+      const sowRatePool = allocPcs > 0 ? Math.round(sowPcs / allocPcs * 100 * 10) / 10 : (pool.sow_rate || 0);
+      if (isPcs) {
+        document.getElementById("out-sow-val").textContent = allocPcs > 0
+          ? `${fmt(sowPcs)}/${fmt(allocPcs)} PCS (${sowRatePool}%)`
+          : "--";
+      } else {
+        document.getElementById("out-sow-val").textContent = skuAlloc > 0
+          ? `${fmt(skuSow)}/${fmt(skuAlloc)} 种 (${allocPcs>0?sowRatePool:0}%)`
+          : "--";
+      }
+      document.getElementById("out-sow-bar").style.width = sowRatePool + "%";
+
+      // 关笼进度（口径：已装笼PCS / 播种PCS，2026-05-25）
+      const cagePcsDone  = caging.pcs_done  || 0;
+      const cagePcsTotal = caging.pcs_total || 0;
+      const cagePcsRate  = caging.pcs_rate  || 0;
+      const cageRate = cagePcsRate || caging.rate || 0;
+      if (isPcs) {
+        document.getElementById("out-cage-val").textContent = cagePcsTotal > 0
+          ? `${fmt(cagePcsDone)}/${fmt(cagePcsTotal)} PCS (${cagePcsRate}%)`
+          : `${fmt(caging.done)}/${fmt(caging.total)} SKU行 (${caging.rate || 0}%)`;
+      } else {
+        document.getElementById("out-cage-val").textContent = `${fmt(caging.done)}/${fmt(caging.total)} SKU行 (${caging.rate || 0}%)`;
+      }
+      document.getElementById("out-cage-bar").style.width = cageRate + "%";
+
+      // 组盘（笼维度：已组盘笼数 / 总笼数，2026-05-25）
+      const packRate = packing.rate || 0;
+      if (packing.total > 0) {
+        document.getElementById("out-pack-val").textContent = `${fmt(packing.done)}/${fmt(packing.total)} 笼 (${packRate}%)`;
+        document.getElementById("out-pack-val").style.color = "";
+        document.getElementById("out-pack-bar").style.width = packRate + "%";
+      } else {
+        document.getElementById("out-pack-val").textContent = "0/0 笼";
+        document.getElementById("out-pack-val").style.color = "#bbb";
+      }
+
+      // 发运进度（= cargoStatus!=-1 的 PCS / 分配PCS）
+      const skuShip    = pool.sku_ship    || 0;
+      const shipRatePool = allocPcs > 0 ? Math.round(shipPcs / allocPcs * 100 * 10) / 10 : (pool.ship_rate || 0);
+      if (shipPcs > 0 || pool.ship_rate > 0) {
+        document.getElementById("out-ship-val").textContent = isPcs
+          ? `${fmt(shipPcs)}/${fmt(allocPcs)} PCS (${shipRatePool}%)`
+          : `${fmt(skuShip)}/${fmt(skuAlloc)} 种`;
+        document.getElementById("out-ship-val").style.color = "";
+        document.getElementById("out-ship-bar").style.width = shipRatePool + "%";
+      } else {
+        document.getElementById("out-ship-val").textContent = isPcs ? "0 PCS（待发运）" : "0 种（待发运）";
+        document.getElementById("out-ship-val").style.color = "#888";
+        document.getElementById("out-ship-bar").style.width = "0%";
+      }
+
+      // KPI 指标
+      const multiCount = kpi.multi_pallet_count || 0;
+      const multiTotal = kpi.multi_pallet_total || 0;
+      const multiRate = kpi.multi_pallet_rate || 0;
+      document.getElementById("out-multi-pallet").textContent =
+        multiTotal > 0 ? `${multiCount}/${multiTotal} (${multiRate}%)` : "--";
+      // 有出库计划就显示🔍（明细为空时弹窗显示「暂无」）
+      const multiDetails = (kpi.multi_pallet_details || []);
+      const multiBtn = document.getElementById("out-multi-pallet-btn");
+      if (multiBtn) {
+        if (planPcs > 0) { multiBtn.style.opacity = ''; multiBtn.style.pointerEvents = 'auto'; }
+        else { multiBtn.style.opacity = '0'; multiBtn.style.pointerEvents = 'none'; }
+      }
+      window._multiPalletDetails = multiDetails;
+
+      // 托盘装载率（TMS真实口径，2026-05-25）
+      const loadRateUnloaded = kpi.load_rate_unloaded || '--';
+      const loadRateLoaded   = kpi.load_rate_loaded   || '--';
+      document.getElementById("out-load-rate-unloaded").textContent = loadRateUnloaded;
+      document.getElementById("out-load-rate-loaded").textContent   = loadRateLoaded;
+      // 颜色：<60% 橙色警示
+      const parseRatePct = s => parseFloat((s||'').replace('%','')) || 0;
+      document.getElementById("out-load-rate-unloaded").style.color = parseRatePct(loadRateUnloaded) > 0 && parseRatePct(loadRateUnloaded) < 60 ? '#ff9966' : '#4caf50';
+      document.getElementById("out-load-rate-loaded").style.color   = parseRatePct(loadRateLoaded)   > 0 && parseRatePct(loadRateLoaded)   < 60 ? '#ff9966' : '#4caf50';
+      // 有出库计划就显示装载率🔍（无已装笼时弹窗显示「暂无」）
+      const lowLoadContainers = (kpi.low_load_containers || []);
+      const allContainersDetail = (kpi.all_containers_detail || []);
+      const loadBtn = document.getElementById("out-load-rate-btn");
+      if (loadBtn) {
+        if (planPcs > 0) { loadBtn.style.opacity = ''; loadBtn.style.pointerEvents = 'auto'; }
+        else { loadBtn.style.opacity = '0'; loadBtn.style.pointerEvents = 'none'; }
+      }
+      window._lowLoadContainers = lowLoadContainers;
+      window._allContainersDetail = allContainersDetail;
+
+      const outEff = kpi.outbound_efficiency || out.outbound_efficiency || 0;
+      document.getElementById("out-efficiency").textContent = outEff > 0 ? outEff : "--";
+
+      // badge
+      if (total > 0 || planPcs > 0) {
+        document.getElementById("outbound-badge").textContent = cageRate >= 100 ? "已完成" : "作业中";
+        document.getElementById("outbound-badge").className =
+          "badge " + (cageRate >= 100 ? "badge-green" : "badge-orange");
+      } else {
+        document.getElementById("outbound-badge").textContent = "待启动";
+        document.getElementById("outbound-badge").className = "badge badge-orange";
+      }
+    }
+
+    function renderPlan(plan) {
+      if (!plan) return;
+      const planPcs = plan.total_pcs || 0;
+      // plan-badge：运输 card 标题 badge，显示计划件数
+      const planBadgeEl = document.getElementById("plan-badge");
+      if (planBadgeEl) planBadgeEl.textContent = planPcs > 0 ? fmt(planPcs) + "件" : "暂无";
+
+      // 约车建议数：ceil(件数 / 600 / 6)
+      const PCS_PER_PALLET = 600, PALLETS_PER_CAR = 6;
+      const suggestCars = planPcs > 0 ? Math.ceil(planPcs / PCS_PER_PALLET / PALLETS_PER_CAR) : 0;
+      document.getElementById("plan-vehicle-suggest").textContent = suggestCars > 0 ? suggestCars + " 车" : "--";
+      // 约车建议🔍按鈕：有数据才显示
+      const vehicleBtn = document.getElementById('vehicle-detail-btn');
+      if (vehicleBtn) {
+        // 有数据：移除display隐藏，opacity由CSS hover控制；无数据：隐藏且禁用点击
+        if (suggestCars > 0) { vehicleBtn.style.display = ''; vehicleBtn.style.pointerEvents = 'auto'; }
+        else { vehicleBtn.style.display = 'none'; vehicleBtn.style.pointerEvents = 'none'; }
+      }
+
+      // 门店约车建议详情（点击展开）—— 格式参考 YC1
+      if (plan.by_store && Object.keys(plan.by_store).length > 0) {
+        // 每门店独立计算托数（向上取整）和建议车辆（向上取整），不足1托按1托
+        let totalCars = 0;
+        const storeRows = Object.entries(plan.by_store).map(([s, p]) => {
+          const rawPallets = p / PCS_PER_PALLET;
+          const pallets = Math.max(1, Math.ceil(rawPallets));  // 不足1托按1托
+          const cars = Math.ceil(pallets / PALLETS_PER_CAR);
+          totalCars += cars;
+          return { s, p, pallets, cars };
+        });
+        let html = '<table><tr><th style="text-align:left">门店</th><th>建议约车</th><th>件数</th><th>托数</th></tr>';
+        for (const { s, p, pallets, cars } of storeRows) {
+          html += `<tr><td>${s}</td><td style="text-align:right;color:#f59e0b;font-weight:600">${cars} 辆</td><td style="text-align:right">${fmt(p)}</td><td style="text-align:right">${pallets}</td></tr>`;
+        }
+        const totalPallets = Math.round(planPcs / PCS_PER_PALLET);
+        html += `<tr style="font-weight:600;background:#f3f4f6;border-top:2px solid #d1d5db;"><td>合计</td><td style="text-align:right;color:#f59e0b">${totalCars} 辆</td><td style="text-align:right">${fmt(planPcs)}</td><td style="text-align:right">${totalPallets}</td></tr>`;
+        html += `<tr><td colspan="4" style="font-size:10px;color:#9ca3af;padding-top:4px">口径：每门店独立向上取整 · ${PCS_PER_PALLET}件/托 · ${PALLETS_PER_CAR}托/车</td></tr>`;
+        html += '</table>';
+        document.getElementById("plan-vehicle-detail").innerHTML = html;
+        // 同步更新顶部合计车辆数（按门店独立取整后的总和）
+        document.getElementById("plan-vehicle-suggest").textContent = totalCars + " 车";
+      }
+    }
+
+    function renderTransport(transport) {
+      if (!transport) return;
+
+      // 温度达成渲染
+      const tempEl = document.getElementById('plan-temp-rate');
+      const tempUnit = document.getElementById('plan-temp-unit');
+      const tempArrow = document.getElementById('temp-detail-arrow');
+      if (tempEl) {
+        const tRate = transport.temp_rate;
+        const tTotal = transport.temp_total || 0;
+        const tQual  = transport.temp_qualified || 0;
+        const tAbnormal = transport.temp_abnormal || [];
+        const tempBtn = document.getElementById('temp-detail-btn');
+        if (tRate === null || tRate === undefined || transport.temp_status === 'no_tab') {
+          tempEl.textContent = '--';
+          tempEl.style.color = '#bbb';
+          if (tempBtn) { tempBtn.style.display = 'none'; tempBtn.style.pointerEvents = 'none'; }
+          const tempSub = document.getElementById('temp-detail-sub');
+          if (tempSub) tempSub.textContent = '(接入中)';
+        } else {
+          const pct = (tRate * 100).toFixed(1) + '%';
+          tempEl.textContent = pct;
+          tempEl.style.color = tRate >= 0.95 ? '#10b981' : tRate >= 0.85 ? '#f59e0b' : '#ef4444';
+          if (tempBtn) { tempBtn.style.display = ''; tempBtn.style.pointerEvents = 'auto'; }
+          const tempSub = document.getElementById('temp-detail-sub');
+          if (tempSub) tempSub.textContent = `${tQual}合格/${tTotal}车${tAbnormal.length > 0 ? ' ⚠️' + tAbnormal.length + '车异常' : ''}`;
+          // 异常车辆明细面板
+          const detailEl = document.getElementById('temp-achieve-detail');
+          if (detailEl) {
+            if (tAbnormal.length === 0) {
+              detailEl.innerHTML = '<div style="padding:8px;color:#10b981;font-size:12px">✅ 所有运输中车辆温度均合格</div>';
+            } else {
+              let html = `<div style="font-size:11px;color:#6b7280;padding:4px 0 6px">不合格车辆 ${tAbnormal.length} 辆：</div>`;
+              html += '<table style="width:100%;border-collapse:collapse;font-size:11px">';
+              html += '<tr style="background:#f9fafb"><th style="text-align:left;padding:3px 4px">车牌</th><th>司机</th><th>车型</th><th>预冷</th><th>到站</th><th>累计异常</th><th>持续异常</th></tr>';
+              tAbnormal.forEach(function(v) {
+                const mark = (s) => s === '不合格' ? `<span style="color:#ef4444">${s}</span>` : s;
+                html += `<tr style="border-bottom:1px solid #f0f0f0">`;
+                html += `<td style="padding:3px 4px">${v.licensePlate}</td>`;
+                html += `<td style="padding:3px 4px">${v.driverName}</td>`;
+                html += `<td style="padding:3px 4px">${v.tempLevel}</td>`;
+                html += `<td style="padding:3px 4px;text-align:center">${mark(v.preCool)}</td>`;
+                html += `<td style="padding:3px 4px;text-align:center">${mark(v.arrivalPoi)}</td>`;
+                html += `<td style="padding:3px 4px;text-align:center">${mark(v.accumulation)}</td>`;
+                html += `<td style="padding:3px 4px;text-align:center">${mark(v.duration)}</td>`;
+                html += '</tr>';
+              });
+              html += '</table>';
+              detailEl.innerHTML = html;
+            }
+          }
+        }
+      }
+
+      // 计划车次渲染（芥末 QMS wayBill 三门店）
+      const tripTotalEl = document.getElementById('plan-trip-total');
+      if (tripTotalEl) {
+        const pt = transport.planned_trips;
+        if (pt && pt.total > 0) {
+          tripTotalEl.textContent = pt.total;
+          tripTotalEl.style.color = '#3b82f6';
+          const tripUnit = tripTotalEl.parentElement.querySelector('.unit');
+          if (tripUnit) {
+            tripUnit.style.color = '';
+            tripUnit.innerHTML = '计划车次 <button class="inb-detail-trigger" id="trip-detail-btn" onclick="toggleDetail(\'trip-store-detail\')">🔍</button>';
+            // 不手动设 opacity，交给 CSS .transport-kpi-hover:hover 控制
+            tripUnit.querySelector('#trip-detail-btn').style.display = 'inline-block';
+          }
+          // 渲染门店明细弹窗
+          let tripDetail = document.getElementById('trip-store-detail');
+          if (!tripDetail) {
+            tripDetail = document.createElement('div');
+            tripDetail.id = 'trip-store-detail';
+            tripDetail.className = 'detail-panel';
+            tripDetail.style.display = 'none';
+            const tripRow = tripTotalEl.closest('.kpi-row');
+            if (tripRow && tripRow.parentElement) {
+              tripRow.parentElement.insertBefore(tripDetail, tripRow.nextSibling);
+            }
+          }
+          const details = pt.details || [];
+          const thStyle = 'text-align:left;padding:4px 8px;background:#f9fafb;font-weight:600;white-space:nowrap';
+          const tdStyle = 'padding:4px 8px;border-bottom:1px solid #f0f0f0;white-space:nowrap';
+          let storeHtml = `<div style="font-size:11px;color:#888;margin-bottom:6px">共 ${pt.total} 条运单</div>`;
+          storeHtml += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
+          storeHtml += `<tr><th style="${thStyle}">运单号</th><th style="${thStyle}">门店</th><th style="${thStyle}">首个装货大仓</th><th style="${thStyle}">承运商</th></tr>`;
+          if (details.length > 0) {
+            details.forEach(function(row) {
+              storeHtml += `<tr>
+                <td style="${tdStyle};color:#3b82f6;font-family:monospace">${row.waybillCode||'--'}</td>
+                <td style="${tdStyle}">${row.store||'--'}</td>
+                <td style="${tdStyle}">${row.firstLadingPoiName||'--'}</td>
+                <td style="${tdStyle}">${row.carrierName||'--'}</td>
+              </tr>`;
+            });
+          } else {
+            // 无明细时按门店汇总展示
+            const allStores = ['禅城东方广场店','番禺建华汇店','南海国昌广场店'];
+            allStores.forEach(function(s) {
+              const cnt = (pt.by_store||{})[s];
+              if (cnt > 0) storeHtml += `<tr><td style="${tdStyle}" colspan="3">${s}</td><td style="${tdStyle};color:#3b82f6">${cnt}车</td></tr>`;
+            });
+          }
+          storeHtml += `<tr style="background:#f9fafb"><td style="padding:4px 8px;font-weight:600" colspan="3">合计</td><td style="padding:4px 8px;font-weight:600;color:#3b82f6">${pt.total} 车</td></tr>`;
+          storeHtml += '</table>';
+          tripDetail.innerHTML = storeHtml;
+        } else {
+          tripTotalEl.textContent = pt ? '0' : '--';
+          tripTotalEl.style.color = '#bbb';
+          const tripUnit = tripTotalEl.parentElement.querySelector('.unit');
+          if (tripUnit) {
+            tripUnit.style.color = '#bbb';
+            tripUnit.innerHTML = '计划车次<br><span style="font-size:9px;">(暂无数据)</span>';
+          }
+        }
+      }
+
+      // 已发车次渲染
+      const departTotalEl = document.getElementById('plan-trip-depart');
+      if (departTotalEl) {
+        const dt = transport.departed_trips;
+        if (dt && dt.total > 0) {
+          departTotalEl.textContent = dt.total;
+          departTotalEl.style.color = '#10b981';
+          const departUnit = departTotalEl.parentElement.querySelector('.unit');
+          if (departUnit) {
+            departUnit.style.color = '';
+            departUnit.innerHTML = '已发车次 <button class="inb-detail-trigger" id="depart-detail-btn" onclick="toggleDetail(\'depart-store-detail\')">🔍</button>';
+            departUnit.querySelector('#depart-detail-btn').style.display = 'inline-block';
+          }
+          let departDetail = document.getElementById('depart-store-detail');
+          if (!departDetail) {
+            departDetail = document.createElement('div');
+            departDetail.id = 'depart-store-detail';
+            departDetail.className = 'detail-panel';
+            departDetail.style.display = 'none';
+            const departRow = departTotalEl.closest('.kpi-row');
+            if (departRow && departRow.parentElement) {
+              departRow.parentElement.insertBefore(departDetail, departRow.nextSibling);
+            }
+          }
+          const dDetails = dt.details || [];
+          const thStyle = 'text-align:left;padding:4px 8px;background:#f9fafb;font-weight:600;white-space:nowrap';
+          const tdStyle = 'padding:4px 8px;border-bottom:1px solid #f0f0f0;white-space:nowrap';
+          let dHtml = `<div style="font-size:11px;color:#888;margin-bottom:6px">已发车 ${dt.total} 辆（含配载/运输中）</div>`;
+          dHtml += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
+          dHtml += `<tr><th style="${thStyle}">运单号</th><th style="${thStyle}">门店</th><th style="${thStyle}">车牌</th><th style="${thStyle}">温度状态</th></tr>`;
+          if (dDetails.length > 0) {
+            dDetails.forEach(function(row) {
+              const tempOk = !row.tempStatus || row.tempStatus === '未告警过' || row.tempStatus === '--';
+              const tempColor = tempOk ? '#10b981' : '#ef4444';
+              dHtml += `<tr>
+                <td style="${tdStyle};color:#10b981;font-family:monospace">${row.waybillCode||'--'}</td>
+                <td style="${tdStyle}">${row.store||'--'}</td>
+                <td style="${tdStyle};font-family:monospace">${row.licensePlate||'--'}</td>
+                <td style="${tdStyle};color:${tempColor}">${row.tempStatus||'--'}</td>
+              </tr>`;
+            });
+          } else {
+            const allStores = ['禅城东方广场店','番禺建华汇店','南海国昌广场店'];
+            allStores.forEach(function(s) {
+              const cnt = (dt.by_store||{})[s];
+              if (cnt > 0) dHtml += `<tr><td style="${tdStyle}" colspan="3">${s}</td><td style="${tdStyle};color:#10b981">${cnt}车</td></tr>`;
+            });
+          }
+          dHtml += `<tr style="background:#f9fafb"><td style="padding:4px 8px;font-weight:600" colspan="3">合计</td><td style="padding:4px 8px;font-weight:600;color:#10b981">${dt.total} 车</td></tr>`;
+          dHtml += '</table>';
+          departDetail.innerHTML = dHtml;
+        } else {
+          departTotalEl.textContent = dt ? '0' : '--';
+          departTotalEl.style.color = '#bbb';
+          const departUnit = departTotalEl.parentElement.querySelector('.unit');
+          if (departUnit) {
+            departUnit.style.color = '#bbb';
+            departUnit.innerHTML = '已发车次<br><span style="font-size:9px;">(暂无运输中)</span>';
+          }
+        }
+      }
+
+      const el = document.getElementById('plan-route-rate');
+      if (!el) return;
+      const rate = transport.serial_rate;
+      const total = transport.total_depart || 0;
+      const serial = transport.serial_count || 0;
+      if (rate === null || rate === undefined || transport.status === 'no_cookie') {
+        el.textContent = '--';
+        el.style.color = '#bbb';
+        el.parentElement.querySelector('.unit').innerHTML = '串点率<br><span style="font-size:9px;color:#bbb">(接入中)</span>';
+      } else {
+        const pct = (rate * 100).toFixed(1) + '%';
+        el.textContent = pct;
+        el.style.color = rate >= 0.5 ? '#10b981' : '#f59e0b';
+        const tb = transport.temp_breakdown || {};
+        const cold = tb['冷藏'] || 0;
+        const frozen = tb['冷冻'] || 0;
+        const normal = tb['常温'] || 0;
+        const tempStr = `冷藏${cold} 冷冻${frozen} 常温${normal}`;
+        el.parentElement.querySelector('.unit').innerHTML =
+          `串点率<br><span style="font-size:9px;color:#6b7280">${serial}串/${total}车</span><br><span style="font-size:8px;color:#9ca3af">${tempStr}</span>`;
+      }
+    }
+
+    function renderAttendance(att) {
+      if (!att) return;
+      const totalInservice = att.total_inservice || 0;
+      const actual = att.attendance || 0;
+      const rate = att.rate || 0;
+
+      document.getElementById("att-schedule").textContent = fmt(totalInservice);
+      document.getElementById("att-actual").textContent = fmt(actual);
+      document.getElementById("att-rate").textContent = totalInservice > 0 ? rate + "%" : "--%";
+      if (totalInservice > 0) {
+        document.getElementById("att-badge").textContent = "今日排班";
+        document.getElementById("att-badge").className = "badge badge-purple";
+      } else {
+        document.getElementById("att-badge").textContent = "暂无数据";
+        document.getElementById("att-badge").className = "badge badge-gray";
+      }
+
+      // 单仓人效 = 播种件数(sow_pcs) / 当天出勤人数
+      const sowPcs =
+        (currentData &&
+          currentData.outbound &&
+          currentData.outbound.pool &&
+          currentData.outbound.pool.sow_pcs) ||
+        0;
+      const productivity = actual > 0 && sowPcs > 0 ? Math.round(sowPcs / actual) : 0;
+      document.getElementById("att-productivity").textContent = productivity > 0 ? fmt(productivity) : "--";
+
+      // 分岗位表格（4列：岗位、在职、出勤、出勤率）
+      // 动态读取 by_job 的实际 key，不硬编码岗位名（各仓岗位不同）
+      const tbody = document.getElementById("job-tbody");
+      tbody.innerHTML = "";
+      const byJob = att.by_job || {};
+      const jobOrder = Object.keys(byJob);
+      let sumInservice = 0;
+      let sumAttendance = 0;
+      for (const name of jobOrder) {
+        const info = byJob[name];
+        const inservice = info ? (info.inservice || 0) : 0;
+        const attendance = info ? (info.attendance || 0) : 0;
+        sumInservice += inservice;
+        sumAttendance += attendance;
+        const jobRate = inservice > 0 ? Math.round((attendance / inservice) * 100) : 0;
+        const rateColor = jobRate >= 80 ? "#10b981" : jobRate >= 60 ? "#f59e0b" : "#ef4444";
+        const rateStr = inservice > 0 ? jobRate + "%" : "--";
+        tbody.innerHTML += `<tr>
+          <td>${name}</td>
+          <td style="text-align:center">${inservice}</td>
+          <td style="text-align:center">${attendance}</td>
+          <td style="text-align:center;font-weight:600;color:${rateColor}">${rateStr}</td>
+        </tr>`;
+      }
+// 合计行用 by_job 明细加总，与表格行保持一致（不用 total_inservice/actual，避免含安防等非核心岗位）
+const totalRate = sumInservice > 0 ? Math.round((sumAttendance / sumInservice) * 100) : 0;
+const totalRateStr = sumInservice > 0 ? totalRate + "%" : "--";
+const totalRateColor = totalRate >= 80 ? "#10b981" : totalRate >= 60 ? "#f59e0b" : "#ef4444";
+tbody.innerHTML += `<tr style="border-top:1px solid #e0e0e0">
+<td style="font-weight:600">合计</td>
+<td style="text-align:center;font-weight:700;color:#2196f3">${sumInservice}</td>
+<td style="text-align:center;font-weight:700;color:#2196f3">${sumAttendance}</td>
+<td style="text-align:center;font-weight:700;color:${totalRateColor}">${totalRateStr}</td>
+</tr>`;
+    }
+
+    function renderPipeline(data) {
+      const inb = data.inbound || {};
+      const reserve = inb.reserve || {};
+      const unload = inb.unload || {};
+      const qc = inb.qc || {};
+      const recvDim = (inb.dimensions && inb.dimensions.pcs) || {};
+      const putaway = inb.putaway || {};
+
+      // 履约进度总览 —— 统一口径：分母 = 当天入库总件数（pcs.total）
+      // 分子与入库模块各环节保持一致，只把分母换成总件数
+      // 口径确认：2026-05-25 用户明确要求
+      const totalPcs = recvDim.total || 0;
+
+      // 履约进度总览专用：保留一位小数（pct1d）
+      const pct1d = (n, d) => d > 0 ? (Math.round((n || 0) / d * 1000) / 10).toFixed(1) : "0.0";
+
+      // 签到：分子 = 已签到PCS（unload.sign_pcs_done，本次预约数量真实值，2026-05-26 口径升级）
+      // 分母 = 入库总量 totalPcs
+      const signPcsDone = unload.sign_pcs_done || 0;
+      document.getElementById("p-sign").textContent = pct1d(signPcsDone, totalPcs) + "%";
+
+      // 卸货：分子 = 已卸货PCS（unload.pcs_done，本次预约数量真实值，2026-05-26 口径升级）
+      // 分母 = 入库总量 totalPcs
+      const unloadedPcs = unload.pcs_done || 0;
+      document.getElementById("p-unload").textContent = pct1d(unloadedPcs, totalPcs) + "%";
+
+      // 质检：分子 = 合格PCS（qc.pcs_passed，2026-05-26 用户确认，与入库模块质检行一致）
+      document.getElementById("p-qc").textContent = pct1d(qc.pcs_passed || 0, totalPcs) + "%";
+
+      // 收货：分子 = 实收PCS（pcs.recv_done，与入库模块收货行分子一致）
+      document.getElementById("p-recv").textContent = pct1d(recvDim.recv_done, totalPcs) + "%";
+
+      // 上架：分子 = 已上架PCS（putaway.done，与入库模块上架行分子一致）
+      document.getElementById("p-putaway").textContent = pct1d(putaway.done, totalPcs) + "%";
+
+      const outPicking = (data.outbound && data.outbound.picking) || {};
+      const outSowing = (data.outbound && data.outbound.sowing) || {};
+      const outCaging = (data.outbound && data.outbound.caging) || {};
+      const outPool = (data.outbound && data.outbound.pool) || {};
+      const outDims = (data.outbound && data.outbound.dimensions && data.outbound.dimensions.pcs) || {};
+      // 分配率 = allocPcs / planPcs
+      // 出库5环节：分母统一用出库计划量（pool.plan_pcs），分子对齐出库模块各进度条
+      // 口径确认：2026-05-25 用户明确要求
+      const outPlanPcs = outPool.plan_pcs || 0;
+      const outPacking = (data.outbound && data.outbound.packing) || {};
+
+      // 分配：pool.alloc_pcs / pool.plan_pcs（与出库模块分配行分子一致）
+      document.getElementById("p-alloc").textContent = pct1d(outPool.alloc_pcs || 0, outPlanPcs) + "%";
+
+      // 播种：pool.sow_pcs / pool.plan_pcs（与出库模块播种行分子一致）
+      document.getElementById("p-sow").textContent = pct1d(outPool.sow_pcs || 0, outPlanPcs) + "%";
+
+      // 关笼：caging.pcs_done / pool.plan_pcs（与出库模块关笼行分子一致）
+      document.getElementById("p-cage").textContent = pct1d(outCaging.pcs_done || 0, outPlanPcs) + "%";
+
+      // 组盘：笼维度无PCS，保持 done/total 笼的比率（packing.rate）
+      document.getElementById("p-pack").textContent = outPacking.total > 0 ? (outPacking.rate || 0).toFixed(1) + "%" : "--";
+
+      // 发运：shipping.done / pool.plan_pcs（与出库模块发运行分子一致）
+      const outShipping = (data.outbound && data.outbound.shipping) || {};
+      document.getElementById("p-ship").textContent = pct1d(outShipping.done || 0, outPlanPcs) + "%";
+    }
+
+    function renderData(data) {
+      currentData = data;
+      const ts = new Date(data.timestamp);
+      document.getElementById("update-time").textContent =
+        `更新于 ${ts.getHours().toString().padStart(2, "0")}:${ts.getMinutes().toString().padStart(2, "0")}:${ts.getSeconds().toString().padStart(2, "0")}`;
+
+      renderPipeline(data);
+      renderInbound(data.inbound);
+      renderOutbound(data.outbound);
+      renderPlan(data.plan);
+      renderTransport(data.transport);
+      renderAttendance(data.attendance);
+      // 车辆装载率：取 TMS 已装车托盘装载率（运输中状态）
+      const planLoadEl = document.getElementById('plan-load-rate');
+      if (planLoadEl) {
+        const shipped = ((data.outbound||{}).kpi||{}).load_rate_shipped || '--';
+        planLoadEl.textContent = shipped;
+        const pct = parseFloat((shipped||'').replace('%','')) || 0;
+        if (pct > 0) {
+          planLoadEl.style.color = pct < 60 ? '#ff9966' : '#10b981';
+          planLoadEl.parentElement.querySelector('.unit').innerHTML = '车辆装载率<br><span style="font-size:9px;color:#6b7280">已装车口径</span>';
+        } else {
+          planLoadEl.style.color = '#bbb';
+          planLoadEl.parentElement.querySelector('.unit').innerHTML = '车辆装载率<br><span style="font-size:9px;color:#bbb">(装车后显示)</span>';
+        }
+      }
+    }
+
+    // 当前仓配置
+    // 每个仓配置主 URL（raw.githubusercontent.com）和备用 URL（jsDelivr CDN）
+    const WAREHOUSES = {
+      'gz0210': {
+        name: 'GZ0210 冷藏',
+        dataUrl:     'https://liyifang-gz.github.io/GZ/realtime_data.json',
+        dataUrlBak:  'https://cdn.jsdelivr.net/gh/liyifang-gz/GZ@main/realtime_data.json',
+        dataUrlBak2: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/realtime_data.json',
+        historyDir:  'https://liyifang-gz.github.io/GZ/history/',
+        historyDirBak: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/history/',
+      },
+      'gz0211': {
+        name: 'GZ0211 冷冻',
+        dataUrl:     'https://liyifang-gz.github.io/GZ/gz0211/realtime_data.json',
+        dataUrlBak:  'https://cdn.jsdelivr.net/gh/liyifang-gz/GZ@main/gz0211/realtime_data.json',
+        dataUrlBak2: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0211/realtime_data.json',
+        historyDir:  'https://liyifang-gz.github.io/GZ/gz0211/history/',
+        historyDirBak: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0211/history/',
+      },
+      'gz0209': {
+        name: 'GZ0209 常温',
+        dataUrl:     'https://liyifang-gz.github.io/GZ/gz0209/realtime_data.json',
+        dataUrlBak:  'https://cdn.jsdelivr.net/gh/liyifang-gz/GZ@main/gz0209/realtime_data.json',
+        dataUrlBak2: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0209/realtime_data.json',
+        historyDir:  'https://liyifang-gz.github.io/GZ/gz0209/history/',
+        historyDirBak: 'https://raw.githubusercontent.com/liyifang-gz/GZ/main/gz0209/history/',
+      },
+    };
+    function getCurrentWarehouse() {
+      const sel = document.getElementById('warehouse-select');
+      return sel ? (sel.value || 'gz0210') : 'gz0210';
+    }
+    function getDataUrl() {
+      return WAREHOUSES[getCurrentWarehouse()].dataUrl;
+    }
+    function getDataUrlBak() {
+      return WAREHOUSES[getCurrentWarehouse()].dataUrlBak;
+    }
+    function getDataUrlBak2() {
+      return WAREHOUSES[getCurrentWarehouse()].dataUrlBak2;
+    }
+    function getHistoryDir() {
+      return WAREHOUSES[getCurrentWarehouse()].historyDir;
+    }
+    function getHistoryDirBak() {
+      return WAREHOUSES[getCurrentWarehouse()].historyDirBak;
+    }
+
+    // ── fetchWithRetry：三源备用（主→jsDelivr→raw.githubusercontent）──
+    async function fetchWithRetry(primaryUrl, backupUrl, retries, timeoutMs, backup2Url) {
+      timeoutMs = timeoutMs || 8000;
+      // 三源陈列：GitHub Pages → jsDelivr → raw.githubusercontent.com
+      const bak2 = backup2Url || getDataUrlBak2();
+      const urls = [primaryUrl, backupUrl, bak2];
+      let lastErr;
+      for (let i = 0; i < urls.length; i++) {
+        const url = urls[i];
+        try {
+          const ctrl = new AbortController();
+          const tid = setTimeout(() => ctrl.abort(), timeoutMs);
+          const resp = await fetch(url + (url.indexOf('?') === -1 ? '?' : '&') + 't=' + Date.now(),
+            { cache: 'no-store', signal: ctrl.signal });
+          clearTimeout(tid);
+          if (!resp.ok) throw new Error('HTTP ' + resp.status);
+          if (i > 0) console.warn('[CDN-FALLBACK] 切换到备用源' + i + ':', url);
+          return resp;
+        } catch (e) {
+          lastErr = e;
+          if (i < urls.length - 1) {
+            await new Promise(function(r) { setTimeout(r, 800); });
+          }
+        }
+      }
+      throw lastErr;
+    }
+
+    const CACHE_KEY_PREFIX = 'gz_realtime_cache_';
+    function getCacheKey() { return CACHE_KEY_PREFIX + getCurrentWarehouse(); }
+    function saveCache(data) {
+      try { localStorage.setItem(getCacheKey(), JSON.stringify({ts: Date.now(), data: data})); } catch(e) {}
+    }
+    function loadCache() {
+      try {
+        const raw = localStorage.getItem(getCacheKey());
+        if (!raw) return null;
+        const obj = JSON.parse(raw);
+        // 缓存有效期 4 小时
+        if (Date.now() - obj.ts > 4 * 3600 * 1000) return null;
+        return obj.data;
+      } catch(e) { return null; }
+    }
+
+    async function loadData() {
+      const utEl = document.getElementById('update-time');
+      try {
+        const wh = getCurrentWarehouse();
+        utEl.textContent = '加载中…';
+        const resp = await fetchWithRetry(getDataUrl(), getDataUrlBak(), 2);
+        if (!resp.ok) {
+          if (wh !== 'gz0210' && resp.status === 404) {
+            utEl.textContent = `⏳ ${WAREHOUSES[wh].name} 看板建设中，敬请期待`;
+            return;
+          }
+          throw new Error('HTTP ' + resp.status);
+        }
+        const data = await resp.json();
+        window._latestData = data;
+        saveCache(data);  // 存缓存
+        renderData(data);
+        initDateSelect(data);  // async，后台探测历史文件，不阻塞主渲染
+        countdown = 30;
+      } catch (e) {
+        const isNetwork = e.name === 'AbortError' || e.message === 'Failed to fetch' || e.name === 'TypeError';
+        // 网络波动时先用缓存渲染，再显示提示
+        const cached = loadCache();
+        if (isNetwork && cached) {
+          window._latestData = cached;
+          renderData(cached);
+          utEl.textContent = '⚠️ 网络波动，显示缓存数据（' + (cached.timestamp || '').slice(11,16) + '），点击「立即刷新」重试';
+        } else {
+          utEl.textContent = isNetwork
+            ? '⚠️ 网络波动，请点击「立即刷新」重试'
+            : '加载失败: ' + e.message;
+        }
+      }
+    }
+
+    function fmtCountdown(s) {
+      const m = Math.floor(s / 60);
+      const sec = s % 60;
+      return m + ":" + String(sec).padStart(2, "0");
+    }
+
+    let _silentRefreshing = false;
+    async function silentRefresh() {
+      if (_silentRefreshing) return;  // 防并发：上次还没完成就不再触发
+      _silentRefreshing = true;
+      const utEl = document.getElementById('update-time');
+      try {
+        // 超时 15s，给网络更多时间
+        const resp = await fetchWithRetry(getDataUrl(), getDataUrlBak(), 2, 15000);
+        if (!resp.ok) throw new Error('HTTP ' + resp.status);
+        const data = await resp.json();
+        // 只在今天模式下更新数据（历史模式不覆盖）
+        const sel = document.getElementById('date-select');
+        const isToday = !sel || !sel.value;
+        if (isToday) {
+          window._latestData = data;
+          renderData(data);
+        }
+      } catch (e) {
+        // 失败时静默（不打断当前渲染内容），仅更新时间提示
+        if (utEl) utEl.textContent = '⚠️ 自动刷新失败，显示上次数据';
+      } finally {
+        _silentRefreshing = false;
+      }
+    }
+
+    function startCountdown() {
+      clearInterval(countdownTimer);
+      countdown = 30;
+      countdownTimer = setInterval(() => {
+        countdown--;
+        const el = document.getElementById("auto-countdown");
+        if (el) el.textContent = fmtCountdown(Math.max(countdown, 0));
+        if (countdown <= 0) {
+          countdown = 30;
+          silentRefresh();
+        }
+      }, 1000);
+    }
+
+    // 初始化日期选择器（2026-05-25 升级：从 history/ 目录读取历史快照）
+    async function initDateSelect(data) {
+      const sel = document.getElementById('date-select');
+      if (!sel) return;
+      // 清空旧选项（保留"今天"）
+      while (sel.options.length > 1) sel.remove(1);
+
+      // 探测过去14天是否有历史快照（主 CDN 失败自动切备用）
+      const histDir = getHistoryDir();
+      const histDirBak = getHistoryDirBak();
+      const today = new Date();
+      const availDates = [];
+      for (let i = 1; i <= 14; i++) {
+        const d = new Date(today);
+        d.setDate(today.getDate() - i);
+        const dateStr = d.toISOString().slice(0, 10);
+        try {
+          let r = await fetch(`${histDir}${dateStr}.json`, { method: 'HEAD' }).catch(() => null);
+          if (!r || !r.ok) r = await fetch(`${histDirBak}${dateStr}.json`, { method: 'HEAD' }).catch(() => null);
+          if (r && r.ok) availDates.push(dateStr);
+        } catch (e) { /* 文件不存在，跳过 */ }
+      }
+
+      availDates.forEach(function(dateStr) {
+        const opt = document.createElement('option');
+        opt.value = dateStr;
+        opt.textContent = dateStr;
+        sel.appendChild(opt);
+      });
+
+      // 切换事件
+      sel.addEventListener('change', async function() {
+        const selectedDate = this.value;
+        if (!selectedDate) {
+          // 切回今天
+          if (window._latestData) { renderData(window._latestData); }
+          startCountdown();
+          const rb = document.getElementById('refresh-btn');
+          if (rb) { rb.disabled = false; rb.textContent = '🔄 立即刷新'; }
+          const ut = document.getElementById('update-time');
+          if (ut && window._latestData) ut.textContent = '更新于 ' + (window._latestData.timestamp || '').slice(11, 16);
+        } else {
+          // 加载历史快照（主 CDN 失败自动切备用）
+          try {
+            const resp = await fetchWithRetry(
+              `${histDir}${selectedDate}.json`,
+              `${histDirBak}${selectedDate}.json`,
+              2
+            );
+            if (!resp.ok) throw new Error('HTTP ' + resp.status);
+            const snap = await resp.json();
+            renderData(snap);
+            clearInterval(countdownTimer);
+            const el = document.getElementById('auto-countdown');
+            if (el) el.textContent = '历史';
+            const rb = document.getElementById('refresh-btn');
+            if (rb) { rb.disabled = true; rb.textContent = '历史模式'; }
+            const ut = document.getElementById('update-time');
+            // 显示日期+时间（取快照里的 timestamp，格式 YYYY-MM-DD HH:MM）
+            const snapTs = snap.timestamp ? snap.timestamp.slice(0, 16).replace('T', ' ') : selectedDate;
+            if (ut) ut.textContent = '历史快照 ' + snapTs;
+          } catch (e) {
+            alert('历史数据加载失败：' + e.message);
+          }
+        }
+      });
+    }
+
+    // 仓切换
+    const warehouseSel = document.getElementById('warehouse-select');
+    if (warehouseSel) {
+      warehouseSel.addEventListener('change', function() {
+        // 重置日期到今天
+        const dateSel = document.getElementById('date-select');
+        if (dateSel) dateSel.value = '';
+        // 重置刷新按钮
+        const rb = document.getElementById('refresh-btn');
+        if (rb) { rb.disabled = false; rb.textContent = '🔄 立即刷新'; }
+        // 重新加载
+        loadData();
+        startCountdown();
+      });
+    }
+
+    // ── 自动检测 HTML 新版本，有更新时自动 reload（解决 GitHub Pages CDN 缓存问题）──
+    let _htmlVersion = null;
+    async function checkHtmlVersion() {
+      try {
+        const resp = await fetch(location.href, { method: 'HEAD', cache: 'no-store' });
+        const etag = resp.headers.get('etag') || resp.headers.get('last-modified') || '';
+        if (_htmlVersion === null) {
+          _htmlVersion = etag;
+        } else if (etag && etag !== _htmlVersion) {
+          console.log('[AUTO-RELOAD] HTML 有新版本，自动刷新页面...');
+          location.reload(true);
+        }
+      } catch (e) { /* 网络问题，忽略 */ }
+    }
+    // 每5分钟检测一次 HTML 是否有新版本
+    setInterval(checkHtmlVersion, 5 * 60 * 1000);
+    checkHtmlVersion();  // 启动时先记录当前版本
+
+    // 初始化
+    loadData();
+    startCountdown();
+})();
+</script>
+</body>
+</html>

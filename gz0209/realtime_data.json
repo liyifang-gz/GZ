@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-08T13:19:36",
+  "timestamp": "2026-06-08T13:22:46",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 30,
-      "signed": 16,
-      "waiting": 9
+      "signed": 17,
+      "waiting": 8
     },
     "ontime": {
       "ontime": 2,
-      "early": 14,
+      "early": 15,
       "late": 0,
       "total": 25,
       "rate": 8.0,
-      "early_rate": 56.0,
+      "early_rate": 60.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 14,
-      "done": 9,
-      "rate": 64.3,
-      "pcs_done": 13012,
-      "sign_pcs_done": 31046
+      "total": 15,
+      "done": 8,
+      "rate": 53.3,
+      "pcs_done": 13007,
+      "sign_pcs_done": 31066
     },
     "qc": {
-      "total": 10,
+      "total": 12,
       "done": 3,
-      "pending": 7,
+      "pending": 9,
       "passed": 3,
       "rejected": 0,
-      "rate": 30.0,
+      "rate": 25.0,
       "bill_done": 3,
-      "bill_total": 10,
+      "bill_total": 12,
       "pcs_done": 605,
       "pcs_passed": 605,
-      "pcs_total": 18639,
+      "pcs_total": 18664,
       "pcs_rejected": 0,
       "pcs_rate": 3.2,
       "sku_done": 2,
-      "sku_total": 9,
-      "sku_rate": 22.2
+      "sku_total": 11,
+      "sku_rate": 18.2
     },
     "putaway": {
       "total": 15893,
@@ -75,8 +75,8 @@
     "dimensions": {
       "reserve": {
         "total": 25,
-        "done": 16,
-        "rate": 64.0
+        "done": 17,
+        "rate": 68.0
       },
       "pcs": {
         "total": 20145,
@@ -87,14 +87,22 @@
       },
       "sku": {
         "total": 79,
-        "done": 60,
-        "rate": 75.9
+        "done": 62,
+        "rate": 78.5
       },
       "supplier": {
         "total": 20,
         "done": 14,
         "rate": 70.0,
         "detail": {
+          "东莞市广垦嘉益粮油有限公司": {
+            "plan": 1,
+            "done": 1
+          },
+          "广州市柏顿电子商务有限公司": {
+            "plan": 2,
+            "done": 2
+          },
           "杭州勤诚塑料包装材料有限公司": {
             "plan": 1,
             "done": 1
@@ -110,10 +118,6 @@
           "广东礼悦食品科技有限公司": {
             "plan": 2,
             "done": 2
-          },
-          "广州市柏顿电子商务有限公司": {
-            "plan": 2,
-            "done": 1
           },
           "北京牧远电子商务有限公司-快乐猴": {
             "plan": 1,
@@ -140,10 +144,6 @@
             "done": 1
           },
           "合肥醉滑网络科技有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 1
-          },
-          "东莞市广垦嘉益粮油有限公司": {
             "plan": 1,
             "done": 1
           },
@@ -256,13 +256,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "广州市柏顿电子商务有限公司",
-          "billCode": "YY20260603005760",
-          "skuCount": 2,
-          "pcs": 25,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
           "supplierName": "广州信必达供应链管理有限公司-快乐猴",
           "billCode": "YY20260602007747",
           "skuCount": 2,
@@ -271,6 +264,13 @@
         }
       ],
       "unloading": [
+        {
+          "supplierName": "广州市柏顿电子商务有限公司",
+          "billCode": "YY20260603005760",
+          "signTime": "13:21",
+          "unloadStartTime": "13:21",
+          "status": "卸货中"
+        },
         {
           "supplierName": "杭州勤诚塑料包装材料有限公司",
           "billCode": "YY20260605000523",
@@ -360,6 +360,22 @@
           "arrivalTime": "13:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "广州市柏顿电子商务有限公司",
+          "skuName": "快乐猴-一次性口罩",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 9,
+          "supplierName": "广州市柏顿电子商务有限公司",
+          "skuName": "快乐猴-一次性帽子（1000个/箱）",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -367,19 +383,19 @@
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
           "skuName": "广合腐乳微辣300g",
           "completeTime": "11:59",
-          "waitingMins": 80
+          "waitingMins": 83
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
           "skuName": "广合腐乳微辣300g",
           "completeTime": "11:59",
-          "waitingMins": 80
+          "waitingMins": 83
         },
         {
           "supplierName": "广州市柏顿电子商务有限公司",
           "skuName": "快乐猴-一次性鸭货手套（5000双/箱）",
           "completeTime": "12:35",
-          "waitingMins": 44
+          "waitingMins": 47
         }
       ],
       "signed_not_recv": [
@@ -496,7 +512,7 @@
         {
           "supplierName": "广州市柏顿电子商务有限公司",
           "poNo": "CG202606031049",
-          "reserveBillCode": "YY20260603006047",
+          "reserveBillCode": "YY20260603005760",
           "skuId": "1136801",
           "skuName": "快乐猴-一次性帽子（1000个/箱）",
           "purchaseQty": 15,
@@ -507,7 +523,7 @@
         {
           "supplierName": "广州市柏顿电子商务有限公司",
           "poNo": "CG202606031049",
-          "reserveBillCode": "YY20260603006047",
+          "reserveBillCode": "YY20260603005760",
           "skuId": "1136334",
           "skuName": "快乐猴-一次性口罩",
           "purchaseQty": 10,
@@ -524,10 +540,24 @@
           "poNo": "CG202606031049",
           "supplierName": "广州市柏顿电子商务有限公司",
           "reserveBillCodes": [
-            "YY20260603006047",
-            "YY20260603005760"
+            "YY20260603005760",
+            "YY20260603006047"
           ],
           "skus": [
+            {
+              "skuId": 1136334,
+              "skuCode": "19670",
+              "skuName": "快乐猴-一次性口罩",
+              "quantity": 10,
+              "cgNo": "CG202606031049"
+            },
+            {
+              "skuId": 1136801,
+              "skuCode": "19669",
+              "skuName": "快乐猴-一次性帽子（1000个/箱）",
+              "quantity": 15,
+              "cgNo": "CG202606031049"
+            },
             {
               "skuId": 1208877,
               "skuCode": "11677",
@@ -732,9 +762,9 @@
       }
     ],
     "seeding": {
-      "not_started": 112,
+      "not_started": 111,
       "in_progress": 1,
-      "done": 67,
+      "done": 68,
       "total": 180,
       "status": "ok"
     }

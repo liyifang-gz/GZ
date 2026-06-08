@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-08T11:55:30",
+  "timestamp": "2026-06-08T11:58:50",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 30,
-      "signed": 12,
-      "waiting": 13
+      "signed": 13,
+      "waiting": 12
     },
     "ontime": {
       "ontime": 2,
-      "early": 10,
+      "early": 11,
       "late": 0,
       "total": 25,
       "rate": 8.0,
-      "early_rate": 40.0,
+      "early_rate": 44.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 10,
-      "done": 5,
-      "rate": 50.0,
-      "pcs_done": 10640,
-      "sign_pcs_done": 17871
+      "total": 11,
+      "done": 6,
+      "rate": 54.5,
+      "pcs_done": 10645,
+      "sign_pcs_done": 17876
     },
     "qc": {
-      "total": 10,
+      "total": 11,
       "done": 0,
-      "pending": 10,
+      "pending": 11,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 10,
+      "bill_total": 11,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 7831,
+      "pcs_total": 7836,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 9,
+      "sku_total": 10,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 25,
-        "done": 12,
-        "rate": 48.0
+        "done": 13,
+        "rate": 52.0
       },
       "pcs": {
         "total": 20145,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 79,
-        "done": 55,
-        "rate": 69.6
+        "done": 56,
+        "rate": 70.9
       },
       "supplier": {
         "total": 20,
-        "done": 10,
-        "rate": 50.0,
+        "done": 11,
+        "rate": 55.0,
         "detail": {
+          "广州市柏顿电子商务有限公司": {
+            "plan": 2,
+            "done": 1
+          },
           "广州同超贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -150,10 +154,6 @@
           },
           "杭州糕诺电子商务有限公司": {
             "plan": 1,
-            "done": 0
-          },
-          "广州市柏顿电子商务有限公司": {
-            "plan": 2,
             "done": 0
           },
           "广州信必达供应链管理有限公司-快乐猴": {
@@ -259,13 +259,6 @@
           "billCode": "YY20260604000147",
           "skuCount": 1,
           "pcs": 720,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
-          "supplierName": "广州市柏顿电子商务有限公司",
-          "billCode": "YY20260603006047",
-          "skuCount": 1,
-          "pcs": 5,
           "timeSlot": "15:30 - 16:00"
         },
         {
@@ -396,6 +389,14 @@
           "arrivalTime": "15:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 11,
+          "supplierName": "广州市柏顿电子商务有限公司",
+          "skuName": "快乐猴-一次性鸭货手套（5000双/箱）",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "11:57",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -498,6 +499,39 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 9
+        },
+        {
+          "supplierName": "广州市柏顿电子商务有限公司",
+          "poNo": "CG202606031049",
+          "reserveBillCode": "YY20260603006047",
+          "skuId": "1136801",
+          "skuName": "快乐猴-一次性帽子（1000个/箱）",
+          "purchaseQty": 15,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 10
+        },
+        {
+          "supplierName": "广州市柏顿电子商务有限公司",
+          "poNo": "CG202606031049",
+          "reserveBillCode": "YY20260603006047",
+          "skuId": "1136334",
+          "skuName": "快乐猴-一次性口罩",
+          "purchaseQty": 10,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 11
+        },
+        {
+          "supplierName": "广州市柏顿电子商务有限公司",
+          "poNo": "CG202606031049",
+          "reserveBillCode": "YY20260603006047",
+          "skuId": "1208877",
+          "skuName": "快乐猴-一次性鸭货手套（5000双/箱）",
+          "purchaseQty": 5,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 12
         }
       ],
       "qc_recv_pending": [],
@@ -511,7 +545,15 @@
             "YY20260603006047",
             "YY20260603005760"
           ],
-          "skus": []
+          "skus": [
+            {
+              "skuId": 1208877,
+              "skuCode": "11677",
+              "skuName": "快乐猴-一次性鸭货手套（5000双/箱）",
+              "quantity": 5,
+              "cgNo": "CG202606031049"
+            }
+          ]
         }
       ]
     },
@@ -596,51 +638,69 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 210,
+      "plan_pcs": 394,
       "alloc_pcs": 210,
-      "alloc_rate": 100.0,
+      "alloc_rate": 53.3,
       "picked_pcs": 0,
       "sow_pcs": 0,
       "sow_rate": 0.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 21,
+      "sku_plan": 26,
       "sku_alloc": 21,
       "sku_sow": 0,
       "sku_ship": 0,
-      "total_orders": 11
+      "total_orders": 12
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB2026060891996",
+        "skuNum": 5,
+        "planQty": 184,
+        "allocQty": 0,
+        "unallocQty": 184
+      }
+    ],
     "seeding": {
-      "not_started": 143,
+      "not_started": 147,
       "in_progress": 0,
       "done": 0,
-      "total": 143,
+      "total": 147,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 11,
-    "total_pcs": 210,
+    "total_orders": 12,
+    "total_pcs": 394,
     "alloc_pcs": 210,
-    "alloc_rate": 100.0,
+    "alloc_rate": 53.3,
     "picked_pcs": 0,
     "sow_pcs": 0,
     "sow_rate": 0.0,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 21,
+    "sku_plan": 26,
     "sku_alloc": 21,
     "sku_sow": 0,
     "store_count": 5,
     "by_store": {
+      "快乐猴-番禺建华汇店-019": 200.0,
       "快乐猴-禅城东方广场店-018": 64.0,
       "快乐猴-越秀越富广场店-031": 51.0,
       "快乐猴-海珠星汇广场店-034": 51.0,
-      "快乐猴-南海国昌广场店-023": 28.0,
-      "快乐猴-番禺建华汇店-019": 16.0
+      "快乐猴-南海国昌广场店-023": 28.0
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB2026060891996",
+        "skuNum": 5,
+        "planQty": 184,
+        "allocQty": 0,
+        "unallocQty": 184
+      }
+    ],
     "status": "ok"
   },
   "transport": {

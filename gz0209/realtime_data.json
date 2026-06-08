@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-08T10:16:12",
+  "timestamp": "2026-06-08T10:19:11",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 30,
-      "signed": 4,
-      "waiting": 21
+      "signed": 6,
+      "waiting": 19
     },
     "ontime": {
       "ontime": 1,
-      "early": 3,
+      "early": 5,
       "late": 0,
       "total": 25,
       "rate": 4.0,
-      "early_rate": 12.0,
+      "early_rate": 20.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 3,
+      "total": 4,
       "done": 2,
-      "rate": 66.7,
+      "rate": 50.0,
       "pcs_done": 3294,
-      "sign_pcs_done": 8094
+      "sign_pcs_done": 9900
     },
     "qc": {
-      "total": 3,
+      "total": 10,
       "done": 0,
-      "pending": 3,
+      "pending": 10,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 3,
+      "bill_total": 10,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 5400,
+      "pcs_total": 7206,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 2,
+      "sku_total": 9,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 25,
-        "done": 4,
-        "rate": 16.0
+        "done": 6,
+        "rate": 24.0
       },
       "pcs": {
         "total": 20145,
@@ -80,14 +80,18 @@
       },
       "sku": {
         "total": 79,
-        "done": 30,
-        "rate": 38.0
+        "done": 44,
+        "rate": 55.7
       },
       "supplier": {
         "total": 20,
-        "done": 3,
-        "rate": 15.0,
+        "done": 4,
+        "rate": 20.0,
         "detail": {
+          "广东礼悦食品科技有限公司": {
+            "plan": 2,
+            "done": 2
+          },
           "广州市捷通兴业贸易有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -153,10 +157,6 @@
             "done": 0
           },
           "广州市柏顿电子商务有限公司": {
-            "plan": 2,
-            "done": 0
-          },
-          "广东礼悦食品科技有限公司": {
             "plan": 2,
             "done": 0
           },
@@ -319,20 +319,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "广东礼悦食品科技有限公司",
-          "billCode": "YY20260603004443",
-          "skuCount": 7,
-          "pcs": 1806,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
-          "supplierName": "广东礼悦食品科技有限公司",
-          "billCode": "YY20260603004443",
-          "skuCount": 7,
-          "pcs": 1806,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
           "supplierName": "东莞市广垦嘉益粮油有限公司",
           "billCode": "YY20260603001979",
           "skuCount": 3,
@@ -348,6 +334,20 @@
         }
       ],
       "unloading": [
+        {
+          "supplierName": "广东礼悦食品科技有限公司",
+          "billCode": "YY20260603004443",
+          "signTime": "10:16",
+          "unloadStartTime": "10:17",
+          "status": "卸货中"
+        },
+        {
+          "supplierName": "广东礼悦食品科技有限公司",
+          "billCode": "YY20260603004443",
+          "signTime": "10:16",
+          "unloadStartTime": "10:17",
+          "status": "卸货中"
+        },
         {
           "supplierName": "华润怡宝饮料（中国）有限公司华南分公司-快乐猴",
           "billCode": "YY20260604006130",
@@ -379,6 +379,62 @@
           "arrivalTime": "09:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "广东礼悦食品科技有限公司",
+          "skuName": "海底捞 香辣味火锅蘸料 120g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "广东礼悦食品科技有限公司",
+          "skuName": "海底捞原味火锅蘸料120g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "广东礼悦食品科技有限公司",
+          "skuName": "海底捞鲜香清汤火锅汤料110g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "广东礼悦食品科技有限公司",
+          "skuName": "筷手小厨 酸汤肥牛调味料 200g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "广东礼悦食品科技有限公司",
+          "skuName": "筷手小厨 金汤酸菜鱼调味料 230g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 9,
+          "supplierName": "广东礼悦食品科技有限公司",
+          "skuName": "海底捞 牛油火锅底料 50g*4",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 10,
+          "supplierName": "广东礼悦食品科技有限公司",
+          "skuName": "海底捞麻辣嫩牛自煮火锅 325g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -395,6 +451,28 @@
           "seq": 1
         },
         {
+          "supplierName": "广东礼悦食品科技有限公司",
+          "poNo": "CG2026060111757",
+          "reserveBillCode": "YY20260603004443",
+          "skuId": "778517",
+          "skuName": "海底捞 牛油火锅底料 50g*4",
+          "purchaseQty": 600,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "广东礼悦食品科技有限公司",
+          "poNo": "CG2026060111757",
+          "reserveBillCode": "YY20260603004443",
+          "skuId": "704712",
+          "skuName": "筷手小厨 金汤酸菜鱼调味料 230g",
+          "purchaseQty": 480,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
           "poNo": "CG2026060112304",
           "reserveBillCode": "YY20260605009989",
@@ -403,7 +481,51 @@
           "purchaseQty": 360,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 4
+        },
+        {
+          "supplierName": "广东礼悦食品科技有限公司",
+          "poNo": "CG2026060111757",
+          "reserveBillCode": "YY20260603004443",
+          "skuId": "4301",
+          "skuName": "海底捞 香辣味火锅蘸料 120g",
+          "purchaseQty": 320,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
+          "supplierName": "广东礼悦食品科技有限公司",
+          "poNo": "CG2026060111757",
+          "reserveBillCode": "YY20260603004443",
+          "skuId": "4302",
+          "skuName": "海底捞原味火锅蘸料120g",
+          "purchaseQty": 160,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
+        },
+        {
+          "supplierName": "广东礼悦食品科技有限公司",
+          "poNo": "CG2026060111757",
+          "reserveBillCode": "YY20260603004443",
+          "skuId": "95736",
+          "skuName": "海底捞鲜香清汤火锅汤料110g",
+          "purchaseQty": 102,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
+        },
+        {
+          "supplierName": "广东礼悦食品科技有限公司",
+          "poNo": "CG2026060111757",
+          "reserveBillCode": "YY20260603004443",
+          "skuId": "491901",
+          "skuName": "筷手小厨 酸汤肥牛调味料 200g",
+          "purchaseQty": 90,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 8
         }
       ],
       "qc_recv_pending": [],
@@ -535,10 +657,10 @@
       }
     ],
     "seeding": {
-      "not_started": 90,
+      "not_started": 91,
       "in_progress": 0,
       "done": 0,
-      "total": 90,
+      "total": 91,
       "status": "ok"
     }
   },

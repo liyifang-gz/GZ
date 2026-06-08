@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-06-08T09:43:36",
+  "timestamp": "2026-06-08T09:46:59",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
-      "total": 29,
+      "total": 30,
       "signed": 3,
-      "waiting": 21
+      "waiting": 22
     },
     "ontime": {
       "ontime": 0,
       "early": 3,
       "late": 0,
-      "total": 24,
+      "total": 25,
       "rate": 0.0,
-      "early_rate": 12.5,
+      "early_rate": 12.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
       "po_total": 18,
-      "po_reserved": 14,
-      "rate": 77.8,
+      "po_reserved": 15,
+      "rate": 83.3,
       "po_data_ok": true
     },
     "unload": {
@@ -59,27 +59,31 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 24,
+        "total": 25,
         "done": 3,
-        "rate": 12.5
+        "rate": 12.0
       },
       "pcs": {
         "total": 20145,
-        "done": 8544,
-        "rate": 42.4,
+        "done": 8585,
+        "rate": 42.6,
         "recv_done": 15302,
         "recv_rate": 76.0
       },
       "sku": {
-        "total": 78,
+        "total": 79,
         "done": 29,
-        "rate": 37.2
+        "rate": 36.7
       },
       "supplier": {
-        "total": 19,
+        "total": 20,
         "done": 2,
-        "rate": 10.5,
+        "rate": 10.0,
         "detail": {
+          "广州同超贸易有限公司-快乐猴": {
+            "plan": 1,
+            "done": 0
+          },
           "广州市捷通兴业贸易有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -162,14 +166,6 @@
     "details": {
       "unreserved": [
         {
-          "supplierName": "广州同超贸易有限公司-快乐猴",
-          "poNo": "CG2026060111970",
-          "skuCount": 1,
-          "pcs": 41,
-          "preArrivalTime": "2026-06-08",
-          "poStatus": "待确认"
-        },
-        {
           "supplierName": "广州市领恒商贸有限公司-快乐猴",
           "poNo": "CG2026060111759",
           "skuCount": 1,
@@ -195,6 +191,13 @@
         }
       ],
       "unsigned": [
+        {
+          "supplierName": "广州同超贸易有限公司-快乐猴",
+          "billCode": "YY20260608000984",
+          "skuCount": 1,
+          "pcs": 41,
+          "timeSlot": "15:30 - 16:00"
+        },
         {
           "supplierName": "广州顺中宜商贸有限公司-快乐猴",
           "billCode": "YY20260608000295",
@@ -540,8 +543,8 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 8544.0,
-      "efficiency_formula": "8544 PCS / 1 人",
+      "efficiency": 8585.0,
+      "efficiency_formula": "8585 PCS / 1 人",
       "inbound_schedule": 1
     }
   },
@@ -635,10 +638,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 68,
+      "not_started": 70,
       "in_progress": 0,
       "done": 0,
-      "total": 68,
+      "total": 70,
       "status": "ok"
     }
   },

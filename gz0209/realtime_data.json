@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-08T11:52:29",
+  "timestamp": "2026-06-08T11:55:30",
   "date": "2026-06-08",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 30,
-      "signed": 11,
-      "waiting": 14
+      "signed": 12,
+      "waiting": 13
     },
     "ontime": {
       "ontime": 2,
-      "early": 9,
+      "early": 10,
       "late": 0,
       "total": 25,
       "rate": 8.0,
-      "early_rate": 36.0,
+      "early_rate": 40.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 9,
+      "total": 10,
       "done": 5,
-      "rate": 55.6,
+      "rate": 50.0,
       "pcs_done": 10640,
-      "sign_pcs_done": 17830
+      "sign_pcs_done": 17871
     },
     "qc": {
-      "total": 9,
+      "total": 10,
       "done": 0,
-      "pending": 9,
+      "pending": 10,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 9,
+      "bill_total": 10,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 7790,
+      "pcs_total": 7831,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 8,
+      "sku_total": 9,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 25,
-        "done": 11,
-        "rate": 44.0
+        "done": 12,
+        "rate": 48.0
       },
       "pcs": {
         "total": 20145,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 79,
-        "done": 54,
-        "rate": 68.4
+        "done": 55,
+        "rate": 69.6
       },
       "supplier": {
         "total": 20,
-        "done": 9,
-        "rate": 45.0,
+        "done": 10,
+        "rate": 50.0,
         "detail": {
+          "广州同超贸易有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "上海泰盛万联达供应链有限公司": {
             "plan": 1,
             "done": 1
@@ -115,10 +119,6 @@
           "上海本甄农业发展有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
-          },
-          "广州同超贸易有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           },
           "三全食品股份有限公司-快乐猴": {
             "plan": 1,
@@ -191,13 +191,6 @@
         }
       ],
       "unsigned": [
-        {
-          "supplierName": "广州同超贸易有限公司-快乐猴",
-          "billCode": "YY20260608000984",
-          "skuCount": 1,
-          "pcs": 41,
-          "timeSlot": "15:30 - 16:00"
-        },
         {
           "supplierName": "三全食品股份有限公司-快乐猴",
           "billCode": "YY20260607001518",
@@ -291,6 +284,12 @@
         }
       ],
       "unloading": [
+        {
+          "supplierName": "广州同超贸易有限公司-快乐猴",
+          "billCode": "YY20260608000984",
+          "signTime": "11:53",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "上海泰盛万联达供应链有限公司",
           "billCode": "YY20260604002809",
@@ -389,6 +388,14 @@
           "arrivalTime": "11:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 10,
+          "supplierName": "广州同超贸易有限公司-快乐猴",
+          "skuName": "风行 纯牛奶 200ml*12",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -480,6 +487,17 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 8
+        },
+        {
+          "supplierName": "广州同超贸易有限公司-快乐猴",
+          "poNo": "CG2026060111970",
+          "reserveBillCode": "YY20260608000984",
+          "skuId": "101214",
+          "skuName": "风行 纯牛奶 200ml*12",
+          "purchaseQty": 41,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 9
         }
       ],
       "qc_recv_pending": [],

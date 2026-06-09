@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-09T08:40:19",
+  "timestamp": "2026-06-09T08:52:00",
   "date": "2026-06-09",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 31,
-      "signed": 0,
-      "waiting": 31
+      "signed": 2,
+      "waiting": 29
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 2,
       "late": 0,
       "total": 31,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 6.5,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 876
     },
     "qc": {
-      "total": 0,
+      "total": 3,
       "done": 0,
-      "pending": 0,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 876,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 3,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 71900,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 31,
-        "done": 0,
-        "rate": 0.0
+        "done": 2,
+        "rate": 6.5
       },
       "pcs": {
         "total": 74844,
@@ -72,14 +72,22 @@
       },
       "sku": {
         "total": 58,
-        "done": 0,
-        "rate": 0.0
+        "done": 3,
+        "rate": 5.2
       },
       "supplier": {
         "total": 21,
-        "done": 0,
-        "rate": 0.0,
+        "done": 2,
+        "rate": 9.5,
         "detail": {
+          "山东汉德酒业有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "福克斯食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广东电闪侠电子商务有限公司-快乐猴": {
             "plan": 2,
             "done": 0
@@ -124,10 +132,6 @@
             "plan": 3,
             "done": 0
           },
-          "山东汉德酒业有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
           "山东润鑫化妆品科技有限公司": {
             "plan": 1,
             "done": 0
@@ -154,10 +158,6 @@
           },
           "安徽汉邦日化有限公司": {
             "plan": 1,
-            "done": 0
-          },
-          "上海澳汐贸易有限公司-快乐猴-自营": {
-            "plan": 2,
             "done": 0
           }
         }
@@ -290,13 +290,6 @@
           "timeSlot": "14:30 - 15:00"
         },
         {
-          "supplierName": "山东汉德酒业有限公司-快乐猴",
-          "billCode": "YY20260604006990",
-          "skuCount": 1,
-          "pcs": 48,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
           "supplierName": "安徽华安食品有限公司",
           "billCode": "YY20260604002367",
           "skuCount": 3,
@@ -407,19 +400,84 @@
           "skuCount": 1,
           "pcs": 700,
           "timeSlot": "15:30 - 16:00"
+        }
+      ],
+      "unloading": [
+        {
+          "supplierName": "山东汉德酒业有限公司-快乐猴",
+          "billCode": "YY20260604006990",
+          "signTime": "08:47",
+          "status": "已签到未卸货"
         },
         {
           "supplierName": "福克斯食品有限公司-快乐猴",
           "billCode": "YY20260527001835",
-          "skuCount": 2,
-          "pcs": 828,
-          "timeSlot": "15:30 - 16:00"
+          "signTime": "08:46",
+          "status": "已签到未卸货"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "福克斯食品有限公司-快乐猴",
+          "skuName": "快乐猴 白胡椒粉 40g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "福克斯食品有限公司-快乐猴",
+          "skuName": "快乐猴 黑胡椒粉 40g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "山东汉德酒业有限公司-快乐猴",
+          "skuName": "小象 全麦皮尔森超爽啤酒 2L",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "福克斯食品有限公司-快乐猴",
+          "poNo": "CG2026052610083",
+          "reserveBillCode": "YY20260527001835",
+          "skuId": "1123285",
+          "skuName": "快乐猴 白胡椒粉 40g",
+          "purchaseQty": 594,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "福克斯食品有限公司-快乐猴",
+          "poNo": "CG2026052610083",
+          "reserveBillCode": "YY20260527001835",
+          "skuId": "1123740",
+          "skuName": "快乐猴 黑胡椒粉 40g",
+          "purchaseQty": 234,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "山东汉德酒业有限公司-快乐猴",
+          "poNo": "CG202606036810",
+          "reserveBillCode": "YY20260604006990",
+          "skuId": "708682",
+          "skuName": "小象 全麦皮尔森超爽啤酒 2L",
+          "purchaseQty": 48,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -814,10 +872,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 17,
+      "not_started": 20,
       "in_progress": 0,
       "done": 0,
-      "total": 17,
+      "total": 20,
       "status": "ok"
     }
   },

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-09T10:35:17",
+  "timestamp": "2026-06-09T10:41:39",
   "date": "2026-06-09",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 35,
-      "signed": 10,
-      "waiting": 23
+      "signed": 11,
+      "waiting": 22
     },
     "ontime": {
       "ontime": 0,
-      "early": 10,
+      "early": 11,
       "late": 0,
       "total": 33,
       "rate": 0.0,
-      "early_rate": 30.3,
+      "early_rate": 33.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 7,
+      "total": 8,
       "done": 3,
-      "rate": 42.9,
+      "rate": 37.5,
       "pcs_done": 3774,
-      "sign_pcs_done": 5514
+      "sign_pcs_done": 5754
     },
     "qc": {
-      "total": 5,
+      "total": 6,
       "done": 0,
-      "pending": 5,
+      "pending": 6,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 5,
+      "bill_total": 6,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 1740,
+      "pcs_total": 1980,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 4,
+      "sku_total": 5,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 33,
-        "done": 10,
-        "rate": 30.3
+        "done": 11,
+        "rate": 33.3
       },
       "pcs": {
         "total": 74844,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 64,
-        "done": 19,
-        "rate": 29.7
+        "done": 20,
+        "rate": 31.2
       },
       "supplier": {
         "total": 22,
-        "done": 6,
-        "rate": 27.3,
+        "done": 7,
+        "rate": 31.8,
         "detail": {
+          "山东润鑫化妆品科技有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳蒙牛液体奶销售有限公司-快乐猴": {
             "plan": 2,
             "done": 0
@@ -138,10 +142,6 @@
           },
           "安徽华安食品有限公司": {
             "plan": 3,
-            "done": 0
-          },
-          "山东润鑫化妆品科技有限公司": {
-            "plan": 1,
             "done": 0
           },
           "武汉绿禾堂食品有限公司-快乐猴": {
@@ -260,13 +260,6 @@
           "timeSlot": "14:00 - 14:30"
         },
         {
-          "supplierName": "山东润鑫化妆品科技有限公司",
-          "billCode": "YY20260604001940",
-          "skuCount": 1,
-          "pcs": 240,
-          "timeSlot": "14:30 - 15:00"
-        },
-        {
           "supplierName": "武汉绿禾堂食品有限公司-快乐猴",
           "billCode": "YY20260604000585",
           "skuCount": 4,
@@ -346,6 +339,12 @@
       ],
       "unloading": [
         {
+          "supplierName": "山东润鑫化妆品科技有限公司",
+          "billCode": "YY20260604001940",
+          "signTime": "10:37",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "仲景食品股份有限公司-快乐猴",
           "billCode": "YY20260603002953",
           "signTime": "10:10",
@@ -420,6 +419,14 @@
           "arrivalTime": "15:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "山东润鑫化妆品科技有限公司",
+          "skuName": "自然堂烟酰胺细致提亮面膜5片/盒",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -447,6 +454,17 @@
           "seq": 2
         },
         {
+          "supplierName": "山东润鑫化妆品科技有限公司",
+          "poNo": "CG202606035704",
+          "reserveBillCode": "YY20260604001940",
+          "skuId": "353078",
+          "skuName": "自然堂烟酰胺细致提亮面膜5片/盒",
+          "purchaseQty": 240,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
           "supplierName": "中山市万荣营销有限公司-快乐猴",
           "poNo": "CG202606027135",
           "reserveBillCode": "YY20260608005630",
@@ -455,7 +473,7 @@
           "purchaseQty": 240,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
+          "seq": 4
         },
         {
           "supplierName": "深圳市栢威贸易有限公司-快乐猴",
@@ -466,7 +484,7 @@
           "purchaseQty": 200,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 5
         }
       ],
       "qc_recv_pending": [],
@@ -802,10 +820,10 @@
       }
     ],
     "seeding": {
-      "not_started": 96,
+      "not_started": 99,
       "in_progress": 0,
       "done": 0,
-      "total": 96,
+      "total": 99,
       "status": "ok"
     }
   },

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-09T09:53:38",
+  "timestamp": "2026-06-09T09:59:36",
   "date": "2026-06-09",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 31,
-      "signed": 6,
-      "waiting": 25
+      "signed": 9,
+      "waiting": 22
     },
     "ontime": {
       "ontime": 0,
-      "early": 6,
+      "early": 9,
       "late": 0,
       "total": 31,
       "rate": 0.0,
-      "early_rate": 19.4,
+      "early_rate": 29.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 4,
+      "total": 6,
       "done": 3,
-      "rate": 75.0,
+      "rate": 50.0,
       "pcs_done": 3774,
-      "sign_pcs_done": 4014
+      "sign_pcs_done": 5214
     },
     "qc": {
-      "total": 1,
+      "total": 4,
       "done": 0,
-      "pending": 1,
+      "pending": 4,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 1,
+      "bill_total": 4,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 240,
+      "pcs_total": 1440,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 1,
+      "sku_total": 3,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 31,
-        "done": 6,
-        "rate": 19.4
+        "done": 9,
+        "rate": 29.0
       },
       "pcs": {
         "total": 74844,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 58,
-        "done": 13,
-        "rate": 22.4
+        "done": 18,
+        "rate": 31.0
       },
       "supplier": {
         "total": 21,
-        "done": 4,
-        "rate": 19.0,
+        "done": 5,
+        "rate": 23.8,
         "detail": {
+          "深圳市栢威贸易有限公司-快乐猴": {
+            "plan": 3,
+            "done": 3
+          },
           "福克斯食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -114,10 +118,6 @@
           },
           "重庆市联发塑料科技股份有限公司": {
             "plan": 1,
-            "done": 0
-          },
-          "深圳市栢威贸易有限公司-快乐猴": {
-            "plan": 3,
             "done": 0
           },
           "鲜上榜乳业（广州）有限公司-快乐猴": {
@@ -234,13 +234,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "深圳市栢威贸易有限公司-快乐猴",
-          "billCode": "YY20260605006259",
-          "skuCount": 1,
-          "pcs": 300,
-          "timeSlot": "14:00 - 14:30"
-        },
-        {
           "supplierName": "鲜上榜乳业（广州）有限公司-快乐猴",
           "billCode": "YY20260605002622",
           "skuCount": 1,
@@ -332,20 +325,6 @@
           "timeSlot": "15:00 - 15:30"
         },
         {
-          "supplierName": "深圳市栢威贸易有限公司-快乐猴",
-          "billCode": "YY20260602001717",
-          "skuCount": 2,
-          "pcs": 900,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
-          "supplierName": "深圳市栢威贸易有限公司-快乐猴",
-          "billCode": "YY20260602001717",
-          "skuCount": 2,
-          "pcs": 900,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
           "supplierName": "仲景食品股份有限公司-快乐猴",
           "billCode": "YY20260601004732",
           "skuCount": 1,
@@ -376,6 +355,27 @@
       ],
       "unloading": [
         {
+          "supplierName": "深圳市栢威贸易有限公司-快乐猴",
+          "billCode": "YY20260605006259",
+          "signTime": "09:57",
+          "unloadStartTime": "09:59",
+          "status": "卸货中"
+        },
+        {
+          "supplierName": "深圳市栢威贸易有限公司-快乐猴",
+          "billCode": "YY20260602001717",
+          "signTime": "09:57",
+          "unloadStartTime": "09:59",
+          "status": "卸货中"
+        },
+        {
+          "supplierName": "深圳市栢威贸易有限公司-快乐猴",
+          "billCode": "YY20260602001717",
+          "signTime": "09:57",
+          "unloadStartTime": "09:59",
+          "status": "卸货中"
+        },
+        {
           "supplierName": "中山市万荣营销有限公司-快乐猴",
           "billCode": "YY20260608005630",
           "signTime": "09:27",
@@ -391,10 +391,45 @@
           "arrivalTime": "10:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "深圳市栢威贸易有限公司-快乐猴",
+          "skuName": "寿桃 非油炸蛋面 1.2kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "深圳市栢威贸易有限公司-快乐猴",
+          "skuName": "寿桃 香港车仔面XO滋味酱组合装 615g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "深圳市栢威贸易有限公司-快乐猴",
+          "skuName": "寿桃 非油炸蛋面 1.2kg",
+          "arrivalTime": "14:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
       "signed_not_recv": [
+        {
+          "supplierName": "深圳市栢威贸易有限公司-快乐猴",
+          "poNo": "CG202606054180",
+          "reserveBillCode": "YY20260605006259",
+          "skuId": "71917",
+          "skuName": "寿桃 非油炸蛋面 1.2kg",
+          "purchaseQty": 300,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
         {
           "supplierName": "中山市万荣营销有限公司-快乐猴",
           "poNo": "CG202606027135",
@@ -404,7 +439,18 @@
           "purchaseQty": 240,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 2
+        },
+        {
+          "supplierName": "深圳市栢威贸易有限公司-快乐猴",
+          "poNo": "CG2026060112371",
+          "reserveBillCode": "YY20260602001717",
+          "skuId": "71917",
+          "skuName": "寿桃 非油炸蛋面 1.2kg",
+          "purchaseQty": 200,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
         }
       ],
       "qc_recv_pending": [],
@@ -810,10 +856,10 @@
       }
     ],
     "seeding": {
-      "not_started": 76,
+      "not_started": 85,
       "in_progress": 0,
       "done": 0,
-      "total": 76,
+      "total": 85,
       "status": "ok"
     }
   },

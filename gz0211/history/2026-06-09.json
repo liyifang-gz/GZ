@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-09T10:16:28",
+  "timestamp": "2026-06-09T10:22:27",
   "date": "2026-06-09",
   "warehouse": "GZ0210",
   "inbound": {
@@ -49,13 +49,28 @@
       "sku_rate": 0.0
     },
     "putaway": {
-      "total": 8260,
+      "total": 9560,
       "done": 8260,
-      "rate": 100.0,
-      "sku_total": 8,
+      "rate": 86.4,
+      "sku_total": 11,
       "sku_done": 8,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 72.7,
+      "details": [
+        {
+          "poNo": "CG202606086743",
+          "hopePcs": 1000,
+          "putPcs": 0,
+          "hopeSku": 2,
+          "putSku": 0
+        },
+        {
+          "poNo": "CG2026060210080",
+          "hopePcs": 300,
+          "putPcs": 0,
+          "hopeSku": 1,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +82,8 @@
         "total": 10856,
         "done": 8616,
         "rate": 79.4,
-        "recv_done": 8260,
-        "recv_rate": 76.1
+        "recv_done": 9560,
+        "recv_rate": 88.1
       },
       "sku": {
         "total": 16,
@@ -80,15 +95,15 @@
         "done": 4,
         "rate": 57.1,
         "detail": {
-          "和路雪（中国）有限公司上海分公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
           "德州天诚鼎盛食品有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
           },
           "杭州一起闯荡科技有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "和路雪（中国）有限公司上海分公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -163,15 +178,15 @@
       ],
       "unloading": [
         {
-          "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
-          "billCode": "YY20260605002660",
-          "signTime": "10:15",
-          "status": "已签到未卸货"
-        },
-        {
           "supplierName": "德州天诚鼎盛食品有限公司-快乐猴-自营",
           "billCode": "YY20260608006169",
           "signTime": "09:14",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
+          "billCode": "YY20260605002660",
+          "signTime": "10:15",
           "status": "已签到未卸货"
         }
       ],
@@ -212,17 +227,6 @@
       "recv_pending": [],
       "signed_not_recv": [
         {
-          "supplierName": "德州天诚鼎盛食品有限公司-快乐猴-自营",
-          "poNo": "CG202606086743",
-          "reserveBillCode": "YY20260608006169",
-          "skuId": "1452182",
-          "skuName": "快乐猴 萌宠卡通包 350g",
-          "purchaseQty": 1000,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 1
-        },
-        {
           "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
           "poNo": "CG202606050713",
           "reserveBillCode": "YY20260605002660",
@@ -231,7 +235,7 @@
           "purchaseQty": 380,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 1
         },
         {
           "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
@@ -242,18 +246,7 @@
           "purchaseQty": 376,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
-        },
-        {
-          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
-          "poNo": "CG2026060210080",
-          "reserveBillCode": "YY20260604001958",
-          "skuId": "1051653",
-          "skuName": "金汤酸菜鱼 450g",
-          "purchaseQty": 300,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 4
+          "seq": 2
         },
         {
           "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
@@ -264,7 +257,7 @@
           "purchaseQty": 80,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 3
         },
         {
           "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
@@ -275,7 +268,7 @@
           "purchaseQty": 40,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 6
+          "seq": 4
         }
       ],
       "qc_recv_pending": [],
@@ -427,10 +420,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 85,
+      "not_started": 86,
       "in_progress": 0,
       "done": 0,
-      "total": 85,
+      "total": 86,
       "status": "ok"
     }
   },

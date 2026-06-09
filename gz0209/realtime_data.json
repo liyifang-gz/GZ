@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-09T18:12:49",
+  "timestamp": "2026-06-09T18:21:10",
   "date": "2026-06-09",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 36,
-      "signed": 32,
-      "waiting": 2
+      "signed": 33,
+      "waiting": 1
     },
     "ontime": {
       "ontime": 2,
       "early": 28,
-      "late": 2,
+      "late": 3,
       "total": 34,
       "rate": 5.9,
       "early_rate": 82.4,
-      "late_rate": 5.9
+      "late_rate": 8.8
     },
     "reserve_progress": {
       "po_total": 15,
@@ -24,52 +24,44 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 27,
+      "total": 28,
       "done": 26,
-      "rate": 96.3,
+      "rate": 92.9,
       "pcs_done": 18841,
-      "sign_pcs_done": 21307
+      "sign_pcs_done": 21382
     },
     "qc": {
-      "total": 17,
+      "total": 18,
       "done": 13,
-      "pending": 4,
+      "pending": 5,
       "passed": 12,
       "rejected": 1,
-      "rate": 76.5,
+      "rate": 72.2,
       "bill_done": 13,
-      "bill_total": 17,
+      "bill_total": 18,
       "pcs_done": 2131,
       "pcs_passed": 1811,
-      "pcs_total": 4597,
+      "pcs_total": 4672,
       "pcs_rejected": 320,
-      "pcs_rate": 46.4,
+      "pcs_rate": 45.6,
       "sku_done": 11,
-      "sku_total": 15,
-      "sku_rate": 73.3
+      "sku_total": 16,
+      "sku_rate": 68.8
     },
     "putaway": {
       "total": 74814,
-      "done": 74792,
+      "done": 74814,
       "rate": 100.0,
       "sku_total": 29,
-      "sku_done": 28,
-      "sku_rate": 96.6,
-      "details": [
-        {
-          "poNo": "CG202606027432",
-          "hopePcs": 22,
-          "putPcs": 0,
-          "hopeSku": 1,
-          "putSku": 0
-        }
-      ]
+      "sku_done": 29,
+      "sku_rate": 100.0,
+      "details": []
     },
     "dimensions": {
       "reserve": {
         "total": 34,
-        "done": 32,
-        "rate": 94.1
+        "done": 33,
+        "rate": 97.1
       },
       "pcs": {
         "total": 74844,
@@ -80,14 +72,18 @@
       },
       "sku": {
         "total": 65,
-        "done": 60,
-        "rate": 92.3
+        "done": 61,
+        "rate": 93.8
       },
       "supplier": {
         "total": 23,
-        "done": 21,
-        "rate": 91.3,
+        "done": 22,
+        "rate": 95.7,
         "detail": {
+          "东莞坤瀚启航商贸有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "安徽华安食品有限公司": {
             "plan": 3,
             "done": 3
@@ -163,10 +159,6 @@
           "山东汉德酒业有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "福克斯食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
           }
         }
       }
@@ -184,13 +176,6 @@
       ],
       "unsigned": [
         {
-          "supplierName": "东莞坤瀚启航商贸有限公司-快乐猴",
-          "billCode": "YY20260604009627",
-          "skuCount": 1,
-          "pcs": 75,
-          "timeSlot": "14:30 - 15:00"
-        },
-        {
           "supplierName": "山东阳春酒业有限公司-快乐猴",
           "billCode": "YY20260603002357",
           "skuCount": 4,
@@ -199,6 +184,12 @@
         }
       ],
       "unloading": [
+        {
+          "supplierName": "东莞坤瀚启航商贸有限公司-快乐猴",
+          "billCode": "YY20260604009627",
+          "signTime": "18:16",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "武汉绿禾堂食品有限公司-快乐猴",
           "billCode": "YY20260604000585",
@@ -239,6 +230,14 @@
           "arrivalTime": "14:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "东莞坤瀚启航商贸有限公司-快乐猴",
+          "skuName": "瑞幸 美式风味冷萃咖啡液 25ml*9",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -246,79 +245,79 @@
           "supplierName": "广东电闪侠电子商务有限公司-快乐猴",
           "skuName": "汾酒红盖玻汾清香型白酒42度475ml",
           "completeTime": "12:02",
-          "waitingMins": 371
+          "waitingMins": 379
         },
         {
           "supplierName": "广东电闪侠电子商务有限公司-快乐猴",
           "skuName": "西凤 绵柔凤香型白酒45度 500ml",
           "completeTime": "12:03",
-          "waitingMins": 369
+          "waitingMins": 378
         },
         {
           "supplierName": "广东电闪侠电子商务有限公司-快乐猴",
           "skuName": "劲牌35度中国劲酒125ml",
           "completeTime": "12:04",
-          "waitingMins": 368
+          "waitingMins": 376
         },
         {
           "supplierName": "上海澳汐贸易有限公司-快乐猴-自营",
           "skuName": "王老吉 凉茶绿盒装植物饮料 250ml*6",
           "completeTime": "12:43",
-          "waitingMins": 329
+          "waitingMins": 337
         },
         {
           "supplierName": "上海澳汐贸易有限公司-快乐猴-自营",
           "skuName": "王老吉 凉茶绿盒装植物饮料 250ml*6",
           "completeTime": "12:43",
-          "waitingMins": 329
+          "waitingMins": 337
         },
         {
           "supplierName": "深圳蒙牛液体奶销售有限公司-快乐猴",
           "skuName": "蒙牛纯牛奶200ml*24盒(整箱)",
           "completeTime": "13:21",
-          "waitingMins": 292
+          "waitingMins": 300
         },
         {
           "supplierName": "安徽华安食品有限公司",
           "skuName": "快乐猴 花生芝麻酱 250g",
           "completeTime": "15:28",
-          "waitingMins": 165
+          "waitingMins": 173
         },
         {
           "supplierName": "安徽华安食品有限公司",
           "skuName": "快乐猴 纯芝麻酱 200g",
           "completeTime": "15:31",
-          "waitingMins": 162
+          "waitingMins": 170
         },
         {
           "supplierName": "安徽华安食品有限公司",
           "skuName": "快乐猴 花生芝麻酱 250g",
           "completeTime": "15:28",
-          "waitingMins": 165
+          "waitingMins": 173
         },
         {
           "supplierName": "重庆市联发塑料科技股份有限公司",
           "skuName": "快乐猴-连卷袋-大号(450)-2丝（10卷/包）",
           "completeTime": "15:59",
-          "waitingMins": 133
+          "waitingMins": 141
         },
         {
           "supplierName": "浙江群鹿新材料股份有限公司",
           "skuName": "快乐猴-打包盒325*198*80（新）",
           "completeTime": "16:41",
-          "waitingMins": 92
+          "waitingMins": 100
         },
         {
           "supplierName": "浙江群鹿新材料股份有限公司",
           "skuName": "快乐猴-打包盒225*225*80（新）",
           "completeTime": "16:39",
-          "waitingMins": 93
+          "waitingMins": 102
         },
         {
           "supplierName": "浙江群鹿新材料股份有限公司",
           "skuName": "打包盒256*170*80",
           "completeTime": "16:37",
-          "waitingMins": 95
+          "waitingMins": 103
         }
       ],
       "signed_not_recv": [
@@ -367,6 +366,17 @@
           "seq": 4
         },
         {
+          "supplierName": "东莞坤瀚启航商贸有限公司-快乐猴",
+          "poNo": "CG202606035971",
+          "reserveBillCode": "YY20260604009627",
+          "skuId": "596219",
+          "skuName": "瑞幸 美式风味冷萃咖啡液 25ml*9",
+          "purchaseQty": 75,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
           "supplierName": "重庆市联发塑料科技股份有限公司",
           "poNo": "CG202606025648",
           "reserveBillCode": "YY20260607003652",
@@ -375,7 +385,7 @@
           "purchaseQty": 30,
           "recvQty": 0,
           "hasQc": true,
-          "seq": 5
+          "seq": 6
         }
       ],
       "qc_recv_pending": [],
@@ -873,9 +883,9 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 77,
-      "in_progress": 3,
-      "done": 323,
+      "not_started": 74,
+      "in_progress": 1,
+      "done": 328,
       "total": 403,
       "status": "ok"
     }

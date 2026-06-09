@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-09T15:17:56",
+  "timestamp": "2026-06-09T15:23:59",
   "date": "2026-06-09",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 36,
-      "signed": 31,
-      "waiting": 3
+      "signed": 32,
+      "waiting": 2
     },
     "ontime": {
       "ontime": 2,
       "early": 28,
-      "late": 1,
+      "late": 2,
       "total": 34,
       "rate": 5.9,
       "early_rate": 82.4,
-      "late_rate": 2.9
+      "late_rate": 5.9
     },
     "reserve_progress": {
       "po_total": 15,
@@ -24,37 +24,37 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 26,
+      "total": 27,
       "done": 21,
-      "rate": 80.8,
+      "rate": 77.8,
       "pcs_done": 10442,
-      "sign_pcs_done": 21217
+      "sign_pcs_done": 21307
     },
     "qc": {
-      "total": 21,
+      "total": 22,
       "done": 6,
-      "pending": 15,
+      "pending": 16,
       "passed": 6,
       "rejected": 0,
-      "rate": 28.6,
+      "rate": 27.3,
       "bill_done": 6,
-      "bill_total": 21,
+      "bill_total": 22,
       "pcs_done": 896,
       "pcs_passed": 896,
-      "pcs_total": 12781,
+      "pcs_total": 12871,
       "pcs_rejected": 0,
       "pcs_rate": 7.0,
       "sku_done": 5,
-      "sku_total": 19,
-      "sku_rate": 26.3
+      "sku_total": 20,
+      "sku_rate": 25.0
     },
     "putaway": {
       "total": 72948,
-      "done": 72206,
-      "rate": 99.0,
+      "done": 72526,
+      "rate": 99.4,
       "sku_total": 24,
-      "sku_done": 20,
-      "sku_rate": 83.3,
+      "sku_done": 21,
+      "sku_rate": 87.5,
       "details": [
         {
           "poNo": "CG2026060817270",
@@ -62,13 +62,6 @@
           "putPcs": 36,
           "hopeSku": 2,
           "putSku": 1
-        },
-        {
-          "poNo": "CG202606045160",
-          "hopePcs": 320,
-          "putPcs": 0,
-          "hopeSku": 1,
-          "putSku": 0
         },
         {
           "poNo": "CG202606040983",
@@ -89,8 +82,8 @@
     "dimensions": {
       "reserve": {
         "total": 34,
-        "done": 31,
-        "rate": 91.2
+        "done": 32,
+        "rate": 94.1
       },
       "pcs": {
         "total": 74844,
@@ -101,14 +94,18 @@
       },
       "sku": {
         "total": 65,
-        "done": 59,
-        "rate": 90.8
+        "done": 60,
+        "rate": 92.3
       },
       "supplier": {
         "total": 23,
-        "done": 20,
-        "rate": 87.0,
+        "done": 21,
+        "rate": 91.3,
         "detail": {
+          "鲜上榜乳业（广州）有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州市联盟商贸有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -184,10 +181,6 @@
           "广州市凤安贸易有限公司-快乐猴": {
             "plan": 3,
             "done": 3
-          },
-          "山东润鑫化妆品科技有限公司": {
-            "plan": 1,
-            "done": 1
           }
         }
       }
@@ -205,13 +198,6 @@
       ],
       "unsigned": [
         {
-          "supplierName": "鲜上榜乳业（广州）有限公司-快乐猴",
-          "billCode": "YY20260605002622",
-          "skuCount": 1,
-          "pcs": 90,
-          "timeSlot": "14:00 - 14:30"
-        },
-        {
           "supplierName": "东莞坤瀚启航商贸有限公司-快乐猴",
           "billCode": "YY20260604009627",
           "skuCount": 1,
@@ -227,6 +213,12 @@
         }
       ],
       "unloading": [
+        {
+          "supplierName": "鲜上榜乳业（广州）有限公司-快乐猴",
+          "billCode": "YY20260605002622",
+          "signTime": "15:18",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "浙江群鹿新材料股份有限公司",
           "billCode": "YY20260608006282",
@@ -380,6 +372,14 @@
           "arrivalTime": "14:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 16,
+          "supplierName": "鲜上榜乳业（广州）有限公司-快乐猴",
+          "skuName": "百菲酪水牛3.8g乳蛋白纯牛奶200ml*12盒",
+          "arrivalTime": "14:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -387,37 +387,37 @@
           "supplierName": "广东电闪侠电子商务有限公司-快乐猴",
           "skuName": "汾酒红盖玻汾清香型白酒42度475ml",
           "completeTime": "12:02",
-          "waitingMins": 196
+          "waitingMins": 202
         },
         {
           "supplierName": "广东电闪侠电子商务有限公司-快乐猴",
           "skuName": "西凤 绵柔凤香型白酒45度 500ml",
           "completeTime": "12:03",
-          "waitingMins": 194
+          "waitingMins": 200
         },
         {
           "supplierName": "广东电闪侠电子商务有限公司-快乐猴",
           "skuName": "劲牌35度中国劲酒125ml",
           "completeTime": "12:04",
-          "waitingMins": 193
+          "waitingMins": 199
         },
         {
           "supplierName": "上海澳汐贸易有限公司-快乐猴-自营",
           "skuName": "王老吉 凉茶绿盒装植物饮料 250ml*6",
           "completeTime": "12:43",
-          "waitingMins": 154
+          "waitingMins": 160
         },
         {
           "supplierName": "上海澳汐贸易有限公司-快乐猴-自营",
           "skuName": "王老吉 凉茶绿盒装植物饮料 250ml*6",
           "completeTime": "12:43",
-          "waitingMins": 154
+          "waitingMins": 160
         },
         {
           "supplierName": "深圳蒙牛液体奶销售有限公司-快乐猴",
           "skuName": "蒙牛纯牛奶200ml*24盒(整箱)",
           "completeTime": "13:21",
-          "waitingMins": 117
+          "waitingMins": 123
         }
       ],
       "signed_not_recv": [
@@ -543,6 +543,17 @@
           "seq": 11
         },
         {
+          "supplierName": "鲜上榜乳业（广州）有限公司-快乐猴",
+          "poNo": "CG202606027431",
+          "reserveBillCode": "YY20260605002622",
+          "skuId": "604858",
+          "skuName": "百菲酪水牛3.8g乳蛋白纯牛奶200ml*12盒",
+          "purchaseQty": 90,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 12
+        },
+        {
           "supplierName": "浙江群鹿新材料股份有限公司",
           "poNo": "CG202606062723",
           "reserveBillCode": "YY20260608006282",
@@ -551,7 +562,7 @@
           "purchaseQty": 70,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 12
+          "seq": 13
         },
         {
           "supplierName": "安徽华安食品有限公司",
@@ -562,7 +573,7 @@
           "purchaseQty": 60,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 13
+          "seq": 14
         },
         {
           "supplierName": "浙江群鹿新材料股份有限公司",
@@ -573,7 +584,7 @@
           "purchaseQty": 35,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 14
+          "seq": 15
         },
         {
           "supplierName": "重庆市联发塑料科技股份有限公司",
@@ -584,7 +595,7 @@
           "purchaseQty": 30,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 15
+          "seq": 16
         },
         {
           "supplierName": "浙江群鹿新材料股份有限公司",
@@ -595,7 +606,7 @@
           "purchaseQty": 20,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 16
+          "seq": 17
         }
       ],
       "qc_recv_pending": [],
@@ -621,48 +632,43 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 465,
-      "done": 97,
-      "rate": 20.9
+      "total": 340,
+      "done": 61,
+      "rate": 17.9
     },
     "caging": {
-      "total": 465,
-      "done": 97,
-      "rate": 20.9,
-      "pcs_done": 3197,
-      "pcs_total": 20735,
-      "pcs_rate": 15.4
+      "total": 340,
+      "done": 61,
+      "rate": 17.9,
+      "pcs_done": 7081,
+      "pcs_total": 21025,
+      "pcs_rate": 33.7
     },
     "packing": {
       "total": 29,
-      "done": 13,
-      "rate": 44.8
+      "done": 17,
+      "rate": 58.6
     },
     "uncaged_details": [
-      {
-        "containerCode": "RQ-28-03-0900442",
-        "poiName": "越秀越富广场店",
-        "qty": 1590
-      },
       {
         "containerCode": "RQ-28-03-0900443",
         "poiName": "越秀越富广场店",
         "qty": 1323
       },
       {
-        "containerCode": "RQ-28-03-0900452",
-        "poiName": "越秀越富广场店",
-        "qty": 1065
-      },
-      {
         "containerCode": "RQ-28-03-0900426",
         "poiName": "越秀越富广场店",
-        "qty": 1056
+        "qty": 1062
       },
       {
         "containerCode": "RQ-28-03-0900434",
         "poiName": "越秀越富广场店",
         "qty": 924
+      },
+      {
+        "containerCode": "RQ-28-03-0900135",
+        "poiName": "番禺建华汇店",
+        "qty": 830
       },
       {
         "containerCode": "RQ-28-03-0900422",
@@ -680,24 +686,9 @@
         "qty": 642
       },
       {
-        "containerCode": "RQ-28-03-0900423",
-        "poiName": "越秀越富广场店",
-        "qty": 561
-      },
-      {
         "containerCode": "RQ-28-03-0900424",
         "poiName": "越秀越富广场店",
-        "qty": 558
-      },
-      {
-        "containerCode": "RQ-28-03-0900135",
-        "poiName": "番禺建华汇店",
-        "qty": 540
-      },
-      {
-        "containerCode": "RQ-28-03-0900430",
-        "poiName": "越秀越富广场店",
-        "qty": 201
+        "qty": 552
       },
       {
         "containerCode": "RQ-28-03-0900421",
@@ -722,29 +713,24 @@
     ],
     "unpacked_details": [
       {
-        "containerCode": "RQ-28-03-0900442",
-        "poiName": "越秀越富广场店",
-        "qty": 1590
-      },
-      {
         "containerCode": "RQ-28-03-0900443",
         "poiName": "越秀越富广场店",
         "qty": 1323
       },
       {
-        "containerCode": "RQ-28-03-0900452",
-        "poiName": "越秀越富广场店",
-        "qty": 1065
-      },
-      {
         "containerCode": "RQ-28-03-0900426",
         "poiName": "越秀越富广场店",
-        "qty": 1056
+        "qty": 1062
       },
       {
         "containerCode": "RQ-28-03-0900434",
         "poiName": "越秀越富广场店",
         "qty": 924
+      },
+      {
+        "containerCode": "RQ-28-03-0900135",
+        "poiName": "番禺建华汇店",
+        "qty": 830
       },
       {
         "containerCode": "RQ-28-03-0900422",
@@ -762,24 +748,9 @@
         "qty": 642
       },
       {
-        "containerCode": "RQ-28-03-0900423",
-        "poiName": "越秀越富广场店",
-        "qty": 561
-      },
-      {
         "containerCode": "RQ-28-03-0900424",
         "poiName": "越秀越富广场店",
-        "qty": 558
-      },
-      {
-        "containerCode": "RQ-28-03-0900135",
-        "poiName": "番禺建华汇店",
-        "qty": 540
-      },
-      {
-        "containerCode": "RQ-28-03-0900430",
-        "poiName": "越秀越富广场店",
-        "qty": 201
+        "qty": 552
       },
       {
         "containerCode": "RQ-28-03-0900421",
@@ -803,16 +774,16 @@
       }
     ],
     "shipping": {
-      "total": 14240,
+      "total": 10646,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
-      "multi_pallet_count": 20,
-      "multi_pallet_total": 441,
-      "multi_pallet_rate": 4.5,
-      "load_rate": 27.7,
+      "multi_pallet_count": 6,
+      "multi_pallet_total": 329,
+      "multi_pallet_rate": 1.8,
+      "load_rate": 32.7,
       "multi_pallet_details": [
         {
           "skuName": "快乐猴 柔韧面巾纸3层 100抽*20",
@@ -824,36 +795,6 @@
             "RQ-28-03-0900440"
           ],
           "qty": 324
-        },
-        {
-          "skuName": "快乐猴卫生湿巾80抽",
-          "poiName": "越秀越富广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900423",
-            "RQ-28-03-0900430"
-          ],
-          "qty": 72
-        },
-        {
-          "skuName": "快乐猴 清新美白牙膏 150g",
-          "poiName": "越秀越富广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900426",
-            "RQ-28-03-0900442"
-          ],
-          "qty": 112
-        },
-        {
-          "skuName": "快乐猴 清新柠檬洗洁精1.5kg",
-          "poiName": "越秀越富广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900426",
-            "RQ-28-03-0900442"
-          ],
-          "qty": 120
         },
         {
           "skuName": "溜溜梅 梅冻电解质冰沙200g",
@@ -876,36 +817,6 @@
           "qty": 24
         },
         {
-          "skuName": "雀巢 丝滑拿铁咖啡 268ml*3",
-          "poiName": "越秀越富广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900434",
-            "RQ-28-03-0900444"
-          ],
-          "qty": 10
-        },
-        {
-          "skuName": "好丽友 巧克力派 222g",
-          "poiName": "越秀越富广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900434",
-            "RQ-28-03-0900444"
-          ],
-          "qty": 32
-        },
-        {
-          "skuName": "白象 汤好喝招牌猪骨汤面 105.5g*5",
-          "poiName": "越秀越富广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900424",
-            "RQ-28-03-0900426"
-          ],
-          "qty": 12
-        },
-        {
           "skuName": "快乐猴 黑糖坚果沙琪玛 430g",
           "poiName": "越秀越富广场店",
           "containerCount": 2,
@@ -926,26 +837,6 @@
           "qty": 48
         },
         {
-          "skuName": "快乐猴 冰糖橘子罐头 800g",
-          "poiName": "越秀越富广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900424",
-            "RQ-28-03-0900442"
-          ],
-          "qty": 24
-        },
-        {
-          "skuName": "康师傅 大食袋红烧牛肉面 145g*5",
-          "poiName": "越秀越富广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900424",
-            "RQ-28-03-0900442"
-          ],
-          "qty": 18
-        },
-        {
           "skuName": "快乐猴 全麦原浆啤酒 500ml",
           "poiName": "越秀越富广场店",
           "containerCount": 2,
@@ -954,70 +845,10 @@
             "RQ-28-03-0900449"
           ],
           "qty": 2112
-        },
-        {
-          "skuName": "快乐猴 香橙味吸吸果汁果冻 150g",
-          "poiName": "越秀越富广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900434",
-            "RQ-28-03-0900452"
-          ],
-          "qty": 48
-        },
-        {
-          "skuName": "快乐猴 葡萄味吸吸果汁果冻 150g",
-          "poiName": "越秀越富广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900434",
-            "RQ-28-03-0900452"
-          ],
-          "qty": 48
-        },
-        {
-          "skuName": "快乐猴 水蜜桃味吸吸果汁果冻 150g",
-          "poiName": "越秀越富广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900434",
-            "RQ-28-03-0900452"
-          ],
-          "qty": 48
-        },
-        {
-          "skuName": "快乐猴 青柠味电解质水 500ml",
-          "poiName": "越秀越富广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900434",
-            "RQ-28-03-0900452"
-          ],
-          "qty": 45
-        },
-        {
-          "skuName": "快乐猴 香烤鳕鱼片 45g",
-          "poiName": "越秀越富广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900434",
-            "RQ-28-03-0900452"
-          ],
-          "qty": 80
-        },
-        {
-          "skuName": "可口可乐汽水 500ml",
-          "poiName": "越秀越富广场店",
-          "containerCount": 2,
-          "containerCodes": [
-            "RQ-28-03-0900434",
-            "RQ-28-03-0900452"
-          ],
-          "qty": 48
         }
       ],
-      "load_rate_unloaded": "71.42%",
-      "load_rate_loaded": "79.22%",
+      "load_rate_unloaded": "72.77%",
+      "load_rate_loaded": "77.02%",
       "load_rate_shipped": "98.16%",
       "low_load_containers": [
         {
@@ -1027,6 +858,15 @@
           "loadingRateVal": 40.25,
           "skuPcs": "524.000",
           "skuVolume": "0.797",
+          "planOutTime": "06-09 20:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900452",
+          "poiName": "越秀越富广场店",
+          "loadingRate": "70.93%",
+          "loadingRateVal": 70.93,
+          "skuPcs": "1065.000",
+          "skuVolume": "1.404",
           "planOutTime": "06-09 20:00"
         }
       ],
@@ -1068,6 +908,15 @@
           "planOutTime": "06-09 20:00"
         },
         {
+          "containerCode": "RQ-28-03-0900442",
+          "poiName": "越秀越富广场店",
+          "loadingRate": "89.12%",
+          "loadingRateVal": 89.12,
+          "skuPcs": "1590.000",
+          "skuVolume": "1.765",
+          "planOutTime": "06-09 20:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900449",
           "poiName": "越秀越富广场店",
           "loadingRate": "86.58%",
@@ -1077,12 +926,39 @@
           "planOutTime": "06-09 20:00"
         },
         {
+          "containerCode": "RQ-28-03-0900430",
+          "poiName": "越秀越富广场店",
+          "loadingRate": "84.93%",
+          "loadingRateVal": 84.93,
+          "skuPcs": "201.000",
+          "skuVolume": "1.682",
+          "planOutTime": "06-09 20:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900452",
+          "poiName": "越秀越富广场店",
+          "loadingRate": "70.93%",
+          "loadingRateVal": 70.93,
+          "skuPcs": "1065.000",
+          "skuVolume": "1.404",
+          "planOutTime": "06-09 20:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900423",
+          "poiName": "越秀越富广场店",
+          "loadingRate": "47.73%",
+          "loadingRateVal": 47.73,
+          "skuPcs": "361.000",
+          "skuVolume": "0.945",
+          "planOutTime": "06-09 20:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900426",
           "poiName": "越秀越富广场店",
-          "loadingRate": "127.32%",
-          "loadingRateVal": 127.32,
-          "skuPcs": "1056.000",
-          "skuVolume": "2.521",
+          "loadingRate": "128.50%",
+          "loadingRateVal": 128.5,
+          "skuPcs": "1062.000",
+          "skuVolume": "2.544",
           "planOutTime": "06-09 20:00"
         },
         {
@@ -1113,30 +989,12 @@
           "planOutTime": "06-09 20:00"
         },
         {
-          "containerCode": "RQ-28-03-0900442",
-          "poiName": "越秀越富广场店",
-          "loadingRate": "89.12%",
-          "loadingRateVal": 89.12,
-          "skuPcs": "1590.000",
-          "skuVolume": "1.765",
-          "planOutTime": "06-09 20:00"
-        },
-        {
           "containerCode": "RQ-28-03-0900421",
           "poiName": "越秀越富广场店",
           "loadingRate": "87.40%",
           "loadingRateVal": 87.4,
           "skuPcs": "120.000",
           "skuVolume": "1.730",
-          "planOutTime": "06-09 20:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900430",
-          "poiName": "越秀越富广场店",
-          "loadingRate": "84.93%",
-          "loadingRateVal": 84.93,
-          "skuPcs": "201.000",
-          "skuVolume": "1.682",
           "planOutTime": "06-09 20:00"
         },
         {
@@ -1160,28 +1018,10 @@
         {
           "containerCode": "RQ-28-03-0900424",
           "poiName": "越秀越富广场店",
-          "loadingRate": "76.59%",
-          "loadingRateVal": 76.59,
-          "skuPcs": "558.000",
-          "skuVolume": "1.516",
-          "planOutTime": "06-09 20:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900452",
-          "poiName": "越秀越富广场店",
-          "loadingRate": "70.93%",
-          "loadingRateVal": 70.93,
-          "skuPcs": "1065.000",
-          "skuVolume": "1.404",
-          "planOutTime": "06-09 20:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900423",
-          "poiName": "越秀越富广场店",
-          "loadingRate": "47.73%",
-          "loadingRateVal": 47.73,
-          "skuPcs": "361.000",
-          "skuVolume": "0.945",
+          "loadingRate": "75.41%",
+          "loadingRateVal": 75.41,
+          "skuPcs": "552.000",
+          "skuVolume": "1.493",
           "planOutTime": "06-09 20:00"
         },
         {
@@ -1223,10 +1063,10 @@
         {
           "containerCode": "RQ-28-03-0900135",
           "poiName": "番禺建华汇店",
-          "loadingRate": "59.00%",
-          "loadingRateVal": 59.0,
-          "skuPcs": "540.000",
-          "skuVolume": "1.168",
+          "loadingRate": "82.21%",
+          "loadingRateVal": 82.21,
+          "skuPcs": "830.000",
+          "skuVolume": "1.628",
           "planOutTime": "06-09 20:00"
         },
         {
@@ -1293,29 +1133,29 @@
           "planOutTime": "06-09 20:00"
         }
       ],
-      "outbound_efficiency": 4746.7,
-      "outbound_efficiency_formula": "14240 PCS / 3 人(拣播员)"
+      "outbound_efficiency": 3548.7,
+      "outbound_efficiency_formula": "10646 PCS / 3 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 14240,
+        "total": 10646,
         "picked": 0,
         "sowed": 0,
-        "caged": 3945,
-        "not_caged": 10295,
+        "caged": 3478,
+        "not_caged": 7168,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 15.4,
-        "sowed_picked": 20735
+        "cage_rate": 33.7,
+        "sowed_picked": 21025
       },
       "sku": {
-        "total": 465,
+        "total": 340,
         "picked": 0,
         "sowed": 0,
-        "caged": 97,
+        "caged": 61,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 20.9
+        "cage_rate": 17.9
       }
     },
     "status": "ok",
@@ -1323,9 +1163,9 @@
       "plan_pcs": 51825,
       "alloc_pcs": 51312,
       "alloc_rate": 99.0,
-      "picked_pcs": 20735,
-      "sow_pcs": 20735,
-      "sow_rate": 40.4,
+      "picked_pcs": 21025,
+      "sow_pcs": 21025,
+      "sow_rate": 41.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 1197,
@@ -1425,10 +1265,10 @@
       }
     ],
     "seeding": {
-      "not_started": 110,
-      "in_progress": 4,
-      "done": 155,
-      "total": 269,
+      "not_started": 111,
+      "in_progress": 3,
+      "done": 161,
+      "total": 275,
       "status": "ok"
     }
   },
@@ -1437,9 +1277,9 @@
     "total_pcs": 51825,
     "alloc_pcs": 51312,
     "alloc_rate": 99.0,
-    "picked_pcs": 20735,
-    "sow_pcs": 20735,
-    "sow_rate": 40.4,
+    "picked_pcs": 21025,
+    "sow_pcs": 21025,
+    "sow_rate": 41.0,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 1197,
@@ -1628,10 +1468,10 @@
       "N常温收退": 2,
       "N常温高叉司机": 1
     },
-    "predicted_efficiency": 2303.9,
-    "efficiency_formula": "20735 PCS(播种) / 9 人",
-    "outbound_efficiency": 4746.7,
-    "outbound_efficiency_formula": "14240 PCS / 3 人(拣播员)",
+    "predicted_efficiency": 2336.1,
+    "efficiency_formula": "21025 PCS(播种) / 9 人",
+    "outbound_efficiency": 3548.7,
+    "outbound_efficiency_formula": "10646 PCS / 3 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

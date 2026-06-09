@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-09T13:18:13",
+  "timestamp": "2026-06-09T13:24:32",
   "date": "2026-06-09",
   "warehouse": "GZ0210",
   "inbound": {
@@ -31,22 +31,22 @@
       "sign_pcs_done": 3872
     },
     "qc": {
-      "total": 2,
+      "total": 0,
       "done": 0,
-      "pending": 2,
+      "pending": 0,
       "passed": 0,
       "rejected": 0,
-      "rate": 0.0,
+      "rate": 0,
       "bill_done": 0,
-      "bill_total": 2,
+      "bill_total": 0,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 28,
+      "pcs_total": 0,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
+      "pcs_rate": 0,
       "sku_done": 0,
-      "sku_total": 2,
-      "sku_rate": 0.0
+      "sku_total": 0,
+      "sku_rate": 0
     },
     "putaway": {
       "total": 10716,
@@ -109,6 +109,10 @@
         "done": 7,
         "rate": 100.0,
         "detail": {
+          "山东仙坛鸿食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州有林贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -126,10 +130,6 @@
             "done": 1
           },
           "和路雪（中国）有限公司上海分公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "山东仙坛鸿食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -170,6 +170,12 @@
       "unsigned": [],
       "unloading": [
         {
+          "supplierName": "山东仙坛鸿食品有限公司-快乐猴",
+          "billCode": "YY20260606006155",
+          "signTime": "10:59",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "德州天诚鼎盛食品有限公司-快乐猴-自营",
           "billCode": "YY20260608006169",
           "signTime": "09:14",
@@ -180,32 +186,9 @@
           "billCode": "YY20260608000791",
           "signTime": "11:23",
           "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "山东仙坛鸿食品有限公司-快乐猴",
-          "billCode": "YY20260606006155",
-          "signTime": "10:59",
-          "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "山东仙坛鸿食品有限公司-快乐猴",
-          "skuName": "(原料)快乐猴 国潮脆皮炸鸡(大翅根) 1.89kg*6",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "山东仙坛鸿食品有限公司-快乐猴",
-          "skuName": "(原料)快乐猴 黄金脆皮炸鸡腿(琵琶腿) 2kg*6",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [],
       "signed_not_recv": [
         {
@@ -421,9 +404,9 @@
       }
     ],
     "seeding": {
-      "not_started": 140,
+      "not_started": 136,
       "in_progress": 1,
-      "done": 57,
+      "done": 61,
       "total": 198,
       "status": "ok"
     }
@@ -506,7 +489,7 @@
       "冷冻": 0,
       "常温": 0
     },
-    "all_count": 1,
+    "all_count": 2,
     "planned_trips": {
       "total": 0,
       "by_store": {},

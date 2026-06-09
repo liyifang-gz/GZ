@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-09T14:59:46",
+  "timestamp": "2026-06-09T15:05:47",
   "date": "2026-06-09",
   "warehouse": "GZ0210",
   "inbound": {
@@ -109,6 +109,10 @@
         "done": 7,
         "rate": 100.0,
         "detail": {
+          "广州有林贸易有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "天津思念食品销售有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -118,10 +122,6 @@
             "done": 1
           },
           "山东仙坛鸿食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "广州有林贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -207,46 +207,24 @@
     },
     "sowing": {
       "total": 119,
-      "done": 43,
-      "rate": 36.1
+      "done": 119,
+      "rate": 100.0
     },
     "caging": {
       "total": 119,
-      "done": 43,
-      "rate": 36.1,
-      "pcs_done": 1073,
+      "done": 119,
+      "rate": 100.0,
+      "pcs_done": 3144,
       "pcs_total": 3144,
-      "pcs_rate": 34.1
+      "pcs_rate": 100.0
     },
     "packing": {
       "total": 6,
-      "done": 4,
-      "rate": 66.7
+      "done": 6,
+      "rate": 100.0
     },
-    "uncaged_details": [
-      {
-        "containerCode": "RQ-05-03-0700671",
-        "poiName": "海珠星汇广场店",
-        "qty": 1261
-      },
-      {
-        "containerCode": "RQ-05-03-0700605",
-        "poiName": "越秀越富广场店",
-        "qty": 703
-      }
-    ],
-    "unpacked_details": [
-      {
-        "containerCode": "RQ-05-03-0700671",
-        "poiName": "海珠星汇广场店",
-        "qty": 1261
-      },
-      {
-        "containerCode": "RQ-05-03-0700605",
-        "poiName": "越秀越富广场店",
-        "qty": 703
-      }
-    ],
+    "uncaged_details": [],
+    "unpacked_details": [],
     "shipping": {
       "total": 3144,
       "done": 0,
@@ -257,7 +235,7 @@
       "multi_pallet_count": 2,
       "multi_pallet_total": 112,
       "multi_pallet_rate": 1.8,
-      "load_rate": 37.5,
+      "load_rate": 100.0,
       "multi_pallet_details": [
         {
           "skuName": "快乐猴 奥尔良肉包 640g",
@@ -280,10 +258,20 @@
           "qty": 120
         }
       ],
-      "load_rate_unloaded": "58.37%",
-      "load_rate_loaded": "85.77%",
+      "load_rate_unloaded": "--",
+      "load_rate_loaded": "65.22%",
       "load_rate_shipped": "19.78%",
-      "low_load_containers": [],
+      "low_load_containers": [
+        {
+          "containerCode": "RQ-05-03-0700674",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "16.89%",
+          "loadingRateVal": 16.89,
+          "skuPcs": "107.000",
+          "skuVolume": "0.334",
+          "planOutTime": "06-09 19:00"
+        }
+      ],
       "all_containers_detail": [
         {
           "containerCode": "RQ-05-03-0700605",
@@ -348,21 +336,21 @@
         "total": 3144,
         "picked": 0,
         "sowed": 0,
-        "caged": 1180,
-        "not_caged": 1964,
+        "caged": 3144,
+        "not_caged": 0,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 34.1,
+        "cage_rate": 100.0,
         "sowed_picked": 3144
       },
       "sku": {
         "total": 119,
         "picked": 0,
         "sowed": 0,
-        "caged": 43,
+        "caged": 119,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 36.1
+        "cage_rate": 100.0
       }
     },
     "status": "ok",
@@ -383,10 +371,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 132,
-      "in_progress": 3,
-      "done": 121,
-      "total": 256,
+      "not_started": 125,
+      "in_progress": 2,
+      "done": 133,
+      "total": 260,
       "status": "ok"
     }
   },

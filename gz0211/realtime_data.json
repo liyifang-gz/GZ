@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-09T14:12:51",
+  "timestamp": "2026-06-09T14:18:54",
   "date": "2026-06-09",
   "warehouse": "GZ0210",
   "inbound": {
@@ -206,38 +206,50 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 52,
+      "total": 61,
       "done": 52,
-      "rate": 100.0
+      "rate": 85.2
     },
     "caging": {
-      "total": 52,
+      "total": 61,
       "done": 52,
-      "rate": 100.0,
+      "rate": 85.2,
       "pcs_done": 1443,
-      "pcs_total": 1443,
-      "pcs_rate": 100.0
+      "pcs_total": 1812,
+      "pcs_rate": 79.6
     },
     "packing": {
-      "total": 4,
+      "total": 5,
       "done": 4,
-      "rate": 100.0
+      "rate": 80.0
     },
-    "uncaged_details": [],
-    "unpacked_details": [],
+    "uncaged_details": [
+      {
+        "containerCode": "RQ-05-03-0700674",
+        "poiName": "海珠星汇广场店",
+        "qty": 369
+      }
+    ],
+    "unpacked_details": [
+      {
+        "containerCode": "RQ-05-03-0700674",
+        "poiName": "海珠星汇广场店",
+        "qty": 369
+      }
+    ],
     "shipping": {
-      "total": 1443,
+      "total": 1812,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 52,
+      "multi_pallet_total": 61,
       "multi_pallet_rate": 0.0,
-      "load_rate": 100.0,
+      "load_rate": 79.6,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "--",
+      "load_rate_unloaded": "27.80%",
       "load_rate_loaded": "55.23%",
       "load_rate_shipped": "19.78%",
       "low_load_containers": [
@@ -271,6 +283,15 @@
           "planOutTime": "06-09 19:00"
         },
         {
+          "containerCode": "RQ-05-03-0700674",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "27.80%",
+          "loadingRateVal": 27.8,
+          "skuPcs": "369.000",
+          "skuVolume": "0.551",
+          "planOutTime": "06-09 19:00"
+        },
+        {
           "containerCode": "RQ-05-03-0700665",
           "poiName": "海珠星汇广场店",
           "loadingRate": "11.00%",
@@ -289,29 +310,29 @@
           "planOutTime": "06-09 19:00"
         }
       ],
-      "outbound_efficiency": 721.5,
-      "outbound_efficiency_formula": "1443 PCS / 2 人(拣播员)"
+      "outbound_efficiency": 906.0,
+      "outbound_efficiency_formula": "1812 PCS / 2 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 1443,
+        "total": 1812,
         "picked": 0,
         "sowed": 0,
         "caged": 1443,
-        "not_caged": 0,
+        "not_caged": 369,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 100.0,
-        "sowed_picked": 1443
+        "cage_rate": 79.6,
+        "sowed_picked": 1812
       },
       "sku": {
-        "total": 52,
+        "total": 61,
         "picked": 0,
         "sowed": 0,
         "caged": 52,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 100.0
+        "cage_rate": 85.2
       }
     },
     "status": "ok",
@@ -319,23 +340,23 @@
       "plan_pcs": 5358,
       "alloc_pcs": 5358,
       "alloc_rate": 100.0,
-      "picked_pcs": 1493,
-      "sow_pcs": 1443,
-      "sow_rate": 26.9,
+      "picked_pcs": 1862,
+      "sow_pcs": 1812,
+      "sow_rate": 33.8,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 240,
       "sku_alloc": 240,
-      "sku_sow": 52,
+      "sku_sow": 61,
       "sku_ship": 0,
       "total_orders": 16
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 140,
-      "in_progress": 0,
+      "not_started": 142,
+      "in_progress": 1,
       "done": 92,
-      "total": 232,
+      "total": 235,
       "status": "ok"
     }
   },
@@ -344,14 +365,14 @@
     "total_pcs": 5358,
     "alloc_pcs": 5358,
     "alloc_rate": 100.0,
-    "picked_pcs": 1493,
-    "sow_pcs": 1443,
-    "sow_rate": 26.9,
+    "picked_pcs": 1862,
+    "sow_pcs": 1812,
+    "sow_rate": 33.8,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 240,
     "sku_alloc": 240,
-    "sku_sow": 52,
+    "sku_sow": 61,
     "store_count": 5,
     "by_store": {
       "快乐猴-海珠星汇广场店-034": 2441.0,
@@ -365,14 +386,14 @@
   },
   "transport": {
     "serial_count": 0,
-    "total_depart": 1,
+    "total_depart": 2,
     "serial_rate": 0.0,
     "trip_total": null,
     "trip_depart": null,
     "trip_arrive": null,
     "status": "ok",
     "temp_breakdown": {
-      "冷藏": 1,
+      "冷藏": 2,
       "冷冻": 0,
       "常温": 0
     },
@@ -424,10 +445,10 @@
     "by_pos_scheduled": {
       "N冷冻高叉司机": 2
     },
-    "predicted_efficiency": 721.5,
-    "efficiency_formula": "1443 PCS(播种) / 2 人",
-    "outbound_efficiency": 721.5,
-    "outbound_efficiency_formula": "1443 PCS / 2 人(拣播员)",
+    "predicted_efficiency": 906.0,
+    "efficiency_formula": "1812 PCS(播种) / 2 人",
+    "outbound_efficiency": 906.0,
+    "outbound_efficiency_formula": "1812 PCS / 2 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

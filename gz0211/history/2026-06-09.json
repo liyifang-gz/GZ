@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-09T09:34:04",
+  "timestamp": "2026-06-09T09:40:04",
   "date": "2026-06-09",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 8,
-      "signed": 2,
-      "waiting": 5
+      "signed": 3,
+      "waiting": 4
     },
     "ontime": {
       "ontime": 0,
-      "early": 2,
+      "early": 3,
       "late": 0,
       "total": 7,
       "rate": 0.0,
-      "early_rate": 28.6,
+      "early_rate": 42.9,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 3,
       "done": 1,
-      "rate": 50.0,
+      "rate": 33.3,
       "pcs_done": 9,
-      "sign_pcs_done": 1009
+      "sign_pcs_done": 1309
     },
     "qc": {
-      "total": 1,
+      "total": 2,
       "done": 0,
-      "pending": 1,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 1,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 1000,
+      "pcs_total": 1300,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 1,
+      "sku_total": 2,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 7,
-        "done": 2,
-        "rate": 28.6
+        "done": 3,
+        "rate": 42.9
       },
       "pcs": {
         "total": 10856,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 16,
-        "done": 2,
-        "rate": 12.5
+        "done": 3,
+        "rate": 18.8
       },
       "supplier": {
         "total": 7,
-        "done": 2,
-        "rate": 28.6,
+        "done": 3,
+        "rate": 42.9,
         "detail": {
+          "杭州一起闯荡科技有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "德州天诚鼎盛食品有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -101,10 +105,6 @@
             "done": 0
           },
           "和路雪（中国）有限公司上海分公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "杭州一起闯荡科技有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -166,16 +166,15 @@
           "skuCount": 4,
           "pcs": 876,
           "timeSlot": "16:00 - 16:30"
-        },
-        {
-          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
-          "billCode": "YY20260604001958",
-          "skuCount": 1,
-          "pcs": 300,
-          "timeSlot": "16:00 - 16:30"
         }
       ],
       "unloading": [
+        {
+          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
+          "billCode": "YY20260604001958",
+          "signTime": "09:37",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "德州天诚鼎盛食品有限公司-快乐猴-自营",
           "billCode": "YY20260608006169",
@@ -189,6 +188,14 @@
           "supplierName": "德州天诚鼎盛食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 萌宠卡通包 350g",
           "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
+          "skuName": "金汤酸菜鱼 450g",
+          "arrivalTime": "16:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
@@ -205,6 +212,17 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 1
+        },
+        {
+          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
+          "poNo": "CG2026060210080",
+          "reserveBillCode": "YY20260604001958",
+          "skuId": "1051653",
+          "skuName": "金汤酸菜鱼 450g",
+          "purchaseQty": 300,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
         }
       ],
       "qc_recv_pending": [],
@@ -356,10 +374,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 65,
+      "not_started": 70,
       "in_progress": 0,
       "done": 0,
-      "total": 65,
+      "total": 70,
       "status": "ok"
     }
   },

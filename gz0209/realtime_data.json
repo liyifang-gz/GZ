@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-09T09:26:55",
+  "timestamp": "2026-06-09T09:34:15",
   "date": "2026-06-09",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 31,
-      "signed": 5,
-      "waiting": 26
+      "signed": 6,
+      "waiting": 25
     },
     "ontime": {
       "ontime": 0,
-      "early": 5,
+      "early": 6,
       "late": 0,
       "total": 31,
       "rate": 0.0,
-      "early_rate": 16.1,
+      "early_rate": 19.4,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 3,
+      "total": 4,
       "done": 3,
-      "rate": 100.0,
+      "rate": 75.0,
       "pcs_done": 3774,
-      "sign_pcs_done": 3774
+      "sign_pcs_done": 4014
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 240,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 71900,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 31,
-        "done": 5,
-        "rate": 16.1
+        "done": 6,
+        "rate": 19.4
       },
       "pcs": {
         "total": 74844,
@@ -72,21 +72,25 @@
       },
       "sku": {
         "total": 58,
-        "done": 12,
-        "rate": 20.7
+        "done": 13,
+        "rate": 22.4
       },
       "supplier": {
         "total": 21,
-        "done": 3,
-        "rate": 14.3,
+        "done": 4,
+        "rate": 19.0,
         "detail": {
-          "广州市凤安贸易有限公司-快乐猴": {
-            "plan": 3,
-            "done": 3
-          },
           "山东汉德酒业有限公司-快乐猴": {
             "plan": 1,
             "done": 1
+          },
+          "中山市万荣营销有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "广州市凤安贸易有限公司-快乐猴": {
+            "plan": 3,
+            "done": 3
           },
           "福克斯食品有限公司-快乐猴": {
             "plan": 1,
@@ -97,10 +101,6 @@
             "done": 0
           },
           "浙江群鹿新材料股份有限公司": {
-            "plan": 1,
-            "done": 0
-          },
-          "中山市万荣营销有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -204,13 +204,6 @@
           "skuCount": 3,
           "pcs": 125,
           "timeSlot": "14:00 - 14:30"
-        },
-        {
-          "supplierName": "中山市万荣营销有限公司-快乐猴",
-          "billCode": "YY20260608005630",
-          "skuCount": 1,
-          "pcs": 240,
-          "timeSlot": "10:30 - 11:30"
         },
         {
           "supplierName": "广州市联盟商贸有限公司-快乐猴",
@@ -381,8 +374,25 @@
           "timeSlot": "15:30 - 16:00"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "中山市万荣营销有限公司-快乐猴",
+          "billCode": "YY20260608005630",
+          "signTime": "09:27",
+          "unloadStartTime": "09:28",
+          "status": "卸货中"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "中山市万荣营销有限公司-快乐猴",
+          "skuName": "汰渍 净白去渍洗衣粉 1.15kg",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "signed_not_recv": [
         {
@@ -397,6 +407,17 @@
           "seq": 1
         },
         {
+          "supplierName": "中山市万荣营销有限公司-快乐猴",
+          "poNo": "CG202606027135",
+          "reserveBillCode": "YY20260608005630",
+          "skuId": "229496",
+          "skuName": "汰渍 净白去渍洗衣粉 1.15kg",
+          "purchaseQty": 240,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
           "supplierName": "福克斯食品有限公司-快乐猴",
           "poNo": "CG2026052610083",
           "reserveBillCode": "YY20260527001835",
@@ -405,29 +426,7 @@
           "purchaseQty": 234,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
-        },
-        {
-          "supplierName": "广州市凤安贸易有限公司-快乐猴",
-          "poNo": "CG202606044375",
-          "reserveBillCode": "YY20260605002335",
-          "skuId": "67937",
-          "skuName": "泰奇 八宝粥 370g",
-          "purchaseQty": 48,
-          "recvQty": 0,
-          "hasQc": false,
           "seq": 3
-        },
-        {
-          "supplierName": "山东汉德酒业有限公司-快乐猴",
-          "poNo": "CG202606036810",
-          "reserveBillCode": "YY20260604006990",
-          "skuId": "708682",
-          "skuName": "小象 全麦皮尔森超爽啤酒 2L",
-          "purchaseQty": 48,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 4
         }
       ],
       "qc_recv_pending": [],
@@ -833,10 +832,10 @@
       }
     ],
     "seeding": {
-      "not_started": 42,
+      "not_started": 65,
       "in_progress": 0,
       "done": 0,
-      "total": 42,
+      "total": 65,
       "status": "ok"
     }
   },

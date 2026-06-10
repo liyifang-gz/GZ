@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-10T10:58:36",
+  "timestamp": "2026-06-10T11:27:51",
   "date": "2026-06-10",
   "warehouse": "GZ0210",
   "inbound": {
@@ -31,36 +31,43 @@
       "sign_pcs_done": 1270
     },
     "qc": {
-      "total": 1,
+      "total": 0,
       "done": 0,
-      "pending": 1,
+      "pending": 0,
       "passed": 0,
       "rejected": 0,
-      "rate": 0.0,
+      "rate": 0,
       "bill_done": 0,
-      "bill_total": 1,
+      "bill_total": 0,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 40,
+      "pcs_total": 0,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
+      "pcs_rate": 0,
       "sku_done": 0,
-      "sku_total": 1,
-      "sku_rate": 0.0
+      "sku_total": 0,
+      "sku_rate": 0
     },
     "putaway": {
-      "total": 2679,
+      "total": 2719,
       "done": 1589,
-      "rate": 59.3,
-      "sku_total": 10,
+      "rate": 58.4,
+      "sku_total": 11,
       "sku_done": 8,
-      "sku_rate": 80.0,
+      "sku_rate": 72.7,
       "details": [
         {
           "poNo": "CG2026060210320",
           "hopePcs": 1090,
           "putPcs": 0,
           "hopeSku": 2,
+          "putSku": 0
+        },
+        {
+          "poNo": "CG2026060115598",
+          "hopePcs": 40,
+          "putPcs": 0,
+          "hopeSku": 1,
           "putSku": 0
         }
       ]
@@ -75,8 +82,8 @@
         "total": 2719,
         "done": 2719,
         "rate": 100.0,
-        "recv_done": 2679,
-        "recv_rate": 98.5
+        "recv_done": 2719,
+        "recv_rate": 100.0
       },
       "sku": {
         "total": 4,
@@ -126,30 +133,9 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "上海踞浒发贸易有限公司-快乐猴",
-          "skuName": "快乐猴 牛肉芝士卷 7.2kg",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [],
-      "signed_not_recv": [
-        {
-          "supplierName": "上海踞浒发贸易有限公司-快乐猴",
-          "poNo": "CG2026060115598",
-          "reserveBillCode": "YY20260609000732",
-          "skuId": "1207064",
-          "skuName": "快乐猴 牛肉芝士卷 7.2kg",
-          "purchaseQty": 40,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 1
-        }
-      ],
+      "signed_not_recv": [],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -252,10 +238,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 104,
+      "not_started": 114,
       "in_progress": 0,
       "done": 0,
-      "total": 104,
+      "total": 114,
       "status": "ok"
     }
   },
@@ -279,14 +265,14 @@
   },
   "transport": {
     "serial_count": 0,
-    "total_depart": 0,
-    "serial_rate": null,
+    "total_depart": 1,
+    "serial_rate": 0.0,
     "trip_total": null,
     "trip_depart": null,
     "trip_arrive": null,
     "status": "ok",
     "temp_breakdown": {
-      "冷藏": 0,
+      "冷藏": 1,
       "冷冻": 0,
       "常温": 0
     },
@@ -421,7 +407,7 @@
           "carrierName": "运多多（广州）",
           "temperatureLevel": 2,
           "temperatureLevelName": "冷藏车",
-          "waybillStatus": 40,
+          "waybillStatus": 60,
           "preCoolMonitorStatus": 1,
           "preCoolMonitorStatusName": "合格",
           "deliveryPoiArrivalMonitorStatus": 1,
@@ -648,46 +634,20 @@
       "status": "ok"
     },
     "departed_trips": {
-      "total": 1,
-      "by_store": {
-        "番禺建华汇店": 1
-      },
-      "details": [
-        {
-          "waybillCode": "GZ2111871014",
-          "licensePlate": "粤AAV0428",
-          "driverName": "薛志丹",
-          "carrierName": "运多多（广州）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 40,
-          "preCoolMonitorStatus": 1,
-          "preCoolMonitorStatusName": "合格",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 1,
-          "deliveryPoiArrivalQualifiedCount": 1,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1781008196000,
-          "store": "番禺建华汇店"
-        }
-      ],
+      "total": 0,
+      "by_store": {},
+      "details": [],
       "status": "ok"
     },
     "arrived_trips": {
-      "total": 14,
+      "total": 15,
       "by_store": {
         "禅城东方广场店": 5,
-        "番禺建华汇店": 5,
+        "番禺建华汇店": 6,
         "南海国昌广场店": 4
       },
-      "total_arrival_poi": 23,
-      "qualified_arrival_poi": 23,
+      "total_arrival_poi": 24,
+      "qualified_arrival_poi": 24,
       "unqualified_arrival_poi": 0,
       "details": [
         {
@@ -804,6 +764,29 @@
           "firstLadingPoiName": "KLH-广州常温1仓",
           "createTime": 1780998296000,
           "store": "禅城东方广场店"
+        },
+        {
+          "waybillCode": "GZ2111871014",
+          "licensePlate": "粤AAV0428",
+          "driverName": "薛志丹",
+          "carrierName": "运多多（广州）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 60,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 1,
+          "deliveryPoiArrivalQualifiedCount": 1,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1781008196000,
+          "store": "番禺建华汇店"
         },
         {
           "waybillCode": "GZ2111749912",

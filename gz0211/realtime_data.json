@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-10T10:29:29",
+  "timestamp": "2026-06-10T10:58:36",
   "date": "2026-06-10",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 3,
-      "signed": 2,
-      "waiting": 1
+      "signed": 3,
+      "waiting": 0
     },
     "ontime": {
       "ontime": 0,
-      "early": 2,
+      "early": 3,
       "late": 0,
       "total": 3,
       "rate": 0.0,
-      "early_rate": 66.7,
+      "early_rate": 100.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 3,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 1230
+      "sign_pcs_done": 1270
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 40,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 2679,
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 3,
-        "done": 2,
-        "rate": 66.7
+        "done": 3,
+        "rate": 100.0
       },
       "pcs": {
         "total": 2719,
@@ -80,14 +80,18 @@
       },
       "sku": {
         "total": 4,
-        "done": 3,
-        "rate": 75.0
+        "done": 4,
+        "rate": 100.0
       },
       "supplier": {
         "total": 3,
-        "done": 2,
-        "rate": 66.7,
+        "done": 3,
+        "rate": 100.0,
         "detail": {
+          "上海踞浒发贸易有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "三全食品股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -95,26 +99,20 @@
           "广东立高食品营销有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "上海踞浒发贸易有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
     },
     "details": {
       "unreserved": [],
-      "unsigned": [
+      "unsigned": [],
+      "unloading": [
         {
           "supplierName": "上海踞浒发贸易有限公司-快乐猴",
           "billCode": "YY20260609000732",
-          "skuCount": 1,
-          "pcs": 40,
-          "timeSlot": "15:00 - 15:30"
-        }
-      ],
-      "unloading": [
+          "signTime": "10:31",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "三全食品股份有限公司-快乐猴",
           "billCode": "YY20260609006003",
@@ -128,9 +126,30 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "上海踞浒发贸易有限公司-快乐猴",
+          "skuName": "快乐猴 牛肉芝士卷 7.2kg",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "上海踞浒发贸易有限公司-快乐猴",
+          "poNo": "CG2026060115598",
+          "reserveBillCode": "YY20260609000732",
+          "skuId": "1207064",
+          "skuName": "快乐猴 牛肉芝士卷 7.2kg",
+          "purchaseQty": 40,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -233,10 +252,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 84,
+      "not_started": 104,
       "in_progress": 0,
       "done": 0,
-      "total": 84,
+      "total": 104,
       "status": "ok"
     }
   },
@@ -271,7 +290,7 @@
       "冷冻": 0,
       "常温": 0
     },
-    "all_count": 0,
+    "all_count": 1,
     "planned_trips": {
       "total": 15,
       "by_store": {

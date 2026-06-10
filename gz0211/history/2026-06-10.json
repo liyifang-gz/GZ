@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-10T08:53:23",
+  "timestamp": "2026-06-10T10:25:26",
   "date": "2026-06-10",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 3,
-      "signed": 0,
-      "waiting": 3
+      "signed": 2,
+      "waiting": 1
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 2,
       "late": 0,
       "total": 3,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 66.7,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,11 +24,11 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 1230
     },
     "qc": {
       "total": 0,
@@ -49,46 +49,54 @@
       "sku_rate": 0
     },
     "putaway": {
-      "total": 1589,
+      "total": 2679,
       "done": 1589,
-      "rate": 100.0,
-      "sku_total": 8,
+      "rate": 59.3,
+      "sku_total": 10,
       "sku_done": 8,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 80.0,
+      "details": [
+        {
+          "poNo": "CG2026060210320",
+          "hopePcs": 1090,
+          "putPcs": 0,
+          "hopeSku": 2,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
         "total": 3,
-        "done": 0,
-        "rate": 0.0
+        "done": 2,
+        "rate": 66.7
       },
       "pcs": {
         "total": 2719,
         "done": 2719,
         "rate": 100.0,
-        "recv_done": 1589,
-        "recv_rate": 58.4
+        "recv_done": 2679,
+        "recv_rate": 98.5
       },
       "sku": {
         "total": 4,
-        "done": 0,
-        "rate": 0.0
+        "done": 3,
+        "rate": 75.0
       },
       "supplier": {
         "total": 3,
-        "done": 0,
-        "rate": 0.0,
+        "done": 2,
+        "rate": 66.7,
         "detail": {
           "三全食品股份有限公司-快乐猴": {
             "plan": 1,
-            "done": 0
-          },
-          "上海踞浒发贸易有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
+            "done": 1
           },
           "广东立高食品营销有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "上海踞浒发贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -99,31 +107,42 @@
       "unreserved": [],
       "unsigned": [
         {
-          "supplierName": "三全食品股份有限公司-快乐猴",
-          "billCode": "YY20260609006003",
-          "skuCount": 1,
-          "pcs": 140,
-          "timeSlot": "16:00 - 16:30"
-        },
-        {
           "supplierName": "上海踞浒发贸易有限公司-快乐猴",
           "billCode": "YY20260609000732",
           "skuCount": 1,
           "pcs": 40,
           "timeSlot": "15:00 - 15:30"
+        }
+      ],
+      "unloading": [
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "billCode": "YY20260609006003",
+          "signTime": "09:46",
+          "status": "已签到未卸货"
         },
         {
           "supplierName": "广东立高食品营销有限公司-快乐猴",
           "billCode": "YY20260608002403",
-          "skuCount": 2,
-          "pcs": 1090,
-          "timeSlot": "11:30 - 12:00"
+          "signTime": "09:46",
+          "status": "已签到未卸货"
         }
       ],
-      "unloading": [],
       "qc_pending": [],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "poNo": "CG202606094595",
+          "reserveBillCode": "YY20260609006003",
+          "skuId": "693958",
+          "skuName": "三全 龙舟粽网兜蜜枣粽 455g",
+          "purchaseQty": 140,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -226,10 +245,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 20,
+      "not_started": 84,
       "in_progress": 0,
       "done": 0,
-      "total": 20,
+      "total": 84,
       "status": "ok"
     }
   },

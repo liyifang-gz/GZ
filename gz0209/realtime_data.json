@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-10T10:58:47",
+  "timestamp": "2026-06-10T11:28:02",
   "date": "2026-06-10",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
-      "total": 13,
-      "signed": 1,
-      "waiting": 9
+      "total": 14,
+      "signed": 3,
+      "waiting": 8
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 3,
       "late": 0,
-      "total": 10,
+      "total": 11,
       "rate": 0.0,
-      "early_rate": 10.0,
+      "early_rate": 27.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
-      "done": 1,
-      "rate": 100.0,
-      "pcs_done": 540,
-      "sign_pcs_done": 540
+      "total": 3,
+      "done": 2,
+      "rate": 66.7,
+      "pcs_done": 1290,
+      "sign_pcs_done": 2010
     },
     "qc": {
-      "total": 0,
+      "total": 3,
       "done": 0,
-      "pending": 0,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 1470,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 3,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 22106,
@@ -59,9 +59,9 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 10,
-        "done": 1,
-        "rate": 10.0
+        "total": 11,
+        "done": 3,
+        "rate": 27.3
       },
       "pcs": {
         "total": 31995,
@@ -71,15 +71,23 @@
         "recv_rate": 69.1
       },
       "sku": {
-        "total": 24,
-        "done": 1,
-        "rate": 4.2
+        "total": 26,
+        "done": 4,
+        "rate": 15.4
       },
       "supplier": {
-        "total": 7,
-        "done": 1,
-        "rate": 14.3,
+        "total": 8,
+        "done": 3,
+        "rate": 37.5,
         "detail": {
+          "广州信必达供应链管理有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "微念集团股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "合肥醉滑网络科技有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -101,10 +109,6 @@
             "done": 0
           },
           "烟台双塔食品股份有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "微念集团股份有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -209,19 +213,79 @@
           "skuCount": 4,
           "pcs": 2448,
           "timeSlot": "15:00 - 16:00"
-        },
-        {
-          "supplierName": "微念集团股份有限公司-快乐猴",
-          "billCode": "YY20260602009375",
-          "skuCount": 1,
-          "pcs": 750,
-          "timeSlot": "15:30 - 16:00"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "广州信必达供应链管理有限公司-快乐猴",
+          "billCode": "YY20260610002009",
+          "signTime": "11:09",
+          "unloadStartTime": "11:15",
+          "status": "卸货中"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "微念集团股份有限公司-快乐猴",
+          "skuName": "臭宝 爆爆浓汤风味柳州螺蛳粉 330g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "11:15",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "广州信必达供应链管理有限公司-快乐猴",
+          "skuName": "恒顺镇江香醋500ml",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "广州信必达供应链管理有限公司-快乐猴",
+          "skuName": "恒顺6度白醋500ml",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "微念集团股份有限公司-快乐猴",
+          "poNo": "CG202606026418",
+          "reserveBillCode": "YY20260602009375",
+          "skuId": "251467",
+          "skuName": "臭宝 爆爆浓汤风味柳州螺蛳粉 330g",
+          "purchaseQty": 750,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "广州信必达供应链管理有限公司-快乐猴",
+          "poNo": "CG2026060115427",
+          "reserveBillCode": "YY20260610002009",
+          "skuId": "4457",
+          "skuName": "恒顺镇江香醋500ml",
+          "purchaseQty": 360,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "广州信必达供应链管理有限公司-快乐猴",
+          "poNo": "CG2026060115427",
+          "reserveBillCode": "YY20260610002009",
+          "skuId": "62777",
+          "skuName": "恒顺6度白醋500ml",
+          "purchaseQty": 360,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -346,10 +410,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 105,
+      "not_started": 114,
       "in_progress": 0,
       "done": 0,
-      "total": 105,
+      "total": 114,
       "status": "ok"
     }
   },
@@ -377,14 +441,14 @@
   },
   "transport": {
     "serial_count": 0,
-    "total_depart": 0,
-    "serial_rate": null,
+    "total_depart": 1,
+    "serial_rate": 0.0,
     "trip_total": null,
     "trip_depart": null,
     "trip_arrive": null,
     "status": "ok",
     "temp_breakdown": {
-      "冷藏": 0,
+      "冷藏": 1,
       "冷冻": 0,
       "常温": 0
     },
@@ -519,7 +583,7 @@
           "carrierName": "运多多（广州）",
           "temperatureLevel": 2,
           "temperatureLevelName": "冷藏车",
-          "waybillStatus": 40,
+          "waybillStatus": 60,
           "preCoolMonitorStatus": 1,
           "preCoolMonitorStatusName": "合格",
           "deliveryPoiArrivalMonitorStatus": 1,
@@ -746,46 +810,20 @@
       "status": "ok"
     },
     "departed_trips": {
-      "total": 1,
-      "by_store": {
-        "番禺建华汇店": 1
-      },
-      "details": [
-        {
-          "waybillCode": "GZ2111871014",
-          "licensePlate": "粤AAV0428",
-          "driverName": "薛志丹",
-          "carrierName": "运多多（广州）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 40,
-          "preCoolMonitorStatus": 1,
-          "preCoolMonitorStatusName": "合格",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 1,
-          "deliveryPoiArrivalQualifiedCount": 1,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1781008196000,
-          "store": "番禺建华汇店"
-        }
-      ],
+      "total": 0,
+      "by_store": {},
+      "details": [],
       "status": "ok"
     },
     "arrived_trips": {
-      "total": 14,
+      "total": 15,
       "by_store": {
         "禅城东方广场店": 5,
-        "番禺建华汇店": 5,
+        "番禺建华汇店": 6,
         "南海国昌广场店": 4
       },
-      "total_arrival_poi": 23,
-      "qualified_arrival_poi": 23,
+      "total_arrival_poi": 24,
+      "qualified_arrival_poi": 24,
       "unqualified_arrival_poi": 0,
       "details": [
         {
@@ -902,6 +940,29 @@
           "firstLadingPoiName": "KLH-广州常温1仓",
           "createTime": 1780998296000,
           "store": "禅城东方广场店"
+        },
+        {
+          "waybillCode": "GZ2111871014",
+          "licensePlate": "粤AAV0428",
+          "driverName": "薛志丹",
+          "carrierName": "运多多（广州）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 60,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 1,
+          "deliveryPoiArrivalQualifiedCount": 1,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1781008196000,
+          "store": "番禺建华汇店"
         },
         {
           "waybillCode": "GZ2111749912",

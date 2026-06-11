@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-11T09:14:48",
+  "timestamp": "2026-06-11T09:42:20",
   "date": "2026-06-11",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 21,
-      "signed": 2,
-      "waiting": 11
+      "signed": 3,
+      "waiting": 10
     },
     "ontime": {
       "ontime": 0,
-      "early": 2,
+      "early": 3,
       "late": 0,
       "total": 13,
       "rate": 0.0,
-      "early_rate": 15.4,
+      "early_rate": 23.1,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
-      "done": 2,
+      "total": 3,
+      "done": 3,
       "rate": 100.0,
-      "pcs_done": 1972,
-      "sign_pcs_done": 1972
+      "pcs_done": 2848,
+      "sign_pcs_done": 2848
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 408,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 15027,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 13,
-        "done": 2,
-        "rate": 15.4
+        "done": 3,
+        "rate": 23.1
       },
       "pcs": {
         "total": 22372,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 18,
-        "done": 2,
-        "rate": 11.1
+        "done": 4,
+        "rate": 22.2
       },
       "supplier": {
         "total": 12,
-        "done": 2,
-        "rate": 16.7,
+        "done": 3,
+        "rate": 25.0,
         "detail": {
+          "江苏那帕实业发展有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广东慧智农业科技有限公司-快乐猴": {
             "plan": 2,
             "done": 0
@@ -117,10 +121,6 @@
             "done": 0
           },
           "深圳红杉食品有限公司": {
-            "plan": 1,
-            "done": 0
-          },
-          "江苏那帕实业发展有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -239,13 +239,6 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "江苏那帕实业发展有限公司-快乐猴",
-          "billCode": "YY20260606002828",
-          "skuCount": 2,
-          "pcs": 876,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
           "supplierName": "湖北旭乐食品工业有限公司-快乐猴-自营",
           "billCode": "YY20260529006129",
           "skuCount": 1,
@@ -254,9 +247,41 @@
         }
       ],
       "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "江苏那帕实业发展有限公司-快乐猴",
+          "skuName": "快乐猴 每日坚果 175g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "09:38",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "江苏那帕实业发展有限公司-快乐猴",
+          "poNo": "CG202606062162",
+          "reserveBillCode": "YY20260606002828",
+          "skuId": "1292399",
+          "skuName": "快乐猴 原味混合纯坚果 380g",
+          "purchaseQty": 468,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "江苏那帕实业发展有限公司-快乐猴",
+          "poNo": "CG202606062162",
+          "reserveBillCode": "YY20260606002828",
+          "skuId": "1281022",
+          "skuName": "快乐猴 每日坚果 175g",
+          "purchaseQty": 408,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -674,10 +699,10 @@
       }
     ],
     "seeding": {
-      "not_started": 35,
+      "not_started": 102,
       "in_progress": 0,
       "done": 0,
-      "total": 35,
+      "total": 102,
       "status": "ok"
     }
   },

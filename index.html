@@ -614,7 +614,7 @@
             <div class="kpi-row" style="margin-top:8px;padding-top:8px;border-top:1px solid #f0f0f0;">
                 <div class="kpi transport-kpi-hover" id="trip-kpi"><div class="number" id="plan-trip-total" style="color:#bbb">--</div><div class="unit" style="color:#bbb" id="trip-unit">计划车次<br><span style="font-size:9px;">(请稍候)</span></div></div>
                 <div class="kpi transport-kpi-hover" id="depart-kpi"><div class="number" id="plan-trip-depart" style="color:#bbb">--</div><div class="unit" style="color:#bbb" id="depart-unit">已发车次<br><span style="font-size:9px;">(请稍候)</span></div></div>
-                <div class="kpi"><div class="number" id="plan-trip-arrive" style="color:#bbb">--</div><div class="unit" style="color:#bbb">到站车次<br><span style="font-size:9px;">(T日待到站)</span></div></div>
+                <div class="kpi"><div class="number" id="plan-trip-arrive" style="color:#bbb">--</div><div class="unit" style="color:#bbb">到站车次<br><span style="font-size:9px;">(接入中)</span></div></div>
                 <div class="kpi"><div class="number" id="plan-route-rate" style="color:#bbb">--</div><div class="unit" style="color:#bbb">串点率<br><span style="font-size:9px;">(接入中)</span></div></div>
             </div>
         </div>
@@ -1680,16 +1680,18 @@ putawayBarPct = pcsRate;
           const dDetails = dt.details || [];
           const thStyle = 'text-align:left;padding:4px 8px;background:#f9fafb;font-weight:600;white-space:nowrap';
           const tdStyle = 'padding:4px 8px;border-bottom:1px solid #f0f0f0;white-space:nowrap';
-          let dHtml = `<div style="font-size:11px;color:#888;margin-bottom:6px">运输中 ${dt.total} 条运单</div>`;
+          let dHtml = `<div style="font-size:11px;color:#888;margin-bottom:6px">已发车 ${dt.total} 辆（含配载/运输中）</div>`;
           dHtml += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
-          dHtml += `<tr><th style="${thStyle}">运单号</th><th style="${thStyle}">门店</th><th style="${thStyle}">首个装货大仓</th><th style="${thStyle}">承运商</th></tr>`;
+          dHtml += `<tr><th style="${thStyle}">运单号</th><th style="${thStyle}">门店</th><th style="${thStyle}">车牌</th><th style="${thStyle}">温度状态</th></tr>`;
           if (dDetails.length > 0) {
             dDetails.forEach(function(row) {
+              const tempOk = !row.tempStatus || row.tempStatus === '未告警过' || row.tempStatus === '--';
+              const tempColor = tempOk ? '#10b981' : '#ef4444';
               dHtml += `<tr>
                 <td style="${tdStyle};color:#10b981;font-family:monospace">${row.waybillCode||'--'}</td>
                 <td style="${tdStyle}">${row.store||'--'}</td>
-                <td style="${tdStyle}">${row.firstLadingPoiName||'--'}</td>
-                <td style="${tdStyle}">${row.carrierName||'--'}</td>
+                <td style="${tdStyle};font-family:monospace">${row.licensePlate||'--'}</td>
+                <td style="${tdStyle};color:${tempColor}">${row.tempStatus||'--'}</td>
               </tr>`;
             });
           } else {
@@ -1709,43 +1711,6 @@ putawayBarPct = pcsRate;
           if (departUnit) {
             departUnit.style.color = '#bbb';
             departUnit.innerHTML = '已发车次<br><span style="font-size:9px;">(暂无运输中)</span>';
-          }
-        }
-      }
-
-      // 到站车次渲染（芥末 QMS wayBill waybillStatus=60）
-      const arriveEl = document.getElementById('plan-trip-arrive');
-      if (arriveEl) {
-        const at = transport.arrived_trips;
-        const arriveUnit = arriveEl.parentElement.querySelector('.unit');
-        if (at && (at.total > 0 || at.status === 'ok')) {
-          arriveEl.textContent = at.total || '0';
-          arriveEl.style.color = at.total > 0 ? '#f59e0b' : '#6b7280';
-          const arrRate = at.arrival_rate;
-          const poi = at.total_arrival_poi || 0;
-          const qPoi = at.qualified_arrival_poi || 0;
-          if (arriveUnit) {
-            if (poi > 0 && arrRate !== null && arrRate !== undefined) {
-              arriveUnit.style.color = '#374151';
-              arriveUnit.innerHTML = `到站车次<br><span style="font-size:9px;color:#6b7280">到站合格 ${arrRate}%</span><br><span style="font-size:8px;color:#9ca3af">${qPoi}合格/${poi}站次</span>`;
-            } else {
-              arriveUnit.style.color = '#6b7280';
-              arriveUnit.innerHTML = '到站车次<br><span style="font-size:9px;">(T日待到站)</span>';
-            }
-          }
-        } else if (at && at.status && at.status !== 'ok') {
-          arriveEl.textContent = '--';
-          arriveEl.style.color = '#bbb';
-          if (arriveUnit) {
-            arriveUnit.style.color = '#bbb';
-            arriveUnit.innerHTML = '到站车次<br><span style="font-size:9px;">(error)</span>';
-          }
-        } else {
-          arriveEl.textContent = '0';
-          arriveEl.style.color = '#6b7280';
-          if (arriveUnit) {
-            arriveUnit.style.color = '#6b7280';
-            arriveUnit.innerHTML = '到站车次<br><span style="font-size:9px;">(T日待到站)</span>';
           }
         }
       }
@@ -1824,7 +1789,48 @@ putawayBarPct = pcsRate;
           <td style="text-align:center;font-weight:600;color:${rateColor}">${rateStr}</td>
         </tr>`;
       }
-// 合计行用 by_job 明细加总，与表格行保持一致（不用 total_inservice/actual，避免含安防等非核心岗位）
+      // 其他岗位行：by_pos_total 里有但 by_job 未覆盖的岗位
+      const byPosTotal = att.by_pos_total || {};
+      const byPosScheduled = att.by_pos_scheduled || {};
+      // 找出 by_job 已覆盖的系统岗位名（反查：展示名→系统名需遍历by_pos_total）
+      // 简单方案：by_pos_total 人数之和 - by_job 人数之和 = 其他岗位人数
+      const posTotal = Object.values(byPosTotal).reduce((a, b) => a + b, 0);
+      const posScheduled = Object.values(byPosScheduled).reduce((a, b) => a + b, 0);
+      const otherInservice = posTotal - sumInservice;
+      const otherScheduled = posScheduled - sumAttendance;
+      if (otherInservice > 0) {
+        // 找出具体是哪些岗位（by_pos_total 里，排除 by_job 已展示的）
+        // by_job 展示的系统名通过 by_pos_total 匹配：用人数差集近似，直接列出多余岗位名
+        // 精确方案：找 by_pos_total 中人数累计超出 sumInservice 的岗位
+        const coveredNames = new Set();
+        let coveredCount = 0;
+        // 先把 by_job 展示岗位对应的 by_pos_total key 标记（通过人数匹配）
+        // 更直接：遍历 by_pos_total，累加直到等于 sumInservice，其余为其他
+        const otherPosNames = [];
+        for (const [posName, cnt] of Object.entries(byPosTotal)) {
+          // 判断是否已在 by_job 中展示：检查 by_job 的 inservice 合计里是否包含了此岗位
+          // 由于 JOB_ALIAS 映射关系前端不知道，用差值判断：
+          // 把 by_pos_total 总人数 - by_job 合计人数 > 0 的岗位列出
+          // 实际上直接对比：找到 by_pos_total 中未被任何 by_job 条目覆盖的 key
+          // 粗略策略：若该岗位名不在 byJob key 中，且人数>0，则为其他
+          const directMatch = byJob[posName] !== undefined;
+          if (!directMatch) {
+            otherPosNames.push(`${posName}×${cnt}`);
+          }
+        }
+        const otherRate = otherInservice > 0 ? Math.round((otherScheduled / otherInservice) * 100) : 0;
+        const otherRateStr = otherInservice > 0 ? otherRate + "%" : "--";
+        const otherRateColor = otherRate >= 80 ? "#10b981" : otherRate >= 60 ? "#f59e0b" : "#ef4444";
+        tbody.innerHTML += `<tr>
+          <td style="color:#888">其他岗位<br><span style="font-size:11px;color:#aaa">${otherPosNames.join('、')}</span></td>
+          <td style="text-align:center;color:#888">${otherInservice}</td>
+          <td style="text-align:center;color:#888">${otherScheduled}</td>
+          <td style="text-align:center;font-weight:600;color:${otherRateColor}">${otherRateStr}</td>
+        </tr>`;
+        sumInservice += otherInservice;
+        sumAttendance += otherScheduled;
+      }
+      // 合计行用累计值（含其他岗位）
 const totalRate = sumInservice > 0 ? Math.round((sumAttendance / sumInservice) * 100) : 0;
 const totalRateStr = sumInservice > 0 ? totalRate + "%" : "--";
 const totalRateColor = totalRate >= 80 ? "#10b981" : totalRate >= 60 ? "#f59e0b" : "#ef4444";

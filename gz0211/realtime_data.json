@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-11T13:48:22",
+  "timestamp": "2026-06-11T14:03:15",
   "date": "2026-06-11",
   "warehouse": "GZ0210",
   "inbound": {
@@ -25,9 +25,9 @@
     },
     "unload": {
       "total": 6,
-      "done": 3,
-      "rate": 50.0,
-      "pcs_done": 2660,
+      "done": 4,
+      "rate": 66.7,
+      "pcs_done": 2900,
       "sign_pcs_done": 4461
     },
     "qc": {
@@ -88,6 +88,10 @@
         "done": 6,
         "rate": 85.7,
         "detail": {
+          "广东何氏蹦蹦鱼食品有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "福建御味香冷冻食品有限公司-SS": {
             "plan": 1,
             "done": 1
@@ -107,10 +111,6 @@
           "江苏益客食品集团股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "广东何氏蹦蹦鱼食品有限公司-快乐猴": {
-            "plan": 2,
-            "done": 2
           },
           "北京雪特商贸有限公司-快乐猴": {
             "plan": 1,
@@ -157,18 +157,6 @@
       ],
       "unloading": [
         {
-          "supplierName": "福建御味香冷冻食品有限公司-SS",
-          "billCode": "YY20260603004603",
-          "signTime": "13:38",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "上海大江通泰食品有限公司-快乐猴",
-          "billCode": "YY20260603002490",
-          "signTime": "13:38",
-          "status": "已签到未卸货"
-        },
-        {
           "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
           "billCode": "YY20260608011518",
           "signTime": "10:54",
@@ -180,6 +168,13 @@
           "billCode": "YY20260608011518",
           "signTime": "10:54",
           "unloadStartTime": "10:59",
+          "status": "卸货中"
+        },
+        {
+          "supplierName": "上海大江通泰食品有限公司-快乐猴",
+          "billCode": "YY20260603002490",
+          "signTime": "13:38",
+          "unloadStartTime": "13:57",
           "status": "卸货中"
         }
       ],
@@ -213,7 +208,7 @@
           "supplierName": "福建御味香冷冻食品有限公司-SS",
           "skuName": "爆汁大肉肠（脆骨风味）1.2kg",
           "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
+          "unloadFinishTime": "14:01",
           "statusLabel": "待质检"
         },
         {
@@ -221,7 +216,7 @@
           "supplierName": "福建御味香冷冻食品有限公司-SS",
           "skuName": "爆汁大肉肠（黑椒风味）1.2kg",
           "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
+          "unloadFinishTime": "14:01",
           "statusLabel": "待质检"
         }
       ],
@@ -230,19 +225,19 @@
           "supplierName": "北海玖嘉久食品有限公司-快乐猴",
           "skuName": "快乐猴 蟹味棒 168g",
           "completeTime": "11:05",
-          "waitingMins": 163
+          "waitingMins": 178
         },
         {
           "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
           "skuName": "快乐猴 青花椒金汤酸菜鱼 455g",
           "completeTime": "11:35",
-          "waitingMins": 133
+          "waitingMins": 148
         },
         {
           "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
           "skuName": "快乐猴 免浆黑鱼片 250g",
           "completeTime": "11:33",
-          "waitingMins": 135
+          "waitingMins": 150
         }
       ],
       "signed_not_recv": [
@@ -473,10 +468,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 140,
-      "in_progress": 7,
-      "done": 194,
-      "total": 341,
+      "not_started": 137,
+      "in_progress": 8,
+      "done": 206,
+      "total": 351,
       "status": "ok"
     }
   },
@@ -505,14 +500,14 @@
   },
   "transport": {
     "serial_count": 0,
-    "total_depart": 0,
-    "serial_rate": null,
+    "total_depart": 1,
+    "serial_rate": 0.0,
     "trip_total": null,
     "trip_depart": null,
     "trip_arrive": null,
     "status": "ok",
     "temp_breakdown": {
-      "冷藏": 0,
+      "冷藏": 1,
       "冷冻": 0,
       "常温": 0
     },
@@ -554,7 +549,7 @@
           "carrierName": "邦运（广州个体）",
           "temperatureLevel": 2,
           "temperatureLevelName": "冷藏车",
-          "waybillStatus": 10,
+          "waybillStatus": 40,
           "preCoolMonitorStatus": 1,
           "preCoolMonitorStatusName": "合格",
           "deliveryPoiArrivalMonitorStatus": 1,
@@ -574,9 +569,35 @@
       "status": "ok"
     },
     "departed_trips": {
-      "total": 0,
-      "by_store": {},
-      "details": [],
+      "total": 1,
+      "by_store": {
+        "越秀越富广场店": 1
+      },
+      "details": [
+        {
+          "waybillCode": "GZ2111806566",
+          "licensePlate": "粤BCN3716",
+          "driverName": "唐湘辉",
+          "carrierName": "邦运（广州个体）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 40,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1781151888000,
+          "store": "越秀越富广场店"
+        }
+      ],
       "status": "ok"
     },
     "arrived_trips": {

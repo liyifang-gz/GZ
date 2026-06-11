@@ -1695,7 +1695,7 @@ putawayBarPct = pcsRate;
           const dDetails = dt.details || [];
           const thStyle = 'text-align:left;padding:4px 8px;background:#f9fafb;font-weight:600;white-space:nowrap';
           const tdStyle = 'padding:4px 8px;border-bottom:1px solid #f0f0f0;white-space:nowrap';
-          let dHtml = `<div style="font-size:11px;color:#888;margin-bottom:6px">已发车 ${dt.total} 辆（含配载/运输中）</div>`;
+          let dHtml = `<div style="font-size:11px;color:#888;margin-bottom:6px">已发车 ${dt.total} 辆（运输中+已完成）</div>`;
           dHtml += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
           dHtml += `<tr><th style="${thStyle}">运单号</th><th style="${thStyle}">门店</th><th style="${thStyle}">车牌</th><th style="${thStyle}">温度状态</th></tr>`;
           if (dDetails.length > 0) {
@@ -1725,7 +1725,7 @@ putawayBarPct = pcsRate;
           const departUnit = departTotalEl.parentElement.querySelector('.unit');
           if (departUnit) {
             departUnit.style.color = '#bbb';
-            departUnit.innerHTML = '已发车次<br><span style="font-size:9px;">(暂无运输中)</span>';
+            departUnit.innerHTML = '已发车次<br><span style="font-size:9px;">(暂无已发车)</span>';
           }
         }
       }

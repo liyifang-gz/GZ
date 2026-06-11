@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-06-11T11:30:59",
+  "timestamp": "2026-06-11T11:51:55",
   "date": "2026-06-11",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
-      "total": 21,
+      "total": 22,
       "signed": 8,
-      "waiting": 5
+      "waiting": 6
     },
     "ontime": {
       "ontime": 0,
       "early": 7,
       "late": 1,
-      "total": 13,
+      "total": 14,
       "rate": 0.0,
-      "early_rate": 53.8,
-      "late_rate": 7.7
+      "early_rate": 50.0,
+      "late_rate": 7.1
     },
     "reserve_progress": {
       "po_total": 16,
-      "po_reserved": 11,
-      "rate": 68.8,
+      "po_reserved": 12,
+      "rate": 75.0,
       "po_data_ok": true
     },
     "unload": {
@@ -67,27 +67,31 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 13,
+        "total": 14,
         "done": 8,
-        "rate": 61.5
+        "rate": 57.1
       },
       "pcs": {
         "total": 22372,
-        "done": 7918,
-        "rate": 35.4,
+        "done": 10478,
+        "rate": 46.8,
         "recv_done": 15903,
         "recv_rate": 71.1
       },
       "sku": {
-        "total": 18,
+        "total": 19,
         "done": 9,
-        "rate": 50.0
+        "rate": 47.4
       },
       "supplier": {
-        "total": 12,
+        "total": 13,
         "done": 8,
-        "rate": 66.7,
+        "rate": 61.5,
         "detail": {
+          "广州市一惜地农产品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 0
+          },
           "广东燕塘乳业股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -142,14 +146,6 @@
     "details": {
       "unreserved": [
         {
-          "supplierName": "广州市一惜地农产品有限公司-快乐猴",
-          "poNo": "CG2026061010782",
-          "skuCount": 1,
-          "pcs": 2560,
-          "preArrivalTime": "2026-06-11",
-          "poStatus": "待确认"
-        },
-        {
           "supplierName": "华润怡宝饮料（中国）有限公司华南分公司-快乐猴",
           "poNo": "CG202606045038",
           "skuCount": 1,
@@ -183,6 +179,13 @@
         }
       ],
       "unsigned": [
+        {
+          "supplierName": "广州市一惜地农产品有限公司-快乐猴",
+          "billCode": "YY20260611002442",
+          "skuCount": 1,
+          "pcs": 2560,
+          "timeSlot": "15:00 - 16:00"
+        },
         {
           "supplierName": "广东慧智农业科技有限公司-快乐猴",
           "billCode": "YY20260610010582",
@@ -257,7 +260,7 @@
           "supplierName": "江苏那帕实业发展有限公司-快乐猴",
           "skuName": "快乐猴 每日坚果 175g",
           "completeTime": "11:02",
-          "waitingMins": 29
+          "waitingMins": 49
         }
       ],
       "signed_not_recv": [
@@ -291,8 +294,8 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 7918.0,
-      "efficiency_formula": "7918 PCS / 1 人",
+      "efficiency": 10478.0,
+      "efficiency_formula": "10478 PCS / 1 人",
       "inbound_schedule": 1
     }
   },
@@ -660,41 +663,41 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 13391,
-      "alloc_pcs": 13391,
+      "plan_pcs": 13431,
+      "alloc_pcs": 13431,
       "alloc_rate": 100.0,
       "picked_pcs": 10953,
       "sow_pcs": 10953,
-      "sow_rate": 81.8,
+      "sow_rate": 81.6,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 41,
-      "sku_alloc": 41,
+      "sku_plan": 42,
+      "sku_alloc": 42,
       "sku_sow": 12,
       "sku_ship": 0,
-      "total_orders": 16
+      "total_orders": 17
     },
     "unalloc_details": [],
     "seeding": {
       "not_started": 124,
-      "in_progress": 6,
-      "done": 95,
-      "total": 225,
+      "in_progress": 8,
+      "done": 107,
+      "total": 239,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 16,
-    "total_pcs": 13391,
-    "alloc_pcs": 13391,
+    "total_orders": 17,
+    "total_pcs": 13431,
+    "alloc_pcs": 13431,
     "alloc_rate": 100.0,
     "picked_pcs": 10953,
     "sow_pcs": 10953,
-    "sow_rate": 81.8,
+    "sow_rate": 81.6,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 41,
-    "sku_alloc": 41,
+    "sku_plan": 42,
+    "sku_alloc": 42,
     "sku_sow": 12,
     "store_count": 8,
     "by_store": {
@@ -702,7 +705,7 @@
       "快乐猴-南海比高商业中心店-041": 3396.0,
       "快乐猴-白云山水立方店-037": 3396.0,
       "快乐猴-越秀越富广场店-031": 1577.0,
-      "快乐猴-禅城东方广场店-018": 282.0,
+      "快乐猴-禅城东方广场店-018": 322.0,
       "快乐猴-海珠星汇广场店-034": 264.0,
       "快乐猴-番禺建华汇店-019": 249.0,
       "快乐猴-南海国昌广场店-023": 66.0

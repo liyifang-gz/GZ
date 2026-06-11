@@ -1678,7 +1678,12 @@ putawayBarPct = pcsRate;
           const departUnit = departTotalEl.parentElement.querySelector('.unit');
           if (departUnit) {
             departUnit.style.color = '';
-            departUnit.innerHTML = '已发车次 <button class="inb-detail-trigger" id="depart-detail-btn" onclick="toggleDetail(\'depart-store-detail\')">🔍</button>';
+            const inTransit = dt.in_transit != null ? dt.in_transit : '--';
+            const arrived60 = dt.arrived != null ? dt.arrived : '--';
+            departUnit.innerHTML = '已发车次 <button class="inb-detail-trigger" id="depart-detail-btn" onclick="toggleDetail(\'depart-store-detail\')">🔍</button>' +
+              '<br><span style="font-size:10px;color:#6b7280;font-weight:normal">' +
+              '运输中 <span style="color:#f59e0b;font-weight:600">' + inTransit + '</span>' +
+              ' &nbsp; 已完成 <span style="color:#10b981;font-weight:600">' + arrived60 + '</span></span>';
             departUnit.querySelector('#depart-detail-btn').style.display = 'inline-block';
           }
           let departDetail = document.getElementById('depart-store-detail');
@@ -1725,7 +1730,10 @@ putawayBarPct = pcsRate;
           const departUnit = departTotalEl.parentElement.querySelector('.unit');
           if (departUnit) {
             departUnit.style.color = '#bbb';
-            departUnit.innerHTML = '已发车次<br><span style="font-size:9px;">(暂无已发车)</span>';
+            departUnit.innerHTML = '已发车次<br>' +
+              '<span style="font-size:10px;color:#9ca3af;font-weight:normal">' +
+              '运输中 <span style="color:#d1d5db;font-weight:600">0</span>' +
+              ' &nbsp; 已完成 <span style="color:#d1d5db;font-weight:600">0</span></span>';
           }
         }
       }

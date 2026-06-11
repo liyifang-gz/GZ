@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-11T10:33:19",
+  "timestamp": "2026-06-11T10:59:48",
   "date": "2026-06-11",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 8,
-      "signed": 2,
-      "waiting": 6
+      "signed": 5,
+      "waiting": 3
     },
     "ontime": {
       "ontime": 0,
-      "early": 2,
+      "early": 5,
       "late": 0,
       "total": 8,
       "rate": 0.0,
-      "early_rate": 25.0,
+      "early_rate": 62.5,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 4,
       "done": 2,
-      "rate": 100.0,
+      "rate": 50.0,
       "pcs_done": 2260,
-      "sign_pcs_done": 2260
+      "sign_pcs_done": 4160
     },
     "qc": {
-      "total": 2,
+      "total": 4,
       "done": 0,
-      "pending": 2,
+      "pending": 4,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 2,
+      "bill_total": 4,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 1260,
+      "pcs_total": 2680,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 2,
+      "sku_total": 4,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 8,
-        "done": 2,
-        "rate": 25.0
+        "done": 5,
+        "rate": 62.5
       },
       "pcs": {
         "total": 1313,
@@ -72,14 +72,22 @@
       },
       "sku": {
         "total": 14,
-        "done": 3,
-        "rate": 21.4
+        "done": 8,
+        "rate": 57.1
       },
       "supplier": {
         "total": 7,
-        "done": 2,
-        "rate": 28.6,
+        "done": 4,
+        "rate": 57.1,
         "detail": {
+          "嘉兴万优食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "广东何氏蹦蹦鱼食品有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "北海玖嘉久食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -89,14 +97,6 @@
             "done": 1
           },
           "北京雪特商贸有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "广东何氏蹦蹦鱼食品有限公司-快乐猴": {
-            "plan": 2,
-            "done": 0
-          },
-          "嘉兴万优食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -147,27 +147,6 @@
           "timeSlot": "16:00 - 16:30"
         },
         {
-          "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
-          "billCode": "YY20260608011518",
-          "skuCount": 2,
-          "pcs": 1500,
-          "timeSlot": "12:00 - 13:00"
-        },
-        {
-          "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
-          "billCode": "YY20260608011518",
-          "skuCount": 2,
-          "pcs": 1500,
-          "timeSlot": "12:00 - 13:00"
-        },
-        {
-          "supplierName": "嘉兴万优食品有限公司-快乐猴",
-          "billCode": "YY20260605006766",
-          "skuCount": 1,
-          "pcs": 400,
-          "timeSlot": "14:30 - 15:00"
-        },
-        {
           "supplierName": "福建御味香冷冻食品有限公司-SS",
           "billCode": "YY20260603004603",
           "skuCount": 2,
@@ -182,22 +161,59 @@
           "timeSlot": "16:00 - 16:30"
         }
       ],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "嘉兴万优食品有限公司-快乐猴",
+          "billCode": "YY20260605006766",
+          "signTime": "10:54",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
+          "billCode": "YY20260608011518",
+          "signTime": "10:54",
+          "unloadStartTime": "10:59",
+          "status": "卸货中"
+        },
+        {
+          "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
+          "billCode": "YY20260608011518",
+          "signTime": "10:54",
+          "unloadStartTime": "10:59",
+          "status": "卸货中"
+        }
+      ],
       "qc_pending": [
         {
           "seq": 1,
           "supplierName": "北海玖嘉久食品有限公司-快乐猴",
-          "skuName": "快乐猴 锁鲜装鱼籽包 160g",
+          "skuName": "快乐猴 蟹味棒 168g",
           "arrivalTime": "11:00",
           "unloadFinishTime": "10:26",
           "statusLabel": "待质检"
         },
         {
           "seq": 2,
-          "supplierName": "北海玖嘉久食品有限公司-快乐猴",
-          "skuName": "快乐猴 蟹味棒 168g",
-          "arrivalTime": "11:00",
-          "unloadFinishTime": "10:26",
+          "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
+          "skuName": "快乐猴 青花椒金汤酸菜鱼 455g",
+          "arrivalTime": "12:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
+          "skuName": "快乐猴 免浆黑鱼片 250g",
+          "arrivalTime": "12:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "嘉兴万优食品有限公司-快乐猴",
+          "skuName": "万正奢选 手作烧卖皇 240g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],
@@ -215,6 +231,17 @@
           "seq": 1
         },
         {
+          "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
+          "poNo": "CG2026060211673",
+          "reserveBillCode": "YY20260608011518",
+          "skuId": "1203834",
+          "skuName": "快乐猴 青花椒金汤酸菜鱼 455g",
+          "purchaseQty": 500,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
           "supplierName": "北海玖嘉久食品有限公司-快乐猴",
           "poNo": "CG2026060211671",
           "reserveBillCode": "YY20260605007142",
@@ -223,7 +250,18 @@
           "purchaseQty": 480,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 3
+        },
+        {
+          "supplierName": "嘉兴万优食品有限公司-快乐猴",
+          "poNo": "CG202606054072",
+          "reserveBillCode": "YY20260605006766",
+          "skuId": "1373975",
+          "skuName": "万正奢选 手作烧卖皇 240g",
+          "purchaseQty": 400,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
         }
       ],
       "qc_recv_pending": [],
@@ -337,10 +375,10 @@
       }
     ],
     "seeding": {
-      "not_started": 178,
-      "in_progress": 5,
-      "done": 8,
-      "total": 191,
+      "not_started": 150,
+      "in_progress": 4,
+      "done": 48,
+      "total": 202,
       "status": "ok"
     }
   },

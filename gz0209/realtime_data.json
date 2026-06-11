@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-11T10:02:33",
+  "timestamp": "2026-06-11T10:30:13",
   "date": "2026-06-11",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 21,
-      "signed": 3,
-      "waiting": 10
+      "signed": 5,
+      "waiting": 8
     },
     "ontime": {
       "ontime": 0,
-      "early": 3,
+      "early": 5,
       "late": 0,
       "total": 13,
       "rate": 0.0,
-      "early_rate": 23.1,
+      "early_rate": 38.5,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,11 +24,11 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 3,
-      "done": 3,
+      "total": 5,
+      "done": 5,
       "rate": 100.0,
-      "pcs_done": 2848,
-      "sign_pcs_done": 2848
+      "pcs_done": 4138,
+      "sign_pcs_done": 4138
     },
     "qc": {
       "total": 1,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 13,
-        "done": 3,
-        "rate": 23.1
+        "done": 5,
+        "rate": 38.5
       },
       "pcs": {
         "total": 22372,
@@ -72,14 +72,22 @@
       },
       "sku": {
         "total": 18,
-        "done": 4,
-        "rate": 22.2
+        "done": 6,
+        "rate": 33.3
       },
       "supplier": {
         "total": 12,
-        "done": 3,
-        "rate": 25.0,
+        "done": 5,
+        "rate": 41.7,
         "detail": {
+          "湖北旭乐食品工业有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
+          "深圳红杉食品有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "江苏那帕实业发展有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -117,14 +125,6 @@
             "done": 0
           },
           "广州东旺国际贸易有限公司": {
-            "plan": 1,
-            "done": 0
-          },
-          "深圳红杉食品有限公司": {
-            "plan": 1,
-            "done": 0
-          },
-          "湖北旭乐食品工业有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
           }
@@ -230,20 +230,6 @@
           "skuCount": 1,
           "pcs": 2400,
           "timeSlot": "14:30 - 15:00"
-        },
-        {
-          "supplierName": "深圳红杉食品有限公司",
-          "billCode": "YY20260609003442",
-          "skuCount": 1,
-          "pcs": 300,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
-          "supplierName": "湖北旭乐食品工业有限公司-快乐猴-自营",
-          "billCode": "YY20260529006129",
-          "skuCount": 1,
-          "pcs": 990,
-          "timeSlot": "11:00 - 11:30"
         }
       ],
       "unloading": [],
@@ -314,8 +300,8 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 10953,
-      "pcs_total": 10953,
-      "pcs_rate": 100.0
+      "pcs_total": 10988,
+      "pcs_rate": 99.7
     },
     "packing": {
       "total": 18,
@@ -643,8 +629,8 @@
         "not_caged": 0,
         "pick_rate": 0,
         "sow_rate": 0,
-        "cage_rate": 100.0,
-        "sowed_picked": 10953
+        "cage_rate": 99.7,
+        "sowed_picked": 10988
       },
       "sku": {
         "total": 0,
@@ -658,19 +644,19 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 12018,
-      "alloc_pcs": 12000,
+      "plan_pcs": 13349,
+      "alloc_pcs": 13331,
       "alloc_rate": 99.9,
-      "picked_pcs": 10953,
-      "sow_pcs": 10953,
-      "sow_rate": 91.3,
+      "picked_pcs": 10988,
+      "sow_pcs": 10988,
+      "sow_rate": 82.4,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 35,
-      "sku_alloc": 35,
-      "sku_sow": 12,
+      "sku_plan": 39,
+      "sku_alloc": 39,
+      "sku_sow": 15,
       "sku_ship": 0,
-      "total_orders": 10
+      "total_orders": 12
     },
     "unalloc_details": [
       {
@@ -699,32 +685,33 @@
       }
     ],
     "seeding": {
-      "not_started": 158,
-      "in_progress": 0,
-      "done": 0,
-      "total": 158,
+      "not_started": 176,
+      "in_progress": 4,
+      "done": 8,
+      "total": 188,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 10,
-    "total_pcs": 12018,
-    "alloc_pcs": 12000,
+    "total_orders": 12,
+    "total_pcs": 13349,
+    "alloc_pcs": 13331,
     "alloc_rate": 99.9,
-    "picked_pcs": 10953,
-    "sow_pcs": 10953,
-    "sow_rate": 91.3,
+    "picked_pcs": 10988,
+    "sow_pcs": 10988,
+    "sow_rate": 82.4,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 35,
-    "sku_alloc": 35,
-    "sku_sow": 12,
-    "store_count": 8,
+    "sku_plan": 39,
+    "sku_alloc": 39,
+    "sku_sow": 15,
+    "store_count": 9,
     "by_store": {
       "快乐猴-白云新世界云集店-042": 4161.0,
       "快乐猴-南海比高商业中心店-041": 3396.0,
       "快乐猴-白云山水立方店-037": 3396.0,
-      "快乐猴-越秀越富广场店-031": 510.0,
+      "快乐猴-越秀越富广场店-031": 1577.0,
+      "快乐猴-海珠星汇广场店-034": 264.0,
       "快乐猴-禅城东方广场店-018": 262.0,
       "快乐猴-番禺建华汇店-019": 192.0,
       "快乐猴-南海国昌广场店-023": 66.0,
@@ -1587,8 +1574,8 @@
       "N常温高叉司机": 2,
       "N常温收退": 1
     },
-    "predicted_efficiency": 1095.3,
-    "efficiency_formula": "10953 PCS(播种) / 10 人",
+    "predicted_efficiency": 1098.8,
+    "efficiency_formula": "10988 PCS(播种) / 10 人",
     "outbound_efficiency": 0.0,
     "outbound_efficiency_formula": "0 PCS / 4 人(拣播员)",
     "inbound_efficiency_workers": 1,

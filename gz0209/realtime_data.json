@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-11T14:46:38",
+  "timestamp": "2026-06-11T15:01:20",
   "date": "2026-06-11",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 6,
-      "done": 3,
-      "pending": 3,
-      "passed": 3,
+      "done": 6,
+      "pending": 0,
+      "passed": 6,
       "rejected": 0,
-      "rate": 50.0,
-      "bill_done": 3,
+      "rate": 100.0,
+      "bill_done": 6,
       "bill_total": 6,
-      "pcs_done": 2352,
-      "pcs_passed": 2352,
+      "pcs_done": 2544,
+      "pcs_passed": 2544,
       "pcs_total": 2544,
       "pcs_rejected": 0,
-      "pcs_rate": 92.5,
-      "sku_done": 3,
+      "pcs_rate": 100.0,
+      "sku_done": 6,
       "sku_total": 6,
-      "sku_rate": 50.0
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 16413,
@@ -80,6 +80,14 @@
         "done": 10,
         "rate": 76.9,
         "detail": {
+          "上海喆慧健康科技有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "广州东旺国际贸易有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳华新创展商贸有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -95,14 +103,6 @@
           "广东慧智农业科技有限公司-快乐猴": {
             "plan": 2,
             "done": 2
-          },
-          "广州东旺国际贸易有限公司": {
-            "plan": 1,
-            "done": 1
-          },
-          "上海喆慧健康科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
           },
           "湖北旭乐食品工业有限公司-快乐猴-自营": {
             "plan": 1,
@@ -194,50 +194,43 @@
         }
       ],
       "unloading": [],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "广东慧智农业科技有限公司-快乐猴",
-          "skuName": "富硒大码鲜鸡蛋20枚1.2kg",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "13:32",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "广东慧智农业科技有限公司-快乐猴",
-          "skuName": "清洁大码鲜鸡蛋30枚 1.8kg",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "13:32",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
-          "supplierName": "广东慧智农业科技有限公司-快乐猴",
-          "skuName": "粗粮谷物红心蛋30枚 1.35kg",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "13:32",
-          "statusLabel": "首次进行中"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "江苏那帕实业发展有限公司-快乐猴",
           "skuName": "快乐猴 每日坚果 175g",
           "completeTime": "11:02",
-          "waitingMins": 224
+          "waitingMins": 239
+        },
+        {
+          "supplierName": "广东慧智农业科技有限公司-快乐猴",
+          "skuName": "富硒大码鲜鸡蛋20枚1.2kg",
+          "completeTime": "14:52",
+          "waitingMins": 9
+        },
+        {
+          "supplierName": "广东慧智农业科技有限公司-快乐猴",
+          "skuName": "清洁大码鲜鸡蛋30枚 1.8kg",
+          "completeTime": "14:56",
+          "waitingMins": 5
         },
         {
           "supplierName": "广东慧智农业科技有限公司-快乐猴",
           "skuName": "精选叶黄素富硒鲜鸡蛋12枚 700g",
           "completeTime": "14:42",
-          "waitingMins": 5
+          "waitingMins": 19
         },
         {
           "supplierName": "广东慧智农业科技有限公司-快乐猴",
           "skuName": "精选清洁鲜鸡蛋30枚 1.6kg",
           "completeTime": "14:32",
-          "waitingMins": 14
+          "waitingMins": 29
+        },
+        {
+          "supplierName": "广东慧智农业科技有限公司-快乐猴",
+          "skuName": "粗粮谷物红心蛋30枚 1.35kg",
+          "completeTime": "14:47",
+          "waitingMins": 13
         }
       ],
       "signed_not_recv": [
@@ -282,7 +275,7 @@
           "skuName": "富硒大码鲜鸡蛋20枚1.2kg",
           "purchaseQty": 120,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 4
         },
         {
@@ -293,7 +286,7 @@
           "skuName": "清洁大码鲜鸡蛋30枚 1.8kg",
           "purchaseQty": 40,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 5
         },
         {
@@ -304,7 +297,7 @@
           "skuName": "粗粮谷物红心蛋30枚 1.35kg",
           "purchaseQty": 32,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 6
         },
         {
@@ -342,38 +335,28 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 141,
+      "total": 88,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 141,
+      "total": 88,
       "done": 0,
       "rate": 0.0,
-      "pcs_done": 12967,
-      "pcs_total": 16296,
-      "pcs_rate": 79.6
+      "pcs_done": 14789,
+      "pcs_total": 16723,
+      "pcs_rate": 88.4
     },
     "packing": {
       "total": 28,
-      "done": 19,
-      "rate": 67.9
+      "done": 22,
+      "rate": 78.6
     },
     "uncaged_details": [
-      {
-        "containerCode": "RQ-28-03-0900042",
-        "poiName": "禅城东方广场店",
-        "qty": 1052
-      },
       {
         "containerCode": "RQ-28-03-0900242",
         "poiName": "南海国昌广场店",
         "qty": 929
-      },
-      {
-        "containerCode": "RQ-28-03-0900040",
-        "poiName": "禅城东方广场店",
-        "qty": 520
       },
       {
         "containerCode": "RQ-28-03-0900410",
@@ -381,14 +364,9 @@
         "qty": 510
       },
       {
-        "containerCode": "RQ-28-03-0900035",
+        "containerCode": "RQ-28-03-0900044",
         "poiName": "禅城东方广场店",
-        "qty": 210
-      },
-      {
-        "containerCode": "RQ-28-03-0900037",
-        "poiName": "禅城东方广场店",
-        "qty": 40
+        "qty": 427
       },
       {
         "containerCode": "RQ-28-03-0900238",
@@ -408,19 +386,9 @@
     ],
     "unpacked_details": [
       {
-        "containerCode": "RQ-28-03-0900042",
-        "poiName": "禅城东方广场店",
-        "qty": 1052
-      },
-      {
         "containerCode": "RQ-28-03-0900242",
         "poiName": "南海国昌广场店",
         "qty": 929
-      },
-      {
-        "containerCode": "RQ-28-03-0900040",
-        "poiName": "禅城东方广场店",
-        "qty": 520
       },
       {
         "containerCode": "RQ-28-03-0900410",
@@ -428,14 +396,9 @@
         "qty": 510
       },
       {
-        "containerCode": "RQ-28-03-0900035",
+        "containerCode": "RQ-28-03-0900044",
         "poiName": "禅城东方广场店",
-        "qty": 210
-      },
-      {
-        "containerCode": "RQ-28-03-0900037",
-        "poiName": "禅城东方广场店",
-        "qty": 40
+        "qty": 427
       },
       {
         "containerCode": "RQ-28-03-0900238",
@@ -454,19 +417,19 @@
       }
     ],
     "shipping": {
-      "total": 3329,
+      "total": 1934,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 141,
+      "multi_pallet_total": 88,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "38.68%",
-      "load_rate_loaded": "80.82%",
+      "load_rate_unloaded": "25.85%",
+      "load_rate_loaded": "79.84%",
       "load_rate_shipped": "--",
       "low_load_containers": [
         {
@@ -477,6 +440,15 @@
           "skuPcs": "264.000",
           "skuVolume": "0.571",
           "planOutTime": "06-11 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900035",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "42.76%",
+          "loadingRateVal": 42.76,
+          "skuPcs": "210.000",
+          "skuVolume": "0.847",
+          "planOutTime": "06-11 20:00"
         },
         {
           "containerCode": "RQ-28-03-0900708",
@@ -524,21 +496,21 @@
           "planOutTime": "06-11 22:00"
         },
         {
+          "containerCode": "RQ-28-03-0900040",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "60.73%",
+          "loadingRateVal": 60.73,
+          "skuPcs": "520.000",
+          "skuVolume": "1.202",
+          "planOutTime": "06-11 22:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900702",
           "poiName": "白云新世界云集店",
           "loadingRate": "63.52%",
           "loadingRateVal": 63.52,
           "skuPcs": "516.000",
           "skuVolume": "1.258",
-          "planOutTime": "06-11 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900038",
-          "poiName": "禅城东方广场店",
-          "loadingRate": "68.93%",
-          "loadingRateVal": 68.93,
-          "skuPcs": "683.000",
-          "skuVolume": "1.365",
           "planOutTime": "06-11 22:00"
         },
         {
@@ -575,6 +547,15 @@
           "loadingRateVal": 70.76,
           "skuPcs": "96.000",
           "skuVolume": "1.401",
+          "planOutTime": "06-11 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900038",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "71.90%",
+          "loadingRateVal": 71.9,
+          "skuPcs": "723.000",
+          "skuVolume": "1.424",
           "planOutTime": "06-11 22:00"
         }
       ],
@@ -769,21 +750,21 @@
           "planOutTime": "06-11 22:00"
         },
         {
-          "containerCode": "RQ-28-03-0900038",
-          "poiName": "禅城东方广场店",
-          "loadingRate": "68.93%",
-          "loadingRateVal": 68.93,
-          "skuPcs": "683.000",
-          "skuVolume": "1.365",
-          "planOutTime": "06-11 22:00"
-        },
-        {
           "containerCode": "RQ-28-03-0900042",
           "poiName": "禅城东方广场店",
           "loadingRate": "114.36%",
           "loadingRateVal": 114.36,
           "skuPcs": "1052.000",
           "skuVolume": "2.264",
+          "planOutTime": "06-11 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900038",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "71.90%",
+          "loadingRateVal": 71.9,
+          "skuPcs": "723.000",
+          "skuVolume": "1.424",
           "planOutTime": "06-11 22:00"
         },
         {
@@ -805,12 +786,12 @@
           "planOutTime": "06-11 20:00"
         },
         {
-          "containerCode": "RQ-28-03-0900037",
+          "containerCode": "RQ-28-03-0900044",
           "poiName": "禅城东方广场店",
-          "loadingRate": "2.97%",
-          "loadingRateVal": 2.97,
-          "skuPcs": "40.000",
-          "skuVolume": "0.059",
+          "loadingRate": "27.80%",
+          "loadingRateVal": 27.8,
+          "skuPcs": "427.000",
+          "skuVolume": "0.550",
           "planOutTime": "06-11 22:00"
         },
         {
@@ -832,23 +813,23 @@
           "planOutTime": "06-11 22:00"
         }
       ],
-      "outbound_efficiency": 832.2,
-      "outbound_efficiency_formula": "3329 PCS / 4 人(拣播员)"
+      "outbound_efficiency": 483.5,
+      "outbound_efficiency_formula": "1934 PCS / 4 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 3329,
+        "total": 1934,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 3329,
+        "not_caged": 1934,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 79.6,
-        "sowed_picked": 16296
+        "cage_rate": 88.4,
+        "sowed_picked": 16723
       },
       "sku": {
-        "total": 141,
+        "total": 88,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -863,8 +844,8 @@
       "alloc_pcs": 21101,
       "alloc_rate": 100.0,
       "picked_pcs": 16723,
-      "sow_pcs": 16296,
-      "sow_rate": 77.2,
+      "sow_pcs": 16723,
+      "sow_rate": 79.3,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 469,
@@ -875,10 +856,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 136,
-      "in_progress": 8,
-      "done": 255,
-      "total": 399,
+      "not_started": 147,
+      "in_progress": 7,
+      "done": 268,
+      "total": 422,
       "status": "ok"
     }
   },
@@ -888,8 +869,8 @@
     "alloc_pcs": 21101,
     "alloc_rate": 100.0,
     "picked_pcs": 16723,
-    "sow_pcs": 16296,
-    "sow_rate": 77.2,
+    "sow_pcs": 16723,
+    "sow_rate": 79.3,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 469,
@@ -992,8 +973,8 @@
           "transportAccumulationMonitorStatusName": "合格",
           "transportDurationMonitorStatus": 1,
           "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
+          "totalArrivalPoiNum": 1,
+          "deliveryPoiArrivalQualifiedCount": 1,
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1781151888000,
@@ -1048,8 +1029,8 @@
           "transportAccumulationMonitorStatusName": "合格",
           "transportDurationMonitorStatus": 1,
           "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
+          "totalArrivalPoiNum": 1,
+          "deliveryPoiArrivalQualifiedCount": 1,
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1781151888000,
@@ -1115,10 +1096,10 @@
       "N常温高叉司机": 2,
       "N常温收退": 1
     },
-    "predicted_efficiency": 1629.6,
-    "efficiency_formula": "16296 PCS(播种) / 10 人",
-    "outbound_efficiency": 832.2,
-    "outbound_efficiency_formula": "3329 PCS / 4 人(拣播员)",
+    "predicted_efficiency": 1672.3,
+    "efficiency_formula": "16723 PCS(播种) / 10 人",
+    "outbound_efficiency": 483.5,
+    "outbound_efficiency_formula": "1934 PCS / 4 人(拣播员)",
     "inbound_efficiency_workers": 1,
     "status": "ok"
   }

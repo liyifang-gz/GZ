@@ -965,6 +965,8 @@ let countdownTimer;
 
         } else if (key === 'unsigned') {
           // ── 未签到预约单（可排序，后端已去重+注入seq） ──
+          var _uTotalSku = 0, _uTotalPcs = 0;
+          list.forEach(function(r){ _uTotalSku += r.skuCount||0; _uTotalPcs += r.pcs||0; });
           html = renderInbTable('inb-unsigned-tbl', list, [
             {key:'seq',          label:'序号', num:true},
             {key:'supplierName', label:'供应商'},
@@ -973,6 +975,18 @@ let countdownTimer;
             {key:'pcs',          label:'采购数量', num:true},
             {key:'timeSlot',     label:'预约送货时段'}
           ], key, 'seq', doRender);
+          // 合计行（渲染后插入）
+          setTimeout(function() {
+            var tbl = document.getElementById('inb-unsigned-tbl');
+            if (!tbl) return;
+            var foot = document.createElement('tfoot');
+            foot.innerHTML = '<tr style="font-weight:600;background:#f3f4f6;border-top:2px solid #d1d5db;">' +
+              '<td colspan="3" style="text-align:right;padding-right:8px;">合计</td>' +
+              '<td>' + _uTotalSku + '</td>' +
+              '<td style="color:#ef4444">' + _uTotalPcs.toLocaleString() + '</td>' +
+              '<td></td></tr>';
+            tbl.appendChild(foot);
+          }, 80);
 
         } else if (key === 'unloading') {
           // ── 已签到未卸货（可排序） ──

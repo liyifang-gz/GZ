@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-11T11:30:48",
+  "timestamp": "2026-06-11T11:51:44",
   "date": "2026-06-11",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 3,
-      "done": 1,
-      "pending": 2,
-      "passed": 0,
+      "done": 3,
+      "pending": 0,
+      "passed": 2,
       "rejected": 1,
-      "rate": 33.3,
-      "bill_done": 1,
+      "rate": 100.0,
+      "bill_done": 3,
       "bill_total": 3,
-      "pcs_done": 780,
-      "pcs_passed": 0,
+      "pcs_done": 2280,
+      "pcs_passed": 1500,
       "pcs_total": 2280,
       "pcs_rejected": 780,
-      "pcs_rate": 34.2,
-      "sku_done": 1,
+      "pcs_rate": 100.0,
+      "sku_done": 3,
       "sku_total": 3,
-      "sku_rate": 33.3
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 1252,
@@ -185,45 +185,28 @@
           "status": "卸货中"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
-          "skuName": "快乐猴 青花椒金汤酸菜鱼 455g",
-          "arrivalTime": "12:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
-          "skuName": "快乐猴 免浆黑鱼片 250g",
-          "arrivalTime": "12:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "北海玖嘉久食品有限公司-快乐猴",
           "skuName": "快乐猴 蟹味棒 168g",
           "completeTime": "11:05",
-          "waitingMins": 26
-        }
-      ],
-      "signed_not_recv": [
+          "waitingMins": 47
+        },
         {
           "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
-          "poNo": "CG2026060211673",
-          "reserveBillCode": "YY20260608011518",
-          "skuId": "1203834",
           "skuName": "快乐猴 青花椒金汤酸菜鱼 455g",
-          "purchaseQty": 500,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 1
+          "completeTime": "11:35",
+          "waitingMins": 17
+        },
+        {
+          "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
+          "skuName": "快乐猴 免浆黑鱼片 250g",
+          "completeTime": "11:33",
+          "waitingMins": 18
         }
       ],
+      "signed_not_recv": [],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -336,9 +319,9 @@
     ],
     "seeding": {
       "not_started": 124,
-      "in_progress": 6,
-      "done": 95,
-      "total": 225,
+      "in_progress": 9,
+      "done": 106,
+      "total": 239,
       "status": "ok"
     }
   },

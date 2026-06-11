@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-11T10:59:59",
+  "timestamp": "2026-06-11T11:28:10",
   "date": "2026-06-11",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 21,
-      "signed": 6,
-      "waiting": 7
+      "signed": 8,
+      "waiting": 5
     },
     "ontime": {
       "ontime": 0,
-      "early": 6,
-      "late": 0,
+      "early": 7,
+      "late": 1,
       "total": 13,
       "rate": 0.0,
-      "early_rate": 46.2,
-      "late_rate": 0.0
+      "early_rate": 53.8,
+      "late_rate": 7.7
     },
     "reserve_progress": {
       "po_total": 16,
@@ -24,62 +24,82 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 6,
-      "done": 5,
-      "rate": 83.3,
-      "pcs_done": 4138,
-      "sign_pcs_done": 6538
+      "total": 8,
+      "done": 6,
+      "rate": 75.0,
+      "pcs_done": 4195,
+      "sign_pcs_done": 7105
     },
     "qc": {
-      "total": 2,
-      "done": 0,
+      "total": 3,
+      "done": 1,
       "pending": 2,
-      "passed": 0,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
-      "bill_total": 2,
-      "pcs_done": 0,
-      "pcs_passed": 0,
-      "pcs_total": 2808,
+      "rate": 33.3,
+      "bill_done": 1,
+      "bill_total": 3,
+      "pcs_done": 408,
+      "pcs_passed": 408,
+      "pcs_total": 3318,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
-      "sku_total": 2,
-      "sku_rate": 0.0
+      "pcs_rate": 12.3,
+      "sku_done": 1,
+      "sku_total": 3,
+      "sku_rate": 33.3
     },
     "putaway": {
-      "total": 15495,
+      "total": 15903,
       "done": 15495,
-      "rate": 100.0,
-      "sku_total": 75,
+      "rate": 97.4,
+      "sku_total": 76,
       "sku_done": 75,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 98.7,
+      "details": [
+        {
+          "poNo": "CG202606062162",
+          "hopePcs": 876,
+          "putPcs": 468,
+          "hopeSku": 2,
+          "putSku": 1
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
         "total": 13,
-        "done": 6,
-        "rate": 46.2
+        "done": 8,
+        "rate": 61.5
       },
       "pcs": {
         "total": 22372,
         "done": 7918,
         "rate": 35.4,
-        "recv_done": 15495,
-        "recv_rate": 69.3
+        "recv_done": 15903,
+        "recv_rate": 71.1
       },
       "sku": {
         "total": 18,
-        "done": 7,
-        "rate": 38.9
+        "done": 9,
+        "rate": 50.0
       },
       "supplier": {
         "total": 12,
-        "done": 6,
-        "rate": 50.0,
+        "done": 8,
+        "rate": 66.7,
         "detail": {
+          "广东燕塘乳业股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "江苏那帕实业发展有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "深圳华新创展商贸有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州东旺国际贸易有限公司": {
             "plan": 1,
             "done": 1
@@ -89,10 +109,6 @@
             "done": 1
           },
           "深圳红杉食品有限公司": {
-            "plan": 1,
-            "done": 1
-          },
-          "江苏那帕实业发展有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -112,15 +128,7 @@
             "plan": 1,
             "done": 1
           },
-          "深圳华新创展商贸有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
           "晋江市宏海塑料实业有限公司": {
-            "plan": 1,
-            "done": 0
-          },
-          "广东燕塘乳业股份有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -190,24 +198,10 @@
           "timeSlot": "15:30 - 16:00"
         },
         {
-          "supplierName": "深圳华新创展商贸有限公司-快乐猴",
-          "billCode": "YY20260610008034",
-          "skuCount": 1,
-          "pcs": 510,
-          "timeSlot": "10:00 - 10:30"
-        },
-        {
           "supplierName": "晋江市宏海塑料实业有限公司",
           "billCode": "YY20260610007332",
           "skuCount": 1,
           "pcs": 15,
-          "timeSlot": "15:30 - 16:00"
-        },
-        {
-          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
-          "billCode": "YY20260610006922",
-          "skuCount": 1,
-          "pcs": 57,
           "timeSlot": "15:30 - 16:00"
         },
         {
@@ -227,6 +221,12 @@
       ],
       "unloading": [
         {
+          "supplierName": "深圳华新创展商贸有限公司-快乐猴",
+          "billCode": "YY20260610008034",
+          "signTime": "11:04",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "广州东旺国际贸易有限公司",
           "billCode": "YY20260609006869",
           "signTime": "10:52",
@@ -237,22 +237,29 @@
       "qc_pending": [
         {
           "seq": 1,
-          "supplierName": "江苏那帕实业发展有限公司-快乐猴",
-          "skuName": "快乐猴 每日坚果 175g",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "09:38",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
           "supplierName": "广州东旺国际贸易有限公司",
           "skuName": "华丰 三鲜伊面 86g*5",
           "arrivalTime": "14:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "深圳华新创展商贸有限公司-快乐猴",
+          "skuName": "伊利 金典纯牛奶 250ml*12",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "江苏那帕实业发展有限公司-快乐猴",
+          "skuName": "快乐猴 每日坚果 175g",
+          "completeTime": "11:02",
+          "waitingMins": 26
+        }
+      ],
       "signed_not_recv": [
         {
           "supplierName": "广州东旺国际贸易有限公司",
@@ -266,12 +273,12 @@
           "seq": 1
         },
         {
-          "supplierName": "江苏那帕实业发展有限公司-快乐猴",
-          "poNo": "CG202606062162",
-          "reserveBillCode": "YY20260606002828",
-          "skuId": "1281022",
-          "skuName": "快乐猴 每日坚果 175g",
-          "purchaseQty": 408,
+          "supplierName": "深圳华新创展商贸有限公司-快乐猴",
+          "poNo": "CG202606105584",
+          "reserveBillCode": "YY20260610008034",
+          "skuId": "14262",
+          "skuName": "伊利 金典纯牛奶 250ml*12",
+          "purchaseQty": 510,
           "recvQty": 0,
           "hasQc": false,
           "seq": 2
@@ -653,41 +660,41 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 13331,
-      "alloc_pcs": 13331,
+      "plan_pcs": 13391,
+      "alloc_pcs": 13391,
       "alloc_rate": 100.0,
       "picked_pcs": 10953,
       "sow_pcs": 10953,
-      "sow_rate": 82.2,
+      "sow_rate": 81.8,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 38,
-      "sku_alloc": 38,
+      "sku_plan": 41,
+      "sku_alloc": 41,
       "sku_sow": 12,
       "sku_ship": 0,
-      "total_orders": 13
+      "total_orders": 16
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 148,
-      "in_progress": 6,
-      "done": 48,
-      "total": 202,
+      "not_started": 124,
+      "in_progress": 10,
+      "done": 89,
+      "total": 223,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 13,
-    "total_pcs": 13331,
-    "alloc_pcs": 13331,
+    "total_orders": 16,
+    "total_pcs": 13391,
+    "alloc_pcs": 13391,
     "alloc_rate": 100.0,
     "picked_pcs": 10953,
     "sow_pcs": 10953,
-    "sow_rate": 82.2,
+    "sow_rate": 81.8,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 38,
-    "sku_alloc": 38,
+    "sku_plan": 41,
+    "sku_alloc": 41,
     "sku_sow": 12,
     "store_count": 8,
     "by_store": {
@@ -695,9 +702,9 @@
       "快乐猴-南海比高商业中心店-041": 3396.0,
       "快乐猴-白云山水立方店-037": 3396.0,
       "快乐猴-越秀越富广场店-031": 1577.0,
+      "快乐猴-禅城东方广场店-018": 282.0,
       "快乐猴-海珠星汇广场店-034": 264.0,
-      "快乐猴-禅城东方广场店-018": 262.0,
-      "快乐猴-番禺建华汇店-019": 209.0,
+      "快乐猴-番禺建华汇店-019": 249.0,
       "快乐猴-南海国昌广场店-023": 66.0
     },
     "unalloc_details": [],

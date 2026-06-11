@@ -1701,26 +1701,30 @@ putawayBarPct = pcsRate;
           const tdStyle = 'padding:4px 8px;border-bottom:1px solid #f0f0f0;white-space:nowrap';
           let dHtml = `<div style="font-size:11px;color:#888;margin-bottom:6px">已发车 ${dt.total} 辆（运输中+已完成）</div>`;
           dHtml += '<table style="width:100%;border-collapse:collapse;font-size:12px">';
-          dHtml += `<tr><th style="${thStyle}">运单号</th><th style="${thStyle}">门店</th><th style="${thStyle}">车牌</th><th style="${thStyle}">温度状态</th></tr>`;
+          dHtml += `<tr><th style="${thStyle}">运单号</th><th style="${thStyle}">门店</th><th style="${thStyle}">车牌</th><th style="${thStyle}">到站合格状态</th><th style="${thStyle}">运单状态</th></tr>`;
           if (dDetails.length > 0) {
             dDetails.forEach(function(row) {
-              const tempOk = !row.tempStatus || row.tempStatus === '未告警过' || row.tempStatus === '--';
-              const tempColor = tempOk ? '#10b981' : '#ef4444';
+              const arrivalStatus = row.deliveryPoiArrivalMonitorStatusName || '--';
+              const arrivalOk = arrivalStatus === '--' || arrivalStatus === '合格' || arrivalStatus === '未告警过';
+              const arrivalColor = arrivalOk ? '#10b981' : '#ef4444';
+              const waybillStatusLabel = row._status_label || '--';
+              const statusColor = waybillStatusLabel === '运输中' ? '#f59e0b' : waybillStatusLabel === '已完成' ? '#10b981' : '#6b7280';
               dHtml += `<tr>
                 <td style="${tdStyle};color:#10b981;font-family:monospace">${row.waybillCode||'--'}</td>
                 <td style="${tdStyle}">${row.store||'--'}</td>
                 <td style="${tdStyle};font-family:monospace">${row.licensePlate||'--'}</td>
-                <td style="${tdStyle};color:${tempColor}">${row.tempStatus||'--'}</td>
+                <td style="${tdStyle};color:${arrivalColor}">${arrivalStatus}</td>
+                <td style="${tdStyle};color:${statusColor}">${waybillStatusLabel}</td>
               </tr>`;
             });
           } else {
             const allStores = ['禅城东方广场店','番禺建华汇店','南海国昌广场店'];
             allStores.forEach(function(s) {
               const cnt = (dt.by_store||{})[s];
-              if (cnt > 0) dHtml += `<tr><td style="${tdStyle}" colspan="3">${s}</td><td style="${tdStyle};color:#10b981">${cnt}车</td></tr>`;
+              if (cnt > 0) dHtml += `<tr><td style="${tdStyle}" colspan="4">${s}</td><td style="${tdStyle};color:#10b981">${cnt}车</td></tr>`;
             });
           }
-          dHtml += `<tr style="background:#f9fafb"><td style="padding:4px 8px;font-weight:600" colspan="3">合计</td><td style="padding:4px 8px;font-weight:600;color:#10b981">${dt.total} 车</td></tr>`;
+          dHtml += `<tr style="background:#f9fafb"><td style="padding:4px 8px;font-weight:600" colspan="4">合计</td><td style="padding:4px 8px;font-weight:600;color:#10b981">${dt.total} 车</td></tr>`;
           dHtml += '</table>';
           departDetail.innerHTML = dHtml;
         } else {

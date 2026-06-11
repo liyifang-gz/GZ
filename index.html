@@ -964,14 +964,15 @@ let countdownTimer;
           }
 
         } else if (key === 'unsigned') {
-          // ── 未签到预约单（可排序） ──
+          // ── 未签到预约单（可排序，后端已去重+注入seq） ──
           html = renderInbTable('inb-unsigned-tbl', list, [
+            {key:'seq',          label:'序号', num:true},
             {key:'supplierName', label:'供应商'},
             {key:'billCode',     label:'预约单号'},
             {key:'skuCount',     label:'SKU数', num:true},
             {key:'pcs',          label:'采购数量', num:true},
             {key:'timeSlot',     label:'预约送货时段'}
-          ], key, 'pcs', doRender);
+          ], key, 'seq', doRender);
 
         } else if (key === 'unloading') {
           // ── 已签到未卸货（可排序） ──

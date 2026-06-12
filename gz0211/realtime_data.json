@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-12T11:42:52",
+  "timestamp": "2026-06-12T11:51:51",
   "date": "2026-06-12",
   "warehouse": "GZ0210",
   "inbound": {
@@ -197,7 +197,7 @@
           "supplierName": "北京雪特商贸有限公司-快乐猴",
           "skuName": "三全 牛肉大葱水饺 450g",
           "completeTime": "11:16",
-          "waitingMins": 26
+          "waitingMins": 35
         }
       ],
       "signed_not_recv": [
@@ -284,7 +284,7 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 0,
+      "pcs_total": 18,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -324,7 +324,7 @@
         "pick_rate": 0,
         "sow_rate": 0,
         "cage_rate": 0.0,
-        "sowed_picked": 0
+        "sowed_picked": 18
       },
       "sku": {
         "total": 0,
@@ -338,44 +338,46 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 0,
-      "alloc_pcs": 0,
-      "alloc_rate": 0,
+      "plan_pcs": 18,
+      "alloc_pcs": 18,
+      "alloc_rate": 100.0,
       "picked_pcs": 0,
       "sow_pcs": 0,
-      "sow_rate": 0,
+      "sow_rate": 0.0,
       "ship_pcs": 0,
-      "ship_rate": 0,
-      "sku_plan": 0,
-      "sku_alloc": 0,
+      "ship_rate": 0.0,
+      "sku_plan": 1,
+      "sku_alloc": 1,
       "sku_sow": 0,
       "sku_ship": 0,
-      "total_orders": 0
+      "total_orders": 1
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 151,
-      "in_progress": 4,
-      "done": 70,
-      "total": 225,
+      "not_started": 148,
+      "in_progress": 6,
+      "done": 74,
+      "total": 228,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 0,
-    "total_pcs": 0,
-    "alloc_pcs": 0,
-    "alloc_rate": 0,
+    "total_orders": 1,
+    "total_pcs": 18,
+    "alloc_pcs": 18,
+    "alloc_rate": 100.0,
     "picked_pcs": 0,
     "sow_pcs": 0,
-    "sow_rate": 0,
+    "sow_rate": 0.0,
     "ship_pcs": 0,
-    "ship_rate": 0,
-    "sku_plan": 0,
-    "sku_alloc": 0,
+    "ship_rate": 0.0,
+    "sku_plan": 1,
+    "sku_alloc": 1,
     "sku_sow": 0,
-    "store_count": 0,
-    "by_store": {},
+    "store_count": 1,
+    "by_store": {
+      "快乐猴-番禺建华汇店-019": 18.0
+    },
     "unalloc_details": [],
     "status": "ok"
   },
@@ -841,29 +843,6 @@
           "store": "南海国昌广场店"
         },
         {
-          "waybillCode": "GZ2111909020",
-          "licensePlate": "粤BE52722",
-          "driverName": "刘旭华",
-          "carrierName": "优乐（广州）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 40,
-          "preCoolMonitorStatus": 1,
-          "preCoolMonitorStatusName": "合格",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 1,
-          "deliveryPoiArrivalQualifiedCount": 1,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1781227831000,
-          "store": "海珠星汇广场店"
-        },
-        {
           "waybillCode": "GZ2111816521",
           "licensePlate": "粤AGR8799",
           "driverName": "邱健民",
@@ -884,6 +863,29 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1781228581000,
+          "store": "海珠星汇广场店"
+        },
+        {
+          "waybillCode": "GZ2111909020",
+          "licensePlate": "粤BE52722",
+          "driverName": "刘旭华",
+          "carrierName": "优乐（广州）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 60,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 1,
+          "deliveryPoiArrivalQualifiedCount": 1,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1781227831000,
           "store": "海珠星汇广场店"
         },
         {
@@ -1305,8 +1307,8 @@
     },
     "departed_trips": {
       "total": 39,
-      "in_transit": 4,
-      "arrived": 35,
+      "in_transit": 3,
+      "arrived": 36,
       "by_store": {
         "禅城东方广场店": 6,
         "番禺建华汇店": 8,
@@ -1772,30 +1774,6 @@
           "_status_label": "已完成"
         },
         {
-          "waybillCode": "GZ2111909020",
-          "licensePlate": "粤BE52722",
-          "driverName": "刘旭华",
-          "carrierName": "优乐（广州）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 40,
-          "preCoolMonitorStatus": 1,
-          "preCoolMonitorStatusName": "合格",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 1,
-          "deliveryPoiArrivalQualifiedCount": 1,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1781227831000,
-          "store": "海珠星汇广场店",
-          "_status_label": "运输中"
-        },
-        {
           "waybillCode": "GZ2111816521",
           "licensePlate": "粤AGR8799",
           "driverName": "邱健民",
@@ -1818,6 +1796,30 @@
           "createTime": 1781228581000,
           "store": "海珠星汇广场店",
           "_status_label": "运输中"
+        },
+        {
+          "waybillCode": "GZ2111909020",
+          "licensePlate": "粤BE52722",
+          "driverName": "刘旭华",
+          "carrierName": "优乐（广州）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 60,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 1,
+          "deliveryPoiArrivalQualifiedCount": 1,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1781227831000,
+          "store": "海珠星汇广场店",
+          "_status_label": "已完成"
         },
         {
           "waybillCode": "GZ2111998035",
@@ -2255,16 +2257,16 @@
       "status": "ok"
     },
     "arrived_trips": {
-      "total": 35,
+      "total": 36,
       "by_store": {
         "禅城东方广场店": 6,
         "番禺建华汇店": 8,
         "南海国昌广场店": 5,
-        "海珠星汇广场店": 8,
+        "海珠星汇广场店": 9,
         "越秀越富广场店": 8
       },
-      "total_arrival_poi": 42,
-      "qualified_arrival_poi": 42,
+      "total_arrival_poi": 43,
+      "qualified_arrival_poi": 43,
       "unqualified_arrival_poi": 0,
       "details": [
         {
@@ -2703,6 +2705,29 @@
           "firstLadingPoiName": "KLH-广州常温1仓",
           "createTime": 1781171411000,
           "store": "南海国昌广场店"
+        },
+        {
+          "waybillCode": "GZ2111909020",
+          "licensePlate": "粤BE52722",
+          "driverName": "刘旭华",
+          "carrierName": "优乐（广州）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 60,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 1,
+          "deliveryPoiArrivalQualifiedCount": 1,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1781227831000,
+          "store": "海珠星汇广场店"
         },
         {
           "waybillCode": "GZ2111998035",

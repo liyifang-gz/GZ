@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-12T10:31:29",
+  "timestamp": "2026-06-12T10:41:30",
   "date": "2026-06-12",
   "warehouse": "GZ0210",
   "inbound": {
@@ -31,22 +31,22 @@
       "sign_pcs_done": 17001
     },
     "qc": {
-      "total": 3,
+      "total": 0,
       "done": 0,
-      "pending": 3,
+      "pending": 0,
       "passed": 0,
       "rejected": 0,
-      "rate": 0.0,
+      "rate": 0,
       "bill_done": 0,
-      "bill_total": 3,
+      "bill_total": 0,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 15990,
+      "pcs_total": 0,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
+      "pcs_rate": 0,
       "sku_done": 0,
-      "sku_total": 3,
-      "sku_rate": 0.0
+      "sku_total": 0,
+      "sku_rate": 0
     },
     "putaway": {
       "total": 577,
@@ -88,6 +88,10 @@
         "done": 4,
         "rate": 57.1,
         "detail": {
+          "安徽易达润食品科技有限责任公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳市金禧康食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -97,10 +101,6 @@
             "done": 1
           },
           "深圳市三德鑫实业有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "安徽易达润食品科技有限责任公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -174,6 +174,12 @@
       ],
       "unloading": [
         {
+          "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
+          "billCode": "YY20260608003464",
+          "signTime": "09:07",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "深圳市金禧康食品有限公司-快乐猴",
           "billCode": "YY20260610001183",
           "signTime": "09:00",
@@ -184,40 +190,9 @@
           "billCode": "YY20260610001844",
           "signTime": "09:00",
           "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
-          "billCode": "YY20260608003464",
-          "signTime": "09:07",
-          "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
-          "skuName": "快乐猴 生牛乳绿豆雪糕 70g*6",
-          "arrivalTime": "09:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
-          "skuName": "快乐猴 生牛乳提子雪糕 70g*6",
-          "arrivalTime": "09:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
-          "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
-          "skuName": "快乐猴 萌猴雪糕 65g",
-          "arrivalTime": "09:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [],
       "signed_not_recv": [
         {
@@ -367,10 +342,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 163,
+      "not_started": 161,
       "in_progress": 5,
-      "done": 8,
-      "total": 176,
+      "done": 13,
+      "total": 179,
       "status": "ok"
     }
   },
@@ -854,29 +829,6 @@
           "store": "南海国昌广场店"
         },
         {
-          "waybillCode": "GZ2111909020",
-          "licensePlate": "粤BE52722",
-          "driverName": "刘旭华",
-          "carrierName": "优乐（广州）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 40,
-          "preCoolMonitorStatus": 1,
-          "preCoolMonitorStatusName": "合格",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1781227831000,
-          "store": "海珠星汇广场店"
-        },
-        {
           "waybillCode": "GZ2111816521",
           "licensePlate": "粤AGR8799",
           "driverName": "邱健民",
@@ -897,6 +849,29 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1781228581000,
+          "store": "海珠星汇广场店"
+        },
+        {
+          "waybillCode": "GZ2111909020",
+          "licensePlate": "粤BE52722",
+          "driverName": "刘旭华",
+          "carrierName": "优乐（广州）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 40,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1781227831000,
           "store": "海珠星汇广场店"
         },
         {
@@ -1091,8 +1066,8 @@
           "temperatureLevel": 2,
           "temperatureLevelName": "冷藏车",
           "waybillStatus": 10,
-          "preCoolMonitorStatus": 3,
-          "preCoolMonitorStatusName": "--",
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
           "deliveryPoiArrivalMonitorStatus": 1,
           "deliveryPoiArrivalMonitorStatusName": "合格",
           "transportAccumulationMonitorStatus": 1,
@@ -1761,30 +1736,6 @@
           "_status_label": "已完成"
         },
         {
-          "waybillCode": "GZ2111909020",
-          "licensePlate": "粤BE52722",
-          "driverName": "刘旭华",
-          "carrierName": "优乐（广州）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 40,
-          "preCoolMonitorStatus": 1,
-          "preCoolMonitorStatusName": "合格",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1781227831000,
-          "store": "海珠星汇广场店",
-          "_status_label": "运输中"
-        },
-        {
           "waybillCode": "GZ2111816521",
           "licensePlate": "粤AGR8799",
           "driverName": "邱健民",
@@ -1805,6 +1756,30 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1781228581000,
+          "store": "海珠星汇广场店",
+          "_status_label": "运输中"
+        },
+        {
+          "waybillCode": "GZ2111909020",
+          "licensePlate": "粤BE52722",
+          "driverName": "刘旭华",
+          "carrierName": "优乐（广州）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 40,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1781227831000,
           "store": "海珠星汇广场店",
           "_status_label": "运输中"
         },

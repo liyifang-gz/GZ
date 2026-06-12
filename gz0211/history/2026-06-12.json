@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-12T12:43:19",
+  "timestamp": "2026-06-12T14:49:46",
   "date": "2026-06-12",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 8,
-      "signed": 5,
-      "waiting": 3
+      "signed": 8,
+      "waiting": 0
     },
     "ontime": {
       "ontime": 2,
-      "early": 3,
-      "late": 0,
+      "early": 4,
+      "late": 2,
       "total": 8,
       "rate": 25.0,
-      "early_rate": 37.5,
-      "late_rate": 0.0
+      "early_rate": 50.0,
+      "late_rate": 25.0
     },
     "reserve_progress": {
       "po_total": 7,
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 5,
+      "total": 8,
       "done": 2,
-      "rate": 40.0,
+      "rate": 25.0,
       "pcs_done": 500,
-      "sign_pcs_done": 17201
+      "sign_pcs_done": 17763
     },
     "qc": {
-      "total": 1,
-      "done": 1,
-      "pending": 0,
-      "passed": 1,
+      "total": 16,
+      "done": 2,
+      "pending": 14,
+      "passed": 2,
       "rejected": 0,
-      "rate": 100.0,
-      "bill_done": 1,
-      "bill_total": 1,
-      "pcs_done": 200,
-      "pcs_passed": 200,
-      "pcs_total": 200,
+      "rate": 12.5,
+      "bill_done": 2,
+      "bill_total": 16,
+      "pcs_done": 650,
+      "pcs_passed": 650,
+      "pcs_total": 762,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
-      "sku_done": 1,
-      "sku_total": 1,
-      "sku_rate": 100.0
+      "pcs_rate": 85.3,
+      "sku_done": 2,
+      "sku_total": 11,
+      "sku_rate": 18.2
     },
     "putaway": {
       "total": 15811,
@@ -75,8 +75,8 @@
     "dimensions": {
       "reserve": {
         "total": 8,
-        "done": 5,
-        "rate": 62.5
+        "done": 8,
+        "rate": 100.0
       },
       "pcs": {
         "total": 16679,
@@ -87,21 +87,21 @@
       },
       "sku": {
         "total": 27,
-        "done": 12,
-        "rate": 44.4
+        "done": 27,
+        "rate": 100.0
       },
       "supplier": {
         "total": 7,
-        "done": 5,
-        "rate": 71.4,
+        "done": 7,
+        "rate": 100.0,
         "detail": {
-          "深圳市三德鑫实业有限公司-快乐猴": {
+          "杭州一起闯荡科技有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
-          "郯城瑞发德食品加工有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 1
+          "苏州瑷玛森食品有限公司": {
+            "plan": 2,
+            "done": 2
           },
           "北京雪特商贸有限公司-快乐猴": {
             "plan": 1,
@@ -111,17 +111,17 @@
             "plan": 1,
             "done": 1
           },
-          "深圳市金禧康食品有限公司-快乐猴": {
+          "深圳市三德鑫实业有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
-          "苏州瑷玛森食品有限公司": {
-            "plan": 2,
-            "done": 0
-          },
-          "杭州一起闯荡科技有限公司-快乐猴": {
+          "郯城瑞发德食品加工有限公司-快乐猴-自营": {
             "plan": 1,
-            "done": 0
+            "done": 1
+          },
+          "深圳市金禧康食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
           }
         }
       }
@@ -145,37 +145,24 @@
           "poStatus": "已完成"
         }
       ],
-      "unsigned": [
+      "unsigned": [],
+      "unloading": [
+        {
+          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
+          "billCode": "YY20260609006903",
+          "signTime": "13:59",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
           "billCode": "YY20260610006992",
-          "skuCount": 8,
-          "pcs": 51,
-          "timeSlot": "09:00 - 09:30",
-          "seq": 1
+          "signTime": "14:01",
+          "status": "已签到未卸货"
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
           "billCode": "YY20260610006894",
-          "skuCount": 6,
-          "pcs": 61,
-          "timeSlot": "09:00 - 09:30",
-          "seq": 2
-        },
-        {
-          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
-          "billCode": "YY20260609006903",
-          "skuCount": 1,
-          "pcs": 450,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 3
-        }
-      ],
-      "unloading": [
-        {
-          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
-          "billCode": "YY20260610001844",
-          "signTime": "09:00",
+          "signTime": "14:00",
           "status": "已签到未卸货"
         },
         {
@@ -185,19 +172,144 @@
           "status": "已签到未卸货"
         },
         {
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "billCode": "YY20260610001844",
+          "signTime": "09:00",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "深圳市金禧康食品有限公司-快乐猴",
           "billCode": "YY20260610001183",
           "signTime": "09:00",
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "法式奶香片6kg",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "核桃马里奥面包4.2kg",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "芝心岩焗吐司10.2kg",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "丹麦奶酥菠萝包（面包）9.12kg",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "(原料)蒜香法棍 8kg",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "(原料)黄油大羊角面包 3.9kg",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "法式奶香片6kg",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "蝴蝶酥10.8kg",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 9,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "核桃马里奥面包4.2kg",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 10,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "芝心岩焗吐司10.2kg",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 11,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "丹麦奶酥菠萝包（面包）9.12kg",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 12,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "(原料)蒜香法棍 8kg",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 13,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "(原料)无花果乳酪欧包 7.2kg",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 14,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "(原料)香肠一口酥面包 7.2kg",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "北京雪特商贸有限公司-快乐猴",
           "skuName": "三全 牛肉大葱水饺 450g",
           "completeTime": "11:16",
-          "waitingMins": 87
+          "waitingMins": 213
+        },
+        {
+          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
+          "skuName": "叮叮懒人菜 双蛋白藜麦鸡排 300g",
+          "completeTime": "14:20",
+          "waitingMins": 29
         }
       ],
       "signed_not_recv": [
@@ -224,6 +336,17 @@
           "seq": 2
         },
         {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026060210323",
+          "reserveBillCode": "YY20260610006894",
+          "skuId": "1157449",
+          "skuName": "法式奶香片6kg",
+          "purchaseQty": 25,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
           "supplierName": "深圳市金禧康食品有限公司-快乐猴",
           "poNo": "CG2026060816847",
           "reserveBillCode": "YY20260610001183",
@@ -232,7 +355,150 @@
           "purchaseQty": 24,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
+          "seq": 4
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG202606106878",
+          "reserveBillCode": "YY20260610006992",
+          "skuId": "1157758",
+          "skuName": "核桃马里奥面包4.2kg",
+          "purchaseQty": 14,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026060210323",
+          "reserveBillCode": "YY20260610006894",
+          "skuId": "1157971",
+          "skuName": "芝心岩焗吐司10.2kg",
+          "purchaseQty": 10,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG202606106878",
+          "reserveBillCode": "YY20260610006992",
+          "skuId": "1466049",
+          "skuName": "(原料)无花果乳酪欧包 7.2kg",
+          "purchaseQty": 9,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG202606106878",
+          "reserveBillCode": "YY20260610006992",
+          "skuId": "1157449",
+          "skuName": "法式奶香片6kg",
+          "purchaseQty": 8,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 8
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026060210323",
+          "reserveBillCode": "YY20260610006894",
+          "skuId": "1432290",
+          "skuName": "(原料)蒜香法棍 8kg",
+          "purchaseQty": 8,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 9
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG202606106878",
+          "reserveBillCode": "YY20260610006992",
+          "skuId": "1158211",
+          "skuName": "丹麦奶酥菠萝包（面包）9.12kg",
+          "purchaseQty": 7,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 10
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026060210323",
+          "reserveBillCode": "YY20260610006894",
+          "skuId": "1158211",
+          "skuName": "丹麦奶酥菠萝包（面包）9.12kg",
+          "purchaseQty": 7,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 11
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG202606106878",
+          "reserveBillCode": "YY20260610006992",
+          "skuId": "1157971",
+          "skuName": "芝心岩焗吐司10.2kg",
+          "purchaseQty": 6,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 12
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026060210323",
+          "reserveBillCode": "YY20260610006894",
+          "skuId": "1462170",
+          "skuName": "(原料)黄油大羊角面包 3.9kg",
+          "purchaseQty": 6,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 13
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026060210323",
+          "reserveBillCode": "YY20260610006894",
+          "skuId": "1157758",
+          "skuName": "核桃马里奥面包4.2kg",
+          "purchaseQty": 5,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 14
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG202606106878",
+          "reserveBillCode": "YY20260610006992",
+          "skuId": "1432290",
+          "skuName": "(原料)蒜香法棍 8kg",
+          "purchaseQty": 4,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 15
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG202606106878",
+          "reserveBillCode": "YY20260610006992",
+          "skuId": "1467268",
+          "skuName": "(原料)香肠一口酥面包 7.2kg",
+          "purchaseQty": 2,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 16
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG202606106878",
+          "reserveBillCode": "YY20260610006992",
+          "skuId": "1157494",
+          "skuName": "蝴蝶酥10.8kg",
+          "purchaseQty": 1,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 17
         }
       ],
       "qc_recv_pending": [],
@@ -275,167 +541,166 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 0,
-      "done": 0,
-      "rate": 0.0
+      "total": 49,
+      "done": 21,
+      "rate": 42.9
     },
     "caging": {
-      "total": 0,
-      "done": 0,
-      "rate": 0.0,
-      "pcs_done": 0,
-      "pcs_total": 3540,
-      "pcs_rate": 0.0
+      "total": 49,
+      "done": 21,
+      "rate": 42.9,
+      "pcs_done": 594,
+      "pcs_total": 1376,
+      "pcs_rate": 43.2
     },
     "packing": {
-      "total": 0,
-      "done": 0,
-      "rate": 0.0
+      "total": 2,
+      "done": 1,
+      "rate": 50.0
     },
-    "uncaged_details": [],
-    "unpacked_details": [],
+    "uncaged_details": [
+      {
+        "containerCode": "RQ-05-03-0700756",
+        "poiName": "禅城东方广场店",
+        "qty": 782
+      }
+    ],
+    "unpacked_details": [
+      {
+        "containerCode": "RQ-05-03-0700756",
+        "poiName": "禅城东方广场店",
+        "qty": 782
+      }
+    ],
     "shipping": {
-      "total": 0,
+      "total": 1376,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 0,
+      "multi_pallet_total": 49,
       "multi_pallet_rate": 0.0,
-      "load_rate": 0.0,
+      "load_rate": 43.2,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "--",
-      "load_rate_loaded": "--",
+      "load_rate_unloaded": "59.02%",
+      "load_rate_loaded": "100.22%",
       "load_rate_shipped": "--",
       "low_load_containers": [],
-      "all_containers_detail": [],
-      "outbound_efficiency": 0.0,
-      "outbound_efficiency_formula": "0 PCS / 2 人(拣播员)"
+      "all_containers_detail": [
+        {
+          "containerCode": "RQ-05-03-0700756",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "59.02%",
+          "loadingRateVal": 59.02,
+          "skuPcs": "782.000",
+          "skuVolume": "1.169",
+          "planOutTime": "06-12 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700583",
+          "poiName": "越秀越富广场店",
+          "loadingRate": "100.22%",
+          "loadingRateVal": 100.22,
+          "skuPcs": "594.000",
+          "skuVolume": "1.984",
+          "planOutTime": "06-12 19:00"
+        }
+      ],
+      "outbound_efficiency": 688.0,
+      "outbound_efficiency_formula": "1376 PCS / 2 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 0,
+        "total": 1376,
         "picked": 0,
         "sowed": 0,
-        "caged": 0,
-        "not_caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
-        "cage_rate": 0.0,
-        "sowed_picked": 3540
+        "caged": 594,
+        "not_caged": 782,
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
+        "cage_rate": 43.2,
+        "sowed_picked": 1376
       },
       "sku": {
-        "total": 0,
+        "total": 49,
         "picked": 0,
         "sowed": 0,
-        "caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
-        "cage_rate": 0
+        "caged": 21,
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
+        "cage_rate": 42.9
       }
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 3544,
-      "alloc_pcs": 3540,
-      "alloc_rate": 99.9,
-      "picked_pcs": 0,
-      "sow_pcs": 0,
-      "sow_rate": 0.0,
+      "plan_pcs": 7499,
+      "alloc_pcs": 7499,
+      "alloc_rate": 100.0,
+      "picked_pcs": 1376,
+      "sow_pcs": 1376,
+      "sow_rate": 18.3,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 172,
-      "sku_alloc": 172,
-      "sku_sow": 0,
+      "sku_plan": 318,
+      "sku_alloc": 318,
+      "sku_sow": 136,
       "sku_ship": 0,
-      "total_orders": 7
+      "total_orders": 10
     },
-    "unalloc_details": [
-      {
-        "receiverName": "快乐猴-禅城东方广场店-018",
-        "orderNo": "DB2026061295611",
-        "skuNum": 65,
-        "planQty": 1361,
-        "allocQty": 1358,
-        "unallocQty": 3
-      },
-      {
-        "receiverName": "快乐猴-南海国昌广场店-023",
-        "orderNo": "DB2026061295604",
-        "skuNum": 45,
-        "planQty": 913,
-        "allocQty": 912,
-        "unallocQty": 1
-      }
-    ],
+    "unalloc_details": [],
     "seeding": {
-      "not_started": 150,
+      "not_started": 183,
       "in_progress": 8,
-      "done": 109,
-      "total": 267,
+      "done": 207,
+      "total": 398,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 7,
-    "total_pcs": 3544,
-    "alloc_pcs": 3540,
-    "alloc_rate": 99.9,
-    "picked_pcs": 0,
-    "sow_pcs": 0,
-    "sow_rate": 0.0,
+    "total_orders": 10,
+    "total_pcs": 7499,
+    "alloc_pcs": 7499,
+    "alloc_rate": 100.0,
+    "picked_pcs": 1376,
+    "sow_pcs": 1376,
+    "sow_rate": 18.3,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 172,
-    "sku_alloc": 172,
-    "sku_sow": 0,
-    "store_count": 3,
+    "sku_plan": 318,
+    "sku_alloc": 318,
+    "sku_sow": 136,
+    "store_count": 5,
     "by_store": {
+      "快乐猴-越秀越富广场店-031": 2065.0,
+      "快乐猴-海珠星汇广场店-034": 1890.0,
       "快乐猴-禅城东方广场店-018": 1421.0,
       "快乐猴-番禺建华汇店-019": 1150.0,
       "快乐猴-南海国昌广场店-023": 973.0
     },
-    "unalloc_details": [
-      {
-        "receiverName": "快乐猴-禅城东方广场店-018",
-        "orderNo": "DB2026061295611",
-        "skuNum": 65,
-        "planQty": 1361,
-        "allocQty": 1358,
-        "unallocQty": 3
-      },
-      {
-        "receiverName": "快乐猴-南海国昌广场店-023",
-        "orderNo": "DB2026061295604",
-        "skuNum": 45,
-        "planQty": 913,
-        "allocQty": 912,
-        "unallocQty": 1
-      }
-    ],
+    "unalloc_details": [],
     "status": "ok"
   },
   "transport": {
-    "serial_count": 0,
-    "total_depart": 6,
-    "serial_rate": 0.0,
+    "serial_count": 2,
+    "total_depart": 8,
+    "serial_rate": 0.25,
     "trip_total": null,
     "trip_depart": null,
     "trip_arrive": null,
     "status": "ok",
     "temp_breakdown": {
-      "冷藏": 6,
+      "冷藏": 8,
       "冷冻": 0,
       "常温": 0
     },
-    "all_count": 8,
+    "all_count": 10,
     "planned_trips": {
-      "total": 2,
+      "total": 4,
       "by_store": {
-        "海珠星汇广场店": 1,
-        "越秀越富广场店": 1
+        "海珠星汇广场店": 2,
+        "越秀越富广场店": 2
       },
       "details": [
         {
@@ -445,7 +710,7 @@
           "carrierName": "优乐（广州）",
           "temperatureLevel": 5,
           "temperatureLevelName": "常温车",
-          "waybillStatus": 10,
+          "waybillStatus": 50,
           "preCoolMonitorStatus": 3,
           "preCoolMonitorStatusName": "--",
           "deliveryPoiArrivalMonitorStatus": 1,
@@ -462,13 +727,36 @@
           "store": "海珠星汇广场店"
         },
         {
+          "waybillCode": "GZ2111886253",
+          "licensePlate": "粤A325G8",
+          "driverName": "周杰",
+          "carrierName": "优乐（广州）",
+          "temperatureLevel": 1,
+          "temperatureLevelName": "冷冻车",
+          "waybillStatus": 40,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 1,
+          "deliveryPoiArrivalQualifiedCount": 1,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷冻1仓",
+          "createTime": 1781239848000,
+          "store": "海珠星汇广场店"
+        },
+        {
           "waybillCode": "GZ2111883231",
           "licensePlate": "粤AA40312",
           "driverName": "陈海波",
           "carrierName": "优乐（广州）",
           "temperatureLevel": 5,
           "temperatureLevelName": "常温车",
-          "waybillStatus": 10,
+          "waybillStatus": 50,
           "preCoolMonitorStatus": 3,
           "preCoolMonitorStatusName": "--",
           "deliveryPoiArrivalMonitorStatus": 1,
@@ -483,16 +771,91 @@
           "firstLadingPoiName": "KLH-广州常温1仓",
           "createTime": 1781238503000,
           "store": "越秀越富广场店"
+        },
+        {
+          "waybillCode": "GZ2111886253",
+          "licensePlate": "粤A325G8",
+          "driverName": "周杰",
+          "carrierName": "优乐（广州）",
+          "temperatureLevel": 1,
+          "temperatureLevelName": "冷冻车",
+          "waybillStatus": 40,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 1,
+          "deliveryPoiArrivalQualifiedCount": 1,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷冻1仓",
+          "createTime": 1781239848000,
+          "store": "越秀越富广场店"
         }
       ],
       "status": "ok"
     },
     "departed_trips": {
-      "total": 0,
-      "in_transit": 0,
+      "total": 2,
+      "in_transit": 2,
       "arrived": 0,
-      "by_store": {},
-      "details": [],
+      "by_store": {
+        "海珠星汇广场店": 1,
+        "越秀越富广场店": 1
+      },
+      "details": [
+        {
+          "waybillCode": "GZ2111886253",
+          "licensePlate": "粤A325G8",
+          "driverName": "周杰",
+          "carrierName": "优乐（广州）",
+          "temperatureLevel": 1,
+          "temperatureLevelName": "冷冻车",
+          "waybillStatus": 40,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 1,
+          "deliveryPoiArrivalQualifiedCount": 1,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷冻1仓",
+          "createTime": 1781239848000,
+          "store": "海珠星汇广场店",
+          "_status_label": "运输中"
+        },
+        {
+          "waybillCode": "GZ2111886253",
+          "licensePlate": "粤A325G8",
+          "driverName": "周杰",
+          "carrierName": "优乐（广州）",
+          "temperatureLevel": 1,
+          "temperatureLevelName": "冷冻车",
+          "waybillStatus": 40,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 1,
+          "deliveryPoiArrivalQualifiedCount": 1,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷冻1仓",
+          "createTime": 1781239848000,
+          "store": "越秀越富广场店",
+          "_status_label": "运输中"
+        }
+      ],
       "status": "ok"
     },
     "arrived_trips": {
@@ -505,9 +868,9 @@
       "status": "ok",
       "arrival_rate": null
     },
-    "temp_rate": null,
-    "temp_qualified": 0,
-    "temp_total": 0,
+    "temp_rate": 1.0,
+    "temp_qualified": 2,
+    "temp_total": 2,
     "temp_abnormal": [],
     "temp_status": "ok"
   },
@@ -530,10 +893,10 @@
     "by_pos_scheduled": {
       "N冷冻高叉司机": 2
     },
-    "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS(播种) / 2 人",
-    "outbound_efficiency": 0.0,
-    "outbound_efficiency_formula": "0 PCS / 2 人(拣播员)",
+    "predicted_efficiency": 688.0,
+    "efficiency_formula": "1376 PCS(播种) / 2 人",
+    "outbound_efficiency": 688.0,
+    "outbound_efficiency_formula": "1376 PCS / 2 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

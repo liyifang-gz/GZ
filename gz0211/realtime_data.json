@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-12T15:24:52",
+  "timestamp": "2026-06-12T15:38:01",
   "date": "2026-06-12",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 4,
-      "done": 2,
-      "pending": 2,
-      "passed": 2,
+      "done": 4,
+      "pending": 0,
+      "passed": 4,
       "rejected": 0,
-      "rate": 50.0,
-      "bill_done": 2,
+      "rate": 100.0,
+      "bill_done": 4,
       "bill_total": 4,
-      "pcs_done": 650,
-      "pcs_passed": 650,
+      "pcs_done": 661,
+      "pcs_passed": 661,
       "pcs_total": 661,
       "pcs_rejected": 0,
-      "pcs_rate": 98.3,
-      "sku_done": 2,
+      "pcs_rate": 100.0,
+      "sku_done": 4,
       "sku_total": 4,
-      "sku_rate": 50.0
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 15811,
@@ -149,14 +149,14 @@
       "unloading": [
         {
           "supplierName": "苏州瑷玛森食品有限公司",
-          "billCode": "YY20260610006894",
-          "signTime": "14:00",
+          "billCode": "YY20260610006992",
+          "signTime": "14:01",
           "status": "已签到未卸货"
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
-          "billCode": "YY20260610006992",
-          "signTime": "14:01",
+          "billCode": "YY20260610006894",
+          "signTime": "14:00",
           "status": "已签到未卸货"
         },
         {
@@ -184,36 +184,31 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "苏州瑷玛森食品有限公司",
-          "skuName": "(原料)无花果乳酪欧包 7.2kg",
-          "arrivalTime": "09:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "苏州瑷玛森食品有限公司",
-          "skuName": "(原料)香肠一口酥面包 7.2kg",
-          "arrivalTime": "09:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "北京雪特商贸有限公司-快乐猴",
           "skuName": "三全 牛肉大葱水饺 450g",
           "completeTime": "11:16",
-          "waitingMins": 248
+          "waitingMins": 261
         },
         {
           "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
           "skuName": "叮叮懒人菜 双蛋白藜麦鸡排 300g",
           "completeTime": "14:20",
-          "waitingMins": 64
+          "waitingMins": 77
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "(原料)无花果乳酪欧包 7.2kg",
+          "completeTime": "15:29",
+          "waitingMins": 9
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "(原料)香肠一口酥面包 7.2kg",
+          "completeTime": "15:31",
+          "waitingMins": 7
         }
       ],
       "signed_not_recv": [
@@ -291,19 +286,8 @@
           "skuName": "(原料)无花果乳酪欧包 7.2kg",
           "purchaseQty": 9,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 7
-        },
-        {
-          "supplierName": "苏州瑷玛森食品有限公司",
-          "poNo": "CG2026060210323",
-          "reserveBillCode": "YY20260610006894",
-          "skuId": "1432290",
-          "skuName": "(原料)蒜香法棍 8kg",
-          "purchaseQty": 8,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 8
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -314,12 +298,23 @@
           "purchaseQty": 8,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 8
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
           "poNo": "CG2026060210323",
           "reserveBillCode": "YY20260610006894",
+          "skuId": "1432290",
+          "skuName": "(原料)蒜香法棍 8kg",
+          "purchaseQty": 8,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 9
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG202606106878",
+          "reserveBillCode": "YY20260610006992",
           "skuId": "1158211",
           "skuName": "丹麦奶酥菠萝包（面包）9.12kg",
           "purchaseQty": 7,
@@ -329,8 +324,8 @@
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
-          "poNo": "CG202606106878",
-          "reserveBillCode": "YY20260610006992",
+          "poNo": "CG2026060210323",
+          "reserveBillCode": "YY20260610006894",
           "skuId": "1158211",
           "skuName": "丹麦奶酥菠萝包（面包）9.12kg",
           "purchaseQty": 7,
@@ -340,10 +335,10 @@
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
-          "poNo": "CG2026060210323",
-          "reserveBillCode": "YY20260610006894",
-          "skuId": "1462170",
-          "skuName": "(原料)黄油大羊角面包 3.9kg",
+          "poNo": "CG202606106878",
+          "reserveBillCode": "YY20260610006992",
+          "skuId": "1157971",
+          "skuName": "芝心岩焗吐司10.2kg",
           "purchaseQty": 6,
           "recvQty": 0,
           "hasQc": false,
@@ -351,10 +346,10 @@
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
-          "poNo": "CG202606106878",
-          "reserveBillCode": "YY20260610006992",
-          "skuId": "1157971",
-          "skuName": "芝心岩焗吐司10.2kg",
+          "poNo": "CG2026060210323",
+          "reserveBillCode": "YY20260610006894",
+          "skuId": "1462170",
+          "skuName": "(原料)黄油大羊角面包 3.9kg",
           "purchaseQty": 6,
           "recvQty": 0,
           "hasQc": false,
@@ -390,7 +385,7 @@
           "skuName": "(原料)香肠一口酥面包 7.2kg",
           "purchaseQty": 2,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 16
         },
         {
@@ -445,50 +440,60 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 102,
+      "total": 133,
       "done": 100,
-      "rate": 98.0
+      "rate": 75.2
     },
     "caging": {
-      "total": 102,
+      "total": 133,
       "done": 100,
-      "rate": 98.0,
+      "rate": 75.2,
       "pcs_done": 2852,
-      "pcs_total": 2855,
-      "pcs_rate": 99.9
+      "pcs_total": 3378,
+      "pcs_rate": 84.4
     },
     "packing": {
-      "total": 4,
+      "total": 5,
       "done": 3,
-      "rate": 75.0
+      "rate": 60.0
     },
     "uncaged_details": [
       {
+        "containerCode": "RQ-05-03-0700588",
+        "poiName": "越秀越富广场店",
+        "qty": 273
+      },
+      {
         "containerCode": "RQ-05-03-0700758",
         "poiName": "禅城东方广场店",
-        "qty": 3
+        "qty": 253
       }
     ],
     "unpacked_details": [
       {
+        "containerCode": "RQ-05-03-0700588",
+        "poiName": "越秀越富广场店",
+        "qty": 273
+      },
+      {
         "containerCode": "RQ-05-03-0700758",
         "poiName": "禅城东方广场店",
-        "qty": 3
+        "qty": 253
       }
     ],
     "shipping": {
-      "total": 2855,
+      "total": 3378,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 102,
+      "multi_pallet_total": 133,
       "multi_pallet_rate": 0.0,
-      "load_rate": 99.9,
+      "load_rate": 84.4,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "7.21%",
+      "load_rate_unloaded": "40.20%",
       "load_rate_loaded": "91.48%",
       "load_rate_shipped": "--",
       "low_load_containers": [],
@@ -505,10 +510,10 @@
         {
           "containerCode": "RQ-05-03-0700758",
           "poiName": "禅城东方广场店",
-          "loadingRate": "7.21%",
-          "loadingRateVal": 7.21,
-          "skuPcs": "3.000",
-          "skuVolume": "0.143",
+          "loadingRate": "42.74%",
+          "loadingRateVal": 42.74,
+          "skuPcs": "253.000",
+          "skuVolume": "0.846",
           "planOutTime": "06-12 19:00"
         },
         {
@@ -528,31 +533,40 @@
           "skuPcs": "1090.000",
           "skuVolume": "1.762",
           "planOutTime": "06-12 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700588",
+          "poiName": "越秀越富广场店",
+          "loadingRate": "37.66%",
+          "loadingRateVal": 37.66,
+          "skuPcs": "273.000",
+          "skuVolume": "0.746",
+          "planOutTime": "06-12 19:00"
         }
       ],
-      "outbound_efficiency": 1427.5,
-      "outbound_efficiency_formula": "2855 PCS / 2 人(拣播员)"
+      "outbound_efficiency": 1689.0,
+      "outbound_efficiency_formula": "3378 PCS / 2 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 2855,
+        "total": 3378,
         "picked": 0,
         "sowed": 0,
         "caged": 2852,
-        "not_caged": 3,
+        "not_caged": 526,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 99.9,
-        "sowed_picked": 2855
+        "cage_rate": 84.4,
+        "sowed_picked": 3378
       },
       "sku": {
-        "total": 102,
+        "total": 133,
         "picked": 0,
         "sowed": 0,
         "caged": 100,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 98.0
+        "cage_rate": 75.2
       }
     },
     "status": "ok",
@@ -560,9 +574,9 @@
       "plan_pcs": 7499,
       "alloc_pcs": 7499,
       "alloc_rate": 100.0,
-      "picked_pcs": 2855,
-      "sow_pcs": 2855,
-      "sow_rate": 38.1,
+      "picked_pcs": 3378,
+      "sow_pcs": 3378,
+      "sow_rate": 45.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 318,
@@ -573,10 +587,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 169,
-      "in_progress": 4,
-      "done": 246,
-      "total": 419,
+      "not_started": 150,
+      "in_progress": 6,
+      "done": 270,
+      "total": 426,
       "status": "ok"
     }
   },
@@ -585,9 +599,9 @@
     "total_pcs": 7499,
     "alloc_pcs": 7499,
     "alloc_rate": 100.0,
-    "picked_pcs": 2855,
-    "sow_pcs": 2855,
-    "sow_rate": 38.1,
+    "picked_pcs": 3378,
+    "sow_pcs": 3378,
+    "sow_rate": 45.0,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 318,
@@ -913,10 +927,10 @@
     "by_pos_scheduled": {
       "N冷冻高叉司机": 2
     },
-    "predicted_efficiency": 1427.5,
-    "efficiency_formula": "2855 PCS(播种) / 2 人",
-    "outbound_efficiency": 1427.5,
-    "outbound_efficiency_formula": "2855 PCS / 2 人(拣播员)",
+    "predicted_efficiency": 1689.0,
+    "efficiency_formula": "3378 PCS(播种) / 2 人",
+    "outbound_efficiency": 1689.0,
+    "outbound_efficiency_formula": "3378 PCS / 2 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

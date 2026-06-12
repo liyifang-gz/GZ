@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-12T08:55:56",
+  "timestamp": "2026-06-12T09:11:58",
   "date": "2026-06-12",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 8,
-      "signed": 0,
-      "waiting": 8
+      "signed": 3,
+      "waiting": 5
     },
     "ontime": {
-      "ontime": 0,
-      "early": 0,
+      "ontime": 1,
+      "early": 2,
       "late": 0,
       "total": 8,
-      "rate": 0.0,
-      "early_rate": 0.0,
+      "rate": 12.5,
+      "early_rate": 25.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 3,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 16701
     },
     "qc": {
-      "total": 0,
+      "total": 10,
       "done": 0,
-      "pending": 0,
+      "pending": 10,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 10,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 16701,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 10,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 277,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 8,
-        "done": 0,
-        "rate": 0.0
+        "done": 3,
+        "rate": 37.5
       },
       "pcs": {
         "total": 16679,
@@ -72,14 +72,26 @@
       },
       "sku": {
         "total": 27,
-        "done": 0,
-        "rate": 0.0
+        "done": 10,
+        "rate": 37.0
       },
       "supplier": {
         "total": 7,
-        "done": 0,
-        "rate": 0.0,
+        "done": 3,
+        "rate": 42.9,
         "detail": {
+          "安徽易达润食品科技有限责任公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "郯城瑞发德食品加工有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
+          "深圳市金禧康食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳市三德鑫实业有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -88,23 +100,11 @@
             "plan": 2,
             "done": 0
           },
-          "郯城瑞发德食品加工有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
-          "深圳市金禧康食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
           "杭州一起闯荡科技有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
           "北京雪特商贸有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "安徽易达润食品科技有限责任公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -156,28 +156,12 @@
           "seq": 3
         },
         {
-          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
-          "billCode": "YY20260610001844",
-          "skuCount": 1,
-          "pcs": 45,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 4
-        },
-        {
-          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
-          "billCode": "YY20260610001183",
-          "skuCount": 6,
-          "pcs": 666,
-          "timeSlot": "09:00 - 09:30",
-          "seq": 5
-        },
-        {
           "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
           "billCode": "YY20260609006903",
           "skuCount": 1,
           "pcs": 450,
           "timeSlot": "16:00 - 16:30",
-          "seq": 6
+          "seq": 4
         },
         {
           "supplierName": "北京雪特商贸有限公司-快乐猴",
@@ -185,21 +169,224 @@
           "skuCount": 1,
           "pcs": 200,
           "timeSlot": "16:00 - 16:30",
-          "seq": 7
-        },
+          "seq": 5
+        }
+      ],
+      "unloading": [
         {
           "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
           "billCode": "YY20260608003464",
-          "skuCount": 3,
-          "pcs": 15990,
-          "timeSlot": "09:30 - 16:30",
-          "seq": 8
+          "signTime": "09:07",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "billCode": "YY20260610001844",
+          "signTime": "09:00",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "billCode": "YY20260610001183",
+          "signTime": "09:00",
+          "status": "已签到未卸货"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "skuName": "蒙牛 绿色心情绿莎莎雪糕 70g*8",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "skuName": "蒙牛优牧布丁雪糕40g*20支",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "skuName": "蒙牛 冰+蓝莓酸奶口味棒冰 70g*6",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "skuName": "蒙牛随变经典香草口味冰淇淋75g*5支",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "skuName": "蒙牛酷爱纯脆香芋味脆皮雪糕65g*5支",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "skuName": "蒙牛纯！牛奶味冰淇淋65g*5支",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "skuName": "(原料)奥尔良全腿 10kg",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
+          "skuName": "快乐猴 生牛乳绿豆雪糕 70g*6",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 9,
+          "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
+          "skuName": "快乐猴 生牛乳提子雪糕 70g*6",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 10,
+          "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
+          "skuName": "快乐猴 萌猴雪糕 65g",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
+          "poNo": "CG202606067397",
+          "reserveBillCode": "YY20260608003464",
+          "skuId": "1478899",
+          "skuName": "快乐猴 萌猴雪糕 65g",
+          "purchaseQty": 9990,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
+          "poNo": "CG202606067397",
+          "reserveBillCode": "YY20260608003464",
+          "skuId": "1357335",
+          "skuName": "快乐猴 生牛乳绿豆雪糕 70g*6",
+          "purchaseQty": 3000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
+          "poNo": "CG202606067397",
+          "reserveBillCode": "YY20260608003464",
+          "skuId": "1381818",
+          "skuName": "快乐猴 生牛乳提子雪糕 70g*6",
+          "purchaseQty": 3000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "poNo": "CG2026060816847",
+          "reserveBillCode": "YY20260610001183",
+          "skuId": "55970",
+          "skuName": "蒙牛优牧布丁雪糕40g*20支",
+          "purchaseQty": 192,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "poNo": "CG2026060816847",
+          "reserveBillCode": "YY20260610001183",
+          "skuId": "77711",
+          "skuName": "蒙牛 冰+蓝莓酸奶口味棒冰 70g*6",
+          "purchaseQty": 192,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "poNo": "CG2026060816847",
+          "reserveBillCode": "YY20260610001183",
+          "skuId": "53014",
+          "skuName": "蒙牛 绿色心情绿莎莎雪糕 70g*8",
+          "purchaseQty": 120,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
+        },
+        {
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "poNo": "CG2026060816847",
+          "reserveBillCode": "YY20260610001183",
+          "skuId": "107372",
+          "skuName": "蒙牛随变经典香草口味冰淇淋75g*5支",
+          "purchaseQty": 96,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
+        },
+        {
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "poNo": "CG2026060115589",
+          "reserveBillCode": "YY20260610001844",
+          "skuId": "1439185",
+          "skuName": "(原料)奥尔良全腿 10kg",
+          "purchaseQty": 45,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 8
+        },
+        {
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "poNo": "CG2026060816847",
+          "reserveBillCode": "YY20260610001183",
+          "skuId": "1032379",
+          "skuName": "蒙牛酷爱纯脆香芋味脆皮雪糕65g*5支",
+          "purchaseQty": 42,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 9
+        },
+        {
+          "supplierName": "深圳市金禧康食品有限公司-快乐猴",
+          "poNo": "CG2026060816847",
+          "reserveBillCode": "YY20260610001183",
+          "skuId": "1366299",
+          "skuName": "蒙牛纯！牛奶味冰淇淋65g*5支",
+          "purchaseQty": 24,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 10
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -302,10 +489,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 26,
+      "not_started": 39,
       "in_progress": 0,
       "done": 0,
-      "total": 26,
+      "total": 39,
       "status": "ok"
     }
   },

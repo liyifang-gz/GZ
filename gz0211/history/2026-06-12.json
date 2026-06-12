@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-06-12T09:11:58",
+  "timestamp": "2026-06-12T09:21:45",
   "date": "2026-06-12",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 8,
-      "signed": 3,
-      "waiting": 5
+      "signed": 4,
+      "waiting": 4
     },
     "ontime": {
-      "ontime": 1,
+      "ontime": 2,
       "early": 2,
       "late": 0,
       "total": 8,
-      "rate": 12.5,
+      "rate": 25.0,
       "early_rate": 25.0,
       "late_rate": 0.0
     },
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 3,
+      "total": 4,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 16701
+      "sign_pcs_done": 17001
     },
     "qc": {
-      "total": 10,
+      "total": 11,
       "done": 0,
-      "pending": 10,
+      "pending": 11,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 10,
+      "bill_total": 11,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 16701,
+      "pcs_total": 17001,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 10,
+      "sku_total": 11,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 8,
-        "done": 3,
-        "rate": 37.5
+        "done": 4,
+        "rate": 50.0
       },
       "pcs": {
         "total": 16679,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 27,
-        "done": 10,
-        "rate": 37.0
+        "done": 11,
+        "rate": 40.7
       },
       "supplier": {
         "total": 7,
-        "done": 3,
-        "rate": 42.9,
+        "done": 4,
+        "rate": 57.1,
         "detail": {
+          "深圳市三德鑫实业有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "安徽易达润食品科技有限责任公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -91,10 +95,6 @@
           "深圳市金禧康食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "深圳市三德鑫实业有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           },
           "苏州瑷玛森食品有限公司": {
             "plan": 2,
@@ -132,20 +132,12 @@
       ],
       "unsigned": [
         {
-          "supplierName": "深圳市三德鑫实业有限公司-快乐猴",
-          "billCode": "YY20260611003164",
-          "skuCount": 1,
-          "pcs": 300,
-          "timeSlot": "09:00 - 09:30",
-          "seq": 1
-        },
-        {
           "supplierName": "苏州瑷玛森食品有限公司",
           "billCode": "YY20260610006992",
           "skuCount": 8,
           "pcs": 51,
           "timeSlot": "09:00 - 09:30",
-          "seq": 2
+          "seq": 1
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -153,7 +145,7 @@
           "skuCount": 6,
           "pcs": 61,
           "timeSlot": "09:00 - 09:30",
-          "seq": 3
+          "seq": 2
         },
         {
           "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
@@ -161,7 +153,7 @@
           "skuCount": 1,
           "pcs": 450,
           "timeSlot": "16:00 - 16:30",
-          "seq": 4
+          "seq": 3
         },
         {
           "supplierName": "北京雪特商贸有限公司-快乐猴",
@@ -169,10 +161,16 @@
           "skuCount": 1,
           "pcs": 200,
           "timeSlot": "16:00 - 16:30",
-          "seq": 5
+          "seq": 4
         }
       ],
       "unloading": [
+        {
+          "supplierName": "深圳市三德鑫实业有限公司-快乐猴",
+          "billCode": "YY20260611003164",
+          "signTime": "09:16",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "安徽易达润食品科技有限责任公司-快乐猴",
           "billCode": "YY20260608003464",
@@ -272,6 +270,14 @@
           "arrivalTime": "09:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 11,
+          "supplierName": "深圳市三德鑫实业有限公司-快乐猴",
+          "skuName": "中街 奶油口味老中街冰棍 62g*10",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -310,6 +316,17 @@
           "seq": 3
         },
         {
+          "supplierName": "深圳市三德鑫实业有限公司-快乐猴",
+          "poNo": "CG202606054563",
+          "reserveBillCode": "YY20260611003164",
+          "skuId": "112178",
+          "skuName": "中街 奶油口味老中街冰棍 62g*10",
+          "purchaseQty": 300,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
           "supplierName": "深圳市金禧康食品有限公司-快乐猴",
           "poNo": "CG2026060816847",
           "reserveBillCode": "YY20260610001183",
@@ -318,7 +335,7 @@
           "purchaseQty": 192,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 5
         },
         {
           "supplierName": "深圳市金禧康食品有限公司-快乐猴",
@@ -329,7 +346,7 @@
           "purchaseQty": 192,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 6
         },
         {
           "supplierName": "深圳市金禧康食品有限公司-快乐猴",
@@ -340,7 +357,7 @@
           "purchaseQty": 120,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 6
+          "seq": 7
         },
         {
           "supplierName": "深圳市金禧康食品有限公司-快乐猴",
@@ -351,7 +368,7 @@
           "purchaseQty": 96,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 8
         },
         {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
@@ -362,7 +379,7 @@
           "purchaseQty": 45,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 9
         },
         {
           "supplierName": "深圳市金禧康食品有限公司-快乐猴",
@@ -373,7 +390,7 @@
           "purchaseQty": 42,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 10
         },
         {
           "supplierName": "深圳市金禧康食品有限公司-快乐猴",
@@ -384,7 +401,7 @@
           "purchaseQty": 24,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 10
+          "seq": 11
         }
       ],
       "qc_recv_pending": [],
@@ -489,10 +506,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 39,
+      "not_started": 72,
       "in_progress": 0,
       "done": 0,
-      "total": 39,
+      "total": 72,
       "status": "ok"
     }
   },
@@ -527,15 +544,15 @@
       "冷冻": 0,
       "常温": 0
     },
-    "all_count": 2,
+    "all_count": 3,
     "planned_trips": {
-      "total": 35,
+      "total": 36,
       "by_store": {
         "禅城东方广场店": 6,
         "番禺建华汇店": 8,
         "南海国昌广场店": 5,
         "海珠星汇广场店": 8,
-        "越秀越富广场店": 8
+        "越秀越富广场店": 9
       },
       "details": [
         {
@@ -1158,6 +1175,29 @@
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1781152350000,
           "store": "海珠星汇广场店"
+        },
+        {
+          "waybillCode": "GZ2111840440",
+          "licensePlate": "粤A8S2C6",
+          "driverName": "梁春良",
+          "carrierName": "优乐（广州）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 10,
+          "preCoolMonitorStatus": 3,
+          "preCoolMonitorStatusName": "--",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1781226865000,
+          "store": "越秀越富广场店"
         },
         {
           "waybillCode": "GZ2111901026",
@@ -2977,8 +3017,8 @@
       "arrival_rate": 1.0
     },
     "temp_rate": 1.0,
-    "temp_qualified": 29,
-    "temp_total": 29,
+    "temp_qualified": 30,
+    "temp_total": 30,
     "temp_abnormal": [],
     "temp_status": "ok"
   },

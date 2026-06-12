@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-12T16:23:52",
+  "timestamp": "2026-06-12T16:32:37",
   "date": "2026-06-12",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 28,
-      "signed": 24,
-      "waiting": 1
+      "signed": 25,
+      "waiting": 0
     },
     "ontime": {
       "ontime": 2,
       "early": 14,
-      "late": 8,
+      "late": 9,
       "total": 25,
       "rate": 8.0,
       "early_rate": 56.0,
-      "late_rate": 32.0
+      "late_rate": 36.0
     },
     "reserve_progress": {
       "po_total": 33,
@@ -24,37 +24,37 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 18,
+      "total": 19,
       "done": 14,
-      "rate": 77.8,
+      "rate": 73.7,
       "pcs_done": 19325,
-      "sign_pcs_done": 60122
+      "sign_pcs_done": 60362
     },
     "qc": {
-      "total": 14,
+      "total": 15,
       "done": 6,
-      "pending": 8,
+      "pending": 9,
       "passed": 6,
       "rejected": 0,
-      "rate": 42.9,
+      "rate": 40.0,
       "bill_done": 6,
-      "bill_total": 14,
+      "bill_total": 15,
       "pcs_done": 2058,
       "pcs_passed": 2058,
-      "pcs_total": 29105,
+      "pcs_total": 29345,
       "pcs_rejected": 0,
-      "pcs_rate": 7.1,
+      "pcs_rate": 7.0,
       "sku_done": 6,
-      "sku_total": 13,
-      "sku_rate": 46.2
+      "sku_total": 14,
+      "sku_rate": 42.9
     },
     "putaway": {
-      "total": 30948,
+      "total": 32164,
       "done": 25685,
-      "rate": 83.0,
-      "sku_total": 67,
+      "rate": 79.9,
+      "sku_total": 69,
       "sku_done": 60,
-      "sku_rate": 89.6,
+      "sku_rate": 87.0,
       "details": [
         {
           "poNo": "CG202606056336",
@@ -76,32 +76,43 @@
           "putPcs": 0,
           "hopeSku": 5,
           "putSku": 0
+        },
+        {
+          "poNo": "CG202606027512",
+          "hopePcs": 1216,
+          "putPcs": 0,
+          "hopeSku": 2,
+          "putSku": 0
         }
       ]
     },
     "dimensions": {
       "reserve": {
         "total": 25,
-        "done": 24,
-        "rate": 96.0
+        "done": 25,
+        "rate": 100.0
       },
       "pcs": {
         "total": 50196,
         "done": 43979,
         "rate": 87.6,
-        "recv_done": 30948,
-        "recv_rate": 61.7
+        "recv_done": 32164,
+        "recv_rate": 64.1
       },
       "sku": {
         "total": 136,
-        "done": 135,
-        "rate": 99.3
+        "done": 136,
+        "rate": 100.0
       },
       "supplier": {
         "total": 16,
-        "done": 15,
-        "rate": 93.8,
+        "done": 16,
+        "rate": 100.0,
         "detail": {
+          "粮心优品（广东）供应链管理有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "福建省古田闽越食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -137,10 +148,6 @@
           "厦门市辑利食品有限公司翔安分公司-快乐猴-自营": {
             "plan": 2,
             "done": 2
-          },
-          "粮心优品（广东）供应链管理有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           },
           "福建皓大工贸有限公司-快乐猴": {
             "plan": 1,
@@ -244,17 +251,14 @@
           "poStatus": "已完成"
         }
       ],
-      "unsigned": [
+      "unsigned": [],
+      "unloading": [
         {
           "supplierName": "粮心优品（广东）供应链管理有限公司-快乐猴",
           "billCode": "YY20260612005708",
-          "skuCount": 1,
-          "pcs": 240,
-          "timeSlot": "13:00 - 13:30",
-          "seq": 1
-        }
-      ],
-      "unloading": [
+          "signTime": "16:31",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "山东天邦粮油有限公司-快乐猴",
           "billCode": "YY20260612004156",
@@ -354,6 +358,14 @@
           "arrivalTime": "15:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 9,
+          "supplierName": "粮心优品（广东）供应链管理有限公司-快乐猴",
+          "skuName": "粮心一号 全麦精酿啤酒 500ml",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -361,37 +373,37 @@
           "supplierName": "浙江冠都新材料科技有限公司",
           "skuName": "快乐猴-PE一次性手套12300个/箱",
           "completeTime": "17:15",
-          "waitingMins": 1389
+          "waitingMins": 1397
         },
         {
           "supplierName": "山东奇伟营销管理有限公司-快乐猴",
           "skuName": "快乐猴 黄桃罐头 800g",
           "completeTime": "11:14",
-          "waitingMins": 310
+          "waitingMins": 319
         },
         {
           "supplierName": "广州广库供应链有限公司-快乐猴",
           "skuName": "红荔牌 红米酒 610ml",
           "completeTime": "12:41",
-          "waitingMins": 223
+          "waitingMins": 231
         },
         {
           "supplierName": "广州广库供应链有限公司-快乐猴",
           "skuName": "九江双蒸 佳品白酒29.5度 610ml",
           "completeTime": "12:43",
-          "waitingMins": 220
+          "waitingMins": 229
         },
         {
           "supplierName": "小熊驾到（山东）食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 油醋汁 250g",
           "completeTime": "16:03",
-          "waitingMins": 20
+          "waitingMins": 29
         },
         {
           "supplierName": "小熊驾到（山东）食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 蛋黄沙拉酱 200g",
           "completeTime": "16:01",
-          "waitingMins": 22
+          "waitingMins": 31
         }
       ],
       "signed_not_recv": [
@@ -451,17 +463,6 @@
           "seq": 5
         },
         {
-          "supplierName": "福建省古田闽越食品有限公司-快乐猴",
-          "poNo": "CG202606027512",
-          "reserveBillCode": "YY20260606004706",
-          "skuId": "1122732",
-          "skuName": "快乐猴一级古田银耳70g",
-          "purchaseQty": 1216,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 6
-        },
-        {
           "supplierName": "山东天邦粮油有限公司-快乐猴",
           "poNo": "CG202606124089",
           "reserveBillCode": "YY20260612004156",
@@ -470,7 +471,7 @@
           "purchaseQty": 1000,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 6
         },
         {
           "supplierName": "五常市丰禾米业有限公司",
@@ -481,7 +482,7 @@
           "purchaseQty": 1000,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 7
         },
         {
           "supplierName": "山东天邦粮油有限公司-快乐猴",
@@ -492,7 +493,7 @@
           "purchaseQty": 1000,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 8
         },
         {
           "supplierName": "山东天邦粮油有限公司-快乐猴",
@@ -503,7 +504,7 @@
           "purchaseQty": 795,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 10
+          "seq": 9
         },
         {
           "supplierName": "山东天邦粮油有限公司-快乐猴",
@@ -514,7 +515,7 @@
           "purchaseQty": 792,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 11
+          "seq": 10
         },
         {
           "supplierName": "山东天邦粮油有限公司-快乐猴",
@@ -525,7 +526,7 @@
           "purchaseQty": 630,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 12
+          "seq": 11
         },
         {
           "supplierName": "山东天邦粮油有限公司-快乐猴",
@@ -534,6 +535,17 @@
           "skuId": "1305649",
           "skuName": "快乐猴 劲道宽面 1kg",
           "purchaseQty": 630,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 12
+        },
+        {
+          "supplierName": "粮心优品（广东）供应链管理有限公司-快乐猴",
+          "poNo": "CG202606086715",
+          "reserveBillCode": "YY20260612005708",
+          "skuId": "872781",
+          "skuName": "粮心一号 全麦精酿啤酒 500ml",
+          "purchaseQty": 240,
           "recvQty": 0,
           "hasQc": false,
           "seq": 13
@@ -879,7 +891,7 @@
       "plan_pcs": 29842,
       "alloc_pcs": 29762,
       "alloc_rate": 99.7,
-      "picked_pcs": 17084,
+      "picked_pcs": 17404,
       "sow_pcs": 17084,
       "sow_rate": 57.4,
       "ship_pcs": 0,
@@ -917,10 +929,10 @@
       }
     ],
     "seeding": {
-      "not_started": 149,
+      "not_started": 156,
       "in_progress": 8,
-      "done": 324,
-      "total": 481,
+      "done": 333,
+      "total": 497,
       "status": "ok"
     }
   },
@@ -929,7 +941,7 @@
     "total_pcs": 29842,
     "alloc_pcs": 29762,
     "alloc_rate": 99.7,
-    "picked_pcs": 17084,
+    "picked_pcs": 17404,
     "sow_pcs": 17084,
     "sow_rate": 57.4,
     "ship_pcs": 0,

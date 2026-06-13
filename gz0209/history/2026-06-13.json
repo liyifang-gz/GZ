@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-13T13:22:30",
+  "timestamp": "2026-06-13T13:29:47",
   "date": "2026-06-13",
   "warehouse": "GZ0210",
   "inbound": {
@@ -49,13 +49,21 @@
       "sku_rate": 38.5
     },
     "putaway": {
-      "total": 5295,
+      "total": 5355,
       "done": 5295,
-      "rate": 100.0,
-      "sku_total": 12,
+      "rate": 98.9,
+      "sku_total": 13,
       "sku_done": 12,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 92.3,
+      "details": [
+        {
+          "poNo": "CG202606115593",
+          "hopePcs": 60,
+          "putPcs": 0,
+          "hopeSku": 1,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +75,8 @@
         "total": 13798,
         "done": 12808,
         "rate": 92.8,
-        "recv_done": 5295,
-        "recv_rate": 38.4
+        "recv_done": 5355,
+        "recv_rate": 38.8
       },
       "sku": {
         "total": 37,
@@ -80,15 +88,15 @@
         "done": 9,
         "rate": 60.0,
         "detail": {
+          "广东美而美食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "沧州市华海顺达粮油调料有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
           "山东天邦粮油有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "广东美而美食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -292,31 +300,31 @@
           "supplierName": "山东天邦粮油有限公司-快乐猴",
           "skuName": "快乐猴 鸡蛋风味挂面 1kg",
           "completeTime": "10:12",
-          "waitingMins": 190
+          "waitingMins": 197
         },
         {
           "supplierName": "江苏光明天成米业有限公司-快乐猴",
           "skuName": "快乐猴 丝苗米 5kg",
           "completeTime": "11:20",
-          "waitingMins": 122
+          "waitingMins": 129
         },
         {
           "supplierName": "青岛周氏塑料包装有限公司",
           "skuName": "快乐猴-垃圾袋黑色130*140-特大号300个/包",
           "completeTime": "11:29",
-          "waitingMins": 113
+          "waitingMins": 120
         },
         {
           "supplierName": "青岛周氏塑料包装有限公司",
           "skuName": "快乐猴-垃圾袋60*50-中号",
           "completeTime": "11:30",
-          "waitingMins": 112
+          "waitingMins": 119
         },
         {
           "supplierName": "广东美而美食品有限公司-快乐猴",
           "skuName": "快乐猴 可生食富硒鲜鸡蛋 500g(10枚)",
           "completeTime": "13:21",
-          "waitingMins": 1
+          "waitingMins": 9
         }
       ],
       "signed_not_recv": [
@@ -429,17 +437,6 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 10
-        },
-        {
-          "supplierName": "广东美而美食品有限公司-快乐猴",
-          "poNo": "CG202606115593",
-          "reserveBillCode": "YY20260612001660",
-          "skuId": "1351101",
-          "skuName": "快乐猴 可生食富硒鲜鸡蛋 500g(10枚)",
-          "purchaseQty": 60,
-          "recvQty": 0,
-          "hasQc": true,
-          "seq": 11
         }
       ],
       "qc_recv_pending": [],
@@ -762,11 +759,11 @@
     "status": "ok",
     "pool": {
       "plan_pcs": 31912,
-      "alloc_pcs": 30671,
-      "alloc_rate": 96.1,
+      "alloc_pcs": 30936,
+      "alloc_rate": 96.9,
       "picked_pcs": 5544,
       "sow_pcs": 5544,
-      "sow_rate": 18.1,
+      "sow_rate": 17.9,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 1112,
@@ -781,34 +778,34 @@
         "orderNo": "DB20260613271623",
         "skuNum": 290,
         "planQty": 8009,
-        "allocQty": 7344,
-        "unallocQty": 665
+        "allocQty": 7489,
+        "unallocQty": 520
       },
       {
         "receiverName": "快乐猴-越秀越富广场店-031",
         "orderNo": "DB20260613271644",
         "skuNum": 272,
         "planQty": 7536,
-        "allocQty": 6960,
-        "unallocQty": 576
+        "allocQty": 7080,
+        "unallocQty": 456
       }
     ],
     "seeding": {
-      "not_started": 97,
-      "in_progress": 6,
-      "done": 137,
-      "total": 240,
+      "not_started": 94,
+      "in_progress": 5,
+      "done": 142,
+      "total": 241,
       "status": "ok"
     }
   },
   "plan": {
     "total_orders": 29,
     "total_pcs": 31912,
-    "alloc_pcs": 30671,
-    "alloc_rate": 96.1,
+    "alloc_pcs": 30936,
+    "alloc_rate": 96.9,
     "picked_pcs": 5544,
     "sow_pcs": 5544,
-    "sow_rate": 18.1,
+    "sow_rate": 17.9,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 1112,
@@ -829,16 +826,16 @@
         "orderNo": "DB20260613271623",
         "skuNum": 290,
         "planQty": 8009,
-        "allocQty": 7344,
-        "unallocQty": 665
+        "allocQty": 7489,
+        "unallocQty": 520
       },
       {
         "receiverName": "快乐猴-越秀越富广场店-031",
         "orderNo": "DB20260613271644",
         "skuNum": 272,
         "planQty": 7536,
-        "allocQty": 6960,
-        "unallocQty": 576
+        "allocQty": 7080,
+        "unallocQty": 456
       }
     ],
     "status": "ok"

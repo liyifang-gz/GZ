@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-13T10:37:40",
+  "timestamp": "2026-06-13T10:46:29",
   "date": "2026-06-13",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 13,
-      "signed": 3,
-      "waiting": 7
+      "signed": 4,
+      "waiting": 6
     },
     "ontime": {
       "ontime": 0,
-      "early": 3,
+      "early": 4,
       "late": 0,
       "total": 10,
       "rate": 0.0,
-      "early_rate": 30.0,
+      "early_rate": 40.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 3,
-      "done": 0,
-      "rate": 0.0,
-      "pcs_done": 0,
-      "sign_pcs_done": 5008
+      "total": 4,
+      "done": 1,
+      "rate": 25.0,
+      "pcs_done": 1020,
+      "sign_pcs_done": 5428
     },
     "qc": {
-      "total": 2,
+      "total": 3,
       "done": 1,
-      "pending": 1,
+      "pending": 2,
       "passed": 1,
       "rejected": 0,
-      "rate": 50.0,
+      "rate": 33.3,
       "bill_done": 1,
-      "bill_total": 2,
+      "bill_total": 3,
       "pcs_done": 700,
       "pcs_passed": 700,
-      "pcs_total": 1720,
+      "pcs_total": 2140,
       "pcs_rejected": 0,
-      "pcs_rate": 40.7,
+      "pcs_rate": 32.7,
       "sku_done": 1,
-      "sku_total": 2,
-      "sku_rate": 50.0
+      "sku_total": 3,
+      "sku_rate": 33.3
     },
     "putaway": {
       "total": 940,
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 10,
-        "done": 3,
-        "rate": 30.0
+        "done": 4,
+        "rate": 40.0
       },
       "pcs": {
         "total": 940,
@@ -80,14 +80,18 @@
       },
       "sku": {
         "total": 18,
-        "done": 5,
-        "rate": 27.8
+        "done": 6,
+        "rate": 33.3
       },
       "supplier": {
         "total": 10,
-        "done": 3,
-        "rate": 30.0,
+        "done": 4,
+        "rate": 40.0,
         "detail": {
+          "广州大链盟贸易有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "德州市金彩凤食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -117,10 +121,6 @@
             "done": 0
           },
           "杭州众点食品科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "广州大链盟贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -175,33 +175,25 @@
           "seq": 5
         },
         {
-          "supplierName": "广州大链盟贸易有限公司-快乐猴",
-          "billCode": "YY20260610006044",
-          "skuCount": 1,
-          "pcs": 420,
-          "timeSlot": "11:30 - 12:00",
-          "seq": 6
-        },
-        {
           "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
           "billCode": "YY20260608001290",
           "skuCount": 2,
           "pcs": 3984,
           "timeSlot": "14:30 - 16:30",
-          "seq": 7
+          "seq": 6
         }
       ],
       "unloading": [
         {
-          "supplierName": "德州市金彩凤食品有限公司-快乐猴",
-          "billCode": "YY20260610003789",
-          "signTime": "09:03",
+          "supplierName": "广州大链盟贸易有限公司-快乐猴",
+          "billCode": "YY20260610006044",
+          "signTime": "10:42",
           "status": "已签到未卸货"
         },
         {
-          "supplierName": "广东环球水产食品有限公司-快乐猴",
-          "billCode": "YY20260610002433",
-          "signTime": "10:19",
+          "supplierName": "德州市金彩凤食品有限公司-快乐猴",
+          "billCode": "YY20260610003789",
+          "signTime": "09:03",
           "status": "已签到未卸货"
         },
         {
@@ -217,6 +209,14 @@
           "supplierName": "广东环球水产食品有限公司-快乐猴",
           "skuName": "大号红虾仁 454g",
           "arrivalTime": "14:00",
+          "unloadFinishTime": "10:43",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "广州大链盟贸易有限公司-快乐猴",
+          "skuName": "玛氏脆香米小熊棒棒巧克力口味冰淇淋42g",
+          "arrivalTime": "11:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
@@ -226,7 +226,7 @@
           "supplierName": "深圳市鲜百汇食品有限公司-快乐猴",
           "skuName": "海氏力 鲜冻海捕带鱼 1kg",
           "completeTime": "10:10",
-          "waitingMins": 28
+          "waitingMins": 36
         }
       ],
       "signed_not_recv": [
@@ -273,6 +273,17 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 4
+        },
+        {
+          "supplierName": "广州大链盟贸易有限公司-快乐猴",
+          "poNo": "CG2026060816844",
+          "reserveBillCode": "YY20260610006044",
+          "skuId": "664757",
+          "skuName": "玛氏脆香米小熊棒棒巧克力口味冰淇淋42g",
+          "purchaseQty": 420,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
         }
       ],
       "qc_recv_pending": [],
@@ -377,10 +388,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 102,
+      "not_started": 112,
       "in_progress": 0,
       "done": 0,
-      "total": 102,
+      "total": 112,
       "status": "ok"
     }
   },
@@ -841,29 +852,6 @@
           "store": "南海国昌广场店"
         },
         {
-          "waybillCode": "GZ2111911090",
-          "licensePlate": "粤A13J28",
-          "driverName": "张钰光",
-          "carrierName": "优乐（广州）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 10,
-          "preCoolMonitorStatus": 1,
-          "preCoolMonitorStatusName": "合格",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1781311951000,
-          "store": "海珠星汇广场店"
-        },
-        {
           "waybillCode": "GZ2111862540",
           "licensePlate": "粤A8S2C6",
           "driverName": "梁春良",
@@ -884,6 +872,29 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1781309812000,
+          "store": "海珠星汇广场店"
+        },
+        {
+          "waybillCode": "GZ2111911090",
+          "licensePlate": "粤A13J28",
+          "driverName": "张钰光",
+          "carrierName": "优乐（广州）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 10,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1781311951000,
           "store": "海珠星汇广场店"
         },
         {
@@ -1140,29 +1151,6 @@
           "store": "海珠星汇广场店"
         },
         {
-          "waybillCode": "GZ2111876455",
-          "licensePlate": "粤AGP9347",
-          "driverName": "李庄浩",
-          "carrierName": "邦运（广州个体）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 10,
-          "preCoolMonitorStatus": 1,
-          "preCoolMonitorStatusName": "合格",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1781313621000,
-          "store": "越秀越富广场店"
-        },
-        {
           "waybillCode": "GZ2111880374",
           "licensePlate": "粤ABM8469",
           "driverName": "晏明虎",
@@ -1183,6 +1171,29 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1781315142000,
+          "store": "越秀越富广场店"
+        },
+        {
+          "waybillCode": "GZ2111876455",
+          "licensePlate": "粤AGP9347",
+          "driverName": "李庄浩",
+          "carrierName": "邦运（广州个体）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 10,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1781313621000,
           "store": "越秀越富广场店"
         },
         {

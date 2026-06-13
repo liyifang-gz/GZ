@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-13T10:22:31",
+  "timestamp": "2026-06-13T10:30:30",
   "date": "2026-06-13",
   "warehouse": "GZ0210",
   "inbound": {
@@ -49,12 +49,12 @@
       "sku_rate": 50.0
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
+      "total": 2435,
+      "done": 2435,
+      "rate": 100.0,
+      "sku_total": 6,
+      "sku_done": 6,
+      "sku_rate": 100.0,
       "details": []
     },
     "dimensions": {
@@ -292,7 +292,7 @@
           "supplierName": "山东天邦粮油有限公司-快乐猴",
           "skuName": "快乐猴 鸡蛋风味挂面 1kg",
           "completeTime": "10:12",
-          "waitingMins": 10
+          "waitingMins": 18
         }
       ],
       "signed_not_recv": [
@@ -371,8 +371,8 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 5388,
-      "pcs_total": 0,
-      "pcs_rate": 0.0
+      "pcs_total": 5388,
+      "pcs_rate": 100.0
     },
     "packing": {
       "total": 8,
@@ -529,8 +529,8 @@
         "not_caged": 0,
         "pick_rate": 0,
         "sow_rate": 0,
-        "cage_rate": 0.0,
-        "sowed_picked": 0
+        "cage_rate": 100.0,
+        "sowed_picked": 5388
       },
       "sku": {
         "total": 0,
@@ -544,45 +544,84 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 0,
-      "alloc_pcs": 0,
-      "alloc_rate": 0,
-      "picked_pcs": 0,
-      "sow_pcs": 0,
-      "sow_rate": 0,
+      "plan_pcs": 5909,
+      "alloc_pcs": 5894,
+      "alloc_rate": 99.7,
+      "picked_pcs": 5388,
+      "sow_pcs": 5388,
+      "sow_rate": 91.4,
       "ship_pcs": 0,
-      "ship_rate": 0,
-      "sku_plan": 0,
-      "sku_alloc": 0,
-      "sku_sow": 0,
+      "ship_rate": 0.0,
+      "sku_plan": 11,
+      "sku_alloc": 9,
+      "sku_sow": 4,
       "sku_ship": 0,
-      "total_orders": 0
+      "total_orders": 6
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB2026061377087",
+        "skuNum": 1,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB2026061377100",
+        "skuNum": 1,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      }
+    ],
     "seeding": {
-      "not_started": 0,
+      "not_started": 79,
       "in_progress": 0,
       "done": 0,
-      "total": 0,
+      "total": 79,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 0,
-    "total_pcs": 0,
-    "alloc_pcs": 0,
-    "alloc_rate": 0,
-    "picked_pcs": 0,
-    "sow_pcs": 0,
-    "sow_rate": 0,
+    "total_orders": 6,
+    "total_pcs": 5909,
+    "alloc_pcs": 5894,
+    "alloc_rate": 99.7,
+    "picked_pcs": 5388,
+    "sow_pcs": 5388,
+    "sow_rate": 91.4,
     "ship_pcs": 0,
-    "ship_rate": 0,
-    "sku_plan": 0,
-    "sku_alloc": 0,
-    "sku_sow": 0,
-    "store_count": 0,
-    "by_store": {},
-    "unalloc_details": [],
+    "ship_rate": 0.0,
+    "sku_plan": 11,
+    "sku_alloc": 9,
+    "sku_sow": 4,
+    "store_count": 4,
+    "by_store": {
+      "快乐猴-罗沙大厦店-043": 5388.0,
+      "快乐猴-禅城东方广场店-018": 504.0,
+      "快乐猴-番禺建华汇店-019": 14.0,
+      "快乐猴-南海国昌广场店-023": 3.0
+    },
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-番禺建华汇店-019",
+        "orderNo": "DB2026061377087",
+        "skuNum": 1,
+        "planQty": 12,
+        "allocQty": 0,
+        "unallocQty": 12
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB2026061377100",
+        "skuNum": 1,
+        "planQty": 3,
+        "allocQty": 0,
+        "unallocQty": 3
+      }
+    ],
     "status": "ok"
   },
   "transport": {
@@ -3594,8 +3633,8 @@
       "N常温收退": 1,
       "N常温高叉司机": 2
     },
-    "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS(播种) / 10 人",
+    "predicted_efficiency": 538.8,
+    "efficiency_formula": "5388 PCS(播种) / 10 人",
     "outbound_efficiency": 0.0,
     "outbound_efficiency_formula": "0 PCS / 4 人(拣播员)",
     "inbound_efficiency_workers": 1,

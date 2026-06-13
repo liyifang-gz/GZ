@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-13T10:46:49",
+  "timestamp": "2026-06-13T10:58:33",
   "date": "2026-06-13",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 22,
-      "signed": 3,
-      "waiting": 16
+      "signed": 4,
+      "waiting": 15
     },
     "ontime": {
       "ontime": 0,
-      "early": 3,
+      "early": 4,
       "late": 0,
       "total": 19,
       "rate": 0.0,
-      "early_rate": 15.8,
+      "early_rate": 21.1,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,67 +24,79 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 3,
-      "done": 2,
-      "rate": 66.7,
-      "pcs_done": 7704,
-      "sign_pcs_done": 8704
+      "total": 4,
+      "done": 3,
+      "rate": 75.0,
+      "pcs_done": 8704,
+      "sign_pcs_done": 8744
     },
     "qc": {
-      "total": 2,
+      "total": 4,
       "done": 1,
-      "pending": 1,
+      "pending": 3,
       "passed": 1,
       "rejected": 0,
-      "rate": 50.0,
+      "rate": 25.0,
       "bill_done": 1,
-      "bill_total": 2,
+      "bill_total": 4,
       "pcs_done": 2700,
       "pcs_passed": 2700,
-      "pcs_total": 3700,
+      "pcs_total": 3740,
       "pcs_rejected": 0,
-      "pcs_rate": 73.0,
+      "pcs_rate": 72.2,
       "sku_done": 1,
-      "sku_total": 2,
-      "sku_rate": 50.0
+      "sku_total": 4,
+      "sku_rate": 25.0
     },
     "putaway": {
-      "total": 2435,
+      "total": 5120,
       "done": 2435,
-      "rate": 100.0,
-      "sku_total": 6,
+      "rate": 47.6,
+      "sku_total": 9,
       "sku_done": 6,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 66.7,
+      "details": [
+        {
+          "poNo": "CG2026061210245",
+          "hopePcs": 2685,
+          "putPcs": 0,
+          "hopeSku": 3,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
         "total": 19,
-        "done": 3,
-        "rate": 15.8
+        "done": 4,
+        "rate": 21.1
       },
       "pcs": {
         "total": 13798,
         "done": 12808,
         "rate": 92.8,
-        "recv_done": 2435,
-        "recv_rate": 17.6
+        "recv_done": 5120,
+        "recv_rate": 37.1
       },
       "sku": {
         "total": 37,
-        "done": 3,
-        "rate": 8.1
+        "done": 5,
+        "rate": 13.5
       },
       "supplier": {
         "total": 15,
-        "done": 3,
-        "rate": 20.0,
+        "done": 4,
+        "rate": 26.7,
         "detail": {
-          "江苏光明天成米业有限公司-快乐猴": {
+          "青岛周氏塑料包装有限公司": {
             "plan": 1,
             "done": 1
           },
           "山东天邦粮油有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "江苏光明天成米业有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -126,10 +138,6 @@
           },
           "广东润康药业有限公司-快乐猴": {
             "plan": 2,
-            "done": 0
-          },
-          "青岛周氏塑料包装有限公司": {
-            "plan": 1,
             "done": 0
           },
           "美贻（北京）科技有限公司": {
@@ -236,20 +244,12 @@
           "seq": 10
         },
         {
-          "supplierName": "青岛周氏塑料包装有限公司",
-          "billCode": "YY20260609002178",
-          "skuCount": 2,
-          "pcs": 40,
-          "timeSlot": "15:00 - 15:30",
-          "seq": 11
-        },
-        {
           "supplierName": "美贻（北京）科技有限公司",
           "billCode": "YY20260608006790",
           "skuCount": 1,
           "pcs": 10,
           "timeSlot": "15:30 - 16:00",
-          "seq": 12
+          "seq": 11
         },
         {
           "supplierName": "山东昊坤果业有限公司-快乐猴",
@@ -257,7 +257,7 @@
           "skuCount": 1,
           "pcs": 3500,
           "timeSlot": "15:00 - 15:30",
-          "seq": 13
+          "seq": 12
         },
         {
           "supplierName": "山东昊坤果业有限公司-快乐猴",
@@ -265,16 +265,15 @@
           "skuCount": 1,
           "pcs": 1512,
           "timeSlot": "15:30 - 16:00",
-          "seq": 14
+          "seq": 13
         }
       ],
       "unloading": [
         {
-          "supplierName": "江苏光明天成米业有限公司-快乐猴",
-          "billCode": "YY20260611005650",
-          "signTime": "10:14",
-          "unloadStartTime": "10:15",
-          "status": "卸货中"
+          "supplierName": "青岛周氏塑料包装有限公司",
+          "billCode": "YY20260609002178",
+          "signTime": "10:51",
+          "status": "已签到未卸货"
         }
       ],
       "qc_pending": [
@@ -283,6 +282,22 @@
           "supplierName": "江苏光明天成米业有限公司-快乐猴",
           "skuName": "快乐猴 丝苗米 5kg",
           "arrivalTime": "15:30",
+          "unloadFinishTime": "10:54",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "青岛周氏塑料包装有限公司",
+          "skuName": "快乐猴-垃圾袋黑色130*140-特大号300个/包",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "青岛周氏塑料包装有限公司",
+          "skuName": "快乐猴-垃圾袋60*50-中号",
+          "arrivalTime": "15:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
@@ -292,7 +307,7 @@
           "supplierName": "山东天邦粮油有限公司-快乐猴",
           "skuName": "快乐猴 鸡蛋风味挂面 1kg",
           "completeTime": "10:12",
-          "waitingMins": 34
+          "waitingMins": 46
         }
       ],
       "signed_not_recv": [
@@ -314,7 +329,7 @@
           "skuId": "1306941",
           "skuName": "快乐猴 鸡蛋风味挂面 1kg",
           "purchaseQty": 2700,
-          "recvQty": 0,
+          "recvQty": 2685,
           "hasQc": true,
           "seq": 2
         },
@@ -328,6 +343,28 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 3
+        },
+        {
+          "supplierName": "青岛周氏塑料包装有限公司",
+          "poNo": "CG202606086532",
+          "reserveBillCode": "YY20260609002178",
+          "skuId": "1138196",
+          "skuName": "快乐猴-垃圾袋黑色130*140-特大号300个/包",
+          "purchaseQty": 20,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
+          "supplierName": "青岛周氏塑料包装有限公司",
+          "poNo": "CG202606086532",
+          "reserveBillCode": "YY20260609002178",
+          "skuId": "1138331",
+          "skuName": "快乐猴-垃圾袋60*50-中号",
+          "purchaseQty": 20,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
         }
       ],
       "qc_recv_pending": [],
@@ -339,6 +376,14 @@
           "recvQty": 900,
           "diffQty": -90,
           "poNo": "CG202605262722"
+        },
+        {
+          "supplierName": "山东天邦粮油有限公司-快乐猴",
+          "skuName": "快乐猴 鸡蛋风味挂面 1kg",
+          "purchaseQty": 2700,
+          "recvQty": 2685,
+          "diffQty": -15,
+          "poNo": "CG2026061210245"
         }
       ],
       "qc_rejected": [],
@@ -560,10 +605,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 112,
+      "not_started": 117,
       "in_progress": 0,
       "done": 0,
-      "total": 112,
+      "total": 117,
       "status": "ok"
     }
   },
@@ -1029,29 +1074,6 @@
           "store": "南海国昌广场店"
         },
         {
-          "waybillCode": "GZ2111911090",
-          "licensePlate": "粤A13J28",
-          "driverName": "张钰光",
-          "carrierName": "优乐（广州）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 10,
-          "preCoolMonitorStatus": 1,
-          "preCoolMonitorStatusName": "合格",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1781311951000,
-          "store": "海珠星汇广场店"
-        },
-        {
           "waybillCode": "GZ2111862540",
           "licensePlate": "粤A8S2C6",
           "driverName": "梁春良",
@@ -1072,6 +1094,29 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1781309812000,
+          "store": "海珠星汇广场店"
+        },
+        {
+          "waybillCode": "GZ2111911090",
+          "licensePlate": "粤A13J28",
+          "driverName": "张钰光",
+          "carrierName": "优乐（广州）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 10,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1781311951000,
           "store": "海珠星汇广场店"
         },
         {

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-13T12:53:31",
+  "timestamp": "2026-06-13T13:02:31",
   "date": "2026-06-13",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 13,
       "signed": 9,
-      "waiting": 1
+      "waiting": 0
     },
     "ontime": {
       "ontime": 0,
       "early": 9,
       "late": 0,
-      "total": 10,
+      "total": 9,
       "rate": 0.0,
-      "early_rate": 90.0,
+      "early_rate": 100.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -67,9 +67,9 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 10,
+        "total": 9,
         "done": 9,
-        "rate": 90.0
+        "rate": 100.0
       },
       "pcs": {
         "total": 940,
@@ -79,14 +79,14 @@
         "recv_rate": 100.0
       },
       "sku": {
-        "total": 18,
+        "total": 15,
         "done": 15,
-        "rate": 83.3
+        "rate": 100.0
       },
       "supplier": {
-        "total": 10,
+        "total": 9,
         "done": 9,
-        "rate": 90.0,
+        "rate": 100.0,
         "detail": {
           "深圳市鲜百汇食品有限公司-快乐猴": {
             "plan": 1,
@@ -123,26 +123,13 @@
           "祐康（杭州）食品制造有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "杭州众点食品科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
     },
     "details": {
       "unreserved": [],
-      "unsigned": [
-        {
-          "supplierName": "杭州众点食品科技有限公司-快乐猴",
-          "billCode": "YY20260611006503",
-          "skuCount": 3,
-          "pcs": 1018,
-          "timeSlot": "12:30 - 13:00",
-          "seq": 1
-        }
-      ],
+      "unsigned": [],
       "unloading": [
         {
           "supplierName": "深圳市鲜百汇食品有限公司-快乐猴",
@@ -203,13 +190,13 @@
           "supplierName": "深圳市鲜百汇食品有限公司-快乐猴",
           "skuName": "海氏力 鲜冻海捕带鱼 1kg",
           "completeTime": "10:10",
-          "waitingMins": 163
+          "waitingMins": 172
         },
         {
           "supplierName": "广东环球水产食品有限公司-快乐猴",
           "skuName": "大号红虾仁 454g",
           "completeTime": "11:35",
-          "waitingMins": 78
+          "waitingMins": 87
         }
       ],
       "signed_not_recv": [
@@ -344,21 +331,37 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 3676,
+      "plan_pcs": 3900,
       "alloc_pcs": 3551,
-      "alloc_rate": 96.6,
+      "alloc_rate": 91.1,
       "picked_pcs": 0,
       "sow_pcs": 0,
       "sow_rate": 0.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 171,
+      "sku_plan": 176,
       "sku_alloc": 171,
       "sku_sow": 0,
       "sku_ship": 0,
-      "total_orders": 8
+      "total_orders": 10
     },
     "unalloc_details": [
+      {
+        "receiverName": "快乐猴-越秀越富广场店-031",
+        "orderNo": "DB20260613270929",
+        "skuNum": 3,
+        "planQty": 152,
+        "allocQty": 0,
+        "unallocQty": 152
+      },
+      {
+        "receiverName": "快乐猴-海珠星汇广场店-034",
+        "orderNo": "DB20260613270928",
+        "skuNum": 2,
+        "planQty": 72,
+        "allocQty": 0,
+        "unallocQty": 72
+      },
       {
         "receiverName": "快乐猴-南海国昌广场店-023",
         "orderNo": "DB2026061387839",
@@ -385,34 +388,51 @@
       }
     ],
     "seeding": {
-      "not_started": 103,
+      "not_started": 104,
       "in_progress": 5,
-      "done": 118,
-      "total": 226,
+      "done": 125,
+      "total": 234,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 8,
-    "total_pcs": 3676,
+    "total_orders": 10,
+    "total_pcs": 3900,
     "alloc_pcs": 3551,
-    "alloc_rate": 96.6,
+    "alloc_rate": 91.1,
     "picked_pcs": 0,
     "sow_pcs": 0,
     "sow_rate": 0.0,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 171,
+    "sku_plan": 176,
     "sku_alloc": 171,
     "sku_sow": 0,
-    "store_count": 4,
+    "store_count": 5,
     "by_store": {
       "快乐猴-番禺建华汇店-019": 1607.0,
       "快乐猴-禅城东方广场店-018": 1062.0,
       "快乐猴-南海国昌广场店-023": 989.0,
-      "快乐猴-越秀越富广场店-031": 18.0
+      "快乐猴-越秀越富广场店-031": 170.0,
+      "快乐猴-海珠星汇广场店-034": 72.0
     },
     "unalloc_details": [
+      {
+        "receiverName": "快乐猴-越秀越富广场店-031",
+        "orderNo": "DB20260613270929",
+        "skuNum": 3,
+        "planQty": 152,
+        "allocQty": 0,
+        "unallocQty": 152
+      },
+      {
+        "receiverName": "快乐猴-海珠星汇广场店-034",
+        "orderNo": "DB20260613270928",
+        "skuNum": 2,
+        "planQty": 72,
+        "allocQty": 0,
+        "unallocQty": 72
+      },
       {
         "receiverName": "快乐猴-南海国昌广场店-023",
         "orderNo": "DB2026061387839",

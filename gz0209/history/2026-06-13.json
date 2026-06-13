@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-13T11:42:07",
+  "timestamp": "2026-06-13T11:49:54",
   "date": "2026-06-13",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 22,
-      "signed": 5,
-      "waiting": 14
+      "signed": 7,
+      "waiting": 12
     },
     "ontime": {
       "ontime": 0,
-      "early": 4,
+      "early": 6,
       "late": 1,
       "total": 19,
       "rate": 0.0,
-      "early_rate": 21.1,
+      "early_rate": 31.6,
       "late_rate": 5.3
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 5,
+      "total": 6,
       "done": 5,
-      "rate": 100.0,
+      "rate": 83.3,
       "pcs_done": 8846,
-      "sign_pcs_done": 8846
+      "sign_pcs_done": 8975
     },
     "qc": {
-      "total": 4,
+      "total": 7,
       "done": 4,
-      "pending": 0,
+      "pending": 3,
       "passed": 4,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 57.1,
       "bill_done": 4,
-      "bill_total": 4,
+      "bill_total": 7,
       "pcs_done": 3740,
       "pcs_passed": 3740,
-      "pcs_total": 3740,
+      "pcs_total": 3869,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 96.7,
       "sku_done": 4,
-      "sku_total": 4,
-      "sku_rate": 100.0
+      "sku_total": 7,
+      "sku_rate": 57.1
     },
     "putaway": {
       "total": 5160,
@@ -75,8 +75,8 @@
     "dimensions": {
       "reserve": {
         "total": 19,
-        "done": 5,
-        "rate": 26.3
+        "done": 7,
+        "rate": 36.8
       },
       "pcs": {
         "total": 13798,
@@ -87,14 +87,18 @@
       },
       "sku": {
         "total": 37,
-        "done": 6,
-        "rate": 16.2
+        "done": 12,
+        "rate": 32.4
       },
       "supplier": {
         "total": 15,
-        "done": 5,
-        "rate": 33.3,
+        "done": 6,
+        "rate": 40.0,
         "detail": {
+          "广东燕塘乳业股份有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "广州华景商贸有限责任公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -133,10 +137,6 @@
           },
           "广东慧智农业科技有限公司-快乐猴": {
             "plan": 1,
-            "done": 0
-          },
-          "广东燕塘乳业股份有限公司-快乐猴": {
-            "plan": 2,
             "done": 0
           },
           "广州广库供应链有限公司-快乐猴": {
@@ -219,20 +219,12 @@
           "seq": 6
         },
         {
-          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
-          "billCode": "YY20260611007352",
-          "skuCount": 3,
-          "pcs": 129,
-          "timeSlot": "15:30 - 16:00",
-          "seq": 7
-        },
-        {
           "supplierName": "广州广库供应链有限公司-快乐猴",
           "billCode": "YY20260611001616",
           "skuCount": 2,
           "pcs": 120,
           "timeSlot": "15:30 - 16:00",
-          "seq": 8
+          "seq": 7
         },
         {
           "supplierName": "广东润康药业有限公司-快乐猴",
@@ -240,7 +232,7 @@
           "skuCount": 2,
           "pcs": 516,
           "timeSlot": "15:30 - 16:00",
-          "seq": 9
+          "seq": 8
         },
         {
           "supplierName": "美贻（北京）科技有限公司",
@@ -248,7 +240,7 @@
           "skuCount": 1,
           "pcs": 10,
           "timeSlot": "15:30 - 16:00",
-          "seq": 10
+          "seq": 9
         },
         {
           "supplierName": "山东昊坤果业有限公司-快乐猴",
@@ -256,7 +248,7 @@
           "skuCount": 1,
           "pcs": 3500,
           "timeSlot": "15:00 - 15:30",
-          "seq": 11
+          "seq": 10
         },
         {
           "supplierName": "山东昊坤果业有限公司-快乐猴",
@@ -264,35 +256,75 @@
           "skuCount": 1,
           "pcs": 1512,
           "timeSlot": "15:30 - 16:00",
-          "seq": 12
+          "seq": 11
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
+          "billCode": "YY20260611007352",
+          "signTime": "11:43",
+          "unloadStartTime": "11:44",
+          "status": "卸货中"
+        },
+        {
+          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
+          "billCode": "YY20260611007352",
+          "signTime": "11:43",
+          "unloadStartTime": "11:44",
+          "status": "卸货中"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
+          "skuName": "燕塘 A2β-酪蛋白浓缩纯牛奶 120ml*16",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
+          "skuName": "燕塘 原味酸奶饮品 250ml*12",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
+          "skuName": "燕塘 红枣枸杞牛奶饮品 250ml*12",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "山东天邦粮油有限公司-快乐猴",
           "skuName": "快乐猴 鸡蛋风味挂面 1kg",
           "completeTime": "10:12",
-          "waitingMins": 89
+          "waitingMins": 97
         },
         {
           "supplierName": "江苏光明天成米业有限公司-快乐猴",
           "skuName": "快乐猴 丝苗米 5kg",
           "completeTime": "11:20",
-          "waitingMins": 21
+          "waitingMins": 29
         },
         {
           "supplierName": "青岛周氏塑料包装有限公司",
           "skuName": "快乐猴-垃圾袋黑色130*140-特大号300个/包",
           "completeTime": "11:29",
-          "waitingMins": 12
+          "waitingMins": 20
         },
         {
           "supplierName": "青岛周氏塑料包装有限公司",
           "skuName": "快乐猴-垃圾袋60*50-中号",
           "completeTime": "11:30",
-          "waitingMins": 11
+          "waitingMins": 19
         }
       ],
       "signed_not_recv": [
@@ -317,6 +349,17 @@
           "recvQty": 2685,
           "hasQc": true,
           "seq": 2
+        },
+        {
+          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
+          "poNo": "CG202606107224",
+          "reserveBillCode": "YY20260611007352",
+          "skuId": "1381346",
+          "skuName": "燕塘 红枣枸杞牛奶饮品 250ml*12",
+          "purchaseQty": 24,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
         }
       ],
       "qc_recv_pending": [],
@@ -597,10 +640,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 136,
-      "in_progress": 4,
-      "done": 35,
-      "total": 175,
+      "not_started": 121,
+      "in_progress": 8,
+      "done": 49,
+      "total": 178,
       "status": "ok"
     }
   },

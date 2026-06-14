@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-14T10:35:12",
+  "timestamp": "2026-06-14T10:39:47",
   "date": "2026-06-14",
   "warehouse": "GZ0210",
   "inbound": {
@@ -25,37 +25,44 @@
     },
     "unload": {
       "total": 4,
-      "done": 2,
-      "rate": 50.0,
-      "pcs_done": 4120,
+      "done": 4,
+      "rate": 100.0,
+      "pcs_done": 8377,
       "sign_pcs_done": 8377
     },
     "qc": {
-      "total": 5,
+      "total": 1,
       "done": 1,
-      "pending": 4,
+      "pending": 0,
       "passed": 1,
       "rejected": 0,
-      "rate": 20.0,
+      "rate": 100.0,
       "bill_done": 1,
-      "bill_total": 5,
+      "bill_total": 1,
       "pcs_done": 3000,
       "pcs_passed": 3000,
-      "pcs_total": 7257,
+      "pcs_total": 3000,
       "pcs_rejected": 0,
-      "pcs_rate": 41.3,
+      "pcs_rate": 100.0,
       "sku_done": 1,
-      "sku_total": 5,
-      "sku_rate": 20.0
+      "sku_total": 1,
+      "sku_rate": 100.0
     },
     "putaway": {
-      "total": 14192,
+      "total": 15182,
       "done": 11192,
-      "rate": 78.9,
-      "sku_total": 24,
+      "rate": 73.7,
+      "sku_total": 25,
       "sku_done": 23,
-      "sku_rate": 95.8,
+      "sku_rate": 92.0,
       "details": [
+        {
+          "poNo": "CG2026060211681",
+          "hopePcs": 990,
+          "putPcs": 0,
+          "hopeSku": 1,
+          "putSku": 0
+        },
         {
           "poNo": "CG2026060211674",
           "hopePcs": 3000,
@@ -75,8 +82,8 @@
         "total": 16182,
         "done": 11422,
         "rate": 70.6,
-        "recv_done": 14192,
-        "recv_rate": 87.7
+        "recv_done": 15182,
+        "recv_rate": 93.8
       },
       "sku": {
         "total": 18,
@@ -188,61 +195,14 @@
           "seq": 3
         }
       ],
-      "unloading": [
-        {
-          "supplierName": "山东华鸭食品科技有限公司-山东华鸭食品科技有限公司",
-          "billCode": "YY20260610000974",
-          "signTime": "10:14",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "广州运通贸易发展有限公司-快乐猴",
-          "billCode": "YY20260613000513",
-          "signTime": "10:11",
-          "unloadStartTime": "10:12",
-          "status": "卸货中"
-        }
-      ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "广州运通贸易发展有限公司-快乐猴",
-          "skuName": "八喜混合口味冰淇淋60g*6杯",
-          "arrivalTime": "11:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "广州运通贸易发展有限公司-快乐猴",
-          "skuName": "五羊牌 香芋味雪糕甜筒 73g",
-          "arrivalTime": "11:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
-          "supplierName": "广州运通贸易发展有限公司-快乐猴",
-          "skuName": "礼拜天红豆糯米方糕雪糕70g",
-          "arrivalTime": "11:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 4,
-          "supplierName": "山东华鸭食品科技有限公司-山东华鸭食品科技有限公司",
-          "skuName": "快乐猴 脆皮香酥鸭 9.6Kg",
-          "arrivalTime": "16:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "unloading": [],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
           "skuName": "快乐猴 大颗粒虾滑 120g",
           "completeTime": "10:02",
-          "waitingMins": 33
+          "waitingMins": 37
         }
       ],
       "signed_not_recv": [
@@ -269,17 +229,6 @@
           "seq": 2
         },
         {
-          "supplierName": "郑州洽好食品有限公司",
-          "poNo": "CG2026060211681",
-          "reserveBillCode": "YY20260612006052",
-          "skuId": "1122451",
-          "skuName": "快乐猴 黑椒牛肉酥皮馅饼 500g",
-          "purchaseQty": 990,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 3
-        },
-        {
           "supplierName": "山东华鸭食品科技有限公司-山东华鸭食品科技有限公司",
           "poNo": "CG2026060115602",
           "reserveBillCode": "YY20260610000974",
@@ -288,7 +237,7 @@
           "purchaseQty": 53,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 3
         },
         {
           "supplierName": "广州运通贸易发展有限公司-快乐猴",
@@ -299,7 +248,7 @@
           "purchaseQty": 12,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 4
         }
       ],
       "qc_recv_pending": [],
@@ -404,10 +353,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 96,
+      "not_started": 98,
       "in_progress": 0,
       "done": 0,
-      "total": 96,
+      "total": 98,
       "status": "ok"
     }
   },

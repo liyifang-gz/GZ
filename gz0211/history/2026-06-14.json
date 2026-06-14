@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-14T09:57:26",
+  "timestamp": "2026-06-14T10:08:12",
   "date": "2026-06-14",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 11,
-      "signed": 2,
-      "waiting": 6
+      "signed": 3,
+      "waiting": 5
     },
     "ontime": {
       "ontime": 0,
-      "early": 2,
+      "early": 3,
       "late": 0,
       "total": 8,
       "rate": 0.0,
-      "early_rate": 25.0,
+      "early_rate": 37.5,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 1,
-      "rate": 100.0,
+      "rate": 50.0,
       "pcs_done": 3130,
-      "sign_pcs_done": 3130
+      "sign_pcs_done": 4120
     },
     "qc": {
       "total": 2,
-      "done": 0,
-      "pending": 2,
-      "passed": 0,
+      "done": 1,
+      "pending": 1,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 50.0,
+      "bill_done": 1,
       "bill_total": 2,
-      "pcs_done": 0,
-      "pcs_passed": 0,
-      "pcs_total": 3130,
+      "pcs_done": 3000,
+      "pcs_passed": 3000,
+      "pcs_total": 3990,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 75.2,
+      "sku_done": 1,
       "sku_total": 2,
-      "sku_rate": 0.0
+      "sku_rate": 50.0
     },
     "putaway": {
       "total": 11192,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 8,
-        "done": 2,
-        "rate": 25.0
+        "done": 3,
+        "rate": 37.5
       },
       "pcs": {
         "total": 16182,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 18,
-        "done": 4,
-        "rate": 22.2
+        "done": 5,
+        "rate": 27.8
       },
       "supplier": {
         "total": 7,
-        "done": 1,
-        "rate": 14.3,
+        "done": 2,
+        "rate": 28.6,
         "detail": {
+          "郑州洽好食品有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "湛江国联水产开发股份有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -93,10 +97,6 @@
             "done": 0
           },
           "广州运通贸易发展有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "郑州洽好食品有限公司": {
             "plan": 1,
             "done": 0
           },
@@ -180,20 +180,12 @@
           "seq": 3
         },
         {
-          "supplierName": "郑州洽好食品有限公司",
-          "billCode": "YY20260612006052",
-          "skuCount": 1,
-          "pcs": 990,
-          "timeSlot": "14:00 - 14:30",
-          "seq": 4
-        },
-        {
           "supplierName": "山东华鸭食品科技有限公司-山东华鸭食品科技有限公司",
           "billCode": "YY20260610000974",
           "skuCount": 1,
           "pcs": 53,
           "timeSlot": "16:00 - 16:30",
-          "seq": 5
+          "seq": 4
         },
         {
           "supplierName": "山东胜农食品有限公司",
@@ -201,29 +193,35 @@
           "skuCount": 5,
           "pcs": 1000,
           "timeSlot": "14:30 - 15:00",
-          "seq": 6
+          "seq": 5
         }
       ],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "郑州洽好食品有限公司",
+          "billCode": "YY20260612006052",
+          "signTime": "10:02",
+          "status": "已签到未卸货"
+        }
+      ],
       "qc_pending": [
         {
           "seq": 1,
-          "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
-          "skuName": "快乐猴 大颗粒虾滑 120g",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "09:43",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
-          "skuName": "小霸龙 蒜香浓郁酥皮烤鱼 1kg",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "09:43",
+          "supplierName": "郑州洽好食品有限公司",
+          "skuName": "快乐猴 黑椒牛肉酥皮馅饼 500g",
+          "arrivalTime": "14:00",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
+          "skuName": "快乐猴 大颗粒虾滑 120g",
+          "completeTime": "10:02",
+          "waitingMins": 6
+        }
+      ],
       "signed_not_recv": [
         {
           "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
@@ -233,8 +231,19 @@
           "skuName": "快乐猴 大颗粒虾滑 120g",
           "purchaseQty": 3000,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 1
+        },
+        {
+          "supplierName": "郑州洽好食品有限公司",
+          "poNo": "CG2026060211681",
+          "reserveBillCode": "YY20260612006052",
+          "skuId": "1122451",
+          "skuName": "快乐猴 黑椒牛肉酥皮馅饼 500g",
+          "purchaseQty": 990,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
         }
       ],
       "qc_recv_pending": [],
@@ -339,10 +348,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 51,
+      "not_started": 67,
       "in_progress": 0,
       "done": 0,
-      "total": 51,
+      "total": 67,
       "status": "ok"
     }
   },

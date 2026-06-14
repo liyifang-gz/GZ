@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-14T09:57:48",
+  "timestamp": "2026-06-14T10:08:35",
   "date": "2026-06-14",
   "warehouse": "GZ0210",
   "inbound": {
@@ -31,22 +31,22 @@
       "sign_pcs_done": 0
     },
     "qc": {
-      "total": 3,
-      "done": 0,
+      "total": 4,
+      "done": 1,
       "pending": 3,
-      "passed": 0,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
-      "bill_total": 3,
-      "pcs_done": 0,
-      "pcs_passed": 0,
-      "pcs_total": 8550,
+      "rate": 25.0,
+      "bill_done": 1,
+      "bill_total": 4,
+      "pcs_done": 1500,
+      "pcs_passed": 1500,
+      "pcs_total": 10550,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
-      "sku_total": 3,
-      "sku_rate": 0.0
+      "pcs_rate": 14.2,
+      "sku_done": 1,
+      "sku_total": 4,
+      "sku_rate": 25.0
     },
     "putaway": {
       "total": 0,
@@ -65,10 +65,10 @@
       },
       "pcs": {
         "total": 38011,
-        "done": 18815,
-        "rate": 49.5,
-        "recv_done": 18815,
-        "recv_rate": 49.5
+        "done": 20835,
+        "rate": 54.8,
+        "recv_done": 20835,
+        "recv_rate": 54.8
       },
       "sku": {
         "total": 0,
@@ -146,7 +146,7 @@
           "skuCount": 1,
           "pcs": 520,
           "preArrivalTime": "2026-06-14",
-          "poStatus": "已确认"
+          "poStatus": "已完成"
         },
         {
           "supplierName": "东莞市天骏生物科技有限公司-快乐猴",
@@ -202,7 +202,7 @@
           "skuCount": 2,
           "pcs": 3372,
           "preArrivalTime": "2026-06-14",
-          "poStatus": "部分收货"
+          "poStatus": "已完成"
         },
         {
           "supplierName": "江苏光明天成米业有限公司-快乐猴",
@@ -235,31 +235,46 @@
         {
           "seq": 2,
           "supplierName": "东莞市天骏生物科技有限公司-快乐猴",
-          "skuName": "快乐猴 饮用纯净水 5L",
-          "arrivalTime": "09:30",
+          "skuName": "快乐猴 饮用纯净水 550ml*24",
+          "arrivalTime": "10:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         },
         {
           "seq": 3,
-          "supplierName": "东莞市天骏生物科技有限公司-快乐猴",
-          "skuName": "快乐猴 饮用纯净水 550ml*24",
-          "arrivalTime": "10:00",
+          "supplierName": "孝感华冠饮料有限公司-快乐猴",
+          "skuName": "快乐猴 劲爽苏打汽水 330ml*4",
+          "arrivalTime": "13:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "东莞市天骏生物科技有限公司-快乐猴",
+          "skuName": "快乐猴 饮用纯净水 5L",
+          "completeTime": "10:04",
+          "waitingMins": 4
+        }
+      ],
       "signed_not_recv": [],
-      "qc_recv_pending": [],
+      "qc_recv_pending": [
+        {
+          "supplierName": "东莞市天骏生物科技有限公司-快乐猴",
+          "skuName": "快乐猴 饮用纯净水 5L",
+          "qcCompleteTime": "10:04",
+          "waitingMins": 4,
+          "poNo": "CG2026060114257"
+        }
+      ],
       "recv_diff": [],
       "qc_rejected": [],
       "duplicate_reserve": []
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 9407.5,
-      "efficiency_formula": "18815 PCS / 2 人",
+      "efficiency": 10417.5,
+      "efficiency_formula": "20835 PCS / 2 人",
       "inbound_schedule": 2
     }
   },

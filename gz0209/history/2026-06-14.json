@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-14T11:10:47",
+  "timestamp": "2026-06-14T11:22:27",
   "date": "2026-06-14",
   "warehouse": "GZ0210",
   "inbound": {
@@ -25,37 +25,45 @@
     },
     "unload": {
       "total": 6,
-      "done": 4,
-      "rate": 66.7,
-      "pcs_done": 6642,
+      "done": 5,
+      "rate": 83.3,
+      "pcs_done": 8642,
       "sign_pcs_done": 13342
     },
     "qc": {
-      "total": 3,
+      "total": 2,
       "done": 1,
-      "pending": 2,
+      "pending": 1,
       "passed": 1,
       "rejected": 0,
-      "rate": 33.3,
+      "rate": 50.0,
       "bill_done": 1,
-      "bill_total": 3,
+      "bill_total": 2,
       "pcs_done": 1500,
       "pcs_passed": 1500,
-      "pcs_total": 8200,
+      "pcs_total": 6200,
       "pcs_rejected": 0,
-      "pcs_rate": 18.3,
+      "pcs_rate": 24.2,
       "sku_done": 1,
-      "sku_total": 3,
-      "sku_rate": 33.3
+      "sku_total": 2,
+      "sku_rate": 50.0
     },
     "putaway": {
-      "total": 23185,
+      "total": 23585,
       "done": 23185,
-      "rate": 100.0,
-      "sku_total": 25,
+      "rate": 98.3,
+      "sku_total": 26,
       "sku_done": 25,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 96.2,
+      "details": [
+        {
+          "poNo": "CG202606099564",
+          "hopePcs": 400,
+          "putPcs": 0,
+          "hopeSku": 1,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +75,8 @@
         "total": 38011,
         "done": 37039,
         "rate": 97.4,
-        "recv_done": 23185,
-        "recv_rate": 61.0
+        "recv_done": 23585,
+        "recv_rate": 62.0
       },
       "sku": {
         "total": 43,
@@ -80,13 +88,13 @@
         "done": 5,
         "rate": 35.7,
         "detail": {
-          "东莞市天骏生物科技有限公司-快乐猴": {
-            "plan": 2,
-            "done": 2
-          },
           "上海塞翁福农业发展有限公司-快乐猴": {
             "plan": 1,
             "done": 1
+          },
+          "东莞市天骏生物科技有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
           },
           "孝感华冠饮料有限公司-快乐猴": {
             "plan": 1,
@@ -258,13 +266,6 @@
       ],
       "unloading": [
         {
-          "supplierName": "孝感华冠饮料有限公司-快乐猴",
-          "billCode": "YY20260608000746",
-          "signTime": "10:00",
-          "unloadStartTime": "10:15",
-          "status": "卸货中"
-        },
-        {
           "supplierName": "福建白岩矿泉水有限公司-快乐猴",
           "billCode": "YY20260603000927",
           "signTime": "08:52",
@@ -280,14 +281,6 @@
           "arrivalTime": "10:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "孝感华冠饮料有限公司-快乐猴",
-          "skuName": "快乐猴 劲爽苏打汽水 330ml*4",
-          "arrivalTime": "13:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -295,7 +288,7 @@
           "supplierName": "东莞市天骏生物科技有限公司-快乐猴",
           "skuName": "快乐猴 饮用纯净水 5L",
           "completeTime": "10:04",
-          "waitingMins": 66
+          "waitingMins": 78
         }
       ],
       "signed_not_recv": [
@@ -320,17 +313,6 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 2
-        },
-        {
-          "supplierName": "上海塞翁福农业发展有限公司-快乐猴",
-          "poNo": "CG202606099564",
-          "reserveBillCode": "YY20260611000340",
-          "skuId": "1340926",
-          "skuName": "快乐猴 云南贡菜干 50g",
-          "purchaseQty": 400,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 3
         }
       ],
       "qc_recv_pending": [],
@@ -365,7 +347,7 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 302,
+      "pcs_total": 338,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -405,7 +387,7 @@
         "pick_rate": 0,
         "sow_rate": 0,
         "cage_rate": 0.0,
-        "sowed_picked": 302
+        "sowed_picked": 338
       },
       "sku": {
         "total": 0,
@@ -419,19 +401,19 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 308,
-      "alloc_pcs": 302,
-      "alloc_rate": 98.1,
+      "plan_pcs": 344,
+      "alloc_pcs": 338,
+      "alloc_rate": 98.3,
       "picked_pcs": 0,
       "sow_pcs": 0,
       "sow_rate": 0.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 10,
-      "sku_alloc": 9,
+      "sku_plan": 11,
+      "sku_alloc": 10,
       "sku_sow": 0,
       "sku_ship": 0,
-      "total_orders": 6
+      "total_orders": 7
     },
     "unalloc_details": [
       {
@@ -452,22 +434,22 @@
     }
   },
   "plan": {
-    "total_orders": 6,
-    "total_pcs": 308,
-    "alloc_pcs": 302,
-    "alloc_rate": 98.1,
+    "total_orders": 7,
+    "total_pcs": 344,
+    "alloc_pcs": 338,
+    "alloc_rate": 98.3,
     "picked_pcs": 0,
     "sow_pcs": 0,
     "sow_rate": 0.0,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 10,
-    "sku_alloc": 9,
+    "sku_plan": 11,
+    "sku_alloc": 10,
     "sku_sow": 0,
     "store_count": 3,
     "by_store": {
       "快乐猴-番禺建华汇店-019": 242.0,
-      "快乐猴-禅城东方广场店-018": 60.0,
+      "快乐猴-禅城东方广场店-018": 96.0,
       "快乐猴-南海国昌广场店-023": 6.0
     },
     "unalloc_details": [

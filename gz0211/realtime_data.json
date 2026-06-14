@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-14T13:26:26",
+  "timestamp": "2026-06-14T13:36:44",
   "date": "2026-06-14",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 6,
-      "done": 4,
-      "pending": 2,
-      "passed": 4,
+      "done": 6,
+      "pending": 0,
+      "passed": 6,
       "rejected": 0,
-      "rate": 66.7,
-      "bill_done": 4,
+      "rate": 100.0,
+      "bill_done": 6,
       "bill_total": 6,
-      "pcs_done": 3770,
-      "pcs_passed": 3770,
+      "pcs_done": 4000,
+      "pcs_passed": 4000,
       "pcs_total": 4000,
       "pcs_rejected": 0,
-      "pcs_rate": 94.2,
-      "sku_done": 4,
+      "pcs_rate": 100.0,
+      "sku_done": 6,
       "sku_total": 6,
-      "sku_rate": 66.7
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 15182,
@@ -171,47 +171,42 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "山东胜农食品有限公司",
-          "skuName": "单冻鸡琵琶腿 1kg",
-          "arrivalTime": "14:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "山东胜农食品有限公司",
-          "skuName": "单冻鸡翅中  1kg",
-          "arrivalTime": "14:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "首次进行中"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
           "skuName": "快乐猴 大颗粒虾滑 120g",
           "completeTime": "10:02",
-          "waitingMins": 204
+          "waitingMins": 214
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "冷冻鸡爪 1kg",
           "completeTime": "13:22",
-          "waitingMins": 4
+          "waitingMins": 14
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅根 1kg",
           "completeTime": "13:15",
-          "waitingMins": 11
+          "waitingMins": 22
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡琵琶腿 1kg",
+          "completeTime": "13:32",
+          "waitingMins": 4
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅尖 1kg",
           "completeTime": "13:19",
+          "waitingMins": 18
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡翅中  1kg",
+          "completeTime": "13:29",
           "waitingMins": 7
         }
       ],
@@ -246,7 +241,7 @@
           "skuName": "单冻鸡翅中  1kg",
           "purchaseQty": 150,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 3
         },
         {
@@ -268,7 +263,7 @@
           "skuName": "单冻鸡琵琶腿 1kg",
           "purchaseQty": 80,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 5
         }
       ],
@@ -391,9 +386,9 @@
       }
     ],
     "seeding": {
-      "not_started": 89,
-      "in_progress": 2,
-      "done": 99,
+      "not_started": 77,
+      "in_progress": 3,
+      "done": 110,
       "total": 190,
       "status": "ok"
     }

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-14T08:53:17",
+  "timestamp": "2026-06-14T09:08:26",
   "date": "2026-06-14",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 11,
-      "signed": 0,
-      "waiting": 8
+      "signed": 2,
+      "waiting": 6
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 2,
       "late": 0,
       "total": 8,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 25.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 3130
     },
     "qc": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "pending": 0,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 3130,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 2,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 11192,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 8,
-        "done": 0,
-        "rate": 0.0
+        "done": 2,
+        "rate": 25.0
       },
       "pcs": {
         "total": 16182,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 18,
-        "done": 0,
-        "rate": 0.0
+        "done": 4,
+        "rate": 22.2
       },
       "supplier": {
         "total": 7,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 14.3,
         "detail": {
+          "湛江国联水产开发股份有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "沧州市日月潭食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -102,10 +106,6 @@
           },
           "山东胜农食品有限公司": {
             "plan": 1,
-            "done": 0
-          },
-          "湛江国联水产开发股份有限公司-快乐猴": {
-            "plan": 2,
             "done": 0
           }
         }
@@ -202,20 +202,54 @@
           "pcs": 1000,
           "timeSlot": "14:30 - 15:00",
           "seq": 6
+        }
+      ],
+      "unloading": [
+        {
+          "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
+          "billCode": "YY20260609002417",
+          "signTime": "09:01",
+          "status": "已签到未卸货"
         },
         {
           "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
           "billCode": "YY20260609002417",
-          "skuCount": 2,
-          "pcs": 3130,
-          "timeSlot": "15:00 - 16:30",
-          "seq": 7
+          "signTime": "09:01",
+          "status": "已签到未卸货"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
+          "skuName": "快乐猴 大颗粒虾滑 120g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
+          "skuName": "小霸龙 蒜香浓郁酥皮烤鱼 1kg",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
+          "poNo": "CG2026060211674",
+          "reserveBillCode": "YY20260609002417",
+          "skuId": "1225930",
+          "skuName": "快乐猴 大颗粒虾滑 120g",
+          "purchaseQty": 3000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -318,10 +352,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 14,
+      "not_started": 21,
       "in_progress": 0,
       "done": 0,
-      "total": 14,
+      "total": 21,
       "status": "ok"
     }
   },

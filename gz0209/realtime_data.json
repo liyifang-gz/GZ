@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-15T07:52:57",
+  "timestamp": "2026-06-15T08:03:56",
   "date": "2026-06-15",
   "warehouse": "GZ0210",
   "inbound": {
@@ -49,12 +49,12 @@
       "sku_rate": 0
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
+      "total": 8692,
+      "done": 8692,
+      "rate": 100.0,
+      "sku_total": 20,
+      "sku_done": 20,
+      "sku_rate": 100.0,
       "details": []
     },
     "dimensions": {
@@ -344,34 +344,46 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 0,
+      "total": 1,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 0,
+      "total": 1,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 5818,
-      "pcs_total": 0,
-      "pcs_rate": 0.0
+      "pcs_total": 6018,
+      "pcs_rate": 96.7
     },
     "packing": {
       "total": 6,
-      "done": 6,
-      "rate": 100.0
+      "done": 5,
+      "rate": 83.3
     },
-    "uncaged_details": [],
-    "unpacked_details": [],
+    "uncaged_details": [
+      {
+        "containerCode": "RQ-28-03-0900010",
+        "poiName": "禅城东方广场店",
+        "qty": 200
+      }
+    ],
+    "unpacked_details": [
+      {
+        "containerCode": "RQ-28-03-0900010",
+        "poiName": "禅城东方广场店",
+        "qty": 200
+      }
+    ],
     "shipping": {
-      "total": 0,
+      "total": 200,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 0,
+      "multi_pallet_total": 1,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
@@ -472,71 +484,75 @@
           "planOutTime": "06-15 22:00"
         }
       ],
-      "outbound_efficiency": 0.0,
-      "outbound_efficiency_formula": "0 PCS / 4 人(拣播员)"
+      "outbound_efficiency": 50.0,
+      "outbound_efficiency_formula": "200 PCS / 4 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 0,
+        "total": 200,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
-        "cage_rate": 0.0,
-        "sowed_picked": 0
+        "not_caged": 200,
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
+        "cage_rate": 96.7,
+        "sowed_picked": 6018
       },
       "sku": {
-        "total": 0,
+        "total": 1,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
-        "cage_rate": 0
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
+        "cage_rate": 0.0
       }
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 0,
-      "alloc_pcs": 0,
-      "alloc_rate": 0,
-      "picked_pcs": 0,
-      "sow_pcs": 0,
-      "sow_rate": 0,
+      "plan_pcs": 21143,
+      "alloc_pcs": 21143,
+      "alloc_rate": 100.0,
+      "picked_pcs": 6018,
+      "sow_pcs": 6018,
+      "sow_rate": 28.5,
       "ship_pcs": 0,
-      "ship_rate": 0,
-      "sku_plan": 0,
-      "sku_alloc": 0,
-      "sku_sow": 0,
+      "ship_rate": 0.0,
+      "sku_plan": 700,
+      "sku_alloc": 700,
+      "sku_sow": 8,
       "sku_ship": 0,
-      "total_orders": 0
+      "total_orders": 4
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 0,
+      "not_started": 8,
       "in_progress": 0,
       "done": 0,
-      "total": 0,
+      "total": 8,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 0,
-    "total_pcs": 0,
-    "alloc_pcs": 0,
-    "alloc_rate": 0,
-    "picked_pcs": 0,
-    "sow_pcs": 0,
-    "sow_rate": 0,
+    "total_orders": 4,
+    "total_pcs": 21143,
+    "alloc_pcs": 21143,
+    "alloc_rate": 100.0,
+    "picked_pcs": 6018,
+    "sow_pcs": 6018,
+    "sow_rate": 28.5,
     "ship_pcs": 0,
-    "ship_rate": 0,
-    "sku_plan": 0,
-    "sku_alloc": 0,
-    "sku_sow": 0,
-    "store_count": 0,
-    "by_store": {},
+    "ship_rate": 0.0,
+    "sku_plan": 700,
+    "sku_alloc": 700,
+    "sku_sow": 8,
+    "store_count": 3,
+    "by_store": {
+      "快乐猴-白云山水立方店-037": 20942.0,
+      "快乐猴-禅城东方广场店-018": 200.0,
+      "快乐猴-番禺建华汇店-019": 1.0
+    },
     "unalloc_details": [],
     "status": "ok"
   },
@@ -2045,10 +2061,10 @@
       "N常温收退": 2,
       "N常温高叉司机": 2
     },
-    "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS(播种) / 11 人",
-    "outbound_efficiency": 0.0,
-    "outbound_efficiency_formula": "0 PCS / 4 人(拣播员)",
+    "predicted_efficiency": 547.1,
+    "efficiency_formula": "6018 PCS(播种) / 11 人",
+    "outbound_efficiency": 50.0,
+    "outbound_efficiency_formula": "200 PCS / 4 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

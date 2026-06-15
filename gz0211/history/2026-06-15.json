@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-15T13:09:34",
+  "timestamp": "2026-06-15T13:18:29",
   "date": "2026-06-15",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 8,
-      "signed": 4,
-      "waiting": 2
+      "signed": 5,
+      "waiting": 1
     },
     "ontime": {
       "ontime": 0,
-      "early": 4,
+      "early": 5,
       "late": 0,
       "total": 6,
       "rate": 0.0,
-      "early_rate": 66.7,
+      "early_rate": 83.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
-      "done": 2,
+      "total": 3,
+      "done": 3,
       "rate": 100.0,
-      "pcs_done": 1670,
-      "sign_pcs_done": 1670
+      "pcs_done": 1830,
+      "sign_pcs_done": 1830
     },
     "qc": {
-      "total": 1,
+      "total": 2,
       "done": 1,
-      "pending": 0,
+      "pending": 1,
       "passed": 1,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 50.0,
       "bill_done": 1,
-      "bill_total": 1,
+      "bill_total": 2,
       "pcs_done": 640,
       "pcs_passed": 640,
-      "pcs_total": 640,
+      "pcs_total": 800,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 80.0,
       "sku_done": 1,
-      "sku_total": 1,
-      "sku_rate": 100.0
+      "sku_total": 2,
+      "sku_rate": 50.0
     },
     "putaway": {
       "total": 7543,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 6,
-        "done": 4,
-        "rate": 66.7
+        "done": 5,
+        "rate": 83.3
       },
       "pcs": {
         "total": 13607,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 10,
-        "done": 8,
-        "rate": 80.0
+        "done": 9,
+        "rate": 90.0
       },
       "supplier": {
         "total": 4,
-        "done": 2,
-        "rate": 50.0,
+        "done": 3,
+        "rate": 75.0,
         "detail": {
+          "大连海大厨食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "洪湖市万农水产食品有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -89,10 +93,6 @@
             "done": 2
           },
           "欧泰贡（广东）食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "大连海大厨食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -142,27 +142,40 @@
           "pcs": 1080,
           "timeSlot": "15:30 - 16:00",
           "seq": 1
-        },
-        {
-          "supplierName": "大连海大厨食品有限公司-快乐猴",
-          "billCode": "YY20260609002070",
-          "skuCount": 1,
-          "pcs": 160,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 2
         }
       ],
       "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "大连海大厨食品有限公司-快乐猴",
+          "skuName": "三文鱼排 600g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "13:15",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "洪湖市万农水产食品有限公司-快乐猴",
           "skuName": "洪湖渔家 蒜蓉虾球 252g",
           "completeTime": "11:52",
-          "waitingMins": 78
+          "waitingMins": 86
         }
       ],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "大连海大厨食品有限公司-快乐猴",
+          "poNo": "CG2026060115594",
+          "reserveBillCode": "YY20260609002070",
+          "skuId": "1078798",
+          "skuName": "三文鱼排 600g",
+          "purchaseQty": 160,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -325,10 +338,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 117,
-      "in_progress": 4,
-      "done": 88,
-      "total": 209,
+      "not_started": 114,
+      "in_progress": 5,
+      "done": 92,
+      "total": 211,
       "status": "ok"
     }
   },

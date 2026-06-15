@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-15T17:17:44",
+  "timestamp": "2026-06-15T17:24:20",
   "date": "2026-06-15",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 8,
-      "signed": 5,
-      "waiting": 1
+      "signed": 6,
+      "waiting": 0
     },
     "ontime": {
       "ontime": 0,
       "early": 5,
-      "late": 0,
+      "late": 1,
       "total": 6,
       "rate": 0.0,
       "early_rate": 83.3,
-      "late_rate": 0.0
+      "late_rate": 16.7
     },
     "reserve_progress": {
       "po_total": 16,
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 3,
+      "total": 4,
       "done": 3,
-      "rate": 100.0,
+      "rate": 75.0,
       "pcs_done": 1830,
-      "sign_pcs_done": 1830
+      "sign_pcs_done": 2910
     },
     "qc": {
-      "total": 2,
+      "total": 3,
       "done": 2,
-      "pending": 0,
+      "pending": 1,
       "passed": 2,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 66.7,
       "bill_done": 2,
-      "bill_total": 2,
+      "bill_total": 3,
       "pcs_done": 800,
       "pcs_passed": 800,
-      "pcs_total": 800,
+      "pcs_total": 1880,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 42.6,
       "sku_done": 2,
-      "sku_total": 2,
-      "sku_rate": 100.0
+      "sku_total": 3,
+      "sku_rate": 66.7
     },
     "putaway": {
       "total": 7703,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 6,
-        "done": 5,
-        "rate": 83.3
+        "done": 6,
+        "rate": 100.0
       },
       "pcs": {
         "total": 13607,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 10,
-        "done": 9,
-        "rate": 90.0
+        "done": 10,
+        "rate": 100.0
       },
       "supplier": {
         "total": 4,
-        "done": 3,
-        "rate": 75.0,
+        "done": 4,
+        "rate": 100.0,
         "detail": {
+          "欧泰贡（广东）食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "大连海大厨食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -91,10 +95,6 @@
           "日冷食品贸易（上海）有限公司-快乐猴": {
             "plan": 2,
             "done": 2
-          },
-          "欧泰贡（广东）食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -134,33 +134,52 @@
           "poStatus": "待确认"
         }
       ],
-      "unsigned": [
+      "unsigned": [],
+      "unloading": [
         {
           "supplierName": "欧泰贡（广东）食品有限公司-快乐猴",
           "billCode": "YY20260613001288",
-          "skuCount": 1,
-          "pcs": 1080,
-          "timeSlot": "15:30 - 16:00",
-          "seq": 1
+          "signTime": "17:21",
+          "status": "已签到未卸货"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "欧泰贡（广东）食品有限公司-快乐猴",
+          "skuName": "湄公大厨 冻生巴沙鱼柳 600g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "洪湖市万农水产食品有限公司-快乐猴",
           "skuName": "洪湖渔家 蒜蓉虾球 252g",
           "completeTime": "11:52",
-          "waitingMins": 326
+          "waitingMins": 332
         },
         {
           "supplierName": "大连海大厨食品有限公司-快乐猴",
           "skuName": "三文鱼排 600g",
           "completeTime": "13:40",
-          "waitingMins": 217
+          "waitingMins": 224
         }
       ],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "欧泰贡（广东）食品有限公司-快乐猴",
+          "poNo": "CG2026060115591",
+          "reserveBillCode": "YY20260613001288",
+          "skuId": "908518",
+          "skuName": "湄公大厨 冻生巴沙鱼柳 600g",
+          "purchaseQty": 1080,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -346,10 +365,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 94,
+      "not_started": 96,
       "in_progress": 2,
       "done": 256,
-      "total": 352,
+      "total": 354,
       "status": "ok"
     }
   },

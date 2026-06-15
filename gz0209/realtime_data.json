@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-06-15T11:36:21",
+  "timestamp": "2026-06-15T11:51:14",
   "date": "2026-06-15",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 18,
-      "signed": 7,
-      "waiting": 8
+      "signed": 8,
+      "waiting": 7
     },
     "ontime": {
-      "ontime": 0,
+      "ontime": 1,
       "early": 7,
       "late": 0,
       "total": 15,
-      "rate": 0.0,
+      "rate": 6.7,
       "early_rate": 46.7,
       "late_rate": 0.0
     },
@@ -24,11 +24,11 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 7,
-      "done": 7,
+      "total": 8,
+      "done": 8,
       "rate": 100.0,
-      "pcs_done": 10352,
-      "sign_pcs_done": 10352
+      "pcs_done": 10472,
+      "sign_pcs_done": 10472
     },
     "qc": {
       "total": 8,
@@ -50,33 +50,18 @@
     },
     "putaway": {
       "total": 12032,
-      "done": 11292,
-      "rate": 93.8,
+      "done": 12032,
+      "rate": 100.0,
       "sku_total": 31,
-      "sku_done": 23,
-      "sku_rate": 74.2,
-      "details": [
-        {
-          "poNo": "CG202606107228",
-          "hopePcs": 180,
-          "putPcs": 0,
-          "hopeSku": 3,
-          "putSku": 0
-        },
-        {
-          "poNo": "CG202606086719",
-          "hopePcs": 560,
-          "putPcs": 0,
-          "hopeSku": 5,
-          "putSku": 0
-        }
-      ]
+      "sku_done": 31,
+      "sku_rate": 100.0,
+      "details": []
     },
     "dimensions": {
       "reserve": {
         "total": 15,
-        "done": 7,
-        "rate": 46.7
+        "done": 8,
+        "rate": 53.3
       },
       "pcs": {
         "total": 14753,
@@ -87,14 +72,18 @@
       },
       "sku": {
         "total": 28,
-        "done": 15,
-        "rate": 53.6
+        "done": 16,
+        "rate": 57.1
       },
       "supplier": {
         "total": 14,
-        "done": 6,
-        "rate": 42.9,
+        "done": 7,
+        "rate": 50.0,
         "detail": {
+          "广州市联盟商贸有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "杭州点余贸易有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -122,10 +111,6 @@
           "安徽欧选电子商务有限公司": {
             "plan": 1,
             "done": 1
-          },
-          "广州市联盟商贸有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           },
           "上海咪噢酒业有限公司-快乐猴": {
             "plan": 1,
@@ -199,20 +184,12 @@
           "seq": 1
         },
         {
-          "supplierName": "广州市联盟商贸有限公司-快乐猴",
-          "billCode": "YY20260613006930",
-          "skuCount": 1,
-          "pcs": 120,
-          "timeSlot": "11:30 - 12:00",
-          "seq": 2
-        },
-        {
           "supplierName": "上海咪噢酒业有限公司-快乐猴",
           "billCode": "YY20260612006769",
           "skuCount": 3,
           "pcs": 1236,
           "timeSlot": "15:00 - 15:30",
-          "seq": 3
+          "seq": 2
         },
         {
           "supplierName": "山东汉德酒业有限公司-快乐猴",
@@ -220,7 +197,7 @@
           "skuCount": 1,
           "pcs": 30,
           "timeSlot": "15:30 - 16:00",
-          "seq": 4
+          "seq": 3
         },
         {
           "supplierName": "今麦郎食品股份有限公司隆尧电子商务分公司-快乐猴",
@@ -228,7 +205,7 @@
           "skuCount": 1,
           "pcs": 600,
           "timeSlot": "15:30 - 16:00",
-          "seq": 5
+          "seq": 4
         },
         {
           "supplierName": "广州群翔贸易有限公司-快乐猴",
@@ -236,7 +213,7 @@
           "skuCount": 2,
           "pcs": 440,
           "timeSlot": "15:30 - 16:00",
-          "seq": 6
+          "seq": 5
         },
         {
           "supplierName": "广州顺手供应链科技有限公司-快乐猴",
@@ -244,7 +221,7 @@
           "skuCount": 2,
           "pcs": 1260,
           "timeSlot": "14:00 - 14:30",
-          "seq": 7
+          "seq": 6
         },
         {
           "supplierName": "广州吉瀚丰翔商贸有限公司-快乐猴",
@@ -252,7 +229,7 @@
           "skuCount": 1,
           "pcs": 90,
           "timeSlot": "15:30 - 16:00",
-          "seq": 8
+          "seq": 7
         }
       ],
       "unloading": [],
@@ -262,52 +239,64 @@
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "真露 青葡萄味利口酒 360ml",
           "completeTime": "10:49",
-          "waitingMins": 47
+          "waitingMins": 62
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "百加得 白朗姆酒 50ml",
           "completeTime": "11:23",
-          "waitingMins": 12
+          "waitingMins": 27
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "百利 甜草莓奶油味甜酒爱尔兰进口 50ml",
           "completeTime": "11:11",
-          "waitingMins": 25
+          "waitingMins": 40
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "百加得 白朗姆酒 50ml",
           "completeTime": "11:23",
-          "waitingMins": 12
+          "waitingMins": 27
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "绝对 原味伏特加瑞典进口 50ml",
           "completeTime": "11:26",
-          "waitingMins": 10
+          "waitingMins": 25
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "百龄坛 特醇苏格兰威士忌英国进口 50ml",
           "completeTime": "11:29",
-          "waitingMins": 7
+          "waitingMins": 22
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "必富达 蒸馏酒金酒英国进口 50ml",
           "completeTime": "11:20",
-          "waitingMins": 16
+          "waitingMins": 30
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "百利 甜草莓奶油味甜酒爱尔兰进口 50ml",
           "completeTime": "10:58",
-          "waitingMins": 38
+          "waitingMins": 53
         }
       ],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "广州市联盟商贸有限公司-快乐猴",
+          "poNo": "CG202606086717",
+          "reserveBillCode": "YY20260613006930",
+          "skuId": "1166079",
+          "skuName": "乌苏啤酒 新疆酒花精酿啤酒 1L",
+          "purchaseQty": 120,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [
         {
@@ -579,69 +568,52 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 28497,
-      "alloc_pcs": 28482,
-      "alloc_rate": 99.9,
+      "plan_pcs": 28502,
+      "alloc_pcs": 28502,
+      "alloc_rate": 100.0,
       "picked_pcs": 16468,
       "sow_pcs": 16468,
       "sow_rate": 57.8,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 731,
-      "sku_alloc": 731,
+      "sku_plan": 732,
+      "sku_alloc": 732,
       "sku_sow": 704,
       "sku_ship": 0,
-      "total_orders": 14
+      "total_orders": 15
     },
-    "unalloc_details": [
-      {
-        "receiverName": "快乐猴-白云山水立方店-037",
-        "orderNo": "DB2026061585071",
-        "skuNum": 10,
-        "planQty": 43,
-        "allocQty": 28,
-        "unallocQty": 15
-      }
-    ],
+    "unalloc_details": [],
     "seeding": {
-      "not_started": 127,
+      "not_started": 142,
       "in_progress": 0,
       "done": 0,
-      "total": 127,
+      "total": 142,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 14,
-    "total_pcs": 28497,
-    "alloc_pcs": 28482,
-    "alloc_rate": 99.9,
+    "total_orders": 15,
+    "total_pcs": 28502,
+    "alloc_pcs": 28502,
+    "alloc_rate": 100.0,
     "picked_pcs": 16468,
     "sow_pcs": 16468,
     "sow_rate": 57.8,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 731,
-    "sku_alloc": 731,
+    "sku_plan": 732,
+    "sku_alloc": 732,
     "sku_sow": 704,
-    "store_count": 5,
+    "store_count": 6,
     "by_store": {
       "快乐猴-白云山水立方店-037": 22508.0,
       "快乐猴-白云新世界云集店-042": 5682.0,
       "快乐猴-禅城东方广场店-018": 200.0,
       "快乐猴-南海国昌广场店-023": 60.0,
-      "快乐猴-番禺建华汇店-019": 47.0
+      "快乐猴-番禺建华汇店-019": 47.0,
+      "快乐猴-越秀越富广场店-031": 5.0
     },
-    "unalloc_details": [
-      {
-        "receiverName": "快乐猴-白云山水立方店-037",
-        "orderNo": "DB2026061585071",
-        "skuNum": 10,
-        "planQty": 43,
-        "allocQty": 28,
-        "unallocQty": 15
-      }
-    ],
+    "unalloc_details": [],
     "status": "ok"
   },
   "transport": {

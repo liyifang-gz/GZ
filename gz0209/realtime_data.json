@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-15T12:32:34",
+  "timestamp": "2026-06-15T12:35:53",
   "date": "2026-06-15",
   "warehouse": "GZ0210",
   "inbound": {
@@ -31,31 +31,39 @@
       "sign_pcs_done": 10562
     },
     "qc": {
-      "total": 9,
+      "total": 8,
       "done": 8,
-      "pending": 1,
+      "pending": 0,
       "passed": 8,
       "rejected": 0,
-      "rate": 88.9,
+      "rate": 100.0,
       "bill_done": 8,
-      "bill_total": 9,
+      "bill_total": 8,
       "pcs_done": 740,
       "pcs_passed": 740,
-      "pcs_total": 830,
+      "pcs_total": 740,
       "pcs_rejected": 0,
-      "pcs_rate": 89.2,
+      "pcs_rate": 100.0,
       "sku_done": 6,
-      "sku_total": 7,
-      "sku_rate": 85.7
+      "sku_total": 6,
+      "sku_rate": 100.0
     },
     "putaway": {
-      "total": 12152,
+      "total": 12242,
       "done": 12152,
-      "rate": 100.0,
-      "sku_total": 32,
+      "rate": 99.3,
+      "sku_total": 33,
       "sku_done": 32,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 97.0,
+      "details": [
+        {
+          "poNo": "CG202606086716",
+          "hopePcs": 90,
+          "putPcs": 0,
+          "hopeSku": 1,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +75,8 @@
         "total": 14753,
         "done": 14321,
         "rate": 97.1,
-        "recv_done": 12152,
-        "recv_rate": 82.4
+        "recv_done": 12242,
+        "recv_rate": 83.0
       },
       "sku": {
         "total": 28,
@@ -225,79 +233,58 @@
         }
       ],
       "unloading": [],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "广州吉瀚丰翔商贸有限公司-快乐猴",
-          "skuName": "百威 啤酒 500ml*3",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "12:32",
-          "statusLabel": "待质检"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "真露 青葡萄味利口酒 360ml",
           "completeTime": "10:49",
-          "waitingMins": 103
+          "waitingMins": 107
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "百加得 白朗姆酒 50ml",
           "completeTime": "11:23",
-          "waitingMins": 69
-        },
-        {
-          "supplierName": "杭州点余贸易有限公司-快乐猴",
-          "skuName": "百利 甜草莓奶油味甜酒爱尔兰进口 50ml",
-          "completeTime": "11:11",
-          "waitingMins": 81
-        },
-        {
-          "supplierName": "杭州点余贸易有限公司-快乐猴",
-          "skuName": "百加得 白朗姆酒 50ml",
-          "completeTime": "11:23",
-          "waitingMins": 69
-        },
-        {
-          "supplierName": "杭州点余贸易有限公司-快乐猴",
-          "skuName": "绝对 原味伏特加瑞典进口 50ml",
-          "completeTime": "11:26",
-          "waitingMins": 66
-        },
-        {
-          "supplierName": "杭州点余贸易有限公司-快乐猴",
-          "skuName": "百龄坛 特醇苏格兰威士忌英国进口 50ml",
-          "completeTime": "11:29",
-          "waitingMins": 63
-        },
-        {
-          "supplierName": "杭州点余贸易有限公司-快乐猴",
-          "skuName": "必富达 蒸馏酒金酒英国进口 50ml",
-          "completeTime": "11:20",
           "waitingMins": 72
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "百利 甜草莓奶油味甜酒爱尔兰进口 50ml",
-          "completeTime": "10:58",
-          "waitingMins": 94
-        }
-      ],
-      "signed_not_recv": [
+          "completeTime": "11:11",
+          "waitingMins": 84
+        },
         {
-          "supplierName": "广州吉瀚丰翔商贸有限公司-快乐猴",
-          "poNo": "CG202606086716",
-          "reserveBillCode": "YY20260608007560",
-          "skuId": "111553",
-          "skuName": "百威 啤酒 500ml*3",
-          "purchaseQty": 90,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 1
+          "supplierName": "杭州点余贸易有限公司-快乐猴",
+          "skuName": "百加得 白朗姆酒 50ml",
+          "completeTime": "11:23",
+          "waitingMins": 72
+        },
+        {
+          "supplierName": "杭州点余贸易有限公司-快乐猴",
+          "skuName": "绝对 原味伏特加瑞典进口 50ml",
+          "completeTime": "11:26",
+          "waitingMins": 70
+        },
+        {
+          "supplierName": "杭州点余贸易有限公司-快乐猴",
+          "skuName": "百龄坛 特醇苏格兰威士忌英国进口 50ml",
+          "completeTime": "11:29",
+          "waitingMins": 66
+        },
+        {
+          "supplierName": "杭州点余贸易有限公司-快乐猴",
+          "skuName": "必富达 蒸馏酒金酒英国进口 50ml",
+          "completeTime": "11:20",
+          "waitingMins": 75
+        },
+        {
+          "supplierName": "杭州点余贸易有限公司-快乐猴",
+          "skuName": "百利 甜草莓奶油味甜酒爱尔兰进口 50ml",
+          "completeTime": "10:58",
+          "waitingMins": 97
         }
       ],
+      "signed_not_recv": [],
       "qc_recv_pending": [],
       "recv_diff": [
         {
@@ -626,10 +613,10 @@
       }
     ],
     "seeding": {
-      "not_started": 142,
-      "in_progress": 6,
-      "done": 29,
-      "total": 177,
+      "not_started": 145,
+      "in_progress": 3,
+      "done": 38,
+      "total": 186,
       "status": "ok"
     }
   },

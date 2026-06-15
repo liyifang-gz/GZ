@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-06-15T15:29:57",
+  "timestamp": "2026-06-15T15:36:06",
   "date": "2026-06-15",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 18,
-      "signed": 12,
-      "waiting": 3
+      "signed": 13,
+      "waiting": 2
     },
     "ontime": {
-      "ontime": 1,
+      "ontime": 2,
       "early": 10,
       "late": 1,
       "total": 15,
-      "rate": 6.7,
+      "rate": 13.3,
       "early_rate": 66.7,
       "late_rate": 6.7
     },
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 12,
+      "total": 13,
       "done": 11,
-      "rate": 91.7,
+      "rate": 84.6,
       "pcs_done": 12422,
-      "sign_pcs_done": 13658
+      "sign_pcs_done": 13778
     },
     "qc": {
-      "total": 12,
+      "total": 14,
       "done": 9,
-      "pending": 3,
+      "pending": 5,
       "passed": 9,
       "rejected": 0,
-      "rate": 75.0,
+      "rate": 64.3,
       "bill_done": 9,
-      "bill_total": 12,
+      "bill_total": 14,
       "pcs_done": 1340,
       "pcs_passed": 1340,
-      "pcs_total": 2576,
+      "pcs_total": 2696,
       "pcs_rejected": 0,
-      "pcs_rate": 52.0,
+      "pcs_rate": 49.7,
       "sku_done": 7,
-      "sku_total": 10,
-      "sku_rate": 70.0
+      "sku_total": 12,
+      "sku_rate": 58.3
     },
     "putaway": {
       "total": 12242,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 15,
-        "done": 12,
-        "rate": 80.0
+        "done": 13,
+        "rate": 86.7
       },
       "pcs": {
         "total": 14753,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 28,
-        "done": 23,
-        "rate": 82.1
+        "done": 25,
+        "rate": 89.3
       },
       "supplier": {
         "total": 14,
-        "done": 11,
-        "rate": 78.6,
+        "done": 12,
+        "rate": 85.7,
         "detail": {
+          "广州广库供应链有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州顺手供应链科技有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -119,10 +123,6 @@
           "广东省广盐集团股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "广州广库供应链有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           },
           "安徽欧选电子商务有限公司": {
             "plan": 1,
@@ -176,20 +176,12 @@
       ],
       "unsigned": [
         {
-          "supplierName": "广州广库供应链有限公司-快乐猴",
-          "billCode": "YY20260614006405",
-          "skuCount": 2,
-          "pcs": 120,
-          "timeSlot": "15:30 - 16:00",
-          "seq": 1
-        },
-        {
           "supplierName": "山东汉德酒业有限公司-快乐猴",
           "billCode": "YY20260612001689",
           "skuCount": 1,
           "pcs": 30,
           "timeSlot": "15:30 - 16:00",
-          "seq": 2
+          "seq": 1
         },
         {
           "supplierName": "广州群翔贸易有限公司-快乐猴",
@@ -197,10 +189,16 @@
           "skuCount": 2,
           "pcs": 440,
           "timeSlot": "15:30 - 16:00",
-          "seq": 3
+          "seq": 2
         }
       ],
       "unloading": [
+        {
+          "supplierName": "广州广库供应链有限公司-快乐猴",
+          "billCode": "YY20260614006405",
+          "signTime": "15:32",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "上海咪噢酒业有限公司-快乐猴",
           "billCode": "YY20260612006769",
@@ -232,6 +230,22 @@
           "arrivalTime": "15:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "广州广库供应链有限公司-快乐猴",
+          "skuName": "红荔牌 红米酒 610ml",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "广州广库供应链有限公司-快乐猴",
+          "skuName": "九江双蒸 佳品白酒29.5度 610ml",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -239,55 +253,55 @@
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "真露 青葡萄味利口酒 360ml",
           "completeTime": "10:49",
-          "waitingMins": 281
+          "waitingMins": 287
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "百加得 白朗姆酒 50ml",
           "completeTime": "11:23",
-          "waitingMins": 246
+          "waitingMins": 252
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "百利 甜草莓奶油味甜酒爱尔兰进口 50ml",
           "completeTime": "11:11",
-          "waitingMins": 258
+          "waitingMins": 264
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "百加得 白朗姆酒 50ml",
           "completeTime": "11:23",
-          "waitingMins": 246
+          "waitingMins": 252
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "绝对 原味伏特加瑞典进口 50ml",
           "completeTime": "11:26",
-          "waitingMins": 244
+          "waitingMins": 250
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "百龄坛 特醇苏格兰威士忌英国进口 50ml",
           "completeTime": "11:29",
-          "waitingMins": 240
+          "waitingMins": 246
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "必富达 蒸馏酒金酒英国进口 50ml",
           "completeTime": "11:20",
-          "waitingMins": 249
+          "waitingMins": 255
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "百利 甜草莓奶油味甜酒爱尔兰进口 50ml",
           "completeTime": "10:58",
-          "waitingMins": 271
+          "waitingMins": 277
         },
         {
           "supplierName": "今麦郎食品股份有限公司隆尧电子商务分公司-快乐猴",
           "skuName": "今麦郎 香辣安徽牛肉板面 142g",
           "completeTime": "14:13",
-          "waitingMins": 77
+          "waitingMins": 83
         }
       ],
       "signed_not_recv": [
@@ -334,6 +348,28 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 4
+        },
+        {
+          "supplierName": "广州广库供应链有限公司-快乐猴",
+          "poNo": "CG202606086721",
+          "reserveBillCode": "YY20260614006405",
+          "skuId": "95076",
+          "skuName": "九江双蒸 佳品白酒29.5度 610ml",
+          "purchaseQty": 96,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
+          "supplierName": "广州广库供应链有限公司-快乐猴",
+          "poNo": "CG202606086721",
+          "reserveBillCode": "YY20260614006405",
+          "skuId": "84856",
+          "skuName": "红荔牌 红米酒 610ml",
+          "purchaseQty": 24,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
         }
       ],
       "qc_recv_pending": [],
@@ -376,72 +412,52 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 76,
+      "total": 30,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 76,
+      "total": 30,
       "done": 0,
       "rate": 0.0,
-      "pcs_done": 17262,
+      "pcs_done": 12185,
       "pcs_total": 25675,
-      "pcs_rate": 67.2
+      "pcs_rate": 47.5
     },
     "packing": {
-      "total": 22,
-      "done": 19,
-      "rate": 86.4
+      "total": 21,
+      "done": 20,
+      "rate": 95.2
     },
     "uncaged_details": [
-      {
-        "containerCode": "RQ-28-03-0900217",
-        "poiName": "南海国昌广场店",
-        "qty": 653
-      },
       {
         "containerCode": "RQ-28-03-0900232",
         "poiName": "南海国昌广场店",
         "qty": 390
-      },
-      {
-        "containerCode": "RQ-28-03-0900219",
-        "poiName": "南海国昌广场店",
-        "qty": 88
       }
     ],
     "unpacked_details": [
       {
-        "containerCode": "RQ-28-03-0900217",
-        "poiName": "南海国昌广场店",
-        "qty": 653
-      },
-      {
         "containerCode": "RQ-28-03-0900232",
         "poiName": "南海国昌广场店",
         "qty": 390
-      },
-      {
-        "containerCode": "RQ-28-03-0900219",
-        "poiName": "南海国昌广场店",
-        "qty": 88
       }
     ],
     "shipping": {
-      "total": 1131,
+      "total": 390,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 74,
+      "multi_pallet_total": 29,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "35.55%",
-      "load_rate_loaded": "81.12%",
-      "load_rate_shipped": "--",
+      "load_rate_unloaded": "36.73%",
+      "load_rate_loaded": "78.99%",
+      "load_rate_shipped": "85.28%",
       "low_load_containers": [
         {
           "containerCode": "RQ-28-03-0900153",
@@ -450,15 +466,6 @@
           "loadingRateVal": 43.83,
           "skuPcs": "528.000",
           "skuVolume": "0.868",
-          "planOutTime": "06-15 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900517",
-          "poiName": "白云山水立方店",
-          "loadingRate": "44.22%",
-          "loadingRateVal": 44.22,
-          "skuPcs": "705.000",
-          "skuVolume": "0.876",
           "planOutTime": "06-15 22:00"
         },
         {
@@ -489,15 +496,6 @@
           "planOutTime": "06-15 22:00"
         },
         {
-          "containerCode": "RQ-28-03-0900513",
-          "poiName": "白云山水立方店",
-          "loadingRate": "64.21%",
-          "loadingRateVal": 64.21,
-          "skuPcs": "894.000",
-          "skuVolume": "1.271",
-          "planOutTime": "06-15 22:00"
-        },
-        {
           "containerCode": "RQ-28-03-0900707",
           "poiName": "白云新世界云集店",
           "loadingRate": "67.75%",
@@ -516,12 +514,12 @@
           "planOutTime": "06-15 22:00"
         },
         {
-          "containerCode": "RQ-28-03-0900515",
-          "poiName": "白云山水立方店",
-          "loadingRate": "68.69%",
-          "loadingRateVal": 68.69,
-          "skuPcs": "1095.000",
-          "skuVolume": "1.360",
+          "containerCode": "RQ-28-03-0900219",
+          "poiName": "南海国昌广场店",
+          "loadingRate": "69.93%",
+          "loadingRateVal": 69.93,
+          "skuPcs": "741.000",
+          "skuVolume": "1.385",
           "planOutTime": "06-15 22:00"
         },
         {
@@ -554,12 +552,12 @@
           "planOutTime": "06-15 22:00"
         },
         {
-          "containerCode": "RQ-28-03-0900217",
+          "containerCode": "RQ-28-03-0900219",
           "poiName": "南海国昌广场店",
-          "loadingRate": "54.94%",
-          "loadingRateVal": 54.94,
-          "skuPcs": "653.000",
-          "skuVolume": "1.088",
+          "loadingRate": "69.93%",
+          "loadingRateVal": 69.93,
+          "skuPcs": "741.000",
+          "skuVolume": "1.385",
           "planOutTime": "06-15 22:00"
         },
         {
@@ -569,60 +567,6 @@
           "loadingRateVal": 36.73,
           "skuPcs": "390.000",
           "skuVolume": "0.727",
-          "planOutTime": "06-15 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900219",
-          "poiName": "南海国昌广场店",
-          "loadingRate": "14.99%",
-          "loadingRateVal": 14.99,
-          "skuPcs": "88.000",
-          "skuVolume": "0.297",
-          "planOutTime": "06-15 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900525",
-          "poiName": "白云山水立方店",
-          "loadingRate": "174.01%",
-          "loadingRateVal": 174.01,
-          "skuPcs": "1924.000",
-          "skuVolume": "3.445",
-          "planOutTime": "06-15 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900523",
-          "poiName": "白云山水立方店",
-          "loadingRate": "75.27%",
-          "loadingRateVal": 75.27,
-          "skuPcs": "1200.000",
-          "skuVolume": "1.490",
-          "planOutTime": "06-15 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900515",
-          "poiName": "白云山水立方店",
-          "loadingRate": "68.69%",
-          "loadingRateVal": 68.69,
-          "skuPcs": "1095.000",
-          "skuVolume": "1.360",
-          "planOutTime": "06-15 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900513",
-          "poiName": "白云山水立方店",
-          "loadingRate": "64.21%",
-          "loadingRateVal": 64.21,
-          "skuPcs": "894.000",
-          "skuVolume": "1.271",
-          "planOutTime": "06-15 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900517",
-          "poiName": "白云山水立方店",
-          "loadingRate": "44.22%",
-          "loadingRateVal": 44.22,
-          "skuPcs": "705.000",
-          "skuVolume": "0.876",
           "planOutTime": "06-15 22:00"
         },
         {
@@ -741,25 +685,70 @@
           "skuPcs": "528.000",
           "skuVolume": "0.868",
           "planOutTime": "06-15 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900525",
+          "poiName": "白云山水立方店",
+          "loadingRate": "174.01%",
+          "loadingRateVal": 174.01,
+          "skuPcs": "1924.000",
+          "skuVolume": "3.445",
+          "planOutTime": "06-15 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900523",
+          "poiName": "白云山水立方店",
+          "loadingRate": "75.27%",
+          "loadingRateVal": 75.27,
+          "skuPcs": "1200.000",
+          "skuVolume": "1.490",
+          "planOutTime": "06-15 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900515",
+          "poiName": "白云山水立方店",
+          "loadingRate": "68.69%",
+          "loadingRateVal": 68.69,
+          "skuPcs": "1095.000",
+          "skuVolume": "1.360",
+          "planOutTime": "06-15 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900513",
+          "poiName": "白云山水立方店",
+          "loadingRate": "64.21%",
+          "loadingRateVal": 64.21,
+          "skuPcs": "894.000",
+          "skuVolume": "1.271",
+          "planOutTime": "06-15 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900517",
+          "poiName": "白云山水立方店",
+          "loadingRate": "44.22%",
+          "loadingRateVal": 44.22,
+          "skuPcs": "705.000",
+          "skuVolume": "0.876",
+          "planOutTime": "06-15 22:00"
         }
       ],
-      "outbound_efficiency": 282.8,
-      "outbound_efficiency_formula": "1131 PCS / 4 人(拣播员)"
+      "outbound_efficiency": 97.5,
+      "outbound_efficiency_formula": "390 PCS / 4 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 1131,
+        "total": 390,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 1131,
+        "not_caged": 390,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 67.2,
+        "cage_rate": 47.5,
         "sowed_picked": 25675
       },
       "sku": {
-        "total": 76,
+        "total": 30,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -786,10 +775,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 97,
-      "in_progress": 1,
-      "done": 172,
-      "total": 270,
+      "not_started": 100,
+      "in_progress": 4,
+      "done": 175,
+      "total": 279,
       "status": "ok"
     }
   },
@@ -830,7 +819,7 @@
     "temp_breakdown": {
       "冷藏": 1,
       "冷冻": 0,
-      "常温": 0
+      "常温": 1
     },
     "all_count": 2,
     "planned_trips": {
@@ -906,8 +895,8 @@
     },
     "predicted_efficiency": 2334.1,
     "efficiency_formula": "25675 PCS(播种) / 11 人",
-    "outbound_efficiency": 282.8,
-    "outbound_efficiency_formula": "1131 PCS / 4 人(拣播员)",
+    "outbound_efficiency": 97.5,
+    "outbound_efficiency_formula": "390 PCS / 4 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

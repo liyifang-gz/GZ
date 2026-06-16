@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-06-16T15:30:25",
+  "timestamp": "2026-06-16T15:40:28",
   "date": "2026-06-16",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 7,
       "signed": 5,
-      "waiting": 2
+      "waiting": 1
     },
     "ontime": {
       "ontime": 0,
       "early": 5,
       "late": 0,
-      "total": 7,
+      "total": 6,
       "rate": 0.0,
-      "early_rate": 71.4,
+      "early_rate": 83.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
       "po_total": 7,
-      "po_reserved": 6,
-      "rate": 85.7,
+      "po_reserved": 5,
+      "rate": 71.4,
       "po_data_ok": true
     },
     "unload": {
@@ -50,43 +50,35 @@
     },
     "putaway": {
       "total": 6991,
-      "done": 6919,
-      "rate": 99.0,
+      "done": 6991,
+      "rate": 100.0,
       "sku_total": 12,
-      "sku_done": 11,
-      "sku_rate": 91.7,
-      "details": [
-        {
-          "poNo": "CG2026060911661",
-          "hopePcs": 292,
-          "putPcs": 220,
-          "hopeSku": 2,
-          "putSku": 1
-        }
-      ]
+      "sku_done": 12,
+      "sku_rate": 100.0,
+      "details": []
     },
     "dimensions": {
       "reserve": {
-        "total": 7,
+        "total": 6,
         "done": 5,
-        "rate": 71.4
+        "rate": 83.3
       },
       "pcs": {
         "total": 10686,
-        "done": 8694,
-        "rate": 81.4,
+        "done": 6894,
+        "rate": 64.5,
         "recv_done": 6991,
         "recv_rate": 65.4
       },
       "sku": {
-        "total": 13,
+        "total": 12,
         "done": 10,
-        "rate": 76.9
+        "rate": 83.3
       },
       "supplier": {
-        "total": 7,
+        "total": 6,
         "done": 5,
-        "rate": 71.4,
+        "rate": 83.3,
         "detail": {
           "广州市美口佳食品有限公司-快乐猴": {
             "plan": 1,
@@ -108,10 +100,6 @@
             "plan": 1,
             "done": 1
           },
-          "上海熟成屋食品贸易有限公司": {
-            "plan": 1,
-            "done": 0
-          },
           "郯城瑞发德食品加工有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
@@ -121,6 +109,14 @@
     },
     "details": {
       "unreserved": [
+        {
+          "supplierName": "上海熟成屋食品贸易有限公司",
+          "poNo": "CG202606111667",
+          "skuCount": 1,
+          "pcs": 1800,
+          "preArrivalTime": "2026-06-16",
+          "poStatus": "已确认"
+        },
         {
           "supplierName": "广州恒洋食品有限公司-快乐猴",
           "poNo": "CG202606094609",
@@ -132,20 +128,12 @@
       ],
       "unsigned": [
         {
-          "supplierName": "上海熟成屋食品贸易有限公司",
-          "billCode": "YY20260612009680",
-          "skuCount": 1,
-          "pcs": 1800,
-          "timeSlot": "14:00 - 16:00",
-          "seq": 1
-        },
-        {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
           "billCode": "YY20260612008560",
           "skuCount": 2,
           "pcs": 1895,
           "timeSlot": "14:30 - 15:30",
-          "seq": 2
+          "seq": 1
         }
       ],
       "unloading": [],
@@ -159,8 +147,8 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 4347.0,
-      "efficiency_formula": "8694 PCS / 2 人",
+      "efficiency": 3447.0,
+      "efficiency_formula": "6894 PCS / 2 人",
       "inbound_schedule": 2
     }
   },
@@ -328,10 +316,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 105,
+      "not_started": 98,
       "in_progress": 5,
-      "done": 146,
-      "total": 256,
+      "done": 163,
+      "total": 266,
       "status": "ok"
     }
   },

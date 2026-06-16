@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-16T10:32:02",
+  "timestamp": "2026-06-16T10:50:10",
   "date": "2026-06-16",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 7,
-      "signed": 1,
-      "waiting": 6
+      "signed": 2,
+      "waiting": 5
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 2,
       "late": 0,
       "total": 7,
       "rate": 0.0,
-      "early_rate": 14.3,
+      "early_rate": 28.6,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 1,
-      "rate": 100.0,
+      "rate": 50.0,
       "pcs_done": 2000,
-      "sign_pcs_done": 2000
+      "sign_pcs_done": 2600
     },
     "qc": {
-      "total": 1,
+      "total": 0,
       "done": 0,
-      "pending": 1,
+      "pending": 0,
       "passed": 0,
       "rejected": 0,
-      "rate": 0.0,
+      "rate": 0,
       "bill_done": 0,
-      "bill_total": 1,
+      "bill_total": 0,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 2000,
+      "pcs_total": 0,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
+      "pcs_rate": 0,
       "sku_done": 0,
-      "sku_total": 1,
-      "sku_rate": 0.0
+      "sku_total": 0,
+      "sku_rate": 0
     },
     "putaway": {
       "total": 6699,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 7,
-        "done": 1,
-        "rate": 14.3
+        "done": 2,
+        "rate": 28.6
       },
       "pcs": {
         "total": 11686,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 13,
-        "done": 1,
-        "rate": 7.7
+        "done": 2,
+        "rate": 15.4
       },
       "supplier": {
         "total": 7,
-        "done": 1,
-        "rate": 14.3,
+        "done": 2,
+        "rate": 28.6,
         "detail": {
+          "广州市美口佳食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "江西大由大食品科技有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -93,10 +97,6 @@
             "done": 0
           },
           "郯城瑞发德食品加工有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
-          "广州市美口佳食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -156,20 +156,12 @@
           "seq": 3
         },
         {
-          "supplierName": "广州市美口佳食品有限公司-快乐猴",
-          "billCode": "YY20260610006091",
-          "skuCount": 1,
-          "pcs": 600,
-          "timeSlot": "15:30 - 16:00",
-          "seq": 4
-        },
-        {
           "supplierName": "河南霍嘉优品网络科技有限公司",
           "billCode": "YY20260610000929",
           "skuCount": 2,
           "pcs": 292,
           "timeSlot": "15:30 - 16:00",
-          "seq": 5
+          "seq": 4
         },
         {
           "supplierName": "新乡富元食品有限公司-快乐猴",
@@ -177,29 +169,27 @@
           "skuCount": 1,
           "pcs": 990,
           "timeSlot": "16:00 - 16:30",
-          "seq": 6
+          "seq": 5
         }
       ],
-      "unloading": [],
-      "qc_pending": [
+      "unloading": [
         {
-          "seq": 1,
-          "supplierName": "江西大由大食品科技有限公司-快乐猴",
-          "skuName": "快乐猴 鲜葱手抓饼 900g",
-          "arrivalTime": "10:00",
-          "unloadFinishTime": "10:08",
-          "statusLabel": "待质检"
+          "supplierName": "广州市美口佳食品有限公司-快乐猴",
+          "billCode": "YY20260610006091",
+          "signTime": "10:50",
+          "status": "已签到未卸货"
         }
       ],
+      "qc_pending": [],
       "recv_pending": [],
       "signed_not_recv": [
         {
-          "supplierName": "江西大由大食品科技有限公司-快乐猴",
-          "poNo": "CG2026060817064",
-          "reserveBillCode": "YY20260612000662",
-          "skuId": "1195207",
-          "skuName": "快乐猴 鲜葱手抓饼 900g",
-          "purchaseQty": 2000,
+          "supplierName": "广州市美口佳食品有限公司-快乐猴",
+          "poNo": "CG202606105588",
+          "reserveBillCode": "YY20260610006091",
+          "skuId": "1364236",
+          "skuName": "美丰多口味水果棒冰480g（40g*12支）",
+          "purchaseQty": 600,
           "recvQty": 0,
           "hasQc": false,
           "seq": 1
@@ -307,10 +297,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 88,
+      "not_started": 97,
       "in_progress": 0,
       "done": 0,
-      "total": 88,
+      "total": 97,
       "status": "ok"
     }
   },

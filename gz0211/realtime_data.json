@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-16T20:45:23",
+  "timestamp": "2026-06-16T20:55:00",
   "date": "2026-06-16",
   "warehouse": "GZ0210",
   "inbound": {
@@ -464,29 +464,6 @@
           "store": "番禺建华汇店"
         },
         {
-          "waybillCode": "GZ2111968087",
-          "licensePlate": "粤ADL2469",
-          "driverName": "韦天屯",
-          "carrierName": "斑马（广州2024）",
-          "temperatureLevel": 5,
-          "temperatureLevelName": "常温车",
-          "waybillStatus": 40,
-          "preCoolMonitorStatus": 3,
-          "preCoolMonitorStatusName": "--",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州常温1仓",
-          "createTime": 1781602714000,
-          "store": "南海国昌广场店"
-        },
-        {
           "waybillCode": "GZ2111850639",
           "licensePlate": "粤BEE1533",
           "driverName": "王忠鲜",
@@ -507,6 +484,29 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷冻1仓",
           "createTime": 1781610716000,
+          "store": "南海国昌广场店"
+        },
+        {
+          "waybillCode": "GZ2111968087",
+          "licensePlate": "粤ADL2469",
+          "driverName": "韦天屯",
+          "carrierName": "斑马（广州2024）",
+          "temperatureLevel": 5,
+          "temperatureLevelName": "常温车",
+          "waybillStatus": 60,
+          "preCoolMonitorStatus": 3,
+          "preCoolMonitorStatusName": "--",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州常温1仓",
+          "createTime": 1781602714000,
           "store": "南海国昌广场店"
         },
         {
@@ -606,8 +606,8 @@
     },
     "departed_trips": {
       "total": 1,
-      "in_transit": 1,
-      "arrived": 0,
+      "in_transit": 0,
+      "arrived": 1,
       "by_store": {
         "南海国昌广场店": 1
       },
@@ -619,7 +619,7 @@
           "carrierName": "斑马（广州2024）",
           "temperatureLevel": 5,
           "temperatureLevelName": "常温车",
-          "waybillStatus": 40,
+          "waybillStatus": 60,
           "preCoolMonitorStatus": 3,
           "preCoolMonitorStatusName": "--",
           "deliveryPoiArrivalMonitorStatus": 1,
@@ -634,18 +634,44 @@
           "firstLadingPoiName": "KLH-广州常温1仓",
           "createTime": 1781602714000,
           "store": "南海国昌广场店",
-          "_status_label": "运输中"
+          "_status_label": "已完成"
         }
       ],
       "status": "ok"
     },
     "arrived_trips": {
-      "total": 0,
-      "by_store": {},
+      "total": 1,
+      "by_store": {
+        "南海国昌广场店": 1
+      },
       "total_arrival_poi": 0,
       "qualified_arrival_poi": 0,
       "unqualified_arrival_poi": 0,
-      "details": [],
+      "details": [
+        {
+          "waybillCode": "GZ2111968087",
+          "licensePlate": "粤ADL2469",
+          "driverName": "韦天屯",
+          "carrierName": "斑马（广州2024）",
+          "temperatureLevel": 5,
+          "temperatureLevelName": "常温车",
+          "waybillStatus": 60,
+          "preCoolMonitorStatus": 3,
+          "preCoolMonitorStatusName": "--",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州常温1仓",
+          "createTime": 1781602714000,
+          "store": "南海国昌广场店"
+        }
+      ],
       "status": "ok",
       "arrival_rate": null
     },

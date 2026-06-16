@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-16T10:50:10",
+  "timestamp": "2026-06-16T11:00:29",
   "date": "2026-06-16",
   "warehouse": "GZ0210",
   "inbound": {
@@ -25,28 +25,28 @@
     },
     "unload": {
       "total": 2,
-      "done": 1,
-      "rate": 50.0,
-      "pcs_done": 2000,
+      "done": 2,
+      "rate": 100.0,
+      "pcs_done": 2600,
       "sign_pcs_done": 2600
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 600,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 6699,
@@ -172,15 +172,17 @@
           "seq": 5
         }
       ],
-      "unloading": [
+      "unloading": [],
+      "qc_pending": [
         {
+          "seq": 1,
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
-          "billCode": "YY20260610006091",
-          "signTime": "10:50",
-          "status": "已签到未卸货"
+          "skuName": "美丰多口味水果棒冰480g（40g*12支）",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "10:57",
+          "statusLabel": "待质检"
         }
       ],
-      "qc_pending": [],
       "recv_pending": [],
       "signed_not_recv": [
         {
@@ -297,10 +299,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 97,
+      "not_started": 102,
       "in_progress": 0,
       "done": 0,
-      "total": 97,
+      "total": 102,
       "status": "ok"
     }
   },

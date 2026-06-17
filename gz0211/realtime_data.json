@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-17T19:05:57",
+  "timestamp": "2026-06-17T19:15:23",
   "date": "2026-06-17",
   "warehouse": "GZ0210",
   "inbound": {
@@ -65,10 +65,10 @@
       },
       "pcs": {
         "total": 10613,
-        "done": 8321,
-        "rate": 78.4,
-        "recv_done": 8321,
-        "recv_rate": 78.4
+        "done": 10613,
+        "rate": 100.0,
+        "recv_done": 10613,
+        "recv_rate": 100.0
       },
       "sku": {
         "total": 0,
@@ -98,7 +98,7 @@
           "skuCount": 2,
           "pcs": 2292,
           "preArrivalTime": "2026-06-17",
-          "poStatus": "已确认"
+          "poStatus": "已完成"
         },
         {
           "supplierName": "福建圣农食品有限公司-快乐猴",
@@ -157,31 +157,31 @@
           "supplierName": "巢湖市大鑫食品有限公司",
           "skuName": "鲜冻大号龙虾尾 450g",
           "completeTime": "12:33",
-          "waitingMins": 392
+          "waitingMins": 402
         },
         {
           "supplierName": "荣成市鸿耀水产捕捞有限公司",
           "skuName": "南美白虾仁 500g",
           "completeTime": "12:35",
-          "waitingMins": 391
+          "waitingMins": 400
         },
         {
           "supplierName": "荣成市鸿耀水产捕捞有限公司",
           "skuName": "杂色花蛤肉 500g",
           "completeTime": "12:36",
-          "waitingMins": 389
+          "waitingMins": 399
         },
         {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
           "skuName": "快乐猴 原味香酥鸡柳 380g",
           "completeTime": "12:43",
-          "waitingMins": 383
+          "waitingMins": 392
         },
         {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
           "skuName": "快乐猴 鸡肉小酥肉 350g",
           "completeTime": "12:41",
-          "waitingMins": 384
+          "waitingMins": 394
         }
       ],
       "signed_not_recv": [],
@@ -190,35 +190,35 @@
           "supplierName": "巢湖市大鑫食品有限公司",
           "skuName": "鲜冻大号龙虾尾 450g",
           "qcCompleteTime": "12:33",
-          "waitingMins": 392,
+          "waitingMins": 402,
           "poNo": "CG202606031415"
         },
         {
           "supplierName": "荣成市鸿耀水产捕捞有限公司",
           "skuName": "南美白虾仁 500g",
           "qcCompleteTime": "12:35",
-          "waitingMins": 391,
+          "waitingMins": 400,
           "poNo": "CG202606128791"
         },
         {
           "supplierName": "荣成市鸿耀水产捕捞有限公司",
           "skuName": "杂色花蛤肉 500g",
           "qcCompleteTime": "12:36",
-          "waitingMins": 389,
+          "waitingMins": 399,
           "poNo": "CG202606128791"
         },
         {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
           "skuName": "快乐猴 鸡肉小酥肉 350g",
           "qcCompleteTime": "12:41",
-          "waitingMins": 384,
+          "waitingMins": 394,
           "poNo": "CG202606170878"
         },
         {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
           "skuName": "快乐猴 原味香酥鸡柳 380g",
           "qcCompleteTime": "12:43",
-          "waitingMins": 383,
+          "waitingMins": 392,
           "poNo": "CG202606170878"
         }
       ],
@@ -228,8 +228,8 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 4160.5,
-      "efficiency_formula": "8321 PCS / 2 人",
+      "efficiency": 5306.5,
+      "efficiency_formula": "10613 PCS / 2 人",
       "inbound_schedule": 2
     }
   },
@@ -450,15 +450,15 @@
     "status": "ok"
   },
   "transport": {
-    "serial_count": 0,
-    "total_depart": 0,
-    "serial_rate": null,
+    "serial_count": 1,
+    "total_depart": 1,
+    "serial_rate": 1.0,
     "trip_total": null,
     "trip_depart": null,
     "trip_arrive": null,
     "status": "ok",
     "temp_breakdown": {
-      "冷藏": 0,
+      "冷藏": 1,
       "冷冻": 0,
       "常温": 1
     },
@@ -526,7 +526,7 @@
           "carrierName": "斑马（广州2024）",
           "temperatureLevel": 5,
           "temperatureLevelName": "常温车",
-          "waybillStatus": 20,
+          "waybillStatus": 40,
           "preCoolMonitorStatus": 3,
           "preCoolMonitorStatusName": "--",
           "deliveryPoiArrivalMonitorStatus": 1,
@@ -592,11 +592,12 @@
       "status": "ok"
     },
     "departed_trips": {
-      "total": 1,
-      "in_transit": 1,
+      "total": 2,
+      "in_transit": 2,
       "arrived": 0,
       "by_store": {
-        "番禺建华汇店": 1
+        "番禺建华汇店": 1,
+        "南海国昌广场店": 1
       },
       "details": [
         {
@@ -621,6 +622,30 @@
           "firstLadingPoiName": "KLH-广州常温1仓",
           "createTime": 1781686240000,
           "store": "番禺建华汇店",
+          "_status_label": "运输中"
+        },
+        {
+          "waybillCode": "GZ2111952207",
+          "licensePlate": "粤BCX2100",
+          "driverName": "曾令川",
+          "carrierName": "斑马（广州2024）",
+          "temperatureLevel": 5,
+          "temperatureLevelName": "常温车",
+          "waybillStatus": 40,
+          "preCoolMonitorStatus": 3,
+          "preCoolMonitorStatusName": "--",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州常温1仓",
+          "createTime": 1781687403000,
+          "store": "南海国昌广场店",
           "_status_label": "运输中"
         }
       ],

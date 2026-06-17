@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-06-17T10:58:52",
+  "timestamp": "2026-06-17T11:09:08",
   "date": "2026-06-17",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
-      "total": 10,
+      "total": 11,
       "signed": 8,
-      "waiting": 2
+      "waiting": 3
     },
     "ontime": {
       "ontime": 0,
       "early": 8,
       "late": 0,
-      "total": 10,
+      "total": 11,
       "rate": 0.0,
-      "early_rate": 80.0,
+      "early_rate": 72.7,
       "late_rate": 0.0
     },
     "reserve_progress": {
       "po_total": 8,
-      "po_reserved": 7,
-      "rate": 87.5,
+      "po_reserved": 8,
+      "rate": 100.0,
       "po_data_ok": true
     },
     "unload": {
@@ -31,21 +31,21 @@
       "sign_pcs_done": 5135
     },
     "qc": {
-      "total": 6,
+      "total": 5,
       "done": 0,
-      "pending": 6,
+      "pending": 5,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 6,
+      "bill_total": 5,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 3898,
+      "pcs_total": 3826,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 6,
+      "sku_total": 5,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -59,36 +59,40 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 10,
+        "total": 11,
         "done": 8,
-        "rate": 80.0
+        "rate": 72.7
       },
       "pcs": {
         "total": 10613,
-        "done": 8718,
-        "rate": 82.1,
+        "done": 10613,
+        "rate": 100.0,
         "recv_done": 1442,
         "recv_rate": 13.6
       },
       "sku": {
-        "total": 14,
+        "total": 16,
         "done": 10,
-        "rate": 71.4
+        "rate": 62.5
       },
       "supplier": {
-        "total": 10,
+        "total": 11,
         "done": 8,
-        "rate": 80.0,
+        "rate": 72.7,
         "detail": {
+          "深圳合口味饮食投资有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "郯城瑞发德食品加工有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 0
+          },
           "汕头市芸美食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
           "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 1
-          },
-          "深圳合口味饮食投资有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -124,24 +128,23 @@
       }
     },
     "details": {
-      "unreserved": [
+      "unreserved": [],
+      "unsigned": [
         {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
-          "poNo": "CG202606170878",
+          "billCode": "YY20260617002524",
           "skuCount": 2,
           "pcs": 1895,
-          "preArrivalTime": "2026-06-17",
-          "poStatus": "待确认"
-        }
-      ],
-      "unsigned": [
+          "timeSlot": "11:30 - 12:30",
+          "seq": 1
+        },
         {
           "supplierName": "安徽省喜富食品有限公司-快乐猴",
           "billCode": "YY20260616001775",
           "skuCount": 2,
           "pcs": 2292,
           "timeSlot": "14:00 - 15:00",
-          "seq": 1
+          "seq": 2
         },
         {
           "supplierName": "广东立高食品营销有限公司-快乐猴",
@@ -149,10 +152,16 @@
           "skuCount": 2,
           "pcs": 2080,
           "timeSlot": "13:00 - 14:00",
-          "seq": 2
+          "seq": 3
         }
       ],
       "unloading": [
+        {
+          "supplierName": "深圳合口味饮食投资有限公司-快乐猴",
+          "billCode": "YY20260615001371",
+          "signTime": "10:24",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "汕头市芸美食品有限公司-快乐猴",
           "billCode": "YY20260615000534",
@@ -162,12 +171,6 @@
         {
           "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
           "billCode": "YY20260616002118",
-          "signTime": "10:24",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "深圳合口味饮食投资有限公司-快乐猴",
-          "billCode": "YY20260615001371",
           "signTime": "10:24",
           "status": "已签到未卸货"
         },
@@ -228,14 +231,6 @@
         },
         {
           "seq": 5,
-          "supplierName": "上海踞浒发贸易有限公司-快乐猴",
-          "skuName": "快乐猴 牛肉芝士卷 7.2kg",
-          "arrivalTime": "14:30",
-          "unloadFinishTime": "10:58",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 6,
           "supplierName": "汕头市芸美食品有限公司-快乐猴",
           "skuName": "快乐猴 潮汕双拼肉丸 500g",
           "arrivalTime": "15:30",
@@ -301,17 +296,6 @@
           "seq": 5
         },
         {
-          "supplierName": "深圳合口味饮食投资有限公司-快乐猴",
-          "poNo": "CG202606128783",
-          "reserveBillCode": "YY20260615001371",
-          "skuId": "1382775",
-          "skuName": "合口味 鲜虾蟹籽云吞 210g",
-          "purchaseQty": 384,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 6
-        },
-        {
           "supplierName": "福建圣农食品有限公司-快乐猴",
           "poNo": "CG202606128781",
           "reserveBillCode": "YY20260613007539",
@@ -320,7 +304,7 @@
           "purchaseQty": 160,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 6
         },
         {
           "supplierName": "上海踞浒发贸易有限公司-快乐猴",
@@ -331,7 +315,7 @@
           "purchaseQty": 72,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 7
         }
       ],
       "qc_recv_pending": [],
@@ -341,8 +325,8 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 4359.0,
-      "efficiency_formula": "8718 PCS / 2 人",
+      "efficiency": 5306.5,
+      "efficiency_formula": "10613 PCS / 2 人",
       "inbound_schedule": 2
     }
   },
@@ -436,10 +420,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 75,
+      "not_started": 77,
       "in_progress": 0,
       "done": 0,
-      "total": 75,
+      "total": 77,
       "status": "ok"
     }
   },

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-17T11:23:05",
+  "timestamp": "2026-06-17T11:29:58",
   "date": "2026-06-17",
   "warehouse": "GZ0210",
   "inbound": {
@@ -80,6 +80,10 @@
         "done": 15,
         "rate": 57.7,
         "detail": {
+          "广州霖磐贸易有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州贵美商务科技有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -121,10 +125,6 @@
             "done": 1
           },
           "广州市佑希成贸易有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "广州霖磐贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -484,7 +484,7 @@
           "supplierName": "开平市国腾食品有限公司-快乐猴-自营",
           "skuName": "松花皮蛋6枚 330g",
           "completeTime": "10:32",
-          "waitingMins": 50
+          "waitingMins": 57
         }
       ],
       "signed_not_recv": [
@@ -686,16 +686,16 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 33,
+      "total": 42,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 33,
+      "total": 42,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 22929,
+      "pcs_total": 22957,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -730,6 +730,11 @@
         "qty": 133
       },
       {
+        "containerCode": "RQ-28-03-0900574",
+        "poiName": "白云山水立方店",
+        "qty": 28
+      },
+      {
         "containerCode": "RQ-28-03-0900544",
         "poiName": "白云山水立方店",
         "qty": 10
@@ -762,23 +767,39 @@
         "qty": 133
       },
       {
+        "containerCode": "RQ-28-03-0900574",
+        "poiName": "白云山水立方店",
+        "qty": 28
+      },
+      {
         "containerCode": "RQ-28-03-0900544",
         "poiName": "白云山水立方店",
         "qty": 10
       }
     ],
     "shipping": {
-      "total": 4823,
+      "total": 4851,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
-      "multi_pallet_count": 0,
-      "multi_pallet_total": 33,
-      "multi_pallet_rate": 0.0,
+      "multi_pallet_count": 1,
+      "multi_pallet_total": 41,
+      "multi_pallet_rate": 2.4,
       "load_rate": 0.0,
-      "multi_pallet_details": [],
+      "multi_pallet_details": [
+        {
+          "skuName": "快乐猴-连卷袋-大号(450)-2丝（10卷/包）",
+          "poiName": "白云山水立方店",
+          "containerCount": 2,
+          "containerCodes": [
+            "RQ-28-03-0900556",
+            "RQ-28-03-0900574"
+          ],
+          "qty": 4
+        }
+      ],
       "load_rate_unloaded": "6.02%",
       "load_rate_loaded": "--",
       "load_rate_shipped": "--",
@@ -821,23 +842,23 @@
           "planOutTime": "06-17 22:00"
         }
       ],
-      "outbound_efficiency": 1205.8,
-      "outbound_efficiency_formula": "4823 PCS / 4 人(拣播员)"
+      "outbound_efficiency": 1212.8,
+      "outbound_efficiency_formula": "4851 PCS / 4 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 4823,
+        "total": 4851,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 4823,
+        "not_caged": 4851,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
         "cage_rate": 0.0,
-        "sowed_picked": 22929
+        "sowed_picked": 22957
       },
       "sku": {
-        "total": 33,
+        "total": 42,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -848,21 +869,29 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 33138,
-      "alloc_pcs": 33137,
-      "alloc_rate": 100.0,
-      "picked_pcs": 22929,
-      "sow_pcs": 22929,
+      "plan_pcs": 33178,
+      "alloc_pcs": 33157,
+      "alloc_rate": 99.9,
+      "picked_pcs": 22959,
+      "sow_pcs": 22957,
       "sow_rate": 69.2,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 427,
-      "sku_alloc": 427,
-      "sku_sow": 397,
+      "sku_plan": 429,
+      "sku_alloc": 428,
+      "sku_sow": 407,
       "sku_ship": 0,
-      "total_orders": 26
+      "total_orders": 28
     },
     "unalloc_details": [
+      {
+        "receiverName": "快乐猴-海珠星汇广场店-034",
+        "orderNo": "DB20260617107517",
+        "skuNum": 1,
+        "planQty": 20,
+        "allocQty": 0,
+        "unallocQty": 20
+      },
       {
         "receiverName": "快乐猴-番禺建华汇店-019",
         "orderNo": "DB20260617106139",
@@ -873,36 +902,44 @@
       }
     ],
     "seeding": {
-      "not_started": 84,
+      "not_started": 86,
       "in_progress": 0,
       "done": 0,
-      "total": 84,
+      "total": 86,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 26,
-    "total_pcs": 33138,
-    "alloc_pcs": 33137,
-    "alloc_rate": 100.0,
-    "picked_pcs": 22929,
-    "sow_pcs": 22929,
+    "total_orders": 28,
+    "total_pcs": 33178,
+    "alloc_pcs": 33157,
+    "alloc_rate": 99.9,
+    "picked_pcs": 22959,
+    "sow_pcs": 22957,
     "sow_rate": 69.2,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 427,
-    "sku_alloc": 427,
-    "sku_sow": 397,
+    "sku_plan": 429,
+    "sku_alloc": 428,
+    "sku_sow": 407,
     "store_count": 6,
     "by_store": {
       "快乐猴-白云山水立方店-037": 27966.0,
-      "快乐猴-海珠星汇广场店-034": 1859.0,
+      "快乐猴-海珠星汇广场店-034": 1899.0,
       "快乐猴-越秀越富广场店-031": 1622.0,
       "快乐猴-禅城东方广场店-018": 1027.0,
       "快乐猴-番禺建华汇店-019": 531.0,
       "快乐猴-南海国昌广场店-023": 133.0
     },
     "unalloc_details": [
+      {
+        "receiverName": "快乐猴-海珠星汇广场店-034",
+        "orderNo": "DB20260617107517",
+        "skuNum": 1,
+        "planQty": 20,
+        "allocQty": 0,
+        "unallocQty": 20
+      },
       {
         "receiverName": "快乐猴-番禺建华汇店-019",
         "orderNo": "DB20260617106139",
@@ -2554,10 +2591,10 @@
       "N常温收退": 2,
       "N常温高叉司机": 2
     },
-    "predicted_efficiency": 2866.1,
-    "efficiency_formula": "22929 PCS(播种) / 8 人",
-    "outbound_efficiency": 1205.8,
-    "outbound_efficiency_formula": "4823 PCS / 4 人(拣播员)",
+    "predicted_efficiency": 2869.6,
+    "efficiency_formula": "22957 PCS(播种) / 8 人",
+    "outbound_efficiency": 1212.8,
+    "outbound_efficiency_formula": "4851 PCS / 4 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-18T10:03:03",
+  "timestamp": "2026-06-18T10:09:12",
   "date": "2026-06-18",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 13,
-      "signed": 3,
-      "waiting": 7
+      "signed": 4,
+      "waiting": 6
     },
     "ontime": {
       "ontime": 0,
-      "early": 3,
+      "early": 4,
       "late": 0,
       "total": 10,
       "rate": 0.0,
-      "early_rate": 30.0,
+      "early_rate": 40.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,44 +24,44 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 3,
+      "total": 4,
       "done": 1,
-      "rate": 33.3,
+      "rate": 25.0,
       "pcs_done": 45,
-      "sign_pcs_done": 1100
+      "sign_pcs_done": 3600
     },
     "qc": {
-      "total": 2,
+      "total": 3,
       "done": 0,
-      "pending": 2,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 2,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 1055,
+      "pcs_total": 3555,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 2,
+      "sku_total": 3,
       "sku_rate": 0.0
     },
     "putaway": {
-      "total": 4047,
-      "done": 4047,
-      "rate": 100.0,
-      "sku_total": 9,
-      "sku_done": 9,
-      "sku_rate": 100.0,
+      "total": 0,
+      "done": 0,
+      "rate": 0,
+      "sku_total": 0,
+      "sku_done": 0,
+      "sku_rate": 0,
       "details": []
     },
     "dimensions": {
       "reserve": {
         "total": 10,
-        "done": 3,
-        "rate": 30.0
+        "done": 4,
+        "rate": 40.0
       },
       "pcs": {
         "total": 7573,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 19,
-        "done": 3,
-        "rate": 15.8
+        "done": 4,
+        "rate": 21.1
       },
       "supplier": {
         "total": 10,
-        "done": 3,
-        "rate": 30.0,
+        "done": 4,
+        "rate": 40.0,
         "detail": {
+          "广东何氏蹦蹦鱼食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "江苏益客食品集团股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -93,10 +97,6 @@
             "done": 1
           },
           "留恋食品（山东）有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "广东何氏蹦蹦鱼食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -152,20 +152,12 @@
           "seq": 1
         },
         {
-          "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
-          "billCode": "YY20260616003654",
-          "skuCount": 1,
-          "pcs": 2500,
-          "timeSlot": "15:00 - 15:30",
-          "seq": 2
-        },
-        {
           "supplierName": "山东胜农食品有限公司",
           "billCode": "YY20260615009690",
           "skuCount": 5,
           "pcs": 2020,
           "timeSlot": "13:30 - 14:30",
-          "seq": 3
+          "seq": 2
         },
         {
           "supplierName": "北京花花食界食品科技有限公司-快乐猴",
@@ -173,7 +165,7 @@
           "skuCount": 2,
           "pcs": 480,
           "timeSlot": "14:30 - 15:00",
-          "seq": 4
+          "seq": 3
         },
         {
           "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
@@ -181,7 +173,7 @@
           "skuCount": 1,
           "pcs": 210,
           "timeSlot": "15:30 - 16:00",
-          "seq": 5
+          "seq": 4
         },
         {
           "supplierName": "上海大江通泰食品有限公司-快乐猴",
@@ -189,7 +181,7 @@
           "skuCount": 3,
           "pcs": 100,
           "timeSlot": "16:00 - 16:30",
-          "seq": 6
+          "seq": 5
         },
         {
           "supplierName": "北京雪特商贸有限公司-快乐猴",
@@ -197,10 +189,16 @@
           "skuCount": 1,
           "pcs": 600,
           "timeSlot": "15:30 - 16:00",
-          "seq": 7
+          "seq": 6
         }
       ],
       "unloading": [
+        {
+          "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
+          "billCode": "YY20260616003654",
+          "signTime": "10:05",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "江苏益客食品集团股份有限公司-快乐猴",
           "billCode": "YY20260609006037",
@@ -230,10 +228,29 @@
           "arrivalTime": "16:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
+          "skuName": "快乐猴 免浆黑鱼片 250g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
       "signed_not_recv": [
+        {
+          "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
+          "poNo": "CG2026061516375",
+          "reserveBillCode": "YY20260616003654",
+          "skuId": "1215308",
+          "skuName": "快乐猴 免浆黑鱼片 250g",
+          "purchaseQty": 2500,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
         {
           "supplierName": "江苏益客食品集团股份有限公司-快乐猴",
           "poNo": "CG2026060817061",
@@ -243,7 +260,7 @@
           "purchaseQty": 990,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 2
         },
         {
           "supplierName": "泰森华东食品发展有限公司-未来唯一",
@@ -254,7 +271,7 @@
           "purchaseQty": 65,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 3
         }
       ],
       "qc_recv_pending": [],
@@ -359,10 +376,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 34,
+      "not_started": 0,
       "in_progress": 0,
       "done": 0,
-      "total": 34,
+      "total": 0,
       "status": "ok"
     }
   },

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-18T10:19:02",
+  "timestamp": "2026-06-18T10:23:01",
   "date": "2026-06-18",
   "warehouse": "GZ0210",
   "inbound": {
@@ -31,21 +31,21 @@
       "sign_pcs_done": 3600
     },
     "qc": {
-      "total": 3,
+      "total": 1,
       "done": 0,
-      "pending": 3,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 3,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 3555,
+      "pcs_total": 2500,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 3,
+      "sku_total": 1,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -80,15 +80,15 @@
         "done": 4,
         "rate": 40.0,
         "detail": {
+          "泰森华东食品发展有限公司-未来唯一": {
+            "plan": 1,
+            "done": 1
+          },
           "广东何氏蹦蹦鱼食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
           "江苏益客食品集团股份有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "泰森华东食品发展有限公司-未来唯一": {
             "plan": 1,
             "done": 1
           },
@@ -194,6 +194,12 @@
       ],
       "unloading": [
         {
+          "supplierName": "泰森华东食品发展有限公司-未来唯一",
+          "billCode": "YY20260615006931",
+          "signTime": "09:19",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
           "billCode": "YY20260616003654",
           "signTime": "10:05",
@@ -204,33 +210,11 @@
           "billCode": "YY20260609006037",
           "signTime": "09:20",
           "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "泰森华东食品发展有限公司-未来唯一",
-          "billCode": "YY20260615006931",
-          "signTime": "09:19",
-          "status": "已签到未卸货"
         }
       ],
       "qc_pending": [
         {
           "seq": 1,
-          "supplierName": "泰森华东食品发展有限公司-未来唯一",
-          "skuName": "奥尔良风味翅中10kg（泰森）",
-          "arrivalTime": "16:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "江苏益客食品集团股份有限公司-快乐猴",
-          "skuName": "快乐猴 香煎大鸡排 300g",
-          "arrivalTime": "16:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
           "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
           "skuName": "快乐猴 免浆黑鱼片 250g",
           "arrivalTime": "15:00",
@@ -261,17 +245,6 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 2
-        },
-        {
-          "supplierName": "泰森华东食品发展有限公司-未来唯一",
-          "poNo": "CG202606128785",
-          "reserveBillCode": "YY20260615006931",
-          "skuId": "1159385",
-          "skuName": "奥尔良风味翅中10kg（泰森）",
-          "purchaseQty": 65,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 3
         }
       ],
       "qc_recv_pending": [],
@@ -376,10 +349,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 63,
+      "not_started": 85,
       "in_progress": 0,
       "done": 0,
-      "total": 63,
+      "total": 85,
       "status": "ok"
     }
   },
@@ -2490,22 +2463,12 @@
       "status": "ok",
       "arrival_rate": 0.95
     },
-    "temp_rate": 0.9167,
-    "temp_qualified": 22,
-    "temp_total": 24,
+    "temp_rate": 0.9091,
+    "temp_qualified": 10,
+    "temp_total": 11,
     "temp_abnormal": [
       {
         "store": "禅城东方广场店",
-        "licensePlate": "粤BEE1533",
-        "driverName": "王忠鲜",
-        "tempLevel": "冷冻车",
-        "preCool": "合格",
-        "arrivalPoi": "不合格",
-        "accumulation": "合格",
-        "duration": "合格"
-      },
-      {
-        "store": "南海国昌广场店",
         "licensePlate": "粤BEE1533",
         "driverName": "王忠鲜",
         "tempLevel": "冷冻车",

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-18T13:07:16",
+  "timestamp": "2026-06-18T13:20:19",
   "date": "2026-06-18",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 13,
-      "signed": 6,
-      "waiting": 4
+      "signed": 7,
+      "waiting": 3
     },
     "ontime": {
       "ontime": 0,
-      "early": 6,
+      "early": 7,
       "late": 0,
       "total": 10,
       "rate": 0.0,
-      "early_rate": 60.0,
+      "early_rate": 70.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 6,
+      "total": 7,
       "done": 3,
-      "rate": 50.0,
+      "rate": 42.9,
       "pcs_done": 4565,
-      "sign_pcs_done": 6214
+      "sign_pcs_done": 6424
     },
     "qc": {
-      "total": 9,
+      "total": 10,
       "done": 6,
-      "pending": 3,
+      "pending": 4,
       "passed": 6,
       "rejected": 0,
-      "rate": 66.7,
+      "rate": 60.0,
       "bill_done": 6,
-      "bill_total": 9,
+      "bill_total": 10,
       "pcs_done": 4520,
       "pcs_passed": 4520,
-      "pcs_total": 5114,
+      "pcs_total": 5324,
       "pcs_rejected": 0,
-      "pcs_rate": 88.4,
+      "pcs_rate": 84.9,
       "sku_done": 6,
-      "sku_total": 9,
-      "sku_rate": 66.7
+      "sku_total": 10,
+      "sku_rate": 60.0
     },
     "putaway": {
       "total": 4047,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 10,
-        "done": 6,
-        "rate": 60.0
+        "done": 7,
+        "rate": 70.0
       },
       "pcs": {
         "total": 7573,
@@ -72,14 +72,22 @@
       },
       "sku": {
         "total": 19,
-        "done": 12,
-        "rate": 63.2
+        "done": 13,
+        "rate": 68.4
       },
       "supplier": {
         "total": 10,
-        "done": 6,
-        "rate": 60.0,
+        "done": 7,
+        "rate": 70.0,
         "detail": {
+          "山东胜农食品有限公司": {
+            "plan": 1,
+            "done": 1
+          },
+          "杭州一起闯荡科技有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "泰森华东食品发展有限公司-未来唯一": {
             "plan": 1,
             "done": 1
@@ -92,10 +100,6 @@
             "plan": 1,
             "done": 1
           },
-          "山东胜农食品有限公司": {
-            "plan": 1,
-            "done": 1
-          },
           "广东何氏蹦蹦鱼食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -105,10 +109,6 @@
             "done": 1
           },
           "北京花花食界食品科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "杭州一起闯荡科技有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -152,20 +152,12 @@
           "seq": 1
         },
         {
-          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
-          "billCode": "YY20260615005032",
-          "skuCount": 1,
-          "pcs": 210,
-          "timeSlot": "15:30 - 16:00",
-          "seq": 2
-        },
-        {
           "supplierName": "上海大江通泰食品有限公司-快乐猴",
           "billCode": "YY20260615000644",
           "skuCount": 3,
           "pcs": 100,
           "timeSlot": "16:00 - 16:30",
-          "seq": 3
+          "seq": 2
         },
         {
           "supplierName": "北京雪特商贸有限公司-快乐猴",
@@ -173,10 +165,16 @@
           "skuCount": 1,
           "pcs": 600,
           "timeSlot": "15:30 - 16:00",
-          "seq": 4
+          "seq": 3
         }
       ],
       "unloading": [
+        {
+          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
+          "billCode": "YY20260615005032",
+          "signTime": "13:14",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "泰森华东食品发展有限公司-未来唯一",
           "billCode": "YY20260615006931",
@@ -220,6 +218,14 @@
           "arrivalTime": "15:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
+          "skuName": "叮叮懒人菜 双蛋白藜麦鸡排 300g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -227,62 +233,40 @@
           "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
           "skuName": "快乐猴 免浆黑鱼片 250g",
           "completeTime": "10:57",
-          "waitingMins": 130
+          "waitingMins": 143
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "冷冻鸡爪 1kg",
           "completeTime": "13:06",
-          "waitingMins": 1
+          "waitingMins": 14
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅根 1kg",
           "completeTime": "13:04",
-          "waitingMins": 2
+          "waitingMins": 15
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡琵琶腿 1kg",
           "completeTime": "13:05",
-          "waitingMins": 2
+          "waitingMins": 15
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅尖 1kg",
           "completeTime": "13:05",
-          "waitingMins": 2
+          "waitingMins": 15
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅中  1kg",
           "completeTime": "13:03",
-          "waitingMins": 4
+          "waitingMins": 17
         }
       ],
       "signed_not_recv": [
-        {
-          "supplierName": "山东胜农食品有限公司",
-          "poNo": "CG202606128789",
-          "reserveBillCode": "YY20260615009690",
-          "skuId": "1125781",
-          "skuName": "单冻鸡翅中  1kg",
-          "purchaseQty": 990,
-          "recvQty": 0,
-          "hasQc": true,
-          "seq": 1
-        },
-        {
-          "supplierName": "山东胜农食品有限公司",
-          "poNo": "CG202606128789",
-          "reserveBillCode": "YY20260615009690",
-          "skuId": "1124266",
-          "skuName": "单冻鸡翅根 1kg",
-          "purchaseQty": 550,
-          "recvQty": 0,
-          "hasQc": true,
-          "seq": 2
-        },
         {
           "supplierName": "留恋食品（山东）有限公司-快乐猴",
           "poNo": "CG2026060911665",
@@ -292,18 +276,7 @@
           "purchaseQty": 336,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
-        },
-        {
-          "supplierName": "山东胜农食品有限公司",
-          "poNo": "CG202606128789",
-          "reserveBillCode": "YY20260615009690",
-          "skuId": "1124796",
-          "skuName": "单冻鸡琵琶腿 1kg",
-          "purchaseQty": 250,
-          "recvQty": 0,
-          "hasQc": true,
-          "seq": 4
+          "seq": 1
         },
         {
           "supplierName": "留恋食品（山东）有限公司-快乐猴",
@@ -314,29 +287,18 @@
           "purchaseQty": 240,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 2
         },
         {
-          "supplierName": "山东胜农食品有限公司",
-          "poNo": "CG202606128789",
-          "reserveBillCode": "YY20260615009690",
-          "skuId": "1125171",
-          "skuName": "单冻鸡翅尖 1kg",
-          "purchaseQty": 190,
+          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
+          "poNo": "CG202606128790",
+          "reserveBillCode": "YY20260615005032",
+          "skuId": "1406310",
+          "skuName": "叮叮懒人菜 双蛋白藜麦鸡排 300g",
+          "purchaseQty": 210,
           "recvQty": 0,
-          "hasQc": true,
-          "seq": 6
-        },
-        {
-          "supplierName": "山东胜农食品有限公司",
-          "poNo": "CG202606128789",
-          "reserveBillCode": "YY20260615009690",
-          "skuId": "1033159",
-          "skuName": "冷冻鸡爪 1kg",
-          "purchaseQty": 40,
-          "recvQty": 0,
-          "hasQc": true,
-          "seq": 7
+          "hasQc": false,
+          "seq": 3
         },
         {
           "supplierName": "留恋食品（山东）有限公司-快乐猴",
@@ -347,7 +309,7 @@
           "purchaseQty": 18,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 4
         }
       ],
       "qc_recv_pending": [],
@@ -452,10 +414,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 137,
-      "in_progress": 6,
-      "done": 59,
-      "total": 202,
+      "not_started": 132,
+      "in_progress": 7,
+      "done": 72,
+      "total": 211,
       "status": "ok"
     }
   },

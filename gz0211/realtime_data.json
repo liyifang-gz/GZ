@@ -1,52 +1,52 @@
 {
-  "timestamp": "2026-06-18T15:58:00",
+  "timestamp": "2026-06-18T16:05:24",
   "date": "2026-06-18",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 13,
-      "signed": 8,
-      "waiting": 2
+      "signed": 9,
+      "waiting": 1
     },
     "ontime": {
       "ontime": 0,
-      "early": 8,
+      "early": 9,
       "late": 0,
       "total": 10,
       "rate": 0.0,
-      "early_rate": 80.0,
+      "early_rate": 90.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
-      "po_total": 8,
+      "po_total": 7,
       "po_reserved": 6,
-      "rate": 75.0,
+      "rate": 85.7,
       "po_data_ok": true
     },
     "unload": {
-      "total": 8,
+      "total": 9,
       "done": 4,
-      "rate": 50.0,
+      "rate": 44.4,
       "pcs_done": 5165,
-      "sign_pcs_done": 7024
+      "sign_pcs_done": 7124
     },
     "qc": {
-      "total": 7,
+      "total": 10,
       "done": 7,
-      "pending": 0,
+      "pending": 3,
       "passed": 7,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 70.0,
       "bill_done": 7,
-      "bill_total": 7,
+      "bill_total": 10,
       "pcs_done": 5120,
       "pcs_passed": 5120,
-      "pcs_total": 5120,
+      "pcs_total": 5220,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 98.1,
       "sku_done": 7,
-      "sku_total": 7,
-      "sku_rate": 100.0
+      "sku_total": 10,
+      "sku_rate": 70.0
     },
     "putaway": {
       "total": 4047,
@@ -60,26 +60,30 @@
     "dimensions": {
       "reserve": {
         "total": 10,
-        "done": 8,
-        "rate": 80.0
+        "done": 9,
+        "rate": 90.0
       },
       "pcs": {
-        "total": 7573,
+        "total": 4627,
         "done": 4327,
-        "rate": 57.1,
+        "rate": 93.5,
         "recv_done": 4047,
-        "recv_rate": 53.4
+        "recv_rate": 87.5
       },
       "sku": {
         "total": 19,
-        "done": 14,
-        "rate": 73.7
+        "done": 17,
+        "rate": 89.5
       },
       "supplier": {
         "total": 10,
-        "done": 8,
-        "rate": 80.0,
+        "done": 9,
+        "rate": 90.0,
         "detail": {
+          "上海大江通泰食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "山东胜农食品有限公司": {
             "plan": 1,
             "done": 1
@@ -115,24 +119,12 @@
           "北京花花食界食品科技有限公司-快乐猴": {
             "plan": 1,
             "done": 0
-          },
-          "上海大江通泰食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
     },
     "details": {
       "unreserved": [
-        {
-          "supplierName": "河南今三麦食品有限公司-快乐猴",
-          "poNo": "CG2026060817054",
-          "skuCount": 3,
-          "pcs": 2946,
-          "preArrivalTime": "2026-06-18",
-          "poStatus": "待确认"
-        },
         {
           "supplierName": "日冷食品贸易（上海）有限公司-快乐猴",
           "poNo": "CG2026060816842",
@@ -150,17 +142,16 @@
           "pcs": 480,
           "timeSlot": "14:30 - 15:00",
           "seq": 1
-        },
-        {
-          "supplierName": "上海大江通泰食品有限公司-快乐猴",
-          "billCode": "YY20260615000644",
-          "skuCount": 3,
-          "pcs": 100,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 2
         }
       ],
       "unloading": [
+        {
+          "supplierName": "上海大江通泰食品有限公司-快乐猴",
+          "billCode": "YY20260615000644",
+          "signTime": "15:59",
+          "unloadStartTime": "16:03",
+          "status": "卸货中"
+        },
         {
           "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
           "billCode": "YY20260615005032",
@@ -186,52 +177,111 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "上海大江通泰食品有限公司-快乐猴",
+          "skuName": "快乐猴 生炸鸡架 10kg",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "上海大江通泰食品有限公司-快乐猴",
+          "skuName": "(原料)快乐猴 韩式炸鸡 10kg",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "上海大江通泰食品有限公司-快乐猴",
+          "skuName": "(原料)快乐猴 薄脆炸全鸡 10.4kg",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "广东何氏蹦蹦鱼食品有限公司-快乐猴",
           "skuName": "快乐猴 免浆黑鱼片 250g",
           "completeTime": "10:57",
-          "waitingMins": 301
+          "waitingMins": 308
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "冷冻鸡爪 1kg",
           "completeTime": "13:06",
-          "waitingMins": 172
+          "waitingMins": 179
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅根 1kg",
           "completeTime": "13:04",
-          "waitingMins": 173
+          "waitingMins": 180
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡琵琶腿 1kg",
           "completeTime": "13:05",
-          "waitingMins": 173
+          "waitingMins": 180
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅尖 1kg",
           "completeTime": "13:05",
-          "waitingMins": 172
+          "waitingMins": 180
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅中  1kg",
           "completeTime": "13:03",
-          "waitingMins": 175
+          "waitingMins": 182
         },
         {
           "supplierName": "北京雪特商贸有限公司-快乐猴",
           "skuName": "雀巢雪糍香草味糯米糍冰淇淋32g*6颗",
           "completeTime": "14:07",
-          "waitingMins": 110
+          "waitingMins": 118
         }
       ],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "上海大江通泰食品有限公司-快乐猴",
+          "poNo": "CG2026060816854",
+          "reserveBillCode": "YY20260615000644",
+          "skuId": "1338377",
+          "skuName": "(原料)快乐猴 韩式炸鸡 10kg",
+          "purchaseQty": 75,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "上海大江通泰食品有限公司-快乐猴",
+          "poNo": "CG2026060816854",
+          "reserveBillCode": "YY20260615000644",
+          "skuId": "1411015",
+          "skuName": "(原料)快乐猴 薄脆炸全鸡 10.4kg",
+          "purchaseQty": 17,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "上海大江通泰食品有限公司-快乐猴",
+          "poNo": "CG2026060816854",
+          "reserveBillCode": "YY20260615000644",
+          "skuId": "1236910",
+          "skuName": "快乐猴 生炸鸡架 10kg",
+          "purchaseQty": 8,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -411,10 +461,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 98,
+      "not_started": 96,
       "in_progress": 5,
-      "done": 213,
-      "total": 316,
+      "done": 217,
+      "total": 318,
       "status": "ok"
     }
   },

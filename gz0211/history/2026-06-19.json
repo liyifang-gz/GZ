@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-19T09:50:06",
+  "timestamp": "2026-06-19T09:58:12",
   "date": "2026-06-19",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 12,
-      "signed": 1,
-      "waiting": 9
+      "signed": 3,
+      "waiting": 7
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 3,
       "late": 0,
       "total": 10,
       "rate": 0.0,
-      "early_rate": 10.0,
+      "early_rate": 30.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 3,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 1160
+      "sign_pcs_done": 13340
     },
     "qc": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "pending": 0,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 12180,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 2,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 3375,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 10,
-        "done": 1,
-        "rate": 10.0
+        "done": 3,
+        "rate": 30.0
       },
       "pcs": {
         "total": 16755,
@@ -72,14 +72,22 @@
       },
       "sku": {
         "total": 19,
-        "done": 2,
-        "rate": 10.5
+        "done": 4,
+        "rate": 21.1
       },
       "supplier": {
         "total": 8,
-        "done": 1,
-        "rate": 12.5,
+        "done": 3,
+        "rate": 37.5,
         "detail": {
+          "祐康（杭州）食品制造有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "福建省华农食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "三全食品股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -101,14 +109,6 @@
             "done": 0
           },
           "广州市艺奇雪贸易有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
-          "祐康（杭州）食品制造有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "福建省华农食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -174,25 +174,21 @@
           "pcs": 3000,
           "timeSlot": "10:00 - 16:30",
           "seq": 6
-        },
+        }
+      ],
+      "unloading": [
         {
           "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
           "billCode": "YY20260615004100",
-          "skuCount": 1,
-          "pcs": 12000,
-          "timeSlot": "11:00 - 16:30",
-          "seq": 7
+          "signTime": "09:50",
+          "status": "已签到未卸货"
         },
         {
           "supplierName": "福建省华农食品有限公司-快乐猴",
           "billCode": "YY20260613004097",
-          "skuCount": 1,
-          "pcs": 180,
-          "timeSlot": "13:30 - 14:00",
-          "seq": 8
-        }
-      ],
-      "unloading": [
+          "signTime": "09:50",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "三全食品股份有限公司-快乐猴",
           "billCode": "YY20260618007468",
@@ -200,9 +196,49 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "福建省华农食品有限公司-快乐猴",
+          "skuName": "快乐猴 蒲烧鳗鱼 330g",
+          "arrivalTime": "13:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
+          "skuName": "快乐猴 红豆糯米方糕 80g",
+          "arrivalTime": "11:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
+          "poNo": "CG202606105833",
+          "reserveBillCode": "YY20260615004100",
+          "skuId": "1481458",
+          "skuName": "快乐猴 红豆糯米方糕 80g",
+          "purchaseQty": 12000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "福建省华农食品有限公司-快乐猴",
+          "poNo": "CG2026060817078",
+          "reserveBillCode": "YY20260613004097",
+          "skuId": "1202359",
+          "skuName": "快乐猴 蒲烧鳗鱼 330g",
+          "purchaseQty": 180,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -436,10 +472,10 @@
       }
     ],
     "seeding": {
-      "not_started": 58,
+      "not_started": 61,
       "in_progress": 0,
       "done": 0,
-      "total": 58,
+      "total": 61,
       "status": "ok"
     }
   },

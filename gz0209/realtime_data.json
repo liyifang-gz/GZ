@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-19T08:52:54",
+  "timestamp": "2026-06-19T09:04:13",
   "date": "2026-06-19",
   "warehouse": "GZ0209",
   "inbound": {
     "reserve": {
       "total": 36,
-      "signed": 3,
-      "waiting": 28
+      "signed": 4,
+      "waiting": 27
     },
     "ontime": {
       "ontime": 0,
-      "early": 3,
+      "early": 4,
       "late": 0,
       "total": 31,
       "rate": 0.0,
-      "early_rate": 9.7,
+      "early_rate": 12.9,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 3,
       "done": 1,
-      "rate": 50.0,
+      "rate": 33.3,
       "pcs_done": 729,
-      "sign_pcs_done": 11229
+      "sign_pcs_done": 11729
     },
     "qc": {
-      "total": 1,
+      "total": 2,
       "done": 0,
-      "pending": 1,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 1,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 10500,
+      "pcs_total": 11000,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 1,
+      "sku_total": 2,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 31,
-        "done": 3,
-        "rate": 9.7
+        "done": 4,
+        "rate": 12.9
       },
       "pcs": {
         "total": 75754,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 65,
-        "done": 5,
-        "rate": 7.7
+        "done": 6,
+        "rate": 9.2
       },
       "supplier": {
         "total": 24,
-        "done": 2,
-        "rate": 8.3,
+        "done": 3,
+        "rate": 12.5,
         "detail": {
+          "深圳市荣林华实业有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广东健力宝股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -153,10 +157,6 @@
             "done": 0
           },
           "金太阳粮油股份有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "上海银恒洽食品有限公司": {
             "plan": 1,
             "done": 0
           }
@@ -408,20 +408,12 @@
           "seq": 19
         },
         {
-          "supplierName": "深圳市荣林华实业有限公司-快乐猴",
-          "billCode": "YY20260615000291",
-          "skuCount": 1,
-          "pcs": 500,
-          "timeSlot": "14:00 - 14:30",
-          "seq": 20
-        },
-        {
           "supplierName": "北京喜之郎商贸有限责任公司-快乐猴-自营",
           "billCode": "YY20260612010513",
           "skuCount": 1,
           "pcs": 360,
           "timeSlot": "15:30 - 16:00",
-          "seq": 21
+          "seq": 20
         },
         {
           "supplierName": "一果荃健康科技（杭州）有限公司-快乐猴",
@@ -429,7 +421,7 @@
           "skuCount": 1,
           "pcs": 165,
           "timeSlot": "14:00 - 14:30",
-          "seq": 22
+          "seq": 21
         },
         {
           "supplierName": "仙源(涿鹿)食品有限公司-快乐猴-自营",
@@ -437,10 +429,16 @@
           "skuCount": 1,
           "pcs": 900,
           "timeSlot": "13:00 - 13:30",
-          "seq": 23
+          "seq": 22
         }
       ],
       "unloading": [
+        {
+          "supplierName": "深圳市荣林华实业有限公司-快乐猴",
+          "billCode": "YY20260615000291",
+          "signTime": "09:04",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "广东健力宝股份有限公司-快乐猴",
           "billCode": "YY20260616006304",
@@ -454,6 +452,14 @@
           "supplierName": "广东健力宝股份有限公司-快乐猴",
           "skuName": "快乐猴 白桃味气泡水 480ml",
           "arrivalTime": "13:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "深圳市荣林华实业有限公司-快乐猴",
+          "skuName": "冠华 南乳花生仁 130g",
+          "arrivalTime": "14:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
@@ -470,6 +476,17 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 1
+        },
+        {
+          "supplierName": "深圳市荣林华实业有限公司-快乐猴",
+          "poNo": "CG202606129455",
+          "reserveBillCode": "YY20260615000291",
+          "skuId": "1374200",
+          "skuName": "冠华 南乳花生仁 130g",
+          "purchaseQty": 500,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
         }
       ],
       "qc_recv_pending": [],
@@ -591,49 +608,67 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 1005,
+      "plan_pcs": 1065,
       "alloc_pcs": 1005,
-      "alloc_rate": 100.0,
+      "alloc_rate": 94.4,
       "picked_pcs": 0,
       "sow_pcs": 0,
       "sow_rate": 0.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 13,
+      "sku_plan": 14,
       "sku_alloc": 13,
       "sku_sow": 0,
       "sku_ship": 0,
-      "total_orders": 5
+      "total_orders": 6
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB202606193838",
+        "skuNum": 1,
+        "planQty": 60,
+        "allocQty": 0,
+        "unallocQty": 60
+      }
+    ],
     "seeding": {
-      "not_started": 21,
+      "not_started": 24,
       "in_progress": 0,
       "done": 0,
-      "total": 21,
+      "total": 24,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 5,
-    "total_pcs": 1005,
+    "total_orders": 6,
+    "total_pcs": 1065,
     "alloc_pcs": 1005,
-    "alloc_rate": 100.0,
+    "alloc_rate": 94.4,
     "picked_pcs": 0,
     "sow_pcs": 0,
     "sow_rate": 0.0,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 13,
+    "sku_plan": 14,
     "sku_alloc": 13,
     "sku_sow": 0,
     "store_count": 3,
     "by_store": {
-      "快乐猴-禅城东方广场店-018": 930.0,
+      "快乐猴-禅城东方广场店-018": 990.0,
       "快乐猴-南海国昌广场店-023": 60.0,
       "快乐猴-番禺建华汇店-019": 15.0
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB202606193838",
+        "skuNum": 1,
+        "planQty": 60,
+        "allocQty": 0,
+        "unallocQty": 60
+      }
+    ],
     "status": "ok"
   },
   "transport": {

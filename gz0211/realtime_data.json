@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-19T08:52:35",
+  "timestamp": "2026-06-19T09:03:44",
   "date": "2026-06-19",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 12,
-      "signed": 0,
-      "waiting": 10
+      "signed": 1,
+      "waiting": 9
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 10,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 10.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 1160
     },
     "qc": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "pending": 0,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 1160,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 2,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 3375,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 10,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 10.0
       },
       "pcs": {
         "total": 16755,
@@ -72,19 +72,19 @@
       },
       "sku": {
         "total": 19,
-        "done": 0,
-        "rate": 0.0
+        "done": 2,
+        "rate": 10.5
       },
       "supplier": {
         "total": 8,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 12.5,
         "detail": {
-          "北京花花食界食品科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
           "三全食品股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "北京花花食界食品科技有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -136,20 +136,12 @@
           "seq": 1
         },
         {
-          "supplierName": "三全食品股份有限公司-快乐猴",
-          "billCode": "YY20260618007468",
-          "skuCount": 2,
-          "pcs": 1160,
-          "timeSlot": "14:00 - 14:30",
-          "seq": 2
-        },
-        {
           "supplierName": "深圳市鲜百汇食品有限公司-快乐猴",
           "billCode": "YY20260618007282",
           "skuCount": 1,
           "pcs": 1000,
           "timeSlot": "15:00 - 15:30",
-          "seq": 3
+          "seq": 2
         },
         {
           "supplierName": "山东仙坛鸿食品有限公司-快乐猴",
@@ -157,7 +149,7 @@
           "skuCount": 1,
           "pcs": 20,
           "timeSlot": "09:00 - 09:30",
-          "seq": 4
+          "seq": 3
         },
         {
           "supplierName": "山东仙坛鸿食品有限公司-快乐猴",
@@ -165,7 +157,7 @@
           "skuCount": 3,
           "pcs": 1530,
           "timeSlot": "08:30 - 09:30",
-          "seq": 5
+          "seq": 4
         },
         {
           "supplierName": "和善园吉美家食品江苏有限公司-快乐猴",
@@ -173,7 +165,7 @@
           "skuCount": 1,
           "pcs": 1000,
           "timeSlot": "09:30 - 16:30",
-          "seq": 6
+          "seq": 5
         },
         {
           "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
@@ -181,7 +173,7 @@
           "skuCount": 4,
           "pcs": 3000,
           "timeSlot": "10:00 - 16:30",
-          "seq": 7
+          "seq": 6
         },
         {
           "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
@@ -189,7 +181,7 @@
           "skuCount": 1,
           "pcs": 12000,
           "timeSlot": "11:00 - 16:30",
-          "seq": 8
+          "seq": 7
         },
         {
           "supplierName": "福建省华农食品有限公司-快乐猴",
@@ -197,13 +189,60 @@
           "skuCount": 1,
           "pcs": 180,
           "timeSlot": "13:30 - 14:00",
-          "seq": 9
+          "seq": 8
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "billCode": "YY20260618007468",
+          "signTime": "08:55",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "skuName": "三全 猪肉玉米风味饺子王 420g(12只)",
+          "arrivalTime": "14:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "skuName": "三全 虾多多虾仁三鲜水饺 400g",
+          "arrivalTime": "14:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "poNo": "CG202606164357",
+          "reserveBillCode": "YY20260618007468",
+          "skuId": "551795",
+          "skuName": "三全 猪肉玉米风味饺子王 420g(12只)",
+          "purchaseQty": 740,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "poNo": "CG202606164357",
+          "reserveBillCode": "YY20260618007468",
+          "skuId": "935404",
+          "skuName": "三全 虾多多虾仁三鲜水饺 400g",
+          "purchaseQty": 420,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -211,9 +250,9 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 16395.0,
-      "efficiency_formula": "16395 PCS / 1 人",
-      "inbound_schedule": 1
+      "efficiency": 8197.5,
+      "efficiency_formula": "16395 PCS / 2 人",
+      "inbound_schedule": 2
     }
   },
   "outbound": {
@@ -385,8 +424,8 @@
           "planOutTime": "06-19 19:00"
         }
       ],
-      "outbound_efficiency": 7371.0,
-      "outbound_efficiency_formula": "7371 PCS / 1 人(拣播员)"
+      "outbound_efficiency": 3685.5,
+      "outbound_efficiency_formula": "7371 PCS / 2 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
@@ -437,10 +476,10 @@
       }
     ],
     "seeding": {
-      "not_started": 21,
+      "not_started": 24,
       "in_progress": 0,
       "done": 0,
-      "total": 21,
+      "total": 24,
       "status": "ok"
     }
   },
@@ -2710,28 +2749,28 @@
   },
   "attendance": {
     "total_inservice": 2,
-    "schedule": 1,
-    "attendance": 1,
-    "rate": 50.0,
+    "schedule": 2,
+    "attendance": 2,
+    "rate": 100.0,
     "by_job": {
       "N高叉司机": {
         "inservice": 2,
-        "schedule": 1,
-        "attendance": 1,
-        "rate": 50.0
+        "schedule": 2,
+        "attendance": 2,
+        "rate": 100.0
       }
     },
     "by_pos_total": {
       "N冷冻高叉司机": 2
     },
     "by_pos_scheduled": {
-      "N冷冻高叉司机": 1
+      "N冷冻高叉司机": 2
     },
-    "predicted_efficiency": 7277.0,
-    "efficiency_formula": "7277 PCS(播种) / 1 人",
-    "outbound_efficiency": 7371.0,
-    "outbound_efficiency_formula": "7371 PCS / 1 人(拣播员)",
-    "inbound_efficiency_workers": 1,
+    "predicted_efficiency": 3638.5,
+    "efficiency_formula": "7277 PCS(播种) / 2 人",
+    "outbound_efficiency": 3685.5,
+    "outbound_efficiency_formula": "7371 PCS / 2 人(拣播员)",
+    "inbound_efficiency_workers": 2,
     "status": "ok"
   }
 }

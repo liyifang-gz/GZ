@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-19T09:18:16",
+  "timestamp": "2026-06-19T09:26:35",
   "date": "2026-06-19",
   "warehouse": "GZ0209",
   "inbound": {
@@ -88,13 +88,13 @@
         "done": 5,
         "rate": 20.8,
         "detail": {
-          "深圳市荣林华实业有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
           "广东禅丰供应链管理有限公司-快乐猴": {
             "plan": 2,
             "done": 2
+          },
+          "深圳市荣林华实业有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
           },
           "永嘉利（福建）食品有限公司-快乐猴-自营": {
             "plan": 1,
@@ -457,17 +457,6 @@
           "seq": 1
         },
         {
-          "supplierName": "广东禅丰供应链管理有限公司-快乐猴",
-          "poNo": "CG202606157544",
-          "reserveBillCode": "YY20260617009512",
-          "skuId": "59359",
-          "skuName": "上海香皂 硫磺皂 85g",
-          "purchaseQty": 1440,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 2
-        },
-        {
           "supplierName": "永嘉利（福建）食品有限公司-快乐猴-自营",
           "poNo": "CG2026061610219",
           "reserveBillCode": "YY20260616011920",
@@ -476,18 +465,7 @@
           "purchaseQty": 660,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
-        },
-        {
-          "supplierName": "广东禅丰供应链管理有限公司-快乐猴",
-          "poNo": "CG202606179523",
-          "reserveBillCode": "YY20260617010402",
-          "skuId": "12827",
-          "skuName": "惠润 绿野芳香柔净洗发露 600ml",
-          "purchaseQty": 72,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 4
+          "seq": 2
         }
       ],
       "qc_recv_pending": [],
@@ -546,65 +524,87 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 0,
+      "total": 3,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 0,
+      "total": 3,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 1065,
+      "pcs_total": 330,
       "pcs_rate": 0.0
     },
     "packing": {
-      "total": 0,
+      "total": 1,
       "done": 0,
       "rate": 0.0
     },
-    "uncaged_details": [],
-    "unpacked_details": [],
+    "uncaged_details": [
+      {
+        "containerCode": "RQ-28-03-0900011",
+        "poiName": "禅城东方广场店",
+        "qty": 330
+      }
+    ],
+    "unpacked_details": [
+      {
+        "containerCode": "RQ-28-03-0900011",
+        "poiName": "禅城东方广场店",
+        "qty": 330
+      }
+    ],
     "shipping": {
-      "total": 0,
+      "total": 330,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 0,
+      "multi_pallet_total": 3,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "--",
+      "load_rate_unloaded": "57.27%",
       "load_rate_loaded": "--",
       "load_rate_shipped": "--",
       "low_load_containers": [],
-      "all_containers_detail": [],
-      "outbound_efficiency": 0.0,
-      "outbound_efficiency_formula": "0 PCS / 3 人(拣播员)"
+      "all_containers_detail": [
+        {
+          "containerCode": "RQ-28-03-0900011",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "57.27%",
+          "loadingRateVal": 57.27,
+          "skuPcs": "330.000",
+          "skuVolume": "1.134",
+          "planOutTime": "06-19 22:00"
+        }
+      ],
+      "outbound_efficiency": 110.0,
+      "outbound_efficiency_formula": "330 PCS / 3 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 0,
+        "total": 330,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
+        "not_caged": 330,
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
         "cage_rate": 0.0,
-        "sowed_picked": 1065
+        "sowed_picked": 330
       },
       "sku": {
-        "total": 0,
+        "total": 3,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
-        "cage_rate": 0
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
+        "cage_rate": 0.0
       }
     },
     "status": "ok",
@@ -612,14 +612,14 @@
       "plan_pcs": 1065,
       "alloc_pcs": 1065,
       "alloc_rate": 100.0,
-      "picked_pcs": 0,
-      "sow_pcs": 0,
-      "sow_rate": 0.0,
+      "picked_pcs": 330,
+      "sow_pcs": 330,
+      "sow_rate": 31.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 14,
       "sku_alloc": 14,
-      "sku_sow": 0,
+      "sku_sow": 5,
       "sku_ship": 0,
       "total_orders": 6
     },
@@ -637,14 +637,14 @@
     "total_pcs": 1065,
     "alloc_pcs": 1065,
     "alloc_rate": 100.0,
-    "picked_pcs": 0,
-    "sow_pcs": 0,
-    "sow_rate": 0.0,
+    "picked_pcs": 330,
+    "sow_pcs": 330,
+    "sow_rate": 31.0,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 14,
     "sku_alloc": 14,
-    "sku_sow": 0,
+    "sku_sow": 5,
     "store_count": 3,
     "by_store": {
       "快乐猴-禅城东方广场店-018": 990.0,
@@ -2924,10 +2924,10 @@
       "N常温收退": 1,
       "N常温高叉司机": 1
     },
-    "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS(播种) / 5 人",
-    "outbound_efficiency": 0.0,
-    "outbound_efficiency_formula": "0 PCS / 3 人(拣播员)",
+    "predicted_efficiency": 66.0,
+    "efficiency_formula": "330 PCS(播种) / 5 人",
+    "outbound_efficiency": 110.0,
+    "outbound_efficiency_formula": "330 PCS / 3 人(拣播员)",
     "inbound_efficiency_workers": 1,
     "status": "ok"
   }

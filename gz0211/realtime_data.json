@@ -1,118 +1,200 @@
 {
-  "timestamp": "2026-06-20T11:28:20",
+  "timestamp": "2026-06-20T11:45:29",
   "date": "2026-06-20",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
-      "total": 0,
-      "signed": 0,
-      "waiting": 0
+      "total": 7,
+      "signed": 4,
+      "waiting": 2
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 4,
       "late": 0,
-      "total": 0,
-      "rate": 0,
-      "early_rate": 0,
-      "late_rate": 0
+      "total": 6,
+      "rate": 0.0,
+      "early_rate": 66.7,
+      "late_rate": 0.0
     },
     "reserve_progress": {
-      "po_total": 0,
-      "po_reserved": 0,
-      "rate": 0,
+      "po_total": 4,
+      "po_reserved": 3,
+      "rate": 75.0,
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "pcs_done": 0,
-      "sign_pcs_done": 0
+      "total": 4,
+      "done": 3,
+      "rate": 75.0,
+      "pcs_done": 1942,
+      "sign_pcs_done": 2642
     },
     "qc": {
-      "total": 1,
+      "total": 2,
       "done": 1,
-      "pending": 0,
+      "pending": 1,
       "passed": 1,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 50.0,
       "bill_done": 1,
-      "bill_total": 1,
+      "bill_total": 2,
       "pcs_done": 720,
       "pcs_passed": 720,
-      "pcs_total": 720,
+      "pcs_total": 1420,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 50.7,
       "sku_done": 1,
-      "sku_total": 1,
-      "sku_rate": 100.0
+      "sku_total": 2,
+      "sku_rate": 50.0
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
+      "total": 2104,
+      "done": 2104,
+      "rate": 100.0,
+      "sku_total": 8,
+      "sku_done": 8,
+      "sku_rate": 100.0,
       "details": []
     },
     "dimensions": {
       "reserve": {
-        "total": 0,
-        "done": 0,
-        "rate": 0
+        "total": 6,
+        "done": 4,
+        "rate": 66.7
       },
       "pcs": {
-        "total": 0,
-        "done": 0,
-        "rate": 0,
-        "recv_done": 0,
-        "recv_rate": 0
+        "total": 2104,
+        "done": 1110,
+        "rate": 52.8,
+        "recv_done": 2104,
+        "recv_rate": 100.0
       },
       "sku": {
-        "total": 0,
-        "done": 0,
-        "rate": 0
+        "total": 12,
+        "done": 10,
+        "rate": 83.3
       },
       "supplier": {
-        "total": 0,
-        "done": 0,
-        "rate": 0,
-        "detail": {}
+        "total": 6,
+        "done": 4,
+        "rate": 66.7,
+        "detail": {
+          "海霸王（汕头）食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "深圳市金禧康食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "深圳市聚赢供应链管理有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "泰森华东食品发展有限公司-未来唯一": {
+            "plan": 1,
+            "done": 1
+          },
+          "德州天诚鼎盛食品有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 0
+          },
+          "广州冰力达食品有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 0
+          }
+        }
       }
     },
     "details": {
-      "unreserved": [],
-      "unsigned": [],
-      "unloading": [],
-      "qc_pending": [],
+      "unreserved": [
+        {
+          "supplierName": "荣成市鸿耀水产捕捞有限公司",
+          "poNo": "CG202606128791",
+          "skuCount": 2,
+          "pcs": 994,
+          "preArrivalTime": "2026-06-20",
+          "poStatus": "已完成"
+        }
+      ],
+      "unsigned": [
+        {
+          "supplierName": "德州天诚鼎盛食品有限公司-快乐猴-自营",
+          "billCode": "YY20260620000552",
+          "skuCount": 1,
+          "pcs": 1000,
+          "timeSlot": "16:00 - 16:30",
+          "seq": 1
+        },
+        {
+          "supplierName": "广州冰力达食品有限公司-快乐猴-自营",
+          "billCode": "YY20260615009954",
+          "skuCount": 1,
+          "pcs": 2400,
+          "timeSlot": "15:30 - 16:30",
+          "seq": 2
+        }
+      ],
+      "unloading": [
+        {
+          "supplierName": "海霸王（汕头）食品有限公司-快乐猴",
+          "billCode": "YY20260617010120",
+          "signTime": "11:38",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "海霸王（汕头）食品有限公司-快乐猴",
+          "skuName": "海霸王 撒尿牛肉丸 240g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "深圳市聚赢供应链管理有限公司-快乐猴",
           "skuName": "妙可蓝多 马苏里拉奶酪碎干酪制品 125g",
           "completeTime": "10:43",
-          "waitingMins": 45
+          "waitingMins": 62
         }
       ],
-      "signed_not_recv": [],
-      "qc_recv_pending": [
+      "signed_not_recv": [
         {
-          "supplierName": "深圳市聚赢供应链管理有限公司-快乐猴",
-          "skuName": "妙可蓝多 马苏里拉奶酪碎干酪制品 125g",
-          "qcCompleteTime": "10:43",
-          "waitingMins": 45,
-          "poNo": "CG2026061515987"
+          "supplierName": "海霸王（汕头）食品有限公司-快乐猴",
+          "poNo": "CG2026061611530",
+          "reserveBillCode": "YY20260617010120",
+          "skuId": "218868",
+          "skuName": "海霸王 撒尿牛肉丸 240g",
+          "purchaseQty": 700,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "泰森华东食品发展有限公司-未来唯一",
+          "poNo": "CG2026061515972",
+          "reserveBillCode": "YY20260617008309",
+          "skuId": "1159385",
+          "skuName": "奥尔良风味翅中10kg（泰森）",
+          "purchaseQty": 30,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
         }
       ],
+      "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
       "duplicate_reserve": []
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 0.0,
-      "efficiency_formula": "0 PCS / 2 人",
+      "efficiency": 555.0,
+      "efficiency_formula": "1110 PCS / 2 人",
       "inbound_schedule": 2
     }
   },
@@ -206,10 +288,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 0,
+      "not_started": 116,
       "in_progress": 0,
       "done": 0,
-      "total": 0,
+      "total": 116,
       "status": "ok"
     }
   },

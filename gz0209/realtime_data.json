@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-21T08:48:32",
+  "timestamp": "2026-06-21T08:58:31",
   "date": "2026-06-21",
   "warehouse": "GZ0209",
   "inbound": {
     "reserve": {
       "total": 38,
-      "signed": 5,
-      "waiting": 29
+      "signed": 6,
+      "waiting": 28
     },
     "ontime": {
       "ontime": 0,
-      "early": 5,
+      "early": 6,
       "late": 0,
       "total": 34,
       "rate": 0.0,
-      "early_rate": 14.7,
+      "early_rate": 17.6,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 5,
+      "total": 6,
       "done": 4,
-      "rate": 80.0,
+      "rate": 66.7,
       "pcs_done": 1786,
-      "sign_pcs_done": 16494
+      "sign_pcs_done": 20094
     },
     "qc": {
-      "total": 3,
+      "total": 5,
       "done": 0,
-      "pending": 3,
+      "pending": 5,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 3,
+      "bill_total": 5,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 14708,
+      "pcs_total": 18308,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 3,
+      "sku_total": 5,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 34,
-        "done": 5,
-        "rate": 14.7
+        "done": 6,
+        "rate": 17.6
       },
       "pcs": {
         "total": 84316,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 86,
-        "done": 10,
-        "rate": 11.6
+        "done": 12,
+        "rate": 14.0
       },
       "supplier": {
         "total": 26,
-        "done": 4,
-        "rate": 15.4,
+        "done": 5,
+        "rate": 19.2,
         "detail": {
+          "东莞市天骏生物科技有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州市捷通兴业贸易有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -153,10 +157,6 @@
             "done": 0
           },
           "安徽溜溜梅销售有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
-          "江苏中脯食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -470,17 +470,16 @@
           "pcs": 770,
           "timeSlot": "15:30 - 16:00",
           "seq": 25
-        },
-        {
-          "supplierName": "东莞市天骏生物科技有限公司-快乐猴",
-          "billCode": "YY20260611008499",
-          "skuCount": 2,
-          "pcs": 3600,
-          "timeSlot": "10:00 - 11:00",
-          "seq": 26
         }
       ],
       "unloading": [
+        {
+          "supplierName": "东莞市天骏生物科技有限公司-快乐猴",
+          "billCode": "YY20260611008499",
+          "signTime": "08:58",
+          "unloadStartTime": "08:58",
+          "status": "卸货中"
+        },
         {
           "supplierName": "福建省武夷白鹭日用化工有限公司-福建省武夷白鹭日用化工有限公司",
           "billCode": "YY20260619008101",
@@ -513,6 +512,22 @@
           "arrivalTime": "15:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "东莞市天骏生物科技有限公司-快乐猴",
+          "skuName": "快乐猴 饮用纯净水 550ml*24",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "东莞市天骏生物科技有限公司-快乐猴",
+          "skuName": "快乐猴 饮用纯净水 5L",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -540,6 +555,28 @@
           "seq": 2
         },
         {
+          "supplierName": "东莞市天骏生物科技有限公司-快乐猴",
+          "poNo": "CG2026060813921",
+          "reserveBillCode": "YY20260611008499",
+          "skuId": "1124716",
+          "skuName": "快乐猴 饮用纯净水 5L",
+          "purchaseQty": 2000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
+          "supplierName": "东莞市天骏生物科技有限公司-快乐猴",
+          "poNo": "CG2026060813921",
+          "reserveBillCode": "YY20260611008499",
+          "skuId": "1121870",
+          "skuName": "快乐猴 饮用纯净水 550ml*24",
+          "purchaseQty": 1600,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
           "supplierName": "南京绿丰食品有限公司-快乐猴",
           "poNo": "CG202606096847",
           "reserveBillCode": "YY20260615000233",
@@ -548,7 +585,7 @@
           "purchaseQty": 992,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
+          "seq": 5
         },
         {
           "supplierName": "福建省武夷白鹭日用化工有限公司-福建省武夷白鹭日用化工有限公司",
@@ -559,7 +596,7 @@
           "purchaseQty": 308,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 6
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
@@ -570,7 +607,7 @@
           "purchaseQty": 144,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 7
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
@@ -581,7 +618,7 @@
           "purchaseQty": 120,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 6
+          "seq": 8
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
@@ -592,7 +629,7 @@
           "purchaseQty": 90,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 9
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
@@ -603,7 +640,7 @@
           "purchaseQty": 60,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 10
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
@@ -614,7 +651,7 @@
           "purchaseQty": 60,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 11
         }
       ],
       "qc_recv_pending": [],
@@ -674,7 +711,7 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 802,
+      "pcs_total": 2322,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -714,7 +751,7 @@
         "pick_rate": 0,
         "sow_rate": 0,
         "cage_rate": 0.0,
-        "sowed_picked": 802
+        "sowed_picked": 2322
       },
       "sku": {
         "total": 0,
@@ -729,8 +766,8 @@
     "status": "ok",
     "pool": {
       "plan_pcs": 2734,
-      "alloc_pcs": 802,
-      "alloc_rate": 29.3,
+      "alloc_pcs": 2322,
+      "alloc_rate": 84.9,
       "picked_pcs": 0,
       "sow_pcs": 0,
       "sow_rate": 0.0,
@@ -745,34 +782,34 @@
     "unalloc_details": [
       {
         "receiverName": "快乐猴-白云山水立方店-037",
-        "orderNo": "DB20260619346734",
-        "skuNum": 3,
-        "planQty": 1762,
-        "allocQty": 50,
-        "unallocQty": 1712
-      },
-      {
-        "receiverName": "快乐猴-白云山水立方店-037",
         "orderNo": "DB20260619328328",
         "skuNum": 5,
         "planQty": 852,
         "allocQty": 632,
         "unallocQty": 220
+      },
+      {
+        "receiverName": "快乐猴-白云山水立方店-037",
+        "orderNo": "DB20260619346734",
+        "skuNum": 3,
+        "planQty": 1762,
+        "allocQty": 1570,
+        "unallocQty": 192
       }
     ],
     "seeding": {
-      "not_started": 9,
+      "not_started": 21,
       "in_progress": 0,
       "done": 0,
-      "total": 9,
+      "total": 21,
       "status": "ok"
     }
   },
   "plan": {
     "total_orders": 4,
     "total_pcs": 2734,
-    "alloc_pcs": 802,
-    "alloc_rate": 29.3,
+    "alloc_pcs": 2322,
+    "alloc_rate": 84.9,
     "picked_pcs": 0,
     "sow_pcs": 0,
     "sow_rate": 0.0,
@@ -789,19 +826,19 @@
     "unalloc_details": [
       {
         "receiverName": "快乐猴-白云山水立方店-037",
-        "orderNo": "DB20260619346734",
-        "skuNum": 3,
-        "planQty": 1762,
-        "allocQty": 50,
-        "unallocQty": 1712
-      },
-      {
-        "receiverName": "快乐猴-白云山水立方店-037",
         "orderNo": "DB20260619328328",
         "skuNum": 5,
         "planQty": 852,
         "allocQty": 632,
         "unallocQty": 220
+      },
+      {
+        "receiverName": "快乐猴-白云山水立方店-037",
+        "orderNo": "DB20260619346734",
+        "skuNum": 3,
+        "planQty": 1762,
+        "allocQty": 1570,
+        "unallocQty": 192
       }
     ],
     "status": "ok"

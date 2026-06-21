@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-22T01:17:51",
+  "timestamp": "2026-06-22T01:32:11",
   "date": "2026-06-22",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 95,
-      "signed": 1,
-      "waiting": 89
+      "signed": 2,
+      "waiting": 88
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 2,
       "late": 0,
       "total": 90,
       "rate": 0.0,
-      "early_rate": 1.1,
+      "early_rate": 2.2,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 1,
-      "rate": 100.0,
+      "rate": 50.0,
       "pcs_done": 167,
-      "sign_pcs_done": 167
+      "sign_pcs_done": 198
     },
     "qc": {
-      "total": 3,
+      "total": 8,
       "done": 0,
-      "pending": 3,
+      "pending": 8,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 3,
+      "bill_total": 8,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 167,
+      "pcs_total": 198,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 3,
+      "sku_total": 8,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 90,
-        "done": 1,
-        "rate": 1.1
+        "done": 2,
+        "rate": 2.2
       },
       "pcs": {
         "total": 36291,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 473,
-        "done": 3,
-        "rate": 0.6
+        "done": 8,
+        "rate": 1.7
       },
       "supplier": {
         "total": 75,
-        "done": 1,
-        "rate": 1.3,
+        "done": 2,
+        "rate": 2.7,
         "detail": {
+          "东莞千厨食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州市友心农业发展有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -153,10 +157,6 @@
             "done": 0
           },
           "深圳市理念供应链管理有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "上海丰楷农业科技有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
           }
@@ -616,7 +616,15 @@
           "seq": 50
         }
       ],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "billCode": "YY20260621002940",
+          "signTime": "01:32",
+          "unloadStartTime": "01:32",
+          "status": "卸货中"
+        }
+      ],
       "qc_pending": [
         {
           "seq": 1,
@@ -640,6 +648,46 @@
           "skuName": "兰竹荔枝 750g",
           "arrivalTime": "14:30",
           "unloadFinishTime": "23:24",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "skuName": "五香耳片(含红油) 115g",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "skuName": "五香猪肝 150g",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "skuName": "卤味双拼(猪耳+猪头肉) 205g",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "skuName": "手撕酱板鸭 120g",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "skuName": "盐焗鹌鹑蛋 200g",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],
@@ -677,6 +725,61 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 3
+        },
+        {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "poNo": "CG202606212887",
+          "reserveBillCode": "YY20260621002940",
+          "skuId": "1116601",
+          "skuName": "五香猪肝 150g",
+          "purchaseQty": 10,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "poNo": "CG202606212887",
+          "reserveBillCode": "YY20260621002940",
+          "skuId": "1404790",
+          "skuName": "盐焗鹌鹑蛋 200g",
+          "purchaseQty": 8,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "poNo": "CG202606212887",
+          "reserveBillCode": "YY20260621002940",
+          "skuId": "1110477",
+          "skuName": "五香耳片(含红油) 115g",
+          "purchaseQty": 7,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
+        },
+        {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "poNo": "CG202606212887",
+          "reserveBillCode": "YY20260621002940",
+          "skuId": "1129770",
+          "skuName": "卤味双拼(猪耳+猪头肉) 205g",
+          "purchaseQty": 4,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
+        },
+        {
+          "supplierName": "东莞千厨食品有限公司-快乐猴",
+          "poNo": "CG202606212887",
+          "reserveBillCode": "YY20260621002940",
+          "skuId": "1404565",
+          "skuName": "手撕酱板鸭 120g",
+          "purchaseQty": 2,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 8
         }
       ],
       "qc_recv_pending": [],
@@ -837,13 +940,13 @@
       },
       "details": [
         {
-          "waybillCode": "GZ2111966991",
-          "licensePlate": "粤BED0999",
-          "driverName": "陈小军",
+          "waybillCode": "GZ2112021631",
+          "licensePlate": "粤BE79606",
+          "driverName": "吴健诚",
           "carrierName": "斑马（广州2024）",
           "temperatureLevel": 2,
           "temperatureLevelName": "冷藏车",
-          "waybillStatus": 50,
+          "waybillStatus": 40,
           "preCoolMonitorStatus": 1,
           "preCoolMonitorStatusName": "合格",
           "deliveryPoiArrivalMonitorStatus": 1,
@@ -852,11 +955,11 @@
           "transportAccumulationMonitorStatusName": "合格",
           "transportDurationMonitorStatus": 1,
           "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 1,
-          "deliveryPoiArrivalQualifiedCount": 1,
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1782046430000,
+          "createTime": 1782046438000,
           "store": "禅城东方广场店"
         },
         {
@@ -883,13 +986,13 @@
           "store": "禅城东方广场店"
         },
         {
-          "waybillCode": "GZ2112021631",
-          "licensePlate": "粤BE79606",
-          "driverName": "吴健诚",
+          "waybillCode": "GZ2111966991",
+          "licensePlate": "粤BED0999",
+          "driverName": "陈小军",
           "carrierName": "斑马（广州2024）",
           "temperatureLevel": 2,
           "temperatureLevelName": "冷藏车",
-          "waybillStatus": 40,
+          "waybillStatus": 50,
           "preCoolMonitorStatus": 1,
           "preCoolMonitorStatusName": "合格",
           "deliveryPoiArrivalMonitorStatus": 1,
@@ -898,11 +1001,11 @@
           "transportAccumulationMonitorStatusName": "合格",
           "transportDurationMonitorStatus": 1,
           "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
+          "totalArrivalPoiNum": 1,
+          "deliveryPoiArrivalQualifiedCount": 1,
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1782046438000,
+          "createTime": 1782046430000,
           "store": "禅城东方广场店"
         },
         {
@@ -1067,29 +1170,6 @@
           "store": "番禺建华汇店"
         },
         {
-          "waybillCode": "GZ2111966991",
-          "licensePlate": "粤BED0999",
-          "driverName": "陈小军",
-          "carrierName": "斑马（广州2024）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 50,
-          "preCoolMonitorStatus": 1,
-          "preCoolMonitorStatusName": "合格",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 1,
-          "deliveryPoiArrivalQualifiedCount": 1,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1782046430000,
-          "store": "南海国昌广场店"
-        },
-        {
           "waybillCode": "GZ2111989882",
           "licensePlate": "粤BEE1533",
           "driverName": "王忠鲜",
@@ -1110,6 +1190,29 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "广州RDC生鲜2号仓-冻（现代物流园）",
           "createTime": 1782045165000,
+          "store": "南海国昌广场店"
+        },
+        {
+          "waybillCode": "GZ2111966991",
+          "licensePlate": "粤BED0999",
+          "driverName": "陈小军",
+          "carrierName": "斑马（广州2024）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 50,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 1,
+          "deliveryPoiArrivalQualifiedCount": 1,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1782046430000,
           "store": "南海国昌广场店"
         },
         {

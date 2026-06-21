@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-21T13:10:42",
+  "timestamp": "2026-06-21T13:28:12",
   "date": "2026-06-21",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 14,
-      "signed": 7,
-      "waiting": 6
+      "signed": 10,
+      "waiting": 3
     },
     "ontime": {
       "ontime": 0,
-      "early": 7,
-      "late": 0,
+      "early": 8,
+      "late": 2,
       "total": 13,
       "rate": 0.0,
-      "early_rate": 53.8,
-      "late_rate": 0.0
+      "early_rate": 61.5,
+      "late_rate": 15.4
     },
     "reserve_progress": {
       "po_total": 17,
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 7,
+      "total": 9,
       "done": 5,
-      "rate": 71.4,
+      "rate": 55.6,
       "pcs_done": 4128,
-      "sign_pcs_done": 6228
+      "sign_pcs_done": 7863
     },
     "qc": {
-      "total": 2,
+      "total": 5,
       "done": 1,
-      "pending": 1,
+      "pending": 4,
       "passed": 1,
       "rejected": 0,
-      "rate": 50.0,
+      "rate": 20.0,
       "bill_done": 1,
-      "bill_total": 2,
+      "bill_total": 5,
       "pcs_done": 1040,
       "pcs_passed": 1040,
-      "pcs_total": 1640,
+      "pcs_total": 3275,
       "pcs_rejected": 0,
-      "pcs_rate": 63.4,
+      "pcs_rate": 31.8,
       "sku_done": 1,
-      "sku_total": 2,
-      "sku_rate": 50.0
+      "sku_total": 4,
+      "sku_rate": 25.0
     },
     "putaway": {
       "total": 10635,
@@ -89,8 +89,8 @@
     "dimensions": {
       "reserve": {
         "total": 13,
-        "done": 7,
-        "rate": 53.8
+        "done": 10,
+        "rate": 76.9
       },
       "pcs": {
         "total": 12498,
@@ -101,14 +101,22 @@
       },
       "sku": {
         "total": 20,
-        "done": 12,
-        "rate": 60.0
+        "done": 17,
+        "rate": 85.0
       },
       "supplier": {
         "total": 12,
-        "done": 7,
-        "rate": 58.3,
+        "done": 9,
+        "rate": 75.0,
         "detail": {
+          "上海倍特食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "河南御江食品股份有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "巴中龙大肉食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -137,10 +145,6 @@
             "plan": 1,
             "done": 1
           },
-          "河南御江食品股份有限公司-快乐猴": {
-            "plan": 2,
-            "done": 0
-          },
           "郯城瑞发德食品加工有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
@@ -150,10 +154,6 @@
             "done": 0
           },
           "安徽橡果糯香食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "上海倍特食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -189,20 +189,12 @@
       ],
       "unsigned": [
         {
-          "supplierName": "河南御江食品股份有限公司-快乐猴",
-          "billCode": "YY20260620001394",
-          "skuCount": 2,
-          "pcs": 1160,
-          "timeSlot": "10:30 - 11:00",
-          "seq": 1
-        },
-        {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
           "billCode": "YY20260620000829",
           "skuCount": 1,
           "pcs": 81,
           "timeSlot": "16:00 - 16:30",
-          "seq": 2
+          "seq": 1
         },
         {
           "supplierName": "正大食品企业(洛阳)有限公司-快乐猴-自营",
@@ -210,7 +202,7 @@
           "skuCount": 1,
           "pcs": 12,
           "timeSlot": "16:00 - 16:30",
-          "seq": 3
+          "seq": 2
         },
         {
           "supplierName": "安徽橡果糯香食品有限公司-快乐猴",
@@ -218,23 +210,34 @@
           "skuCount": 1,
           "pcs": 2000,
           "timeSlot": "14:30 - 16:00",
-          "seq": 4
-        },
-        {
-          "supplierName": "上海倍特食品有限公司-快乐猴",
-          "billCode": "YY20260616008564",
-          "skuCount": 1,
-          "pcs": 475,
-          "timeSlot": "15:00 - 15:30",
-          "seq": 5
+          "seq": 3
         }
       ],
       "unloading": [
         {
+          "supplierName": "上海倍特食品有限公司-快乐猴",
+          "billCode": "YY20260616008564",
+          "signTime": "13:19",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "河南御江食品股份有限公司-快乐猴",
+          "billCode": "YY20260620001394",
+          "signTime": "13:19",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "河南御江食品股份有限公司-快乐猴",
+          "billCode": "YY20260620001394",
+          "signTime": "13:19",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "巴中龙大肉食品有限公司-快乐猴",
           "billCode": "YY20260619006720",
           "signTime": "13:10",
-          "status": "已签到未卸货"
+          "unloadStartTime": "13:12",
+          "status": "卸货中"
         },
         {
           "supplierName": "德州市金彩凤食品有限公司-快乐猴",
@@ -251,6 +254,30 @@
           "arrivalTime": "16:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "河南御江食品股份有限公司-快乐猴",
+          "skuName": "快乐猴 老北京风味鸡肉卷 435g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "河南御江食品股份有限公司-快乐猴",
+          "skuName": "快乐猴 老北京风味鸡肉卷 435g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "上海倍特食品有限公司-快乐猴",
+          "skuName": "冷冻南美白虾 500g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -258,10 +285,21 @@
           "supplierName": "上海立坤食品有限公司",
           "skuName": "(原料)快乐猴 柚子巴斯克 110g",
           "completeTime": "16:55",
-          "waitingMins": 1215
+          "waitingMins": 1233
         }
       ],
       "signed_not_recv": [
+        {
+          "supplierName": "河南御江食品股份有限公司-快乐猴",
+          "poNo": "CG2026061516373",
+          "reserveBillCode": "YY20260620001394",
+          "skuId": "1121377",
+          "skuName": "快乐猴 老北京风味鸡肉卷 435g",
+          "purchaseQty": 1000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
         {
           "supplierName": "巴中龙大肉食品有限公司-快乐猴",
           "poNo": "CG2026060817059",
@@ -271,7 +309,18 @@
           "purchaseQty": 600,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 2
+        },
+        {
+          "supplierName": "上海倍特食品有限公司-快乐猴",
+          "poNo": "CG202606164479",
+          "reserveBillCode": "YY20260616008564",
+          "skuId": "1082701",
+          "skuName": "冷冻南美白虾 500g",
+          "purchaseQty": 475,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
         }
       ],
       "qc_recv_pending": [],
@@ -315,7 +364,7 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 4283,
+      "pcs_total": 4442,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -355,7 +404,7 @@
         "pick_rate": 0,
         "sow_rate": 0,
         "cage_rate": 0.0,
-        "sowed_picked": 4283
+        "sowed_picked": 4442
       },
       "sku": {
         "total": 0,
@@ -370,8 +419,8 @@
     "status": "ok",
     "pool": {
       "plan_pcs": 4442,
-      "alloc_pcs": 4283,
-      "alloc_rate": 96.4,
+      "alloc_pcs": 4442,
+      "alloc_rate": 100.0,
       "picked_pcs": 0,
       "sow_pcs": 0,
       "sow_rate": 0.0,
@@ -383,53 +432,20 @@
       "sku_ship": 0,
       "total_orders": 9
     },
-    "unalloc_details": [
-      {
-        "receiverName": "快乐猴-海珠星汇广场店-034",
-        "orderNo": "DB2026062190760",
-        "skuNum": 45,
-        "planQty": 1223,
-        "allocQty": 1179,
-        "unallocQty": 44
-      },
-      {
-        "receiverName": "快乐猴-越秀越富广场店-031",
-        "orderNo": "DB2026062190748",
-        "skuNum": 38,
-        "planQty": 677,
-        "allocQty": 633,
-        "unallocQty": 44
-      },
-      {
-        "receiverName": "快乐猴-番禺建华汇店-019",
-        "orderNo": "DB2026062190749",
-        "skuNum": 37,
-        "planQty": 849,
-        "allocQty": 809,
-        "unallocQty": 40
-      },
-      {
-        "receiverName": "快乐猴-禅城东方广场店-018",
-        "orderNo": "DB2026062190752",
-        "skuNum": 45,
-        "planQty": 892,
-        "allocQty": 861,
-        "unallocQty": 31
-      }
-    ],
+    "unalloc_details": [],
     "seeding": {
-      "not_started": 126,
-      "in_progress": 4,
-      "done": 70,
-      "total": 200,
+      "not_started": 112,
+      "in_progress": 2,
+      "done": 87,
+      "total": 201,
       "status": "ok"
     }
   },
   "plan": {
     "total_orders": 9,
     "total_pcs": 4442,
-    "alloc_pcs": 4283,
-    "alloc_rate": 96.4,
+    "alloc_pcs": 4442,
+    "alloc_rate": 100.0,
     "picked_pcs": 0,
     "sow_pcs": 0,
     "sow_rate": 0.0,
@@ -446,40 +462,7 @@
       "快乐猴-越秀越富广场店-031": 749.0,
       "快乐猴-南海国昌广场店-023": 687.0
     },
-    "unalloc_details": [
-      {
-        "receiverName": "快乐猴-海珠星汇广场店-034",
-        "orderNo": "DB2026062190760",
-        "skuNum": 45,
-        "planQty": 1223,
-        "allocQty": 1179,
-        "unallocQty": 44
-      },
-      {
-        "receiverName": "快乐猴-越秀越富广场店-031",
-        "orderNo": "DB2026062190748",
-        "skuNum": 38,
-        "planQty": 677,
-        "allocQty": 633,
-        "unallocQty": 44
-      },
-      {
-        "receiverName": "快乐猴-番禺建华汇店-019",
-        "orderNo": "DB2026062190749",
-        "skuNum": 37,
-        "planQty": 849,
-        "allocQty": 809,
-        "unallocQty": 40
-      },
-      {
-        "receiverName": "快乐猴-禅城东方广场店-018",
-        "orderNo": "DB2026062190752",
-        "skuNum": 45,
-        "planQty": 892,
-        "allocQty": 861,
-        "unallocQty": 31
-      }
-    ],
+    "unalloc_details": [],
     "status": "ok"
   },
   "transport": {

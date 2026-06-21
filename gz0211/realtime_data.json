@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-21T12:24:19",
+  "timestamp": "2026-06-21T12:35:07",
   "date": "2026-06-21",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 14,
-      "signed": 5,
-      "waiting": 8
+      "signed": 6,
+      "waiting": 7
     },
     "ontime": {
       "ontime": 0,
-      "early": 5,
+      "early": 6,
       "late": 0,
       "total": 13,
       "rate": 0.0,
-      "early_rate": 38.5,
+      "early_rate": 46.2,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 5,
+      "total": 6,
       "done": 4,
-      "rate": 80.0,
+      "rate": 66.7,
       "pcs_done": 3828,
-      "sign_pcs_done": 5328
+      "sign_pcs_done": 5628
     },
     "qc": {
-      "total": 1,
+      "total": 2,
       "done": 1,
-      "pending": 0,
+      "pending": 1,
       "passed": 1,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 50.0,
       "bill_done": 1,
-      "bill_total": 1,
+      "bill_total": 2,
       "pcs_done": 1040,
       "pcs_passed": 1040,
-      "pcs_total": 1040,
+      "pcs_total": 1340,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 77.6,
       "sku_done": 1,
-      "sku_total": 1,
-      "sku_rate": 100.0
+      "sku_total": 2,
+      "sku_rate": 50.0
     },
     "putaway": {
       "total": 10335,
@@ -82,8 +82,8 @@
     "dimensions": {
       "reserve": {
         "total": 13,
-        "done": 5,
-        "rate": 38.5
+        "done": 6,
+        "rate": 46.2
       },
       "pcs": {
         "total": 12498,
@@ -94,27 +94,31 @@
       },
       "sku": {
         "total": 20,
-        "done": 10,
-        "rate": 50.0
+        "done": 11,
+        "rate": 55.0
       },
       "supplier": {
         "total": 12,
-        "done": 5,
-        "rate": 41.7,
+        "done": 6,
+        "rate": 50.0,
         "detail": {
-          "和路雪（中国）有限公司上海分公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "德州市金彩凤食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
           "和善园吉美家食品江苏有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
           "广州宥新贸易有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "上海广粤轩食品科技有限公司-上海广粤轩食品科技有限公司": {
+            "plan": 1,
+            "done": 1
+          },
+          "和路雪（中国）有限公司上海分公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "德州市金彩凤食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -143,10 +147,6 @@
             "done": 0
           },
           "上海倍特食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "上海广粤轩食品科技有限公司-上海广粤轩食品科技有限公司": {
             "plan": 1,
             "done": 0
           }
@@ -228,17 +228,15 @@
           "pcs": 475,
           "timeSlot": "15:00 - 15:30",
           "seq": 6
-        },
-        {
-          "supplierName": "上海广粤轩食品科技有限公司-上海广粤轩食品科技有限公司",
-          "billCode": "YY20260609001470",
-          "skuCount": 1,
-          "pcs": 300,
-          "timeSlot": "13:00 - 13:30",
-          "seq": 7
         }
       ],
       "unloading": [
+        {
+          "supplierName": "上海广粤轩食品科技有限公司-上海广粤轩食品科技有限公司",
+          "billCode": "YY20260609001470",
+          "signTime": "12:28",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "德州市金彩凤食品有限公司-快乐猴",
           "billCode": "YY20260619008173",
@@ -246,16 +244,37 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "上海广粤轩食品科技有限公司-上海广粤轩食品科技有限公司",
+          "skuName": "快乐猴 原材料蜜汁叉烧 330g",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "上海立坤食品有限公司",
           "skuName": "(原料)快乐猴 柚子巴斯克 110g",
           "completeTime": "16:55",
-          "waitingMins": 1169
+          "waitingMins": 1180
         }
       ],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "上海广粤轩食品科技有限公司-上海广粤轩食品科技有限公司",
+          "poNo": "CG2026060816850",
+          "reserveBillCode": "YY20260609001470",
+          "skuId": "1191425",
+          "skuName": "快乐猴 原材料蜜汁叉烧 330g",
+          "purchaseQty": 300,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [
         {
@@ -408,9 +427,9 @@
       }
     ],
     "seeding": {
-      "not_started": 167,
-      "in_progress": 5,
-      "done": 18,
+      "not_started": 156,
+      "in_progress": 4,
+      "done": 30,
       "total": 190,
       "status": "ok"
     }

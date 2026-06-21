@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-21T15:17:47",
+  "timestamp": "2026-06-21T15:37:48",
   "date": "2026-06-21",
   "warehouse": "GZ0211",
   "inbound": {
@@ -31,22 +31,22 @@
       "sign_pcs_done": 9944
     },
     "qc": {
-      "total": 5,
+      "total": 4,
       "done": 4,
-      "pending": 1,
+      "pending": 0,
       "passed": 4,
       "rejected": 0,
-      "rate": 80.0,
+      "rate": 100.0,
       "bill_done": 4,
-      "bill_total": 5,
+      "bill_total": 4,
       "pcs_done": 2675,
       "pcs_passed": 2675,
-      "pcs_total": 2756,
+      "pcs_total": 2675,
       "pcs_rejected": 0,
-      "pcs_rate": 97.1,
+      "pcs_rate": 100.0,
       "sku_done": 3,
-      "sku_total": 4,
-      "sku_rate": 75.0
+      "sku_total": 3,
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 12395,
@@ -123,6 +123,18 @@
         "done": 11,
         "rate": 91.7,
         "detail": {
+          "郯城瑞发德食品加工有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
+          "上海广粤轩食品科技有限公司-上海广粤轩食品科技有限公司": {
+            "plan": 1,
+            "done": 1
+          },
+          "安徽橡果糯香食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "巴中龙大肉食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -135,19 +147,7 @@
             "plan": 1,
             "done": 1
           },
-          "安徽橡果糯香食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "郯城瑞发德食品加工有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 1
-          },
           "和路雪（中国）有限公司上海分公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "上海广粤轩食品科技有限公司-上海广粤轩食品科技有限公司": {
             "plan": 1,
             "done": 1
           },
@@ -225,54 +225,34 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
-          "skuName": "(原料)奥尔良全腿 10kg",
-          "arrivalTime": "16:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "上海立坤食品有限公司",
           "skuName": "(原料)快乐猴 柚子巴斯克 110g",
           "completeTime": "16:55",
-          "waitingMins": 1342
+          "waitingMins": 1362
         },
         {
           "supplierName": "河南御江食品股份有限公司-快乐猴",
           "skuName": "快乐猴 老北京风味鸡肉卷 435g",
           "completeTime": "14:52",
-          "waitingMins": 25
+          "waitingMins": 45
         },
         {
           "supplierName": "河南御江食品股份有限公司-快乐猴",
           "skuName": "快乐猴 老北京风味鸡肉卷 435g",
           "completeTime": "14:52",
-          "waitingMins": 25
+          "waitingMins": 45
         },
         {
           "supplierName": "上海倍特食品有限公司-快乐猴",
           "skuName": "冷冻南美白虾 500g",
           "completeTime": "14:47",
-          "waitingMins": 30
+          "waitingMins": 50
         }
       ],
       "signed_not_recv": [
-        {
-          "supplierName": "安徽橡果糯香食品有限公司-快乐猴",
-          "poNo": "CG2026061516361",
-          "reserveBillCode": "YY20260618005551",
-          "skuId": "1409895",
-          "skuName": "快乐猴 手作荷香糯米鸡 600g",
-          "purchaseQty": 2000,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 1
-        },
         {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
           "poNo": "CG2026060816846",
@@ -282,7 +262,7 @@
           "purchaseQty": 81,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 1
         }
       ],
       "qc_recv_pending": [],
@@ -452,10 +432,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 93,
+      "not_started": 76,
       "in_progress": 5,
-      "done": 190,
-      "total": 288,
+      "done": 216,
+      "total": 297,
       "status": "ok"
     }
   },

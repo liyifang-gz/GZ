@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-23T08:55:52",
+  "timestamp": "2026-06-23T09:03:57",
   "date": "2026-06-23",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 16,
-      "signed": 0,
-      "waiting": 14
+      "signed": 2,
+      "waiting": 12
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 2,
       "late": 0,
       "total": 14,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 14.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 2900
     },
     "qc": {
-      "total": 0,
+      "total": 4,
       "done": 0,
-      "pending": 0,
+      "pending": 4,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 4,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 2900,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 3,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 12,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 14,
-        "done": 0,
-        "rate": 0.0
+        "done": 2,
+        "rate": 14.3
       },
       "pcs": {
         "total": 7062,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 35,
-        "done": 0,
-        "rate": 0.0
+        "done": 8,
+        "rate": 22.9
       },
       "supplier": {
         "total": 10,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 10.0,
         "detail": {
+          "上海馥松食品科技有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "深圳市麦麦食品有限公司": {
             "plan": 1,
             "done": 0
@@ -114,10 +118,6 @@
           },
           "天津市大桥道食品有限公司-快乐猴": {
             "plan": 1,
-            "done": 0
-          },
-          "上海馥松食品科技有限公司-快乐猴": {
-            "plan": 2,
             "done": 0
           }
         }
@@ -230,20 +230,81 @@
           "pcs": 2000,
           "timeSlot": "14:00 - 15:00",
           "seq": 12
+        }
+      ],
+      "unloading": [
+        {
+          "supplierName": "上海馥松食品科技有限公司-快乐猴",
+          "billCode": "YY20260617007067",
+          "signTime": "08:58",
+          "status": "已签到未卸货"
         },
         {
           "supplierName": "上海馥松食品科技有限公司-快乐猴",
           "billCode": "YY20260617007067",
-          "skuCount": 4,
-          "pcs": 2900,
-          "timeSlot": "10:30 - 12:00",
-          "seq": 13
+          "signTime": "08:58",
+          "status": "已签到未卸货"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "上海馥松食品科技有限公司-快乐猴",
+          "skuName": "(原料)快乐猴 双拼瑞士卷(黑金抹茶+生巧可可味) 200g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "上海馥松食品科技有限公司-快乐猴",
+          "skuName": "(原料)快乐猴 半熟芝士蛋糕 100g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "上海馥松食品科技有限公司-快乐猴",
+          "skuName": "(原料)快乐猴 双拼瑞士卷(原味+伯爵茶味) 240g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "上海馥松食品科技有限公司-快乐猴",
+          "skuName": "(原料)快乐猴 双拼瑞士卷(黑金抹茶+生巧可可味) 200g",
+          "arrivalTime": "10:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "上海馥松食品科技有限公司-快乐猴",
+          "poNo": "CG202606174989",
+          "reserveBillCode": "YY20260617007067",
+          "skuId": "1325717",
+          "skuName": "(原料)快乐猴 双拼瑞士卷(原味+伯爵茶味) 240g",
+          "purchaseQty": 1280,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "上海馥松食品科技有限公司-快乐猴",
+          "poNo": "CG202606174989",
+          "reserveBillCode": "YY20260617007067",
+          "skuId": "1341581",
+          "skuName": "(原料)快乐猴 双拼瑞士卷(黑金抹茶+生巧可可味) 200g",
+          "purchaseQty": 320,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -346,10 +407,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 0,
+      "not_started": 8,
       "in_progress": 0,
       "done": 0,
-      "total": 0,
+      "total": 8,
       "status": "ok"
     }
   },

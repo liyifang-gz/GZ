@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-24T04:13:31",
+  "timestamp": "2026-06-24T04:18:10",
   "date": "2026-06-24",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 92,
-      "signed": 9,
-      "waiting": 83
+      "signed": 10,
+      "waiting": 82
     },
     "ontime": {
       "ontime": 0,
-      "early": 9,
+      "early": 10,
       "late": 0,
       "total": 92,
       "rate": 0.0,
-      "early_rate": 9.8,
+      "early_rate": 10.9,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 9,
+      "total": 10,
       "done": 5,
-      "rate": 55.6,
+      "rate": 50.0,
       "pcs_done": 999,
-      "sign_pcs_done": 4200
+      "sign_pcs_done": 4201
     },
     "qc": {
-      "total": 34,
+      "total": 35,
       "done": 0,
-      "pending": 34,
+      "pending": 35,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 34,
+      "bill_total": 35,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 4200,
+      "pcs_total": 4201,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 30,
+      "sku_total": 31,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 92,
-        "done": 9,
-        "rate": 9.8
+        "done": 10,
+        "rate": 10.9
       },
       "pcs": {
         "total": 47651,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 427,
-        "done": 34,
-        "rate": 8.0
+        "done": 35,
+        "rate": 8.2
       },
       "supplier": {
         "total": 74,
-        "done": 8,
-        "rate": 10.8,
+        "done": 9,
+        "rate": 12.2,
         "detail": {
+          "深圳市味中王食品有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "汶上县富鑫种植农民专业合作社-快乐猴": {
             "plan": 1,
             "done": 1
@@ -153,10 +157,6 @@
             "done": 0
           },
           "深圳禾顺农业有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "佳农食品（上海）有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -626,6 +626,13 @@
       ],
       "unloading": [
         {
+          "supplierName": "深圳市味中王食品有限公司-快乐猴-自营",
+          "billCode": "YY20260622003906",
+          "signTime": "04:15",
+          "unloadStartTime": "04:15",
+          "status": "卸货中"
+        },
+        {
           "supplierName": "金乡县英格电子商务有限公司-快乐猴",
           "billCode": "YY20260623012142",
           "signTime": "03:37",
@@ -921,6 +928,14 @@
           "skuName": "老姜  500g",
           "arrivalTime": "15:00",
           "unloadFinishTime": "03:42",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 35,
+          "supplierName": "深圳市味中王食品有限公司-快乐猴-自营",
+          "skuName": "潮汕卤水四拼(含蒜蓉醋) 260g+12g",
+          "arrivalTime": "09:30",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],
@@ -1299,6 +1314,17 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 34
+        },
+        {
+          "supplierName": "深圳市味中王食品有限公司-快乐猴-自营",
+          "poNo": "CG202606225285",
+          "reserveBillCode": "YY20260622003906",
+          "skuId": "1418028",
+          "skuName": "潮汕卤水四拼(含蒜蓉醋) 260g+12g",
+          "purchaseQty": 1,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 35
         }
       ],
       "qc_recv_pending": [],
@@ -1343,7 +1369,7 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 24,
+      "pcs_total": 0,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -1383,7 +1409,7 @@
         "pick_rate": 0,
         "sow_rate": 0,
         "cage_rate": 0.0,
-        "sowed_picked": 24
+        "sowed_picked": 0
       },
       "sku": {
         "total": 0,
@@ -1397,19 +1423,19 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 37915,
-      "alloc_pcs": 24,
-      "alloc_rate": 0.1,
+      "plan_pcs": 0,
+      "alloc_pcs": 0,
+      "alloc_rate": 0,
       "picked_pcs": 0,
       "sow_pcs": 0,
-      "sow_rate": 0.0,
+      "sow_rate": 0,
       "ship_pcs": 0,
-      "ship_rate": 0.0,
-      "sku_plan": 1,
-      "sku_alloc": 1,
+      "ship_rate": 0,
+      "sku_plan": 0,
+      "sku_alloc": 0,
       "sku_sow": 0,
       "sku_ship": 0,
-      "total_orders": 1
+      "total_orders": 0
     },
     "unalloc_details": [],
     "seeding": {
@@ -1421,27 +1447,20 @@
     }
   },
   "plan": {
-    "total_orders": 1,
-    "total_pcs": 37915,
-    "alloc_pcs": 24,
-    "alloc_rate": 0.1,
+    "total_orders": 0,
+    "total_pcs": 0,
+    "alloc_pcs": 0,
+    "alloc_rate": 0,
     "picked_pcs": 0,
     "sow_pcs": 0,
-    "sow_rate": 0.0,
+    "sow_rate": 0,
     "ship_pcs": 0,
-    "ship_rate": 0.0,
-    "sku_plan": 1,
-    "sku_alloc": 1,
+    "ship_rate": 0,
+    "sku_plan": 0,
+    "sku_alloc": 0,
     "sku_sow": 0,
-    "store_count": 6,
-    "by_store": {
-      "快乐猴-番禺建华汇店-019": 10794.0,
-      "快乐猴-海珠星汇广场店-034": 7269.0,
-      "快乐猴-越秀越富广场店-031": 6911.0,
-      "快乐猴-禅城东方广场店-018": 6890.0,
-      "快乐猴-南海国昌广场店-023": 5936.0,
-      "快乐猴-白云山水立方店-037": 115.0
-    },
+    "store_count": 0,
+    "by_store": {},
     "unalloc_details": [],
     "status": "ok"
   },

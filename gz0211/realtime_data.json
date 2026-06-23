@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-23T17:27:57",
+  "timestamp": "2026-06-23T17:36:18",
   "date": "2026-06-23",
   "warehouse": "GZ0211",
   "inbound": {
@@ -31,30 +31,30 @@
       "sign_pcs_done": 15274
     },
     "qc": {
-      "total": 6,
+      "total": 4,
       "done": 4,
-      "pending": 2,
+      "pending": 0,
       "passed": 4,
       "rejected": 0,
-      "rate": 66.7,
+      "rate": 100.0,
       "bill_done": 4,
-      "bill_total": 6,
+      "bill_total": 4,
       "pcs_done": 3180,
       "pcs_passed": 3180,
-      "pcs_total": 5640,
+      "pcs_total": 3180,
       "pcs_rejected": 0,
-      "pcs_rate": 56.4,
+      "pcs_rate": 100.0,
       "sku_done": 4,
-      "sku_total": 6,
-      "sku_rate": 66.7
+      "sku_total": 4,
+      "sku_rate": 100.0
     },
     "putaway": {
-      "total": 4242,
+      "total": 6702,
       "done": 381,
-      "rate": 9.0,
-      "sku_total": 26,
+      "rate": 5.7,
+      "sku_total": 29,
       "sku_done": 4,
-      "sku_rate": 15.4,
+      "sku_rate": 13.8,
       "details": [
         {
           "poNo": "CG2026062211592",
@@ -62,6 +62,13 @@
           "putPcs": 49,
           "hopeSku": 14,
           "putSku": 2
+        },
+        {
+          "poNo": "CG202606186493",
+          "hopePcs": 2460,
+          "putPcs": 0,
+          "hopeSku": 3,
+          "putSku": 0
         },
         {
           "poNo": "CG202606182649",
@@ -103,8 +110,8 @@
         "total": 6702,
         "done": 6702,
         "rate": 100.0,
-        "recv_done": 4242,
-        "recv_rate": 63.3
+        "recv_done": 6702,
+        "recv_rate": 100.0
       },
       "sku": {
         "total": 35,
@@ -194,74 +201,34 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "河南今三麦食品有限公司-快乐猴",
-          "skuName": "快乐猴 桂圆红糖手撕馒头 320g",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "河南今三麦食品有限公司-快乐猴",
-          "skuName": "快乐猴 手作纸皮韭菜盒子 300g(4只)",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "苏州瑷玛森食品有限公司",
           "skuName": "(原料)无花果乳酪欧包 7.2kg",
           "completeTime": "12:00",
-          "waitingMins": 327
+          "waitingMins": 336
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
           "skuName": "(原料)香肠一口酥面包 7.2kg",
           "completeTime": "12:03",
-          "waitingMins": 325
+          "waitingMins": 333
         },
         {
           "supplierName": "深圳市麦麦食品有限公司",
           "skuName": "快乐猴 原味手抓饼 900g",
           "completeTime": "12:35",
-          "waitingMins": 293
+          "waitingMins": 301
         },
         {
           "supplierName": "广州恒洋食品有限公司-快乐猴",
           "skuName": "广州酒家 利口福流沙凤凰包 450g",
           "completeTime": "14:39",
-          "waitingMins": 168
+          "waitingMins": 177
         }
       ],
-      "signed_not_recv": [
-        {
-          "supplierName": "河南今三麦食品有限公司-快乐猴",
-          "poNo": "CG202606186493",
-          "reserveBillCode": "YY20260618007895",
-          "skuId": "1284303",
-          "skuName": "快乐猴 手作纸皮韭菜盒子 300g(4只)",
-          "purchaseQty": 1476,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 1
-        },
-        {
-          "supplierName": "河南今三麦食品有限公司-快乐猴",
-          "poNo": "CG202606186493",
-          "reserveBillCode": "YY20260618007895",
-          "skuId": "1180824",
-          "skuName": "快乐猴 桂圆红糖手撕馒头 320g",
-          "purchaseQty": 984,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 2
-        }
-      ],
+      "signed_not_recv": [],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -456,10 +423,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 90,
+      "not_started": 110,
       "in_progress": 0,
       "done": 312,
-      "total": 402,
+      "total": 422,
       "status": "ok"
     }
   },
@@ -510,29 +477,6 @@
       },
       "details": [
         {
-          "waybillCode": "GZ2111944230",
-          "licensePlate": "粤BCJ7747",
-          "driverName": "胡继杭",
-          "carrierName": "斑马（广州2024）",
-          "temperatureLevel": 5,
-          "temperatureLevelName": "常温车",
-          "waybillStatus": 0,
-          "preCoolMonitorStatus": 3,
-          "preCoolMonitorStatusName": "--",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州常温1仓",
-          "createTime": 1782203381000,
-          "store": "禅城东方广场店"
-        },
-        {
           "waybillCode": "GZ2112018879",
           "licensePlate": "粤BE19723",
           "driverName": "柯建东",
@@ -553,6 +497,29 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州常温1仓",
           "createTime": 1782206488000,
+          "store": "禅城东方广场店"
+        },
+        {
+          "waybillCode": "GZ2111944230",
+          "licensePlate": "粤BCJ7747",
+          "driverName": "胡继杭",
+          "carrierName": "斑马（广州2024）",
+          "temperatureLevel": 5,
+          "temperatureLevelName": "常温车",
+          "waybillStatus": 0,
+          "preCoolMonitorStatus": 3,
+          "preCoolMonitorStatusName": "--",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州常温1仓",
+          "createTime": 1782203381000,
           "store": "禅城东方广场店"
         },
         {

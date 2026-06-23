@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-23T16:28:37",
+  "timestamp": "2026-06-23T16:36:24",
   "date": "2026-06-23",
   "warehouse": "GZ0211",
   "inbound": {
@@ -80,6 +80,10 @@
         "done": 9,
         "rate": 90.0,
         "detail": {
+          "广州赛味谦食品有限公司": {
+            "plan": 2,
+            "done": 2
+          },
           "沧州市日月潭食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -99,10 +103,6 @@
           "苏州瑷玛森食品有限公司": {
             "plan": 1,
             "done": 1
-          },
-          "广州赛味谦食品有限公司": {
-            "plan": 2,
-            "done": 2
           },
           "上海踞浒发贸易有限公司-快乐猴": {
             "plan": 1,
@@ -167,25 +167,25 @@
           "supplierName": "苏州瑷玛森食品有限公司",
           "skuName": "(原料)无花果乳酪欧包 7.2kg",
           "completeTime": "12:00",
-          "waitingMins": 268
+          "waitingMins": 276
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
           "skuName": "(原料)香肠一口酥面包 7.2kg",
           "completeTime": "12:03",
-          "waitingMins": 266
+          "waitingMins": 273
         },
         {
           "supplierName": "深圳市麦麦食品有限公司",
           "skuName": "快乐猴 原味手抓饼 900g",
           "completeTime": "12:35",
-          "waitingMins": 233
+          "waitingMins": 241
         },
         {
           "supplierName": "广州恒洋食品有限公司-快乐猴",
           "skuName": "广州酒家 利口福流沙凤凰包 450g",
           "completeTime": "14:39",
-          "waitingMins": 109
+          "waitingMins": 117
         }
       ],
       "signed_not_recv": [],
@@ -220,13 +220,13 @@
       "total": 0,
       "done": 0,
       "rate": 0.0,
-      "pcs_done": 0,
+      "pcs_done": 788,
       "pcs_total": 0,
       "pcs_rate": 0.0
     },
     "packing": {
-      "total": 5,
-      "done": 5,
+      "total": 6,
+      "done": 6,
       "rate": 100.0
     },
     "uncaged_details": [],
@@ -243,11 +243,20 @@
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "64.00%",
-      "load_rate_loaded": "71.44%",
+      "load_rate_unloaded": "63.88%",
+      "load_rate_loaded": "76.50%",
       "load_rate_shipped": "--",
       "low_load_containers": [],
       "all_containers_detail": [
+        {
+          "containerCode": "RQ-05-03-0700722",
+          "poiName": "白云山水立方店",
+          "loadingRate": "56.44%",
+          "loadingRateVal": 56.44,
+          "skuPcs": "453.000",
+          "skuVolume": "1.117",
+          "planOutTime": "06-23 19:00"
+        },
         {
           "containerCode": "RQ-05-03-0700116",
           "poiName": "禅城东方广场店",
@@ -287,10 +296,10 @@
         {
           "containerCode": "RQ-05-03-0700633",
           "poiName": "海珠星汇广场店",
-          "loadingRate": "56.93%",
-          "loadingRateVal": 56.93,
-          "skuPcs": "728.000",
-          "skuVolume": "1.127",
+          "loadingRate": "81.56%",
+          "loadingRateVal": 81.56,
+          "skuPcs": "788.000",
+          "skuVolume": "1.615",
           "planOutTime": "06-23 19:00"
         }
       ],
@@ -375,11 +384,37 @@
       "冷冻": 0,
       "常温": 1
     },
-    "all_count": 3,
+    "all_count": 4,
     "planned_trips": {
-      "total": 0,
-      "by_store": {},
-      "details": [],
+      "total": 1,
+      "by_store": {
+        "禅城东方广场店": 1
+      },
+      "details": [
+        {
+          "waybillCode": "GZ2111944230",
+          "licensePlate": "粤BCJ7747",
+          "driverName": "胡继杭",
+          "carrierName": "斑马（广州2024）",
+          "temperatureLevel": 5,
+          "temperatureLevelName": "常温车",
+          "waybillStatus": 0,
+          "preCoolMonitorStatus": 3,
+          "preCoolMonitorStatusName": "--",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州常温1仓",
+          "createTime": 1782203381000,
+          "store": "禅城东方广场店"
+        }
+      ],
       "status": "ok"
     },
     "departed_trips": {

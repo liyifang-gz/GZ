@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-23T09:14:50",
+  "timestamp": "2026-06-23T09:19:33",
   "date": "2026-06-23",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 16,
-      "signed": 3,
-      "waiting": 11
+      "signed": 4,
+      "waiting": 10
     },
     "ontime": {
       "ontime": 0,
-      "early": 3,
+      "early": 4,
       "late": 0,
       "total": 14,
       "rate": 0.0,
-      "early_rate": 21.4,
+      "early_rate": 28.6,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 3,
       "done": 1,
-      "rate": 50.0,
+      "rate": 33.3,
       "pcs_done": 2900,
-      "sign_pcs_done": 4900
+      "sign_pcs_done": 5326
     },
     "qc": {
-      "total": 5,
+      "total": 15,
       "done": 0,
-      "pending": 5,
+      "pending": 15,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 5,
+      "bill_total": 15,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 4900,
+      "pcs_total": 5326,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 4,
+      "sku_total": 14,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 14,
-        "done": 3,
-        "rate": 21.4
+        "done": 4,
+        "rate": 28.6
       },
       "pcs": {
         "total": 7062,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 35,
-        "done": 9,
-        "rate": 25.7
+        "done": 19,
+        "rate": 54.3
       },
       "supplier": {
         "total": 10,
-        "done": 2,
-        "rate": 20.0,
+        "done": 3,
+        "rate": 30.0,
         "detail": {
+          "苏州瑷玛森食品有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "天津市大桥道食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -89,10 +93,6 @@
             "done": 2
           },
           "深圳市麦麦食品有限公司": {
-            "plan": 1,
-            "done": 0
-          },
-          "苏州瑷玛森食品有限公司": {
             "plan": 1,
             "done": 0
           },
@@ -144,20 +144,12 @@
           "seq": 1
         },
         {
-          "supplierName": "苏州瑷玛森食品有限公司",
-          "billCode": "YY20260622009057",
-          "skuCount": 10,
-          "pcs": 426,
-          "timeSlot": "10:00 - 10:30",
-          "seq": 2
-        },
-        {
           "supplierName": "上海踞浒发贸易有限公司-快乐猴",
           "billCode": "YY20260622001290",
           "skuCount": 1,
           "pcs": 40,
           "timeSlot": "15:00 - 15:30",
-          "seq": 3
+          "seq": 2
         },
         {
           "supplierName": "沧州市日月潭食品有限公司-快乐猴",
@@ -165,7 +157,7 @@
           "skuCount": 1,
           "pcs": 20,
           "timeSlot": "16:00 - 16:30",
-          "seq": 4
+          "seq": 3
         },
         {
           "supplierName": "山东凤祥食品发展有限公司-快乐猴",
@@ -173,7 +165,7 @@
           "skuCount": 2,
           "pcs": 1600,
           "timeSlot": "15:00 - 15:30",
-          "seq": 5
+          "seq": 4
         },
         {
           "supplierName": "山东凤祥食品发展有限公司-快乐猴",
@@ -181,7 +173,7 @@
           "skuCount": 1,
           "pcs": 600,
           "timeSlot": "15:00 - 15:30",
-          "seq": 6
+          "seq": 5
         },
         {
           "supplierName": "山东凤祥食品发展有限公司-快乐猴",
@@ -189,7 +181,7 @@
           "skuCount": 2,
           "pcs": 24,
           "timeSlot": "15:00 - 15:30",
-          "seq": 7
+          "seq": 6
         },
         {
           "supplierName": "河南今三麦食品有限公司-快乐猴",
@@ -197,7 +189,7 @@
           "skuCount": 2,
           "pcs": 2460,
           "timeSlot": "15:30 - 16:30",
-          "seq": 8
+          "seq": 7
         },
         {
           "supplierName": "广州恒洋食品有限公司-快乐猴",
@@ -205,7 +197,7 @@
           "skuCount": 4,
           "pcs": 1664,
           "timeSlot": "15:30 - 16:30",
-          "seq": 9
+          "seq": 8
         },
         {
           "supplierName": "广州赛味谦食品有限公司",
@@ -213,7 +205,7 @@
           "skuCount": 1,
           "pcs": 300,
           "timeSlot": "15:30 - 16:00",
-          "seq": 10
+          "seq": 9
         },
         {
           "supplierName": "广州赛味谦食品有限公司",
@@ -221,10 +213,16 @@
           "skuCount": 1,
           "pcs": 240,
           "timeSlot": "15:30 - 16:00",
-          "seq": 11
+          "seq": 10
         }
       ],
       "unloading": [
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "billCode": "YY20260622009057",
+          "signTime": "09:16",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "天津市大桥道食品有限公司-快乐猴",
           "billCode": "YY20260618002124",
@@ -272,6 +270,86 @@
           "arrivalTime": "14:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "原味黑芝麻麻薯3.78kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "法式奶香片6kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "蝴蝶酥10.8kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 9,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "核桃马里奥面包4.2kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 10,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "芝心岩焗吐司10.2kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 11,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "丹麦奶酥菠萝包（面包）9.12kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 12,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "(原料)蒜香法棍 8kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 13,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "(原料)黄油大羊角面包 3.9kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 14,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "(原料)无花果乳酪欧包 7.2kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 15,
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "skuName": "(原料)香肠一口酥面包 7.2kg",
+          "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -308,6 +386,116 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 3
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026062211592",
+          "reserveBillCode": "YY20260622009057",
+          "skuId": "1157309",
+          "skuName": "原味黑芝麻麻薯3.78kg",
+          "purchaseQty": 150,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026062211592",
+          "reserveBillCode": "YY20260622009057",
+          "skuId": "1157494",
+          "skuName": "蝴蝶酥10.8kg",
+          "purchaseQty": 67,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026062211592",
+          "reserveBillCode": "YY20260622009057",
+          "skuId": "1157758",
+          "skuName": "核桃马里奥面包4.2kg",
+          "purchaseQty": 65,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026062211592",
+          "reserveBillCode": "YY20260622009057",
+          "skuId": "1157449",
+          "skuName": "法式奶香片6kg",
+          "purchaseQty": 34,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026062211592",
+          "reserveBillCode": "YY20260622009057",
+          "skuId": "1432290",
+          "skuName": "(原料)蒜香法棍 8kg",
+          "purchaseQty": 30,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 8
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026062211592",
+          "reserveBillCode": "YY20260622009057",
+          "skuId": "1462170",
+          "skuName": "(原料)黄油大羊角面包 3.9kg",
+          "purchaseQty": 22,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 9
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026062211592",
+          "reserveBillCode": "YY20260622009057",
+          "skuId": "1158211",
+          "skuName": "丹麦奶酥菠萝包（面包）9.12kg",
+          "purchaseQty": 21,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 10
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026062211592",
+          "reserveBillCode": "YY20260622009057",
+          "skuId": "1157971",
+          "skuName": "芝心岩焗吐司10.2kg",
+          "purchaseQty": 17,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 11
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026062211592",
+          "reserveBillCode": "YY20260622009057",
+          "skuId": "1467268",
+          "skuName": "(原料)香肠一口酥面包 7.2kg",
+          "purchaseQty": 12,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 12
+        },
+        {
+          "supplierName": "苏州瑷玛森食品有限公司",
+          "poNo": "CG2026062211592",
+          "reserveBillCode": "YY20260622009057",
+          "skuId": "1466049",
+          "skuName": "(原料)无花果乳酪欧包 7.2kg",
+          "purchaseQty": 8,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 13
         }
       ],
       "qc_recv_pending": [],

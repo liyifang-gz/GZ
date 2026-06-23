@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-23T15:00:25",
+  "timestamp": "2026-06-23T15:07:41",
   "date": "2026-06-23",
   "warehouse": "GZ0209",
   "inbound": {
     "reserve": {
       "total": 27,
-      "signed": 19,
-      "waiting": 4
+      "signed": 22,
+      "waiting": 1
     },
     "ontime": {
-      "ontime": 2,
-      "early": 15,
+      "ontime": 4,
+      "early": 16,
       "late": 2,
       "total": 23,
-      "rate": 8.7,
-      "early_rate": 65.2,
+      "rate": 17.4,
+      "early_rate": 69.6,
       "late_rate": 8.7
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 17,
-      "done": 16,
-      "rate": 94.1,
-      "pcs_done": 29005,
-      "sign_pcs_done": 29005
+      "total": 20,
+      "done": 17,
+      "rate": 85.0,
+      "pcs_done": 29293,
+      "sign_pcs_done": 30693
     },
     "qc": {
-      "total": 6,
+      "total": 9,
       "done": 5,
-      "pending": 1,
+      "pending": 4,
       "passed": 5,
       "rejected": 0,
-      "rate": 83.3,
+      "rate": 55.6,
       "bill_done": 5,
-      "bill_total": 6,
+      "bill_total": 9,
       "pcs_done": 1050,
       "pcs_passed": 1050,
-      "pcs_total": 14055,
+      "pcs_total": 15455,
       "pcs_rejected": 0,
-      "pcs_rate": 7.5,
+      "pcs_rate": 6.8,
       "sku_done": 5,
-      "sku_total": 6,
-      "sku_rate": 83.3
+      "sku_total": 9,
+      "sku_rate": 55.6
     },
     "putaway": {
       "total": 0,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 23,
-        "done": 19,
-        "rate": 82.6
+        "done": 22,
+        "rate": 95.7
       },
       "pcs": {
         "total": 9597,
@@ -72,17 +72,29 @@
       },
       "sku": {
         "total": 47,
-        "done": 42,
-        "rate": 89.4
+        "done": 46,
+        "rate": 97.9
       },
       "supplier": {
         "total": 20,
-        "done": 16,
-        "rate": 80.0,
+        "done": 19,
+        "rate": 95.0,
         "detail": {
+          "广州齐佑宝商贸有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "山东天邦粮油有限公司-快乐猴": {
             "plan": 2,
             "done": 2
+          },
+          "北京祥瑞腾达商贸有限公司": {
+            "plan": 1,
+            "done": 1
+          },
+          "洽洽食品股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
           },
           "北京聚鑫泰贸易有限公司-快乐猴": {
             "plan": 1,
@@ -147,18 +159,6 @@
           "山东汉德酒业有限公司-快乐猴": {
             "plan": 1,
             "done": 0
-          },
-          "广州齐佑宝商贸有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "北京祥瑞腾达商贸有限公司": {
-            "plan": 1,
-            "done": 0
-          },
-          "洽洽食品股份有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -173,33 +173,23 @@
           "pcs": 36,
           "timeSlot": "15:30 - 16:00",
           "seq": 1
-        },
+        }
+      ],
+      "unloading": [
         {
           "supplierName": "广州齐佑宝商贸有限公司-快乐猴",
           "billCode": "YY20260619006133",
-          "skuCount": 2,
-          "pcs": 600,
-          "timeSlot": "15:00 - 15:30",
-          "seq": 2
-        },
-        {
-          "supplierName": "北京祥瑞腾达商贸有限公司",
-          "billCode": "YY20260619001614",
-          "skuCount": 1,
-          "pcs": 288,
-          "timeSlot": "15:30 - 16:00",
-          "seq": 3
+          "signTime": "15:07",
+          "status": "已签到未卸货"
         },
         {
           "supplierName": "洽洽食品股份有限公司-快乐猴",
           "billCode": "YY20260618002300",
-          "skuCount": 1,
-          "pcs": 800,
-          "timeSlot": "15:00 - 15:30",
-          "seq": 4
+          "signTime": "15:03",
+          "unloadStartTime": "15:04",
+          "status": "卸货中"
         }
       ],
-      "unloading": [],
       "qc_pending": [
         {
           "seq": 1,
@@ -208,6 +198,30 @@
           "arrivalTime": "08:30",
           "unloadFinishTime": "14:49",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "洽洽食品股份有限公司-快乐猴",
+          "skuName": "快乐猴 原味瓜子 500g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "广州齐佑宝商贸有限公司-快乐猴",
+          "skuName": "康师傅 大食袋红烧牛肉面 145g*5",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "广州齐佑宝商贸有限公司-快乐猴",
+          "skuName": "康师傅大食袋香辣牛肉面144g*5袋",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -215,31 +229,31 @@
           "supplierName": "广东电闪侠电子商务有限公司-快乐猴",
           "skuName": "汾酒 清香型白酒53度 475ml",
           "completeTime": "10:34",
-          "waitingMins": 266
+          "waitingMins": 273
         },
         {
           "supplierName": "广东电闪侠电子商务有限公司-快乐猴",
           "skuName": "习酒 银质酱香型白酒53度 500ml",
           "completeTime": "10:29",
-          "waitingMins": 271
+          "waitingMins": 278
         },
         {
           "supplierName": "广东电闪侠电子商务有限公司-快乐猴",
           "skuName": "西凤 绵柔凤香型白酒45度 500ml",
           "completeTime": "10:32",
-          "waitingMins": 268
+          "waitingMins": 275
         },
         {
           "supplierName": "四川创调电子商务有限公司-快乐猴",
           "skuName": "川娃子油泼辣子230g",
           "completeTime": "11:56",
-          "waitingMins": 184
+          "waitingMins": 191
         },
         {
           "supplierName": "徐州鑫恒晟食品科技有限公司-快乐猴",
           "skuName": "快乐猴 金丝馓子 240g",
           "completeTime": "14:00",
-          "waitingMins": 60
+          "waitingMins": 68
         }
       ],
       "signed_not_recv": [
@@ -286,6 +300,50 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 4
+        },
+        {
+          "supplierName": "洽洽食品股份有限公司-快乐猴",
+          "poNo": "CG202606108842",
+          "reserveBillCode": "YY20260618002300",
+          "skuId": "1476565",
+          "skuName": "快乐猴 原味瓜子 500g",
+          "purchaseQty": 800,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
+          "supplierName": "广州齐佑宝商贸有限公司-快乐猴",
+          "poNo": "CG202606196315",
+          "reserveBillCode": "YY20260619006133",
+          "skuId": "85592",
+          "skuName": "康师傅大食袋香辣牛肉面144g*5袋",
+          "purchaseQty": 420,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
+        },
+        {
+          "supplierName": "北京祥瑞腾达商贸有限公司",
+          "poNo": "CG202606180771",
+          "reserveBillCode": "YY20260619001614",
+          "skuId": "1284618",
+          "skuName": "食验室 厚厚奶酪玉米片 70g",
+          "purchaseQty": 288,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
+        },
+        {
+          "supplierName": "广州齐佑宝商贸有限公司-快乐猴",
+          "poNo": "CG202606196315",
+          "reserveBillCode": "YY20260619006133",
+          "skuId": "85590",
+          "skuName": "康师傅 大食袋红烧牛肉面 145g*5",
+          "purchaseQty": 180,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 8
         }
       ],
       "qc_recv_pending": [],
@@ -391,8 +449,8 @@
       "pcs_rate": 0.0
     },
     "packing": {
-      "total": 22,
-      "done": 22,
+      "total": 23,
+      "done": 23,
       "rate": 100.0
     },
     "uncaged_details": [],
@@ -409,7 +467,7 @@
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "28.42%",
+      "load_rate_unloaded": "29.18%",
       "load_rate_loaded": "88.59%",
       "load_rate_shipped": "74.30%",
       "low_load_containers": [
@@ -451,6 +509,15 @@
         }
       ],
       "all_containers_detail": [
+        {
+          "containerCode": "RQ-28-03-0900292",
+          "poiName": "南海国昌广场店",
+          "loadingRate": "31.47%",
+          "loadingRateVal": 31.47,
+          "skuPcs": "303.000",
+          "skuVolume": "0.623",
+          "planOutTime": "06-23 22:00"
+        },
         {
           "containerCode": "RQ-28-03-0900446",
           "poiName": "越秀越富广场店",
@@ -720,14 +787,14 @@
   },
   "transport": {
     "serial_count": 0,
-    "total_depart": 0,
-    "serial_rate": null,
+    "total_depart": 1,
+    "serial_rate": 0.0,
     "trip_total": null,
     "trip_depart": null,
     "trip_arrive": null,
     "status": "ok",
     "temp_breakdown": {
-      "冷藏": 0,
+      "冷藏": 1,
       "冷冻": 0,
       "常温": 1
     },

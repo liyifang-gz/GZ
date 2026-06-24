@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-24T10:26:50",
+  "timestamp": "2026-06-24T10:41:06",
   "date": "2026-06-24",
   "warehouse": "GZ0209",
   "inbound": {
@@ -18,35 +18,35 @@
       "late_rate": 0.0
     },
     "reserve_progress": {
-      "po_total": 104,
-      "po_reserved": 87,
-      "rate": 83.7,
+      "po_total": 32,
+      "po_reserved": 27,
+      "rate": 84.4,
       "po_data_ok": true
     },
     "unload": {
       "total": 6,
-      "done": 4,
-      "rate": 66.7,
-      "pcs_done": 6186,
+      "done": 6,
+      "rate": 100.0,
+      "pcs_done": 7338,
       "sign_pcs_done": 7338
     },
     "qc": {
-      "total": 7,
+      "total": 3,
       "done": 3,
-      "pending": 4,
+      "pending": 0,
       "passed": 3,
       "rejected": 0,
-      "rate": 42.9,
+      "rate": 100.0,
       "bill_done": 3,
-      "bill_total": 7,
+      "bill_total": 3,
       "pcs_done": 1020,
       "pcs_passed": 1020,
-      "pcs_total": 2172,
+      "pcs_total": 1020,
       "pcs_rejected": 0,
-      "pcs_rate": 47.0,
+      "pcs_rate": 100.0,
       "sku_done": 3,
-      "sku_total": 7,
-      "sku_rate": 42.9
+      "sku_total": 3,
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 0,
@@ -64,11 +64,11 @@
         "rate": 30.0
       },
       "pcs": {
-        "total": 0,
-        "done": 0,
-        "rate": 0,
-        "recv_done": 0,
-        "recv_rate": 0
+        "total": 45148,
+        "done": 42082,
+        "rate": 93.2,
+        "recv_done": 30759,
+        "recv_rate": 68.1
       },
       "sku": {
         "total": 53,
@@ -80,6 +80,10 @@
         "done": 6,
         "rate": 35.3,
         "detail": {
+          "上海银恒洽食品有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "重庆辣媳妇德宝食品有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -89,10 +93,6 @@
             "done": 1
           },
           "龙岩市闽羽亿贸易有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 1
-          },
-          "上海银恒洽食品有限公司": {
             "plan": 1,
             "done": 1
           },
@@ -152,7 +152,48 @@
       }
     },
     "details": {
-      "unreserved": [],
+      "unreserved": [
+        {
+          "supplierName": "鸿晟园食品科技有限公司-快乐猴-自营",
+          "poNo": "CG202606238376",
+          "skuCount": 2,
+          "pcs": 348,
+          "preArrivalTime": "2026-06-24",
+          "poStatus": "待确认"
+        },
+        {
+          "supplierName": "达利食品实业（福建）有限公司-快乐猴",
+          "poNo": "CG202606186010",
+          "skuCount": 3,
+          "pcs": 1568,
+          "preArrivalTime": "2026-06-24",
+          "poStatus": "待确认"
+        },
+        {
+          "supplierName": "广州市新风彩品牌管理有限公司-快乐猴",
+          "poNo": "CG202606179821",
+          "skuCount": 1,
+          "pcs": 40,
+          "preArrivalTime": "2026-06-24",
+          "poStatus": "已完成"
+        },
+        {
+          "supplierName": "福州新供给科技有限公司-快乐猴",
+          "poNo": "CG202606179478",
+          "skuCount": 1,
+          "pcs": 720,
+          "preArrivalTime": "2026-06-24",
+          "poStatus": "已完成"
+        },
+        {
+          "supplierName": "广州同超贸易有限公司-快乐猴",
+          "poNo": "CG202606174990",
+          "skuCount": 1,
+          "pcs": 390,
+          "preArrivalTime": "2026-06-24",
+          "poStatus": "待确认"
+        }
+      ],
       "unsigned": [
         {
           "supplierName": "深圳蒙牛液体奶销售有限公司-快乐猴",
@@ -243,74 +284,26 @@
           "seq": 11
         }
       ],
-      "unloading": [
-        {
-          "supplierName": "龙岩市闽羽亿贸易有限公司-快乐猴-自营",
-          "billCode": "YY20260621001410",
-          "signTime": "10:21",
-          "unloadStartTime": "10:23",
-          "status": "卸货中"
-        },
-        {
-          "supplierName": "上海银恒洽食品有限公司",
-          "billCode": "YY20260622002302",
-          "signTime": "10:21",
-          "unloadStartTime": "10:22",
-          "status": "卸货中"
-        }
-      ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "上海银恒洽食品有限公司",
-          "skuName": "力诚 原味鳕鱼肠 120g",
-          "arrivalTime": "14:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "龙岩市闽羽亿贸易有限公司-快乐猴-自营",
-          "skuName": "阿尔卑斯 组合口味棒棒糖 200g",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
-          "supplierName": "龙岩市闽羽亿贸易有限公司-快乐猴-自营",
-          "skuName": "珍宝珠酸酸哒酸条缤纷果味挤出型糖果57.6g",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 4,
-          "supplierName": "龙岩市闽羽亿贸易有限公司-快乐猴-自营",
-          "skuName": "炫迈 口香糖(西瓜味+蓝莓味) 100.8g",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "unloading": [],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "开平市国腾食品有限公司-快乐猴-自营",
           "skuName": "松花皮蛋6枚 330g",
           "completeTime": "10:00",
-          "waitingMins": 27
+          "waitingMins": 41
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
           "skuName": "广合 微辣腐乳 300g",
           "completeTime": "09:49",
-          "waitingMins": 38
+          "waitingMins": 52
         },
         {
           "supplierName": "重庆辣媳妇德宝食品有限公司-快乐猴-自营",
           "skuName": "快乐猴  山椒泡凤爪  210g",
           "completeTime": "09:56",
-          "waitingMins": 30
+          "waitingMins": 44
         }
       ],
       "signed_not_recv": [
@@ -337,17 +330,6 @@
           "seq": 2
         },
         {
-          "supplierName": "上海银恒洽食品有限公司",
-          "poNo": "CG202606221812",
-          "reserveBillCode": "YY20260622002302",
-          "skuId": "1313542",
-          "skuName": "力诚 原味鳕鱼肠 120g",
-          "purchaseQty": 408,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 3
-        },
-        {
           "supplierName": "龙岩市闽羽亿贸易有限公司-快乐猴-自营",
           "poNo": "CG202606189116",
           "reserveBillCode": "YY20260621001410",
@@ -356,7 +338,7 @@
           "purchaseQty": 360,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 3
         },
         {
           "supplierName": "龙岩市闽羽亿贸易有限公司-快乐猴-自营",
@@ -367,7 +349,7 @@
           "purchaseQty": 192,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 4
         },
         {
           "supplierName": "龙岩市闽羽亿贸易有限公司-快乐猴-自营",
@@ -378,7 +360,7 @@
           "purchaseQty": 192,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 6
+          "seq": 5
         },
         {
           "supplierName": "上海喆慧健康科技有限公司-快乐猴",
@@ -389,7 +371,7 @@
           "purchaseQty": 171,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 6
         }
       ],
       "qc_recv_pending": [],
@@ -399,9 +381,9 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 0.0,
-      "efficiency_formula": "0 PCS / 0 人",
-      "inbound_schedule": 0
+      "efficiency": 21041.0,
+      "efficiency_formula": "42082 PCS / 2 人",
+      "inbound_schedule": 2
     }
   },
   "outbound": {
@@ -661,7 +643,7 @@
         }
       ],
       "outbound_efficiency": 0.0,
-      "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)"
+      "outbound_efficiency_formula": "0 PCS / 7 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
@@ -2544,37 +2526,45 @@
     "temp_status": "ok"
   },
   "attendance": {
-    "total_inservice": 0,
-    "schedule": 0,
-    "attendance": 0,
-    "rate": 0,
+    "total_inservice": 11,
+    "schedule": 11,
+    "attendance": 11,
+    "rate": 100.0,
     "by_job": {
       "N拣播员": {
-        "inservice": 0,
-        "schedule": 0,
-        "attendance": 0,
-        "rate": 0
+        "inservice": 7,
+        "schedule": 7,
+        "attendance": 7,
+        "rate": 100.0
       },
       "N常温收退": {
-        "inservice": 0,
-        "schedule": 0,
-        "attendance": 0,
-        "rate": 0
+        "inservice": 2,
+        "schedule": 2,
+        "attendance": 2,
+        "rate": 100.0
       },
       "N高叉司机": {
-        "inservice": 0,
-        "schedule": 0,
-        "attendance": 0,
-        "rate": 0
+        "inservice": 2,
+        "schedule": 2,
+        "attendance": 2,
+        "rate": 100.0
       }
     },
-    "by_pos_total": {},
-    "by_pos_scheduled": {},
+    "by_pos_total": {
+      "N常温拣播员": 7,
+      "N常温收退": 2,
+      "N常温高叉司机": 2
+    },
+    "by_pos_scheduled": {
+      "N常温拣播员": 7,
+      "N常温收退": 2,
+      "N常温高叉司机": 2
+    },
     "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS(播种) / 0 人",
+    "efficiency_formula": "0 PCS(播种) / 11 人",
     "outbound_efficiency": 0.0,
-    "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)",
-    "inbound_efficiency_workers": 0,
+    "outbound_efficiency_formula": "0 PCS / 7 人(拣播员)",
+    "inbound_efficiency_workers": 2,
     "status": "ok"
   }
 }

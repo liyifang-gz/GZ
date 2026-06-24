@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-24T08:35:18",
+  "timestamp": "2026-06-24T08:59:47",
   "date": "2026-06-24",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 11,
-      "signed": 0,
-      "waiting": 9
+      "signed": 1,
+      "waiting": 8
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 9,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 11.1,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 2000
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 2000,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 0,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 9,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 11.1
       },
       "pcs": {
         "total": 12192,
@@ -72,19 +72,19 @@
       },
       "sku": {
         "total": 16,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 6.2
       },
       "supplier": {
         "total": 9,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 11.1,
         "detail": {
-          "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
           "汕头市芸美食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
           },
@@ -140,20 +140,12 @@
           "seq": 1
         },
         {
-          "supplierName": "汕头市芸美食品有限公司-快乐猴",
-          "billCode": "YY20260622006617",
-          "skuCount": 1,
-          "pcs": 2000,
-          "timeSlot": "15:30 - 16:30",
-          "seq": 2
-        },
-        {
           "supplierName": "福建御味香冷冻食品有限公司-快乐猴",
           "billCode": "YY20260622004581",
           "skuCount": 1,
           "pcs": 300,
           "timeSlot": "16:00 - 16:30",
-          "seq": 3
+          "seq": 2
         },
         {
           "supplierName": "广州有林贸易有限公司-快乐猴",
@@ -161,7 +153,7 @@
           "skuCount": 6,
           "pcs": 2372,
           "timeSlot": "15:30 - 16:30",
-          "seq": 4
+          "seq": 3
         },
         {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
@@ -169,7 +161,7 @@
           "skuCount": 1,
           "pcs": 100,
           "timeSlot": "16:00 - 16:30",
-          "seq": 5
+          "seq": 4
         },
         {
           "supplierName": "广东环球水产食品有限公司-快乐猴",
@@ -177,7 +169,7 @@
           "skuCount": 1,
           "pcs": 900,
           "timeSlot": "15:00 - 15:30",
-          "seq": 6
+          "seq": 5
         },
         {
           "supplierName": "厦门陈纪乐肴居食品有限公司-快乐猴",
@@ -185,7 +177,7 @@
           "skuCount": 1,
           "pcs": 9,
           "timeSlot": "14:00 - 14:30",
-          "seq": 7
+          "seq": 6
         },
         {
           "supplierName": "广东立高食品营销有限公司-快乐猴",
@@ -193,7 +185,7 @@
           "skuCount": 2,
           "pcs": 6600,
           "timeSlot": "11:00 - 14:00",
-          "seq": 8
+          "seq": 7
         },
         {
           "supplierName": "福建御味香冷冻食品有限公司-SS",
@@ -201,13 +193,42 @@
           "skuCount": 2,
           "pcs": 380,
           "timeSlot": "13:30 - 14:00",
-          "seq": 9
+          "seq": 8
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "汕头市芸美食品有限公司-快乐猴",
+          "billCode": "YY20260622006617",
+          "signTime": "08:54",
+          "unloadStartTime": "08:56",
+          "status": "卸货中"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "汕头市芸美食品有限公司-快乐猴",
+          "skuName": "快乐猴 潮汕双拼肉丸 500g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "汕头市芸美食品有限公司-快乐猴",
+          "poNo": "CG2026061516350",
+          "reserveBillCode": "YY20260622006617",
+          "skuId": "1228741",
+          "skuName": "快乐猴 潮汕双拼肉丸 500g",
+          "purchaseQty": 2000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],

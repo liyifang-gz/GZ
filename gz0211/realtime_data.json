@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-24T11:13:17",
+  "timestamp": "2026-06-24T11:22:56",
   "date": "2026-06-24",
   "warehouse": "GZ0211",
   "inbound": {
@@ -31,31 +31,46 @@
       "sign_pcs_done": 11819
     },
     "qc": {
-      "total": 2,
-      "done": 0,
-      "pending": 2,
-      "passed": 0,
-      "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
-      "bill_total": 2,
-      "pcs_done": 0,
-      "pcs_passed": 0,
-      "pcs_total": 2650,
-      "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
-      "sku_total": 2,
-      "sku_rate": 0.0
-    },
-    "putaway": {
       "total": 0,
       "done": 0,
+      "pending": 0,
+      "passed": 0,
+      "rejected": 0,
       "rate": 0,
-      "sku_total": 0,
+      "bill_done": 0,
+      "bill_total": 0,
+      "pcs_done": 0,
+      "pcs_passed": 0,
+      "pcs_total": 0,
+      "pcs_rejected": 0,
+      "pcs_rate": 0,
       "sku_done": 0,
-      "sku_rate": 0,
-      "details": []
+      "sku_total": 0,
+      "sku_rate": 0
+    },
+    "putaway": {
+      "total": 9820,
+      "done": 1220,
+      "rate": 12.4,
+      "sku_total": 16,
+      "sku_done": 5,
+      "sku_rate": 31.2,
+      "details": [
+        {
+          "poNo": "CG2026061611529",
+          "hopePcs": 6600,
+          "putPcs": 0,
+          "hopeSku": 9,
+          "putSku": 0
+        },
+        {
+          "poNo": "CG2026061516350",
+          "hopePcs": 2000,
+          "putPcs": 0,
+          "hopeSku": 2,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -80,6 +95,10 @@
         "done": 5,
         "rate": 50.0,
         "detail": {
+          "安徽省喜富食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "厦门陈纪乐肴居食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -93,10 +112,6 @@
             "done": 1
           },
           "汕头市芸美食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "安徽省喜富食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -184,24 +199,7 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "安徽省喜富食品有限公司-快乐猴",
-          "skuName": "快乐猴 鲜汁大肉包 800g(10只)",
-          "arrivalTime": "10:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "安徽省喜富食品有限公司-快乐猴",
-          "skuName": "快乐猴 翡翠香菇大菜包 640g(8只)",
-          "arrivalTime": "10:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [],
       "signed_not_recv": [
         {
@@ -259,7 +257,7 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 0,
+      "pcs_total": 30,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -299,7 +297,7 @@
         "pick_rate": 0,
         "sow_rate": 0,
         "cage_rate": 0.0,
-        "sowed_picked": 0
+        "sowed_picked": 30
       },
       "sku": {
         "total": 0,
@@ -313,44 +311,46 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 0,
-      "alloc_pcs": 0,
-      "alloc_rate": 0,
+      "plan_pcs": 30,
+      "alloc_pcs": 30,
+      "alloc_rate": 100.0,
       "picked_pcs": 0,
       "sow_pcs": 0,
-      "sow_rate": 0,
+      "sow_rate": 0.0,
       "ship_pcs": 0,
-      "ship_rate": 0,
-      "sku_plan": 0,
-      "sku_alloc": 0,
+      "ship_rate": 0.0,
+      "sku_plan": 1,
+      "sku_alloc": 1,
       "sku_sow": 0,
       "sku_ship": 0,
-      "total_orders": 0
+      "total_orders": 1
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 0,
+      "not_started": 105,
       "in_progress": 0,
       "done": 0,
-      "total": 0,
+      "total": 105,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 0,
-    "total_pcs": 0,
-    "alloc_pcs": 0,
-    "alloc_rate": 0,
+    "total_orders": 1,
+    "total_pcs": 30,
+    "alloc_pcs": 30,
+    "alloc_rate": 100.0,
     "picked_pcs": 0,
     "sow_pcs": 0,
-    "sow_rate": 0,
+    "sow_rate": 0.0,
     "ship_pcs": 0,
-    "ship_rate": 0,
-    "sku_plan": 0,
-    "sku_alloc": 0,
+    "ship_rate": 0.0,
+    "sku_plan": 1,
+    "sku_alloc": 1,
     "sku_sow": 0,
-    "store_count": 0,
-    "by_store": {},
+    "store_count": 1,
+    "by_store": {
+      "快乐猴-海珠星汇广场店-034": 30.0
+    },
     "unalloc_details": [],
     "status": "ok"
   },
@@ -367,7 +367,7 @@
       "冷冻": 0,
       "常温": 0
     },
-    "all_count": 0,
+    "all_count": 1,
     "planned_trips": {
       "total": 20,
       "by_store": {

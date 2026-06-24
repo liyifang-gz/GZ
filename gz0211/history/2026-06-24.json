@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-24T08:59:47",
+  "timestamp": "2026-06-24T09:05:41",
   "date": "2026-06-24",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 11,
-      "signed": 1,
-      "waiting": 8
+      "signed": 2,
+      "waiting": 7
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 2,
       "late": 0,
       "total": 9,
       "rate": 0.0,
-      "early_rate": 11.1,
+      "early_rate": 22.2,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,44 +24,44 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 2000
+      "sign_pcs_done": 8600
     },
     "qc": {
-      "total": 1,
+      "total": 3,
       "done": 0,
-      "pending": 1,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 1,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 2000,
+      "pcs_total": 8600,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 1,
+      "sku_total": 3,
       "sku_rate": 0.0
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
+      "total": 1220,
+      "done": 1220,
+      "rate": 100.0,
+      "sku_total": 5,
+      "sku_done": 5,
+      "sku_rate": 100.0,
       "details": []
     },
     "dimensions": {
       "reserve": {
         "total": 9,
-        "done": 1,
-        "rate": 11.1
+        "done": 2,
+        "rate": 22.2
       },
       "pcs": {
         "total": 12192,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 16,
-        "done": 1,
-        "rate": 6.2
+        "done": 3,
+        "rate": 18.8
       },
       "supplier": {
         "total": 9,
-        "done": 1,
-        "rate": 11.1,
+        "done": 2,
+        "rate": 22.2,
         "detail": {
+          "广东立高食品营销有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "汕头市芸美食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -105,10 +109,6 @@
             "done": 0
           },
           "厦门陈纪乐肴居食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "广东立高食品营销有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -180,23 +180,21 @@
           "seq": 6
         },
         {
-          "supplierName": "广东立高食品营销有限公司-快乐猴",
-          "billCode": "YY20260617001855",
-          "skuCount": 2,
-          "pcs": 6600,
-          "timeSlot": "11:00 - 14:00",
-          "seq": 7
-        },
-        {
           "supplierName": "福建御味香冷冻食品有限公司-SS",
           "billCode": "YY20260617000786",
           "skuCount": 2,
           "pcs": 380,
           "timeSlot": "13:30 - 14:00",
-          "seq": 8
+          "seq": 7
         }
       ],
       "unloading": [
+        {
+          "supplierName": "广东立高食品营销有限公司-快乐猴",
+          "billCode": "YY20260617001855",
+          "signTime": "09:00",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "汕头市芸美食品有限公司-快乐猴",
           "billCode": "YY20260622006617",
@@ -213,10 +211,48 @@
           "arrivalTime": "15:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "广东立高食品营销有限公司-快乐猴",
+          "skuName": "(原料)葡式蛋挞液 907g",
+          "arrivalTime": "11:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "广东立高食品营销有限公司-快乐猴",
+          "skuName": "(原料)爆酥葡挞皮  750g",
+          "arrivalTime": "11:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
       "signed_not_recv": [
+        {
+          "supplierName": "广东立高食品营销有限公司-快乐猴",
+          "poNo": "CG2026061611529",
+          "reserveBillCode": "YY20260617001855",
+          "skuId": "1378937",
+          "skuName": "(原料)葡式蛋挞液 907g",
+          "purchaseQty": 3600,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "广东立高食品营销有限公司-快乐猴",
+          "poNo": "CG2026061611529",
+          "reserveBillCode": "YY20260617001855",
+          "skuId": "1379176",
+          "skuName": "(原料)爆酥葡挞皮  750g",
+          "purchaseQty": 3000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
         {
           "supplierName": "汕头市芸美食品有限公司-快乐猴",
           "poNo": "CG2026061516350",
@@ -226,7 +262,7 @@
           "purchaseQty": 2000,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 3
         }
       ],
       "qc_recv_pending": [],
@@ -331,10 +367,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 0,
+      "not_started": 15,
       "in_progress": 0,
       "done": 0,
-      "total": 0,
+      "total": 15,
       "status": "ok"
     }
   },

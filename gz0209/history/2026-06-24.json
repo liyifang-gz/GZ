@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-24T16:49:00",
+  "timestamp": "2026-06-24T17:12:00",
   "date": "2026-06-24",
   "warehouse": "GZ0209",
   "inbound": {
     "reserve": {
       "total": 21,
       "signed": 18,
-      "waiting": 3
+      "waiting": 2
     },
     "ontime": {
       "ontime": 4,
       "early": 13,
       "late": 1,
-      "total": 21,
-      "rate": 19.0,
-      "early_rate": 61.9,
-      "late_rate": 4.8
+      "total": 20,
+      "rate": 20.0,
+      "early_rate": 65.0,
+      "late_rate": 5.0
     },
     "reserve_progress": {
       "po_total": 31,
@@ -59,9 +59,9 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 21,
+        "total": 20,
         "done": 18,
-        "rate": 85.7
+        "rate": 90.0
       },
       "pcs": {
         "total": 43400,
@@ -71,14 +71,14 @@
         "recv_rate": 88.8
       },
       "sku": {
-        "total": 54,
+        "total": 52,
         "done": 48,
-        "rate": 88.9
+        "rate": 92.3
       },
       "supplier": {
-        "total": 18,
+        "total": 17,
         "done": 16,
-        "rate": 88.9,
+        "rate": 94.1,
         "detail": {
           "鸿晟园食品科技有限公司-快乐猴-自营": {
             "plan": 1,
@@ -144,10 +144,6 @@
             "plan": 1,
             "done": 1
           },
-          "漳州信裕嘉食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
           "山东巧媳妇食品集团有限公司-快乐猴-自营": {
             "plan": 2,
             "done": 0
@@ -184,20 +180,12 @@
       ],
       "unsigned": [
         {
-          "supplierName": "漳州信裕嘉食品有限公司-快乐猴",
-          "billCode": "YY20260620000644",
-          "skuCount": 2,
-          "pcs": 1304,
-          "timeSlot": "14:00 - 14:30",
-          "seq": 1
-        },
-        {
           "supplierName": "山东巧媳妇食品集团有限公司-快乐猴-自营",
           "billCode": "YY20260619000551",
           "skuCount": 2,
           "pcs": 2400,
           "timeSlot": "15:00 - 15:30",
-          "seq": 2
+          "seq": 1
         }
       ],
       "unloading": [],
@@ -207,31 +195,31 @@
           "supplierName": "开平市国腾食品有限公司-快乐猴-自营",
           "skuName": "松花皮蛋6枚 330g",
           "completeTime": "10:00",
-          "waitingMins": 409
+          "waitingMins": 432
         },
         {
           "supplierName": "广州市捷通兴业贸易有限公司-快乐猴",
           "skuName": "广合 微辣腐乳 300g",
           "completeTime": "09:49",
-          "waitingMins": 420
+          "waitingMins": 443
         },
         {
           "supplierName": "重庆辣媳妇德宝食品有限公司-快乐猴-自营",
           "skuName": "快乐猴  山椒泡凤爪  210g",
           "completeTime": "09:56",
-          "waitingMins": 412
+          "waitingMins": 435
         },
         {
           "supplierName": "深圳蒙牛液体奶销售有限公司-快乐猴",
           "skuName": "蒙牛纯牛奶200ml*24盒(整箱)",
           "completeTime": "14:07",
-          "waitingMins": 161
+          "waitingMins": 184
         },
         {
           "supplierName": "深圳蒙牛液体奶销售有限公司-快乐猴",
           "skuName": "蒙牛纯牛奶200ml*24盒(整箱)",
           "completeTime": "14:07",
-          "waitingMins": 161
+          "waitingMins": 184
         }
       ],
       "signed_not_recv": [
@@ -300,13 +288,13 @@
       "total": 0,
       "done": 0,
       "rate": 0.0,
-      "pcs_done": 15231,
+      "pcs_done": 17362,
       "pcs_total": 0,
       "pcs_rate": 0.0
     },
     "packing": {
-      "total": 49,
-      "done": 49,
+      "total": 48,
+      "done": 48,
       "rate": 100.0
     },
     "uncaged_details": [],
@@ -323,10 +311,19 @@
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "45.28%",
-      "load_rate_loaded": "81.73%",
+      "load_rate_unloaded": "44.69%",
+      "load_rate_loaded": "82.43%",
       "load_rate_shipped": "86.05%",
       "low_load_containers": [
+        {
+          "containerCode": "RQ-28-03-0900481",
+          "poiName": "越秀越富广场店",
+          "loadingRate": "37.23%",
+          "loadingRateVal": 37.23,
+          "skuPcs": "232.000",
+          "skuVolume": "0.737",
+          "planOutTime": "06-24 22:00"
+        },
         {
           "containerCode": "RQ-28-03-0900292",
           "poiName": "南海国昌广场店",
@@ -447,12 +444,30 @@
           "planOutTime": "06-24 22:00"
         },
         {
+          "containerCode": "RQ-28-03-0900499",
+          "poiName": "越秀越富广场店",
+          "loadingRate": "90.79%",
+          "loadingRateVal": 90.79,
+          "skuPcs": "760.000",
+          "skuVolume": "1.798",
+          "planOutTime": "06-24 22:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900479",
           "poiName": "越秀越富广场店",
           "loadingRate": "90.59%",
           "loadingRateVal": 90.59,
           "skuPcs": "465.000",
           "skuVolume": "1.794",
+          "planOutTime": "06-24 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900481",
+          "poiName": "越秀越富广场店",
+          "loadingRate": "37.23%",
+          "loadingRateVal": 37.23,
+          "skuPcs": "232.000",
+          "skuVolume": "0.737",
           "planOutTime": "06-24 22:00"
         },
         {
@@ -474,48 +489,21 @@
           "planOutTime": "06-24 22:00"
         },
         {
-          "containerCode": "RQ-28-03-0900437",
-          "poiName": "越秀越富广场店",
-          "loadingRate": "47.02%",
-          "loadingRateVal": 47.02,
-          "skuPcs": "308.000",
-          "skuVolume": "0.931",
+          "containerCode": "RQ-28-03-0900302",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "113.26%",
+          "loadingRateVal": 113.26,
+          "skuPcs": "711.000",
+          "skuVolume": "2.243",
           "planOutTime": "06-24 22:00"
         },
         {
-          "containerCode": "RQ-28-03-0900499",
-          "poiName": "越秀越富广场店",
-          "loadingRate": "43.77%",
-          "loadingRateVal": 43.77,
-          "skuPcs": "452.000",
-          "skuVolume": "0.867",
-          "planOutTime": "06-24 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900481",
-          "poiName": "越秀越富广场店",
-          "loadingRate": "25.66%",
-          "loadingRateVal": 25.66,
-          "skuPcs": "146.000",
-          "skuVolume": "0.508",
-          "planOutTime": "06-24 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900448",
-          "poiName": "越秀越富广场店",
-          "loadingRate": "7.64%",
-          "loadingRateVal": 7.64,
-          "skuPcs": "41.000",
-          "skuVolume": "0.151",
-          "planOutTime": "06-24 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900495",
-          "poiName": "越秀越富广场店",
-          "loadingRate": "3.93%",
-          "loadingRateVal": 3.93,
-          "skuPcs": "45.000",
-          "skuVolume": "0.078",
+          "containerCode": "RQ-28-03-0900333",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "103.75%",
+          "loadingRateVal": 103.75,
+          "skuPcs": "428.000",
+          "skuVolume": "2.054",
           "planOutTime": "06-24 22:00"
         },
         {
@@ -528,15 +516,6 @@
           "planOutTime": "06-24 22:00"
         },
         {
-          "containerCode": "RQ-28-03-0900302",
-          "poiName": "海珠星汇广场店",
-          "loadingRate": "88.48%",
-          "loadingRateVal": 88.48,
-          "skuPcs": "619.000",
-          "skuVolume": "1.752",
-          "planOutTime": "06-24 22:00"
-        },
-        {
           "containerCode": "RQ-28-03-0900314",
           "poiName": "海珠星汇广场店",
           "loadingRate": "52.47%",
@@ -546,12 +525,21 @@
           "planOutTime": "06-24 22:00"
         },
         {
-          "containerCode": "RQ-28-03-0900333",
+          "containerCode": "RQ-28-03-0900303",
           "poiName": "海珠星汇广场店",
-          "loadingRate": "33.27%",
-          "loadingRateVal": 33.27,
-          "skuPcs": "352.000",
-          "skuVolume": "0.659",
+          "loadingRate": "16.24%",
+          "loadingRateVal": 16.24,
+          "skuPcs": "30.000",
+          "skuVolume": "0.322",
+          "planOutTime": "06-24 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900331",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "3.53%",
+          "loadingRateVal": 3.53,
+          "skuPcs": "26.000",
+          "skuVolume": "0.070",
           "planOutTime": "06-24 22:00"
         },
         {
@@ -931,7 +919,7 @@
     "temp_breakdown": {
       "冷藏": 0,
       "冷冻": 0,
-      "常温": 1
+      "常温": 0
     },
     "all_count": 2,
     "planned_trips": {
@@ -948,7 +936,7 @@
           "carrierName": "斑马（广州2024）",
           "temperatureLevel": 2,
           "temperatureLevelName": "冷藏车",
-          "waybillStatus": 0,
+          "waybillStatus": 10,
           "preCoolMonitorStatus": 3,
           "preCoolMonitorStatusName": "--",
           "deliveryPoiArrivalMonitorStatus": 1,
@@ -971,7 +959,7 @@
           "carrierName": "斑马（广州2024）",
           "temperatureLevel": 2,
           "temperatureLevelName": "冷藏车",
-          "waybillStatus": 0,
+          "waybillStatus": 10,
           "preCoolMonitorStatus": 3,
           "preCoolMonitorStatusName": "--",
           "deliveryPoiArrivalMonitorStatus": 1,

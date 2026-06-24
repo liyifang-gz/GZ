@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-24T10:26:32",
+  "timestamp": "2026-06-24T10:40:48",
   "date": "2026-06-24",
   "warehouse": "GZ0211",
   "inbound": {
@@ -18,44 +18,52 @@
       "late_rate": 0.0
     },
     "reserve_progress": {
-      "po_total": 49,
-      "po_reserved": 40,
-      "rate": 81.6,
+      "po_total": 6,
+      "po_reserved": 5,
+      "rate": 83.3,
       "po_data_ok": true
     },
     "unload": {
       "total": 3,
-      "done": 1,
-      "rate": 33.3,
-      "pcs_done": 2000,
+      "done": 2,
+      "rate": 66.7,
+      "pcs_done": 8600,
       "sign_pcs_done": 11250
     },
     "qc": {
-      "total": 4,
+      "total": 2,
       "done": 0,
-      "pending": 4,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 4,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 9250,
+      "pcs_total": 2650,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 4,
+      "sku_total": 2,
       "sku_rate": 0.0
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
-      "details": []
+      "total": 3220,
+      "done": 1220,
+      "rate": 37.9,
+      "sku_total": 7,
+      "sku_done": 5,
+      "sku_rate": 71.4,
+      "details": [
+        {
+          "poNo": "CG2026061516350",
+          "hopePcs": 2000,
+          "putPcs": 0,
+          "hopeSku": 2,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -64,11 +72,11 @@
         "rate": 30.0
       },
       "pcs": {
-        "total": 0,
-        "done": 0,
-        "rate": 0,
-        "recv_done": 0,
-        "recv_rate": 0
+        "total": 12192,
+        "done": 11032,
+        "rate": 90.5,
+        "recv_done": 3220,
+        "recv_rate": 26.4
       },
       "sku": {
         "total": 18,
@@ -80,15 +88,15 @@
         "done": 3,
         "rate": 30.0,
         "detail": {
+          "广东立高食品营销有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "汕头市芸美食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
           "安徽省喜富食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "广东立高食品营销有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -124,7 +132,16 @@
       }
     },
     "details": {
-      "unreserved": [],
+      "unreserved": [
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "poNo": "CG202606164357",
+          "skuCount": 2,
+          "pcs": 1160,
+          "preArrivalTime": "2026-06-24",
+          "poStatus": "已完成"
+        }
+      ],
       "unsigned": [
         {
           "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
@@ -189,34 +206,11 @@
           "billCode": "YY20260624001820",
           "signTime": "10:10",
           "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "广东立高食品营销有限公司-快乐猴",
-          "billCode": "YY20260617001855",
-          "signTime": "09:00",
-          "unloadStartTime": "09:21",
-          "status": "卸货中"
         }
       ],
       "qc_pending": [
         {
           "seq": 1,
-          "supplierName": "广东立高食品营销有限公司-快乐猴",
-          "skuName": "(原料)葡式蛋挞液 907g",
-          "arrivalTime": "11:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "广东立高食品营销有限公司-快乐猴",
-          "skuName": "(原料)爆酥葡挞皮  750g",
-          "arrivalTime": "11:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
           "supplierName": "安徽省喜富食品有限公司-快乐猴",
           "skuName": "快乐猴 鲜汁大肉包 800g(10只)",
           "arrivalTime": "10:30",
@@ -224,7 +218,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 4,
+          "seq": 2,
           "supplierName": "安徽省喜富食品有限公司-快乐猴",
           "skuName": "快乐猴 翡翠香菇大菜包 640g(8只)",
           "arrivalTime": "10:30",
@@ -286,9 +280,9 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 0.0,
-      "efficiency_formula": "0 PCS / 0 人",
-      "inbound_schedule": 0
+      "efficiency": 5516.0,
+      "efficiency_formula": "11032 PCS / 2 人",
+      "inbound_schedule": 2
     }
   },
   "outbound": {
@@ -339,7 +333,7 @@
       "low_load_containers": [],
       "all_containers_detail": [],
       "outbound_efficiency": 0.0,
-      "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)"
+      "outbound_efficiency_formula": "0 PCS / 2 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
@@ -381,10 +375,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 50,
+      "not_started": 58,
       "in_progress": 0,
       "done": 0,
-      "total": 50,
+      "total": 58,
       "status": "ok"
     }
   },
@@ -2222,25 +2216,29 @@
     "temp_status": "ok"
   },
   "attendance": {
-    "total_inservice": 0,
-    "schedule": 0,
-    "attendance": 0,
-    "rate": 0,
+    "total_inservice": 2,
+    "schedule": 2,
+    "attendance": 2,
+    "rate": 100.0,
     "by_job": {
       "N高叉司机": {
-        "inservice": 0,
-        "schedule": 0,
-        "attendance": 0,
-        "rate": 0
+        "inservice": 2,
+        "schedule": 2,
+        "attendance": 2,
+        "rate": 100.0
       }
     },
-    "by_pos_total": {},
-    "by_pos_scheduled": {},
+    "by_pos_total": {
+      "N冷冻高叉司机": 2
+    },
+    "by_pos_scheduled": {
+      "N冷冻高叉司机": 2
+    },
     "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS(播种) / 0 人",
+    "efficiency_formula": "0 PCS(播种) / 2 人",
     "outbound_efficiency": 0.0,
-    "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)",
-    "inbound_efficiency_workers": 0,
+    "outbound_efficiency_formula": "0 PCS / 2 人(拣播员)",
+    "inbound_efficiency_workers": 2,
     "status": "ok"
   }
 }

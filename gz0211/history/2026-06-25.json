@@ -1,52 +1,52 @@
 {
-  "timestamp": "2026-06-25T12:24:16",
+  "timestamp": "2026-06-25T12:36:06",
   "date": "2026-06-25",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 15,
-      "signed": 10,
-      "waiting": 3
+      "signed": 11,
+      "waiting": 2
     },
     "ontime": {
       "ontime": 0,
-      "early": 10,
+      "early": 11,
       "late": 0,
       "total": 13,
       "rate": 0.0,
-      "early_rate": 76.9,
+      "early_rate": 84.6,
       "late_rate": 0.0
     },
     "reserve_progress": {
-      "po_total": 19,
+      "po_total": 17,
       "po_reserved": 13,
-      "rate": 68.4,
+      "rate": 76.5,
       "po_data_ok": true
     },
     "unload": {
-      "total": 7,
+      "total": 8,
       "done": 5,
-      "rate": 71.4,
+      "rate": 62.5,
       "pcs_done": 25148,
-      "sign_pcs_done": 32148
+      "sign_pcs_done": 33060
     },
     "qc": {
-      "total": 2,
+      "total": 5,
       "done": 2,
-      "pending": 0,
+      "pending": 3,
       "passed": 2,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 40.0,
       "bill_done": 2,
-      "bill_total": 2,
+      "bill_total": 5,
       "pcs_done": 2580,
       "pcs_passed": 2580,
-      "pcs_total": 2580,
+      "pcs_total": 3492,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 73.9,
       "sku_done": 2,
-      "sku_total": 2,
-      "sku_rate": 100.0
+      "sku_total": 5,
+      "sku_rate": 40.0
     },
     "putaway": {
       "total": 23322,
@@ -103,26 +103,34 @@
     "dimensions": {
       "reserve": {
         "total": 13,
-        "done": 10,
-        "rate": 76.9
+        "done": 11,
+        "rate": 84.6
       },
       "pcs": {
-        "total": 29352,
+        "total": 28272,
         "done": 22342,
-        "rate": 76.1,
+        "rate": 79.0,
         "recv_done": 23322,
-        "recv_rate": 79.5
+        "recv_rate": 82.5
       },
       "sku": {
         "total": 41,
-        "done": 34,
-        "rate": 82.9
+        "done": 37,
+        "rate": 90.2
       },
       "supplier": {
         "total": 9,
-        "done": 7,
-        "rate": 77.8,
+        "done": 8,
+        "rate": 88.9,
         "detail": {
+          "三全食品股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "青海胜道薯业有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "嵊州向日葵食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -130,10 +138,6 @@
           "福建圣农食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "三全食品股份有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           },
           "江西大由大食品科技有限公司-快乐猴": {
             "plan": 1,
@@ -151,10 +155,6 @@
             "plan": 1,
             "done": 1
           },
-          "青海胜道薯业有限公司": {
-            "plan": 1,
-            "done": 1
-          },
           "福建御味香冷冻食品有限公司-快乐猴": {
             "plan": 2,
             "done": 0
@@ -165,28 +165,12 @@
     "details": {
       "unreserved": [
         {
-          "supplierName": "上海大江通泰食品有限公司-快乐猴",
-          "poNo": "CG2026061516347",
-          "skuCount": 1,
-          "pcs": 1000,
-          "preArrivalTime": "2026-06-25",
-          "poStatus": "已确认"
-        },
-        {
           "supplierName": "北海玖嘉久食品有限公司-快乐猴",
           "poNo": "CG2026061516383",
           "skuCount": 3,
           "pcs": 3780,
           "preArrivalTime": "2026-06-25",
           "poStatus": "已完成"
-        },
-        {
-          "supplierName": "上海大江通泰食品有限公司-快乐猴",
-          "poNo": "CG2026061515982",
-          "skuCount": 3,
-          "pcs": 80,
-          "preArrivalTime": "2026-06-25",
-          "poStatus": "已确认"
         },
         {
           "supplierName": "山东新立信食品科技有限公司-快乐猴",
@@ -215,23 +199,21 @@
       ],
       "unsigned": [
         {
-          "supplierName": "三全食品股份有限公司-快乐猴",
-          "billCode": "YY20260625002793",
-          "skuCount": 3,
-          "pcs": 912,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 1
-        },
-        {
           "supplierName": "福建御味香冷冻食品有限公司-快乐猴",
           "billCode": "YY20260624002869",
           "skuCount": 2,
           "pcs": 4350,
           "timeSlot": "08:30 - 11:30",
-          "seq": 2
+          "seq": 1
         }
       ],
       "unloading": [
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "billCode": "YY20260625002793",
+          "signTime": "12:34",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "江西大由大食品科技有限公司-快乐猴",
           "billCode": "YY20260622000354",
@@ -246,19 +228,44 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "skuName": "三全 三鲜馅飘香馄饨 300g(36只)",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "skuName": "三全 猪肉玉米风味饺子王 420g(12只)",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "skuName": "三全 虾多多虾仁三鲜水饺 400g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "青海胜道薯业有限公司",
           "skuName": "快乐猴 原切黄金酥脆薯条 800g",
           "completeTime": "10:15",
-          "waitingMins": 129
+          "waitingMins": 141
         },
         {
           "supplierName": "济南高贝食品有限公司-快乐猴",
           "skuName": "(原料)快乐猴 草莓乳酪大福 130g",
           "completeTime": "10:18",
-          "waitingMins": 126
+          "waitingMins": 138
         }
       ],
       "signed_not_recv": [
@@ -316,6 +323,39 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 5
+        },
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "poNo": "CG202606251420",
+          "reserveBillCode": "YY20260625002793",
+          "skuId": "551795",
+          "skuName": "三全 猪肉玉米风味饺子王 420g(12只)",
+          "purchaseQty": 620,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
+        },
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "poNo": "CG202606251420",
+          "reserveBillCode": "YY20260625002793",
+          "skuId": "935404",
+          "skuName": "三全 虾多多虾仁三鲜水饺 400g",
+          "purchaseQty": 220,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
+        },
+        {
+          "supplierName": "三全食品股份有限公司-快乐猴",
+          "poNo": "CG202606251420",
+          "reserveBillCode": "YY20260625002793",
+          "skuId": "86126",
+          "skuName": "三全 三鲜馅飘香馄饨 300g(36只)",
+          "purchaseQty": 72,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 8
         }
       ],
       "qc_recv_pending": [],
@@ -501,10 +541,10 @@
       }
     ],
     "seeding": {
-      "not_started": 195,
-      "in_progress": 9,
-      "done": 11,
-      "total": 215,
+      "not_started": 193,
+      "in_progress": 10,
+      "done": 25,
+      "total": 228,
       "status": "ok"
     }
   },

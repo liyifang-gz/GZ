@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-25T10:44:25",
+  "timestamp": "2026-06-25T10:49:25",
   "date": "2026-06-25",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 14,
-      "signed": 7,
-      "waiting": 6
+      "signed": 8,
+      "waiting": 4
     },
     "ontime": {
       "ontime": 0,
-      "early": 7,
+      "early": 8,
       "late": 0,
-      "total": 13,
+      "total": 12,
       "rate": 0.0,
-      "early_rate": 53.8,
+      "early_rate": 66.7,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 4,
-      "done": 2,
-      "rate": 50.0,
-      "pcs_done": 5568,
-      "sign_pcs_done": 12568
+      "total": 5,
+      "done": 3,
+      "rate": 60.0,
+      "pcs_done": 21368,
+      "sign_pcs_done": 28368
     },
     "qc": {
-      "total": 3,
+      "total": 8,
       "done": 2,
-      "pending": 1,
+      "pending": 6,
       "passed": 2,
       "rejected": 0,
-      "rate": 66.7,
+      "rate": 25.0,
       "bill_done": 2,
-      "bill_total": 3,
+      "bill_total": 8,
       "pcs_done": 2580,
       "pcs_passed": 2580,
-      "pcs_total": 6580,
+      "pcs_total": 22380,
       "pcs_rejected": 0,
-      "pcs_rate": 39.2,
+      "pcs_rate": 11.5,
       "sku_done": 2,
-      "sku_total": 3,
-      "sku_rate": 66.7
+      "sku_total": 8,
+      "sku_rate": 25.0
     },
     "putaway": {
       "total": 14054,
@@ -67,9 +67,9 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 13,
-        "done": 7,
-        "rate": 53.8
+        "total": 12,
+        "done": 8,
+        "rate": 66.7
       },
       "pcs": {
         "total": 29352,
@@ -79,15 +79,19 @@
         "recv_rate": 47.9
       },
       "sku": {
-        "total": 41,
-        "done": 27,
-        "rate": 65.9
+        "total": 38,
+        "done": 32,
+        "rate": 84.2
       },
       "supplier": {
-        "total": 9,
-        "done": 4,
-        "rate": 44.4,
+        "total": 8,
+        "done": 5,
+        "rate": 62.5,
         "detail": {
+          "祐康（杭州）食品制造有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "济南高贝食品有限公司-快乐猴": {
             "plan": 4,
             "done": 4
@@ -104,10 +108,6 @@
             "plan": 1,
             "done": 1
           },
-          "三全食品股份有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
           "福建御味香冷冻食品有限公司-快乐猴": {
             "plan": 2,
             "done": 0
@@ -117,10 +117,6 @@
             "done": 0
           },
           "嵊州向日葵食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "祐康（杭州）食品制造有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -180,20 +176,12 @@
       ],
       "unsigned": [
         {
-          "supplierName": "三全食品股份有限公司-快乐猴",
-          "billCode": "YY20260624007551",
-          "skuCount": 3,
-          "pcs": 912,
-          "timeSlot": "14:00 - 14:30",
-          "seq": 1
-        },
-        {
           "supplierName": "福建御味香冷冻食品有限公司-快乐猴",
           "billCode": "YY20260624002869",
           "skuCount": 2,
           "pcs": 4350,
           "timeSlot": "08:30 - 11:30",
-          "seq": 2
+          "seq": 1
         },
         {
           "supplierName": "福建圣农食品有限公司-快乐猴",
@@ -201,7 +189,7 @@
           "skuCount": 1,
           "pcs": 780,
           "timeSlot": "12:00 - 12:30",
-          "seq": 3
+          "seq": 2
         },
         {
           "supplierName": "嵊州向日葵食品有限公司-快乐猴",
@@ -209,15 +197,7 @@
           "skuCount": 1,
           "pcs": 3000,
           "timeSlot": "11:30 - 12:30",
-          "seq": 4
-        },
-        {
-          "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
-          "billCode": "YY20260620000682",
-          "skuCount": 5,
-          "pcs": 15800,
-          "timeSlot": "13:00 - 16:30",
-          "seq": 5
+          "seq": 3
         }
       ],
       "unloading": [
@@ -243,6 +223,46 @@
           "arrivalTime": "10:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
+          "skuName": "快乐猴 鲜牛乳浓醇黑巧冰淇淋 75g",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "10:49",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
+          "skuName": "快乐猴 鲜牛乳香草口味冰淇淋 75g",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "10:49",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
+          "skuName": "快乐猴 我很开心果冰淇淋 75g",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "10:49",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
+          "skuName": "快乐猴 千目抹茶冰淇淋 75g",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "10:49",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
+          "skuName": "快乐猴 老冰棍棒冰 70g*6",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "10:49",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -250,16 +270,27 @@
           "supplierName": "青海胜道薯业有限公司",
           "skuName": "快乐猴 原切黄金酥脆薯条 800g",
           "completeTime": "10:15",
-          "waitingMins": 29
+          "waitingMins": 34
         },
         {
           "supplierName": "济南高贝食品有限公司-快乐猴",
           "skuName": "(原料)快乐猴 草莓乳酪大福 130g",
           "completeTime": "10:18",
-          "waitingMins": 26
+          "waitingMins": 31
         }
       ],
       "signed_not_recv": [
+        {
+          "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
+          "poNo": "CG2026061611957",
+          "reserveBillCode": "YY20260620000682",
+          "skuId": "1411998",
+          "skuName": "快乐猴 千目抹茶冰淇淋 75g",
+          "purchaseQty": 4800,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
         {
           "supplierName": "江西大由大食品科技有限公司-快乐猴",
           "poNo": "CG2026061516377",
@@ -269,7 +300,51 @@
           "purchaseQty": 4000,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 2
+        },
+        {
+          "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
+          "poNo": "CG2026061611957",
+          "reserveBillCode": "YY20260620000682",
+          "skuId": "1356308",
+          "skuName": "快乐猴 鲜牛乳浓醇黑巧冰淇淋 75g",
+          "purchaseQty": 3000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
+          "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
+          "poNo": "CG2026061611957",
+          "reserveBillCode": "YY20260620000682",
+          "skuId": "1356892",
+          "skuName": "快乐猴 鲜牛乳香草口味冰淇淋 75g",
+          "purchaseQty": 3000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
+          "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
+          "poNo": "CG2026061611957",
+          "reserveBillCode": "YY20260620000682",
+          "skuId": "1395745",
+          "skuName": "快乐猴 我很开心果冰淇淋 75g",
+          "purchaseQty": 3000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
+          "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
+          "poNo": "CG2026061611957",
+          "reserveBillCode": "YY20260620000682",
+          "skuId": "1433625",
+          "skuName": "快乐猴 老冰棍棒冰 70g*6",
+          "purchaseQty": 2000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
         },
         {
           "supplierName": "济南高贝食品有限公司-快乐猴",
@@ -280,7 +355,7 @@
           "purchaseQty": 720,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 7
         }
       ],
       "qc_recv_pending": [],
@@ -385,10 +460,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 81,
+      "not_started": 88,
       "in_progress": 0,
       "done": 0,
-      "total": 81,
+      "total": 88,
       "status": "ok"
     }
   },

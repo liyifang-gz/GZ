@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-26T13:51:28",
+  "timestamp": "2026-06-26T13:56:36",
   "date": "2026-06-26",
   "warehouse": "GZ0209",
   "inbound": {
     "reserve": {
       "total": 26,
-      "signed": 16,
-      "waiting": 6
+      "signed": 17,
+      "waiting": 5
     },
     "ontime": {
       "ontime": 0,
-      "early": 16,
+      "early": 17,
       "late": 0,
       "total": 22,
       "rate": 0.0,
-      "early_rate": 72.7,
+      "early_rate": 77.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 15,
+      "total": 16,
       "done": 15,
-      "rate": 100.0,
+      "rate": 93.8,
       "pcs_done": 27188,
-      "sign_pcs_done": 27188
+      "sign_pcs_done": 27613
     },
     "qc": {
-      "total": 4,
+      "total": 6,
       "done": 4,
-      "pending": 0,
+      "pending": 2,
       "passed": 4,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 66.7,
       "bill_done": 4,
-      "bill_total": 4,
+      "bill_total": 6,
       "pcs_done": 5970,
       "pcs_passed": 5970,
-      "pcs_total": 5970,
+      "pcs_total": 6395,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 93.4,
       "sku_done": 4,
-      "sku_total": 4,
-      "sku_rate": 100.0
+      "sku_total": 6,
+      "sku_rate": 66.7
     },
     "putaway": {
       "total": 17570,
@@ -75,8 +75,8 @@
     "dimensions": {
       "reserve": {
         "total": 22,
-        "done": 16,
-        "rate": 72.7
+        "done": 17,
+        "rate": 77.3
       },
       "pcs": {
         "total": 28026,
@@ -87,14 +87,22 @@
       },
       "sku": {
         "total": 45,
-        "done": 32,
-        "rate": 71.1
+        "done": 34,
+        "rate": 75.6
       },
       "supplier": {
         "total": 18,
-        "done": 13,
-        "rate": 72.2,
+        "done": 14,
+        "rate": 77.8,
         "detail": {
+          "广东省启创食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "合肥炫滋电子商务有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "微念集团股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -104,10 +112,6 @@
             "done": 3
           },
           "广州志诚联合商贸有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 1
-          },
-          "广东省启创食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -156,10 +160,6 @@
             "done": 0
           },
           "亿佰利（临沂）食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "合肥炫滋电子商务有限公司": {
             "plan": 1,
             "done": 0
           },
@@ -223,48 +223,65 @@
           "seq": 4
         },
         {
-          "supplierName": "合肥炫滋电子商务有限公司",
-          "billCode": "YY20260621007380",
-          "skuCount": 2,
-          "pcs": 425,
-          "timeSlot": "15:00 - 15:30",
-          "seq": 5
-        },
-        {
           "supplierName": "上海巡味大叔品牌管理有限公司-快乐猴",
           "billCode": "YY20260615004040",
           "skuCount": 1,
           "pcs": 3480,
           "timeSlot": "15:30 - 16:00",
-          "seq": 6
+          "seq": 5
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "合肥炫滋电子商务有限公司",
+          "billCode": "YY20260621007380",
+          "signTime": "13:51",
+          "unloadStartTime": "13:55",
+          "status": "卸货中"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "合肥炫滋电子商务有限公司",
+          "skuName": "南方黑芝麻 黑芝麻糊(无添加蔗糖) 640g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "合肥炫滋电子商务有限公司",
+          "skuName": "南方黑芝麻 黑芝麻糊 315g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "宁波千友电子商务有限公司-快乐猴",
           "skuName": "吕梁野山坡 沙棘汁饮料 300ml",
           "completeTime": "18:45",
-          "waitingMins": 1146
+          "waitingMins": 1151
         },
         {
           "supplierName": "上海迦麦商贸有限公司-快乐猴",
           "skuName": "爱之湾 璀璨粉漾莫斯卡托甜起泡葡萄酒进口 750ml",
           "completeTime": "09:42",
-          "waitingMins": 249
+          "waitingMins": 255
         },
         {
           "supplierName": "广州尚源网络科技有限公司-快乐猴",
           "skuName": "牛栏山 陈酿调香型白酒42度 500ml",
           "completeTime": "10:55",
-          "waitingMins": 176
+          "waitingMins": 181
         },
         {
           "supplierName": "广州志诚联合商贸有限公司-快乐猴-自营",
           "skuName": "郎酒小郎酒 浓酱兼香型白酒45度 100ml",
           "completeTime": "10:35",
-          "waitingMins": 196
+          "waitingMins": 201
         }
       ],
       "signed_not_recv": [
@@ -313,6 +330,17 @@
           "seq": 4
         },
         {
+          "supplierName": "合肥炫滋电子商务有限公司",
+          "poNo": "CG202606169962",
+          "reserveBillCode": "YY20260621007380",
+          "skuId": "1098443",
+          "skuName": "南方黑芝麻 黑芝麻糊(无添加蔗糖) 640g",
+          "purchaseQty": 300,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
           "supplierName": "广州尚源网络科技有限公司-快乐猴",
           "poNo": "CG2026062211614",
           "reserveBillCode": "YY20260623003586",
@@ -321,7 +349,7 @@
           "purchaseQty": 300,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 6
         },
         {
           "supplierName": "广州尚源网络科技有限公司-快乐猴",
@@ -332,7 +360,7 @@
           "purchaseQty": 300,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 6
+          "seq": 7
         },
         {
           "supplierName": "广州尚源网络科技有限公司-快乐猴",
@@ -343,7 +371,7 @@
           "purchaseQty": 220,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 8
         },
         {
           "supplierName": "广州尚源网络科技有限公司-快乐猴",
@@ -354,7 +382,7 @@
           "purchaseQty": 188,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 9
         },
         {
           "supplierName": "广州尚源网络科技有限公司-快乐猴",
@@ -365,18 +393,18 @@
           "purchaseQty": 188,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 10
         },
         {
-          "supplierName": "广东省启创食品有限公司-快乐猴",
-          "poNo": "CG2026062211604",
-          "reserveBillCode": "YY20260623002719",
-          "skuId": "1325313",
-          "skuName": "依能 碧莹饮用天然苏打水 360ml*6",
-          "purchaseQty": 120,
+          "supplierName": "合肥炫滋电子商务有限公司",
+          "poNo": "CG202606169962",
+          "reserveBillCode": "YY20260621007380",
+          "skuId": "1143906",
+          "skuName": "南方黑芝麻 黑芝麻糊 315g",
+          "purchaseQty": 125,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 10
+          "seq": 11
         },
         {
           "supplierName": "广州尚源网络科技有限公司-快乐猴",
@@ -387,7 +415,7 @@
           "purchaseQty": 52,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 11
+          "seq": 12
         }
       ],
       "qc_recv_pending": [],
@@ -1298,8 +1326,8 @@
     "seeding": {
       "not_started": 87,
       "in_progress": 6,
-      "done": 90,
-      "total": 183,
+      "done": 92,
+      "total": 185,
       "status": "ok"
     }
   },

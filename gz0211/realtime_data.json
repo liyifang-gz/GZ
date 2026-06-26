@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-26T09:21:59",
+  "timestamp": "2026-06-26T09:36:16",
   "date": "2026-06-26",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 13,
-      "signed": 0,
-      "waiting": 11
+      "signed": 2,
+      "waiting": 9
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 2,
       "late": 0,
       "total": 11,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 18.2,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,44 +24,44 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 3008
     },
     "qc": {
-      "total": 0,
+      "total": 3,
       "done": 0,
-      "pending": 0,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 3008,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 3,
+      "sku_rate": 0.0
     },
     "putaway": {
-      "total": 18349,
-      "done": 18349,
-      "rate": 100.0,
-      "sku_total": 17,
-      "sku_done": 17,
-      "sku_rate": 100.0,
+      "total": 0,
+      "done": 0,
+      "rate": 0,
+      "sku_total": 0,
+      "sku_done": 0,
+      "sku_rate": 0,
       "details": []
     },
     "dimensions": {
       "reserve": {
         "total": 11,
-        "done": 0,
-        "rate": 0.0
+        "done": 2,
+        "rate": 18.2
       },
       "pcs": {
         "total": 22129,
@@ -72,14 +72,22 @@
       },
       "sku": {
         "total": 34,
-        "done": 0,
-        "rate": 0.0
+        "done": 3,
+        "rate": 8.8
       },
       "supplier": {
         "total": 9,
-        "done": 0,
-        "rate": 0.0,
+        "done": 2,
+        "rate": 22.2,
         "detail": {
+          "广州市美口佳食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "无锡安井食品营销有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "杭州众点食品科技有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -96,19 +104,11 @@
             "plan": 1,
             "done": 0
           },
-          "无锡安井食品营销有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
           "广州市艺奇雪贸易有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
           },
           "深圳市金禧康食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "广州市美口佳食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -172,20 +172,12 @@
           "seq": 5
         },
         {
-          "supplierName": "无锡安井食品营销有限公司-快乐猴",
-          "billCode": "YY20260624003189",
-          "skuCount": 1,
-          "pcs": 2000,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 6
-        },
-        {
           "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
           "billCode": "YY20260623011530",
           "skuCount": 6,
           "pcs": 10116,
           "timeSlot": "10:30 - 13:30",
-          "seq": 7
+          "seq": 6
         },
         {
           "supplierName": "深圳市金禧康食品有限公司-快乐猴",
@@ -193,15 +185,7 @@
           "skuCount": 6,
           "pcs": 1408,
           "timeSlot": "12:00 - 12:30",
-          "seq": 8
-        },
-        {
-          "supplierName": "广州市美口佳食品有限公司-快乐猴",
-          "billCode": "YY20260623000367",
-          "skuCount": 2,
-          "pcs": 1008,
-          "timeSlot": "15:00 - 15:30",
-          "seq": 9
+          "seq": 7
         },
         {
           "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
@@ -209,13 +193,85 @@
           "skuCount": 5,
           "pcs": 2200,
           "timeSlot": "11:00 - 11:30",
-          "seq": 10
+          "seq": 8
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "广州市美口佳食品有限公司-快乐猴",
+          "billCode": "YY20260623000367",
+          "signTime": "09:34",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "无锡安井食品营销有限公司-快乐猴",
+          "billCode": "YY20260624003189",
+          "signTime": "09:33",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "无锡安井食品营销有限公司-快乐猴",
+          "skuName": "快乐猴 猪肉笋丁糯米烧麦 900g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "广州市美口佳食品有限公司-快乐猴",
+          "skuName": "美丰 绿豆沙冰棍 70g*6",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "广州市美口佳食品有限公司-快乐猴",
+          "skuName": "美丰 玉米香雪糕 65g*4",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "无锡安井食品营销有限公司-快乐猴",
+          "poNo": "CG202606241177",
+          "reserveBillCode": "YY20260624003189",
+          "skuId": "1208006",
+          "skuName": "快乐猴 猪肉笋丁糯米烧麦 900g",
+          "purchaseQty": 2000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "广州市美口佳食品有限公司-快乐猴",
+          "poNo": "CG2026062215125",
+          "reserveBillCode": "YY20260623000367",
+          "skuId": "216223",
+          "skuName": "美丰 绿豆沙冰棍 70g*6",
+          "purchaseQty": 852,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "广州市美口佳食品有限公司-快乐猴",
+          "poNo": "CG2026062215125",
+          "reserveBillCode": "YY20260623000367",
+          "skuId": "617804",
+          "skuName": "美丰 玉米香雪糕 65g*4",
+          "purchaseQty": 156,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -318,10 +374,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 10,
+      "not_started": 0,
       "in_progress": 0,
       "done": 0,
-      "total": 10,
+      "total": 0,
       "status": "ok"
     }
   },

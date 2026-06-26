@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-26T15:57:04",
+  "timestamp": "2026-06-26T16:06:08",
   "date": "2026-06-26",
   "warehouse": "GZ0209",
   "inbound": {
     "reserve": {
       "total": 26,
-      "signed": 20,
-      "waiting": 2
+      "signed": 21,
+      "waiting": 1
     },
     "ontime": {
       "ontime": 1,
       "early": 18,
-      "late": 1,
+      "late": 2,
       "total": 22,
       "rate": 4.5,
       "early_rate": 81.8,
-      "late_rate": 4.5
+      "late_rate": 9.1
     },
     "reserve_progress": {
       "po_total": 17,
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 19,
+      "total": 20,
       "done": 18,
-      "rate": 94.7,
+      "rate": 90.0,
       "pcs_done": 34093,
-      "sign_pcs_done": 35247
+      "sign_pcs_done": 38255
     },
     "qc": {
-      "total": 7,
+      "total": 8,
       "done": 4,
-      "pending": 3,
+      "pending": 4,
       "passed": 4,
       "rejected": 0,
-      "rate": 57.1,
+      "rate": 50.0,
       "bill_done": 4,
-      "bill_total": 7,
+      "bill_total": 8,
       "pcs_done": 5970,
       "pcs_passed": 5970,
-      "pcs_total": 7124,
+      "pcs_total": 10132,
       "pcs_rejected": 0,
-      "pcs_rate": 83.8,
+      "pcs_rate": 58.9,
       "sku_done": 4,
-      "sku_total": 7,
-      "sku_rate": 57.1
+      "sku_total": 8,
+      "sku_rate": 50.0
     },
     "putaway": {
       "total": 0,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 22,
-        "done": 20,
-        "rate": 90.9
+        "done": 21,
+        "rate": 95.5
       },
       "pcs": {
         "total": 28026,
@@ -72,14 +72,26 @@
       },
       "sku": {
         "total": 45,
-        "done": 39,
-        "rate": 86.7
+        "done": 40,
+        "rate": 88.9
       },
       "supplier": {
         "total": 18,
-        "done": 16,
-        "rate": 88.9,
+        "done": 17,
+        "rate": 94.4,
         "detail": {
+          "微念集团股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "广东省启创食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "亿佰利（临沂）食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "上海巡味大叔品牌管理有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -105,14 +117,6 @@
             "done": 1
           },
           "湖南麦克普勒供应链集团有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "广东省启创食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "微念集团股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -147,10 +151,6 @@
           "武汉铭德昌印务股份有限公司-快乐猴": {
             "plan": 1,
             "done": 0
-          },
-          "亿佰利（临沂）食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -182,17 +182,16 @@
           "pcs": 63,
           "timeSlot": "15:30 - 16:00",
           "seq": 1
-        },
-        {
-          "supplierName": "亿佰利（临沂）食品有限公司-快乐猴",
-          "billCode": "YY20260622000271",
-          "skuCount": 1,
-          "pcs": 3008,
-          "timeSlot": "14:30 - 15:00",
-          "seq": 2
         }
       ],
       "unloading": [
+        {
+          "supplierName": "亿佰利（临沂）食品有限公司-快乐猴",
+          "billCode": "YY20260622000271",
+          "signTime": "15:59",
+          "unloadStartTime": "16:00",
+          "status": "卸货中"
+        },
         {
           "supplierName": "邵武德林多家居用品制造有限公司",
           "billCode": "YY20260622001731",
@@ -225,6 +224,14 @@
           "arrivalTime": "15:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "亿佰利（临沂）食品有限公司-快乐猴",
+          "skuName": "快乐猴 黑糖坚果沙琪玛 430g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -232,28 +239,39 @@
           "supplierName": "宁波千友电子商务有限公司-快乐猴",
           "skuName": "吕梁野山坡 沙棘汁饮料 300ml",
           "completeTime": "18:45",
-          "waitingMins": 1271
+          "waitingMins": 1281
         },
         {
           "supplierName": "上海迦麦商贸有限公司-快乐猴",
           "skuName": "爱之湾 璀璨粉漾莫斯卡托甜起泡葡萄酒进口 750ml",
           "completeTime": "09:42",
-          "waitingMins": 375
+          "waitingMins": 384
         },
         {
           "supplierName": "广州尚源网络科技有限公司-快乐猴",
           "skuName": "牛栏山 陈酿调香型白酒42度 500ml",
           "completeTime": "10:55",
-          "waitingMins": 302
+          "waitingMins": 311
         },
         {
           "supplierName": "广州志诚联合商贸有限公司-快乐猴-自营",
           "skuName": "郎酒小郎酒 浓酱兼香型白酒45度 100ml",
           "completeTime": "10:35",
-          "waitingMins": 321
+          "waitingMins": 330
         }
       ],
       "signed_not_recv": [
+        {
+          "supplierName": "亿佰利（临沂）食品有限公司-快乐猴",
+          "poNo": "CG202606184206",
+          "reserveBillCode": "YY20260622000271",
+          "skuId": "1355734",
+          "skuName": "快乐猴 黑糖坚果沙琪玛 430g",
+          "purchaseQty": 3008,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
         {
           "supplierName": "微念集团股份有限公司-快乐猴",
           "poNo": "CG2026061515381",
@@ -263,7 +281,7 @@
           "purchaseQty": 1500,
           "recvQty": 1450,
           "hasQc": false,
-          "seq": 1
+          "seq": 2
         },
         {
           "supplierName": "贵州西秀翠宏食品有限公司-快乐猴",
@@ -274,7 +292,7 @@
           "purchaseQty": 1500,
           "recvQty": 1400,
           "hasQc": false,
-          "seq": 2
+          "seq": 3
         },
         {
           "supplierName": "贵州西秀翠宏食品有限公司-快乐猴",
@@ -285,7 +303,7 @@
           "purchaseQty": 1040,
           "recvQty": 936,
           "hasQc": false,
-          "seq": 3
+          "seq": 4
         },
         {
           "supplierName": "邵武德林多家居用品制造有限公司",
@@ -296,7 +314,7 @@
           "purchaseQty": 880,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 5
         },
         {
           "supplierName": "广州尚源网络科技有限公司-快乐猴",
@@ -307,7 +325,7 @@
           "purchaseQty": 300,
           "recvQty": 288,
           "hasQc": false,
-          "seq": 5
+          "seq": 6
         },
         {
           "supplierName": "邵武德林多家居用品制造有限公司",
@@ -318,7 +336,7 @@
           "purchaseQty": 190,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 6
+          "seq": 7
         },
         {
           "supplierName": "广州尚源网络科技有限公司-快乐猴",
@@ -329,7 +347,7 @@
           "purchaseQty": 188,
           "recvQty": 184,
           "hasQc": false,
-          "seq": 7
+          "seq": 8
         },
         {
           "supplierName": "邵武德林多家居用品制造有限公司",
@@ -340,7 +358,7 @@
           "purchaseQty": 84,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 9
         }
       ],
       "qc_recv_pending": [],
@@ -407,13 +425,13 @@
       "total": 0,
       "done": 0,
       "rate": 0.0,
-      "pcs_done": 17481,
+      "pcs_done": 19949,
       "pcs_total": 0,
       "pcs_rate": 0.0
     },
     "packing": {
-      "total": 82,
-      "done": 82,
+      "total": 83,
+      "done": 83,
       "rate": 100.0
     },
     "uncaged_details": [],
@@ -430,8 +448,8 @@
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "64.39%",
-      "load_rate_loaded": "77.75%",
+      "load_rate_unloaded": "62.46%",
+      "load_rate_loaded": "78.44%",
       "load_rate_shipped": "80.71%",
       "low_load_containers": [
         {
@@ -525,6 +543,15 @@
           "planOutTime": "06-26 22:00"
         },
         {
+          "containerCode": "RQ-28-03-0900241",
+          "poiName": "南海国昌广场店",
+          "loadingRate": "70.80%",
+          "loadingRateVal": 70.8,
+          "skuPcs": "662.000",
+          "skuVolume": "1.402",
+          "planOutTime": "06-26 22:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900737",
           "poiName": "白云新世界云集店",
           "loadingRate": "72.76%",
@@ -572,6 +599,15 @@
           "planOutTime": "06-26 22:00"
         },
         {
+          "containerCode": "RQ-28-03-0900271",
+          "poiName": "南海国昌广场店",
+          "loadingRate": "29.93%",
+          "loadingRateVal": 29.93,
+          "skuPcs": "396.000",
+          "skuVolume": "0.593",
+          "planOutTime": "06-26 22:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900344",
           "poiName": "海珠星汇广场店",
           "loadingRate": "66.87%",
@@ -605,6 +641,15 @@
           "loadingRateVal": 66.48,
           "skuPcs": "725.000",
           "skuVolume": "1.316",
+          "planOutTime": "06-26 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900563",
+          "poiName": "白云山水立方店",
+          "loadingRate": "80.54%",
+          "loadingRateVal": 80.54,
+          "skuPcs": "935.000",
+          "skuVolume": "1.595",
           "planOutTime": "06-26 22:00"
         },
         {
@@ -659,6 +704,15 @@
           "loadingRateVal": 49.76,
           "skuPcs": "727.000",
           "skuVolume": "0.985",
+          "planOutTime": "06-26 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900833",
+          "poiName": "罗沙大厦店",
+          "loadingRate": "103.32%",
+          "loadingRateVal": 103.32,
+          "skuPcs": "871.000",
+          "skuVolume": "2.046",
           "planOutTime": "06-26 22:00"
         },
         {
@@ -779,15 +833,6 @@
           "planOutTime": "06-26 22:00"
         },
         {
-          "containerCode": "RQ-28-03-0900833",
-          "poiName": "罗沙大厦店",
-          "loadingRate": "102.22%",
-          "loadingRateVal": 102.22,
-          "skuPcs": "847.000",
-          "skuVolume": "2.024",
-          "planOutTime": "06-26 22:00"
-        },
-        {
           "containerCode": "RQ-28-03-0900847",
           "poiName": "罗沙大厦店",
           "loadingRate": "85.72%",
@@ -812,15 +857,6 @@
           "loadingRateVal": 69.52,
           "skuPcs": "449.000",
           "skuVolume": "1.376",
-          "planOutTime": "06-26 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900832",
-          "poiName": "罗沙大厦店",
-          "loadingRate": "1.10%",
-          "loadingRateVal": 1.1,
-          "skuPcs": "24.000",
-          "skuVolume": "0.022",
           "planOutTime": "06-26 22:00"
         },
         {

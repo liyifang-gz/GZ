@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-27T16:54:57",
+  "timestamp": "2026-06-27T17:11:48",
   "date": "2026-06-27",
   "warehouse": "GZ0211",
   "inbound": {
@@ -130,6 +130,10 @@
         "done": 15,
         "rate": 100.0,
         "detail": {
+          "广东创银食材供应链管理有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "北京圣野金源商贸有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -157,10 +161,6 @@
           "欧泰贡（广东）食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "广东创银食材供应链管理有限公司-快乐猴": {
-            "plan": 2,
-            "done": 2
           },
           "天津思念食品销售有限公司-快乐猴": {
             "plan": 1,
@@ -214,6 +214,12 @@
       ],
       "unsigned": [],
       "unloading": [
+        {
+          "supplierName": "广东创银食材供应链管理有限公司-快乐猴",
+          "billCode": "YY20260624007224",
+          "signTime": "13:31",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "北京圣野金源商贸有限公司-快乐猴",
           "billCode": "YY20260627000382",
@@ -276,12 +282,6 @@
           "status": "已签到未卸货"
         },
         {
-          "supplierName": "广东创银食材供应链管理有限公司-快乐猴",
-          "billCode": "YY20260624007224",
-          "signTime": "13:31",
-          "status": "已签到未卸货"
-        },
-        {
           "supplierName": "北京雪特商贸有限公司-快乐猴",
           "billCode": "YY20260626000385",
           "signTime": "11:10",
@@ -300,31 +300,31 @@
           "supplierName": "天津思念食品销售有限公司-快乐猴",
           "skuName": "思念 猪肉荠菜水饺 2kg",
           "completeTime": "13:54",
-          "waitingMins": 180
+          "waitingMins": 197
         },
         {
           "supplierName": "欧泰贡（广东）食品有限公司-快乐猴",
           "skuName": "湄公大厨 冻生巴沙鱼柳 600g",
           "completeTime": "15:01",
-          "waitingMins": 114
+          "waitingMins": 131
         },
         {
           "supplierName": "北京圣野金源商贸有限公司-快乐猴",
           "skuName": "北极甜虾 300g",
           "completeTime": "15:49",
-          "waitingMins": 65
+          "waitingMins": 82
         },
         {
           "supplierName": "大连海大厨食品有限公司-快乐猴",
           "skuName": "三文鱼排 600g",
           "completeTime": "15:43",
-          "waitingMins": 72
+          "waitingMins": 89
         },
         {
           "supplierName": "广东创银食材供应链管理有限公司-快乐猴",
           "skuName": "和兴 速冻鱼皮角 350g",
           "completeTime": "15:05",
-          "waitingMins": 109
+          "waitingMins": 126
         }
       ],
       "signed_not_recv": [],
@@ -1314,10 +1314,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 39,
-      "in_progress": 3,
-      "done": 288,
-      "total": 330,
+      "not_started": 48,
+      "in_progress": 1,
+      "done": 290,
+      "total": 339,
       "status": "ok"
     }
   },
@@ -1361,11 +1361,37 @@
       "冷冻": 0,
       "常温": 0
     },
-    "all_count": 2,
+    "all_count": 3,
     "planned_trips": {
-      "total": 0,
-      "by_store": {},
-      "details": [],
+      "total": 1,
+      "by_store": {
+        "番禺建华汇店": 1
+      },
+      "details": [
+        {
+          "waybillCode": "GZ2111928631",
+          "licensePlate": "粤SD17683",
+          "driverName": "龚飞",
+          "carrierName": "运多多（广州）",
+          "temperatureLevel": 5,
+          "temperatureLevelName": "常温车",
+          "waybillStatus": 0,
+          "preCoolMonitorStatus": 3,
+          "preCoolMonitorStatusName": "--",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州常温1仓",
+          "createTime": 1782551453000,
+          "store": "番禺建华汇店"
+        }
+      ],
       "status": "ok"
     },
     "departed_trips": {

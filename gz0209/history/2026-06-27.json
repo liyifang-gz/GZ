@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-27T11:06:18",
+  "timestamp": "2026-06-27T11:11:09",
   "date": "2026-06-27",
   "warehouse": "GZ0209",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 13,
-      "done": 2,
-      "pending": 11,
-      "passed": 2,
+      "done": 3,
+      "pending": 10,
+      "passed": 3,
       "rejected": 0,
-      "rate": 15.4,
-      "bill_done": 2,
+      "rate": 23.1,
+      "bill_done": 3,
       "bill_total": 13,
-      "pcs_done": 5192,
-      "pcs_passed": 5192,
+      "pcs_done": 5392,
+      "pcs_passed": 5392,
       "pcs_total": 13352,
       "pcs_rejected": 0,
-      "pcs_rate": 38.9,
-      "sku_done": 2,
+      "pcs_rate": 40.4,
+      "sku_done": 3,
       "sku_total": 13,
-      "sku_rate": 15.4
+      "sku_rate": 23.1
     },
     "putaway": {
       "total": 28240,
@@ -387,14 +387,6 @@
         },
         {
           "seq": 10,
-          "supplierName": "广东美而美食品有限公司-快乐猴",
-          "skuName": "快乐猴 可生食富硒鲜鸡蛋 500g(10枚)",
-          "arrivalTime": "11:00",
-          "unloadFinishTime": "10:14",
-          "statusLabel": "首次进行中"
-        },
-        {
-          "seq": 11,
           "supplierName": "广东天地壹号饮料销售有限公司-快乐猴",
           "skuName": "天地壹号 苹果醋饮料 330ml*6",
           "arrivalTime": "14:00",
@@ -407,12 +399,18 @@
           "supplierName": "江苏仙之宝食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 水蜜桃味吸吸果汁果冻 150g",
           "completeTime": "18:36",
-          "waitingMins": 990
+          "waitingMins": 995
         },
         {
           "supplierName": "揭阳市天潮食品有限公司-快乐猴",
           "skuName": "快乐猴 蒟蒻果冻 500g",
           "completeTime": "11:04",
+          "waitingMins": 7
+        },
+        {
+          "supplierName": "广东美而美食品有限公司-快乐猴",
+          "skuName": "快乐猴 可生食富硒鲜鸡蛋 500g(10枚)",
+          "completeTime": "11:08",
           "waitingMins": 2
         }
       ],
@@ -546,7 +544,7 @@
           "skuName": "快乐猴 可生食富硒鲜鸡蛋 500g(10枚)",
           "purchaseQty": 200,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 12
         },
         {
@@ -601,20 +599,20 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 16,
+      "total": 21,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 16,
+      "total": 21,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 6120,
+      "pcs_total": 6186,
       "pcs_rate": 0.0
     },
     "packing": {
-      "total": 1,
+      "total": 2,
       "done": 0,
       "rate": 0.0
     },
@@ -643,6 +641,11 @@
         "containerCode": "RQ-28-03-0900488",
         "poiName": "越秀越富广场店",
         "qty": 41
+      },
+      {
+        "containerCode": "RQ-28-03-0900322",
+        "poiName": "海珠星汇广场店",
+        "qty": 26
       }
     ],
     "unpacked_details": [
@@ -670,21 +673,26 @@
         "containerCode": "RQ-28-03-0900488",
         "poiName": "越秀越富广场店",
         "qty": 41
+      },
+      {
+        "containerCode": "RQ-28-03-0900322",
+        "poiName": "海珠星汇广场店",
+        "qty": 26
       }
     ],
     "shipping": {
-      "total": 5558,
+      "total": 5584,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 16,
+      "multi_pallet_total": 21,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "2.52%",
+      "load_rate_unloaded": "2.26%",
       "load_rate_loaded": "--",
       "load_rate_shipped": "--",
       "low_load_containers": [],
@@ -697,25 +705,34 @@
           "skuPcs": "40.000",
           "skuVolume": "0.050",
           "planOutTime": "06-27 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900322",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "2.01%",
+          "loadingRateVal": 2.01,
+          "skuPcs": "20.000",
+          "skuVolume": "0.040",
+          "planOutTime": "06-27 22:00"
         }
       ],
-      "outbound_efficiency": 794.0,
-      "outbound_efficiency_formula": "5558 PCS / 7 人(拣播员)"
+      "outbound_efficiency": 797.7,
+      "outbound_efficiency_formula": "5584 PCS / 7 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 5558,
+        "total": 5584,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 5558,
+        "not_caged": 5584,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
         "cage_rate": 0.0,
-        "sowed_picked": 6120
+        "sowed_picked": 6186
       },
       "sku": {
-        "total": 16,
+        "total": 21,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
@@ -729,23 +746,23 @@
       "plan_pcs": 20126,
       "alloc_pcs": 20126,
       "alloc_rate": 100.0,
-      "picked_pcs": 6182,
-      "sow_pcs": 6120,
-      "sow_rate": 30.4,
+      "picked_pcs": 6188,
+      "sow_pcs": 6186,
+      "sow_rate": 30.7,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 44,
       "sku_alloc": 44,
-      "sku_sow": 21,
+      "sku_sow": 28,
       "sku_ship": 0,
       "total_orders": 15
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 96,
+      "not_started": 101,
       "in_progress": 0,
       "done": 0,
-      "total": 96,
+      "total": 101,
       "status": "ok"
     }
   },
@@ -754,14 +771,14 @@
     "total_pcs": 20126,
     "alloc_pcs": 20126,
     "alloc_rate": 100.0,
-    "picked_pcs": 6182,
-    "sow_pcs": 6120,
-    "sow_rate": 30.4,
+    "picked_pcs": 6188,
+    "sow_pcs": 6186,
+    "sow_rate": 30.7,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 44,
     "sku_alloc": 44,
-    "sku_sow": 21,
+    "sku_sow": 28,
     "store_count": 9,
     "by_store": {
       "快乐猴-大朗市场店-049": 6054.0,
@@ -2977,10 +2994,10 @@
       "N常温收退": 2,
       "N常温高叉司机": 1
     },
-    "predicted_efficiency": 612.0,
-    "efficiency_formula": "6120 PCS(播种) / 10 人",
-    "outbound_efficiency": 794.0,
-    "outbound_efficiency_formula": "5558 PCS / 7 人(拣播员)",
+    "predicted_efficiency": 618.6,
+    "efficiency_formula": "6186 PCS(播种) / 10 人",
+    "outbound_efficiency": 797.7,
+    "outbound_efficiency_formula": "5584 PCS / 7 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-06-28T20:59:15",
+  "timestamp": "2026-06-28T21:09:50",
   "date": "2026-06-28",
   "warehouse": "GZ0209",
   "inbound": {
     "reserve": {
       "total": 49,
-      "signed": 33,
-      "waiting": 6
+      "signed": 36,
+      "waiting": 3
     },
     "ontime": {
       "ontime": 2,
       "early": 30,
-      "late": 1,
+      "late": 4,
       "total": 39,
       "rate": 5.1,
       "early_rate": 76.9,
-      "late_rate": 2.6
+      "late_rate": 10.3
     },
     "reserve_progress": {
       "po_total": 27,
@@ -24,44 +24,44 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 27,
-      "done": 27,
+      "total": 28,
+      "done": 28,
       "rate": 100.0,
-      "pcs_done": 202974,
-      "sign_pcs_done": 202974
+      "pcs_done": 204950,
+      "sign_pcs_done": 204950
     },
     "qc": {
-      "total": 23,
+      "total": 32,
       "done": 23,
-      "pending": 0,
+      "pending": 9,
       "passed": 23,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 71.9,
       "bill_done": 23,
-      "bill_total": 23,
+      "bill_total": 32,
       "pcs_done": 160630,
       "pcs_passed": 160630,
-      "pcs_total": 160630,
+      "pcs_total": 162606,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 98.8,
       "sku_done": 22,
-      "sku_total": 22,
-      "sku_rate": 100.0
+      "sku_total": 26,
+      "sku_rate": 84.6
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
+      "total": 62787,
+      "done": 62787,
+      "rate": 100.0,
+      "sku_total": 51,
+      "sku_done": 51,
+      "sku_rate": 100.0,
       "details": []
     },
     "dimensions": {
       "reserve": {
         "total": 39,
-        "done": 33,
-        "rate": 84.6
+        "done": 36,
+        "rate": 92.3
       },
       "pcs": {
         "total": 204763,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 116,
-        "done": 82,
-        "rate": 70.7
+        "done": 109,
+        "rate": 94.0
       },
       "supplier": {
         "total": 30,
-        "done": 27,
-        "rate": 90.0,
+        "done": 28,
+        "rate": 93.3,
         "detail": {
+          "广东慧智农业科技有限公司-快乐猴": {
+            "plan": 3,
+            "done": 3
+          },
           "上海怡辰日化有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -119,10 +123,6 @@
           "苏昱冷链科技（常州）有限公司": {
             "plan": 1,
             "done": 1
-          },
-          "广东慧智农业科技有限公司-快乐猴": {
-            "plan": 3,
-            "done": 0
           },
           "广州市新风彩品牌管理有限公司-快乐猴": {
             "plan": 2,
@@ -167,20 +167,12 @@
       "unreserved": [],
       "unsigned": [
         {
-          "supplierName": "广东慧智农业科技有限公司-快乐猴",
-          "billCode": "YY20260628003841",
-          "skuCount": 9,
-          "pcs": 1976,
-          "timeSlot": "15:30 - 16:00",
-          "seq": 1
-        },
-        {
           "supplierName": "广州贵美商务科技有限公司-快乐猴",
           "billCode": "YY20260626009752",
           "skuCount": 3,
           "pcs": 804,
           "timeSlot": "16:00 - 16:30",
-          "seq": 2
+          "seq": 1
         },
         {
           "supplierName": "杭州勤诚塑料包装材料有限公司",
@@ -188,149 +180,222 @@
           "skuCount": 1,
           "pcs": 20000,
           "timeSlot": "11:00 - 11:30",
-          "seq": 3
+          "seq": 2
         }
       ],
       "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "广东慧智农业科技有限公司-快乐猴",
+          "skuName": "鲜鹌鹑蛋24枚装 251g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "21:07",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "广东慧智农业科技有限公司-快乐猴",
+          "skuName": "富硒大码鲜鸡蛋20枚 1.2kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "21:07",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "广东慧智农业科技有限公司-快乐猴",
+          "skuName": "鲜鹌鹑蛋24枚装 251g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "21:07",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "广东慧智农业科技有限公司-快乐猴",
+          "skuName": "清洁大码鲜鸡蛋30枚 1.8kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "21:07",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "广东慧智农业科技有限公司-快乐猴",
+          "skuName": "精选叶黄素富硒鲜鸡蛋12枚 700g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "21:07",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "广东慧智农业科技有限公司-快乐猴",
+          "skuName": "富硒大码鲜鸡蛋20枚 1.2kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "21:07",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "广东慧智农业科技有限公司-快乐猴",
+          "skuName": "鲜鹌鹑蛋24枚装 251g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "21:07",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "广东慧智农业科技有限公司-快乐猴",
+          "skuName": "清洁大码鲜鸡蛋30枚 1.8kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "21:07",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 9,
+          "supplierName": "广东慧智农业科技有限公司-快乐猴",
+          "skuName": "精选叶黄素富硒鲜鸡蛋12枚 700g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "21:07",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "晋江市宏海塑料实业有限公司",
           "skuName": "快乐猴-2214盒220*140*70（分体）-榴莲专用",
           "completeTime": "10:58",
-          "waitingMins": 601
+          "waitingMins": 612
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "百加得 白朗姆酒 50ml",
           "completeTime": "10:38",
-          "waitingMins": 621
+          "waitingMins": 631
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "绝对 原味伏特加瑞典进口 50ml",
           "completeTime": "10:35",
-          "waitingMins": 624
+          "waitingMins": 635
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "百龄坛 特醇苏格兰威士忌英国进口 50ml",
           "completeTime": "10:53",
-          "waitingMins": 605
+          "waitingMins": 616
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "必富达 蒸馏酒金酒英国进口 50ml",
           "completeTime": "10:54",
-          "waitingMins": 605
+          "waitingMins": 615
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
           "skuName": "百利 甜草莓奶油味甜酒爱尔兰进口 50ml",
           "completeTime": "10:33",
-          "waitingMins": 626
+          "waitingMins": 637
         },
         {
           "supplierName": "北京锦顺硕达商贸有限公司-快乐猴",
           "skuName": "花田萃 橙c美式咖啡 100g(5条)",
           "completeTime": "09:57",
-          "waitingMins": 662
+          "waitingMins": 673
         },
         {
           "supplierName": "北京锦顺硕达商贸有限公司-快乐猴",
           "skuName": "花田萃 芭乐C美式即溶咖啡 100g",
           "completeTime": "10:00",
-          "waitingMins": 659
+          "waitingMins": 670
         },
         {
           "supplierName": "北京锦顺硕达商贸有限公司-快乐猴",
           "skuName": "花田萃 羽衣果蔬茶 100g",
           "completeTime": "10:01",
-          "waitingMins": 657
+          "waitingMins": 668
         },
         {
           "supplierName": "广州市新风彩品牌管理有限公司-快乐猴",
           "skuName": "锐澳微醺冰萃葡萄风味果冻起泡鸡尾酒(预调酒)250ml",
           "completeTime": "11:23",
-          "waitingMins": 576
+          "waitingMins": 586
         },
         {
           "supplierName": "广州市新风彩品牌管理有限公司-快乐猴",
           "skuName": "锐澳微醺冰萃葡萄风味果冻起泡鸡尾酒(预调酒)250ml",
           "completeTime": "11:23",
-          "waitingMins": 576
+          "waitingMins": 586
         },
         {
           "supplierName": "广州市新风彩品牌管理有限公司-快乐猴",
           "skuName": "锐澳微醺桂香青梅风味果冻鸡尾酒(预调酒)250ml",
           "completeTime": "11:25",
-          "waitingMins": 573
+          "waitingMins": 584
         },
         {
           "supplierName": "泰华施清洁科技（上海）有限公司-快乐猴-自营",
           "skuName": "快乐猴-玻璃清洁剂-奇亮浓缩玻璃清洁剂1箱",
           "completeTime": "13:05",
-          "waitingMins": 473
+          "waitingMins": 484
         },
         {
           "supplierName": "泰华施清洁科技（上海）有限公司-快乐猴-自营",
           "skuName": "快乐猴-清洗药片-苏马烤箱清洁片",
           "completeTime": "12:52",
-          "waitingMins": 487
+          "waitingMins": 498
         },
         {
           "supplierName": "泰华施清洁科技（上海）有限公司-快乐猴-自营",
           "skuName": "快乐猴-除垢剂-苏马烤箱中和片1箱",
           "completeTime": "12:53",
-          "waitingMins": 485
+          "waitingMins": 496
         },
         {
           "supplierName": "泰华施清洁科技（上海）有限公司-快乐猴-自营",
           "skuName": "快乐猴-手部清洁液-丝洁牌抗菌洗手液（泡沫II型）1箱",
           "completeTime": "13:00",
-          "waitingMins": 479
+          "waitingMins": 490
         },
         {
           "supplierName": "泰华施清洁科技（上海）有限公司-快乐猴-自营",
           "skuName": "快乐猴-手部消毒液-丝洁牌免过水洗手消毒液（H52型）1箱",
           "completeTime": "12:55",
-          "waitingMins": 484
+          "waitingMins": 494
         },
         {
           "supplierName": "泰华施清洁科技（上海）有限公司-快乐猴-自营",
           "skuName": "快乐猴-烤盘清洁剂-苏马牌多用途除油剂1箱",
           "completeTime": "13:01",
-          "waitingMins": 478
+          "waitingMins": 489
         },
         {
           "supplierName": "泰华施清洁科技（上海）有限公司-快乐猴-自营",
           "skuName": "快乐猴-工器具消毒液-J-512®季铵盐消毒液1箱",
           "completeTime": "12:57",
-          "waitingMins": 482
+          "waitingMins": 492
         },
         {
           "supplierName": "泰华施清洁科技（上海）有限公司-快乐猴-自营",
           "skuName": "快乐猴-地板清洁剂-泰泡丰含氯泡沫清洁剂1箱",
           "completeTime": "12:58",
-          "waitingMins": 481
+          "waitingMins": 491
         },
         {
           "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
           "skuName": "新包材-塑盒-蛋挞盒",
           "completeTime": "15:22",
-          "waitingMins": 337
+          "waitingMins": 348
         },
         {
           "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
           "skuName": "新包材-盒子-热出提手盒",
           "completeTime": "15:20",
-          "waitingMins": 339
+          "waitingMins": 350
         },
         {
           "supplierName": "苏昱冷链科技（常州）有限公司",
           "skuName": "快乐猴-200ml双侧吸水冰袋包",
           "completeTime": "16:06",
-          "waitingMins": 293
+          "waitingMins": 303
         }
       ],
       "signed_not_recv": [
@@ -344,6 +409,17 @@
           "recvQty": 0,
           "hasQc": true,
           "seq": 1
+        },
+        {
+          "supplierName": "广东慧智农业科技有限公司-快乐猴",
+          "poNo": "CG202606280666",
+          "reserveBillCode": "YY20260628003841",
+          "skuId": "1046290",
+          "skuName": "鲜鹌鹑蛋24枚装 251g",
+          "purchaseQty": 100,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
         }
       ],
       "qc_recv_pending": [],
@@ -378,8 +454,8 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 8987,
-      "pcs_total": 0,
-      "pcs_rate": 0.0
+      "pcs_total": 10909,
+      "pcs_rate": 82.4
     },
     "packing": {
       "total": 39,
@@ -824,8 +900,8 @@
         "not_caged": 0,
         "pick_rate": 0,
         "sow_rate": 0,
-        "cage_rate": 0.0,
-        "sowed_picked": 0
+        "cage_rate": 82.4,
+        "sowed_picked": 10909
       },
       "sku": {
         "total": 0,
@@ -839,45 +915,88 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 0,
-      "alloc_pcs": 0,
-      "alloc_rate": 0,
-      "picked_pcs": 0,
-      "sow_pcs": 0,
-      "sow_rate": 0,
+      "plan_pcs": 16858,
+      "alloc_pcs": 16848,
+      "alloc_rate": 99.9,
+      "picked_pcs": 10909,
+      "sow_pcs": 10909,
+      "sow_rate": 64.7,
       "ship_pcs": 0,
-      "ship_rate": 0,
-      "sku_plan": 0,
-      "sku_alloc": 0,
-      "sku_sow": 0,
+      "ship_rate": 0.0,
+      "sku_plan": 171,
+      "sku_alloc": 169,
+      "sku_sow": 143,
       "sku_ship": 0,
-      "total_orders": 0
+      "total_orders": 17
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-海珠星汇广场店-034",
+        "orderNo": "DB20260628504710",
+        "skuNum": 1,
+        "planQty": 5,
+        "allocQty": 0,
+        "unallocQty": 5
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260628504716",
+        "skuNum": 1,
+        "planQty": 5,
+        "allocQty": 0,
+        "unallocQty": 5
+      }
+    ],
     "seeding": {
       "not_started": 0,
       "in_progress": 0,
-      "done": 0,
-      "total": 0,
+      "done": 434,
+      "total": 434,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 0,
-    "total_pcs": 0,
-    "alloc_pcs": 0,
-    "alloc_rate": 0,
-    "picked_pcs": 0,
-    "sow_pcs": 0,
-    "sow_rate": 0,
+    "total_orders": 17,
+    "total_pcs": 16858,
+    "alloc_pcs": 16848,
+    "alloc_rate": 99.9,
+    "picked_pcs": 10909,
+    "sow_pcs": 10909,
+    "sow_rate": 64.7,
     "ship_pcs": 0,
-    "ship_rate": 0,
-    "sku_plan": 0,
-    "sku_alloc": 0,
-    "sku_sow": 0,
-    "store_count": 0,
-    "by_store": {},
-    "unalloc_details": [],
+    "ship_rate": 0.0,
+    "sku_plan": 171,
+    "sku_alloc": 169,
+    "sku_sow": 143,
+    "store_count": 8,
+    "by_store": {
+      "快乐猴-龙岗三联商业广场店-047": 5986.0,
+      "快乐猴-罗沙大厦店-043": 3120.0,
+      "快乐猴-白云山水立方店-037": 3003.0,
+      "快乐猴-白云新世界云集店-042": 2716.0,
+      "快乐猴-南海比高商业中心店-041": 2012.0,
+      "快乐猴-海珠星汇广场店-034": 10.0,
+      "快乐猴-禅城东方广场店-018": 8.0,
+      "快乐猴-越秀越富广场店-031": 3.0
+    },
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-海珠星汇广场店-034",
+        "orderNo": "DB20260628504710",
+        "skuNum": 1,
+        "planQty": 5,
+        "allocQty": 0,
+        "unallocQty": 5
+      },
+      {
+        "receiverName": "快乐猴-禅城东方广场店-018",
+        "orderNo": "DB20260628504716",
+        "skuNum": 1,
+        "planQty": 5,
+        "allocQty": 0,
+        "unallocQty": 5
+      }
+    ],
     "status": "ok"
   },
   "transport": {
@@ -893,7 +1012,7 @@
       "冷冻": 0,
       "常温": 1
     },
-    "all_count": 17,
+    "all_count": 19,
     "planned_trips": {
       "total": 13,
       "by_store": {
@@ -905,13 +1024,13 @@
       },
       "details": [
         {
-          "waybillCode": "GZ2112081885",
-          "licensePlate": "粤ADD8869",
-          "driverName": "刘可",
+          "waybillCode": "GZ2112152143",
+          "licensePlate": "粤BEE1533",
+          "driverName": "王忠鲜",
           "carrierName": "斑马（广州2024）",
-          "temperatureLevel": 5,
-          "temperatureLevelName": "常温车",
-          "waybillStatus": 40,
+          "temperatureLevel": 1,
+          "temperatureLevelName": "冷冻车",
+          "waybillStatus": 10,
           "preCoolMonitorStatus": 3,
           "preCoolMonitorStatusName": "--",
           "deliveryPoiArrivalMonitorStatus": 1,
@@ -923,8 +1042,8 @@
           "totalArrivalPoiNum": 0,
           "deliveryPoiArrivalQualifiedCount": 0,
           "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州常温1仓",
-          "createTime": 1782643534000,
+          "firstLadingPoiName": "广州RDC生鲜2号仓-冻（现代物流园）",
+          "createTime": 1782650316000,
           "store": "禅城东方广场店"
         },
         {
@@ -951,6 +1070,29 @@
           "store": "禅城东方广场店"
         },
         {
+          "waybillCode": "GZ2112081885",
+          "licensePlate": "粤ADD8869",
+          "driverName": "刘可",
+          "carrierName": "斑马（广州2024）",
+          "temperatureLevel": 5,
+          "temperatureLevelName": "常温车",
+          "waybillStatus": 40,
+          "preCoolMonitorStatus": 3,
+          "preCoolMonitorStatusName": "--",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州常温1仓",
+          "createTime": 1782643534000,
+          "store": "禅城东方广场店"
+        },
+        {
           "waybillCode": "GZ2112081905",
           "licensePlate": "粤BP66335",
           "driverName": "龚云泰",
@@ -972,52 +1114,6 @@
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1782651139000,
           "store": "禅城东方广场店"
-        },
-        {
-          "waybillCode": "GZ2112152143",
-          "licensePlate": "粤BEE1533",
-          "driverName": "王忠鲜",
-          "carrierName": "斑马（广州2024）",
-          "temperatureLevel": 1,
-          "temperatureLevelName": "冷冻车",
-          "waybillStatus": 0,
-          "preCoolMonitorStatus": 3,
-          "preCoolMonitorStatusName": "--",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "广州RDC生鲜2号仓-冻（现代物流园）",
-          "createTime": 1782650316000,
-          "store": "禅城东方广场店"
-        },
-        {
-          "waybillCode": "GZ2112072962",
-          "licensePlate": "粤AA40645",
-          "driverName": "钟宜淳",
-          "carrierName": "运多多（广州）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 0,
-          "preCoolMonitorStatus": 3,
-          "preCoolMonitorStatusName": "--",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1782651227000,
-          "store": "番禺建华汇店"
         },
         {
           "waybillCode": "GZ2112088855",
@@ -1066,6 +1162,29 @@
           "store": "番禺建华汇店"
         },
         {
+          "waybillCode": "GZ2112072962",
+          "licensePlate": "粤AA40645",
+          "driverName": "钟宜淳",
+          "carrierName": "运多多（广州）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 0,
+          "preCoolMonitorStatus": 3,
+          "preCoolMonitorStatusName": "--",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1782651227000,
+          "store": "番禺建华汇店"
+        },
+        {
           "waybillCode": "GZ2111917608",
           "licensePlate": "粤SAF3058",
           "driverName": "卢连波",
@@ -1087,6 +1206,29 @@
           "firstLadingPoiName": "KLH-广州常温1仓",
           "createTime": 1782638018000,
           "store": "番禺建华汇店"
+        },
+        {
+          "waybillCode": "GZ2112152143",
+          "licensePlate": "粤BEE1533",
+          "driverName": "王忠鲜",
+          "carrierName": "斑马（广州2024）",
+          "temperatureLevel": 1,
+          "temperatureLevelName": "冷冻车",
+          "waybillStatus": 10,
+          "preCoolMonitorStatus": 3,
+          "preCoolMonitorStatusName": "--",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "广州RDC生鲜2号仓-冻（现代物流园）",
+          "createTime": 1782650316000,
+          "store": "南海国昌广场店"
         },
         {
           "waybillCode": "GZ2111954425",
@@ -1135,52 +1277,6 @@
           "store": "南海国昌广场店"
         },
         {
-          "waybillCode": "GZ2112152143",
-          "licensePlate": "粤BEE1533",
-          "driverName": "王忠鲜",
-          "carrierName": "斑马（广州2024）",
-          "temperatureLevel": 1,
-          "temperatureLevelName": "冷冻车",
-          "waybillStatus": 0,
-          "preCoolMonitorStatus": 3,
-          "preCoolMonitorStatusName": "--",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "广州RDC生鲜2号仓-冻（现代物流园）",
-          "createTime": 1782650316000,
-          "store": "南海国昌广场店"
-        },
-        {
-          "waybillCode": "GZ2112076928",
-          "licensePlate": "粤AGP5613",
-          "driverName": "李文斌",
-          "carrierName": "优乐（广州）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 0,
-          "preCoolMonitorStatus": 3,
-          "preCoolMonitorStatusName": "--",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1782651315000,
-          "store": "海珠星汇广场店"
-        },
-        {
           "waybillCode": "GZ2111950433",
           "licensePlate": "粤ABJ3346",
           "driverName": "林山",
@@ -1201,6 +1297,29 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷冻1仓",
           "createTime": 1782645369000,
+          "store": "海珠星汇广场店"
+        },
+        {
+          "waybillCode": "GZ2112076928",
+          "licensePlate": "粤AGP5613",
+          "driverName": "李文斌",
+          "carrierName": "优乐（广州）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 10,
+          "preCoolMonitorStatus": 3,
+          "preCoolMonitorStatusName": "--",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1782651315000,
           "store": "海珠星汇广场店"
         },
         {
@@ -1411,8 +1530,8 @@
       "N常温高叉司机": 1,
       "N常温收退": 1
     },
-    "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS(播种) / 9 人",
+    "predicted_efficiency": 1212.1,
+    "efficiency_formula": "10909 PCS(播种) / 9 人",
     "outbound_efficiency": 0.0,
     "outbound_efficiency_formula": "0 PCS / 7 人(拣播员)",
     "inbound_efficiency_workers": 1,

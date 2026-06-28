@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-28T11:53:04",
+  "timestamp": "2026-06-28T11:58:07",
   "date": "2026-06-28",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 13,
-      "waiting": 2
+      "signed": 14,
+      "waiting": 1
     },
     "ontime": {
       "ontime": 0,
-      "early": 13,
+      "early": 14,
       "late": 0,
       "total": 15,
       "rate": 0.0,
-      "early_rate": 86.7,
+      "early_rate": 93.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 12,
+      "total": 13,
       "done": 7,
-      "rate": 58.3,
+      "rate": 53.8,
       "pcs_done": 15209,
-      "sign_pcs_done": 21597
+      "sign_pcs_done": 23597
     },
     "qc": {
-      "total": 6,
+      "total": 7,
       "done": 0,
-      "pending": 6,
+      "pending": 7,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 6,
+      "bill_total": 7,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 6388,
+      "pcs_total": 8388,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 6,
+      "sku_total": 7,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 15,
-        "done": 13,
-        "rate": 86.7
+        "done": 14,
+        "rate": 93.3
       },
       "pcs": {
         "total": 16319,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 27,
-        "done": 25,
-        "rate": 92.6
+        "done": 26,
+        "rate": 96.3
       },
       "supplier": {
         "total": 12,
-        "done": 10,
-        "rate": 83.3,
+        "done": 11,
+        "rate": 91.7,
         "detail": {
+          "广东环球水产食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "上海熟成屋食品贸易有限公司": {
             "plan": 2,
             "done": 2
@@ -123,10 +127,6 @@
           "广州大链盟贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 0
-          },
-          "广东环球水产食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -150,17 +150,15 @@
           "pcs": 840,
           "timeSlot": "15:00 - 16:30",
           "seq": 1
-        },
-        {
-          "supplierName": "广东环球水产食品有限公司-快乐猴",
-          "billCode": "YY20260623003386",
-          "skuCount": 1,
-          "pcs": 2000,
-          "timeSlot": "15:30 - 16:00",
-          "seq": 2
         }
       ],
       "unloading": [
+        {
+          "supplierName": "广东环球水产食品有限公司-快乐猴",
+          "billCode": "YY20260623003386",
+          "signTime": "11:55",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "上海熟成屋食品贸易有限公司",
           "billCode": "YY20260623001874",
@@ -244,6 +242,14 @@
           "arrivalTime": "16:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "广东环球水产食品有限公司-快乐猴",
+          "skuName": "大号红虾仁 454g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -260,6 +266,17 @@
           "seq": 1
         },
         {
+          "supplierName": "广东环球水产食品有限公司-快乐猴",
+          "poNo": "CG2026062215684",
+          "reserveBillCode": "YY20260623003386",
+          "skuId": "1083202",
+          "skuName": "大号红虾仁 454g",
+          "purchaseQty": 2000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
           "supplierName": "广东立高食品营销有限公司-快乐猴",
           "poNo": "CG2026062312578",
           "reserveBillCode": "YY20260624000681",
@@ -268,7 +285,7 @@
           "purchaseQty": 1790,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 3
         },
         {
           "supplierName": "洪湖市万农水产食品有限公司-快乐猴",
@@ -279,7 +296,7 @@
           "purchaseQty": 1680,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
+          "seq": 4
         },
         {
           "supplierName": "山东仙坛鸿食品有限公司-快乐猴",
@@ -290,7 +307,7 @@
           "purchaseQty": 1500,
           "recvQty": 1460,
           "hasQc": false,
-          "seq": 4
+          "seq": 5
         },
         {
           "supplierName": "洪湖市万农水产食品有限公司-快乐猴",
@@ -301,7 +318,7 @@
           "purchaseQty": 1440,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 6
         },
         {
           "supplierName": "洪湖市万农水产食品有限公司-快乐猴",
@@ -312,7 +329,7 @@
           "purchaseQty": 610,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 6
+          "seq": 7
         },
         {
           "supplierName": "洪湖市万农水产食品有限公司-快乐猴",
@@ -323,7 +340,7 @@
           "purchaseQty": 550,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 8
         },
         {
           "supplierName": "上海熟成屋食品贸易有限公司",
@@ -334,7 +351,7 @@
           "purchaseQty": 500,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 9
         },
         {
           "supplierName": "祐康（杭州）食品制造有限公司-快乐猴",
@@ -345,7 +362,7 @@
           "purchaseQty": 402,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 10
         },
         {
           "supplierName": "上海熟成屋食品贸易有限公司",
@@ -356,7 +373,7 @@
           "purchaseQty": 385,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 10
+          "seq": 11
         },
         {
           "supplierName": "厦门陈纪乐肴居食品有限公司-快乐猴",
@@ -367,7 +384,7 @@
           "purchaseQty": 35,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 11
+          "seq": 12
         }
       ],
       "qc_recv_pending": [],

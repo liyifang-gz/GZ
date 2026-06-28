@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-28T07:54:21",
+  "timestamp": "2026-06-28T08:05:04",
   "date": "2026-06-28",
   "warehouse": "GZ0209",
   "inbound": {
@@ -49,12 +49,12 @@
       "sku_rate": 0
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
+      "total": 16721,
+      "done": 16721,
+      "rate": 100.0,
+      "sku_total": 25,
+      "sku_done": 25,
+      "sku_rate": 100.0,
       "details": []
     },
     "dimensions": {
@@ -403,34 +403,56 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 0,
+      "total": 11,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 0,
+      "total": 11,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 0,
+      "pcs_total": 1517,
       "pcs_rate": 0.0
     },
     "packing": {
       "total": 1,
-      "done": 1,
-      "rate": 100.0
+      "done": 0,
+      "rate": 0.0
     },
-    "uncaged_details": [],
-    "unpacked_details": [],
+    "uncaged_details": [
+      {
+        "containerCode": "RQ-28-03-0900345",
+        "poiName": "海珠星汇广场店",
+        "qty": 915
+      },
+      {
+        "containerCode": "RQ-28-03-0900003",
+        "poiName": "龙岗三联商业广场店",
+        "qty": 602
+      }
+    ],
+    "unpacked_details": [
+      {
+        "containerCode": "RQ-28-03-0900345",
+        "poiName": "海珠星汇广场店",
+        "qty": 915
+      },
+      {
+        "containerCode": "RQ-28-03-0900003",
+        "poiName": "龙岗三联商业广场店",
+        "qty": 602
+      }
+    ],
     "shipping": {
-      "total": 0,
+      "total": 1517,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 0,
+      "multi_pallet_total": 11,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
@@ -449,48 +471,65 @@
           "planOutTime": "06-28 22:00"
         }
       ],
-      "outbound_efficiency": 0.0,
-      "outbound_efficiency_formula": "0 PCS / 7 人(拣播员)"
+      "outbound_efficiency": 216.7,
+      "outbound_efficiency_formula": "1517 PCS / 7 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 0,
+        "total": 1517,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
+        "not_caged": 1517,
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
         "cage_rate": 0.0,
-        "sowed_picked": 0
+        "sowed_picked": 1517
       },
       "sku": {
-        "total": 0,
+        "total": 11,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
-        "cage_rate": 0
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
+        "cage_rate": 0.0
       }
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 0,
-      "alloc_pcs": 0,
-      "alloc_rate": 0,
-      "picked_pcs": 0,
-      "sow_pcs": 0,
-      "sow_rate": 0,
+      "plan_pcs": 21711,
+      "alloc_pcs": 17407,
+      "alloc_rate": 80.2,
+      "picked_pcs": 1517,
+      "sow_pcs": 1517,
+      "sow_rate": 8.7,
       "ship_pcs": 0,
-      "ship_rate": 0,
-      "sku_plan": 0,
-      "sku_alloc": 0,
-      "sku_sow": 0,
+      "ship_rate": 0.0,
+      "sku_plan": 49,
+      "sku_alloc": 49,
+      "sku_sow": 16,
       "sku_ship": 0,
-      "total_orders": 0
+      "total_orders": 11
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-罗沙大厦店-043",
+        "orderNo": "DB20260627530085",
+        "skuNum": 6,
+        "planQty": 2688,
+        "allocQty": 106,
+        "unallocQty": 2582
+      },
+      {
+        "receiverName": "快乐猴-南海比高商业中心店-041",
+        "orderNo": "DB20260627530086",
+        "skuNum": 5,
+        "planQty": 1812,
+        "allocQty": 90,
+        "unallocQty": 1722
+      }
+    ],
     "seeding": {
       "not_started": 0,
       "in_progress": 0,
@@ -500,21 +539,49 @@
     }
   },
   "plan": {
-    "total_orders": 0,
-    "total_pcs": 0,
-    "alloc_pcs": 0,
-    "alloc_rate": 0,
-    "picked_pcs": 0,
-    "sow_pcs": 0,
-    "sow_rate": 0,
+    "total_orders": 11,
+    "total_pcs": 21711,
+    "alloc_pcs": 17407,
+    "alloc_rate": 80.2,
+    "picked_pcs": 1517,
+    "sow_pcs": 1517,
+    "sow_rate": 8.7,
     "ship_pcs": 0,
-    "ship_rate": 0,
-    "sku_plan": 0,
-    "sku_alloc": 0,
-    "sku_sow": 0,
-    "store_count": 0,
-    "by_store": {},
-    "unalloc_details": [],
+    "ship_rate": 0.0,
+    "sku_plan": 49,
+    "sku_alloc": 49,
+    "sku_sow": 16,
+    "store_count": 11,
+    "by_store": {
+      "快乐猴-大朗市场店-049": 6054.0,
+      "快乐猴-龙岗三联商业广场店-047": 5986.0,
+      "快乐猴-罗沙大厦店-043": 2688.0,
+      "快乐猴-白云新世界云集店-042": 2434.0,
+      "快乐猴-南海比高商业中心店-041": 1812.0,
+      "快乐猴-海珠星汇广场店-034": 915.0,
+      "快乐猴-越秀越富广场店-031": 906.0,
+      "快乐猴-禅城东方广场店-018": 901.0,
+      "快乐猴-番禺建华汇店-019": 12.0,
+      "快乐猴-白云山水立方店-037": 2.0
+    },
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-罗沙大厦店-043",
+        "orderNo": "DB20260627530085",
+        "skuNum": 6,
+        "planQty": 2688,
+        "allocQty": 106,
+        "unallocQty": 2582
+      },
+      {
+        "receiverName": "快乐猴-南海比高商业中心店-041",
+        "orderNo": "DB20260627530086",
+        "skuNum": 5,
+        "planQty": 1812,
+        "allocQty": 90,
+        "unallocQty": 1722
+      }
+    ],
     "status": "ok"
   },
   "transport": {
@@ -2390,10 +2457,10 @@
       "N常温高叉司机": 1,
       "N常温收退": 1
     },
-    "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS(播种) / 9 人",
-    "outbound_efficiency": 0.0,
-    "outbound_efficiency_formula": "0 PCS / 7 人(拣播员)",
+    "predicted_efficiency": 168.6,
+    "efficiency_formula": "1517 PCS(播种) / 9 人",
+    "outbound_efficiency": 216.7,
+    "outbound_efficiency_formula": "1517 PCS / 7 人(拣播员)",
     "inbound_efficiency_workers": 1,
     "status": "ok"
   }

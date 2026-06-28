@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-28T12:43:43",
+  "timestamp": "2026-06-28T12:48:48",
   "date": "2026-06-28",
   "warehouse": "GZ0211",
   "inbound": {
@@ -32,45 +32,30 @@
     },
     "qc": {
       "total": 5,
-      "done": 0,
-      "pending": 5,
-      "passed": 0,
+      "done": 2,
+      "pending": 3,
+      "passed": 2,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 40.0,
+      "bill_done": 2,
       "bill_total": 5,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 2385,
+      "pcs_passed": 2385,
       "pcs_total": 7951,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 30.0,
+      "sku_done": 2,
       "sku_total": 5,
-      "sku_rate": 0.0
+      "sku_rate": 40.0
     },
     "putaway": {
-      "total": 15346,
-      "done": 13586,
-      "rate": 88.5,
-      "sku_total": 31,
-      "sku_done": 28,
-      "sku_rate": 90.3,
-      "details": [
-        {
-          "poNo": "CG2026061810138",
-          "hopePcs": 300,
-          "putPcs": 0,
-          "hopeSku": 1,
-          "putSku": 0
-        },
-        {
-          "poNo": "CG2026061516340",
-          "hopePcs": 1460,
-          "putPcs": 0,
-          "hopeSku": 2,
-          "putSku": 0
-        }
-      ]
+      "total": 0,
+      "done": 0,
+      "rate": 0,
+      "sku_total": 0,
+      "sku_done": 0,
+      "sku_rate": 0,
+      "details": []
     },
     "dimensions": {
       "reserve": {
@@ -195,29 +180,26 @@
         {
           "seq": 3,
           "supplierName": "上海熟成屋食品贸易有限公司",
-          "skuName": "澳洲和牛M4-5板腱牛排 150g",
-          "arrivalTime": "16:00",
-          "unloadFinishTime": "12:07",
-          "statusLabel": "首次进行中"
-        },
-        {
-          "seq": 4,
-          "supplierName": "上海熟成屋食品贸易有限公司",
           "skuName": "快乐猴 原切牛腩块 1kg",
           "arrivalTime": "16:00",
           "unloadFinishTime": "12:07",
           "statusLabel": "待质检"
-        },
-        {
-          "seq": 5,
-          "supplierName": "广东环球水产食品有限公司-快乐猴",
-          "skuName": "大号红虾仁 454g",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "12:30",
-          "statusLabel": "待质检"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "上海熟成屋食品贸易有限公司",
+          "skuName": "澳洲和牛M4-5板腱牛排 150g",
+          "completeTime": "12:44",
+          "waitingMins": 4
+        },
+        {
+          "supplierName": "广东环球水产食品有限公司-快乐猴",
+          "skuName": "大号红虾仁 454g",
+          "completeTime": "12:48",
+          "waitingMins": 0
+        }
+      ],
       "signed_not_recv": [
         {
           "supplierName": "广东立高食品营销有限公司-快乐猴",
@@ -238,7 +220,7 @@
           "skuName": "大号红虾仁 454g",
           "purchaseQty": 2000,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 2
         },
         {
@@ -326,7 +308,7 @@
           "skuName": "澳洲和牛M4-5板腱牛排 150g",
           "purchaseQty": 385,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 10
         }
       ],
@@ -379,7 +361,7 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 5273,
+      "pcs_total": 0,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -419,7 +401,7 @@
         "pick_rate": 0,
         "sow_rate": 0,
         "cage_rate": 0.0,
-        "sowed_picked": 5273
+        "sowed_picked": 0
       },
       "sku": {
         "total": 0,
@@ -433,51 +415,44 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 5273,
-      "alloc_pcs": 5273,
-      "alloc_rate": 100.0,
+      "plan_pcs": 0,
+      "alloc_pcs": 0,
+      "alloc_rate": 0,
       "picked_pcs": 0,
       "sow_pcs": 0,
-      "sow_rate": 0.0,
+      "sow_rate": 0,
       "ship_pcs": 0,
-      "ship_rate": 0.0,
-      "sku_plan": 285,
-      "sku_alloc": 285,
+      "ship_rate": 0,
+      "sku_plan": 0,
+      "sku_alloc": 0,
       "sku_sow": 0,
       "sku_ship": 0,
-      "total_orders": 10
+      "total_orders": 0
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 102,
-      "in_progress": 10,
-      "done": 59,
-      "total": 171,
+      "not_started": 0,
+      "in_progress": 0,
+      "done": 0,
+      "total": 0,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 10,
-    "total_pcs": 5273,
-    "alloc_pcs": 5273,
-    "alloc_rate": 100.0,
+    "total_orders": 0,
+    "total_pcs": 0,
+    "alloc_pcs": 0,
+    "alloc_rate": 0,
     "picked_pcs": 0,
     "sow_pcs": 0,
-    "sow_rate": 0.0,
+    "sow_rate": 0,
     "ship_pcs": 0,
-    "ship_rate": 0.0,
-    "sku_plan": 285,
-    "sku_alloc": 285,
+    "ship_rate": 0,
+    "sku_plan": 0,
+    "sku_alloc": 0,
     "sku_sow": 0,
-    "store_count": 6,
-    "by_store": {
-      "快乐猴-南海国昌广场店-023": 1187.0,
-      "快乐猴-禅城东方广场店-018": 1112.0,
-      "快乐猴-番禺建华汇店-019": 1059.0,
-      "快乐猴-海珠星汇广场店-034": 1005.0,
-      "快乐猴-越秀越富广场店-031": 862.0,
-      "快乐猴-白云山水立方店-037": 48.0
-    },
+    "store_count": 0,
+    "by_store": {},
     "unalloc_details": [],
     "status": "ok"
   },
@@ -494,7 +469,7 @@
       "冷冻": 0,
       "常温": 0
     },
-    "all_count": 0,
+    "all_count": 1,
     "planned_trips": {
       "total": 0,
       "by_store": {},

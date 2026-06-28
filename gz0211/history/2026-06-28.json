@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-06-28T14:55:30",
+  "timestamp": "2026-06-28T15:10:47",
   "date": "2026-06-28",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 17,
-      "signed": 14,
-      "waiting": 1
+      "signed": 15,
+      "waiting": 0
     },
     "ontime": {
-      "ontime": 0,
+      "ontime": 1,
       "early": 14,
       "late": 0,
       "total": 15,
-      "rate": 0.0,
+      "rate": 6.7,
       "early_rate": 93.3,
       "late_rate": 0.0
     },
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 13,
-      "done": 13,
+      "total": 14,
+      "done": 14,
       "rate": 100.0,
-      "pcs_done": 23597,
-      "sign_pcs_done": 23597
+      "pcs_done": 24437,
+      "sign_pcs_done": 24437
     },
     "qc": {
-      "total": 3,
+      "total": 4,
       "done": 3,
-      "pending": 0,
+      "pending": 1,
       "passed": 3,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 75.0,
       "bill_done": 3,
-      "bill_total": 3,
+      "bill_total": 4,
       "pcs_done": 2885,
       "pcs_passed": 2885,
-      "pcs_total": 2885,
+      "pcs_total": 3725,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 77.4,
       "sku_done": 3,
-      "sku_total": 3,
-      "sku_rate": 100.0
+      "sku_total": 4,
+      "sku_rate": 75.0
     },
     "putaway": {
       "total": 16231,
@@ -89,8 +89,8 @@
     "dimensions": {
       "reserve": {
         "total": 15,
-        "done": 14,
-        "rate": 93.3
+        "done": 15,
+        "rate": 100.0
       },
       "pcs": {
         "total": 16319,
@@ -101,15 +101,19 @@
       },
       "sku": {
         "total": 27,
-        "done": 26,
-        "rate": 96.3
+        "done": 27,
+        "rate": 100.0
       },
       "supplier": {
         "total": 12,
-        "done": 11,
-        "rate": 91.7,
+        "done": 12,
+        "rate": 100.0,
         "detail": {
           "广东立高食品营销有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "广州大链盟贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 1
           },
@@ -152,10 +156,6 @@
           "山东华鸭食品科技有限公司-山东华鸭食品科技有限公司": {
             "plan": 1,
             "done": 1
-          },
-          "广州大链盟贸易有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -171,61 +171,39 @@
           "poStatus": "已完成"
         }
       ],
-      "unsigned": [
+      "unsigned": [],
+      "unloading": [],
+      "qc_pending": [
         {
+          "seq": 1,
           "supplierName": "广州大链盟贸易有限公司-快乐猴",
-          "billCode": "YY20260623009576",
-          "skuCount": 1,
-          "pcs": 840,
-          "timeSlot": "15:00 - 16:30",
-          "seq": 1
+          "skuName": "玛氏脆香米 小熊棒棒巧克力口味冰淇淋 42g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "15:01",
+          "statusLabel": "待质检"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "上海熟成屋食品贸易有限公司",
           "skuName": "澳洲和牛M4-5板腱牛排 150g",
           "completeTime": "12:44",
-          "waitingMins": 131
+          "waitingMins": 146
         },
         {
           "supplierName": "上海熟成屋食品贸易有限公司",
           "skuName": "快乐猴 原切牛腩块 1kg",
           "completeTime": "14:35",
-          "waitingMins": 20
+          "waitingMins": 35
         },
         {
           "supplierName": "广东环球水产食品有限公司-快乐猴",
           "skuName": "大号红虾仁 454g",
           "completeTime": "12:48",
-          "waitingMins": 127
+          "waitingMins": 142
         }
       ],
       "signed_not_recv": [
-        {
-          "supplierName": "广东立高食品营销有限公司-快乐猴",
-          "poNo": "CG2026062312578",
-          "reserveBillCode": "YY20260624000681",
-          "skuId": "1378937",
-          "skuName": "(原料)葡式蛋挞液 907g",
-          "purchaseQty": 3276,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 1
-        },
-        {
-          "supplierName": "广东立高食品营销有限公司-快乐猴",
-          "poNo": "CG2026062312578",
-          "reserveBillCode": "YY20260624000681",
-          "skuId": "1379176",
-          "skuName": "(原料)爆酥葡挞皮  750g",
-          "purchaseQty": 1790,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 2
-        },
         {
           "supplierName": "山东仙坛鸿食品有限公司-快乐猴",
           "poNo": "CG2026061516340",
@@ -235,7 +213,18 @@
           "purchaseQty": 1500,
           "recvQty": 1460,
           "hasQc": false,
-          "seq": 3
+          "seq": 1
+        },
+        {
+          "supplierName": "广州大链盟贸易有限公司-快乐猴",
+          "poNo": "CG2026062215099",
+          "reserveBillCode": "YY20260623009576",
+          "skuId": "664757",
+          "skuName": "玛氏脆香米 小熊棒棒巧克力口味冰淇淋 42g",
+          "purchaseQty": 840,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
         }
       ],
       "qc_recv_pending": [],
@@ -454,10 +443,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 41,
+      "not_started": 39,
       "in_progress": 4,
-      "done": 195,
-      "total": 240,
+      "done": 210,
+      "total": 253,
       "status": "ok"
     }
   },
@@ -488,14 +477,14 @@
   },
   "transport": {
     "serial_count": 0,
-    "total_depart": 0,
-    "serial_rate": null,
+    "total_depart": 2,
+    "serial_rate": 0.0,
     "trip_total": null,
     "trip_depart": null,
     "trip_arrive": null,
     "status": "ok",
     "temp_breakdown": {
-      "冷藏": 0,
+      "冷藏": 2,
       "冷冻": 0,
       "常温": 0
     },

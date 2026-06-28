@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-28T09:00:30",
+  "timestamp": "2026-06-28T09:05:43",
   "date": "2026-06-28",
   "warehouse": "GZ0209",
   "inbound": {
     "reserve": {
-      "total": 41,
-      "signed": 7,
-      "waiting": 26
+      "total": 43,
+      "signed": 8,
+      "waiting": 27
     },
     "ontime": {
-      "ontime": 0,
+      "ontime": 1,
       "early": 7,
       "late": 0,
-      "total": 33,
-      "rate": 0.0,
-      "early_rate": 21.2,
+      "total": 35,
+      "rate": 2.9,
+      "early_rate": 20.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 6,
+      "total": 7,
       "done": 4,
-      "rate": 66.7,
+      "rate": 57.1,
       "pcs_done": 7572,
-      "sign_pcs_done": 15168
+      "sign_pcs_done": 15198
     },
     "qc": {
-      "total": 4,
+      "total": 5,
       "done": 0,
-      "pending": 4,
+      "pending": 5,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 4,
+      "bill_total": 5,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 7596,
+      "pcs_total": 7626,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 4,
+      "sku_total": 5,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -59,9 +59,9 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 33,
-        "done": 7,
-        "rate": 21.2
+        "total": 35,
+        "done": 8,
+        "rate": 22.9
       },
       "pcs": {
         "total": 205047,
@@ -71,15 +71,23 @@
         "recv_rate": 8.2
       },
       "sku": {
-        "total": 76,
-        "done": 18,
-        "rate": 23.7
+        "total": 82,
+        "done": 19,
+        "rate": 23.2
       },
       "supplier": {
-        "total": 29,
-        "done": 6,
-        "rate": 20.7,
+        "total": 30,
+        "done": 7,
+        "rate": 23.3,
         "detail": {
+          "广州市新风彩品牌管理有限公司-快乐猴": {
+            "plan": 2,
+            "done": 0
+          },
+          "晋江市宏海塑料实业有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "东莞市天骏生物科技有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -103,10 +111,6 @@
           "中山市明润商贸有限公司-快乐猴": {
             "plan": 2,
             "done": 2
-          },
-          "晋江市宏海塑料实业有限公司": {
-            "plan": 1,
-            "done": 0
           },
           "北京锦顺硕达商贸有限公司-快乐猴": {
             "plan": 1,
@@ -155,10 +159,6 @@
           "福建省美巧乐食品有限公司": {
             "plan": 1,
             "done": 0
-          },
-          "成都锦味嘉食品有限公司": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -176,11 +176,11 @@
       ],
       "unsigned": [
         {
-          "supplierName": "晋江市宏海塑料实业有限公司",
-          "billCode": "YY20260627004023",
-          "skuCount": 1,
-          "pcs": 30,
-          "timeSlot": "09:00 - 09:30",
+          "supplierName": "广州市新风彩品牌管理有限公司-快乐猴",
+          "billCode": "YY20260628000556",
+          "skuCount": 3,
+          "pcs": 384,
+          "timeSlot": "13:30 - 14:00",
           "seq": 1
         },
         {
@@ -362,6 +362,13 @@
       ],
       "unloading": [
         {
+          "supplierName": "晋江市宏海塑料实业有限公司",
+          "billCode": "YY20260627004023",
+          "signTime": "09:05",
+          "unloadStartTime": "09:05",
+          "status": "卸货中"
+        },
+        {
           "supplierName": "东莞市天骏生物科技有限公司-快乐猴",
           "billCode": "YY20260618003932",
           "signTime": "08:39",
@@ -404,6 +411,14 @@
           "supplierName": "东莞市天骏生物科技有限公司-快乐猴",
           "skuName": "快乐猴 饮用纯净水 5L",
           "arrivalTime": "10:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "晋江市宏海塑料实业有限公司",
+          "skuName": "快乐猴-2214盒220*140*70（分体）-榴莲专用",
+          "arrivalTime": "09:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
@@ -453,6 +468,17 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 4
+        },
+        {
+          "supplierName": "晋江市宏海塑料实业有限公司",
+          "poNo": "CG202606251353",
+          "reserveBillCode": "YY20260627004023",
+          "skuId": "1137729",
+          "skuName": "快乐猴-2214盒220*140*70（分体）-榴莲专用",
+          "purchaseQty": 30,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
         }
       ],
       "qc_recv_pending": [],

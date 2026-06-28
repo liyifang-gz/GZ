@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-29T07:38:40",
+  "timestamp": "2026-06-29T07:44:32",
   "date": "2026-06-29",
   "warehouse": "GZ0211",
   "inbound": {
@@ -343,8 +343,8 @@
       "load_rate_shipped": "--",
       "low_load_containers": [],
       "all_containers_detail": [],
-      "outbound_efficiency": 0,
-      "outbound_efficiency_formula": "--"
+      "outbound_efficiency": 0.0,
+      "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
@@ -1947,14 +1947,27 @@
     "temp_status": "ok"
   },
   "attendance": {
-    "total_inservice": 0,
+    "total_inservice": 2,
     "schedule": 0,
     "attendance": 0,
-    "rate": 0,
-    "by_job": {},
+    "rate": 0.0,
+    "by_job": {
+      "N高叉司机": {
+        "inservice": 2,
+        "schedule": 0,
+        "attendance": 0,
+        "rate": 0.0
+      }
+    },
+    "by_pos_total": {
+      "N冷冻高叉司机": 2
+    },
+    "by_pos_scheduled": {},
     "predicted_efficiency": 0.0,
     "efficiency_formula": "0 PCS(播种) / 0 人",
-    "status": "error",
-    "error": "the JSON object must be str, bytes or bytearray, not dict"
+    "outbound_efficiency": 0.0,
+    "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)",
+    "inbound_efficiency_workers": 0,
+    "status": "ok"
   }
 }

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-29T11:39:53",
+  "timestamp": "2026-06-29T11:50:08",
   "date": "2026-06-29",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 16,
-      "signed": 9,
-      "waiting": 5
+      "signed": 10,
+      "waiting": 4
     },
     "ontime": {
       "ontime": 0,
-      "early": 9,
+      "early": 10,
       "late": 0,
       "total": 14,
       "rate": 0.0,
-      "early_rate": 64.3,
+      "early_rate": 71.4,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 9,
+      "total": 10,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 11215
+      "sign_pcs_done": 12715
     },
     "qc": {
-      "total": 35,
+      "total": 36,
       "done": 7,
-      "pending": 28,
+      "pending": 29,
       "passed": 7,
       "rejected": 0,
-      "rate": 20.0,
+      "rate": 19.4,
       "bill_done": 7,
-      "bill_total": 35,
+      "bill_total": 36,
       "pcs_done": 4870,
       "pcs_passed": 4870,
-      "pcs_total": 11215,
+      "pcs_total": 12715,
       "pcs_rejected": 0,
-      "pcs_rate": 43.4,
+      "pcs_rate": 38.3,
       "sku_done": 7,
-      "sku_total": 25,
-      "sku_rate": 28.0
+      "sku_total": 26,
+      "sku_rate": 26.9
     },
     "putaway": {
       "total": 26076,
@@ -82,8 +82,8 @@
     "dimensions": {
       "reserve": {
         "total": 14,
-        "done": 9,
-        "rate": 64.3
+        "done": 10,
+        "rate": 71.4
       },
       "pcs": {
         "total": 30810,
@@ -94,14 +94,18 @@
       },
       "sku": {
         "total": 43,
-        "done": 35,
-        "rate": 81.4
+        "done": 36,
+        "rate": 83.7
       },
       "supplier": {
         "total": 12,
-        "done": 7,
-        "rate": 58.3,
+        "done": 8,
+        "rate": 66.7,
         "detail": {
+          "日冷食品贸易（上海）有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "山东胜农食品有限公司": {
             "plan": 1,
             "done": 1
@@ -131,10 +135,6 @@
             "done": 2
           },
           "三全食品股份有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "日冷食品贸易（上海）有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -198,20 +198,12 @@
           "seq": 1
         },
         {
-          "supplierName": "日冷食品贸易（上海）有限公司-快乐猴",
-          "billCode": "YY20260626000422",
-          "skuCount": 1,
-          "pcs": 1500,
-          "timeSlot": "14:30 - 16:30",
-          "seq": 2
-        },
-        {
           "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
           "billCode": "YY20260625002222",
           "skuCount": 1,
           "pcs": 310,
           "timeSlot": "14:30 - 15:00",
-          "seq": 3
+          "seq": 2
         },
         {
           "supplierName": "福建御味香冷冻食品有限公司-快乐猴",
@@ -219,7 +211,7 @@
           "skuCount": 1,
           "pcs": 720,
           "timeSlot": "16:00 - 16:30",
-          "seq": 4
+          "seq": 3
         },
         {
           "supplierName": "河南霍嘉优品网络科技有限公司",
@@ -227,10 +219,16 @@
           "skuCount": 2,
           "pcs": 320,
           "timeSlot": "16:00 - 16:30",
-          "seq": 5
+          "seq": 4
         }
       ],
       "unloading": [
+        {
+          "supplierName": "日冷食品贸易（上海）有限公司-快乐猴",
+          "billCode": "YY20260626000422",
+          "signTime": "11:50",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "山东胜农食品有限公司",
           "billCode": "YY20260623002934",
@@ -510,6 +508,14 @@
           "arrivalTime": "14:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 29,
+          "supplierName": "日冷食品贸易（上海）有限公司-快乐猴",
+          "skuName": "碳烤鸡肉软骨串400g(N)",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -517,46 +523,57 @@
           "supplierName": "山东胜农食品有限公司",
           "skuName": "冷冻鸡爪 1kg",
           "completeTime": "11:13",
-          "waitingMins": 27
+          "waitingMins": 37
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅根 1kg",
           "completeTime": "11:02",
-          "waitingMins": 37
+          "waitingMins": 48
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡琵琶腿 1kg",
           "completeTime": "10:58",
-          "waitingMins": 41
+          "waitingMins": 52
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅尖 1kg",
           "completeTime": "10:57",
-          "waitingMins": 43
+          "waitingMins": 53
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅中  1kg",
           "completeTime": "11:04",
-          "waitingMins": 35
+          "waitingMins": 45
         },
         {
           "supplierName": "北京月盛斋清真食品有限公司-快乐猴",
           "skuName": "月盛斋 澳洲谷饲肥牛肉卷  400g",
           "completeTime": "11:18",
-          "waitingMins": 21
+          "waitingMins": 31
         },
         {
           "supplierName": "北京月盛斋清真食品有限公司-快乐猴",
           "skuName": "月盛斋 羔羊肉片 400g",
           "completeTime": "11:19",
-          "waitingMins": 20
+          "waitingMins": 30
         }
       ],
       "signed_not_recv": [
+        {
+          "supplierName": "日冷食品贸易（上海）有限公司-快乐猴",
+          "poNo": "CG2026062510543",
+          "reserveBillCode": "YY20260626000422",
+          "skuId": "1159783",
+          "skuName": "碳烤鸡肉软骨串400g(N)",
+          "purchaseQty": 1500,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
         {
           "supplierName": "杭州众点食品科技有限公司-快乐猴",
           "poNo": "CG2026062215110",
@@ -566,7 +583,7 @@
           "purchaseQty": 1296,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 2
         },
         {
           "supplierName": "上海熟成屋食品贸易有限公司",
@@ -577,7 +594,7 @@
           "purchaseQty": 1200,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 3
         },
         {
           "supplierName": "荣成市鸿耀水产捕捞有限公司",
@@ -588,7 +605,7 @@
           "purchaseQty": 954,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
+          "seq": 4
         },
         {
           "supplierName": "荣成市鸿耀水产捕捞有限公司",
@@ -599,7 +616,7 @@
           "purchaseQty": 760,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 5
         },
         {
           "supplierName": "德州市金彩凤食品有限公司-快乐猴",
@@ -610,7 +627,7 @@
           "purchaseQty": 744,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 6
         },
         {
           "supplierName": "杭州众点食品科技有限公司-快乐猴",
@@ -621,7 +638,7 @@
           "purchaseQty": 276,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 6
+          "seq": 7
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -632,7 +649,7 @@
           "purchaseQty": 170,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 8
         },
         {
           "supplierName": "杭州众点食品科技有限公司-快乐猴",
@@ -643,7 +660,7 @@
           "purchaseQty": 152,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 9
         },
         {
           "supplierName": "荣成市鸿耀水产捕捞有限公司",
@@ -654,7 +671,7 @@
           "purchaseQty": 120,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 10
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -665,7 +682,7 @@
           "purchaseQty": 109,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 10
+          "seq": 11
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -676,7 +693,7 @@
           "purchaseQty": 96,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 11
+          "seq": 12
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -687,7 +704,7 @@
           "purchaseQty": 74,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 12
+          "seq": 13
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -698,7 +715,7 @@
           "purchaseQty": 64,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 13
+          "seq": 14
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -709,7 +726,7 @@
           "purchaseQty": 60,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 14
+          "seq": 15
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -720,7 +737,7 @@
           "purchaseQty": 56,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 15
+          "seq": 16
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -731,7 +748,7 @@
           "purchaseQty": 38,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 16
+          "seq": 17
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -742,7 +759,7 @@
           "purchaseQty": 32,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 17
+          "seq": 18
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -753,7 +770,7 @@
           "purchaseQty": 28,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 18
+          "seq": 19
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -764,7 +781,7 @@
           "purchaseQty": 26,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 19
+          "seq": 20
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -775,7 +792,7 @@
           "purchaseQty": 25,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 20
+          "seq": 21
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -786,7 +803,7 @@
           "purchaseQty": 17,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 21
+          "seq": 22
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -797,7 +814,7 @@
           "purchaseQty": 14,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 22
+          "seq": 23
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -808,7 +825,7 @@
           "purchaseQty": 10,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 23
+          "seq": 24
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -819,7 +836,7 @@
           "purchaseQty": 8,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 24
+          "seq": 25
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -830,7 +847,7 @@
           "purchaseQty": 6,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 25
+          "seq": 26
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -841,7 +858,7 @@
           "purchaseQty": 5,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 26
+          "seq": 27
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -852,7 +869,7 @@
           "purchaseQty": 3,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 27
+          "seq": 28
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -863,7 +880,7 @@
           "purchaseQty": 2,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 28
+          "seq": 29
         }
       ],
       "qc_recv_pending": [],
@@ -898,7 +915,7 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 0,
+      "pcs_total": 48,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -938,7 +955,7 @@
         "pick_rate": 0,
         "sow_rate": 0,
         "cage_rate": 0.0,
-        "sowed_picked": 0
+        "sowed_picked": 48
       },
       "sku": {
         "total": 0,
@@ -952,19 +969,19 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 0,
-      "alloc_pcs": 0,
-      "alloc_rate": 0,
+      "plan_pcs": 48,
+      "alloc_pcs": 48,
+      "alloc_rate": 100.0,
       "picked_pcs": 0,
       "sow_pcs": 0,
-      "sow_rate": 0,
+      "sow_rate": 0.0,
       "ship_pcs": 0,
-      "ship_rate": 0,
-      "sku_plan": 0,
-      "sku_alloc": 0,
+      "ship_rate": 0.0,
+      "sku_plan": 2,
+      "sku_alloc": 2,
       "sku_sow": 0,
       "sku_ship": 0,
-      "total_orders": 0
+      "total_orders": 2
     },
     "unalloc_details": [],
     "seeding": {
@@ -976,20 +993,23 @@
     }
   },
   "plan": {
-    "total_orders": 0,
-    "total_pcs": 0,
-    "alloc_pcs": 0,
-    "alloc_rate": 0,
+    "total_orders": 2,
+    "total_pcs": 48,
+    "alloc_pcs": 48,
+    "alloc_rate": 100.0,
     "picked_pcs": 0,
     "sow_pcs": 0,
-    "sow_rate": 0,
+    "sow_rate": 0.0,
     "ship_pcs": 0,
-    "ship_rate": 0,
-    "sku_plan": 0,
-    "sku_alloc": 0,
+    "ship_rate": 0.0,
+    "sku_plan": 2,
+    "sku_alloc": 2,
     "sku_sow": 0,
-    "store_count": 0,
-    "by_store": {},
+    "store_count": 2,
+    "by_store": {
+      "快乐猴-海珠星汇广场店-034": 30.0,
+      "快乐猴-番禺建华汇店-019": 18.0
+    },
     "unalloc_details": [],
     "status": "ok"
   },

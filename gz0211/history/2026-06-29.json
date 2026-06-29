@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-29T09:07:55",
+  "timestamp": "2026-06-29T09:17:50",
   "date": "2026-06-29",
   "warehouse": "GZ0211",
   "inbound": {
@@ -291,9 +291,9 @@
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 0.0,
-      "efficiency_formula": "15586 PCS / 0 人",
-      "inbound_schedule": 0
+      "efficiency": 15586.0,
+      "efficiency_formula": "15586 PCS / 1 人",
+      "inbound_schedule": 1
     }
   },
   "outbound": {
@@ -344,7 +344,7 @@
       "low_load_containers": [],
       "all_containers_detail": [],
       "outbound_efficiency": 0.0,
-      "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)"
+      "outbound_efficiency_formula": "0 PCS / 1 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
@@ -386,10 +386,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 34,
+      "not_started": 42,
       "in_progress": 0,
       "done": 0,
-      "total": 34,
+      "total": 42,
       "status": "ok"
     }
   },
@@ -649,7 +649,7 @@
           "carrierName": "斑马（广州2024）",
           "temperatureLevel": 2,
           "temperatureLevelName": "冷藏车",
-          "waybillStatus": 50,
+          "waybillStatus": 60,
           "preCoolMonitorStatus": 1,
           "preCoolMonitorStatusName": "合格",
           "deliveryPoiArrivalMonitorStatus": 1,
@@ -945,13 +945,13 @@
       "status": "ok"
     },
     "departed_trips": {
-      "total": 17,
+      "total": 18,
       "in_transit": 1,
-      "arrived": 16,
+      "arrived": 17,
       "by_store": {
         "禅城东方广场店": 4,
         "番禺建华汇店": 5,
-        "南海国昌广场店": 3,
+        "南海国昌广场店": 4,
         "海珠星汇广场店": 5,
         "越秀越富广场店": 4
       },
@@ -1170,6 +1170,30 @@
           "firstLadingPoiName": "KLH-广州常温1仓",
           "createTime": 1782638018000,
           "store": "番禺建华汇店",
+          "_status_label": "已完成"
+        },
+        {
+          "waybillCode": "GZ2112124303",
+          "licensePlate": "粤BED0999",
+          "driverName": "陈小军",
+          "carrierName": "斑马（广州2024）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 60,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 2,
+          "deliveryPoiArrivalQualifiedCount": 2,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "广州RDC生鲜1号仓（博展）",
+          "createTime": 1782658464000,
+          "store": "南海国昌广场店",
           "_status_label": "已完成"
         },
         {
@@ -1464,16 +1488,16 @@
       "status": "ok"
     },
     "arrived_trips": {
-      "total": 16,
+      "total": 17,
       "by_store": {
         "禅城东方广场店": 3,
         "番禺建华汇店": 5,
-        "南海国昌广场店": 3,
+        "南海国昌广场店": 4,
         "海珠星汇广场店": 5,
         "越秀越富广场店": 4
       },
-      "total_arrival_poi": 29,
-      "qualified_arrival_poi": 29,
+      "total_arrival_poi": 31,
+      "qualified_arrival_poi": 31,
       "unqualified_arrival_poi": 0,
       "details": [
         {
@@ -1659,6 +1683,29 @@
           "firstLadingPoiName": "KLH-广州常温1仓",
           "createTime": 1782638018000,
           "store": "番禺建华汇店"
+        },
+        {
+          "waybillCode": "GZ2112124303",
+          "licensePlate": "粤BED0999",
+          "driverName": "陈小军",
+          "carrierName": "斑马（广州2024）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 60,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 2,
+          "deliveryPoiArrivalQualifiedCount": 2,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "广州RDC生鲜1号仓（博展）",
+          "createTime": 1782658464000,
+          "store": "南海国昌广场店"
         },
         {
           "waybillCode": "GZ2112152143",
@@ -1948,26 +1995,28 @@
   },
   "attendance": {
     "total_inservice": 2,
-    "schedule": 0,
-    "attendance": 0,
-    "rate": 0.0,
+    "schedule": 1,
+    "attendance": 1,
+    "rate": 50.0,
     "by_job": {
       "N高叉司机": {
         "inservice": 2,
-        "schedule": 0,
-        "attendance": 0,
-        "rate": 0.0
+        "schedule": 1,
+        "attendance": 1,
+        "rate": 50.0
       }
     },
     "by_pos_total": {
       "N冷冻高叉司机": 2
     },
-    "by_pos_scheduled": {},
+    "by_pos_scheduled": {
+      "N冷冻高叉司机": 1
+    },
     "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS(播种) / 0 人",
+    "efficiency_formula": "0 PCS(播种) / 1 人",
     "outbound_efficiency": 0.0,
-    "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)",
-    "inbound_efficiency_workers": 0,
+    "outbound_efficiency_formula": "0 PCS / 1 人(拣播员)",
+    "inbound_efficiency_workers": 1,
     "status": "ok"
   }
 }

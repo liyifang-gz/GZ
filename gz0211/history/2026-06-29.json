@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-29T12:40:39",
+  "timestamp": "2026-06-29T12:50:35",
   "date": "2026-06-29",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 16,
-      "signed": 10,
-      "waiting": 4
+      "signed": 11,
+      "waiting": 3
     },
     "ontime": {
       "ontime": 0,
-      "early": 10,
+      "early": 11,
       "late": 0,
       "total": 14,
       "rate": 0.0,
-      "early_rate": 71.4,
+      "early_rate": 78.6,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,11 +24,11 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 10,
+      "total": 11,
       "done": 3,
-      "rate": 30.0,
+      "rate": 27.3,
       "pcs_done": 4758,
-      "sign_pcs_done": 12715
+      "sign_pcs_done": 13025
     },
     "qc": {
       "total": 36,
@@ -41,9 +41,9 @@
       "bill_total": 36,
       "pcs_done": 4870,
       "pcs_passed": 4870,
-      "pcs_total": 12715,
+      "pcs_total": 12281,
       "pcs_rejected": 0,
-      "pcs_rate": 38.3,
+      "pcs_rate": 39.7,
       "sku_done": 7,
       "sku_total": 26,
       "sku_rate": 26.9
@@ -82,8 +82,8 @@
     "dimensions": {
       "reserve": {
         "total": 14,
-        "done": 10,
-        "rate": 71.4
+        "done": 11,
+        "rate": 78.6
       },
       "pcs": {
         "total": 30810,
@@ -94,14 +94,22 @@
       },
       "sku": {
         "total": 43,
-        "done": 36,
-        "rate": 83.7
+        "done": 37,
+        "rate": 86.0
       },
       "supplier": {
         "total": 12,
-        "done": 8,
-        "rate": 66.7,
+        "done": 9,
+        "rate": 75.0,
         "detail": {
+          "湛江国联水产开发股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "德州市金彩凤食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "日冷食品贸易（上海）有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -126,19 +134,11 @@
             "plan": 1,
             "done": 1
           },
-          "德州市金彩凤食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
           "苏州瑷玛森食品有限公司": {
             "plan": 2,
             "done": 2
           },
           "三全食品股份有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "湛江国联水产开发股份有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -198,20 +198,12 @@
           "seq": 1
         },
         {
-          "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
-          "billCode": "YY20260625002222",
-          "skuCount": 1,
-          "pcs": 310,
-          "timeSlot": "14:30 - 15:00",
-          "seq": 2
-        },
-        {
           "supplierName": "福建御味香冷冻食品有限公司-快乐猴",
           "billCode": "YY20260624001340",
           "skuCount": 1,
           "pcs": 720,
           "timeSlot": "16:00 - 16:30",
-          "seq": 3
+          "seq": 2
         },
         {
           "supplierName": "河南霍嘉优品网络科技有限公司",
@@ -219,10 +211,22 @@
           "skuCount": 2,
           "pcs": 320,
           "timeSlot": "16:00 - 16:30",
-          "seq": 4
+          "seq": 3
         }
       ],
       "unloading": [
+        {
+          "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
+          "billCode": "YY20260625002222",
+          "signTime": "12:48",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "德州市金彩凤食品有限公司-快乐猴",
+          "billCode": "YY20260627004251",
+          "signTime": "10:48",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "日冷食品贸易（上海）有限公司-快乐猴",
           "billCode": "YY20260626000422",
@@ -245,12 +249,6 @@
           "supplierName": "北京月盛斋清真食品有限公司-快乐猴",
           "billCode": "YY20260622000305",
           "signTime": "10:49",
-          "status": "已签到未卸货"
-        },
-        {
-          "supplierName": "德州市金彩凤食品有限公司-快乐猴",
-          "billCode": "YY20260627004251",
-          "signTime": "10:48",
           "status": "已签到未卸货"
         },
         {
@@ -429,14 +427,6 @@
         },
         {
           "seq": 21,
-          "supplierName": "德州市金彩凤食品有限公司-快乐猴",
-          "skuName": "快乐猴 手作整虾仁三鲜水饺 320g",
-          "arrivalTime": "13:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 22,
           "supplierName": "荣成市鸿耀水产捕捞有限公司",
           "skuName": "南美白虾仁 500g",
           "arrivalTime": "13:00",
@@ -444,7 +434,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 23,
+          "seq": 22,
           "supplierName": "荣成市鸿耀水产捕捞有限公司",
           "skuName": "杂色花蛤肉 500g",
           "arrivalTime": "13:00",
@@ -452,7 +442,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 24,
+          "seq": 23,
           "supplierName": "荣成市鸿耀水产捕捞有限公司",
           "skuName": "南美白虾仁 200g",
           "arrivalTime": "13:00",
@@ -460,7 +450,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 25,
+          "seq": 24,
           "supplierName": "杭州众点食品科技有限公司-快乐猴",
           "skuName": "索菲亚 朗姆葡萄干口味大碗冰淇淋 450g",
           "arrivalTime": "13:30",
@@ -468,7 +458,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 26,
+          "seq": 25,
           "supplierName": "杭州众点食品科技有限公司-快乐猴",
           "skuName": "八喜 巧克力口味冰淇淋 283g",
           "arrivalTime": "13:30",
@@ -476,7 +466,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 27,
+          "seq": 26,
           "supplierName": "杭州众点食品科技有限公司-快乐猴",
           "skuName": "光明 香草味冰淇淋 115g",
           "arrivalTime": "13:30",
@@ -484,7 +474,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 28,
+          "seq": 27,
           "supplierName": "上海熟成屋食品贸易有限公司",
           "skuName": "塞拉多草原原切牛肉卷 300g",
           "arrivalTime": "14:30",
@@ -492,9 +482,17 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 29,
+          "seq": 28,
           "supplierName": "日冷食品贸易（上海）有限公司-快乐猴",
           "skuName": "碳烤鸡肉软骨串400g(N)",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 29,
+          "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
+          "skuName": "小霸龙 蒜香浓郁酥皮烤鱼 1kg",
           "arrivalTime": "14:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
@@ -505,43 +503,43 @@
           "supplierName": "山东胜农食品有限公司",
           "skuName": "冷冻鸡爪 1kg",
           "completeTime": "11:13",
-          "waitingMins": 87
+          "waitingMins": 97
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅根 1kg",
           "completeTime": "11:02",
-          "waitingMins": 98
+          "waitingMins": 108
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡琵琶腿 1kg",
           "completeTime": "10:58",
-          "waitingMins": 102
+          "waitingMins": 112
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅尖 1kg",
           "completeTime": "10:57",
-          "waitingMins": 103
+          "waitingMins": 113
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅中  1kg",
           "completeTime": "11:04",
-          "waitingMins": 96
+          "waitingMins": 106
         },
         {
           "supplierName": "北京月盛斋清真食品有限公司-快乐猴",
           "skuName": "月盛斋 澳洲谷饲肥牛肉卷  400g",
           "completeTime": "11:18",
-          "waitingMins": 82
+          "waitingMins": 92
         },
         {
           "supplierName": "北京月盛斋清真食品有限公司-快乐猴",
           "skuName": "月盛斋 羔羊肉片 400g",
           "completeTime": "11:19",
-          "waitingMins": 81
+          "waitingMins": 91
         }
       ],
       "signed_not_recv": [
@@ -601,12 +599,12 @@
           "seq": 5
         },
         {
-          "supplierName": "德州市金彩凤食品有限公司-快乐猴",
-          "poNo": "CG202606255353",
-          "reserveBillCode": "YY20260627004251",
-          "skuId": "1334275",
-          "skuName": "快乐猴 手作整虾仁三鲜水饺 320g",
-          "purchaseQty": 744,
+          "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
+          "poNo": "CG2026062215103",
+          "reserveBillCode": "YY20260625002222",
+          "skuId": "995833",
+          "skuName": "小霸龙 蒜香浓郁酥皮烤鱼 1kg",
+          "purchaseQty": 310,
           "recvQty": 0,
           "hasQc": false,
           "seq": 6
@@ -992,10 +990,10 @@
       }
     ],
     "seeding": {
-      "not_started": 134,
-      "in_progress": 6,
-      "done": 29,
-      "total": 169,
+      "not_started": 131,
+      "in_progress": 2,
+      "done": 37,
+      "total": 170,
       "status": "ok"
     }
   },

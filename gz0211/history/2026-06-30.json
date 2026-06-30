@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-06-30T13:01:33",
+  "timestamp": "2026-06-30T13:07:15",
   "date": "2026-06-30",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 19,
-      "signed": 14,
-      "waiting": 4
+      "signed": 15,
+      "waiting": 3
     },
     "ontime": {
       "ontime": 0,
-      "early": 14,
+      "early": 15,
       "late": 0,
       "total": 18,
       "rate": 0.0,
-      "early_rate": 77.8,
+      "early_rate": 83.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 11,
+      "total": 12,
       "done": 5,
-      "rate": 45.5,
+      "rate": 41.7,
       "pcs_done": 17746,
-      "sign_pcs_done": 24255
+      "sign_pcs_done": 25755
     },
     "qc": {
-      "total": 1,
+      "total": 2,
       "done": 1,
-      "pending": 0,
+      "pending": 1,
       "passed": 1,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 50.0,
       "bill_done": 1,
-      "bill_total": 1,
+      "bill_total": 2,
       "pcs_done": 440,
       "pcs_passed": 440,
-      "pcs_total": 440,
+      "pcs_total": 1940,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 22.7,
       "sku_done": 1,
-      "sku_total": 1,
-      "sku_rate": 100.0
+      "sku_total": 2,
+      "sku_rate": 50.0
     },
     "putaway": {
       "total": 24778,
@@ -103,8 +103,8 @@
     "dimensions": {
       "reserve": {
         "total": 18,
-        "done": 14,
-        "rate": 77.8
+        "done": 15,
+        "rate": 83.3
       },
       "pcs": {
         "total": 27298,
@@ -115,14 +115,18 @@
       },
       "sku": {
         "total": 47,
-        "done": 42,
-        "rate": 89.4
+        "done": 43,
+        "rate": 91.5
       },
       "supplier": {
         "total": 15,
-        "done": 11,
-        "rate": 73.3,
+        "done": 12,
+        "rate": 80.0,
         "detail": {
+          "北京玖合金隆食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "河南今三麦食品有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -166,10 +170,6 @@
           "山东新立信食品科技有限公司-快乐猴": {
             "plan": 2,
             "done": 2
-          },
-          "北京玖合金隆食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           },
           "欧泰贡（广东）食品有限公司-快乐猴": {
             "plan": 1,
@@ -223,20 +223,12 @@
       ],
       "unsigned": [
         {
-          "supplierName": "北京玖合金隆食品有限公司-快乐猴",
-          "billCode": "YY20260629000689",
-          "skuCount": 1,
-          "pcs": 1500,
-          "timeSlot": "14:30 - 16:30",
-          "seq": 1
-        },
-        {
           "supplierName": "欧泰贡（广东）食品有限公司-快乐猴",
           "billCode": "YY20260627001354",
           "skuCount": 1,
           "pcs": 2000,
           "timeSlot": "15:00 - 15:30",
-          "seq": 2
+          "seq": 1
         },
         {
           "supplierName": "福建御味香冷冻食品有限公司-快乐猴",
@@ -244,7 +236,7 @@
           "skuCount": 1,
           "pcs": 630,
           "timeSlot": "16:00 - 16:30",
-          "seq": 3
+          "seq": 2
         },
         {
           "supplierName": "福建御味香冷冻食品有限公司-SS",
@@ -252,10 +244,16 @@
           "skuCount": 2,
           "pcs": 520,
           "timeSlot": "16:00 - 16:30",
-          "seq": 4
+          "seq": 3
         }
       ],
       "unloading": [
+        {
+          "supplierName": "北京玖合金隆食品有限公司-快乐猴",
+          "billCode": "YY20260629000689",
+          "signTime": "13:04",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "河南今三麦食品有限公司-快乐猴",
           "billCode": "YY20260626005511",
@@ -311,16 +309,37 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "北京玖合金隆食品有限公司-快乐猴",
+          "skuName": "(原料)速冻开口板栗 250g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "大连海大厨食品有限公司-快乐猴",
           "skuName": "三文鱼排 600g",
           "completeTime": "12:21",
-          "waitingMins": 41
+          "waitingMins": 46
         }
       ],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "北京玖合金隆食品有限公司-快乐猴",
+          "poNo": "CG202606234787",
+          "reserveBillCode": "YY20260629000689",
+          "skuId": "1299740",
+          "skuName": "(原料)速冻开口板栗 250g",
+          "purchaseQty": 1500,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -513,9 +532,9 @@
       }
     ],
     "seeding": {
-      "not_started": 114,
-      "in_progress": 9,
-      "done": 39,
+      "not_started": 110,
+      "in_progress": 7,
+      "done": 45,
       "total": 162,
       "status": "ok"
     }

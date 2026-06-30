@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-06-30T16:45:37",
+  "timestamp": "2026-06-30T17:11:20",
   "date": "2026-06-30",
   "warehouse": "GZ0211",
   "inbound": {
@@ -31,30 +31,30 @@
       "sign_pcs_done": 28905
     },
     "qc": {
-      "total": 5,
+      "total": 2,
       "done": 2,
-      "pending": 3,
+      "pending": 0,
       "passed": 2,
       "rejected": 0,
-      "rate": 40.0,
+      "rate": 100.0,
       "bill_done": 2,
-      "bill_total": 5,
+      "bill_total": 2,
       "pcs_done": 2440,
       "pcs_passed": 2440,
-      "pcs_total": 3590,
+      "pcs_total": 2440,
       "pcs_rejected": 0,
-      "pcs_rate": 68.0,
+      "pcs_rate": 100.0,
       "sku_done": 2,
-      "sku_total": 5,
-      "sku_rate": 40.0
+      "sku_total": 2,
+      "sku_rate": 100.0
     },
     "putaway": {
-      "total": 26778,
+      "total": 27298,
       "done": 21776,
-      "rate": 81.3,
-      "sku_total": 88,
+      "rate": 79.8,
+      "sku_total": 90,
       "sku_done": 75,
-      "sku_rate": 85.2,
+      "sku_rate": 83.3,
       "details": [
         {
           "poNo": "CG202606241159",
@@ -68,6 +68,13 @@
           "hopePcs": 486,
           "putPcs": 0,
           "hopeSku": 1,
+          "putSku": 0
+        },
+        {
+          "poNo": "CG2026062312582",
+          "hopePcs": 520,
+          "putPcs": 0,
+          "hopeSku": 2,
           "putSku": 0
         },
         {
@@ -117,8 +124,8 @@
         "total": 27298,
         "done": 22584,
         "rate": 82.7,
-        "recv_done": 26778,
-        "recv_rate": 98.1
+        "recv_done": 27298,
+        "recv_rate": 100.0
       },
       "sku": {
         "total": 47,
@@ -303,81 +310,22 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "福建御味香冷冻食品有限公司-SS",
-          "skuName": "爆汁大肉肠（脆骨风味）1.2kg",
-          "arrivalTime": "16:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "福建御味香冷冻食品有限公司-SS",
-          "skuName": "爆汁大肉肠（黑椒风味）1.2kg",
-          "arrivalTime": "16:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
-          "supplierName": "福建御味香冷冻食品有限公司-快乐猴",
-          "skuName": "快乐猴 原味黑猪肉爆汁烤肠 200g",
-          "arrivalTime": "16:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "大连海大厨食品有限公司-快乐猴",
           "skuName": "三文鱼排 600g",
           "completeTime": "12:21",
-          "waitingMins": 265
+          "waitingMins": 290
         },
         {
           "supplierName": "欧泰贡（广东）食品有限公司-快乐猴",
           "skuName": "湄公大厨 冻生巴沙鱼柳 600g",
           "completeTime": "14:17",
-          "waitingMins": 149
+          "waitingMins": 174
         }
       ],
-      "signed_not_recv": [
-        {
-          "supplierName": "福建御味香冷冻食品有限公司-快乐猴",
-          "poNo": "CG202606241178",
-          "reserveBillCode": "YY20260625005112",
-          "skuId": "1123901",
-          "skuName": "快乐猴 原味黑猪肉爆汁烤肠 200g",
-          "purchaseQty": 630,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 1
-        },
-        {
-          "supplierName": "福建御味香冷冻食品有限公司-SS",
-          "poNo": "CG2026062312582",
-          "reserveBillCode": "YY20260625005095",
-          "skuId": "1159208",
-          "skuName": "爆汁大肉肠（脆骨风味）1.2kg",
-          "purchaseQty": 260,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 2
-        },
-        {
-          "supplierName": "福建御味香冷冻食品有限公司-SS",
-          "poNo": "CG2026062312582",
-          "reserveBillCode": "YY20260625005095",
-          "skuId": "1160500",
-          "skuName": "爆汁大肉肠（黑椒风味）1.2kg",
-          "purchaseQty": 260,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 3
-        }
-      ],
+      "signed_not_recv": [],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -401,33 +349,28 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 363,
-      "done": 272,
-      "rate": 74.9
+      "total": 380,
+      "done": 327,
+      "rate": 86.1
     },
     "caging": {
-      "total": 363,
-      "done": 272,
-      "rate": 74.9,
-      "pcs_done": 5660,
-      "pcs_total": 7269,
-      "pcs_rate": 77.9
+      "total": 380,
+      "done": 327,
+      "rate": 86.1,
+      "pcs_done": 6601,
+      "pcs_total": 7501,
+      "pcs_rate": 88.0
     },
     "packing": {
-      "total": 14,
-      "done": 12,
-      "rate": 85.7
+      "total": 15,
+      "done": 14,
+      "rate": 93.3
     },
     "uncaged_details": [
       {
         "containerCode": "RQ-05-03-0700101",
         "poiName": "禅城东方广场店",
         "qty": 900
-      },
-      {
-        "containerCode": "RQ-05-03-0700181",
-        "poiName": "海珠星汇广场店",
-        "qty": 709
       }
     ],
     "unpacked_details": [
@@ -435,24 +378,19 @@
         "containerCode": "RQ-05-03-0700101",
         "poiName": "禅城东方广场店",
         "qty": 900
-      },
-      {
-        "containerCode": "RQ-05-03-0700181",
-        "poiName": "海珠星汇广场店",
-        "qty": 709
       }
     ],
     "shipping": {
-      "total": 7269,
+      "total": 7501,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 2,
-      "multi_pallet_total": 360,
-      "multi_pallet_rate": 0.6,
-      "load_rate": 77.9,
+      "multi_pallet_total": 377,
+      "multi_pallet_rate": 0.5,
+      "load_rate": 88.0,
       "multi_pallet_details": [
         {
           "skuName": "快乐猴 萌猴雪糕 65g",
@@ -475,8 +413,8 @@
           "qty": 60
         }
       ],
-      "load_rate_unloaded": "77.98%",
-      "load_rate_loaded": "66.96%",
+      "load_rate_unloaded": "91.57%",
+      "load_rate_loaded": "64.45%",
       "load_rate_shipped": "62.67%",
       "low_load_containers": [
         {
@@ -486,6 +424,15 @@
           "loadingRateVal": 8.16,
           "skuPcs": "90.000",
           "skuVolume": "0.162",
+          "planOutTime": "06-30 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700183",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "23.86%",
+          "loadingRateVal": 23.86,
+          "skuPcs": "10.000",
+          "skuVolume": "0.472",
           "planOutTime": "06-30 19:00"
         },
         {
@@ -574,10 +521,19 @@
         {
           "containerCode": "RQ-05-03-0700181",
           "poiName": "海珠星汇广场店",
-          "loadingRate": "64.39%",
-          "loadingRateVal": 64.39,
-          "skuPcs": "709.000",
-          "skuVolume": "1.275",
+          "loadingRate": "84.94%",
+          "loadingRateVal": 84.94,
+          "skuPcs": "931.000",
+          "skuVolume": "1.682",
+          "planOutTime": "06-30 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700183",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "23.86%",
+          "loadingRateVal": 23.86,
+          "skuPcs": "10.000",
+          "skuVolume": "0.472",
           "planOutTime": "06-30 19:00"
         },
         {
@@ -644,29 +600,29 @@
           "planOutTime": "06-30 19:00"
         }
       ],
-      "outbound_efficiency": 7269.0,
-      "outbound_efficiency_formula": "7269 PCS / 1 人(拣播员)"
+      "outbound_efficiency": 7501.0,
+      "outbound_efficiency_formula": "7501 PCS / 1 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 7269,
+        "total": 7501,
         "picked": 0,
         "sowed": 0,
-        "caged": 5660,
-        "not_caged": 1609,
+        "caged": 6601,
+        "not_caged": 900,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 77.9,
-        "sowed_picked": 7269
+        "cage_rate": 88.0,
+        "sowed_picked": 7501
       },
       "sku": {
-        "total": 363,
+        "total": 380,
         "picked": 0,
         "sowed": 0,
-        "caged": 272,
+        "caged": 327,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 74.9
+        "cage_rate": 86.1
       }
     },
     "status": "ok",
@@ -674,9 +630,9 @@
       "plan_pcs": 7501,
       "alloc_pcs": 7501,
       "alloc_rate": 100.0,
-      "picked_pcs": 7269,
-      "sow_pcs": 7269,
-      "sow_rate": 96.9,
+      "picked_pcs": 7501,
+      "sow_pcs": 7501,
+      "sow_rate": 100.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 381,
@@ -687,10 +643,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 51,
-      "in_progress": 6,
-      "done": 248,
-      "total": 305,
+      "not_started": 45,
+      "in_progress": 2,
+      "done": 267,
+      "total": 314,
       "status": "ok"
     }
   },
@@ -699,9 +655,9 @@
     "total_pcs": 7501,
     "alloc_pcs": 7501,
     "alloc_rate": 100.0,
-    "picked_pcs": 7269,
-    "sow_pcs": 7269,
-    "sow_rate": 96.9,
+    "picked_pcs": 7501,
+    "sow_pcs": 7501,
+    "sow_rate": 100.0,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 381,
@@ -774,7 +730,7 @@
           "carrierName": "运多多（广州）",
           "temperatureLevel": 2,
           "temperatureLevelName": "冷藏车",
-          "waybillStatus": 40,
+          "waybillStatus": 60,
           "preCoolMonitorStatus": 1,
           "preCoolMonitorStatusName": "合格",
           "deliveryPoiArrivalMonitorStatus": 1,
@@ -864,8 +820,8 @@
     },
     "departed_trips": {
       "total": 3,
-      "in_transit": 3,
-      "arrived": 0,
+      "in_transit": 2,
+      "arrived": 1,
       "by_store": {
         "禅城东方广场店": 1,
         "番禺建华汇店": 1,
@@ -905,7 +861,7 @@
           "carrierName": "运多多（广州）",
           "temperatureLevel": 2,
           "temperatureLevelName": "冷藏车",
-          "waybillStatus": 40,
+          "waybillStatus": 60,
           "preCoolMonitorStatus": 1,
           "preCoolMonitorStatusName": "合格",
           "deliveryPoiArrivalMonitorStatus": 1,
@@ -920,7 +876,7 @@
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1782803711000,
           "store": "番禺建华汇店",
-          "_status_label": "运输中"
+          "_status_label": "已完成"
         },
         {
           "waybillCode": "GZ2111914698",
@@ -998,14 +954,40 @@
       "status": "ok"
     },
     "arrived_trips": {
-      "total": 0,
-      "by_store": {},
-      "total_arrival_poi": 0,
-      "qualified_arrival_poi": 0,
+      "total": 1,
+      "by_store": {
+        "番禺建华汇店": 1
+      },
+      "total_arrival_poi": 1,
+      "qualified_arrival_poi": 1,
       "unqualified_arrival_poi": 0,
-      "details": [],
+      "details": [
+        {
+          "waybillCode": "GZ2111912897",
+          "licensePlate": "粤BCJ6108",
+          "driverName": "邱志灵",
+          "carrierName": "运多多（广州）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 60,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 1,
+          "deliveryPoiArrivalQualifiedCount": 1,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1782803711000,
+          "store": "番禺建华汇店"
+        }
+      ],
       "status": "ok",
-      "arrival_rate": null
+      "arrival_rate": 1.0
     },
     "temp_rate": 1.0,
     "temp_qualified": 5,
@@ -1032,10 +1014,10 @@
     "by_pos_scheduled": {
       "N冷冻高叉司机": 1
     },
-    "predicted_efficiency": 7269.0,
-    "efficiency_formula": "7269 PCS(播种) / 1 人",
-    "outbound_efficiency": 7269.0,
-    "outbound_efficiency_formula": "7269 PCS / 1 人(拣播员)",
+    "predicted_efficiency": 7501.0,
+    "efficiency_formula": "7501 PCS(播种) / 1 人",
+    "outbound_efficiency": 7501.0,
+    "outbound_efficiency_formula": "7501 PCS / 1 人(拣播员)",
     "inbound_efficiency_workers": 1,
     "status": "ok"
   }

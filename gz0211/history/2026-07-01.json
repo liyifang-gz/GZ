@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-01T09:59:00",
+  "timestamp": "2026-07-01T10:11:55",
   "date": "2026-07-01",
   "warehouse": "GZ0211",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 5,
-      "done": 0,
-      "pending": 5,
-      "passed": 0,
+      "done": 1,
+      "pending": 4,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 20.0,
+      "bill_done": 1,
       "bill_total": 5,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 720,
+      "pcs_passed": 720,
       "pcs_total": 2080,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 34.6,
+      "sku_done": 1,
       "sku_total": 5,
-      "sku_rate": 0.0
+      "sku_rate": 20.0
     },
     "putaway": {
       "total": 14855,
@@ -213,14 +213,6 @@
         },
         {
           "seq": 2,
-          "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
-          "skuName": "红宝石 东北奶糕 325g",
-          "arrivalTime": "14:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "skuName": "美丰 绿豆沙冰棍 70g*6",
           "arrivalTime": "15:00",
@@ -228,7 +220,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 4,
+          "seq": 3,
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "skuName": "美丰 玉米香雪糕 65g*4",
           "arrivalTime": "15:00",
@@ -236,7 +228,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 5,
+          "seq": 4,
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "skuName": "美丰 多口味水果棒冰480g(12支)",
           "arrivalTime": "15:00",
@@ -244,7 +236,14 @@
           "statusLabel": "待质检"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
+          "skuName": "红宝石 东北奶糕 325g",
+          "completeTime": "10:11",
+          "waitingMins": 0
+        }
+      ],
       "signed_not_recv": [
         {
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
@@ -265,7 +264,7 @@
           "skuName": "红宝石 东北奶糕 325g",
           "purchaseQty": 720,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 2
         },
         {
@@ -404,10 +403,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 68,
+      "not_started": 70,
       "in_progress": 0,
       "done": 0,
-      "total": 68,
+      "total": 70,
       "status": "ok"
     }
   },

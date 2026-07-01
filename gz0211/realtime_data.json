@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-01T12:59:52",
+  "timestamp": "2026-07-01T13:06:30",
   "date": "2026-07-01",
   "warehouse": "GZ0211",
   "inbound": {
@@ -165,19 +165,22 @@
           "supplierName": "正大食品企业（洛阳）有限公司-快乐猴-自营",
           "billCode": "YY20260701003931",
           "signTime": "12:49",
-          "status": "已签到未卸货"
+          "unloadStartTime": "13:05",
+          "status": "卸货中"
         },
         {
           "supplierName": "上海熟成屋食品贸易有限公司",
           "billCode": "YY20260623009106",
           "signTime": "12:48",
-          "status": "已签到未卸货"
+          "unloadStartTime": "13:05",
+          "status": "卸货中"
         },
         {
           "supplierName": "山东美佳集团有限公司-快乐猴",
           "billCode": "YY20260623010877",
           "signTime": "12:48",
-          "status": "已签到未卸货"
+          "unloadStartTime": "13:05",
+          "status": "卸货中"
         },
         {
           "supplierName": "深圳市鲜百汇食品有限公司-快乐猴",
@@ -237,37 +240,37 @@
           "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
           "skuName": "东北大板 五常大米口味雪糕 340g",
           "completeTime": "10:13",
-          "waitingMins": 166
+          "waitingMins": 173
         },
         {
           "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
           "skuName": "红宝石 东北奶糕 325g",
           "completeTime": "10:11",
-          "waitingMins": 168
+          "waitingMins": 175
         },
         {
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "skuName": "美丰 绿豆沙冰棍 70g*6",
           "completeTime": "10:15",
-          "waitingMins": 164
+          "waitingMins": 171
         },
         {
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "skuName": "美丰 玉米香雪糕 65g*4",
           "completeTime": "10:19",
-          "waitingMins": 161
+          "waitingMins": 167
         },
         {
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "skuName": "美丰 多口味水果棒冰480g(12支)",
           "completeTime": "10:17",
-          "waitingMins": 162
+          "waitingMins": 169
         },
         {
           "supplierName": "深圳市鲜百汇食品有限公司-快乐猴",
           "skuName": "海氏力 鲜冻海捕带鱼 1kg",
           "completeTime": "12:37",
-          "waitingMins": 22
+          "waitingMins": 29
         }
       ],
       "signed_not_recv": [
@@ -339,65 +342,87 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 0,
+      "total": 41,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 0,
+      "total": 41,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 6920,
+      "pcs_total": 707,
       "pcs_rate": 0.0
     },
     "packing": {
-      "total": 0,
+      "total": 1,
       "done": 0,
       "rate": 0.0
     },
-    "uncaged_details": [],
-    "unpacked_details": [],
+    "uncaged_details": [
+      {
+        "containerCode": "RQ-05-03-0700125",
+        "poiName": "番禺建华汇店",
+        "qty": 707
+      }
+    ],
+    "unpacked_details": [
+      {
+        "containerCode": "RQ-05-03-0700125",
+        "poiName": "番禺建华汇店",
+        "qty": 707
+      }
+    ],
     "shipping": {
-      "total": 0,
+      "total": 707,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 0,
+      "multi_pallet_total": 41,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "--",
+      "load_rate_unloaded": "54.61%",
       "load_rate_loaded": "--",
       "load_rate_shipped": "--",
       "low_load_containers": [],
-      "all_containers_detail": [],
-      "outbound_efficiency": 0.0,
-      "outbound_efficiency_formula": "0 PCS / 2 人(拣播员)"
+      "all_containers_detail": [
+        {
+          "containerCode": "RQ-05-03-0700125",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "54.61%",
+          "loadingRateVal": 54.61,
+          "skuPcs": "707.000",
+          "skuVolume": "1.081",
+          "planOutTime": "07-01 19:00"
+        }
+      ],
+      "outbound_efficiency": 353.5,
+      "outbound_efficiency_formula": "707 PCS / 2 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 0,
+        "total": 707,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
+        "not_caged": 707,
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
         "cage_rate": 0.0,
-        "sowed_picked": 6920
+        "sowed_picked": 707
       },
       "sku": {
-        "total": 0,
+        "total": 41,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
-        "cage_rate": 0
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
+        "cage_rate": 0.0
       }
     },
     "status": "ok",
@@ -405,22 +430,22 @@
       "plan_pcs": 6920,
       "alloc_pcs": 6920,
       "alloc_rate": 100.0,
-      "picked_pcs": 0,
-      "sow_pcs": 0,
-      "sow_rate": 0.0,
+      "picked_pcs": 707,
+      "sow_pcs": 707,
+      "sow_rate": 10.2,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 390,
       "sku_alloc": 390,
-      "sku_sow": 0,
+      "sku_sow": 77,
       "sku_ship": 0,
       "total_orders": 9
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 119,
-      "in_progress": 8,
-      "done": 50,
+      "not_started": 113,
+      "in_progress": 9,
+      "done": 55,
       "total": 177,
       "status": "ok"
     }
@@ -430,14 +455,14 @@
     "total_pcs": 6920,
     "alloc_pcs": 6920,
     "alloc_rate": 100.0,
-    "picked_pcs": 0,
-    "sow_pcs": 0,
-    "sow_rate": 0.0,
+    "picked_pcs": 707,
+    "sow_pcs": 707,
+    "sow_rate": 10.2,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 390,
     "sku_alloc": 390,
-    "sku_sow": 0,
+    "sku_sow": 77,
     "store_count": 6,
     "by_store": {
       "快乐猴-白云山水立方店-037": 1384.0,
@@ -513,10 +538,10 @@
     "by_pos_scheduled": {
       "N冷冻高叉司机": 2
     },
-    "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS(播种) / 2 人",
-    "outbound_efficiency": 0.0,
-    "outbound_efficiency_formula": "0 PCS / 2 人(拣播员)",
+    "predicted_efficiency": 353.5,
+    "efficiency_formula": "707 PCS(播种) / 2 人",
+    "outbound_efficiency": 353.5,
+    "outbound_efficiency_formula": "707 PCS / 2 人(拣播员)",
     "inbound_efficiency_workers": 2,
     "status": "ok"
   }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-01T13:28:53",
+  "timestamp": "2026-07-01T13:39:51",
   "date": "2026-07-01",
   "warehouse": "GZ0209",
   "inbound": {
@@ -50,20 +50,12 @@
     },
     "putaway": {
       "total": 57286,
-      "done": 57076,
-      "rate": 99.6,
+      "done": 57286,
+      "rate": 100.0,
       "sku_total": 84,
-      "sku_done": 83,
-      "sku_rate": 98.8,
-      "details": [
-        {
-          "poNo": "CG202606247270",
-          "hopePcs": 3000,
-          "putPcs": 2790,
-          "hopeSku": 3,
-          "putSku": 2
-        }
-      ]
+      "sku_done": 84,
+      "sku_rate": 100.0,
+      "details": []
     },
     "dimensions": {
       "reserve": {
@@ -563,7 +555,7 @@
           "supplierName": "东莞市睿致商贸有限公司-快乐猴",
           "skuName": "莲花味精 200g",
           "completeTime": "12:52",
-          "waitingMins": 36
+          "waitingMins": 47
         }
       ],
       "signed_not_recv": [
@@ -888,38 +880,50 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 0,
+      "total": 9,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 0,
+      "total": 9,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 1720,
-      "pcs_total": 1720,
-      "pcs_rate": 100.0
+      "pcs_total": 2008,
+      "pcs_rate": 85.7
     },
     "packing": {
-      "total": 2,
+      "total": 3,
       "done": 2,
-      "rate": 100.0
+      "rate": 66.7
     },
-    "uncaged_details": [],
-    "unpacked_details": [],
+    "uncaged_details": [
+      {
+        "containerCode": "RQ-28-03-0900134",
+        "poiName": "番禺建华汇店",
+        "qty": 288
+      }
+    ],
+    "unpacked_details": [
+      {
+        "containerCode": "RQ-28-03-0900134",
+        "poiName": "番禺建华汇店",
+        "qty": 288
+      }
+    ],
     "shipping": {
-      "total": 0,
+      "total": 288,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 0,
+      "multi_pallet_total": 9,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "--",
+      "load_rate_unloaded": "100.30%",
       "load_rate_loaded": "88.57%",
       "load_rate_shipped": "--",
       "low_load_containers": [],
@@ -941,31 +945,40 @@
           "skuPcs": "856.000",
           "skuVolume": "1.831",
           "planOutTime": "07-01 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900134",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "100.30%",
+          "loadingRateVal": 100.3,
+          "skuPcs": "288.000",
+          "skuVolume": "1.986",
+          "planOutTime": "07-01 22:00"
         }
       ],
-      "outbound_efficiency": 0.0,
-      "outbound_efficiency_formula": "0 PCS / 4 人(拣播员)"
+      "outbound_efficiency": 72.0,
+      "outbound_efficiency_formula": "288 PCS / 4 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 0,
+        "total": 288,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
-        "cage_rate": 100.0,
-        "sowed_picked": 1720
+        "not_caged": 288,
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
+        "cage_rate": 85.7,
+        "sowed_picked": 2008
       },
       "sku": {
-        "total": 0,
+        "total": 9,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
-        "cage_rate": 0
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
+        "cage_rate": 0.0
       }
     },
     "status": "ok",
@@ -973,9 +986,9 @@
       "plan_pcs": 17924,
       "alloc_pcs": 17924,
       "alloc_rate": 100.0,
-      "picked_pcs": 1720,
-      "sow_pcs": 1720,
-      "sow_rate": 9.6,
+      "picked_pcs": 2008,
+      "sow_pcs": 2008,
+      "sow_rate": 11.2,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 868,
@@ -986,10 +999,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 94,
-      "in_progress": 10,
-      "done": 77,
-      "total": 181,
+      "not_started": 88,
+      "in_progress": 9,
+      "done": 97,
+      "total": 194,
       "status": "ok"
     }
   },
@@ -998,9 +1011,9 @@
     "total_pcs": 17924,
     "alloc_pcs": 17924,
     "alloc_rate": 100.0,
-    "picked_pcs": 1720,
-    "sow_pcs": 1720,
-    "sow_rate": 9.6,
+    "picked_pcs": 2008,
+    "sow_pcs": 2008,
+    "sow_rate": 11.2,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 868,
@@ -1098,10 +1111,10 @@
       "N常温收退": 3,
       "N常温高叉司机": 2
     },
-    "predicted_efficiency": 191.1,
-    "efficiency_formula": "1720 PCS(播种) / 9 人",
-    "outbound_efficiency": 0.0,
-    "outbound_efficiency_formula": "0 PCS / 4 人(拣播员)",
+    "predicted_efficiency": 223.1,
+    "efficiency_formula": "2008 PCS(播种) / 9 人",
+    "outbound_efficiency": 72.0,
+    "outbound_efficiency_formula": "288 PCS / 4 人(拣播员)",
     "inbound_efficiency_workers": 3,
     "status": "ok"
   }

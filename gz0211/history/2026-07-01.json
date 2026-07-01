@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-01T16:26:40",
+  "timestamp": "2026-07-01T16:35:31",
   "date": "2026-07-01",
   "warehouse": "GZ0211",
   "inbound": {
@@ -31,22 +31,22 @@
       "sign_pcs_done": 7211
     },
     "qc": {
-      "total": 8,
+      "total": 7,
       "done": 7,
-      "pending": 1,
+      "pending": 0,
       "passed": 7,
       "rejected": 0,
-      "rate": 87.5,
+      "rate": 100.0,
       "bill_done": 7,
-      "bill_total": 8,
+      "bill_total": 7,
       "pcs_done": 5200,
       "pcs_passed": 5200,
-      "pcs_total": 5305,
+      "pcs_total": 5200,
       "pcs_rejected": 0,
-      "pcs_rate": 98.0,
+      "pcs_rate": 100.0,
       "sku_done": 7,
-      "sku_total": 8,
-      "sku_rate": 87.5
+      "sku_total": 7,
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 17121,
@@ -102,6 +102,10 @@
         "done": 8,
         "rate": 100.0,
         "detail": {
+          "上海熟成屋食品贸易有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "正大食品企业（洛阳）有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -115,10 +119,6 @@
             "done": 1
           },
           "深圳市鲜百汇食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "上海熟成屋食品贸易有限公司": {
             "plan": 1,
             "done": 1
           },
@@ -185,58 +185,49 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "上海熟成屋食品贸易有限公司",
-          "skuName": "澳洲和牛M4-5板腱牛排 150g",
-          "arrivalTime": "16:00",
-          "unloadFinishTime": "13:17",
-          "statusLabel": "待质检"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
           "skuName": "东北大板 五常大米口味雪糕 340g",
           "completeTime": "10:13",
-          "waitingMins": 373
+          "waitingMins": 382
         },
         {
           "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
           "skuName": "红宝石 东北奶糕 325g",
           "completeTime": "10:11",
-          "waitingMins": 375
+          "waitingMins": 384
         },
         {
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "skuName": "美丰 绿豆沙冰棍 70g*6",
           "completeTime": "10:15",
-          "waitingMins": 371
+          "waitingMins": 380
         },
         {
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "skuName": "美丰 玉米香雪糕 65g*4",
           "completeTime": "10:19",
-          "waitingMins": 367
+          "waitingMins": 376
         },
         {
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "skuName": "美丰 多口味水果棒冰480g(12支)",
           "completeTime": "10:17",
-          "waitingMins": 369
+          "waitingMins": 378
         },
         {
           "supplierName": "深圳市鲜百汇食品有限公司-快乐猴",
           "skuName": "海氏力 鲜冻海捕带鱼 1kg",
           "completeTime": "12:37",
-          "waitingMins": 229
+          "waitingMins": 238
         },
         {
           "supplierName": "上海熟成屋食品贸易有限公司",
           "skuName": "塞拉多草原原切牛肉卷 300g",
           "completeTime": "14:05",
-          "waitingMins": 141
+          "waitingMins": 150
         }
       ],
       "signed_not_recv": [
@@ -556,10 +547,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 71,
-      "in_progress": 6,
-      "done": 243,
-      "total": 320,
+      "not_started": 79,
+      "in_progress": 5,
+      "done": 252,
+      "total": 336,
       "status": "ok"
     }
   },

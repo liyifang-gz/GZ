@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-01T11:35:57",
+  "timestamp": "2026-07-01T11:46:13",
   "date": "2026-07-01",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 9,
-      "signed": 3,
-      "waiting": 4
+      "signed": 4,
+      "waiting": 3
     },
     "ontime": {
       "ontime": 0,
-      "early": 3,
+      "early": 4,
       "late": 0,
       "total": 7,
       "rate": 0.0,
-      "early_rate": 42.9,
+      "early_rate": 57.1,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 3,
+      "total": 4,
       "done": 1,
-      "rate": 33.3,
+      "rate": 25.0,
       "pcs_done": 1200,
-      "sign_pcs_done": 3280
+      "sign_pcs_done": 4780
     },
     "qc": {
-      "total": 5,
+      "total": 6,
       "done": 5,
-      "pending": 0,
+      "pending": 1,
       "passed": 5,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 83.3,
       "bill_done": 5,
-      "bill_total": 5,
+      "bill_total": 6,
       "pcs_done": 2080,
       "pcs_passed": 2080,
-      "pcs_total": 2080,
+      "pcs_total": 3580,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 58.1,
       "sku_done": 5,
-      "sku_total": 5,
-      "sku_rate": 100.0
+      "sku_total": 6,
+      "sku_rate": 83.3
     },
     "putaway": {
       "total": 16055,
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 7,
-        "done": 3,
-        "rate": 42.9
+        "done": 4,
+        "rate": 57.1
       },
       "pcs": {
         "total": 17806,
@@ -80,14 +80,18 @@
       },
       "sku": {
         "total": 11,
-        "done": 6,
-        "rate": 54.5
+        "done": 7,
+        "rate": 63.6
       },
       "supplier": {
         "total": 7,
-        "done": 3,
-        "rate": 42.9,
+        "done": 4,
+        "rate": 57.1,
         "detail": {
+          "深圳市鲜百汇食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "上海广粤轩食品科技有限公司-上海广粤轩食品科技有限公司": {
             "plan": 1,
             "done": 1
@@ -99,10 +103,6 @@
           "广州市美口佳食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "深圳市鲜百汇食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           },
           "广州宥新贸易有限公司-快乐猴": {
             "plan": 1,
@@ -156,20 +156,12 @@
       ],
       "unsigned": [
         {
-          "supplierName": "深圳市鲜百汇食品有限公司-快乐猴",
-          "billCode": "YY20260627008042",
-          "skuCount": 1,
-          "pcs": 1500,
-          "timeSlot": "15:00 - 15:30",
-          "seq": 1
-        },
-        {
           "supplierName": "广州宥新贸易有限公司-快乐猴",
           "billCode": "YY20260626011259",
           "skuCount": 1,
           "pcs": 660,
           "timeSlot": "16:00 - 16:30",
-          "seq": 2
+          "seq": 1
         },
         {
           "supplierName": "山东美佳集团有限公司-快乐猴",
@@ -177,7 +169,7 @@
           "skuCount": 1,
           "pcs": 20,
           "timeSlot": "15:00 - 15:30",
-          "seq": 3
+          "seq": 2
         },
         {
           "supplierName": "上海熟成屋食品贸易有限公司",
@@ -185,10 +177,16 @@
           "skuCount": 2,
           "pcs": 1725,
           "timeSlot": "16:00 - 16:30",
-          "seq": 4
+          "seq": 3
         }
       ],
       "unloading": [
+        {
+          "supplierName": "深圳市鲜百汇食品有限公司-快乐猴",
+          "billCode": "YY20260627008042",
+          "signTime": "11:44",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
           "billCode": "YY20260630007345",
@@ -202,40 +200,61 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "深圳市鲜百汇食品有限公司-快乐猴",
+          "skuName": "海氏力 鲜冻海捕带鱼 1kg",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
           "skuName": "东北大板 五常大米口味雪糕 340g",
           "completeTime": "10:13",
-          "waitingMins": 82
+          "waitingMins": 93
         },
         {
           "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
           "skuName": "红宝石 东北奶糕 325g",
           "completeTime": "10:11",
-          "waitingMins": 84
+          "waitingMins": 94
         },
         {
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "skuName": "美丰 绿豆沙冰棍 70g*6",
           "completeTime": "10:15",
-          "waitingMins": 80
+          "waitingMins": 91
         },
         {
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "skuName": "美丰 玉米香雪糕 65g*4",
           "completeTime": "10:19",
-          "waitingMins": 77
+          "waitingMins": 87
         },
         {
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "skuName": "美丰 多口味水果棒冰480g(12支)",
           "completeTime": "10:17",
-          "waitingMins": 79
+          "waitingMins": 89
         }
       ],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "深圳市鲜百汇食品有限公司-快乐猴",
+          "poNo": "CG202606241181",
+          "reserveBillCode": "YY20260627008042",
+          "skuId": "1465001",
+          "skuName": "海氏力 鲜冻海捕带鱼 1kg",
+          "purchaseQty": 1500,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -338,10 +357,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 138,
+      "not_started": 144,
       "in_progress": 0,
       "done": 0,
-      "total": 138,
+      "total": 144,
       "status": "ok"
     }
   },

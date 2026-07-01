@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-01T10:16:59",
+  "timestamp": "2026-07-01T10:33:42",
   "date": "2026-07-01",
   "warehouse": "GZ0211",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 5,
-      "done": 3,
-      "pending": 2,
-      "passed": 3,
+      "done": 5,
+      "pending": 0,
+      "passed": 5,
       "rejected": 0,
-      "rate": 60.0,
-      "bill_done": 3,
+      "rate": 100.0,
+      "bill_done": 5,
       "bill_total": 5,
-      "pcs_done": 1048,
-      "pcs_passed": 1048,
+      "pcs_done": 2080,
+      "pcs_passed": 2080,
       "pcs_total": 2080,
       "pcs_rejected": 0,
-      "pcs_rate": 50.4,
-      "sku_done": 3,
+      "pcs_rate": 100.0,
+      "sku_done": 5,
       "sku_total": 5,
-      "sku_rate": 60.0
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 14855,
@@ -202,101 +202,40 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "广州市美口佳食品有限公司-快乐猴",
-          "skuName": "美丰 玉米香雪糕 65g*4",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "广州市美口佳食品有限公司-快乐猴",
-          "skuName": "美丰 多口味水果棒冰480g(12支)",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "首次进行中"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
           "skuName": "东北大板 五常大米口味雪糕 340g",
           "completeTime": "10:13",
-          "waitingMins": 3
+          "waitingMins": 20
         },
         {
           "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
           "skuName": "红宝石 东北奶糕 325g",
           "completeTime": "10:11",
-          "waitingMins": 5
+          "waitingMins": 22
         },
         {
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "skuName": "美丰 绿豆沙冰棍 70g*6",
           "completeTime": "10:15",
-          "waitingMins": 1
-        }
-      ],
-      "signed_not_recv": [
-        {
-          "supplierName": "广州市美口佳食品有限公司-快乐猴",
-          "poNo": "CG2026062916308",
-          "reserveBillCode": "YY20260630000407",
-          "skuId": "1364236",
-          "skuName": "美丰 多口味水果棒冰480g(12支)",
-          "purchaseQty": 1008,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 1
-        },
-        {
-          "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
-          "poNo": "CG2026062916302",
-          "reserveBillCode": "YY20260630007345",
-          "skuId": "1483352",
-          "skuName": "红宝石 东北奶糕 325g",
-          "purchaseQty": 720,
-          "recvQty": 0,
-          "hasQc": true,
-          "seq": 2
+          "waitingMins": 18
         },
         {
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
-          "poNo": "CG2026062916308",
-          "reserveBillCode": "YY20260630000407",
-          "skuId": "216223",
-          "skuName": "美丰 绿豆沙冰棍 70g*6",
-          "purchaseQty": 216,
-          "recvQty": 0,
-          "hasQc": true,
-          "seq": 3
-        },
-        {
-          "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
-          "poNo": "CG2026062916302",
-          "reserveBillCode": "YY20260630007345",
-          "skuId": "1356348",
-          "skuName": "东北大板 五常大米口味雪糕 340g",
-          "purchaseQty": 112,
-          "recvQty": 0,
-          "hasQc": true,
-          "seq": 4
-        },
-        {
-          "supplierName": "广州市美口佳食品有限公司-快乐猴",
-          "poNo": "CG2026062916308",
-          "reserveBillCode": "YY20260630000407",
-          "skuId": "617804",
           "skuName": "美丰 玉米香雪糕 65g*4",
-          "purchaseQty": 24,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 5
+          "completeTime": "10:19",
+          "waitingMins": 14
+        },
+        {
+          "supplierName": "广州市美口佳食品有限公司-快乐猴",
+          "skuName": "美丰 多口味水果棒冰480g(12支)",
+          "completeTime": "10:17",
+          "waitingMins": 16
         }
       ],
+      "signed_not_recv": [],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -399,10 +338,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 75,
+      "not_started": 81,
       "in_progress": 0,
       "done": 0,
-      "total": 75,
+      "total": 81,
       "status": "ok"
     }
   },

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-01T10:11:55",
+  "timestamp": "2026-07-01T10:16:59",
   "date": "2026-07-01",
   "warehouse": "GZ0211",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 5,
-      "done": 1,
-      "pending": 4,
-      "passed": 1,
+      "done": 3,
+      "pending": 2,
+      "passed": 3,
       "rejected": 0,
-      "rate": 20.0,
-      "bill_done": 1,
+      "rate": 60.0,
+      "bill_done": 3,
       "bill_total": 5,
-      "pcs_done": 720,
-      "pcs_passed": 720,
+      "pcs_done": 1048,
+      "pcs_passed": 1048,
       "pcs_total": 2080,
       "pcs_rejected": 0,
-      "pcs_rate": 34.6,
-      "sku_done": 1,
+      "pcs_rate": 50.4,
+      "sku_done": 3,
       "sku_total": 5,
-      "sku_rate": 20.0
+      "sku_rate": 60.0
     },
     "putaway": {
       "total": 14855,
@@ -205,22 +205,6 @@
       "qc_pending": [
         {
           "seq": 1,
-          "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
-          "skuName": "东北大板 五常大米口味雪糕 340g",
-          "arrivalTime": "14:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
-          "supplierName": "广州市美口佳食品有限公司-快乐猴",
-          "skuName": "美丰 绿豆沙冰棍 70g*6",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "skuName": "美丰 玉米香雪糕 65g*4",
           "arrivalTime": "15:00",
@@ -228,20 +212,32 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 4,
+          "seq": 2,
           "supplierName": "广州市美口佳食品有限公司-快乐猴",
           "skuName": "美丰 多口味水果棒冰480g(12支)",
           "arrivalTime": "15:00",
           "unloadFinishTime": "--",
-          "statusLabel": "待质检"
+          "statusLabel": "首次进行中"
         }
       ],
       "recv_pending": [
         {
           "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
+          "skuName": "东北大板 五常大米口味雪糕 340g",
+          "completeTime": "10:13",
+          "waitingMins": 3
+        },
+        {
+          "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
           "skuName": "红宝石 东北奶糕 325g",
           "completeTime": "10:11",
-          "waitingMins": 0
+          "waitingMins": 5
+        },
+        {
+          "supplierName": "广州市美口佳食品有限公司-快乐猴",
+          "skuName": "美丰 绿豆沙冰棍 70g*6",
+          "completeTime": "10:15",
+          "waitingMins": 1
         }
       ],
       "signed_not_recv": [
@@ -275,7 +271,7 @@
           "skuName": "美丰 绿豆沙冰棍 70g*6",
           "purchaseQty": 216,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 3
         },
         {
@@ -286,7 +282,7 @@
           "skuName": "东北大板 五常大米口味雪糕 340g",
           "purchaseQty": 112,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 4
         },
         {
@@ -403,10 +399,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 70,
+      "not_started": 75,
       "in_progress": 0,
       "done": 0,
-      "total": 70,
+      "total": 75,
       "status": "ok"
     }
   },

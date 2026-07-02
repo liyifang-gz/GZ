@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-02T10:39:26",
+  "timestamp": "2026-07-02T10:44:25",
   "date": "2026-07-02",
   "warehouse": "GZ0209",
   "inbound": {
     "reserve": {
       "total": 45,
-      "signed": 9,
-      "waiting": 27
+      "signed": 10,
+      "waiting": 26
     },
     "ontime": {
       "ontime": 0,
-      "early": 9,
+      "early": 10,
       "late": 0,
       "total": 36,
       "rate": 0.0,
-      "early_rate": 25.0,
+      "early_rate": 27.8,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 8,
+      "total": 9,
       "done": 8,
-      "rate": 100.0,
+      "rate": 88.9,
       "pcs_done": 10838,
-      "sign_pcs_done": 10838
+      "sign_pcs_done": 11702
     },
     "qc": {
-      "total": 2,
+      "total": 3,
       "done": 2,
-      "pending": 0,
+      "pending": 1,
       "passed": 2,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 66.7,
       "bill_done": 2,
-      "bill_total": 2,
+      "bill_total": 3,
       "pcs_done": 1060,
       "pcs_passed": 1060,
-      "pcs_total": 1060,
+      "pcs_total": 1924,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 55.1,
       "sku_done": 2,
-      "sku_total": 2,
-      "sku_rate": 100.0
+      "sku_total": 3,
+      "sku_rate": 66.7
     },
     "putaway": {
       "total": 30322,
@@ -82,8 +82,8 @@
     "dimensions": {
       "reserve": {
         "total": 36,
-        "done": 9,
-        "rate": 25.0
+        "done": 10,
+        "rate": 27.8
       },
       "pcs": {
         "total": 44178,
@@ -94,14 +94,18 @@
       },
       "sku": {
         "total": 70,
-        "done": 12,
-        "rate": 17.1
+        "done": 13,
+        "rate": 18.6
       },
       "supplier": {
         "total": 34,
-        "done": 8,
-        "rate": 23.5,
+        "done": 9,
+        "rate": 26.5,
         "detail": {
+          "福克斯食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "洽洽食品股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -175,10 +179,6 @@
             "done": 0
           },
           "徐州鑫恒晟食品科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "厦门江鲁食品科技有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -454,20 +454,12 @@
           "seq": 21
         },
         {
-          "supplierName": "福克斯食品有限公司-快乐猴",
-          "billCode": "YY20260623005560",
-          "skuCount": 1,
-          "pcs": 864,
-          "timeSlot": "15:00 - 15:30",
-          "seq": 22
-        },
-        {
           "supplierName": "内蒙古蒙薯食品科技有限公司-快乐猴",
           "billCode": "YY20260623000481",
           "skuCount": 2,
           "pcs": 2520,
           "timeSlot": "11:00 - 16:00",
-          "seq": 23
+          "seq": 22
         },
         {
           "supplierName": "北京匠造芊成商贸有限公司-快乐猴-自营",
@@ -475,7 +467,7 @@
           "skuCount": 2,
           "pcs": 2000,
           "timeSlot": "15:00 - 16:00",
-          "seq": 24
+          "seq": 23
         },
         {
           "supplierName": "福州惠源食品有限公司-快乐猴",
@@ -483,7 +475,7 @@
           "skuCount": 1,
           "pcs": 408,
           "timeSlot": "14:00 - 14:30",
-          "seq": 25
+          "seq": 24
         },
         {
           "supplierName": "安徽美代食品有限公司-快乐猴",
@@ -491,26 +483,55 @@
           "skuCount": 1,
           "pcs": 1000,
           "timeSlot": "11:00 - 11:30",
-          "seq": 26
+          "seq": 25
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "福克斯食品有限公司-快乐猴",
+          "billCode": "YY20260623005560",
+          "signTime": "10:41",
+          "unloadStartTime": "10:43",
+          "status": "卸货中"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "福克斯食品有限公司-快乐猴",
+          "skuName": "快乐猴 白胡椒粉 40g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "厦门市辑利食品有限公司翔安分公司-快乐猴-自营",
           "skuName": "快乐猴 番茄味空心土豆条 70g",
           "completeTime": "17:59",
-          "waitingMins": 1000
+          "waitingMins": 1005
         },
         {
           "supplierName": "洽洽食品股份有限公司-快乐猴",
           "skuName": "快乐猴 焦糖瓜子 208g",
           "completeTime": "10:35",
-          "waitingMins": 4
+          "waitingMins": 9
         }
       ],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "福克斯食品有限公司-快乐猴",
+          "poNo": "CG2026062211891",
+          "reserveBillCode": "YY20260623005560",
+          "skuId": "1123285",
+          "skuName": "快乐猴 白胡椒粉 40g",
+          "purchaseQty": 864,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [
         {
@@ -552,7 +573,7 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 80,
+      "pcs_total": 120,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -592,7 +613,7 @@
         "pick_rate": 0,
         "sow_rate": 0,
         "cage_rate": 0.0,
-        "sowed_picked": 80
+        "sowed_picked": 120
       },
       "sku": {
         "total": 0,
@@ -607,15 +628,15 @@
     "status": "ok",
     "pool": {
       "plan_pcs": 9462,
-      "alloc_pcs": 80,
-      "alloc_rate": 0.8,
+      "alloc_pcs": 120,
+      "alloc_rate": 1.3,
       "picked_pcs": 0,
       "sow_pcs": 0,
       "sow_rate": 0.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 13,
-      "sku_alloc": 4,
+      "sku_alloc": 6,
       "sku_sow": 0,
       "sku_ship": 0,
       "total_orders": 6
@@ -636,44 +657,28 @@
         "planQty": 4660,
         "allocQty": 0,
         "unallocQty": 4660
-      },
-      {
-        "receiverName": "快乐猴-禅城东方广场店-018",
-        "orderNo": "DB2026070280364",
-        "skuNum": 1,
-        "planQty": 20,
-        "allocQty": 0,
-        "unallocQty": 20
-      },
-      {
-        "receiverName": "快乐猴-番禺建华汇店-019",
-        "orderNo": "DB2026070280361",
-        "skuNum": 1,
-        "planQty": 20,
-        "allocQty": 0,
-        "unallocQty": 20
       }
     ],
     "seeding": {
-      "not_started": 56,
+      "not_started": 57,
       "in_progress": 10,
-      "done": 88,
-      "total": 154,
+      "done": 95,
+      "total": 162,
       "status": "ok"
     }
   },
   "plan": {
     "total_orders": 6,
     "total_pcs": 9462,
-    "alloc_pcs": 80,
-    "alloc_rate": 0.8,
+    "alloc_pcs": 120,
+    "alloc_rate": 1.3,
     "picked_pcs": 0,
     "sow_pcs": 0,
     "sow_rate": 0.0,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 13,
-    "sku_alloc": 4,
+    "sku_alloc": 6,
     "sku_sow": 0,
     "store_count": 5,
     "by_store": {
@@ -699,22 +704,6 @@
         "planQty": 4660,
         "allocQty": 0,
         "unallocQty": 4660
-      },
-      {
-        "receiverName": "快乐猴-禅城东方广场店-018",
-        "orderNo": "DB2026070280364",
-        "skuNum": 1,
-        "planQty": 20,
-        "allocQty": 0,
-        "unallocQty": 20
-      },
-      {
-        "receiverName": "快乐猴-番禺建华汇店-019",
-        "orderNo": "DB2026070280361",
-        "skuNum": 1,
-        "planQty": 20,
-        "allocQty": 0,
-        "unallocQty": 20
       }
     ],
     "status": "ok"

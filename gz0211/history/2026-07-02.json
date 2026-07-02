@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-02T10:39:05",
+  "timestamp": "2026-07-02T10:44:04",
   "date": "2026-07-02",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 10,
-      "signed": 3,
-      "waiting": 4
+      "signed": 4,
+      "waiting": 3
     },
     "ontime": {
       "ontime": 1,
-      "early": 2,
+      "early": 3,
       "late": 0,
       "total": 7,
       "rate": 14.3,
-      "early_rate": 28.6,
+      "early_rate": 42.9,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 3,
+      "total": 4,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 3040
+      "sign_pcs_done": 3820
     },
     "qc": {
-      "total": 3,
+      "total": 5,
       "done": 1,
-      "pending": 2,
+      "pending": 4,
       "passed": 1,
       "rejected": 0,
-      "rate": 33.3,
+      "rate": 20.0,
       "bill_done": 1,
-      "bill_total": 3,
+      "bill_total": 5,
       "pcs_done": 2400,
       "pcs_passed": 2400,
-      "pcs_total": 3040,
+      "pcs_total": 3820,
       "pcs_rejected": 0,
-      "pcs_rate": 78.9,
+      "pcs_rate": 62.8,
       "sku_done": 1,
-      "sku_total": 3,
-      "sku_rate": 33.3
+      "sku_total": 5,
+      "sku_rate": 20.0
     },
     "putaway": {
       "total": 7817,
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 7,
-        "done": 3,
-        "rate": 42.9
+        "done": 4,
+        "rate": 57.1
       },
       "pcs": {
         "total": 8892,
@@ -80,14 +80,18 @@
       },
       "sku": {
         "total": 11,
-        "done": 3,
-        "rate": 27.3
+        "done": 5,
+        "rate": 45.5
       },
       "supplier": {
         "total": 7,
-        "done": 3,
-        "rate": 42.9,
+        "done": 4,
+        "rate": 57.1,
         "detail": {
+          "北京花花食界食品科技有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "河南霍嘉优品网络科技有限公司": {
             "plan": 1,
             "done": 1
@@ -109,10 +113,6 @@
             "done": 0
           },
           "山东仙坛鸿食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "北京花花食界食品科技有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -154,22 +154,21 @@
           "pcs": 85,
           "timeSlot": "16:00 - 16:30",
           "seq": 3
-        },
-        {
-          "supplierName": "北京花花食界食品科技有限公司-快乐猴",
-          "billCode": "YY20260623011515",
-          "skuCount": 2,
-          "pcs": 780,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 4
         }
       ],
       "unloading": [
         {
+          "supplierName": "北京花花食界食品科技有限公司-快乐猴",
+          "billCode": "YY20260623011515",
+          "signTime": "10:39",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "河南霍嘉优品网络科技有限公司",
           "billCode": "YY20260629005855",
           "signTime": "10:37",
-          "status": "已签到未卸货"
+          "unloadStartTime": "10:41",
+          "status": "卸货中"
         },
         {
           "supplierName": "深圳市三德鑫实业有限公司-快乐猴",
@@ -200,6 +199,22 @@
           "arrivalTime": "16:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "北京花花食界食品科技有限公司-快乐猴",
+          "skuName": "【甄选和牛秘制肉酱】华仔爸爸 和牛肉酱披萨 180g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "北京花花食界食品科技有限公司-快乐猴",
+          "skuName": "华仔爸爸 牛肉芝士薄饼 200g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -207,10 +222,21 @@
           "supplierName": "济南高贝食品有限公司-快乐猴",
           "skuName": "(原料)快乐猴 双拼瑞士卷(原味+伯爵茶味) 420g",
           "completeTime": "09:47",
-          "waitingMins": 51
+          "waitingMins": 56
         }
       ],
       "signed_not_recv": [
+        {
+          "supplierName": "北京花花食界食品科技有限公司-快乐猴",
+          "poNo": "CG2026062215098",
+          "reserveBillCode": "YY20260623011515",
+          "skuId": "1342658",
+          "skuName": "【甄选和牛秘制肉酱】华仔爸爸 和牛肉酱披萨 180g",
+          "purchaseQty": 630,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
         {
           "supplierName": "深圳市三德鑫实业有限公司-快乐猴",
           "poNo": "CG2026062610114",
@@ -220,7 +246,7 @@
           "purchaseQty": 500,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 2
         },
         {
           "supplierName": "河南霍嘉优品网络科技有限公司",
@@ -231,7 +257,18 @@
           "purchaseQty": 330,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 3
+        },
+        {
+          "supplierName": "北京花花食界食品科技有限公司-快乐猴",
+          "poNo": "CG2026062215098",
+          "reserveBillCode": "YY20260623011515",
+          "skuId": "1362227",
+          "skuName": "华仔爸爸 牛肉芝士薄饼 200g",
+          "purchaseQty": 150,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
         }
       ],
       "qc_recv_pending": [],
@@ -336,10 +373,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 56,
-      "in_progress": 11,
-      "done": 87,
-      "total": 154,
+      "not_started": 58,
+      "in_progress": 9,
+      "done": 95,
+      "total": 162,
       "status": "ok"
     }
   },

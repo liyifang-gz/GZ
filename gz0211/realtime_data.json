@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-02T10:34:08",
+  "timestamp": "2026-07-02T10:39:05",
   "date": "2026-07-02",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 10,
-      "signed": 2,
-      "waiting": 5
+      "signed": 3,
+      "waiting": 4
     },
     "ontime": {
       "ontime": 1,
-      "early": 1,
+      "early": 2,
       "late": 0,
       "total": 7,
       "rate": 14.3,
-      "early_rate": 14.3,
+      "early_rate": 28.6,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 3,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 2710
+      "sign_pcs_done": 3040
     },
     "qc": {
-      "total": 2,
+      "total": 3,
       "done": 1,
-      "pending": 1,
+      "pending": 2,
       "passed": 1,
       "rejected": 0,
-      "rate": 50.0,
+      "rate": 33.3,
       "bill_done": 1,
-      "bill_total": 2,
+      "bill_total": 3,
       "pcs_done": 2400,
       "pcs_passed": 2400,
-      "pcs_total": 2710,
+      "pcs_total": 3040,
       "pcs_rejected": 0,
-      "pcs_rate": 88.6,
+      "pcs_rate": 78.9,
       "sku_done": 1,
-      "sku_total": 2,
-      "sku_rate": 50.0
+      "sku_total": 3,
+      "sku_rate": 33.3
     },
     "putaway": {
       "total": 7817,
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 7,
-        "done": 2,
-        "rate": 28.6
+        "done": 3,
+        "rate": 42.9
       },
       "pcs": {
         "total": 8892,
@@ -80,14 +80,18 @@
       },
       "sku": {
         "total": 11,
-        "done": 2,
-        "rate": 18.2
+        "done": 3,
+        "rate": 27.3
       },
       "supplier": {
         "total": 7,
-        "done": 2,
-        "rate": 28.6,
+        "done": 3,
+        "rate": 42.9,
         "detail": {
+          "河南霍嘉优品网络科技有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳市三德鑫实业有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -97,10 +101,6 @@
             "done": 1
           },
           "郯城瑞发德食品加工有限公司-快乐猴-自营": {
-            "plan": 1,
-            "done": 0
-          },
-          "河南霍嘉优品网络科技有限公司": {
             "plan": 1,
             "done": 0
           },
@@ -140,20 +140,12 @@
           "seq": 1
         },
         {
-          "supplierName": "河南霍嘉优品网络科技有限公司",
-          "billCode": "YY20260629005855",
-          "skuCount": 1,
-          "pcs": 330,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 2
-        },
-        {
           "supplierName": "上海大江通泰食品有限公司-快乐猴",
           "billCode": "YY20260629000710",
           "skuCount": 3,
           "pcs": 113,
           "timeSlot": "16:00 - 16:30",
-          "seq": 3
+          "seq": 2
         },
         {
           "supplierName": "山东仙坛鸿食品有限公司-快乐猴",
@@ -161,7 +153,7 @@
           "skuCount": 2,
           "pcs": 85,
           "timeSlot": "16:00 - 16:30",
-          "seq": 4
+          "seq": 3
         },
         {
           "supplierName": "北京花花食界食品科技有限公司-快乐猴",
@@ -169,10 +161,16 @@
           "skuCount": 2,
           "pcs": 780,
           "timeSlot": "16:00 - 16:30",
-          "seq": 5
+          "seq": 4
         }
       ],
       "unloading": [
+        {
+          "supplierName": "河南霍嘉优品网络科技有限公司",
+          "billCode": "YY20260629005855",
+          "signTime": "10:37",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "深圳市三德鑫实业有限公司-快乐猴",
           "billCode": "YY20260630007699",
@@ -194,6 +192,14 @@
           "arrivalTime": "10:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "河南霍嘉优品网络科技有限公司",
+          "skuName": "霍嘉 猪肉芹菜水饺 2kg",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -201,7 +207,7 @@
           "supplierName": "济南高贝食品有限公司-快乐猴",
           "skuName": "(原料)快乐猴 双拼瑞士卷(原味+伯爵茶味) 420g",
           "completeTime": "09:47",
-          "waitingMins": 46
+          "waitingMins": 51
         }
       ],
       "signed_not_recv": [
@@ -215,6 +221,17 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 1
+        },
+        {
+          "supplierName": "河南霍嘉优品网络科技有限公司",
+          "poNo": "CG2026062610118",
+          "reserveBillCode": "YY20260629005855",
+          "skuId": "1210215",
+          "skuName": "霍嘉 猪肉芹菜水饺 2kg",
+          "purchaseQty": 330,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
         }
       ],
       "qc_recv_pending": [],
@@ -319,10 +336,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 57,
-      "in_progress": 12,
-      "done": 81,
-      "total": 150,
+      "not_started": 56,
+      "in_progress": 11,
+      "done": 87,
+      "total": 154,
       "status": "ok"
     }
   },

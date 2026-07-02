@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-02T15:50:54",
+  "timestamp": "2026-07-02T16:01:00",
   "date": "2026-07-02",
   "warehouse": "GZ0211",
   "inbound": {
@@ -50,11 +50,11 @@
     },
     "putaway": {
       "total": 8892,
-      "done": 5417,
-      "rate": 60.9,
+      "done": 5657,
+      "rate": 63.6,
       "sku_total": 34,
-      "sku_done": 16,
-      "sku_rate": 47.1,
+      "sku_done": 17,
+      "sku_rate": 50.0,
       "details": [
         {
           "poNo": "CG202606304766",
@@ -73,9 +73,9 @@
         {
           "poNo": "CG202606236921",
           "hopePcs": 2400,
-          "putPcs": 0,
+          "putPcs": 240,
           "hopeSku": 7,
-          "putSku": 0
+          "putSku": 1
         },
         {
           "poNo": "CG2026062215115",
@@ -198,7 +198,7 @@
           "supplierName": "济南高贝食品有限公司-快乐猴",
           "skuName": "(原料)快乐猴 双拼瑞士卷(原味+伯爵茶味) 420g",
           "completeTime": "09:47",
-          "waitingMins": 363
+          "waitingMins": 373
         }
       ],
       "signed_not_recv": [
@@ -238,37 +238,27 @@
     },
     "sowing": {
       "total": 269,
-      "done": 193,
-      "rate": 71.7
+      "done": 229,
+      "rate": 85.1
     },
     "caging": {
       "total": 269,
-      "done": 193,
-      "rate": 71.7,
-      "pcs_done": 3928,
+      "done": 229,
+      "rate": 85.1,
+      "pcs_done": 4550,
       "pcs_total": 5168,
-      "pcs_rate": 76.0
+      "pcs_rate": 88.0
     },
     "packing": {
       "total": 9,
-      "done": 4,
-      "rate": 44.4
+      "done": 6,
+      "rate": 66.7
     },
     "uncaged_details": [
       {
         "containerCode": "RQ-05-03-0700109",
         "poiName": "禅城东方广场店",
         "qty": 378
-      },
-      {
-        "containerCode": "RQ-05-03-0700133",
-        "poiName": "番禺建华汇店",
-        "qty": 367
-      },
-      {
-        "containerCode": "RQ-05-03-0700135",
-        "poiName": "番禺建华汇店",
-        "qty": 255
       },
       {
         "containerCode": "RQ-05-03-0700150",
@@ -286,16 +276,6 @@
         "containerCode": "RQ-05-03-0700109",
         "poiName": "禅城东方广场店",
         "qty": 378
-      },
-      {
-        "containerCode": "RQ-05-03-0700133",
-        "poiName": "番禺建华汇店",
-        "qty": 367
-      },
-      {
-        "containerCode": "RQ-05-03-0700135",
-        "poiName": "番禺建华汇店",
-        "qty": 255
       },
       {
         "containerCode": "RQ-05-03-0700150",
@@ -318,12 +298,21 @@
       "multi_pallet_count": 0,
       "multi_pallet_total": 269,
       "multi_pallet_rate": 0.0,
-      "load_rate": 76.0,
+      "load_rate": 88.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "57.35%",
-      "load_rate_loaded": "79.51%",
+      "load_rate_unloaded": "49.62%",
+      "load_rate_loaded": "75.99%",
       "load_rate_shipped": "--",
       "low_load_containers": [
+        {
+          "containerCode": "RQ-05-03-0700135",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "57.13%",
+          "loadingRateVal": 57.13,
+          "skuPcs": "255.000",
+          "skuVolume": "1.131",
+          "planOutTime": "07-02 19:00"
+        },
         {
           "containerCode": "RQ-05-03-0700131",
           "poiName": "番禺建华汇店",
@@ -363,21 +352,21 @@
           "planOutTime": "07-02 19:00"
         },
         {
-          "containerCode": "RQ-05-03-0700131",
-          "poiName": "番禺建华汇店",
-          "loadingRate": "71.84%",
-          "loadingRateVal": 71.84,
-          "skuPcs": "1022.000",
-          "skuVolume": "1.423",
-          "planOutTime": "07-02 19:00"
-        },
-        {
           "containerCode": "RQ-05-03-0700133",
           "poiName": "番禺建华汇店",
           "loadingRate": "80.79%",
           "loadingRateVal": 80.79,
           "skuPcs": "367.000",
           "skuVolume": "1.600",
+          "planOutTime": "07-02 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700131",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "71.84%",
+          "loadingRateVal": 71.84,
+          "skuPcs": "1022.000",
+          "skuVolume": "1.423",
           "planOutTime": "07-02 19:00"
         },
         {
@@ -434,83 +423,43 @@
         "total": 5168,
         "picked": 0,
         "sowed": 0,
-        "caged": 3928,
-        "not_caged": 1240,
+        "caged": 4550,
+        "not_caged": 618,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 76.0,
+        "cage_rate": 88.0,
         "sowed_picked": 5168
       },
       "sku": {
         "total": 269,
         "picked": 0,
         "sowed": 0,
-        "caged": 193,
+        "caged": 229,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 71.7
+        "cage_rate": 85.1
       }
     },
     "status": "ok",
     "pool": {
       "plan_pcs": 8254,
-      "alloc_pcs": 7966,
-      "alloc_rate": 96.5,
+      "alloc_pcs": 8206,
+      "alloc_rate": 99.4,
       "picked_pcs": 5168,
       "sow_pcs": 5168,
-      "sow_rate": 64.9,
+      "sow_rate": 63.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 401,
-      "sku_alloc": 395,
+      "sku_alloc": 400,
       "sku_sow": 269,
       "sku_ship": 0,
       "total_orders": 17
     },
     "unalloc_details": [
       {
-        "receiverName": "快乐猴-海珠星汇广场店-034",
-        "orderNo": "DB20260702297261",
-        "skuNum": 1,
-        "planQty": 48,
-        "allocQty": 0,
-        "unallocQty": 48
-      },
-      {
         "receiverName": "快乐猴-白云山水立方店-037",
         "orderNo": "DB20260702297263",
-        "skuNum": 1,
-        "planQty": 48,
-        "allocQty": 0,
-        "unallocQty": 48
-      },
-      {
-        "receiverName": "快乐猴-禅城东方广场店-018",
-        "orderNo": "DB20260702297264",
-        "skuNum": 1,
-        "planQty": 48,
-        "allocQty": 0,
-        "unallocQty": 48
-      },
-      {
-        "receiverName": "快乐猴-越秀越富广场店-031",
-        "orderNo": "DB20260702297265",
-        "skuNum": 1,
-        "planQty": 48,
-        "allocQty": 0,
-        "unallocQty": 48
-      },
-      {
-        "receiverName": "快乐猴-南海国昌广场店-023",
-        "orderNo": "DB20260702297266",
-        "skuNum": 1,
-        "planQty": 48,
-        "allocQty": 0,
-        "unallocQty": 48
-      },
-      {
-        "receiverName": "快乐猴-番禺建华汇店-019",
-        "orderNo": "DB20260702297262",
         "skuNum": 1,
         "planQty": 48,
         "allocQty": 0,
@@ -519,24 +468,24 @@
     ],
     "seeding": {
       "not_started": 72,
-      "in_progress": 12,
-      "done": 379,
-      "total": 463,
+      "in_progress": 5,
+      "done": 394,
+      "total": 471,
       "status": "ok"
     }
   },
   "plan": {
     "total_orders": 17,
     "total_pcs": 8254,
-    "alloc_pcs": 7966,
-    "alloc_rate": 96.5,
+    "alloc_pcs": 8206,
+    "alloc_rate": 99.4,
     "picked_pcs": 5168,
     "sow_pcs": 5168,
-    "sow_rate": 64.9,
+    "sow_rate": 63.0,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 401,
-    "sku_alloc": 395,
+    "sku_alloc": 400,
     "sku_sow": 269,
     "store_count": 6,
     "by_store": {
@@ -549,48 +498,8 @@
     },
     "unalloc_details": [
       {
-        "receiverName": "快乐猴-海珠星汇广场店-034",
-        "orderNo": "DB20260702297261",
-        "skuNum": 1,
-        "planQty": 48,
-        "allocQty": 0,
-        "unallocQty": 48
-      },
-      {
         "receiverName": "快乐猴-白云山水立方店-037",
         "orderNo": "DB20260702297263",
-        "skuNum": 1,
-        "planQty": 48,
-        "allocQty": 0,
-        "unallocQty": 48
-      },
-      {
-        "receiverName": "快乐猴-禅城东方广场店-018",
-        "orderNo": "DB20260702297264",
-        "skuNum": 1,
-        "planQty": 48,
-        "allocQty": 0,
-        "unallocQty": 48
-      },
-      {
-        "receiverName": "快乐猴-越秀越富广场店-031",
-        "orderNo": "DB20260702297265",
-        "skuNum": 1,
-        "planQty": 48,
-        "allocQty": 0,
-        "unallocQty": 48
-      },
-      {
-        "receiverName": "快乐猴-南海国昌广场店-023",
-        "orderNo": "DB20260702297266",
-        "skuNum": 1,
-        "planQty": 48,
-        "allocQty": 0,
-        "unallocQty": 48
-      },
-      {
-        "receiverName": "快乐猴-番禺建华汇店-019",
-        "orderNo": "DB20260702297262",
         "skuNum": 1,
         "planQty": 48,
         "allocQty": 0,

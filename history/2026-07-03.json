@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-03T06:26:12",
+  "timestamp": "2026-07-03T06:31:44",
   "date": "2026-07-03",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 95,
-      "signed": 15,
-      "waiting": 75
+      "signed": 16,
+      "waiting": 74
     },
     "ontime": {
       "ontime": 0,
-      "early": 15,
+      "early": 16,
       "late": 0,
       "total": 90,
       "rate": 0.0,
-      "early_rate": 16.7,
+      "early_rate": 17.8,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 12,
+      "total": 13,
       "done": 7,
-      "rate": 58.3,
+      "rate": 53.8,
       "pcs_done": 8914,
-      "sign_pcs_done": 34430
+      "sign_pcs_done": 34494
     },
     "qc": {
-      "total": 58,
+      "total": 59,
       "done": 0,
-      "pending": 58,
+      "pending": 59,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 58,
+      "bill_total": 59,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 34430,
+      "pcs_total": 34494,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 56,
+      "sku_total": 57,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 90,
-        "done": 15,
-        "rate": 16.7
+        "done": 16,
+        "rate": 17.8
       },
       "pcs": {
         "total": 122518,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 442,
-        "done": 67,
-        "rate": 15.2
+        "done": 68,
+        "rate": 15.4
       },
       "supplier": {
         "total": 75,
-        "done": 10,
-        "rate": 13.3,
+        "done": 11,
+        "rate": 14.7,
         "detail": {
+          "北京和润乳制品厂-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "上海丰楷农业科技有限公司-快乐猴-自营": {
             "plan": 2,
             "done": 2
@@ -153,10 +157,6 @@
             "done": 0
           },
           "上海全苗蔬农业科技发展有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "东莞市时农农业有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -610,10 +610,17 @@
       ],
       "unloading": [
         {
+          "supplierName": "北京和润乳制品厂-快乐猴",
+          "billCode": "YY20260630005200",
+          "signTime": "06:31",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "上海丰楷农业科技有限公司-快乐猴-自营",
           "billCode": "YY20260702011483",
           "signTime": "06:26",
-          "status": "已签到未卸货"
+          "unloadStartTime": "06:26",
+          "status": "卸货中"
         },
         {
           "supplierName": "上海丰楷农业科技有限公司-快乐猴-自营",
@@ -1109,6 +1116,14 @@
           "supplierName": "上海丰楷农业科技有限公司-快乐猴-自营",
           "skuName": "新疆吊干杏 250g",
           "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 59,
+          "supplierName": "北京和润乳制品厂-快乐猴",
+          "skuName": "和润 原味干噎酸奶 100g",
+          "arrivalTime": "10:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
@@ -1644,6 +1659,17 @@
           "seq": 48
         },
         {
+          "supplierName": "北京和润乳制品厂-快乐猴",
+          "poNo": "CG202606301497",
+          "reserveBillCode": "YY20260630005200",
+          "skuId": "1002956",
+          "skuName": "和润 原味干噎酸奶 100g",
+          "purchaseQty": 64,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 49
+        },
+        {
           "supplierName": "东莞千厨食品有限公司-快乐猴",
           "poNo": "CG202607024298",
           "reserveBillCode": "YY20260702004370",
@@ -1652,7 +1678,7 @@
           "purchaseQty": 35,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 49
+          "seq": 50
         },
         {
           "supplierName": "东莞千厨食品有限公司-快乐猴",
@@ -1663,7 +1689,7 @@
           "purchaseQty": 25,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 50
+          "seq": 51
         },
         {
           "supplierName": "东莞千厨食品有限公司-快乐猴",
@@ -1674,7 +1700,7 @@
           "purchaseQty": 21,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 51
+          "seq": 52
         },
         {
           "supplierName": "东莞千厨食品有限公司-快乐猴",
@@ -1685,7 +1711,7 @@
           "purchaseQty": 15,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 52
+          "seq": 53
         },
         {
           "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
@@ -1696,7 +1722,7 @@
           "purchaseQty": 15,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 53
+          "seq": 54
         },
         {
           "supplierName": "东莞千厨食品有限公司-快乐猴",
@@ -1707,7 +1733,7 @@
           "purchaseQty": 11,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 54
+          "seq": 55
         },
         {
           "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
@@ -1718,7 +1744,7 @@
           "purchaseQty": 9,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 55
+          "seq": 56
         }
       ],
       "qc_recv_pending": [],

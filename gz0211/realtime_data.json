@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-03T10:15:34",
+  "timestamp": "2026-07-03T10:25:47",
   "date": "2026-07-03",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
-      "total": 5,
-      "signed": 1,
+      "total": 6,
+      "signed": 2,
       "waiting": 4
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 2,
       "late": 0,
-      "total": 5,
+      "total": 6,
       "rate": 0.0,
-      "early_rate": 20.0,
+      "early_rate": 33.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 2311
+      "sign_pcs_done": 2911
     },
     "qc": {
-      "total": 5,
+      "total": 6,
       "done": 0,
-      "pending": 5,
+      "pending": 6,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 5,
+      "bill_total": 6,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 2311,
+      "pcs_total": 2911,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 5,
+      "sku_total": 6,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -59,9 +59,9 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 5,
-        "done": 1,
-        "rate": 20.0
+        "total": 6,
+        "done": 2,
+        "rate": 33.3
       },
       "pcs": {
         "total": 15570,
@@ -71,15 +71,23 @@
         "recv_rate": 94.0
       },
       "sku": {
-        "total": 14,
-        "done": 5,
-        "rate": 35.7
+        "total": 17,
+        "done": 6,
+        "rate": 35.3
       },
       "supplier": {
         "total": 5,
-        "done": 1,
-        "rate": 20.0,
+        "done": 2,
+        "rate": 40.0,
         "detail": {
+          "日冷食品贸易（上海）有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "胜田(福清)食品有限公司-快乐猴": {
+            "plan": 2,
+            "done": 0
+          },
           "广州市艺奇雪贸易有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -88,15 +96,7 @@
             "plan": 1,
             "done": 0
           },
-          "胜田(福清)食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
           "海蓝厨房食品加工（海南）有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "日冷食品贸易（上海）有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -116,12 +116,20 @@
       ],
       "unsigned": [
         {
+          "supplierName": "胜田(福清)食品有限公司-快乐猴",
+          "billCode": "YY20260703001847",
+          "skuCount": 3,
+          "pcs": 8980,
+          "timeSlot": "15:00 - 15:30",
+          "seq": 1
+        },
+        {
           "supplierName": "深圳市金禧康食品有限公司-快乐猴",
           "billCode": "YY20260701002432",
           "skuCount": 6,
           "pcs": 2184,
           "timeSlot": "12:00 - 12:30",
-          "seq": 1
+          "seq": 2
         },
         {
           "supplierName": "胜田(福清)食品有限公司-快乐猴",
@@ -129,7 +137,7 @@
           "skuCount": 1,
           "pcs": 3000,
           "timeSlot": "14:00 - 15:00",
-          "seq": 2
+          "seq": 3
         },
         {
           "supplierName": "海蓝厨房食品加工（海南）有限公司-快乐猴",
@@ -137,18 +145,17 @@
           "skuCount": 1,
           "pcs": 150,
           "timeSlot": "10:00 - 10:30",
-          "seq": 3
-        },
-        {
-          "supplierName": "日冷食品贸易（上海）有限公司-快乐猴",
-          "billCode": "YY20260626000494",
-          "skuCount": 1,
-          "pcs": 600,
-          "timeSlot": "16:00 - 16:30",
           "seq": 4
         }
       ],
       "unloading": [
+        {
+          "supplierName": "日冷食品贸易（上海）有限公司-快乐猴",
+          "billCode": "YY20260626000494",
+          "signTime": "10:20",
+          "unloadStartTime": "10:21",
+          "status": "卸货中"
+        },
         {
           "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
           "billCode": "YY20260630012094",
@@ -197,6 +204,14 @@
           "arrivalTime": "10:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "日冷食品贸易（上海）有限公司-快乐猴",
+          "skuName": "碳烤鸡肉软骨串400g(N)",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -213,6 +228,17 @@
           "seq": 1
         },
         {
+          "supplierName": "日冷食品贸易（上海）有限公司-快乐猴",
+          "poNo": "CG2026062510544",
+          "reserveBillCode": "YY20260626000494",
+          "skuId": "1159783",
+          "skuName": "碳烤鸡肉软骨串400g(N)",
+          "purchaseQty": 600,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
           "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
           "poNo": "CG2026062916290",
           "reserveBillCode": "YY20260630012094",
@@ -221,7 +247,7 @@
           "purchaseQty": 408,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 3
         },
         {
           "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
@@ -232,7 +258,7 @@
           "purchaseQty": 388,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
+          "seq": 4
         },
         {
           "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
@@ -243,7 +269,7 @@
           "purchaseQty": 372,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 5
         },
         {
           "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
@@ -254,7 +280,7 @@
           "purchaseQty": 135,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 6
         }
       ],
       "qc_recv_pending": [],
@@ -368,10 +394,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 55,
-      "in_progress": 9,
-      "done": 61,
-      "total": 125,
+      "not_started": 53,
+      "in_progress": 8,
+      "done": 70,
+      "total": 131,
       "status": "ok"
     }
   },

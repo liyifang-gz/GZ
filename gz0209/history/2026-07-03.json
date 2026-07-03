@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-03T10:10:07",
+  "timestamp": "2026-07-03T10:15:55",
   "date": "2026-07-03",
   "warehouse": "GZ0209",
   "inbound": {
@@ -49,12 +49,12 @@
       "sku_rate": 6.2
     },
     "putaway": {
-      "total": 29771,
+      "total": 32459,
       "done": 28501,
-      "rate": 95.7,
-      "sku_total": 29,
+      "rate": 87.8,
+      "sku_total": 33,
       "sku_done": 23,
-      "sku_rate": 79.3,
+      "sku_rate": 69.7,
       "details": [
         {
           "poNo": "CG2026062915567",
@@ -64,10 +64,17 @@
           "putSku": 0
         },
         {
-          "poNo": "CG202606246555",
-          "hopePcs": 512,
+          "poNo": "CG202606246556",
+          "hopePcs": 2500,
           "putPcs": 0,
           "hopeSku": 3,
+          "putSku": 0
+        },
+        {
+          "poNo": "CG202606246555",
+          "hopePcs": 700,
+          "putPcs": 0,
+          "hopeSku": 4,
           "putSku": 0
         },
         {
@@ -89,8 +96,8 @@
         "total": 64485,
         "done": 61825,
         "rate": 95.9,
-        "recv_done": 29771,
-        "recv_rate": 46.2
+        "recv_done": 32199,
+        "recv_rate": 49.9
       },
       "sku": {
         "total": 81,
@@ -515,7 +522,7 @@
           "supplierName": "广东美而美食品有限公司-快乐猴",
           "skuName": "快乐猴 可生食富硒鲜鸡蛋 500g(10枚)",
           "completeTime": "10:02",
-          "waitingMins": 7
+          "waitingMins": 13
         }
       ],
       "signed_not_recv": [
@@ -542,17 +549,6 @@
           "seq": 2
         },
         {
-          "supplierName": "深圳市栢威贸易有限公司-快乐猴",
-          "poNo": "CG202606246555",
-          "reserveBillCode": "YY20260625000730",
-          "skuId": "71917",
-          "skuName": "寿桃 非油炸蛋面 1.2kg",
-          "purchaseQty": 700,
-          "recvQty": 512,
-          "hasQc": false,
-          "seq": 3
-        },
-        {
           "supplierName": "深圳华新创展商贸有限公司-快乐猴",
           "poNo": "CG2026062915800",
           "reserveBillCode": "YY20260702002273",
@@ -561,7 +557,7 @@
           "purchaseQty": 100,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 3
         },
         {
           "supplierName": "深圳华新创展商贸有限公司-快乐猴",
@@ -572,20 +568,11 @@
           "purchaseQty": 40,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 4
         }
       ],
       "qc_recv_pending": [],
-      "recv_diff": [
-        {
-          "supplierName": "深圳市栢威贸易有限公司-快乐猴",
-          "skuName": "寿桃 非油炸蛋面 1.2kg",
-          "purchaseQty": 700,
-          "recvQty": 512,
-          "diffQty": -188,
-          "poNo": "CG202606246555"
-        }
-      ],
+      "recv_diff": [],
       "qc_rejected": [],
       "duplicate_reserve": []
     },
@@ -816,40 +803,49 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 9725,
+      "plan_pcs": 9745,
       "alloc_pcs": 9725,
-      "alloc_rate": 100.0,
+      "alloc_rate": 99.8,
       "picked_pcs": 9342,
       "sow_pcs": 9342,
       "sow_rate": 96.1,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 15,
+      "sku_plan": 16,
       "sku_alloc": 15,
       "sku_sow": 7,
       "sku_ship": 0,
-      "total_orders": 10
+      "total_orders": 11
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-海珠星汇广场店-034",
+        "orderNo": "DB2026070379714",
+        "skuNum": 1,
+        "planQty": 20,
+        "allocQty": 0,
+        "unallocQty": 20
+      }
+    ],
     "seeding": {
-      "not_started": 56,
-      "in_progress": 11,
-      "done": 55,
-      "total": 122,
+      "not_started": 55,
+      "in_progress": 8,
+      "done": 62,
+      "total": 125,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 10,
-    "total_pcs": 9725,
+    "total_orders": 11,
+    "total_pcs": 9745,
     "alloc_pcs": 9725,
-    "alloc_rate": 100.0,
+    "alloc_rate": 99.8,
     "picked_pcs": 9342,
     "sow_pcs": 9342,
     "sow_rate": 96.1,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 15,
+    "sku_plan": 16,
     "sku_alloc": 15,
     "sku_sow": 7,
     "store_count": 8,
@@ -857,13 +853,22 @@
       "快乐猴-龙岗三联商业广场店-047": 4682.0,
       "快乐猴-大朗市场店-049": 4660.0,
       "快乐猴-白云山水立方店-037": 146.0,
+      "快乐猴-海珠星汇广场店-034": 68.0,
       "快乐猴-莞城罗沙大厦店-043": 48.0,
       "快乐猴-番禺建华汇店-019": 48.0,
-      "快乐猴-海珠星汇广场店-034": 48.0,
       "快乐猴-南海比高商业中心店-041": 48.0,
       "快乐猴-越秀越富广场店-031": 45.0
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-海珠星汇广场店-034",
+        "orderNo": "DB2026070379714",
+        "skuNum": 1,
+        "planQty": 20,
+        "allocQty": 0,
+        "unallocQty": 20
+      }
+    ],
     "status": "ok"
   },
   "transport": {

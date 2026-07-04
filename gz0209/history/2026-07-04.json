@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-04T10:34:38",
+  "timestamp": "2026-07-04T10:39:43",
   "date": "2026-07-04",
   "warehouse": "GZ0209",
   "inbound": {
@@ -25,27 +25,27 @@
     },
     "unload": {
       "total": 10,
-      "done": 4,
-      "rate": 40.0,
-      "pcs_done": 2682,
+      "done": 5,
+      "rate": 50.0,
+      "pcs_done": 3492,
       "sign_pcs_done": 36498
     },
     "qc": {
-      "total": 8,
+      "total": 7,
       "done": 0,
-      "pending": 8,
+      "pending": 7,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 8,
+      "bill_total": 7,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 33816,
+      "pcs_total": 33006,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 8,
+      "sku_total": 7,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -80,13 +80,13 @@
         "done": 10,
         "rate": 45.5,
         "detail": {
-          "广东绿番茄供应链管理有限公司-快乐猴-自营": {
-            "plan": 2,
-            "done": 2
-          },
           "仲景食品股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
+          },
+          "广东绿番茄供应链管理有限公司-快乐猴-自营": {
+            "plan": 2,
+            "done": 2
           },
           "安徽振洋食品科技有限公司-快乐猴": {
             "plan": 1,
@@ -290,13 +290,6 @@
       ],
       "unloading": [
         {
-          "supplierName": "仲景食品股份有限公司-快乐猴",
-          "billCode": "YY20260627000440",
-          "signTime": "10:26",
-          "unloadStartTime": "10:26",
-          "status": "卸货中"
-        },
-        {
           "supplierName": "安徽振洋食品科技有限公司-快乐猴",
           "billCode": "YY20260701000713",
           "signTime": "10:22",
@@ -381,14 +374,6 @@
           "supplierName": "安徽振洋食品科技有限公司-快乐猴",
           "skuName": "快乐猴 蒜香花生 400g",
           "arrivalTime": "15:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 8,
-          "supplierName": "仲景食品股份有限公司-快乐猴",
-          "skuName": "快乐猴 蒜蓉酱 240g",
-          "arrivalTime": "16:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
@@ -629,40 +614,49 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 32776,
+      "plan_pcs": 32796,
       "alloc_pcs": 32776,
-      "alloc_rate": 100.0,
+      "alloc_rate": 99.9,
       "picked_pcs": 10506,
       "sow_pcs": 10506,
       "sow_rate": 32.1,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 62,
+      "sku_plan": 63,
       "sku_alloc": 62,
       "sku_sow": 16,
       "sku_ship": 0,
-      "total_orders": 18
+      "total_orders": 19
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-白云山水立方店-037",
+        "orderNo": "DB2026070477450",
+        "skuNum": 1,
+        "planQty": 20,
+        "allocQty": 0,
+        "unallocQty": 20
+      }
+    ],
     "seeding": {
-      "not_started": 50,
-      "in_progress": 0,
+      "not_started": 53,
+      "in_progress": 1,
       "done": 0,
-      "total": 50,
+      "total": 54,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 18,
-    "total_pcs": 32776,
+    "total_orders": 19,
+    "total_pcs": 32796,
     "alloc_pcs": 32776,
-    "alloc_rate": 100.0,
+    "alloc_rate": 99.9,
     "picked_pcs": 10506,
     "sow_pcs": 10506,
     "sow_rate": 32.1,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 62,
+    "sku_plan": 63,
     "sku_alloc": 62,
     "sku_sow": 16,
     "store_count": 11,
@@ -674,11 +668,20 @@
       "快乐猴-白云永泰里店-053": 4649.0,
       "快乐猴-越秀越富广场店-031": 615.0,
       "快乐猴-海珠星汇广场店-034": 613.0,
-      "快乐猴-白云山水立方店-037": 8.0,
+      "快乐猴-白云山水立方店-037": 28.0,
       "快乐猴-白云新世界云集店-042": 8.0,
       "快乐猴-莞城罗沙大厦店-043": 8.0
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-白云山水立方店-037",
+        "orderNo": "DB2026070477450",
+        "skuNum": 1,
+        "planQty": 20,
+        "allocQty": 0,
+        "unallocQty": 20
+      }
+    ],
     "status": "ok"
   },
   "transport": {

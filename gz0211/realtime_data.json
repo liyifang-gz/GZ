@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-04T10:14:13",
+  "timestamp": "2026-07-04T10:19:15",
   "date": "2026-07-04",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 8,
-      "signed": 2,
-      "waiting": 6
+      "signed": 3,
+      "waiting": 5
     },
     "ontime": {
       "ontime": 0,
-      "early": 2,
+      "early": 3,
       "late": 0,
       "total": 8,
       "rate": 0.0,
-      "early_rate": 25.0,
+      "early_rate": 37.5,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,62 +24,81 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 1,
-      "rate": 100.0,
+      "rate": 50.0,
       "pcs_done": 656,
-      "sign_pcs_done": 656
+      "sign_pcs_done": 3934
     },
     "qc": {
-      "total": 0,
+      "total": 5,
       "done": 0,
-      "pending": 0,
+      "pending": 5,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 5,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 3278,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 5,
+      "sku_rate": 0.0
     },
     "putaway": {
-      "total": 2748,
+      "total": 3404,
       "done": 2748,
-      "rate": 100.0,
-      "sku_total": 6,
+      "rate": 80.7,
+      "sku_total": 9,
       "sku_done": 6,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 66.7,
+      "details": [
+        {
+          "poNo": "CG2026062916309",
+          "hopePcs": 576,
+          "putPcs": 0,
+          "hopeSku": 2,
+          "putSku": 0
+        },
+        {
+          "poNo": "CG2026062916303",
+          "hopePcs": 80,
+          "putPcs": 0,
+          "hopeSku": 1,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
         "total": 8,
-        "done": 2,
-        "rate": 25.0
+        "done": 3,
+        "rate": 37.5
       },
       "pcs": {
         "total": 6909,
         "done": 4161,
         "rate": 60.2,
-        "recv_done": 2748,
-        "recv_rate": 39.8
+        "recv_done": 3404,
+        "recv_rate": 49.3
       },
       "sku": {
         "total": 19,
-        "done": 6,
-        "rate": 31.6
+        "done": 11,
+        "rate": 57.9
       },
       "supplier": {
         "total": 6,
-        "done": 1,
-        "rate": 16.7,
+        "done": 2,
+        "rate": 33.3,
         "detail": {
+          "和路雪（中国）有限公司上海分公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "北京雪特商贸有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -97,10 +116,6 @@
             "done": 0
           },
           "杭州一起闯荡科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "和路雪（中国）有限公司上海分公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -166,41 +181,115 @@
           "pcs": 810,
           "timeSlot": "15:30 - 16:00",
           "seq": 5
-        },
+        }
+      ],
+      "unloading": [
         {
           "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
           "billCode": "YY20260629010404",
-          "skuCount": 5,
-          "pcs": 3278,
-          "timeSlot": "15:00 - 16:00",
-          "seq": 6
+          "signTime": "10:17",
+          "unloadStartTime": "10:19",
+          "status": "卸货中"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
+          "skuName": "和路雪 迷你可爱多香草巧克力味甜筒 20g*8",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
+          "skuName": "和路雪 菠萝喳喳菠萝棒冰 78g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
+          "skuName": "和路雪 可爱多非常巧克力口味冰淇淋 67g*4",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
+          "skuName": "和路雪 迷你绿舌头苹果口味果冻冰棍 174g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
+          "skuName": "和路雪 冰淇淋(迷你梦龙香草+松露巧克力) 170g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "signed_not_recv": [
         {
-          "supplierName": "北京雪特商贸有限公司-快乐猴",
-          "poNo": "CG2026062916309",
-          "reserveBillCode": "YY20260701007767",
-          "skuId": "115273",
-          "skuName": "雀巢 雪糍香草味糯米糍冰淇淋 32g*6",
-          "purchaseQty": 408,
+          "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
+          "poNo": "CG2026062916310",
+          "reserveBillCode": "YY20260629010404",
+          "skuId": "285153",
+          "skuName": "和路雪 菠萝喳喳菠萝棒冰 78g",
+          "purchaseQty": 1824,
           "recvQty": 0,
           "hasQc": false,
           "seq": 1
         },
         {
-          "supplierName": "北京雪特商贸有限公司-快乐猴",
-          "poNo": "CG2026062916309",
-          "reserveBillCode": "YY20260701007767",
-          "skuId": "618714",
-          "skuName": "金水园 生巧巧克力味冰淇淋 350g(5支)",
-          "purchaseQty": 168,
+          "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
+          "poNo": "CG2026062916310",
+          "reserveBillCode": "YY20260629010404",
+          "skuId": "2734",
+          "skuName": "和路雪 迷你可爱多香草巧克力味甜筒 20g*8",
+          "purchaseQty": 870,
           "recvQty": 0,
           "hasQc": false,
           "seq": 2
+        },
+        {
+          "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
+          "poNo": "CG2026062916310",
+          "reserveBillCode": "YY20260629010404",
+          "skuId": "958459",
+          "skuName": "和路雪 迷你绿舌头苹果口味果冻冰棍 174g",
+          "purchaseQty": 296,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
+          "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
+          "poNo": "CG2026062916310",
+          "reserveBillCode": "YY20260629010404",
+          "skuId": "659974",
+          "skuName": "和路雪 可爱多非常巧克力口味冰淇淋 67g*4",
+          "purchaseQty": 264,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
+          "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
+          "poNo": "CG2026062916310",
+          "reserveBillCode": "YY20260629010404",
+          "skuId": "1324815",
+          "skuName": "和路雪 冰淇淋(迷你梦龙香草+松露巧克力) 170g",
+          "purchaseQty": 24,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
         }
       ],
       "qc_recv_pending": [],
@@ -305,10 +394,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 43,
+      "not_started": 45,
       "in_progress": 0,
       "done": 0,
-      "total": 43,
+      "total": 45,
       "status": "ok"
     }
   },

@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-07-05T07:42:06",
+  "timestamp": "2026-07-05T07:47:06",
   "date": "2026-07-05",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
-      "total": 0,
+      "total": 4,
       "signed": 0,
-      "waiting": 0
+      "waiting": 3
     },
     "ontime": {
       "ontime": 0,
       "early": 0,
       "late": 0,
-      "total": 0,
-      "rate": 0,
-      "early_rate": 0,
-      "late_rate": 0
+      "total": 3,
+      "rate": 0.0,
+      "early_rate": 0.0,
+      "late_rate": 0.0
     },
     "reserve_progress": {
       "po_total": 1,
-      "po_reserved": 0,
-      "rate": 0.0,
+      "po_reserved": 1,
+      "rate": 100.0,
       "po_data_ok": true
     },
     "unload": {
@@ -59,9 +59,9 @@
     },
     "dimensions": {
       "reserve": {
-        "total": 0,
+        "total": 3,
         "done": 0,
-        "rate": 0
+        "rate": 0.0
       },
       "pcs": {
         "total": 43,
@@ -71,29 +71,58 @@
         "recv_rate": 100.0
       },
       "sku": {
-        "total": 0,
+        "total": 6,
         "done": 0,
-        "rate": 0
+        "rate": 0.0
       },
       "supplier": {
-        "total": 0,
+        "total": 3,
         "done": 0,
-        "rate": 0,
-        "detail": {}
+        "rate": 0.0,
+        "detail": {
+          "浙江骏马食品有限公司": {
+            "plan": 1,
+            "done": 0
+          },
+          "胜田(福清)食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 0
+          },
+          "北京月盛斋清真食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 0
+          }
+        }
       }
     },
     "details": {
-      "unreserved": [
+      "unreserved": [],
+      "unsigned": [
         {
-          "supplierName": "沧州市日月潭食品有限公司-快乐猴",
-          "poNo": "CG2026062610111",
+          "supplierName": "浙江骏马食品有限公司",
+          "billCode": "YY20260704005828",
           "skuCount": 1,
-          "pcs": 43,
-          "preArrivalTime": "2026-07-05",
-          "poStatus": "已完成"
+          "pcs": 3000,
+          "timeSlot": "15:30 - 16:30",
+          "seq": 1
+        },
+        {
+          "supplierName": "胜田(福清)食品有限公司-快乐猴",
+          "billCode": "YY20260704004500",
+          "skuCount": 3,
+          "pcs": 8980,
+          "timeSlot": "15:00 - 15:30",
+          "seq": 2
+        },
+        {
+          "supplierName": "北京月盛斋清真食品有限公司-快乐猴",
+          "billCode": "YY20260701000615",
+          "skuCount": 2,
+          "pcs": 1040,
+          "timeSlot": "15:30 - 16:00",
+          "seq": 3
         }
       ],
-      "unsigned": [],
       "unloading": [],
       "qc_pending": [],
       "recv_pending": [],

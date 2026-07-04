@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-04T10:24:39",
+  "timestamp": "2026-07-04T10:29:33",
   "date": "2026-07-04",
   "warehouse": "GZ0209",
   "inbound": {
     "reserve": {
       "total": 33,
-      "signed": 10,
-      "waiting": 15
+      "signed": 11,
+      "waiting": 14
     },
     "ontime": {
       "ontime": 5,
-      "early": 5,
+      "early": 6,
       "late": 0,
       "total": 25,
       "rate": 20.0,
-      "early_rate": 20.0,
+      "early_rate": 24.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 9,
+      "total": 10,
       "done": 4,
-      "rate": 44.4,
+      "rate": 40.0,
       "pcs_done": 2682,
-      "sign_pcs_done": 35688
+      "sign_pcs_done": 36498
     },
     "qc": {
-      "total": 7,
+      "total": 8,
       "done": 0,
-      "pending": 7,
+      "pending": 8,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 7,
+      "bill_total": 8,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 33006,
+      "pcs_total": 33816,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 7,
+      "sku_total": 8,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 25,
-        "done": 10,
-        "rate": 40.0
+        "done": 11,
+        "rate": 44.0
       },
       "pcs": {
         "total": 164252,
@@ -72,17 +72,21 @@
       },
       "sku": {
         "total": 47,
-        "done": 16,
-        "rate": 34.0
+        "done": 17,
+        "rate": 36.2
       },
       "supplier": {
         "total": 22,
-        "done": 9,
-        "rate": 40.9,
+        "done": 10,
+        "rate": 45.5,
         "detail": {
           "广东绿番茄供应链管理有限公司-快乐猴-自营": {
             "plan": 2,
             "done": 2
+          },
+          "仲景食品股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
           },
           "安徽振洋食品科技有限公司-快乐猴": {
             "plan": 1,
@@ -154,10 +158,6 @@
           },
           "厦门市辑利食品有限公司翔安分公司-快乐猴-自营": {
             "plan": 1,
-            "done": 0
-          },
-          "长菁（浙江）新材料有限公司-快乐猴-自营": {
-            "plan": 2,
             "done": 0
           }
         }
@@ -272,20 +272,12 @@
           "seq": 12
         },
         {
-          "supplierName": "仲景食品股份有限公司-快乐猴",
-          "billCode": "YY20260627000440",
-          "skuCount": 1,
-          "pcs": 810,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 13
-        },
-        {
           "supplierName": "长菁（浙江）新材料有限公司-快乐猴-自营",
           "billCode": "YY20260623005382",
           "skuCount": 2,
           "pcs": 24000,
           "timeSlot": "12:00 - 16:00",
-          "seq": 14
+          "seq": 13
         },
         {
           "supplierName": "山东昆润食品有限公司-快乐猴",
@@ -293,10 +285,17 @@
           "skuCount": 1,
           "pcs": 600,
           "timeSlot": "15:30 - 16:00",
-          "seq": 15
+          "seq": 14
         }
       ],
       "unloading": [
+        {
+          "supplierName": "仲景食品股份有限公司-快乐猴",
+          "billCode": "YY20260627000440",
+          "signTime": "10:26",
+          "unloadStartTime": "10:26",
+          "status": "卸货中"
+        },
         {
           "supplierName": "安徽振洋食品科技有限公司-快乐猴",
           "billCode": "YY20260701000713",
@@ -384,6 +383,14 @@
           "arrivalTime": "15:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "仲景食品股份有限公司-快乐猴",
+          "skuName": "快乐猴 蒜蓉酱 240g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -455,6 +462,17 @@
           "seq": 6
         },
         {
+          "supplierName": "仲景食品股份有限公司-快乐猴",
+          "poNo": "CG202606251203",
+          "reserveBillCode": "YY20260627000440",
+          "skuId": "1348717",
+          "skuName": "快乐猴 蒜蓉酱 240g",
+          "purchaseQty": 810,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
+        },
+        {
           "supplierName": "深圳市荣德润贸易有限公司-快乐猴",
           "poNo": "CG2026063010550",
           "reserveBillCode": "YY20260702004822",
@@ -463,7 +481,7 @@
           "purchaseQty": 600,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 8
         }
       ],
       "qc_recv_pending": [],

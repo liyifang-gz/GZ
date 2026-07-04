@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-04T13:06:11",
+  "timestamp": "2026-07-04T13:14:37",
   "date": "2026-07-04",
   "warehouse": "GZ0211",
   "inbound": {
@@ -156,13 +156,15 @@
           "supplierName": "北京美知源商贸有限公司",
           "billCode": "YY20260702006210",
           "signTime": "13:00",
-          "status": "已签到未卸货"
+          "unloadStartTime": "13:10",
+          "status": "卸货中"
         },
         {
           "supplierName": "北京美知源商贸有限公司",
           "billCode": "YY20260703011904",
           "signTime": "12:59",
-          "status": "已签到未卸货"
+          "unloadStartTime": "13:11",
+          "status": "卸货中"
         }
       ],
       "qc_pending": [
@@ -212,7 +214,7 @@
           "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
           "skuName": "叮叮懒人菜 双蛋白藜麦鸡排 300g",
           "completeTime": "12:04",
-          "waitingMins": 62
+          "waitingMins": 71
         }
       ],
       "signed_not_recv": [
@@ -315,7 +317,7 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 5329,
+      "pcs_total": 8675,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -355,7 +357,7 @@
         "pick_rate": 0,
         "sow_rate": 0,
         "cage_rate": 0.0,
-        "sowed_picked": 5329
+        "sowed_picked": 8675
       },
       "sku": {
         "total": 0,
@@ -369,52 +371,105 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 5329,
-      "alloc_pcs": 5329,
-      "alloc_rate": 100.0,
+      "plan_pcs": 8994,
+      "alloc_pcs": 8675,
+      "alloc_rate": 96.5,
       "picked_pcs": 0,
       "sow_pcs": 0,
       "sow_rate": 0.0,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 283,
-      "sku_alloc": 283,
+      "sku_plan": 448,
+      "sku_alloc": 448,
       "sku_sow": 0,
       "sku_ship": 0,
-      "total_orders": 11
+      "total_orders": 16
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-莞城罗沙大厦店-043",
+        "orderNo": "DB20260704288782",
+        "skuNum": 76,
+        "planQty": 1669,
+        "allocQty": 1522,
+        "unallocQty": 147
+      },
+      {
+        "receiverName": "快乐猴-白云新世界云集店-042",
+        "orderNo": "DB20260704288769",
+        "skuNum": 40,
+        "planQty": 928,
+        "allocQty": 817,
+        "unallocQty": 111
+      },
+      {
+        "receiverName": "快乐猴-南海比高商业中心店-041",
+        "orderNo": "DB20260704288780",
+        "skuNum": 47,
+        "planQty": 828,
+        "allocQty": 767,
+        "unallocQty": 61
+      }
+    ],
     "seeding": {
-      "not_started": 59,
+      "not_started": 57,
       "in_progress": 4,
-      "done": 156,
-      "total": 219,
+      "done": 159,
+      "total": 220,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 11,
-    "total_pcs": 5329,
-    "alloc_pcs": 5329,
-    "alloc_rate": 100.0,
+    "total_orders": 16,
+    "total_pcs": 8994,
+    "alloc_pcs": 8675,
+    "alloc_rate": 96.5,
     "picked_pcs": 0,
     "sow_pcs": 0,
     "sow_rate": 0.0,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 283,
-    "sku_alloc": 283,
+    "sku_plan": 448,
+    "sku_alloc": 448,
     "sku_sow": 0,
-    "store_count": 6,
+    "store_count": 9,
     "by_store": {
+      "快乐猴-莞城罗沙大厦店-043": 1669.0,
+      "快乐猴-白云新世界云集店-042": 1108.0,
       "快乐猴-番禺建华汇店-019": 1095.0,
       "快乐猴-禅城东方广场店-018": 1015.0,
       "快乐猴-海珠星汇广场店-034": 963.0,
+      "快乐猴-南海比高商业中心店-041": 888.0,
       "快乐猴-白云山水立方店-037": 870.0,
       "快乐猴-南海国昌广场店-023": 705.0,
       "快乐猴-越秀越富广场店-031": 681.0
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-莞城罗沙大厦店-043",
+        "orderNo": "DB20260704288782",
+        "skuNum": 76,
+        "planQty": 1669,
+        "allocQty": 1522,
+        "unallocQty": 147
+      },
+      {
+        "receiverName": "快乐猴-白云新世界云集店-042",
+        "orderNo": "DB20260704288769",
+        "skuNum": 40,
+        "planQty": 928,
+        "allocQty": 817,
+        "unallocQty": 111
+      },
+      {
+        "receiverName": "快乐猴-南海比高商业中心店-041",
+        "orderNo": "DB20260704288780",
+        "skuNum": 47,
+        "planQty": 828,
+        "allocQty": 767,
+        "unallocQty": 61
+      }
+    ],
     "status": "ok"
   },
   "transport": {

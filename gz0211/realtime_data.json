@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-04T09:10:44",
+  "timestamp": "2026-07-04T09:24:17",
   "date": "2026-07-04",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 8,
-      "signed": 0,
-      "waiting": 8
+      "signed": 2,
+      "waiting": 6
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 2,
       "late": 0,
       "total": 8,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 25.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "pcs_done": 0,
-      "sign_pcs_done": 0
+      "total": 1,
+      "done": 1,
+      "rate": 100.0,
+      "pcs_done": 656,
+      "sign_pcs_done": 656
     },
     "qc": {
-      "total": 0,
+      "total": 3,
       "done": 0,
-      "pending": 0,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 656,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 3,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 2748,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 8,
-        "done": 0,
-        "rate": 0.0
+        "done": 2,
+        "rate": 25.0
       },
       "pcs": {
         "total": 6909,
@@ -72,24 +72,24 @@
       },
       "sku": {
         "total": 19,
-        "done": 0,
-        "rate": 0.0
+        "done": 6,
+        "rate": 31.6
       },
       "supplier": {
         "total": 6,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 16.7,
         "detail": {
+          "北京雪特商贸有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "北京美知源商贸有限公司": {
             "plan": 2,
             "done": 0
           },
           "沧州市日月潭食品有限公司-快乐猴": {
             "plan": 1,
-            "done": 0
-          },
-          "北京雪特商贸有限公司-快乐猴": {
-            "plan": 2,
             "done": 0
           },
           "上海杰味食品科技有限公司-快乐猴": {
@@ -152,20 +152,12 @@
           "seq": 3
         },
         {
-          "supplierName": "北京雪特商贸有限公司-快乐猴",
-          "billCode": "YY20260701007767",
-          "skuCount": 3,
-          "pcs": 656,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 4
-        },
-        {
           "supplierName": "上海杰味食品科技有限公司-快乐猴",
           "billCode": "YY20260701006234",
           "skuCount": 1,
           "pcs": 560,
           "timeSlot": "16:00 - 16:30",
-          "seq": 5
+          "seq": 4
         },
         {
           "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
@@ -173,7 +165,7 @@
           "skuCount": 1,
           "pcs": 810,
           "timeSlot": "15:30 - 16:00",
-          "seq": 6
+          "seq": 5
         },
         {
           "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
@@ -181,13 +173,61 @@
           "skuCount": 5,
           "pcs": 3278,
           "timeSlot": "15:00 - 16:00",
-          "seq": 7
+          "seq": 6
         }
       ],
       "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "北京雪特商贸有限公司-快乐猴",
+          "skuName": "雀巢 雪糍香草味糯米糍冰淇淋 32g*6",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "09:24",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "北京雪特商贸有限公司-快乐猴",
+          "skuName": "金水园 生巧巧克力味冰淇淋 350g(5支)",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "09:24",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "北京雪特商贸有限公司-快乐猴",
+          "skuName": "三全 牛肉大葱水饺 450g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "09:24",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "北京雪特商贸有限公司-快乐猴",
+          "poNo": "CG2026062916309",
+          "reserveBillCode": "YY20260701007767",
+          "skuId": "115273",
+          "skuName": "雀巢 雪糍香草味糯米糍冰淇淋 32g*6",
+          "purchaseQty": 408,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "北京雪特商贸有限公司-快乐猴",
+          "poNo": "CG2026062916309",
+          "reserveBillCode": "YY20260701007767",
+          "skuId": "618714",
+          "skuName": "金水园 生巧巧克力味冰淇淋 350g(5支)",
+          "purchaseQty": 168,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -290,10 +330,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 0,
+      "not_started": 3,
       "in_progress": 0,
       "done": 0,
-      "total": 0,
+      "total": 3,
       "status": "ok"
     }
   },

@@ -1,26 +1,26 @@
 {
-  "timestamp": "2026-07-05T00:05:52",
+  "timestamp": "2026-07-05T00:11:41",
   "date": "2026-07-05",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
-      "total": 0,
+      "total": 4,
       "signed": 0,
-      "waiting": 0
+      "waiting": 3
     },
     "ontime": {
       "ontime": 0,
       "early": 0,
       "late": 0,
-      "total": 0,
-      "rate": 0,
-      "early_rate": 0,
-      "late_rate": 0
+      "total": 3,
+      "rate": 0.0,
+      "early_rate": 0.0,
+      "late_rate": 0.0
     },
     "reserve_progress": {
       "po_total": 1,
-      "po_reserved": 0,
-      "rate": 0.0,
+      "po_reserved": 1,
+      "rate": 100.0,
       "po_data_ok": true
     },
     "unload": {
@@ -49,19 +49,19 @@
       "sku_rate": 0
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
+      "total": 43,
+      "done": 43,
+      "rate": 100.0,
+      "sku_total": 1,
+      "sku_done": 1,
+      "sku_rate": 100.0,
       "details": []
     },
     "dimensions": {
       "reserve": {
-        "total": 0,
+        "total": 3,
         "done": 0,
-        "rate": 0
+        "rate": 0.0
       },
       "pcs": {
         "total": 43,
@@ -71,29 +71,58 @@
         "recv_rate": 100.0
       },
       "sku": {
-        "total": 0,
+        "total": 6,
         "done": 0,
-        "rate": 0
+        "rate": 0.0
       },
       "supplier": {
-        "total": 0,
+        "total": 3,
         "done": 0,
-        "rate": 0,
-        "detail": {}
+        "rate": 0.0,
+        "detail": {
+          "浙江骏马食品有限公司": {
+            "plan": 1,
+            "done": 0
+          },
+          "胜田(福清)食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 0
+          },
+          "北京月盛斋清真食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 0
+          }
+        }
       }
     },
     "details": {
-      "unreserved": [
+      "unreserved": [],
+      "unsigned": [
         {
-          "supplierName": "沧州市日月潭食品有限公司-快乐猴",
-          "poNo": "CG2026062610111",
+          "supplierName": "浙江骏马食品有限公司",
+          "billCode": "YY20260704005828",
           "skuCount": 1,
-          "pcs": 43,
-          "preArrivalTime": "2026-07-05",
-          "poStatus": "已完成"
+          "pcs": 3000,
+          "timeSlot": "15:30 - 16:30",
+          "seq": 1
+        },
+        {
+          "supplierName": "胜田(福清)食品有限公司-快乐猴",
+          "billCode": "YY20260704004500",
+          "skuCount": 3,
+          "pcs": 8980,
+          "timeSlot": "15:00 - 15:30",
+          "seq": 2
+        },
+        {
+          "supplierName": "北京月盛斋清真食品有限公司-快乐猴",
+          "billCode": "YY20260701000615",
+          "skuCount": 2,
+          "pcs": 1040,
+          "timeSlot": "15:30 - 16:00",
+          "seq": 3
         }
       ],
-      "unsigned": [],
       "unloading": [],
       "qc_pending": [],
       "recv_pending": [],
@@ -296,29 +325,6 @@
           "store": "禅城东方广场店"
         },
         {
-          "waybillCode": "GZ2112229066",
-          "licensePlate": "粤ADD8869",
-          "driverName": "刘可",
-          "carrierName": "斑马（广州2024）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 0,
-          "preCoolMonitorStatus": 3,
-          "preCoolMonitorStatusName": "--",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1783177965000,
-          "store": "禅城东方广场店"
-        },
-        {
           "waybillCode": "GZ2112208318",
           "licensePlate": "粤BCW5276",
           "driverName": "刘礼勇",
@@ -339,6 +345,29 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "广州RDC生鲜2号仓-冻（现代物流园）",
           "createTime": 1783166416000,
+          "store": "禅城东方广场店"
+        },
+        {
+          "waybillCode": "GZ2112229066",
+          "licensePlate": "粤ADD8869",
+          "driverName": "刘可",
+          "carrierName": "斑马（广州2024）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 0,
+          "preCoolMonitorStatus": 3,
+          "preCoolMonitorStatusName": "--",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1783177965000,
           "store": "禅城东方广场店"
         },
         {
@@ -363,6 +392,52 @@
           "firstLadingPoiName": "KLH-广州常温1仓",
           "createTime": 1783162086000,
           "store": "禅城东方广场店"
+        },
+        {
+          "waybillCode": "GZ2111956720",
+          "licensePlate": "粤AB48106",
+          "driverName": "刘嘉俊",
+          "carrierName": "运多多（广州）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 40,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 1,
+          "deliveryPoiArrivalQualifiedCount": 1,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1783168773000,
+          "store": "番禺建华汇店"
+        },
+        {
+          "waybillCode": "GZ2112224068",
+          "licensePlate": "粤ACM9199",
+          "driverName": "孙新平",
+          "carrierName": "运多多（广州）",
+          "temperatureLevel": 1,
+          "temperatureLevelName": "冷冻车",
+          "waybillStatus": 40,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷冻1仓",
+          "createTime": 1783167674000,
+          "store": "番禺建华汇店"
         },
         {
           "waybillCode": "GZ2111914905",
@@ -408,52 +483,6 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1783175734000,
-          "store": "番禺建华汇店"
-        },
-        {
-          "waybillCode": "GZ2111956720",
-          "licensePlate": "粤AB48106",
-          "driverName": "刘嘉俊",
-          "carrierName": "运多多（广州）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 40,
-          "preCoolMonitorStatus": 1,
-          "preCoolMonitorStatusName": "合格",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 1,
-          "deliveryPoiArrivalQualifiedCount": 1,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1783168773000,
-          "store": "番禺建华汇店"
-        },
-        {
-          "waybillCode": "GZ2112224068",
-          "licensePlate": "粤ACM9199",
-          "driverName": "孙新平",
-          "carrierName": "运多多（广州）",
-          "temperatureLevel": 1,
-          "temperatureLevelName": "冷冻车",
-          "waybillStatus": 20,
-          "preCoolMonitorStatus": 1,
-          "preCoolMonitorStatusName": "合格",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷冻1仓",
-          "createTime": 1783167674000,
           "store": "番禺建华汇店"
         },
         {
@@ -526,29 +555,6 @@
           "store": "番禺建华汇店"
         },
         {
-          "waybillCode": "GZ2112192429",
-          "licensePlate": "粤AB34426",
-          "driverName": "贺海兵",
-          "carrierName": "斑马（广州2024）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 0,
-          "preCoolMonitorStatus": 3,
-          "preCoolMonitorStatusName": "--",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1783178057000,
-          "store": "南海国昌广场店"
-        },
-        {
           "waybillCode": "GZ2112215082",
           "licensePlate": "粤BEH2089",
           "driverName": "李付军",
@@ -592,6 +598,29 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "广州RDC生鲜2号仓-冻（现代物流园）",
           "createTime": 1783166416000,
+          "store": "南海国昌广场店"
+        },
+        {
+          "waybillCode": "GZ2112192429",
+          "licensePlate": "粤AB34426",
+          "driverName": "贺海兵",
+          "carrierName": "斑马（广州2024）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 0,
+          "preCoolMonitorStatus": 3,
+          "preCoolMonitorStatusName": "--",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1783178057000,
           "store": "南海国昌广场店"
         },
         {
@@ -641,29 +670,6 @@
           "store": "南海国昌广场店"
         },
         {
-          "waybillCode": "GZ2112025252",
-          "licensePlate": "粤A326G1",
-          "driverName": "伍家伟",
-          "carrierName": "优乐（广州）",
-          "temperatureLevel": 1,
-          "temperatureLevelName": "冷冻车",
-          "waybillStatus": 50,
-          "preCoolMonitorStatus": 1,
-          "preCoolMonitorStatusName": "合格",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 3,
-          "deliveryPoiArrivalQualifiedCount": 3,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷冻1仓",
-          "createTime": 1783167628000,
-          "store": "海珠星汇广场店"
-        },
-        {
           "waybillCode": "GZ2112028100",
           "licensePlate": "粤AGR9899",
           "driverName": "吴永焱",
@@ -710,6 +716,29 @@
           "store": "海珠星汇广场店"
         },
         {
+          "waybillCode": "GZ2112025252",
+          "licensePlate": "粤A326G1",
+          "driverName": "伍家伟",
+          "carrierName": "优乐（广州）",
+          "temperatureLevel": 1,
+          "temperatureLevelName": "冷冻车",
+          "waybillStatus": 50,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 3,
+          "deliveryPoiArrivalQualifiedCount": 3,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷冻1仓",
+          "createTime": 1783167628000,
+          "store": "海珠星汇广场店"
+        },
+        {
           "waybillCode": "GZ2112205291",
           "licensePlate": "粤AGR8551",
           "driverName": "郑炳杰",
@@ -731,29 +760,6 @@
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1783168629000,
           "store": "海珠星汇广场店"
-        },
-        {
-          "waybillCode": "GZ2112025252",
-          "licensePlate": "粤A326G1",
-          "driverName": "伍家伟",
-          "carrierName": "优乐（广州）",
-          "temperatureLevel": 1,
-          "temperatureLevelName": "冷冻车",
-          "waybillStatus": 50,
-          "preCoolMonitorStatus": 1,
-          "preCoolMonitorStatusName": "合格",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 3,
-          "deliveryPoiArrivalQualifiedCount": 3,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷冻1仓",
-          "createTime": 1783167628000,
-          "store": "越秀越富广场店"
         },
         {
           "waybillCode": "GZ2112198394",
@@ -802,6 +808,29 @@
           "store": "越秀越富广场店"
         },
         {
+          "waybillCode": "GZ2112025252",
+          "licensePlate": "粤A326G1",
+          "driverName": "伍家伟",
+          "carrierName": "优乐（广州）",
+          "temperatureLevel": 1,
+          "temperatureLevelName": "冷冻车",
+          "waybillStatus": 50,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 3,
+          "deliveryPoiArrivalQualifiedCount": 3,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷冻1仓",
+          "createTime": 1783167628000,
+          "store": "越秀越富广场店"
+        },
+        {
           "waybillCode": "GZ2112180973",
           "licensePlate": "粤ADU4692",
           "driverName": "罗天锋",
@@ -828,12 +857,12 @@
       "status": "ok"
     },
     "departed_trips": {
-      "total": 11,
-      "in_transit": 5,
+      "total": 12,
+      "in_transit": 6,
       "arrived": 6,
       "by_store": {
         "禅城东方广场店": 1,
-        "番禺建华汇店": 5,
+        "番禺建华汇店": 6,
         "南海国昌广场店": 1,
         "海珠星汇广场店": 3,
         "越秀越富广场店": 1
@@ -864,30 +893,6 @@
           "_status_label": "已完成"
         },
         {
-          "waybillCode": "GZ2112199349",
-          "licensePlate": "粤AA40645",
-          "driverName": "钟宜淳",
-          "carrierName": "运多多（广州）",
-          "temperatureLevel": 2,
-          "temperatureLevelName": "冷藏车",
-          "waybillStatus": 40,
-          "preCoolMonitorStatus": 1,
-          "preCoolMonitorStatusName": "合格",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "KLH-广州冷藏1仓",
-          "createTime": 1783175734000,
-          "store": "番禺建华汇店",
-          "_status_label": "运输中"
-        },
-        {
           "waybillCode": "GZ2111956720",
           "licensePlate": "粤AB48106",
           "driverName": "刘嘉俊",
@@ -908,6 +913,54 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1783168773000,
+          "store": "番禺建华汇店",
+          "_status_label": "运输中"
+        },
+        {
+          "waybillCode": "GZ2112224068",
+          "licensePlate": "粤ACM9199",
+          "driverName": "孙新平",
+          "carrierName": "运多多（广州）",
+          "temperatureLevel": 1,
+          "temperatureLevelName": "冷冻车",
+          "waybillStatus": 40,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷冻1仓",
+          "createTime": 1783167674000,
+          "store": "番禺建华汇店",
+          "_status_label": "运输中"
+        },
+        {
+          "waybillCode": "GZ2112199349",
+          "licensePlate": "粤AA40645",
+          "driverName": "钟宜淳",
+          "carrierName": "运多多（广州）",
+          "temperatureLevel": 2,
+          "temperatureLevelName": "冷藏车",
+          "waybillStatus": 40,
+          "preCoolMonitorStatus": 1,
+          "preCoolMonitorStatusName": "合格",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "KLH-广州冷藏1仓",
+          "createTime": 1783175734000,
           "store": "番禺建华汇店",
           "_status_label": "运输中"
         },

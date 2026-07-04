@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-04T10:19:15",
+  "timestamp": "2026-07-04T10:24:17",
   "date": "2026-07-04",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 8,
-      "signed": 3,
-      "waiting": 5
+      "signed": 4,
+      "waiting": 4
     },
     "ontime": {
       "ontime": 0,
-      "early": 3,
+      "early": 4,
       "late": 0,
       "total": 8,
       "rate": 0.0,
-      "early_rate": 37.5,
+      "early_rate": 50.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 3,
       "done": 1,
-      "rate": 50.0,
+      "rate": 33.3,
       "pcs_done": 656,
-      "sign_pcs_done": 3934
+      "sign_pcs_done": 4744
     },
     "qc": {
-      "total": 5,
+      "total": 6,
       "done": 0,
-      "pending": 5,
+      "pending": 6,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 5,
+      "bill_total": 6,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 3278,
+      "pcs_total": 4088,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 5,
+      "sku_total": 6,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -75,8 +75,8 @@
     "dimensions": {
       "reserve": {
         "total": 8,
-        "done": 3,
-        "rate": 37.5
+        "done": 4,
+        "rate": 50.0
       },
       "pcs": {
         "total": 6909,
@@ -87,14 +87,18 @@
       },
       "sku": {
         "total": 19,
-        "done": 11,
-        "rate": 57.9
+        "done": 12,
+        "rate": 63.2
       },
       "supplier": {
         "total": 6,
-        "done": 2,
-        "rate": 33.3,
+        "done": 3,
+        "rate": 50.0,
         "detail": {
+          "杭州一起闯荡科技有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "和路雪（中国）有限公司上海分公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -112,10 +116,6 @@
             "done": 0
           },
           "上海杰味食品科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "杭州一起闯荡科技有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -173,17 +173,16 @@
           "pcs": 560,
           "timeSlot": "16:00 - 16:30",
           "seq": 4
-        },
-        {
-          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
-          "billCode": "YY20260630011042",
-          "skuCount": 1,
-          "pcs": 810,
-          "timeSlot": "15:30 - 16:00",
-          "seq": 5
         }
       ],
       "unloading": [
+        {
+          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
+          "billCode": "YY20260630011042",
+          "signTime": "10:22",
+          "unloadStartTime": "10:23",
+          "status": "卸货中"
+        },
         {
           "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
           "billCode": "YY20260629010404",
@@ -232,6 +231,14 @@
           "arrivalTime": "15:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
+          "skuName": "叮叮懒人菜 双蛋白藜麦鸡排 300g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -259,6 +266,17 @@
           "seq": 2
         },
         {
+          "supplierName": "杭州一起闯荡科技有限公司-快乐猴",
+          "poNo": "CG2026062916306",
+          "reserveBillCode": "YY20260630011042",
+          "skuId": "1406310",
+          "skuName": "叮叮懒人菜 双蛋白藜麦鸡排 300g",
+          "purchaseQty": 810,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
           "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
           "poNo": "CG2026062916310",
           "reserveBillCode": "YY20260629010404",
@@ -267,7 +285,7 @@
           "purchaseQty": 296,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
+          "seq": 4
         },
         {
           "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
@@ -278,7 +296,7 @@
           "purchaseQty": 264,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 5
         },
         {
           "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
@@ -289,7 +307,7 @@
           "purchaseQty": 24,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 6
         }
       ],
       "qc_recv_pending": [],
@@ -394,10 +412,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 45,
+      "not_started": 50,
       "in_progress": 0,
       "done": 0,
-      "total": 45,
+      "total": 50,
       "status": "ok"
     }
   },

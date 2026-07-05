@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-07-06T04:54:26",
+  "timestamp": "2026-07-06T05:04:26",
   "date": "2026-07-06",
   "warehouse": "GZ0210",
   "inbound": {
     "reserve": {
       "total": 95,
-      "signed": 8,
-      "waiting": 87
+      "signed": 10,
+      "waiting": 85
     },
     "ontime": {
-      "ontime": 0,
+      "ontime": 2,
       "early": 8,
       "late": 0,
       "total": 95,
-      "rate": 0.0,
+      "rate": 2.1,
       "early_rate": 8.4,
       "late_rate": 0.0
     },
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 8,
+      "total": 9,
       "done": 5,
-      "rate": 62.5,
+      "rate": 55.6,
       "pcs_done": 5286,
-      "sign_pcs_done": 10655
+      "sign_pcs_done": 10955
     },
     "qc": {
-      "total": 41,
+      "total": 43,
       "done": 0,
-      "pending": 41,
+      "pending": 43,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 41,
+      "bill_total": 43,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 10655,
+      "pcs_total": 10955,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 41,
+      "sku_total": 43,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 95,
-        "done": 8,
-        "rate": 8.4
+        "done": 10,
+        "rate": 10.5
       },
       "pcs": {
         "total": 81169,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 446,
-        "done": 41,
-        "rate": 9.2
+        "done": 45,
+        "rate": 10.1
       },
       "supplier": {
         "total": 79,
-        "done": 8,
-        "rate": 10.1,
+        "done": 9,
+        "rate": 11.4,
         "detail": {
+          "广州市蒙牛乳业低温奶销售有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
           "金乡县英格电子商务有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -153,10 +157,6 @@
             "done": 0
           },
           "广州市广懋鲜农业发展有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "北京沃千里贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -594,6 +594,18 @@
       ],
       "unloading": [
         {
+          "supplierName": "广州市蒙牛乳业低温奶销售有限公司-快乐猴",
+          "billCode": "YY20260705001287",
+          "signTime": "05:03",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "广州市蒙牛乳业低温奶销售有限公司-快乐猴",
+          "billCode": "YY20260705001287",
+          "signTime": "05:03",
+          "status": "已签到未卸货"
+        },
+        {
           "supplierName": "金乡县英格电子商务有限公司-快乐猴",
           "billCode": "YY20260705006936",
           "signTime": "04:31",
@@ -940,6 +952,22 @@
           "arrivalTime": "14:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 42,
+          "supplierName": "广州市蒙牛乳业低温奶销售有限公司-快乐猴",
+          "skuName": "蒙牛 低脂高钙原味风味酸牛奶 90g*16",
+          "arrivalTime": "05:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 43,
+          "supplierName": "广州市蒙牛乳业低温奶销售有限公司-快乐猴",
+          "skuName": "蒙牛 内蒙古原味老酸奶 140g*4",
+          "arrivalTime": "05:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
@@ -1253,6 +1281,17 @@
           "seq": 28
         },
         {
+          "supplierName": "广州市蒙牛乳业低温奶销售有限公司-快乐猴",
+          "poNo": "CG202607020850",
+          "reserveBillCode": "YY20260705001287",
+          "skuId": "218330",
+          "skuName": "蒙牛 低脂高钙原味风味酸牛奶 90g*16",
+          "purchaseQty": 120,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 29
+        },
+        {
           "supplierName": "广州市友心农业发展有限公司-快乐猴",
           "poNo": "CG202607057288",
           "reserveBillCode": "YY20260706000035",
@@ -1261,7 +1300,7 @@
           "purchaseQty": 118,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 29
+          "seq": 30
         },
         {
           "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
@@ -1272,7 +1311,7 @@
           "purchaseQty": 114,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 30
+          "seq": 31
         },
         {
           "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
@@ -1283,7 +1322,7 @@
           "purchaseQty": 100,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 31
+          "seq": 32
         },
         {
           "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
@@ -1294,7 +1333,7 @@
           "purchaseQty": 99,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 32
+          "seq": 33
         },
         {
           "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
@@ -1305,7 +1344,7 @@
           "purchaseQty": 89,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 33
+          "seq": 34
         },
         {
           "supplierName": "深圳市大程鑫农业开发有限公司-快乐猴",
@@ -1316,7 +1355,7 @@
           "purchaseQty": 88,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 34
+          "seq": 35
         },
         {
           "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
@@ -1327,7 +1366,7 @@
           "purchaseQty": 73,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 35
+          "seq": 36
         },
         {
           "supplierName": "久泰现代农业有限公司-快乐猴",
@@ -1338,7 +1377,7 @@
           "purchaseQty": 67,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 36
+          "seq": 37
         },
         {
           "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
@@ -1349,7 +1388,7 @@
           "purchaseQty": 58,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 37
+          "seq": 38
         },
         {
           "supplierName": "深圳市大程鑫农业开发有限公司-快乐猴",
@@ -1360,7 +1399,7 @@
           "purchaseQty": 58,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 38
+          "seq": 39
         },
         {
           "supplierName": "广东省邻优家农业发展有限公司-快乐猴",
@@ -1371,7 +1410,7 @@
           "purchaseQty": 35,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 39
+          "seq": 40
         },
         {
           "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
@@ -1382,7 +1421,7 @@
           "purchaseQty": 9,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 40
+          "seq": 41
         },
         {
           "supplierName": "深圳市农耕记智慧科技有限公司-快乐猴",
@@ -1393,7 +1432,7 @@
           "purchaseQty": 8,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 41
+          "seq": 42
         }
       ],
       "qc_recv_pending": [],

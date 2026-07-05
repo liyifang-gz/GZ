@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-05T09:07:51",
+  "timestamp": "2026-07-05T09:25:59",
   "date": "2026-07-05",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 4,
-      "signed": 0,
-      "waiting": 3
+      "signed": 1,
+      "waiting": 2
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 3,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 33.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 8980
     },
     "qc": {
-      "total": 0,
+      "total": 3,
       "done": 0,
-      "pending": 0,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 8980,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 3,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 43,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 3,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 33.3
       },
       "pcs": {
         "total": 43,
@@ -72,19 +72,19 @@
       },
       "sku": {
         "total": 6,
-        "done": 0,
-        "rate": 0.0
+        "done": 3,
+        "rate": 50.0
       },
       "supplier": {
         "total": 3,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 33.3,
         "detail": {
-          "浙江骏马食品有限公司": {
-            "plan": 1,
-            "done": 0
-          },
           "胜田(福清)食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "浙江骏马食品有限公司": {
             "plan": 1,
             "done": 0
           },
@@ -107,26 +107,85 @@
           "seq": 1
         },
         {
-          "supplierName": "胜田(福清)食品有限公司-快乐猴",
-          "billCode": "YY20260704004500",
-          "skuCount": 3,
-          "pcs": 8980,
-          "timeSlot": "15:00 - 15:30",
-          "seq": 2
-        },
-        {
           "supplierName": "北京月盛斋清真食品有限公司-快乐猴",
           "billCode": "YY20260701000615",
           "skuCount": 2,
           "pcs": 1040,
           "timeSlot": "15:30 - 16:00",
+          "seq": 2
+        }
+      ],
+      "unloading": [
+        {
+          "supplierName": "胜田(福清)食品有限公司-快乐猴",
+          "billCode": "YY20260704004500",
+          "signTime": "09:21",
+          "unloadStartTime": "09:22",
+          "status": "卸货中"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "胜田(福清)食品有限公司-快乐猴",
+          "skuName": "快乐猴 鱼豆腐 240g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "胜田(福清)食品有限公司-快乐猴",
+          "skuName": "快乐猴 嫩鱼丸 200g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "胜田(福清)食品有限公司-快乐猴",
+          "skuName": "快乐猴 灌汤福州鱼丸 500g",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
+      "recv_pending": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "胜田(福清)食品有限公司-快乐猴",
+          "poNo": "CG2026062312859",
+          "reserveBillCode": "YY20260704004500",
+          "skuId": "1265765",
+          "skuName": "快乐猴 嫩鱼丸 200g",
+          "purchaseQty": 4000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "胜田(福清)食品有限公司-快乐猴",
+          "poNo": "CG2026062312859",
+          "reserveBillCode": "YY20260704004500",
+          "skuId": "1265820",
+          "skuName": "快乐猴 灌汤福州鱼丸 500g",
+          "purchaseQty": 3000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "胜田(福清)食品有限公司-快乐猴",
+          "poNo": "CG2026062312859",
+          "reserveBillCode": "YY20260704004500",
+          "skuId": "1201810",
+          "skuName": "快乐猴 鱼豆腐 240g",
+          "purchaseQty": 1980,
+          "recvQty": 0,
+          "hasQc": false,
           "seq": 3
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
-      "recv_pending": [],
-      "signed_not_recv": [],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -229,10 +288,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 1,
+      "not_started": 2,
       "in_progress": 0,
       "done": 0,
-      "total": 1,
+      "total": 2,
       "status": "ok"
     }
   },

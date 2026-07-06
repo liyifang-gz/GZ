@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-07T05:12:32",
+  "timestamp": "2026-07-07T05:46:43",
   "date": "2026-07-07",
   "warehouse": "GZ0209",
   "inbound": {
@@ -49,12 +49,12 @@
       "sku_rate": 0
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
+      "total": 10459,
+      "done": 10459,
+      "rate": 100.0,
+      "sku_total": 16,
+      "sku_done": 16,
+      "sku_rate": 100.0,
       "details": []
     },
     "dimensions": {
@@ -346,12 +346,12 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 0,
+      "total": 1,
       "done": 0,
       "rate": 0.0
     },
     "caging": {
-      "total": 0,
+      "total": 1,
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
@@ -359,21 +359,33 @@
       "pcs_rate": 0.0
     },
     "packing": {
-      "total": 0,
+      "total": 1,
       "done": 0,
       "rate": 0.0
     },
-    "uncaged_details": [],
-    "unpacked_details": [],
+    "uncaged_details": [
+      {
+        "containerCode": "RQ-28-03-0900123",
+        "poiName": "南海国昌广场店",
+        "qty": 5000
+      }
+    ],
+    "unpacked_details": [
+      {
+        "containerCode": "RQ-28-03-0900123",
+        "poiName": "南海国昌广场店",
+        "qty": 5000
+      }
+    ],
     "shipping": {
-      "total": 0,
+      "total": 5000,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 0,
+      "multi_pallet_total": 1,
       "multi_pallet_rate": 0.0,
       "load_rate": 0.0,
       "multi_pallet_details": [],
@@ -387,43 +399,92 @@
     },
     "dimensions": {
       "pcs": {
-        "total": 0,
+        "total": 5000,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "not_caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
+        "not_caged": 5000,
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
         "cage_rate": 0.0,
         "sowed_picked": 0
       },
       "sku": {
-        "total": 0,
+        "total": 1,
         "picked": 0,
         "sowed": 0,
         "caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
-        "cage_rate": 0
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
+        "cage_rate": 0.0
       }
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 0,
+      "plan_pcs": 3112,
       "alloc_pcs": 0,
-      "alloc_rate": 0,
+      "alloc_rate": 0.0,
       "picked_pcs": 0,
       "sow_pcs": 0,
       "sow_rate": 0,
       "ship_pcs": 0,
-      "ship_rate": 0,
-      "sku_plan": 0,
+      "ship_rate": 0.0,
+      "sku_plan": 28,
       "sku_alloc": 0,
       "sku_sow": 0,
       "sku_ship": 0,
-      "total_orders": 0
+      "total_orders": 6
     },
-    "unalloc_details": [],
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-大朗市场店-049",
+        "orderNo": "DB2026070679257",
+        "skuNum": 3,
+        "planQty": 1503,
+        "allocQty": 0,
+        "unallocQty": 1503
+      },
+      {
+        "receiverName": "快乐猴-龙岗三联商业广场店-047",
+        "orderNo": "DB2026070678048",
+        "skuNum": 3,
+        "planQty": 1503,
+        "allocQty": 0,
+        "unallocQty": 1503
+      },
+      {
+        "receiverName": "快乐猴-大朗市场店-049",
+        "orderNo": "DB2026070679306",
+        "skuNum": 10,
+        "planQty": 43,
+        "allocQty": 0,
+        "unallocQty": 43
+      },
+      {
+        "receiverName": "快乐猴-龙岗三联商业广场店-047",
+        "orderNo": "DB2026070679122",
+        "skuNum": 10,
+        "planQty": 43,
+        "allocQty": 0,
+        "unallocQty": 43
+      },
+      {
+        "receiverName": "快乐猴-大朗市场店-049",
+        "orderNo": "DB2026070679303",
+        "skuNum": 1,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      },
+      {
+        "receiverName": "快乐猴-龙岗三联商业广场店-047",
+        "orderNo": "DB2026070678077",
+        "skuNum": 1,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      }
+    ],
     "seeding": {
       "not_started": 0,
       "in_progress": 0,
@@ -433,21 +494,73 @@
     }
   },
   "plan": {
-    "total_orders": 0,
-    "total_pcs": 0,
+    "total_orders": 6,
+    "total_pcs": 3112,
     "alloc_pcs": 0,
-    "alloc_rate": 0,
+    "alloc_rate": 0.0,
     "picked_pcs": 0,
     "sow_pcs": 0,
     "sow_rate": 0,
     "ship_pcs": 0,
-    "ship_rate": 0,
-    "sku_plan": 0,
+    "ship_rate": 0.0,
+    "sku_plan": 28,
     "sku_alloc": 0,
     "sku_sow": 0,
-    "store_count": 0,
-    "by_store": {},
-    "unalloc_details": [],
+    "store_count": 2,
+    "by_store": {
+      "快乐猴-大朗市场店-049": 1556.0,
+      "快乐猴-龙岗三联商业广场店-047": 1556.0
+    },
+    "unalloc_details": [
+      {
+        "receiverName": "快乐猴-大朗市场店-049",
+        "orderNo": "DB2026070679257",
+        "skuNum": 3,
+        "planQty": 1503,
+        "allocQty": 0,
+        "unallocQty": 1503
+      },
+      {
+        "receiverName": "快乐猴-龙岗三联商业广场店-047",
+        "orderNo": "DB2026070678048",
+        "skuNum": 3,
+        "planQty": 1503,
+        "allocQty": 0,
+        "unallocQty": 1503
+      },
+      {
+        "receiverName": "快乐猴-大朗市场店-049",
+        "orderNo": "DB2026070679306",
+        "skuNum": 10,
+        "planQty": 43,
+        "allocQty": 0,
+        "unallocQty": 43
+      },
+      {
+        "receiverName": "快乐猴-龙岗三联商业广场店-047",
+        "orderNo": "DB2026070679122",
+        "skuNum": 10,
+        "planQty": 43,
+        "allocQty": 0,
+        "unallocQty": 43
+      },
+      {
+        "receiverName": "快乐猴-大朗市场店-049",
+        "orderNo": "DB2026070679303",
+        "skuNum": 1,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      },
+      {
+        "receiverName": "快乐猴-龙岗三联商业广场店-047",
+        "orderNo": "DB2026070678077",
+        "skuNum": 1,
+        "planQty": 10,
+        "allocQty": 0,
+        "unallocQty": 10
+      }
+    ],
     "status": "ok"
   },
   "transport": {
@@ -728,29 +841,6 @@
           "store": "番禺建华汇店"
         },
         {
-          "waybillCode": "GZ2112222510",
-          "licensePlate": "粤BCT4445",
-          "driverName": "陆世根",
-          "carrierName": "斑马（广州2024）",
-          "temperatureLevel": 5,
-          "temperatureLevelName": "常温车",
-          "waybillStatus": 50,
-          "preCoolMonitorStatus": 3,
-          "preCoolMonitorStatusName": "--",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "广州RDC常温1号仓（顺德）",
-          "createTime": 1783337610000,
-          "store": "南海国昌广场店"
-        },
-        {
           "waybillCode": "GZ2111921983",
           "licensePlate": "粤ABZ1439",
           "driverName": "李浩",
@@ -771,6 +861,29 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1783348477000,
+          "store": "南海国昌广场店"
+        },
+        {
+          "waybillCode": "GZ2112222510",
+          "licensePlate": "粤BCT4445",
+          "driverName": "陆世根",
+          "carrierName": "斑马（广州2024）",
+          "temperatureLevel": 5,
+          "temperatureLevelName": "常温车",
+          "waybillStatus": 50,
+          "preCoolMonitorStatus": 3,
+          "preCoolMonitorStatusName": "--",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "广州RDC常温1号仓（顺德）",
+          "createTime": 1783337610000,
           "store": "南海国昌广场店"
         },
         {

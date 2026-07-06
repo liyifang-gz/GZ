@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-07T06:26:30",
+  "timestamp": "2026-07-07T06:31:36",
   "date": "2026-07-07",
   "warehouse": "GZ0210",
   "inbound": {
@@ -1827,8 +1827,8 @@
       "load_rate_shipped": "--",
       "low_load_containers": [],
       "all_containers_detail": [],
-      "outbound_efficiency": 0,
-      "outbound_efficiency_formula": "--"
+      "outbound_efficiency": 0.0,
+      "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
@@ -2183,29 +2183,6 @@
           "store": "番禺建华汇店"
         },
         {
-          "waybillCode": "GZ2112222510",
-          "licensePlate": "粤BCT4445",
-          "driverName": "陆世根",
-          "carrierName": "斑马（广州2024）",
-          "temperatureLevel": 5,
-          "temperatureLevelName": "常温车",
-          "waybillStatus": 50,
-          "preCoolMonitorStatus": 3,
-          "preCoolMonitorStatusName": "--",
-          "deliveryPoiArrivalMonitorStatus": 1,
-          "deliveryPoiArrivalMonitorStatusName": "合格",
-          "transportAccumulationMonitorStatus": 1,
-          "transportAccumulationMonitorStatusName": "合格",
-          "transportDurationMonitorStatus": 1,
-          "transportDurationMonitorStatusName": "合格",
-          "totalArrivalPoiNum": 0,
-          "deliveryPoiArrivalQualifiedCount": 0,
-          "deliveryPoiArrivalUnqualifiedCount": 0,
-          "firstLadingPoiName": "广州RDC常温1号仓（顺德）",
-          "createTime": 1783337610000,
-          "store": "南海国昌广场店"
-        },
-        {
           "waybillCode": "GZ2111921983",
           "licensePlate": "粤ABZ1439",
           "driverName": "李浩",
@@ -2226,6 +2203,29 @@
           "deliveryPoiArrivalUnqualifiedCount": 0,
           "firstLadingPoiName": "KLH-广州冷藏1仓",
           "createTime": 1783348477000,
+          "store": "南海国昌广场店"
+        },
+        {
+          "waybillCode": "GZ2112222510",
+          "licensePlate": "粤BCT4445",
+          "driverName": "陆世根",
+          "carrierName": "斑马（广州2024）",
+          "temperatureLevel": 5,
+          "temperatureLevelName": "常温车",
+          "waybillStatus": 50,
+          "preCoolMonitorStatus": 3,
+          "preCoolMonitorStatusName": "--",
+          "deliveryPoiArrivalMonitorStatus": 1,
+          "deliveryPoiArrivalMonitorStatusName": "合格",
+          "transportAccumulationMonitorStatus": 1,
+          "transportAccumulationMonitorStatusName": "合格",
+          "transportDurationMonitorStatus": 1,
+          "transportDurationMonitorStatusName": "合格",
+          "totalArrivalPoiNum": 0,
+          "deliveryPoiArrivalQualifiedCount": 0,
+          "deliveryPoiArrivalUnqualifiedCount": 0,
+          "firstLadingPoiName": "广州RDC常温1号仓（顺德）",
+          "createTime": 1783337610000,
           "store": "南海国昌广场店"
         },
         {
@@ -3677,10 +3677,39 @@
     "schedule": 0,
     "attendance": 0,
     "rate": 0,
-    "by_job": {},
+    "by_job": {
+      "N拣播员": {
+        "inservice": 0,
+        "schedule": 0,
+        "attendance": 0,
+        "rate": 0
+      },
+      "N冷藏收退": {
+        "inservice": 0,
+        "schedule": 0,
+        "attendance": 0,
+        "rate": 0
+      },
+      "N库维": {
+        "inservice": 0,
+        "schedule": 0,
+        "attendance": 0,
+        "rate": 0
+      },
+      "N物资": {
+        "inservice": 0,
+        "schedule": 0,
+        "attendance": 0,
+        "rate": 0
+      }
+    },
+    "by_pos_total": {},
+    "by_pos_scheduled": {},
     "predicted_efficiency": 0.0,
     "efficiency_formula": "0 PCS(播种) / 0 人",
-    "status": "error",
-    "error": "排班接口限流(attempt 3/3): 请求被限流: rhino one limiter reject, strategy is CLUSTER_FREQUENCY"
+    "outbound_efficiency": 0.0,
+    "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)",
+    "inbound_efficiency_workers": 0,
+    "status": "ok"
   }
 }

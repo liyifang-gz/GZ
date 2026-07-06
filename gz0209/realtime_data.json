@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-06T10:16:29",
+  "timestamp": "2026-07-06T10:24:46",
   "date": "2026-07-06",
   "warehouse": "GZ0209",
   "inbound": {
@@ -25,37 +25,45 @@
     },
     "unload": {
       "total": 12,
-      "done": 9,
-      "rate": 75.0,
-      "pcs_done": 11492,
+      "done": 10,
+      "rate": 83.3,
+      "pcs_done": 15488,
       "sign_pcs_done": 21538
     },
     "qc": {
-      "total": 4,
+      "total": 3,
       "done": 0,
-      "pending": 4,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 4,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 11046,
+      "pcs_total": 7050,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 4,
+      "sku_total": 3,
       "sku_rate": 0.0
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
-      "details": []
+      "total": 19206,
+      "done": 18706,
+      "rate": 97.4,
+      "sku_total": 15,
+      "sku_done": 14,
+      "sku_rate": 93.3,
+      "details": [
+        {
+          "poNo": "CG202607040629",
+          "hopePcs": 500,
+          "putPcs": 0,
+          "hopeSku": 1,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -80,6 +88,10 @@
         "done": 11,
         "rate": 28.9,
         "detail": {
+          "深圳红杉食品有限公司": {
+            "plan": 2,
+            "done": 2
+          },
           "亿佰利（临沂）食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -87,10 +99,6 @@
           "浙江江心调味食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "深圳红杉食品有限公司": {
-            "plan": 2,
-            "done": 2
           },
           "上海银恒洽食品有限公司": {
             "plan": 1,
@@ -506,12 +514,6 @@
       ],
       "unloading": [
         {
-          "supplierName": "遵化市广汇食品有限公司-快乐猴",
-          "billCode": "YY20260702007049",
-          "signTime": "09:45",
-          "status": "已签到未卸货"
-        },
-        {
           "supplierName": "洽洽食品股份有限公司-快乐猴",
           "billCode": "YY20260702006521",
           "signTime": "09:41",
@@ -546,14 +548,6 @@
           "supplierName": "洽洽食品股份有限公司-快乐猴",
           "skuName": "快乐猴 焦糖瓜子 208g",
           "arrivalTime": "14:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 4,
-          "supplierName": "遵化市广汇食品有限公司-快乐猴",
-          "skuName": "快乐猴 有机板栗仁 200g",
-          "arrivalTime": "11:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
@@ -669,7 +663,7 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 0,
+      "pcs_total": 2000,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -709,7 +703,7 @@
         "pick_rate": 0,
         "sow_rate": 0,
         "cage_rate": 0.0,
-        "sowed_picked": 0
+        "sowed_picked": 2000
       },
       "sku": {
         "total": 0,
@@ -723,44 +717,46 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 0,
-      "alloc_pcs": 0,
-      "alloc_rate": 0,
+      "plan_pcs": 2000,
+      "alloc_pcs": 2000,
+      "alloc_rate": 100.0,
       "picked_pcs": 0,
       "sow_pcs": 0,
-      "sow_rate": 0,
+      "sow_rate": 0.0,
       "ship_pcs": 0,
-      "ship_rate": 0,
-      "sku_plan": 0,
-      "sku_alloc": 0,
+      "ship_rate": 0.0,
+      "sku_plan": 1,
+      "sku_alloc": 1,
       "sku_sow": 0,
       "sku_ship": 0,
-      "total_orders": 0
+      "total_orders": 1
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 0,
+      "not_started": 43,
       "in_progress": 0,
       "done": 0,
-      "total": 0,
+      "total": 43,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 0,
-    "total_pcs": 0,
-    "alloc_pcs": 0,
-    "alloc_rate": 0,
+    "total_orders": 1,
+    "total_pcs": 2000,
+    "alloc_pcs": 2000,
+    "alloc_rate": 100.0,
     "picked_pcs": 0,
     "sow_pcs": 0,
-    "sow_rate": 0,
+    "sow_rate": 0.0,
     "ship_pcs": 0,
-    "ship_rate": 0,
-    "sku_plan": 0,
-    "sku_alloc": 0,
+    "ship_rate": 0.0,
+    "sku_plan": 1,
+    "sku_alloc": 1,
     "sku_sow": 0,
-    "store_count": 0,
-    "by_store": {},
+    "store_count": 1,
+    "by_store": {
+      "快乐猴-南海国昌广场店-023": 2000.0
+    },
     "unalloc_details": [],
     "status": "ok"
   },

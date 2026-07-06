@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-07T07:31:57",
+  "timestamp": "2026-07-07T07:34:04",
   "date": "2026-07-07",
   "warehouse": "GZ0210",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 80,
-      "done": 0,
-      "pending": 80,
-      "passed": 0,
+      "done": 1,
+      "pending": 79,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 1.2,
+      "bill_done": 1,
       "bill_total": 80,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 13,
+      "pcs_passed": 13,
       "pcs_total": 14504,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 0.1,
+      "sku_done": 1,
       "sku_total": 79,
-      "sku_rate": 0.0
+      "sku_rate": 1.3
     },
     "putaway": {
       "total": 0,
@@ -1313,21 +1313,20 @@
         {
           "seq": 79,
           "supplierName": "佛山市轩宝食品有限公司-快乐猴",
-          "skuName": "红油麻酱凉面 370g",
-          "arrivalTime": "07:30",
-          "unloadFinishTime": "07:01",
-          "statusLabel": "首次进行中"
-        },
-        {
-          "seq": 80,
-          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
           "skuName": "日式混合蔬菜沙拉 200g",
           "arrivalTime": "07:30",
           "unloadFinishTime": "07:01",
-          "statusLabel": "待质检"
+          "statusLabel": "首次进行中"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "佛山市轩宝食品有限公司-快乐猴",
+          "skuName": "红油麻酱凉面 370g",
+          "completeTime": "07:33",
+          "waitingMins": 1
+        }
+      ],
       "signed_not_recv": [
         {
           "supplierName": "上海全苗蔬农业科技发展有限公司-快乐猴",
@@ -2228,7 +2227,7 @@
           "skuName": "红油麻酱凉面 370g",
           "purchaseQty": 13,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 82
         },
         {

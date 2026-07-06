@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-06T10:46:14",
+  "timestamp": "2026-07-06T10:51:19",
   "date": "2026-07-06",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 13,
-      "signed": 2,
-      "waiting": 7
+      "signed": 5,
+      "waiting": 4
     },
     "ontime": {
       "ontime": 0,
-      "early": 2,
+      "early": 5,
       "late": 0,
       "total": 9,
       "rate": 0.0,
-      "early_rate": 22.2,
+      "early_rate": 55.6,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 4,
       "done": 2,
-      "rate": 100.0,
+      "rate": 50.0,
       "pcs_done": 1713,
-      "sign_pcs_done": 1713
+      "sign_pcs_done": 5453
     },
     "qc": {
-      "total": 0,
+      "total": 9,
       "done": 0,
-      "pending": 0,
+      "pending": 9,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 9,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 3740,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 7,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 16314,
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 9,
-        "done": 2,
-        "rate": 22.2
+        "done": 5,
+        "rate": 55.6
       },
       "pcs": {
         "total": 34726,
@@ -80,14 +80,22 @@
       },
       "sku": {
         "total": 24,
-        "done": 3,
-        "rate": 12.5
+        "done": 18,
+        "rate": 75.0
       },
       "supplier": {
         "total": 7,
-        "done": 2,
-        "rate": 28.6,
+        "done": 4,
+        "rate": 57.1,
         "detail": {
+          "广州赛味谦食品有限公司": {
+            "plan": 2,
+            "done": 2
+          },
+          "广州恒洋食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "杭州众点食品科技有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -95,14 +103,6 @@
           "泰森华东食品发展有限公司-未来唯一": {
             "plan": 1,
             "done": 1
-          },
-          "广州赛味谦食品有限公司": {
-            "plan": 2,
-            "done": 0
-          },
-          "广州恒洋食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           },
           "青岛宏泽源食品科技有限公司": {
             "plan": 2,
@@ -156,28 +156,12 @@
       ],
       "unsigned": [
         {
-          "supplierName": "广州赛味谦食品有限公司",
-          "billCode": "YY20260705001861",
-          "skuCount": 6,
-          "pcs": 1644,
-          "timeSlot": "12:00 - 12:30",
-          "seq": 1
-        },
-        {
-          "supplierName": "广州恒洋食品有限公司-快乐猴",
-          "billCode": "YY20260705000509",
-          "skuCount": 3,
-          "pcs": 2096,
-          "timeSlot": "11:30 - 12:00",
-          "seq": 2
-        },
-        {
           "supplierName": "青岛宏泽源食品科技有限公司",
           "billCode": "YY20260701008016",
           "skuCount": 2,
           "pcs": 14940,
           "timeSlot": "13:00 - 16:30",
-          "seq": 3
+          "seq": 1
         },
         {
           "supplierName": "深圳合口味饮食投资有限公司-快乐猴",
@@ -185,7 +169,7 @@
           "skuCount": 1,
           "pcs": 640,
           "timeSlot": "15:00 - 15:30",
-          "seq": 4
+          "seq": 2
         },
         {
           "supplierName": "北京月盛斋清真食品有限公司-快乐猴",
@@ -193,7 +177,7 @@
           "skuCount": 2,
           "pcs": 1040,
           "timeSlot": "15:30 - 16:00",
-          "seq": 5
+          "seq": 3
         },
         {
           "supplierName": "深圳市聚赢供应链管理有限公司-快乐猴",
@@ -201,11 +185,106 @@
           "skuCount": 1,
           "pcs": 800,
           "timeSlot": "16:00 - 16:30",
-          "seq": 6
+          "seq": 4
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "广州赛味谦食品有限公司",
+          "billCode": "YY20260705001861",
+          "signTime": "10:50",
+          "unloadStartTime": "10:50",
+          "status": "卸货中"
+        },
+        {
+          "supplierName": "广州赛味谦食品有限公司",
+          "billCode": "YY20260705001861",
+          "signTime": "10:50",
+          "unloadStartTime": "10:50",
+          "status": "卸货中"
+        },
+        {
+          "supplierName": "广州恒洋食品有限公司-快乐猴",
+          "billCode": "YY20260705000509",
+          "signTime": "10:47",
+          "unloadStartTime": "10:49",
+          "status": "卸货中"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "广州恒洋食品有限公司-快乐猴",
+          "skuName": "广州酒家利口福 叉烧小笼包 300g(12只)",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "广州恒洋食品有限公司-快乐猴",
+          "skuName": "广州酒家 利口福小米糕 120g",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "广州恒洋食品有限公司-快乐猴",
+          "skuName": "广州酒家 利口福流沙凤凰包 450g",
+          "arrivalTime": "11:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "广州赛味谦食品有限公司",
+          "skuName": "湾仔码头 鲜美猪肉上汤小云吞 600g",
+          "arrivalTime": "12:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "广州赛味谦食品有限公司",
+          "skuName": "湾仔码头 一品奶黄包 350g(10只)",
+          "arrivalTime": "12:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "广州赛味谦食品有限公司",
+          "skuName": "湾仔码头 玉米蔬菜猪肉水饺 1kg",
+          "arrivalTime": "12:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "广州赛味谦食品有限公司",
+          "skuName": "湾仔码头 鲜美虾皇上汤小云吞 400g",
+          "arrivalTime": "12:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 8,
+          "supplierName": "广州赛味谦食品有限公司",
+          "skuName": "湾仔码头 玉米蔬菜猪肉水饺 1kg",
+          "arrivalTime": "12:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 9,
+          "supplierName": "广州赛味谦食品有限公司",
+          "skuName": "湾仔码头 鲜美虾皇上汤小云吞 400g",
+          "arrivalTime": "12:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
       "signed_not_recv": [
         {
@@ -220,6 +299,61 @@
           "seq": 1
         },
         {
+          "supplierName": "广州恒洋食品有限公司-快乐猴",
+          "poNo": "CG202607031510",
+          "reserveBillCode": "YY20260705000509",
+          "skuId": "89878",
+          "skuName": "广州酒家利口福 叉烧小笼包 300g(12只)",
+          "purchaseQty": 1008,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "广州恒洋食品有限公司-快乐猴",
+          "poNo": "CG202607031510",
+          "reserveBillCode": "YY20260705000509",
+          "skuId": "225631",
+          "skuName": "广州酒家 利口福小米糕 120g",
+          "purchaseQty": 816,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
+          "supplierName": "广州恒洋食品有限公司-快乐猴",
+          "poNo": "CG202607031510",
+          "reserveBillCode": "YY20260705000509",
+          "skuId": "994877",
+          "skuName": "广州酒家 利口福流沙凤凰包 450g",
+          "purchaseQty": 272,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
+          "supplierName": "广州赛味谦食品有限公司",
+          "poNo": "CG202606305509",
+          "reserveBillCode": "YY20260705001861",
+          "skuId": "68350",
+          "skuName": "湾仔码头 玉米蔬菜猪肉水饺 1kg",
+          "purchaseQty": 248,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
+          "supplierName": "广州赛味谦食品有限公司",
+          "poNo": "CG202606305509",
+          "reserveBillCode": "YY20260705001861",
+          "skuId": "68353",
+          "skuName": "湾仔码头 鲜美虾皇上汤小云吞 400g",
+          "purchaseQty": 60,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
+        },
+        {
           "supplierName": "杭州众点食品科技有限公司-快乐猴",
           "poNo": "CG2026062916307",
           "reserveBillCode": "YY20260702001067",
@@ -228,7 +362,7 @@
           "purchaseQty": 48,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 7
         }
       ],
       "qc_recv_pending": [],
@@ -333,10 +467,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 50,
+      "not_started": 54,
       "in_progress": 0,
       "done": 0,
-      "total": 50,
+      "total": 54,
       "status": "ok"
     }
   },

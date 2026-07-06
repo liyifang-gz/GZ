@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-06T13:16:54",
+  "timestamp": "2026-07-06T13:29:08",
   "date": "2026-07-06",
   "warehouse": "GZ0211",
   "inbound": {
@@ -202,13 +202,13 @@
           "supplierName": "广州赛味谦食品有限公司",
           "skuName": "湾仔码头 玉米蔬菜猪肉水饺 1kg",
           "completeTime": "12:19",
-          "waitingMins": 58
+          "waitingMins": 70
         },
         {
           "supplierName": "广州赛味谦食品有限公司",
           "skuName": "湾仔码头 玉米蔬菜猪肉水饺 1kg",
           "completeTime": "12:19",
-          "waitingMins": 57
+          "waitingMins": 69
         }
       ],
       "signed_not_recv": [
@@ -247,38 +247,50 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 19,
+      "total": 22,
       "done": 19,
-      "rate": 100.0
+      "rate": 86.4
     },
     "caging": {
-      "total": 19,
+      "total": 22,
       "done": 19,
-      "rate": 100.0,
+      "rate": 86.4,
       "pcs_done": 454,
-      "pcs_total": 454,
-      "pcs_rate": 100.0
+      "pcs_total": 475,
+      "pcs_rate": 95.6
     },
     "packing": {
-      "total": 1,
+      "total": 2,
       "done": 1,
-      "rate": 100.0
+      "rate": 50.0
     },
-    "uncaged_details": [],
-    "unpacked_details": [],
+    "uncaged_details": [
+      {
+        "containerCode": "RQ-05-03-0700117",
+        "poiName": "禅城东方广场店",
+        "qty": 21
+      }
+    ],
+    "unpacked_details": [
+      {
+        "containerCode": "RQ-05-03-0700117",
+        "poiName": "禅城东方广场店",
+        "qty": 21
+      }
+    ],
     "shipping": {
-      "total": 454,
+      "total": 475,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 19,
+      "multi_pallet_total": 22,
       "multi_pallet_rate": 0.0,
-      "load_rate": 100.0,
+      "load_rate": 95.6,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "--",
+      "load_rate_unloaded": "5.50%",
       "load_rate_loaded": "25.30%",
       "load_rate_shipped": "--",
       "low_load_containers": [
@@ -294,6 +306,15 @@
       ],
       "all_containers_detail": [
         {
+          "containerCode": "RQ-05-03-0700117",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "5.50%",
+          "loadingRateVal": 5.5,
+          "skuPcs": "21.000",
+          "skuVolume": "0.109",
+          "planOutTime": "07-06 19:00"
+        },
+        {
           "containerCode": "RQ-05-03-0700244",
           "poiName": "白云新世界云集店",
           "loadingRate": "25.30%",
@@ -303,29 +324,29 @@
           "planOutTime": "07-06 19:00"
         }
       ],
-      "outbound_efficiency": 45.4,
-      "outbound_efficiency_formula": "454 PCS / 10 人(拣播员)"
+      "outbound_efficiency": 47.5,
+      "outbound_efficiency_formula": "475 PCS / 10 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 454,
+        "total": 475,
         "picked": 0,
         "sowed": 0,
         "caged": 454,
-        "not_caged": 0,
+        "not_caged": 21,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 100.0,
-        "sowed_picked": 454
+        "cage_rate": 95.6,
+        "sowed_picked": 475
       },
       "sku": {
-        "total": 19,
+        "total": 22,
         "picked": 0,
         "sowed": 0,
         "caged": 19,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 100.0
+        "cage_rate": 86.4
       }
     },
     "status": "ok",
@@ -333,23 +354,23 @@
       "plan_pcs": 7346,
       "alloc_pcs": 7346,
       "alloc_rate": 100.0,
-      "picked_pcs": 454,
-      "sow_pcs": 454,
-      "sow_rate": 6.2,
+      "picked_pcs": 475,
+      "sow_pcs": 475,
+      "sow_rate": 6.5,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 384,
       "sku_alloc": 384,
-      "sku_sow": 19,
+      "sku_sow": 66,
       "sku_ship": 0,
       "total_orders": 13
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 74,
-      "in_progress": 8,
-      "done": 71,
-      "total": 153,
+      "not_started": 68,
+      "in_progress": 5,
+      "done": 83,
+      "total": 156,
       "status": "ok"
     }
   },
@@ -358,14 +379,14 @@
     "total_pcs": 7346,
     "alloc_pcs": 7346,
     "alloc_rate": 100.0,
-    "picked_pcs": 454,
-    "sow_pcs": 454,
-    "sow_rate": 6.2,
+    "picked_pcs": 475,
+    "sow_pcs": 475,
+    "sow_rate": 6.5,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 384,
     "sku_alloc": 384,
-    "sku_sow": 19,
+    "sku_sow": 66,
     "store_count": 9,
     "by_store": {
       "快乐猴-番禺建华汇店-019": 1273.0,
@@ -466,10 +487,10 @@
       "N冷藏拣播员": 10,
       "N冷藏物资": 1
     },
-    "predicted_efficiency": 26.7,
-    "efficiency_formula": "454 PCS(播种) / 17 人",
-    "outbound_efficiency": 45.4,
-    "outbound_efficiency_formula": "454 PCS / 10 人(拣播员)",
+    "predicted_efficiency": 27.9,
+    "efficiency_formula": "475 PCS(播种) / 17 人",
+    "outbound_efficiency": 47.5,
+    "outbound_efficiency_formula": "475 PCS / 10 人(拣播员)",
     "inbound_efficiency_workers": 6,
     "status": "cached_fallback",
     "error": "排班接口限流(attempt 3/3): 请求被限流: rhino one limiter reject, strategy is CLUSTER_FREQUENCY"

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-06T09:06:55",
+  "timestamp": "2026-07-06T09:22:08",
   "date": "2026-07-06",
   "warehouse": "GZ0211",
   "inbound": {
@@ -25,37 +25,45 @@
     },
     "unload": {
       "total": 1,
-      "done": 0,
-      "rate": 0.0,
-      "pcs_done": 0,
+      "done": 1,
+      "rate": 100.0,
+      "pcs_done": 81,
       "sign_pcs_done": 81
     },
     "qc": {
-      "total": 1,
+      "total": 0,
       "done": 0,
-      "pending": 1,
+      "pending": 0,
       "passed": 0,
       "rejected": 0,
-      "rate": 0.0,
+      "rate": 0,
       "bill_done": 0,
-      "bill_total": 1,
+      "bill_total": 0,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 81,
+      "pcs_total": 0,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
+      "pcs_rate": 0,
       "sku_done": 0,
-      "sku_total": 1,
-      "sku_rate": 0.0
+      "sku_total": 0,
+      "sku_rate": 0
     },
     "putaway": {
-      "total": 16233,
+      "total": 16314,
       "done": 16233,
-      "rate": 100.0,
-      "sku_total": 31,
+      "rate": 99.5,
+      "sku_total": 33,
       "sku_done": 31,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 93.9,
+      "details": [
+        {
+          "poNo": "CG2026062916291",
+          "hopePcs": 81,
+          "putPcs": 0,
+          "hopeSku": 2,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +75,8 @@
         "total": 34726,
         "done": 27126,
         "rate": 78.1,
-        "recv_done": 16233,
-        "recv_rate": 46.7
+        "recv_done": 16314,
+        "recv_rate": 47.0
       },
       "sku": {
         "total": 24,
@@ -204,39 +212,10 @@
           "seq": 7
         }
       ],
-      "unloading": [
-        {
-          "supplierName": "泰森华东食品发展有限公司-未来唯一",
-          "billCode": "YY20260701007203",
-          "signTime": "08:57",
-          "unloadStartTime": "08:58",
-          "status": "卸货中"
-        }
-      ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "泰森华东食品发展有限公司-未来唯一",
-          "skuName": "奥尔良风味翅中10kg（泰森）",
-          "arrivalTime": "16:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        }
-      ],
+      "unloading": [],
+      "qc_pending": [],
       "recv_pending": [],
-      "signed_not_recv": [
-        {
-          "supplierName": "泰森华东食品发展有限公司-未来唯一",
-          "poNo": "CG2026062916291",
-          "reserveBillCode": "YY20260701007203",
-          "skuId": "1159385",
-          "skuName": "奥尔良风味翅中10kg（泰森）",
-          "purchaseQty": 81,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 1
-        }
-      ],
+      "signed_not_recv": [],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -339,10 +318,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 6,
+      "not_started": 9,
       "in_progress": 0,
       "done": 0,
-      "total": 6,
+      "total": 9,
       "status": "ok"
     }
   },

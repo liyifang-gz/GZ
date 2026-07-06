@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-06T10:51:19",
+  "timestamp": "2026-07-06T11:11:12",
   "date": "2026-07-06",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 13,
-      "signed": 5,
-      "waiting": 4
+      "signed": 8,
+      "waiting": 1
     },
     "ontime": {
       "ontime": 0,
-      "early": 5,
+      "early": 8,
       "late": 0,
       "total": 9,
       "rate": 0.0,
-      "early_rate": 55.6,
+      "early_rate": 88.9,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,38 +24,45 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 4,
-      "done": 2,
-      "rate": 50.0,
-      "pcs_done": 1713,
-      "sign_pcs_done": 5453
+      "total": 6,
+      "done": 4,
+      "rate": 66.7,
+      "pcs_done": 17453,
+      "sign_pcs_done": 21193
     },
     "qc": {
-      "total": 9,
+      "total": 12,
       "done": 0,
-      "pending": 9,
+      "pending": 12,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 9,
+      "bill_total": 12,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 3740,
+      "pcs_total": 19480,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 7,
+      "sku_total": 9,
       "sku_rate": 0.0
     },
     "putaway": {
-      "total": 16314,
+      "total": 17946,
       "done": 16233,
-      "rate": 99.5,
-      "sku_total": 33,
+      "rate": 90.5,
+      "sku_total": 36,
       "sku_done": 31,
-      "sku_rate": 93.9,
+      "sku_rate": 86.1,
       "details": [
+        {
+          "poNo": "CG2026062916307",
+          "hopePcs": 1632,
+          "putPcs": 0,
+          "hopeSku": 3,
+          "putSku": 0
+        },
         {
           "poNo": "CG2026062916291",
           "hopePcs": 81,
@@ -68,26 +75,38 @@
     "dimensions": {
       "reserve": {
         "total": 9,
-        "done": 5,
-        "rate": 55.6
+        "done": 8,
+        "rate": 88.9
       },
       "pcs": {
         "total": 34726,
         "done": 27126,
         "rate": 78.1,
-        "recv_done": 16314,
-        "recv_rate": 47.0
+        "recv_done": 17946,
+        "recv_rate": 51.7
       },
       "sku": {
         "total": 24,
-        "done": 18,
-        "rate": 75.0
+        "done": 23,
+        "rate": 95.8
       },
       "supplier": {
         "total": 7,
-        "done": 4,
-        "rate": 57.1,
+        "done": 6,
+        "rate": 85.7,
         "detail": {
+          "杭州众点食品科技有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "青岛宏泽源食品科技有限公司": {
+            "plan": 2,
+            "done": 2
+          },
+          "深圳市聚赢供应链管理有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州赛味谦食品有限公司": {
             "plan": 2,
             "done": 2
@@ -96,23 +115,11 @@
             "plan": 1,
             "done": 1
           },
-          "杭州众点食品科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
           "泰森华东食品发展有限公司-未来唯一": {
             "plan": 1,
             "done": 1
           },
-          "青岛宏泽源食品科技有限公司": {
-            "plan": 2,
-            "done": 0
-          },
           "深圳合口味饮食投资有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "深圳市聚赢供应链管理有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -156,20 +163,12 @@
       ],
       "unsigned": [
         {
-          "supplierName": "青岛宏泽源食品科技有限公司",
-          "billCode": "YY20260701008016",
-          "skuCount": 2,
-          "pcs": 14940,
-          "timeSlot": "13:00 - 16:30",
-          "seq": 1
-        },
-        {
           "supplierName": "深圳合口味饮食投资有限公司-快乐猴",
           "billCode": "YY20260701000715",
           "skuCount": 1,
           "pcs": 640,
           "timeSlot": "15:00 - 15:30",
-          "seq": 2
+          "seq": 1
         },
         {
           "supplierName": "北京月盛斋清真食品有限公司-快乐猴",
@@ -177,15 +176,7 @@
           "skuCount": 2,
           "pcs": 1040,
           "timeSlot": "15:30 - 16:00",
-          "seq": 3
-        },
-        {
-          "supplierName": "深圳市聚赢供应链管理有限公司-快乐猴",
-          "billCode": "YY20260630007895",
-          "skuCount": 1,
-          "pcs": 800,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 4
+          "seq": 2
         }
       ],
       "unloading": [
@@ -283,17 +274,41 @@
           "arrivalTime": "12:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 10,
+          "supplierName": "深圳市聚赢供应链管理有限公司-快乐猴",
+          "skuName": "妙可蓝多 马苏里拉奶酪碎干酪制品 125g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "11:06",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 11,
+          "supplierName": "青岛宏泽源食品科技有限公司",
+          "skuName": "快乐猴 冷冻金枕榴莲果肉(去核) 100g",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "11:06",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 12,
+          "supplierName": "青岛宏泽源食品科技有限公司",
+          "skuName": "快乐猴 冷冻金枕榴莲果肉(去核) 100g",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "11:06",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
       "signed_not_recv": [
         {
-          "supplierName": "杭州众点食品科技有限公司-快乐猴",
-          "poNo": "CG2026062916307",
-          "reserveBillCode": "YY20260702001067",
-          "skuId": "1428249",
-          "skuName": "光明 香草味冰淇淋 115g",
-          "purchaseQty": 1584,
+          "supplierName": "青岛宏泽源食品科技有限公司",
+          "poNo": "CG202606254836",
+          "reserveBillCode": "YY20260701008016",
+          "skuId": "1141584",
+          "skuName": "快乐猴 冷冻金枕榴莲果肉(去核) 100g",
+          "purchaseQty": 4980,
           "recvQty": 0,
           "hasQc": false,
           "seq": 1
@@ -321,6 +336,17 @@
           "seq": 3
         },
         {
+          "supplierName": "深圳市聚赢供应链管理有限公司-快乐猴",
+          "poNo": "CG2026062916299",
+          "reserveBillCode": "YY20260630007895",
+          "skuId": "332857",
+          "skuName": "妙可蓝多 马苏里拉奶酪碎干酪制品 125g",
+          "purchaseQty": 800,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
           "supplierName": "广州恒洋食品有限公司-快乐猴",
           "poNo": "CG202607031510",
           "reserveBillCode": "YY20260705000509",
@@ -329,7 +355,7 @@
           "purchaseQty": 272,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 5
         },
         {
           "supplierName": "广州赛味谦食品有限公司",
@@ -340,7 +366,7 @@
           "purchaseQty": 248,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 6
         },
         {
           "supplierName": "广州赛味谦食品有限公司",
@@ -349,17 +375,6 @@
           "skuId": "68353",
           "skuName": "湾仔码头 鲜美虾皇上汤小云吞 400g",
           "purchaseQty": 60,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 6
-        },
-        {
-          "supplierName": "杭州众点食品科技有限公司-快乐猴",
-          "poNo": "CG2026062916307",
-          "reserveBillCode": "YY20260702001067",
-          "skuId": "81925",
-          "skuName": "索菲亚 朗姆葡萄干口味大碗冰淇淋 450g",
-          "purchaseQty": 48,
           "recvQty": 0,
           "hasQc": false,
           "seq": 7
@@ -467,10 +482,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 54,
+      "not_started": 81,
       "in_progress": 0,
       "done": 0,
-      "total": 54,
+      "total": 81,
       "status": "ok"
     }
   },

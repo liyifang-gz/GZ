@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-07T07:36:31",
+  "timestamp": "2026-07-07T08:02:48",
   "date": "2026-07-07",
   "warehouse": "GZ0209",
   "inbound": {
@@ -355,7 +355,7 @@
       "done": 0,
       "rate": 0.0,
       "pcs_done": 0,
-      "pcs_total": 58,
+      "pcs_total": 5000,
       "pcs_rate": 0.0
     },
     "packing": {
@@ -407,7 +407,7 @@
         "pick_rate": 0.0,
         "sow_rate": 0.0,
         "cage_rate": 0.0,
-        "sowed_picked": 58
+        "sowed_picked": 5000
       },
       "sku": {
         "total": 1,
@@ -421,19 +421,19 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 3112,
-      "alloc_pcs": 58,
-      "alloc_rate": 1.9,
-      "picked_pcs": 0,
-      "sow_pcs": 0,
-      "sow_rate": 0.0,
+      "plan_pcs": 23018,
+      "alloc_pcs": 19586,
+      "alloc_rate": 85.1,
+      "picked_pcs": 5000,
+      "sow_pcs": 5000,
+      "sow_rate": 25.5,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 28,
-      "sku_alloc": 26,
-      "sku_sow": 0,
+      "sku_plan": 45,
+      "sku_alloc": 34,
+      "sku_sow": 1,
       "sku_ship": 0,
-      "total_orders": 6
+      "total_orders": 14
     },
     "unalloc_details": [
       {
@@ -451,6 +451,22 @@
         "planQty": 1503,
         "allocQty": 3,
         "unallocQty": 1500
+      },
+      {
+        "receiverName": "快乐猴-海珠星汇广场店-034",
+        "orderNo": "DB20260706534043",
+        "skuNum": 6,
+        "planQty": 234,
+        "allocQty": 0,
+        "unallocQty": 234
+      },
+      {
+        "receiverName": "快乐猴-白云山水立方店-037",
+        "orderNo": "DB20260706534663",
+        "skuNum": 3,
+        "planQty": 144,
+        "allocQty": 0,
+        "unallocQty": 144
       },
       {
         "receiverName": "快乐猴-大朗市场店-049",
@@ -494,22 +510,27 @@
     }
   },
   "plan": {
-    "total_orders": 6,
-    "total_pcs": 3112,
-    "alloc_pcs": 58,
-    "alloc_rate": 1.9,
-    "picked_pcs": 0,
-    "sow_pcs": 0,
-    "sow_rate": 0.0,
+    "total_orders": 14,
+    "total_pcs": 23018,
+    "alloc_pcs": 19586,
+    "alloc_rate": 85.1,
+    "picked_pcs": 5000,
+    "sow_pcs": 5000,
+    "sow_rate": 25.5,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 28,
-    "sku_alloc": 26,
-    "sku_sow": 0,
-    "store_count": 2,
+    "sku_plan": 45,
+    "sku_alloc": 34,
+    "sku_sow": 1,
+    "store_count": 7,
     "by_store": {
+      "快乐猴-番禺建华汇店-019": 8000.0,
+      "快乐猴-禅城东方广场店-018": 6500.0,
+      "快乐猴-南海国昌广场店-023": 5028.0,
       "快乐猴-大朗市场店-049": 1556.0,
-      "快乐猴-龙岗三联商业广场店-047": 1556.0
+      "快乐猴-龙岗三联商业广场店-047": 1556.0,
+      "快乐猴-海珠星汇广场店-034": 234.0,
+      "快乐猴-白云山水立方店-037": 144.0
     },
     "unalloc_details": [
       {
@@ -527,6 +548,22 @@
         "planQty": 1503,
         "allocQty": 3,
         "unallocQty": 1500
+      },
+      {
+        "receiverName": "快乐猴-海珠星汇广场店-034",
+        "orderNo": "DB20260706534043",
+        "skuNum": 6,
+        "planQty": 234,
+        "allocQty": 0,
+        "unallocQty": 234
+      },
+      {
+        "receiverName": "快乐猴-白云山水立方店-037",
+        "orderNo": "DB20260706534663",
+        "skuNum": 3,
+        "planQty": 144,
+        "allocQty": 0,
+        "unallocQty": 144
       },
       {
         "receiverName": "快乐猴-大朗市场店-049",
@@ -2384,7 +2421,7 @@
     "rate": 0,
     "by_job": {},
     "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS(播种) / 0 人",
+    "efficiency_formula": "5000 PCS(播种) / 0 人",
     "status": "error",
     "error": "排班接口限流(attempt 3/3): 请求被限流: rhino one limiter reject, strategy is CLUSTER_FREQUENCY"
   }

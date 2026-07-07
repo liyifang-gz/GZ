@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-07T10:20:40",
+  "timestamp": "2026-07-07T11:08:45",
   "date": "2026-07-07",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 6,
-      "signed": 1,
-      "waiting": 4
+      "signed": 4,
+      "waiting": 1
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 4,
       "late": 0,
       "total": 5,
       "rate": 0.0,
-      "early_rate": 20.0,
+      "early_rate": 80.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,52 +24,44 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
-      "done": 0,
-      "rate": 0.0,
-      "pcs_done": 0,
-      "sign_pcs_done": 5375
+      "total": 4,
+      "done": 2,
+      "rate": 50.0,
+      "pcs_done": 120,
+      "sign_pcs_done": 9075
     },
     "qc": {
-      "total": 1,
+      "total": 8,
       "done": 1,
-      "pending": 0,
+      "pending": 7,
       "passed": 1,
       "rejected": 0,
-      "rate": 100.0,
+      "rate": 12.5,
       "bill_done": 1,
-      "bill_total": 1,
+      "bill_total": 8,
       "pcs_done": 1875,
       "pcs_passed": 1875,
-      "pcs_total": 1875,
+      "pcs_total": 5575,
       "pcs_rejected": 0,
-      "pcs_rate": 100.0,
+      "pcs_rate": 33.6,
       "sku_done": 1,
-      "sku_total": 1,
-      "sku_rate": 100.0
+      "sku_total": 8,
+      "sku_rate": 12.5
     },
     "putaway": {
-      "total": 6015,
-      "done": 640,
-      "rate": 10.6,
-      "sku_total": 8,
-      "sku_done": 1,
-      "sku_rate": 12.5,
-      "details": [
-        {
-          "poNo": "CG202607053254",
-          "hopePcs": 5375,
-          "putPcs": 0,
-          "hopeSku": 7,
-          "putSku": 0
-        }
-      ]
+      "total": 0,
+      "done": 0,
+      "rate": 0,
+      "sku_total": 0,
+      "sku_done": 0,
+      "sku_rate": 0,
+      "details": []
     },
     "dimensions": {
       "reserve": {
         "total": 5,
-        "done": 1,
-        "rate": 20.0
+        "done": 4,
+        "rate": 80.0
       },
       "pcs": {
         "total": 9625,
@@ -80,31 +72,31 @@
       },
       "sku": {
         "total": 12,
-        "done": 3,
-        "rate": 25.0
+        "done": 10,
+        "rate": 83.3
       },
       "supplier": {
         "total": 5,
-        "done": 1,
-        "rate": 20.0,
+        "done": 4,
+        "rate": 80.0,
         "detail": {
-          "郯城瑞发德食品加工有限公司-快乐猴-自营": {
+          "青岛浩源集团有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "山东胜农食品有限公司": {
             "plan": 1,
             "done": 1
           },
           "上海踞浒发贸易有限公司-快乐猴": {
             "plan": 1,
-            "done": 0
+            "done": 1
+          },
+          "郯城瑞发德食品加工有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
           },
           "山东新立信食品科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "山东胜农食品有限公司": {
-            "plan": 1,
-            "done": 0
-          },
-          "青岛浩源集团有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -115,39 +107,22 @@
       "unreserved": [],
       "unsigned": [
         {
-          "supplierName": "上海踞浒发贸易有限公司-快乐猴",
-          "billCode": "YY20260706001396",
-          "skuCount": 1,
-          "pcs": 90,
-          "timeSlot": "14:00 - 14:30",
-          "seq": 1
-        },
-        {
           "supplierName": "山东新立信食品科技有限公司-快乐猴",
           "billCode": "YY20260706000560",
           "skuCount": 2,
           "pcs": 180,
           "timeSlot": "16:00 - 16:30",
-          "seq": 2
-        },
-        {
-          "supplierName": "山东胜农食品有限公司",
-          "billCode": "YY20260705003163",
-          "skuCount": 5,
-          "pcs": 3580,
-          "timeSlot": "15:30 - 16:30",
-          "seq": 3
-        },
-        {
-          "supplierName": "青岛浩源集团有限公司-快乐猴",
-          "billCode": "YY20260630008759",
-          "skuCount": 1,
-          "pcs": 30,
-          "timeSlot": "15:00 - 15:30",
-          "seq": 4
+          "seq": 1
         }
       ],
       "unloading": [
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "billCode": "YY20260705003163",
+          "signTime": "10:30",
+          "unloadStartTime": "10:32",
+          "status": "卸货中"
+        },
         {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
           "billCode": "YY20260705006229",
@@ -155,16 +130,151 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "上海踞浒发贸易有限公司-快乐猴",
+          "skuName": "快乐猴 牛肉芝士卷 7.2kg",
+          "arrivalTime": "14:00",
+          "unloadFinishTime": "10:37",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "冷冻鸡爪 1kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡翅根 1kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 4,
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡琵琶腿 1kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 5,
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡翅尖 1kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 6,
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡翅中 1kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "青岛浩源集团有限公司-快乐猴",
+          "skuName": "(原料)酱爆鱿鱼串 5.04kg",
+          "arrivalTime": "15:00",
+          "unloadFinishTime": "11:08",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [
         {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
           "skuName": "快乐猴 咔滋脆鸡排 400g",
           "completeTime": "10:09",
-          "waitingMins": 11
+          "waitingMins": 59
         }
       ],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "poNo": "CG202607015817",
+          "reserveBillCode": "YY20260705003163",
+          "skuId": "1124266",
+          "skuName": "单冻鸡翅根 1kg",
+          "purchaseQty": 1320,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "poNo": "CG202607015817",
+          "reserveBillCode": "YY20260705003163",
+          "skuId": "1125781",
+          "skuName": "单冻鸡翅中 1kg",
+          "purchaseQty": 1060,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "poNo": "CG202607015817",
+          "reserveBillCode": "YY20260705003163",
+          "skuId": "1124796",
+          "skuName": "单冻鸡琵琶腿 1kg",
+          "purchaseQty": 580,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "poNo": "CG202607015817",
+          "reserveBillCode": "YY20260705003163",
+          "skuId": "1125171",
+          "skuName": "单冻鸡翅尖 1kg",
+          "purchaseQty": 400,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "poNo": "CG202607015817",
+          "reserveBillCode": "YY20260705003163",
+          "skuId": "1033159",
+          "skuName": "冷冻鸡爪 1kg",
+          "purchaseQty": 220,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 5
+        },
+        {
+          "supplierName": "上海踞浒发贸易有限公司-快乐猴",
+          "poNo": "CG2026062916289",
+          "reserveBillCode": "YY20260706001396",
+          "skuId": "1207064",
+          "skuName": "快乐猴 牛肉芝士卷 7.2kg",
+          "purchaseQty": 90,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 6
+        },
+        {
+          "supplierName": "青岛浩源集团有限公司-快乐猴",
+          "poNo": "CG202606301132",
+          "reserveBillCode": "YY20260630008759",
+          "skuId": "1494943",
+          "skuName": "(原料)酱爆鱿鱼串 5.04kg",
+          "purchaseQty": 30,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 7
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -267,10 +377,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 20,
+      "not_started": 0,
       "in_progress": 0,
       "done": 0,
-      "total": 20,
+      "total": 0,
       "status": "ok"
     }
   },

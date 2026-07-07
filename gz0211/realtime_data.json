@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-07T08:40:56",
+  "timestamp": "2026-07-07T09:02:40",
   "date": "2026-07-07",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 6,
-      "signed": 0,
-      "waiting": 5
+      "signed": 1,
+      "waiting": 4
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 5,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 20.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,44 +24,44 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 5375
     },
     "qc": {
-      "total": 0,
+      "total": 3,
       "done": 0,
-      "pending": 0,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 5375,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 3,
+      "sku_rate": 0.0
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
+      "total": 640,
+      "done": 640,
+      "rate": 100.0,
+      "sku_total": 1,
+      "sku_done": 1,
+      "sku_rate": 100.0,
       "details": []
     },
     "dimensions": {
       "reserve": {
         "total": 5,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 20.0
       },
       "pcs": {
         "total": 9625,
@@ -72,23 +72,23 @@
       },
       "sku": {
         "total": 12,
-        "done": 0,
-        "rate": 0.0
+        "done": 3,
+        "rate": 25.0
       },
       "supplier": {
         "total": 5,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 20.0,
         "detail": {
+          "郯城瑞发德食品加工有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "上海踞浒发贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
           "山东新立信食品科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "郯城瑞发德食品加工有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 0
           },
@@ -123,20 +123,12 @@
           "seq": 2
         },
         {
-          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
-          "billCode": "YY20260705006229",
-          "skuCount": 3,
-          "pcs": 5375,
-          "timeSlot": "14:30 - 16:30",
-          "seq": 3
-        },
-        {
           "supplierName": "山东胜农食品有限公司",
           "billCode": "YY20260705003163",
           "skuCount": 5,
           "pcs": 3580,
           "timeSlot": "15:30 - 16:30",
-          "seq": 4
+          "seq": 3
         },
         {
           "supplierName": "青岛浩源集团有限公司-快乐猴",
@@ -144,13 +136,79 @@
           "skuCount": 1,
           "pcs": 30,
           "timeSlot": "15:00 - 15:30",
-          "seq": 5
+          "seq": 4
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "billCode": "YY20260705006229",
+          "signTime": "09:02",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "skuName": "快乐猴 咔滋脆鸡排 400g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "skuName": "快乐猴 原味香酥鸡柳 380g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "skuName": "快乐猴 鸡肉小酥肉 350g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "poNo": "CG202607053254",
+          "reserveBillCode": "YY20260705006229",
+          "skuId": "1487043",
+          "skuName": "快乐猴 原味香酥鸡柳 380g",
+          "purchaseQty": 2000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "poNo": "CG202607053254",
+          "reserveBillCode": "YY20260705006229",
+          "skuId": "1125925",
+          "skuName": "快乐猴 咔滋脆鸡排 400g",
+          "purchaseQty": 1875,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "poNo": "CG202607053254",
+          "reserveBillCode": "YY20260705006229",
+          "skuId": "1487720",
+          "skuName": "快乐猴 鸡肉小酥肉 350g",
+          "purchaseQty": 1500,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -253,10 +311,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 0,
+      "not_started": 6,
       "in_progress": 0,
       "done": 0,
-      "total": 0,
+      "total": 6,
       "status": "ok"
     }
   },

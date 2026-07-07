@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-07T15:56:43",
+  "timestamp": "2026-07-07T16:01:39",
   "date": "2026-07-07",
   "warehouse": "GZ0211",
   "inbound": {
@@ -102,6 +102,10 @@
         "done": 5,
         "rate": 100.0,
         "detail": {
+          "山东胜农食品有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "山东新立信食品科技有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -111,10 +115,6 @@
             "done": 1
           },
           "青岛浩源集团有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "山东胜农食品有限公司": {
             "plan": 1,
             "done": 1
           },
@@ -142,56 +142,106 @@
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
           "skuName": "快乐猴 咔滋脆鸡排 400g",
           "completeTime": "10:09",
-          "waitingMins": 347
+          "waitingMins": 352
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "冷冻鸡爪 1kg",
           "completeTime": "13:38",
-          "waitingMins": 138
+          "waitingMins": 143
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅根 1kg",
           "completeTime": "13:37",
-          "waitingMins": 139
+          "waitingMins": 144
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡琵琶腿 1kg",
           "completeTime": "13:38",
-          "waitingMins": 139
+          "waitingMins": 144
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅尖 1kg",
           "completeTime": "12:37",
-          "waitingMins": 199
+          "waitingMins": 204
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅中 1kg",
           "completeTime": "13:37",
-          "waitingMins": 139
+          "waitingMins": 144
         },
         {
           "supplierName": "青岛浩源集团有限公司-快乐猴",
           "skuName": "(原料)酱爆鱿鱼串 5.04kg",
           "completeTime": "11:43",
-          "waitingMins": 253
+          "waitingMins": 258
         }
       ],
       "signed_not_recv": [],
-      "qc_recv_pending": [],
+      "qc_recv_pending": [
+        {
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "skuName": "快乐猴 咔滋脆鸡排 400g",
+          "qcCompleteTime": "10:09",
+          "waitingMins": 352,
+          "poNo": "CG202607053254"
+        },
+        {
+          "supplierName": "青岛浩源集团有限公司-快乐猴",
+          "skuName": "(原料)酱爆鱿鱼串 5.04kg",
+          "qcCompleteTime": "11:43",
+          "waitingMins": 258,
+          "poNo": "CG202606301132"
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡翅尖 1kg",
+          "qcCompleteTime": "12:37",
+          "waitingMins": 204,
+          "poNo": "CG202607015817"
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡翅根 1kg",
+          "qcCompleteTime": "13:37",
+          "waitingMins": 144,
+          "poNo": "CG202607015817"
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡琵琶腿 1kg",
+          "qcCompleteTime": "13:38",
+          "waitingMins": 144,
+          "poNo": "CG202607015817"
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡翅中 1kg",
+          "qcCompleteTime": "13:37",
+          "waitingMins": 144,
+          "poNo": "CG202607015817"
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "冷冻鸡爪 1kg",
+          "qcCompleteTime": "13:38",
+          "waitingMins": 143,
+          "poNo": "CG202607015817"
+        }
+      ],
       "recv_diff": [],
       "qc_rejected": [],
       "duplicate_reserve": []
     },
     "status": "ok",
     "kpi": {
-      "efficiency": 1925.0,
-      "efficiency_formula": "9625 PCS / 5 人",
-      "inbound_schedule": 5
+      "efficiency": 0.0,
+      "efficiency_formula": "9625 PCS / 0 人",
+      "inbound_schedule": 0
     }
   },
   "outbound": {
@@ -387,8 +437,8 @@
           "planOutTime": "07-07 19:00"
         }
       ],
-      "outbound_efficiency": 397.8,
-      "outbound_efficiency_formula": "6365 PCS / 16 人(拣播员)"
+      "outbound_efficiency": 0.0,
+      "outbound_efficiency_formula": "6365 PCS / 0 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
@@ -430,10 +480,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 37,
-      "in_progress": 2,
-      "done": 226,
-      "total": 265,
+      "not_started": 38,
+      "in_progress": 1,
+      "done": 227,
+      "total": 266,
       "status": "ok"
     }
   },
@@ -510,51 +560,25 @@
     "temp_status": "ok"
   },
   "attendance": {
-    "total_inservice": 25,
-    "schedule": 22,
-    "attendance": 22,
-    "rate": 88.0,
+    "total_inservice": 0,
+    "schedule": 0,
+    "attendance": 0,
+    "rate": 0,
     "by_job": {
-      "N拣播员": {
-        "inservice": 16,
-        "schedule": 16,
-        "attendance": 16,
-        "rate": 100.0
-      },
-      "N冷藏收退": {
-        "inservice": 8,
-        "schedule": 5,
-        "attendance": 5,
-        "rate": 62.5
-      },
-      "N库维": {
+      "N高叉司机": {
         "inservice": 0,
         "schedule": 0,
         "attendance": 0,
         "rate": 0
-      },
-      "N物资": {
-        "inservice": 1,
-        "schedule": 1,
-        "attendance": 1,
-        "rate": 100.0
       }
     },
-    "by_pos_total": {
-      "KLH冷藏拣播员": 16,
-      "KLH冷藏物资": 1,
-      "KLH冷藏收退": 8
-    },
-    "by_pos_scheduled": {
-      "KLH冷藏拣播员": 16,
-      "KLH冷藏物资": 1,
-      "KLH冷藏收退": 5
-    },
-    "predicted_efficiency": 289.3,
-    "efficiency_formula": "6365 PCS(播种) / 22 人",
-    "outbound_efficiency": 397.8,
-    "outbound_efficiency_formula": "6365 PCS / 16 人(拣播员)",
-    "inbound_efficiency_workers": 5,
+    "by_pos_total": {},
+    "by_pos_scheduled": {},
+    "predicted_efficiency": 0.0,
+    "efficiency_formula": "6365 PCS(播种) / 0 人",
+    "outbound_efficiency": 0.0,
+    "outbound_efficiency_formula": "6365 PCS / 0 人(拣播员)",
+    "inbound_efficiency_workers": 0,
     "status": "ok"
   }
 }

@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-07T10:03:57",
+  "timestamp": "2026-07-07T10:20:40",
   "date": "2026-07-07",
   "warehouse": "GZ0211",
   "inbound": {
@@ -32,30 +32,38 @@
     },
     "qc": {
       "total": 1,
-      "done": 0,
-      "pending": 1,
-      "passed": 0,
+      "done": 1,
+      "pending": 0,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 100.0,
+      "bill_done": 1,
       "bill_total": 1,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 1875,
+      "pcs_passed": 1875,
       "pcs_total": 1875,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 100.0,
+      "sku_done": 1,
       "sku_total": 1,
-      "sku_rate": 0.0
+      "sku_rate": 100.0
     },
     "putaway": {
-      "total": 640,
+      "total": 6015,
       "done": 640,
-      "rate": 100.0,
-      "sku_total": 1,
+      "rate": 10.6,
+      "sku_total": 8,
       "sku_done": 1,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 12.5,
+      "details": [
+        {
+          "poNo": "CG202607053254",
+          "hopePcs": 5375,
+          "putPcs": 0,
+          "hopeSku": 7,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +75,8 @@
         "total": 9625,
         "done": 9625,
         "rate": 100.0,
-        "recv_done": 640,
-        "recv_rate": 6.6
+        "recv_done": 6015,
+        "recv_rate": 62.5
       },
       "sku": {
         "total": 12,
@@ -147,52 +155,16 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
+      "qc_pending": [],
+      "recv_pending": [
         {
-          "seq": 1,
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
           "skuName": "快乐猴 咔滋脆鸡排 400g",
-          "arrivalTime": "14:30",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
+          "completeTime": "10:09",
+          "waitingMins": 11
         }
       ],
-      "recv_pending": [],
-      "signed_not_recv": [
-        {
-          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
-          "poNo": "CG202607053254",
-          "reserveBillCode": "YY20260705006229",
-          "skuId": "1487043",
-          "skuName": "快乐猴 原味香酥鸡柳 380g",
-          "purchaseQty": 2000,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 1
-        },
-        {
-          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
-          "poNo": "CG202607053254",
-          "reserveBillCode": "YY20260705006229",
-          "skuId": "1125925",
-          "skuName": "快乐猴 咔滋脆鸡排 400g",
-          "purchaseQty": 1875,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 2
-        },
-        {
-          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
-          "poNo": "CG202607053254",
-          "reserveBillCode": "YY20260705006229",
-          "skuId": "1487720",
-          "skuName": "快乐猴 鸡肉小酥肉 350g",
-          "purchaseQty": 1500,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 3
-        }
-      ],
+      "signed_not_recv": [],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -295,10 +267,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 15,
+      "not_started": 20,
       "in_progress": 0,
       "done": 0,
-      "total": 15,
+      "total": 20,
       "status": "ok"
     }
   },

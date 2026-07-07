@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-07T09:45:51",
+  "timestamp": "2026-07-07T10:04:47",
   "date": "2026-07-07",
   "warehouse": "GZ0209",
   "inbound": {
@@ -32,30 +32,38 @@
     },
     "qc": {
       "total": 2,
-      "done": 0,
-      "pending": 2,
-      "passed": 0,
+      "done": 2,
+      "pending": 0,
+      "passed": 2,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 100.0,
+      "bill_done": 2,
       "bill_total": 2,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 1160,
+      "pcs_passed": 1160,
       "pcs_total": 1160,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 100.0,
+      "sku_done": 2,
       "sku_total": 2,
-      "sku_rate": 0.0
+      "sku_rate": 100.0
     },
     "putaway": {
-      "total": 10459,
+      "total": 10709,
       "done": 10459,
-      "rate": 100.0,
-      "sku_total": 16,
+      "rate": 97.7,
+      "sku_total": 18,
       "sku_done": 16,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 88.9,
+      "details": [
+        {
+          "poNo": "CG202606298321",
+          "hopePcs": 250,
+          "putPcs": 0,
+          "hopeSku": 2,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +75,8 @@
         "total": 18168,
         "done": 18168,
         "rate": 100.0,
-        "recv_done": 10459,
-        "recv_rate": 57.6
+        "recv_done": 10709,
+        "recv_rate": 58.9
       },
       "sku": {
         "total": 56,
@@ -80,6 +88,14 @@
         "done": 8,
         "rate": 40.0,
         "detail": {
+          "广州顺中宜商贸有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
+          "广州增城区新塘粮食管理所有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "深圳市荣德润贸易有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -87,14 +103,6 @@
           "广东省广盐集团股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "广州增城区新塘粮食管理所有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "广州顺中宜商贸有限公司-快乐猴": {
-            "plan": 2,
-            "done": 2
           },
           "广州市万荣商贸有限公司广州分公司-快乐猴": {
             "plan": 2,
@@ -264,25 +272,21 @@
         }
       ],
       "unloading": [],
-      "qc_pending": [
+      "qc_pending": [],
+      "recv_pending": [
         {
-          "seq": 1,
           "supplierName": "深圳市荣德润贸易有限公司-快乐猴",
           "skuName": "霸王 花河源米粉 2kg",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "08:51",
-          "statusLabel": "待质检"
+          "completeTime": "09:56",
+          "waitingMins": 9
         },
         {
-          "seq": 2,
           "supplierName": "北京喜之郎商贸有限责任公司-快乐猴-自营",
           "skuName": "喜之郎 什锦果冻 200g",
-          "arrivalTime": "16:00",
-          "unloadFinishTime": "09:21",
-          "statusLabel": "待质检"
+          "completeTime": "09:57",
+          "waitingMins": 7
         }
       ],
-      "recv_pending": [],
       "signed_not_recv": [
         {
           "supplierName": "北京喜之郎商贸有限责任公司-快乐猴-自营",
@@ -303,7 +307,7 @@
           "skuName": "喜之郎 什锦果冻 200g",
           "purchaseQty": 600,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 2
         },
         {
@@ -314,7 +318,7 @@
           "skuName": "霸王 花河源米粉 2kg",
           "purchaseQty": 560,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 3
         },
         {
@@ -329,17 +333,6 @@
           "seq": 4
         },
         {
-          "supplierName": "广州增城区新塘粮食管理所有限公司-快乐猴",
-          "poNo": "CG202606298321",
-          "reserveBillCode": "YY20260703000377",
-          "skuId": "239837",
-          "skuName": "挂荔 增城丝苗米 5kg",
-          "purchaseQty": 250,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 5
-        },
-        {
           "supplierName": "广州顺中宜商贸有限公司-快乐猴",
           "poNo": "CG202606307800",
           "reserveBillCode": "YY20260706000500",
@@ -348,7 +341,7 @@
           "purchaseQty": 240,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 6
+          "seq": 5
         },
         {
           "supplierName": "广州顺中宜商贸有限公司-快乐猴",
@@ -359,7 +352,7 @@
           "purchaseQty": 120,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 6
         },
         {
           "supplierName": "鸿晟园食品科技有限公司-快乐猴-自营",
@@ -370,7 +363,7 @@
           "purchaseQty": 108,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 7
         },
         {
           "supplierName": "鸿晟园食品科技有限公司-快乐猴-自营",
@@ -381,7 +374,7 @@
           "purchaseQty": 72,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 8
         }
       ],
       "qc_recv_pending": [],

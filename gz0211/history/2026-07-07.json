@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-07T13:31:28",
+  "timestamp": "2026-07-07T13:54:57",
   "date": "2026-07-07",
   "warehouse": "GZ0211",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 7,
-      "done": 3,
-      "pending": 4,
-      "passed": 3,
+      "done": 7,
+      "pending": 0,
+      "passed": 7,
       "rejected": 0,
-      "rate": 42.9,
-      "bill_done": 3,
+      "rate": 100.0,
+      "bill_done": 7,
       "bill_total": 7,
-      "pcs_done": 2305,
-      "pcs_passed": 2305,
+      "pcs_done": 5485,
+      "pcs_passed": 5485,
       "pcs_total": 5485,
       "pcs_rejected": 0,
-      "pcs_rate": 42.0,
-      "sku_done": 3,
+      "pcs_rate": 100.0,
+      "sku_done": 7,
       "sku_total": 7,
-      "sku_rate": 42.9
+      "sku_rate": 100.0
     },
     "putaway": {
       "total": 6045,
@@ -95,6 +95,10 @@
         "done": 5,
         "rate": 100.0,
         "detail": {
+          "山东胜农食品有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "郯城瑞发德食品加工有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -108,10 +112,6 @@
             "done": 1
           },
           "青岛浩源集团有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "山东胜农食品有限公司": {
             "plan": 1,
             "done": 1
           }
@@ -129,58 +129,49 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [
-        {
-          "seq": 1,
-          "supplierName": "山东胜农食品有限公司",
-          "skuName": "冷冻鸡爪 1kg",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "11:54",
-          "statusLabel": "首次进行中"
-        },
-        {
-          "seq": 2,
-          "supplierName": "山东胜农食品有限公司",
-          "skuName": "单冻鸡翅根 1kg",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "11:54",
-          "statusLabel": "首次进行中"
-        },
-        {
-          "seq": 3,
-          "supplierName": "山东胜农食品有限公司",
-          "skuName": "单冻鸡琵琶腿 1kg",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "11:54",
-          "statusLabel": "首次进行中"
-        },
-        {
-          "seq": 4,
-          "supplierName": "山东胜农食品有限公司",
-          "skuName": "单冻鸡翅中 1kg",
-          "arrivalTime": "15:30",
-          "unloadFinishTime": "11:54",
-          "statusLabel": "首次进行中"
-        }
-      ],
+      "qc_pending": [],
       "recv_pending": [
         {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
           "skuName": "快乐猴 咔滋脆鸡排 400g",
           "completeTime": "10:09",
-          "waitingMins": 202
+          "waitingMins": 226
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "冷冻鸡爪 1kg",
+          "completeTime": "13:38",
+          "waitingMins": 17
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡翅根 1kg",
+          "completeTime": "13:37",
+          "waitingMins": 17
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡琵琶腿 1kg",
+          "completeTime": "13:38",
+          "waitingMins": 17
         },
         {
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅尖 1kg",
           "completeTime": "12:37",
-          "waitingMins": 54
+          "waitingMins": 78
+        },
+        {
+          "supplierName": "山东胜农食品有限公司",
+          "skuName": "单冻鸡翅中 1kg",
+          "completeTime": "13:37",
+          "waitingMins": 17
         },
         {
           "supplierName": "青岛浩源集团有限公司-快乐猴",
           "skuName": "(原料)酱爆鱿鱼串 5.04kg",
           "completeTime": "11:43",
-          "waitingMins": 108
+          "waitingMins": 131
         }
       ],
       "signed_not_recv": [
@@ -192,7 +183,7 @@
           "skuName": "单冻鸡翅根 1kg",
           "purchaseQty": 1320,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 1
         },
         {
@@ -203,7 +194,7 @@
           "skuName": "单冻鸡翅中 1kg",
           "purchaseQty": 1060,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 2
         },
         {
@@ -214,7 +205,7 @@
           "skuName": "单冻鸡琵琶腿 1kg",
           "purchaseQty": 580,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 3
         },
         {
@@ -236,7 +227,7 @@
           "skuName": "冷冻鸡爪 1kg",
           "purchaseQty": 220,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 5
         }
       ],
@@ -263,41 +254,50 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 89,
-      "done": 89,
+      "total": 139,
+      "done": 139,
       "rate": 100.0
     },
     "caging": {
-      "total": 89,
-      "done": 89,
+      "total": 139,
+      "done": 139,
       "rate": 100.0,
-      "pcs_done": 1762,
-      "pcs_total": 1762,
+      "pcs_done": 2748,
+      "pcs_total": 2748,
       "pcs_rate": 100.0
     },
     "packing": {
-      "total": 2,
-      "done": 2,
+      "total": 4,
+      "done": 4,
       "rate": 100.0
     },
     "uncaged_details": [],
     "unpacked_details": [],
     "shipping": {
-      "total": 1762,
+      "total": 2748,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 89,
+      "multi_pallet_total": 139,
       "multi_pallet_rate": 0.0,
       "load_rate": 100.0,
       "multi_pallet_details": [],
       "load_rate_unloaded": "--",
-      "load_rate_loaded": "77.21%",
+      "load_rate_loaded": "61.21%",
       "load_rate_shipped": "--",
       "low_load_containers": [
+        {
+          "containerCode": "RQ-05-03-0700246",
+          "poiName": "白云新世界云集店",
+          "loadingRate": "23.83%",
+          "loadingRateVal": 23.83,
+          "skuPcs": "234.000",
+          "skuVolume": "0.472",
+          "planOutTime": "07-07 19:00"
+        },
         {
           "containerCode": "RQ-05-03-0700267",
           "poiName": "莞城罗沙大厦店",
@@ -306,9 +306,27 @@
           "skuPcs": "839.000",
           "skuVolume": "1.077",
           "planOutTime": "07-07 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700132",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "66.57%",
+          "loadingRateVal": 66.57,
+          "skuPcs": "752.000",
+          "skuVolume": "1.318",
+          "planOutTime": "07-07 19:00"
         }
       ],
       "all_containers_detail": [
+        {
+          "containerCode": "RQ-05-03-0700132",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "66.57%",
+          "loadingRateVal": 66.57,
+          "skuPcs": "752.000",
+          "skuVolume": "1.318",
+          "planOutTime": "07-07 19:00"
+        },
         {
           "containerCode": "RQ-05-03-0700200",
           "poiName": "海珠星汇广场店",
@@ -316,6 +334,15 @@
           "loadingRateVal": 100.04,
           "skuPcs": "923.000",
           "skuVolume": "1.981",
+          "planOutTime": "07-07 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700246",
+          "poiName": "白云新世界云集店",
+          "loadingRate": "23.83%",
+          "loadingRateVal": 23.83,
+          "skuPcs": "234.000",
+          "skuVolume": "0.472",
           "planOutTime": "07-07 19:00"
         },
         {
@@ -328,26 +355,26 @@
           "planOutTime": "07-07 19:00"
         }
       ],
-      "outbound_efficiency": 110.1,
-      "outbound_efficiency_formula": "1762 PCS / 16 人(拣播员)"
+      "outbound_efficiency": 171.8,
+      "outbound_efficiency_formula": "2748 PCS / 16 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 1762,
+        "total": 2748,
         "picked": 0,
         "sowed": 0,
-        "caged": 1762,
+        "caged": 2748,
         "not_caged": 0,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
         "cage_rate": 100.0,
-        "sowed_picked": 1762
+        "sowed_picked": 2748
       },
       "sku": {
-        "total": 89,
+        "total": 139,
         "picked": 0,
         "sowed": 0,
-        "caged": 89,
+        "caged": 139,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
         "cage_rate": 100.0
@@ -358,23 +385,23 @@
       "plan_pcs": 6365,
       "alloc_pcs": 6365,
       "alloc_rate": 100.0,
-      "picked_pcs": 1762,
-      "sow_pcs": 1762,
-      "sow_rate": 27.7,
+      "picked_pcs": 2748,
+      "sow_pcs": 2748,
+      "sow_rate": 43.2,
       "ship_pcs": 0,
       "ship_rate": 0.0,
       "sku_plan": 334,
       "sku_alloc": 334,
-      "sku_sow": 89,
+      "sku_sow": 139,
       "sku_ship": 0,
       "total_orders": 16
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 62,
-      "in_progress": 7,
-      "done": 91,
-      "total": 160,
+      "not_started": 49,
+      "in_progress": 4,
+      "done": 109,
+      "total": 162,
       "status": "ok"
     }
   },
@@ -383,14 +410,14 @@
     "total_pcs": 6365,
     "alloc_pcs": 6365,
     "alloc_rate": 100.0,
-    "picked_pcs": 1762,
-    "sow_pcs": 1762,
-    "sow_rate": 27.7,
+    "picked_pcs": 2748,
+    "sow_pcs": 2748,
+    "sow_rate": 43.2,
     "ship_pcs": 0,
     "ship_rate": 0.0,
     "sku_plan": 334,
     "sku_alloc": 334,
-    "sku_sow": 89,
+    "sku_sow": 139,
     "store_count": 9,
     "by_store": {
       "快乐猴-白云山水立方店-037": 1117.0,
@@ -491,10 +518,10 @@
       "KLH冷藏物资": 1,
       "KLH冷藏收退": 5
     },
-    "predicted_efficiency": 80.1,
-    "efficiency_formula": "1762 PCS(播种) / 22 人",
-    "outbound_efficiency": 110.1,
-    "outbound_efficiency_formula": "1762 PCS / 16 人(拣播员)",
+    "predicted_efficiency": 124.9,
+    "efficiency_formula": "2748 PCS(播种) / 22 人",
+    "outbound_efficiency": 171.8,
+    "outbound_efficiency_formula": "2748 PCS / 16 人(拣播员)",
     "inbound_efficiency_workers": 5,
     "status": "ok"
   }

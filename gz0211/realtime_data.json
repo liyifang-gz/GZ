@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-08T09:34:37",
+  "timestamp": "2026-07-08T09:39:15",
   "date": "2026-07-08",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 9,
-      "signed": 0,
-      "waiting": 6
+      "signed": 1,
+      "waiting": 5
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 6,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 16.7,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 500
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 500,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 3830,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 6,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 16.7
       },
       "pcs": {
         "total": 9684,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 25,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 4.0
       },
       "supplier": {
         "total": 5,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 20.0,
         "detail": {
+          "嘉兴万优食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "三全食品股份有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -90,10 +94,6 @@
           },
           "广州有林贸易有限公司-快乐猴": {
             "plan": 2,
-            "done": 0
-          },
-          "嘉兴万优食品有限公司-快乐猴": {
-            "plan": 1,
             "done": 0
           },
           "广东立高食品营销有限公司-快乐猴": {
@@ -131,26 +131,46 @@
           "seq": 3
         },
         {
-          "supplierName": "嘉兴万优食品有限公司-快乐猴",
-          "billCode": "YY20260703001117",
-          "skuCount": 1,
-          "pcs": 500,
-          "timeSlot": "14:30 - 15:00",
-          "seq": 4
-        },
-        {
           "supplierName": "广东立高食品营销有限公司-快乐猴",
           "billCode": "YY20260701008349",
           "skuCount": 2,
           "pcs": 2446,
           "timeSlot": "13:00 - 14:00",
-          "seq": 5
+          "seq": 4
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "嘉兴万优食品有限公司-快乐猴",
+          "billCode": "YY20260703001117",
+          "signTime": "09:36",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "嘉兴万优食品有限公司-快乐猴",
+          "skuName": "万正奢选 手作烧卖皇 240g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "嘉兴万优食品有限公司-快乐猴",
+          "poNo": "CG2026062915518",
+          "reserveBillCode": "YY20260703001117",
+          "skuId": "1373975",
+          "skuName": "万正奢选 手作烧卖皇 240g",
+          "purchaseQty": 500,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -253,10 +273,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 19,
+      "not_started": 24,
       "in_progress": 0,
       "done": 0,
-      "total": 19,
+      "total": 24,
       "status": "ok"
     }
   },

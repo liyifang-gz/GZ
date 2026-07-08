@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-08T11:28:48",
+  "timestamp": "2026-07-08T11:32:31",
   "date": "2026-07-08",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 9,
-      "signed": 1,
-      "waiting": 5
+      "signed": 2,
+      "waiting": 4
     },
     "ontime": {
       "ontime": 0,
-      "early": 1,
+      "early": 2,
       "late": 0,
       "total": 6,
       "rate": 0.0,
-      "early_rate": 16.7,
+      "early_rate": 33.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 1,
+      "total": 2,
       "done": 1,
-      "rate": 100.0,
+      "rate": 50.0,
       "pcs_done": 500,
-      "sign_pcs_done": 500
+      "sign_pcs_done": 2946
     },
     "qc": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "pending": 0,
+      "pending": 2,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 2,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 2446,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 2,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 4330,
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 6,
-        "done": 1,
-        "rate": 16.7
+        "done": 2,
+        "rate": 33.3
       },
       "pcs": {
         "total": 9684,
@@ -80,14 +80,18 @@
       },
       "sku": {
         "total": 25,
-        "done": 1,
-        "rate": 4.0
+        "done": 3,
+        "rate": 12.0
       },
       "supplier": {
         "total": 5,
-        "done": 1,
-        "rate": 20.0,
+        "done": 2,
+        "rate": 40.0,
         "detail": {
+          "广东立高食品营销有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "嘉兴万优食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -102,10 +106,6 @@
           },
           "广州有林贸易有限公司-快乐猴": {
             "plan": 2,
-            "done": 0
-          },
-          "广东立高食品营销有限公司-快乐猴": {
-            "plan": 1,
             "done": 0
           }
         }
@@ -137,20 +137,59 @@
           "pcs": 3208,
           "timeSlot": "15:30 - 16:30",
           "seq": 3
-        },
+        }
+      ],
+      "unloading": [
         {
           "supplierName": "广东立高食品营销有限公司-快乐猴",
           "billCode": "YY20260701008349",
-          "skuCount": 2,
-          "pcs": 2446,
-          "timeSlot": "13:00 - 14:00",
-          "seq": 4
+          "signTime": "11:28",
+          "status": "已签到未卸货"
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "广东立高食品营销有限公司-快乐猴",
+          "skuName": "(原料)葡式蛋挞液 907g",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "广东立高食品营销有限公司-快乐猴",
+          "skuName": "(原料)爆酥葡挞皮  750g",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "广东立高食品营销有限公司-快乐猴",
+          "poNo": "CG2026063010402",
+          "reserveBillCode": "YY20260701008349",
+          "skuId": "1378937",
+          "skuName": "(原料)葡式蛋挞液 907g",
+          "purchaseQty": 1596,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "广东立高食品营销有限公司-快乐猴",
+          "poNo": "CG2026063010402",
+          "reserveBillCode": "YY20260701008349",
+          "skuId": "1379176",
+          "skuName": "(原料)爆酥葡挞皮  750g",
+          "purchaseQty": 850,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -253,10 +292,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 114,
+      "not_started": 119,
       "in_progress": 0,
       "done": 0,
-      "total": 114,
+      "total": 119,
       "status": "ok"
     }
   },

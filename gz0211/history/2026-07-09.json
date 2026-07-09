@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-09T10:38:51",
+  "timestamp": "2026-07-09T10:45:30",
   "date": "2026-07-09",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 5,
-      "signed": 2,
-      "waiting": 3
+      "signed": 3,
+      "waiting": 2
     },
     "ontime": {
       "ontime": 0,
-      "early": 2,
+      "early": 3,
       "late": 0,
       "total": 5,
       "rate": 0.0,
-      "early_rate": 40.0,
+      "early_rate": 60.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 3,
       "done": 1,
-      "rate": 50.0,
+      "rate": 33.3,
       "pcs_done": 3000,
-      "sign_pcs_done": 5232
+      "sign_pcs_done": 7212
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 1980,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 480,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 5,
-        "done": 2,
-        "rate": 40.0
+        "done": 3,
+        "rate": 60.0
       },
       "pcs": {
         "total": 480,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 8,
-        "done": 5,
-        "rate": 62.5
+        "done": 6,
+        "rate": 75.0
       },
       "supplier": {
         "total": 5,
-        "done": 2,
-        "rate": 40.0,
+        "done": 3,
+        "rate": 60.0,
         "detail": {
+          "江苏益客食品集团股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "济南高贝食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -93,10 +97,6 @@
             "done": 0
           },
           "福建省华农食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "江苏益客食品集团股份有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -121,17 +121,16 @@
           "pcs": 300,
           "timeSlot": "13:30 - 14:00",
           "seq": 2
-        },
-        {
-          "supplierName": "江苏益客食品集团股份有限公司-快乐猴",
-          "billCode": "YY20260624005284",
-          "skuCount": 1,
-          "pcs": 1980,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 3
         }
       ],
       "unloading": [
+        {
+          "supplierName": "江苏益客食品集团股份有限公司-快乐猴",
+          "billCode": "YY20260624005284",
+          "signTime": "10:42",
+          "unloadStartTime": "10:43",
+          "status": "卸货中"
+        },
         {
           "supplierName": "济南高贝食品有限公司-快乐猴",
           "billCode": "YY20260707001271",
@@ -139,9 +138,30 @@
           "status": "已签到未卸货"
         }
       ],
-      "qc_pending": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "江苏益客食品集团股份有限公司-快乐猴",
+          "skuName": "快乐猴 香煎大鸡排 300g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "江苏益客食品集团股份有限公司-快乐猴",
+          "poNo": "CG2026062312896",
+          "reserveBillCode": "YY20260624005284",
+          "skuId": "1125374",
+          "skuName": "快乐猴 香煎大鸡排 300g",
+          "purchaseQty": 1980,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],

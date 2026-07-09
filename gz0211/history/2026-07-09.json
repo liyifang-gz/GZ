@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-09T10:53:46",
+  "timestamp": "2026-07-09T10:58:48",
   "date": "2026-07-09",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 5,
-      "signed": 3,
-      "waiting": 2
+      "signed": 5,
+      "waiting": 0
     },
     "ontime": {
       "ontime": 0,
-      "early": 3,
+      "early": 5,
       "late": 0,
       "total": 5,
       "rate": 0.0,
-      "early_rate": 60.0,
+      "early_rate": 100.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 3,
+      "total": 5,
       "done": 1,
-      "rate": 33.3,
+      "rate": 20.0,
       "pcs_done": 3000,
-      "sign_pcs_done": 7212
+      "sign_pcs_done": 9512
     },
     "qc": {
-      "total": 1,
+      "total": 3,
       "done": 0,
-      "pending": 1,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 1,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 1980,
+      "pcs_total": 4280,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 1,
+      "sku_total": 3,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 5,
-        "done": 3,
-        "rate": 60.0
+        "done": 5,
+        "rate": 100.0
       },
       "pcs": {
         "total": 480,
@@ -72,14 +72,22 @@
       },
       "sku": {
         "total": 8,
-        "done": 6,
-        "rate": 75.0
+        "done": 8,
+        "rate": 100.0
       },
       "supplier": {
         "total": 5,
-        "done": 3,
-        "rate": 60.0,
+        "done": 5,
+        "rate": 100.0,
         "detail": {
+          "福建省华农食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "北海海拓渔港食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "江苏益客食品集团股份有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -91,39 +99,26 @@
           "漳州市梅可果斯食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "北海海拓渔港食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "福建省华农食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
     },
     "details": {
       "unreserved": [],
-      "unsigned": [
-        {
-          "supplierName": "北海海拓渔港食品有限公司-快乐猴",
-          "billCode": "YY20260703009510",
-          "skuCount": 1,
-          "pcs": 2000,
-          "timeSlot": "15:30 - 16:00",
-          "seq": 1
-        },
+      "unsigned": [],
+      "unloading": [
         {
           "supplierName": "福建省华农食品有限公司-快乐猴",
           "billCode": "YY20260702004555",
-          "skuCount": 1,
-          "pcs": 300,
-          "timeSlot": "13:30 - 14:00",
-          "seq": 2
-        }
-      ],
-      "unloading": [
+          "signTime": "10:54",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "北海海拓渔港食品有限公司-快乐猴",
+          "billCode": "YY20260703009510",
+          "signTime": "10:54",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "江苏益客食品集团股份有限公司-快乐猴",
           "billCode": "YY20260624005284",
@@ -146,10 +141,37 @@
           "arrivalTime": "16:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "北海海拓渔港食品有限公司-快乐猴",
+          "skuName": "快乐猴 黑虎虾滑 120g",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "福建省华农食品有限公司-快乐猴",
+          "skuName": "快乐猴 蒲烧鳗鱼 330g",
+          "arrivalTime": "13:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
       "signed_not_recv": [
+        {
+          "supplierName": "北海海拓渔港食品有限公司-快乐猴",
+          "poNo": "CG2026062312899",
+          "reserveBillCode": "YY20260703009510",
+          "skuId": "1233734",
+          "skuName": "快乐猴 黑虎虾滑 120g",
+          "purchaseQty": 2000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
         {
           "supplierName": "江苏益客食品集团股份有限公司-快乐猴",
           "poNo": "CG2026062312896",
@@ -159,7 +181,18 @@
           "purchaseQty": 1980,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 2
+        },
+        {
+          "supplierName": "福建省华农食品有限公司-快乐猴",
+          "poNo": "CG2026062312884",
+          "reserveBillCode": "YY20260702004555",
+          "skuId": "1202359",
+          "skuName": "快乐猴 蒲烧鳗鱼 330g",
+          "purchaseQty": 300,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
         }
       ],
       "qc_recv_pending": [],
@@ -264,10 +297,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 78,
+      "not_started": 88,
       "in_progress": 0,
       "done": 0,
-      "total": 78,
+      "total": 88,
       "status": "ok"
     }
   },

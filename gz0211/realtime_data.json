@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-10T02:48:25",
+  "timestamp": "2026-07-10T02:53:32",
   "date": "2026-07-10",
   "warehouse": "GZ0211",
   "inbound": {
@@ -195,7 +195,8 @@
       "in_progress": 0,
       "done": 0,
       "total": 0,
-      "status": "ok"
+      "status": "error",
+      "error": "the JSON object must be str, bytes or bytearray, not dict"
     }
   },
   "plan": {
@@ -217,19 +218,19 @@
     "status": "ok"
   },
   "transport": {
-    "serial_count": 0,
-    "total_depart": 0,
-    "serial_rate": null,
+    "serial_count": 1,
+    "total_depart": 2,
+    "serial_rate": 0.5,
     "trip_total": null,
     "trip_depart": null,
     "trip_arrive": null,
     "status": "ok",
     "temp_breakdown": {
-      "冷藏": 0,
+      "冷藏": 2,
       "冷冻": 0,
       "常温": 0
     },
-    "all_count": 0,
+    "all_count": 2,
     "planned_trips": {
       "total": 0,
       "by_store": {},

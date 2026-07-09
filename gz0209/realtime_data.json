@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-09T08:32:14",
+  "timestamp": "2026-07-09T08:42:18",
   "date": "2026-07-09",
   "warehouse": "GZ0209",
   "inbound": {
     "reserve": {
       "total": 40,
-      "signed": 2,
-      "waiting": 34
+      "signed": 3,
+      "waiting": 33
     },
     "ontime": {
       "ontime": 0,
-      "early": 2,
+      "early": 3,
       "late": 0,
       "total": 36,
       "rate": 0.0,
-      "early_rate": 5.6,
+      "early_rate": 8.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
+      "total": 3,
       "done": 2,
-      "rate": 100.0,
+      "rate": 66.7,
       "pcs_done": 1450,
-      "sign_pcs_done": 1450
+      "sign_pcs_done": 6118
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 4668,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 18857,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 36,
-        "done": 2,
-        "rate": 5.6
+        "done": 3,
+        "rate": 8.3
       },
       "pcs": {
         "total": 65478,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 83,
-        "done": 3,
-        "rate": 3.6
+        "done": 4,
+        "rate": 4.8
       },
       "supplier": {
         "total": 25,
-        "done": 2,
-        "rate": 8.0,
+        "done": 3,
+        "rate": 12.0,
         "detail": {
+          "上海泰盛万联达供应链有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "广州市汇城贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -153,10 +157,6 @@
             "done": 0
           },
           "杭州点余贸易有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "重庆伴侣食品有限公司": {
             "plan": 1,
             "done": 0
           }
@@ -416,20 +416,12 @@
           "seq": 21
         },
         {
-          "supplierName": "上海泰盛万联达供应链有限公司",
-          "billCode": "YY20260704002681",
-          "skuCount": 1,
-          "pcs": 4668,
-          "timeSlot": "11:00 - 12:00",
-          "seq": 22
-        },
-        {
           "supplierName": "泉州爱尚食品有限公司-快乐猴",
           "billCode": "YY20260702008098",
           "skuCount": 1,
           "pcs": 720,
           "timeSlot": "16:00 - 16:30",
-          "seq": 23
+          "seq": 22
         },
         {
           "supplierName": "北京市美丹食品有限公司-快乐猴-自营",
@@ -437,7 +429,7 @@
           "skuCount": 1,
           "pcs": 1000,
           "timeSlot": "14:30 - 15:00",
-          "seq": 24
+          "seq": 23
         },
         {
           "supplierName": "沧州市华海顺达粮油调料有限公司-快乐猴",
@@ -445,7 +437,7 @@
           "skuCount": 9,
           "pcs": 5934,
           "timeSlot": "14:00 - 15:00",
-          "seq": 25
+          "seq": 24
         },
         {
           "supplierName": "烟台双塔食品股份有限公司-快乐猴",
@@ -453,13 +445,41 @@
           "skuCount": 1,
           "pcs": 3000,
           "timeSlot": "15:30 - 16:00",
-          "seq": 26
+          "seq": 25
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "上海泰盛万联达供应链有限公司",
+          "billCode": "YY20260704002681",
+          "signTime": "08:34",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "上海泰盛万联达供应链有限公司",
+          "skuName": "快乐猴 柔韧面巾纸3层 100抽*20",
+          "arrivalTime": "11:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "上海泰盛万联达供应链有限公司",
+          "poNo": "CG202606244980",
+          "reserveBillCode": "YY20260704002681",
+          "skuId": "1122924",
+          "skuName": "快乐猴 柔韧面巾纸3层 100抽*20",
+          "purchaseQty": 4668,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [
         {
@@ -863,10 +883,10 @@
       }
     ],
     "seeding": {
-      "not_started": 0,
+      "not_started": 7,
       "in_progress": 0,
       "done": 0,
-      "total": 0,
+      "total": 7,
       "status": "ok"
     }
   },

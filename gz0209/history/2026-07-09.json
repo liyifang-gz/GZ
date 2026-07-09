@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-09T09:39:21",
+  "timestamp": "2026-07-09T09:43:14",
   "date": "2026-07-09",
   "warehouse": "GZ0209",
   "inbound": {
@@ -32,21 +32,21 @@
     },
     "qc": {
       "total": 11,
-      "done": 0,
-      "pending": 11,
-      "passed": 0,
+      "done": 1,
+      "pending": 10,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0.0,
-      "bill_done": 0,
+      "rate": 9.1,
+      "bill_done": 1,
       "bill_total": 11,
-      "pcs_done": 0,
-      "pcs_passed": 0,
+      "pcs_done": 300,
+      "pcs_passed": 300,
       "pcs_total": 9697,
       "pcs_rejected": 0,
-      "pcs_rate": 0.0,
-      "sku_done": 0,
+      "pcs_rate": 3.1,
+      "sku_done": 1,
       "sku_total": 10,
-      "sku_rate": 0.0
+      "sku_rate": 10.0
     },
     "putaway": {
       "total": 18857,
@@ -518,17 +518,16 @@
           "arrivalTime": "15:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
-        },
-        {
-          "seq": 11,
-          "supplierName": "广东美而美食品有限公司-快乐猴",
-          "skuName": "快乐猴 可生食富硒鲜鸡蛋 500g(10枚)",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "09:17",
-          "statusLabel": "待质检"
         }
       ],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "广东美而美食品有限公司-快乐猴",
+          "skuName": "快乐猴 可生食富硒鲜鸡蛋 500g(10枚)",
+          "completeTime": "09:42",
+          "waitingMins": 1
+        }
+      ],
       "signed_not_recv": [
         {
           "supplierName": "上海泰盛万联达供应链有限公司",
@@ -571,7 +570,7 @@
           "skuName": "快乐猴 可生食富硒鲜鸡蛋 500g(10枚)",
           "purchaseQty": 300,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 4
         },
         {
@@ -1005,10 +1004,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 22,
+      "not_started": 24,
       "in_progress": 0,
       "done": 0,
-      "total": 22,
+      "total": 24,
       "status": "ok"
     }
   },

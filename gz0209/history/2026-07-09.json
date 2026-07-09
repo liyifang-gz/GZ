@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-09T12:45:43",
+  "timestamp": "2026-07-09T12:50:50",
   "date": "2026-07-09",
   "warehouse": "GZ0209",
   "inbound": {
     "reserve": {
       "total": 40,
-      "signed": 22,
-      "waiting": 13
+      "signed": 23,
+      "waiting": 12
     },
     "ontime": {
       "ontime": 1,
-      "early": 21,
+      "early": 22,
       "late": 0,
       "total": 35,
       "rate": 2.9,
-      "early_rate": 60.0,
+      "early_rate": 62.9,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 16,
+      "total": 17,
       "done": 16,
-      "rate": 100.0,
+      "rate": 94.1,
       "pcs_done": 24697,
-      "sign_pcs_done": 24697
+      "sign_pcs_done": 26369
     },
     "qc": {
-      "total": 3,
-      "done": 2,
-      "pending": 1,
-      "passed": 2,
+      "total": 5,
+      "done": 3,
+      "pending": 2,
+      "passed": 3,
       "rejected": 0,
-      "rate": 66.7,
-      "bill_done": 2,
-      "bill_total": 3,
-      "pcs_done": 500,
-      "pcs_passed": 500,
-      "pcs_total": 700,
+      "rate": 60.0,
+      "bill_done": 3,
+      "bill_total": 5,
+      "pcs_done": 700,
+      "pcs_passed": 700,
+      "pcs_total": 2372,
       "pcs_rejected": 0,
-      "pcs_rate": 71.4,
-      "sku_done": 2,
-      "sku_total": 3,
-      "sku_rate": 66.7
+      "pcs_rate": 29.5,
+      "sku_done": 3,
+      "sku_total": 5,
+      "sku_rate": 60.0
     },
     "putaway": {
       "total": 27017,
@@ -96,8 +96,8 @@
     "dimensions": {
       "reserve": {
         "total": 35,
-        "done": 22,
-        "rate": 62.9
+        "done": 23,
+        "rate": 65.7
       },
       "pcs": {
         "total": 65478,
@@ -108,14 +108,18 @@
       },
       "sku": {
         "total": 82,
-        "done": 54,
-        "rate": 65.9
+        "done": 56,
+        "rate": 68.3
       },
       "supplier": {
         "total": 24,
-        "done": 13,
-        "rate": 54.2,
+        "done": 14,
+        "rate": 58.3,
         "detail": {
+          "广州臻萃贸易有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州市润江贸易有限公司-快乐猴": {
             "plan": 3,
             "done": 3
@@ -186,10 +190,6 @@
           },
           "广东宏佳商贸有限公司-快乐猴": {
             "plan": 3,
-            "done": 0
-          },
-          "广州臻萃贸易有限公司-快乐猴": {
-            "plan": 1,
             "done": 0
           },
           "亿佰利（临沂）食品有限公司-快乐猴": {
@@ -324,20 +324,12 @@
           "seq": 5
         },
         {
-          "supplierName": "广州臻萃贸易有限公司-快乐猴",
-          "billCode": "YY20260707001676",
-          "skuCount": 2,
-          "pcs": 1672,
-          "timeSlot": "13:00 - 13:30",
-          "seq": 6
-        },
-        {
           "supplierName": "亿佰利（临沂）食品有限公司-快乐猴",
           "billCode": "YY20260706001702",
           "skuCount": 1,
           "pcs": 2976,
           "timeSlot": "15:00 - 15:30",
-          "seq": 7
+          "seq": 6
         },
         {
           "supplierName": "杭州点余贸易有限公司-快乐猴",
@@ -345,7 +337,7 @@
           "skuCount": 1,
           "pcs": 200,
           "timeSlot": "15:00 - 15:30",
-          "seq": 8
+          "seq": 7
         },
         {
           "supplierName": "泉州爱尚食品有限公司-快乐猴",
@@ -353,7 +345,7 @@
           "skuCount": 1,
           "pcs": 720,
           "timeSlot": "16:00 - 16:30",
-          "seq": 9
+          "seq": 8
         },
         {
           "supplierName": "北京市美丹食品有限公司-快乐猴-自营",
@@ -361,7 +353,7 @@
           "skuCount": 1,
           "pcs": 1000,
           "timeSlot": "14:30 - 15:00",
-          "seq": 10
+          "seq": 9
         },
         {
           "supplierName": "沧州市华海顺达粮油调料有限公司-快乐猴",
@@ -369,18 +361,33 @@
           "skuCount": 9,
           "pcs": 5934,
           "timeSlot": "14:00 - 15:00",
-          "seq": 11
+          "seq": 10
         }
       ],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "广州臻萃贸易有限公司-快乐猴",
+          "billCode": "YY20260707001676",
+          "signTime": "12:49",
+          "status": "已签到未卸货"
+        }
+      ],
       "qc_pending": [
         {
           "seq": 1,
-          "supplierName": "广州聚艺亭商贸有限公司-快乐猴",
-          "skuName": "珍珍 经典荔枝汽水 330ml*6",
-          "arrivalTime": "14:30",
-          "unloadFinishTime": "12:27",
-          "statusLabel": "首次进行中"
+          "supplierName": "广州臻萃贸易有限公司-快乐猴",
+          "skuName": "健力宝 橙蜜味运动饮料 330ml*6",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "广州臻萃贸易有限公司-快乐猴",
+          "skuName": "大窑 橙诺橙味汽水 480ml",
+          "arrivalTime": "13:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -388,16 +395,44 @@
           "supplierName": "山东阳春酒业有限公司-快乐猴",
           "skuName": "快乐猴 金麦拉格啤酒 330ml*6",
           "completeTime": "11:04",
-          "waitingMins": 101
+          "waitingMins": 106
         },
         {
           "supplierName": "广东美而美食品有限公司-快乐猴",
           "skuName": "快乐猴 可生食富硒鲜鸡蛋 500g(10枚)",
           "completeTime": "09:42",
-          "waitingMins": 183
+          "waitingMins": 188
+        },
+        {
+          "supplierName": "广州聚艺亭商贸有限公司-快乐猴",
+          "skuName": "珍珍 经典荔枝汽水 330ml*6",
+          "completeTime": "12:50",
+          "waitingMins": 1
         }
       ],
       "signed_not_recv": [
+        {
+          "supplierName": "广州臻萃贸易有限公司-快乐猴",
+          "poNo": "CG2026070612777",
+          "reserveBillCode": "YY20260707001676",
+          "skuId": "779472",
+          "skuName": "大窑 橙诺橙味汽水 480ml",
+          "purchaseQty": 1404,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "广州臻萃贸易有限公司-快乐猴",
+          "poNo": "CG2026070612777",
+          "reserveBillCode": "YY20260707001676",
+          "skuId": "98422",
+          "skuName": "健力宝 橙蜜味运动饮料 330ml*6",
+          "purchaseQty": 268,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
         {
           "supplierName": "广州聚艺亭商贸有限公司-快乐猴",
           "poNo": "CG202607076754",
@@ -406,8 +441,8 @@
           "skuName": "珍珍 经典荔枝汽水 330ml*6",
           "purchaseQty": 200,
           "recvQty": 0,
-          "hasQc": false,
-          "seq": 1
+          "hasQc": true,
+          "seq": 3
         }
       ],
       "qc_recv_pending": [],
@@ -909,9 +944,9 @@
       }
     ],
     "seeding": {
-      "not_started": 114,
-      "in_progress": 7,
-      "done": 4,
+      "not_started": 110,
+      "in_progress": 8,
+      "done": 7,
       "total": 125,
       "status": "ok"
     }

@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-09T11:20:24",
+  "timestamp": "2026-07-09T11:22:57",
   "date": "2026-07-09",
   "warehouse": "GZ0209",
   "inbound": {
     "reserve": {
       "total": 40,
-      "signed": 17,
-      "waiting": 19
+      "signed": 18,
+      "waiting": 18
     },
     "ontime": {
       "ontime": 1,
-      "early": 16,
+      "early": 17,
       "late": 0,
       "total": 36,
       "rate": 2.8,
-      "early_rate": 44.4,
+      "early_rate": 47.2,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 12,
-      "done": 8,
-      "rate": 66.7,
-      "pcs_done": 7402,
-      "sign_pcs_done": 18037
+      "total": 13,
+      "done": 9,
+      "rate": 69.2,
+      "pcs_done": 7879,
+      "sign_pcs_done": 21037
     },
     "qc": {
-      "total": 10,
+      "total": 9,
       "done": 2,
-      "pending": 8,
+      "pending": 7,
       "passed": 2,
       "rejected": 0,
-      "rate": 20.0,
+      "rate": 22.2,
       "bill_done": 2,
-      "bill_total": 10,
+      "bill_total": 9,
       "pcs_done": 500,
       "pcs_passed": 500,
-      "pcs_total": 11135,
+      "pcs_total": 13658,
       "pcs_rejected": 0,
-      "pcs_rate": 4.5,
+      "pcs_rate": 3.7,
       "sku_done": 2,
-      "sku_total": 10,
-      "sku_rate": 20.0
+      "sku_total": 9,
+      "sku_rate": 22.2
     },
     "putaway": {
       "total": 19307,
@@ -68,8 +68,8 @@
     "dimensions": {
       "reserve": {
         "total": 36,
-        "done": 17,
-        "rate": 47.2
+        "done": 18,
+        "rate": 50.0
       },
       "pcs": {
         "total": 65478,
@@ -80,14 +80,18 @@
       },
       "sku": {
         "total": 83,
-        "done": 45,
-        "rate": 54.2
+        "done": 46,
+        "rate": 55.4
       },
       "supplier": {
         "total": 25,
-        "done": 10,
-        "rate": 40.0,
+        "done": 11,
+        "rate": 44.0,
         "detail": {
+          "烟台双塔食品股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "鲜上榜乳业（广州）有限公司-快乐猴": {
             "plan": 2,
             "done": 2
@@ -161,10 +165,6 @@
             "done": 0
           },
           "亿佰利（临沂）食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "杭州点余贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           }
@@ -374,17 +374,15 @@
           "pcs": 5934,
           "timeSlot": "14:00 - 15:00",
           "seq": 15
-        },
-        {
-          "supplierName": "烟台双塔食品股份有限公司-快乐猴",
-          "billCode": "YY20260626010022",
-          "skuCount": 1,
-          "pcs": 3000,
-          "timeSlot": "15:30 - 16:00",
-          "seq": 16
         }
       ],
       "unloading": [
+        {
+          "supplierName": "烟台双塔食品股份有限公司-快乐猴",
+          "billCode": "YY20260626010022",
+          "signTime": "11:21",
+          "status": "已签到未卸货"
+        },
         {
           "supplierName": "广州市润江贸易有限公司-快乐猴",
           "billCode": "YY20260706008280",
@@ -410,13 +408,6 @@
           "status": "已签到未卸货"
         },
         {
-          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
-          "billCode": "YY20260707000933",
-          "signTime": "09:00",
-          "unloadStartTime": "10:15",
-          "status": "卸货中"
-        },
-        {
           "supplierName": "上海泰盛万联达供应链有限公司",
           "billCode": "YY20260704002681",
           "signTime": "08:34",
@@ -434,22 +425,6 @@
         },
         {
           "seq": 2,
-          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
-          "skuName": "燕塘 原味酸奶饮品 250ml*12",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 3,
-          "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
-          "skuName": "燕塘 红枣枸杞牛奶饮品 250ml*12",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 4,
           "supplierName": "益嘉惠购（北京）科技发展有限公司-快乐猴",
           "skuName": "金龙鱼 黄金比例食用调和油 4L",
           "arrivalTime": "16:00",
@@ -457,7 +432,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 5,
+          "seq": 3,
           "supplierName": "广州市润江贸易有限公司-快乐猴",
           "skuName": "统一双萃 鸭屎香风味柠檬茶饮料 1L",
           "arrivalTime": "13:30",
@@ -465,7 +440,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 6,
+          "seq": 4,
           "supplierName": "广州市润江贸易有限公司-快乐猴",
           "skuName": "奈雪的茶 羽衣甘蓝茉莉花茶 450ml",
           "arrivalTime": "13:30",
@@ -473,7 +448,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 7,
+          "seq": 5,
           "supplierName": "广州市润江贸易有限公司-快乐猴",
           "skuName": "老干妈 风味豆豉油制辣椒 280g",
           "arrivalTime": "13:30",
@@ -481,10 +456,18 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 8,
+          "seq": 6,
           "supplierName": "广州市润江贸易有限公司-快乐猴",
           "skuName": "老干妈 风味鸡油辣椒 280g",
           "arrivalTime": "13:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 7,
+          "supplierName": "烟台双塔食品股份有限公司-快乐猴",
+          "skuName": "快乐猴 龙口粉丝 200g",
+          "arrivalTime": "15:30",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
@@ -494,13 +477,13 @@
           "supplierName": "山东阳春酒业有限公司-快乐猴",
           "skuName": "快乐猴 金麦拉格啤酒 330ml*6",
           "completeTime": "11:04",
-          "waitingMins": 16
+          "waitingMins": 19
         },
         {
           "supplierName": "广东美而美食品有限公司-快乐猴",
           "skuName": "快乐猴 可生食富硒鲜鸡蛋 500g(10枚)",
           "completeTime": "09:42",
-          "waitingMins": 98
+          "waitingMins": 101
         }
       ],
       "signed_not_recv": [
@@ -516,6 +499,17 @@
           "seq": 1
         },
         {
+          "supplierName": "烟台双塔食品股份有限公司-快乐猴",
+          "poNo": "CG202606251401",
+          "reserveBillCode": "YY20260626010022",
+          "skuId": "1123647",
+          "skuName": "快乐猴 龙口粉丝 200g",
+          "purchaseQty": 3000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
           "supplierName": "广州市润江贸易有限公司-快乐猴",
           "poNo": "CG2026070610158",
           "reserveBillCode": "YY20260706008280",
@@ -524,7 +518,7 @@
           "purchaseQty": 960,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 3
         },
         {
           "supplierName": "广州市润江贸易有限公司-快乐猴",
@@ -535,7 +529,7 @@
           "purchaseQty": 480,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
+          "seq": 4
         },
         {
           "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
@@ -546,7 +540,7 @@
           "purchaseQty": 310,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 4
+          "seq": 5
         },
         {
           "supplierName": "鲜上榜乳业（广州）有限公司-快乐猴",
@@ -557,7 +551,7 @@
           "purchaseQty": 180,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 5
+          "seq": 6
         },
         {
           "supplierName": "广东燕塘乳业股份有限公司-快乐猴",
@@ -568,7 +562,7 @@
           "purchaseQty": 167,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 6
+          "seq": 7
         },
         {
           "supplierName": "鲜上榜乳业（广州）有限公司-快乐猴",
@@ -579,7 +573,7 @@
           "purchaseQty": 120,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 7
+          "seq": 8
         },
         {
           "supplierName": "益嘉惠购（北京）科技发展有限公司-快乐猴",
@@ -590,7 +584,7 @@
           "purchaseQty": 100,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 8
+          "seq": 9
         }
       ],
       "qc_recv_pending": [],
@@ -979,10 +973,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 101,
+      "not_started": 102,
       "in_progress": 0,
       "done": 0,
-      "total": 101,
+      "total": 102,
       "status": "ok"
     }
   },

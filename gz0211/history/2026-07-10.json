@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-10T08:58:02",
+  "timestamp": "2026-07-10T09:33:34",
   "date": "2026-07-10",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 11,
-      "signed": 0,
-      "waiting": 9
+      "signed": 3,
+      "waiting": 6
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 3,
       "late": 0,
       "total": 9,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 33.3,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "pcs_done": 0,
-      "sign_pcs_done": 0
+      "total": 3,
+      "done": 1,
+      "rate": 33.3,
+      "pcs_done": 4980,
+      "sign_pcs_done": 7050
     },
     "qc": {
-      "total": 0,
+      "total": 3,
       "done": 0,
-      "pending": 0,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 7050,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 3,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 0,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 9,
-        "done": 0,
-        "rate": 0.0
+        "done": 3,
+        "rate": 33.3
       },
       "pcs": {
         "total": 3403,
@@ -72,21 +72,25 @@
       },
       "sku": {
         "total": 23,
-        "done": 0,
-        "rate": 0.0
+        "done": 3,
+        "rate": 13.0
       },
       "supplier": {
         "total": 8,
-        "done": 0,
-        "rate": 0.0,
+        "done": 3,
+        "rate": 37.5,
         "detail": {
           "郯城瑞发德食品加工有限公司-快乐猴-自营": {
             "plan": 1,
-            "done": 0
+            "done": 1
           },
           "德州天诚鼎盛食品有限公司-快乐猴-自营": {
             "plan": 1,
-            "done": 0
+            "done": 1
+          },
+          "湛江国联水产开发股份有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
           },
           "北京美知源商贸有限公司": {
             "plan": 1,
@@ -107,10 +111,6 @@
           "欧泰贡（广东）食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
-          },
-          "湛江国联水产开发股份有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -119,28 +119,12 @@
       "unreserved": [],
       "unsigned": [
         {
-          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
-          "billCode": "YY20260709008279",
-          "skuCount": 1,
-          "pcs": 70,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 1
-        },
-        {
-          "supplierName": "德州天诚鼎盛食品有限公司-快乐猴-自营",
-          "billCode": "YY20260709002638",
-          "skuCount": 1,
-          "pcs": 2000,
-          "timeSlot": "12:00 - 13:00",
-          "seq": 2
-        },
-        {
           "supplierName": "北京美知源商贸有限公司",
           "billCode": "YY20260708004873",
           "skuCount": 3,
           "pcs": 1230,
           "timeSlot": "13:00 - 13:30",
-          "seq": 3
+          "seq": 1
         },
         {
           "supplierName": "北京玖合金隆食品有限公司-快乐猴",
@@ -148,7 +132,7 @@
           "skuCount": 1,
           "pcs": 3000,
           "timeSlot": "15:30 - 16:30",
-          "seq": 4
+          "seq": 2
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -156,7 +140,7 @@
           "skuCount": 2,
           "pcs": 60,
           "timeSlot": "16:00 - 16:30",
-          "seq": 5
+          "seq": 3
         },
         {
           "supplierName": "深圳市金禧康食品有限公司-快乐猴",
@@ -164,7 +148,7 @@
           "skuCount": 6,
           "pcs": 1264,
           "timeSlot": "12:00 - 12:30",
-          "seq": 6
+          "seq": 4
         },
         {
           "supplierName": "欧泰贡（广东）食品有限公司-快乐猴",
@@ -172,7 +156,7 @@
           "skuCount": 1,
           "pcs": 2000,
           "timeSlot": "14:00 - 14:30",
-          "seq": 7
+          "seq": 5
         },
         {
           "supplierName": "苏州瑷玛森食品有限公司",
@@ -180,21 +164,85 @@
           "skuCount": 7,
           "pcs": 173,
           "timeSlot": "16:00 - 16:30",
-          "seq": 8
-        },
-        {
-          "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
-          "billCode": "YY20260703010144",
-          "skuCount": 1,
-          "pcs": 4980,
-          "timeSlot": "14:30 - 16:30",
-          "seq": 9
+          "seq": 6
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "billCode": "YY20260709008279",
+          "signTime": "09:09",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "德州天诚鼎盛食品有限公司-快乐猴-自营",
+          "billCode": "YY20260709002638",
+          "signTime": "09:09",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
+          "skuName": "快乐猴 大颗粒虾滑 120g",
+          "arrivalTime": "14:30",
+          "unloadFinishTime": "09:13",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "德州天诚鼎盛食品有限公司-快乐猴-自营",
+          "skuName": "快乐猴 萌宠卡通包 350g",
+          "arrivalTime": "12:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 3,
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "skuName": "(原料)奥尔良全腿 10kg",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "湛江国联水产开发股份有限公司-快乐猴",
+          "poNo": "CG2026062312840",
+          "reserveBillCode": "YY20260703010144",
+          "skuId": "1225930",
+          "skuName": "快乐猴 大颗粒虾滑 120g",
+          "purchaseQty": 4980,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "德州天诚鼎盛食品有限公司-快乐猴-自营",
+          "poNo": "CG2026062312850",
+          "reserveBillCode": "YY20260709002638",
+          "skuId": "1452182",
+          "skuName": "快乐猴 萌宠卡通包 350g",
+          "purchaseQty": 2000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
+        {
+          "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
+          "poNo": "CG2026062916294",
+          "reserveBillCode": "YY20260709008279",
+          "skuId": "1439185",
+          "skuName": "(原料)奥尔良全腿 10kg",
+          "purchaseQty": 70,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 3
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -297,10 +345,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 6,
+      "not_started": 21,
       "in_progress": 0,
       "done": 0,
-      "total": 6,
+      "total": 21,
       "status": "ok"
     }
   },

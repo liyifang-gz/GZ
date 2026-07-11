@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-11T09:18:50",
+  "timestamp": "2026-07-11T09:21:31",
   "date": "2026-07-11",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 7,
-      "signed": 0,
-      "waiting": 4
+      "signed": 1,
+      "waiting": 3
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 4,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 25.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 3000
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 3000,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 6516,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 4,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 25.0
       },
       "pcs": {
         "total": 6516,
@@ -72,23 +72,23 @@
       },
       "sku": {
         "total": 9,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 11.1
       },
       "supplier": {
         "total": 4,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 25.0,
         "detail": {
+          "和善园吉美家食品江苏有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "荣成市鸿耀水产捕捞有限公司": {
             "plan": 1,
             "done": 0
           },
           "德州市金彩凤食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "和善园吉美家食品江苏有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -128,26 +128,46 @@
           "seq": 2
         },
         {
-          "supplierName": "和善园吉美家食品江苏有限公司-快乐猴",
-          "billCode": "YY20260708000960",
-          "skuCount": 1,
-          "pcs": 3000,
-          "timeSlot": "15:30 - 16:30",
-          "seq": 3
-        },
-        {
           "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
           "billCode": "YY20260706011608",
           "skuCount": 5,
           "pcs": 1492,
           "timeSlot": "16:00 - 16:30",
-          "seq": 4
+          "seq": 3
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "和善园吉美家食品江苏有限公司-快乐猴",
+          "billCode": "YY20260708000960",
+          "signTime": "09:19",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "和善园吉美家食品江苏有限公司-快乐猴",
+          "skuName": "快乐猴 玉米蔬菜猪肉水饺 1kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "和善园吉美家食品江苏有限公司-快乐猴",
+          "poNo": "CG2026062312878",
+          "reserveBillCode": "YY20260708000960",
+          "skuId": "1174981",
+          "skuName": "快乐猴 玉米蔬菜猪肉水饺 1kg",
+          "purchaseQty": 3000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -250,10 +270,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 17,
+      "not_started": 23,
       "in_progress": 0,
       "done": 0,
-      "total": 17,
+      "total": 23,
       "status": "ok"
     }
   },

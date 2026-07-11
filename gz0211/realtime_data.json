@@ -1,94 +1,159 @@
 {
-  "timestamp": "2026-07-11T10:58:56",
+  "timestamp": "2026-07-11T11:02:36",
   "date": "2026-07-11",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
-      "total": 0,
-      "signed": 0,
-      "waiting": 0
+      "total": 7,
+      "signed": 2,
+      "waiting": 1
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 2,
       "late": 0,
-      "total": 0,
-      "rate": 0,
-      "early_rate": 0,
-      "late_rate": 0
+      "total": 3,
+      "rate": 0.0,
+      "early_rate": 66.7,
+      "late_rate": 0.0
     },
     "reserve_progress": {
-      "po_total": 0,
-      "po_reserved": 0,
-      "rate": 0,
+      "po_total": 4,
+      "po_reserved": 3,
+      "rate": 75.0,
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 2,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 4492
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 3000,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
+      "total": 6516,
+      "done": 6516,
+      "rate": 100.0,
+      "sku_total": 12,
+      "sku_done": 12,
+      "sku_rate": 100.0,
       "details": []
     },
     "dimensions": {
       "reserve": {
-        "total": 0,
-        "done": 0,
-        "rate": 0
+        "total": 3,
+        "done": 2,
+        "rate": 66.7
       },
       "pcs": {
-        "total": 0,
-        "done": 0,
-        "rate": 0,
-        "recv_done": 0,
-        "recv_rate": 0
+        "total": 6516,
+        "done": 5292,
+        "rate": 81.2,
+        "recv_done": 6516,
+        "recv_rate": 100.0
       },
       "sku": {
-        "total": 0,
-        "done": 0,
-        "rate": 0
+        "total": 8,
+        "done": 6,
+        "rate": 75.0
       },
       "supplier": {
-        "total": 0,
-        "done": 0,
-        "rate": 0,
-        "detail": {}
+        "total": 3,
+        "done": 2,
+        "rate": 66.7,
+        "detail": {
+          "和路雪（中国）有限公司上海分公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "和善园吉美家食品江苏有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "荣成市鸿耀水产捕捞有限公司": {
+            "plan": 1,
+            "done": 0
+          }
+        }
       }
     },
     "details": {
-      "unreserved": [],
-      "unsigned": [],
-      "unloading": [],
-      "qc_pending": [],
+      "unreserved": [
+        {
+          "supplierName": "广州市美口佳食品有限公司-快乐猴",
+          "poNo": "CG2026070612972",
+          "skuCount": 3,
+          "pcs": 1224,
+          "preArrivalTime": "2026-07-11",
+          "poStatus": "已完成"
+        }
+      ],
+      "unsigned": [
+        {
+          "supplierName": "荣成市鸿耀水产捕捞有限公司",
+          "billCode": "YY20260710004565",
+          "skuCount": 2,
+          "pcs": 1252,
+          "timeSlot": "14:30 - 15:00",
+          "seq": 1
+        }
+      ],
+      "unloading": [
+        {
+          "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
+          "billCode": "YY20260706011608",
+          "signTime": "10:09",
+          "status": "已签到未卸货"
+        },
+        {
+          "supplierName": "和善园吉美家食品江苏有限公司-快乐猴",
+          "billCode": "YY20260708000960",
+          "signTime": "09:19",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "和善园吉美家食品江苏有限公司-快乐猴",
+          "skuName": "快乐猴 玉米蔬菜猪肉水饺 1kg",
+          "arrivalTime": "15:30",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "和善园吉美家食品江苏有限公司-快乐猴",
+          "poNo": "CG2026062312878",
+          "reserveBillCode": "YY20260708000960",
+          "skuId": "1174981",
+          "skuName": "快乐猴 玉米蔬菜猪肉水饺 1kg",
+          "purchaseQty": 3000,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -97,7 +162,7 @@
     "status": "ok",
     "kpi": {
       "efficiency": 0.0,
-      "efficiency_formula": "0 PCS / 0 人",
+      "efficiency_formula": "5292 PCS / 0 人",
       "inbound_schedule": 0
     }
   },
@@ -148,8 +213,8 @@
       "load_rate_shipped": "--",
       "low_load_containers": [],
       "all_containers_detail": [],
-      "outbound_efficiency": 0,
-      "outbound_efficiency_formula": "--"
+      "outbound_efficiency": 0.0,
+      "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
@@ -191,12 +256,11 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 0,
+      "not_started": 91,
       "in_progress": 0,
       "done": 0,
-      "total": 0,
-      "status": "error",
-      "error": "the JSON object must be str, bytes or bytearray, not dict"
+      "total": 91,
+      "status": "ok"
     }
   },
   "plan": {
@@ -266,10 +330,21 @@
     "schedule": 0,
     "attendance": 0,
     "rate": 0,
-    "by_job": {},
+    "by_job": {
+      "N高叉司机": {
+        "inservice": 0,
+        "schedule": 0,
+        "attendance": 0,
+        "rate": 0
+      }
+    },
+    "by_pos_total": {},
+    "by_pos_scheduled": {},
     "predicted_efficiency": 0.0,
     "efficiency_formula": "0 PCS(播种) / 0 人",
-    "status": "error",
-    "error": "the JSON object must be str, bytes or bytearray, not dict"
+    "outbound_efficiency": 0.0,
+    "outbound_efficiency_formula": "0 PCS / 0 人(拣播员)",
+    "inbound_efficiency_workers": 0,
+    "status": "ok"
   }
 }

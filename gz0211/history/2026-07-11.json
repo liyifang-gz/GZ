@@ -1,93 +1,141 @@
 {
-  "timestamp": "2026-07-11T18:18:08",
+  "timestamp": "2026-07-11T18:23:12",
   "date": "2026-07-11",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
-      "total": 0,
-      "signed": 0,
+      "total": 7,
+      "signed": 3,
       "waiting": 0
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 3,
       "late": 0,
-      "total": 0,
-      "rate": 0,
-      "early_rate": 0,
-      "late_rate": 0
+      "total": 3,
+      "rate": 0.0,
+      "early_rate": 100.0,
+      "late_rate": 0.0
     },
     "reserve_progress": {
-      "po_total": 0,
-      "po_reserved": 0,
-      "rate": 0,
+      "po_total": 4,
+      "po_reserved": 3,
+      "rate": 75.0,
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "pcs_done": 0,
-      "sign_pcs_done": 0
+      "total": 3,
+      "done": 2,
+      "rate": 66.7,
+      "pcs_done": 4252,
+      "sign_pcs_done": 5744
     },
     "qc": {
-      "total": 0,
-      "done": 0,
+      "total": 3,
+      "done": 3,
       "pending": 0,
-      "passed": 0,
+      "passed": 3,
       "rejected": 0,
-      "rate": 0,
-      "bill_done": 0,
-      "bill_total": 0,
-      "pcs_done": 0,
-      "pcs_passed": 0,
-      "pcs_total": 0,
+      "rate": 100.0,
+      "bill_done": 3,
+      "bill_total": 3,
+      "pcs_done": 4252,
+      "pcs_passed": 4252,
+      "pcs_total": 4252,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
-      "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "pcs_rate": 100.0,
+      "sku_done": 3,
+      "sku_total": 3,
+      "sku_rate": 100.0
     },
     "putaway": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "sku_total": 0,
-      "sku_done": 0,
-      "sku_rate": 0,
+      "total": 6516,
+      "done": 6516,
+      "rate": 100.0,
+      "sku_total": 12,
+      "sku_done": 12,
+      "sku_rate": 100.0,
       "details": []
     },
     "dimensions": {
       "reserve": {
-        "total": 0,
-        "done": 0,
-        "rate": 0
+        "total": 3,
+        "done": 3,
+        "rate": 100.0
       },
       "pcs": {
-        "total": 0,
-        "done": 0,
-        "rate": 0,
-        "recv_done": 0,
-        "recv_rate": 0
+        "total": 6516,
+        "done": 5292,
+        "rate": 81.2,
+        "recv_done": 6516,
+        "recv_rate": 100.0
       },
       "sku": {
-        "total": 0,
-        "done": 0,
-        "rate": 0
+        "total": 8,
+        "done": 8,
+        "rate": 100.0
       },
       "supplier": {
-        "total": 0,
-        "done": 0,
-        "rate": 0,
-        "detail": {}
+        "total": 3,
+        "done": 3,
+        "rate": 100.0,
+        "detail": {
+          "荣成市鸿耀水产捕捞有限公司": {
+            "plan": 1,
+            "done": 1
+          },
+          "和善园吉美家食品江苏有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "和路雪（中国）有限公司上海分公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          }
+        }
       }
     },
     "details": {
-      "unreserved": [],
+      "unreserved": [
+        {
+          "supplierName": "广州市美口佳食品有限公司-快乐猴",
+          "poNo": "CG2026070612972",
+          "skuCount": 3,
+          "pcs": 1224,
+          "preArrivalTime": "2026-07-11",
+          "poStatus": "已完成"
+        }
+      ],
       "unsigned": [],
-      "unloading": [],
+      "unloading": [
+        {
+          "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
+          "billCode": "YY20260706011608",
+          "signTime": "10:09",
+          "status": "已签到未卸货"
+        }
+      ],
       "qc_pending": [],
-      "recv_pending": [],
+      "recv_pending": [
+        {
+          "supplierName": "和善园吉美家食品江苏有限公司-快乐猴",
+          "skuName": "快乐猴 玉米蔬菜猪肉水饺 1kg",
+          "completeTime": "12:27",
+          "waitingMins": 356
+        },
+        {
+          "supplierName": "荣成市鸿耀水产捕捞有限公司",
+          "skuName": "南美白虾仁 500g",
+          "completeTime": "14:36",
+          "waitingMins": 227
+        },
+        {
+          "supplierName": "荣成市鸿耀水产捕捞有限公司",
+          "skuName": "南美白虾仁 200g",
+          "completeTime": "14:37",
+          "waitingMins": 226
+        }
+      ],
       "signed_not_recv": [],
       "qc_recv_pending": [],
       "recv_diff": [],
@@ -97,7 +145,7 @@
     "status": "ok",
     "kpi": {
       "efficiency": 0.0,
-      "efficiency_formula": "0 PCS / 0 人",
+      "efficiency_formula": "5292 PCS / 0 人",
       "inbound_schedule": 0
     }
   },
@@ -112,108 +160,311 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 0,
-      "done": 0,
-      "rate": 0.0
+      "total": 523,
+      "done": 523,
+      "rate": 100.0
     },
     "caging": {
-      "total": 0,
-      "done": 0,
-      "rate": 0.0,
-      "pcs_done": 0,
-      "pcs_total": 0,
-      "pcs_rate": 0.0
+      "total": 523,
+      "done": 523,
+      "rate": 100.0,
+      "pcs_done": 9812,
+      "pcs_total": 9812,
+      "pcs_rate": 100.0
     },
     "packing": {
-      "total": 0,
-      "done": 0,
-      "rate": 0.0
+      "total": 12,
+      "done": 12,
+      "rate": 100.0
     },
     "uncaged_details": [],
     "unpacked_details": [],
     "shipping": {
-      "total": 0,
+      "total": 9812,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
-      "multi_pallet_count": 0,
-      "multi_pallet_total": 0,
-      "multi_pallet_rate": 0.0,
-      "load_rate": 0.0,
-      "multi_pallet_details": [],
+      "multi_pallet_count": 2,
+      "multi_pallet_total": 521,
+      "multi_pallet_rate": 0.4,
+      "load_rate": 100.0,
+      "multi_pallet_details": [
+        {
+          "skuName": "快乐猴 鲜汁大肉包 800g(10只)",
+          "poiName": "白云山水立方店",
+          "containerCount": 2,
+          "containerCodes": [
+            "RQ-05-03-0700201",
+            "RQ-05-03-0700203"
+          ],
+          "qty": 40
+        },
+        {
+          "skuName": "快乐猴 鲜葱手抓饼 900g",
+          "poiName": "白云山水立方店",
+          "containerCount": 2,
+          "containerCodes": [
+            "RQ-05-03-0700201",
+            "RQ-05-03-0700203"
+          ],
+          "qty": 50
+        }
+      ],
       "load_rate_unloaded": "--",
-      "load_rate_loaded": "--",
+      "load_rate_loaded": "64.50%",
       "load_rate_shipped": "--",
-      "low_load_containers": [],
-      "all_containers_detail": [],
-      "outbound_efficiency": 0,
-      "outbound_efficiency_formula": "--"
+      "low_load_containers": [
+        {
+          "containerCode": "RQ-05-03-0700203",
+          "poiName": "白云山水立方店",
+          "loadingRate": "25.60%",
+          "loadingRateVal": 25.6,
+          "skuPcs": "194.000",
+          "skuVolume": "0.507",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700187",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "34.78%",
+          "loadingRateVal": 34.78,
+          "skuPcs": "281.000",
+          "skuVolume": "0.689",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700265",
+          "poiName": "莞城罗沙大厦店",
+          "loadingRate": "40.32%",
+          "loadingRateVal": 40.32,
+          "skuPcs": "60.000",
+          "skuVolume": "0.798",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700242",
+          "poiName": "白云新世界云集店",
+          "loadingRate": "50.25%",
+          "loadingRateVal": 50.25,
+          "skuPcs": "634.000",
+          "skuVolume": "0.995",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700155",
+          "poiName": "南海国昌广场店",
+          "loadingRate": "68.13%",
+          "loadingRateVal": 68.13,
+          "skuPcs": "1091.000",
+          "skuVolume": "1.349",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700226",
+          "poiName": "南海比高商业中心店",
+          "loadingRate": "74.16%",
+          "loadingRateVal": 74.16,
+          "skuPcs": "1086.000",
+          "skuVolume": "1.468",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700201",
+          "poiName": "白云山水立方店",
+          "loadingRate": "74.75%",
+          "loadingRateVal": 74.75,
+          "skuPcs": "1132.000",
+          "skuVolume": "1.480",
+          "planOutTime": "07-11 19:00"
+        }
+      ],
+      "all_containers_detail": [
+        {
+          "containerCode": "RQ-05-03-0700113",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "85.02%",
+          "loadingRateVal": 85.02,
+          "skuPcs": "882.000",
+          "skuVolume": "1.683",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700125",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "82.33%",
+          "loadingRateVal": 82.33,
+          "skuPcs": "1189.000",
+          "skuVolume": "1.630",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700155",
+          "poiName": "南海国昌广场店",
+          "loadingRate": "68.13%",
+          "loadingRateVal": 68.13,
+          "skuPcs": "1091.000",
+          "skuVolume": "1.349",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700161",
+          "poiName": "越秀越富广场店",
+          "loadingRate": "86.95%",
+          "loadingRateVal": 86.95,
+          "skuPcs": "1122.000",
+          "skuVolume": "1.722",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700185",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "76.65%",
+          "loadingRateVal": 76.65,
+          "skuPcs": "997.000",
+          "skuVolume": "1.518",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700187",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "34.78%",
+          "loadingRateVal": 34.78,
+          "skuPcs": "281.000",
+          "skuVolume": "0.689",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700201",
+          "poiName": "白云山水立方店",
+          "loadingRate": "74.75%",
+          "loadingRateVal": 74.75,
+          "skuPcs": "1132.000",
+          "skuVolume": "1.480",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700203",
+          "poiName": "白云山水立方店",
+          "loadingRate": "25.60%",
+          "loadingRateVal": 25.6,
+          "skuPcs": "194.000",
+          "skuVolume": "0.507",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700226",
+          "poiName": "南海比高商业中心店",
+          "loadingRate": "74.16%",
+          "loadingRateVal": 74.16,
+          "skuPcs": "1086.000",
+          "skuVolume": "1.468",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700242",
+          "poiName": "白云新世界云集店",
+          "loadingRate": "50.25%",
+          "loadingRateVal": 50.25,
+          "skuPcs": "634.000",
+          "skuVolume": "0.995",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700263",
+          "poiName": "莞城罗沙大厦店",
+          "loadingRate": "75.08%",
+          "loadingRateVal": 75.08,
+          "skuPcs": "1144.000",
+          "skuVolume": "1.487",
+          "planOutTime": "07-11 19:00"
+        },
+        {
+          "containerCode": "RQ-05-03-0700265",
+          "poiName": "莞城罗沙大厦店",
+          "loadingRate": "40.32%",
+          "loadingRateVal": 40.32,
+          "skuPcs": "60.000",
+          "skuVolume": "0.798",
+          "planOutTime": "07-11 19:00"
+        }
+      ],
+      "outbound_efficiency": 0.0,
+      "outbound_efficiency_formula": "9812 PCS / 0 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 0,
+        "total": 9812,
         "picked": 0,
         "sowed": 0,
-        "caged": 0,
+        "caged": 9812,
         "not_caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
-        "cage_rate": 0.0,
-        "sowed_picked": 0
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
+        "cage_rate": 100.0,
+        "sowed_picked": 9812
       },
       "sku": {
-        "total": 0,
+        "total": 523,
         "picked": 0,
         "sowed": 0,
-        "caged": 0,
-        "pick_rate": 0,
-        "sow_rate": 0,
-        "cage_rate": 0
+        "caged": 523,
+        "pick_rate": 0.0,
+        "sow_rate": 0.0,
+        "cage_rate": 100.0
       }
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 0,
-      "alloc_pcs": 0,
-      "alloc_rate": 0,
-      "picked_pcs": 0,
-      "sow_pcs": 0,
-      "sow_rate": 0,
+      "plan_pcs": 9812,
+      "alloc_pcs": 9812,
+      "alloc_rate": 100.0,
+      "picked_pcs": 9812,
+      "sow_pcs": 9812,
+      "sow_rate": 100.0,
       "ship_pcs": 0,
-      "ship_rate": 0,
-      "sku_plan": 0,
-      "sku_alloc": 0,
-      "sku_sow": 0,
+      "ship_rate": 0.0,
+      "sku_plan": 523,
+      "sku_alloc": 523,
+      "sku_sow": 523,
       "sku_ship": 0,
-      "total_orders": 0
+      "total_orders": 15
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 0,
-      "in_progress": 0,
-      "done": 0,
-      "total": 0,
-      "status": "error",
-      "error": "the JSON object must be str, bytes or bytearray, not dict"
+      "not_started": 81,
+      "in_progress": 11,
+      "done": 258,
+      "total": 350,
+      "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 0,
-    "total_pcs": 0,
-    "alloc_pcs": 0,
-    "alloc_rate": 0,
-    "picked_pcs": 0,
-    "sow_pcs": 0,
-    "sow_rate": 0,
+    "total_orders": 15,
+    "total_pcs": 9812,
+    "alloc_pcs": 9812,
+    "alloc_rate": 100.0,
+    "picked_pcs": 9812,
+    "sow_pcs": 9812,
+    "sow_rate": 100.0,
     "ship_pcs": 0,
-    "ship_rate": 0,
-    "sku_plan": 0,
-    "sku_alloc": 0,
-    "sku_sow": 0,
-    "store_count": 0,
-    "by_store": {},
+    "ship_rate": 0.0,
+    "sku_plan": 523,
+    "sku_alloc": 523,
+    "sku_sow": 523,
+    "store_count": 9,
+    "by_store": {
+      "快乐猴-白云山水立方店-037": 1326.0,
+      "快乐猴-海珠星汇广场店-034": 1278.0,
+      "快乐猴-莞城罗沙大厦店-043": 1204.0,
+      "快乐猴-番禺建华汇店-019": 1189.0,
+      "快乐猴-越秀越富广场店-031": 1122.0,
+      "快乐猴-南海国昌广场店-023": 1091.0,
+      "快乐猴-南海比高商业中心店-041": 1086.0,
+      "快乐猴-禅城东方广场店-018": 882.0,
+      "快乐猴-白云新世界云集店-042": 634.0
+    },
     "unalloc_details": [],
     "status": "ok"
   },
@@ -266,10 +517,21 @@
     "schedule": 0,
     "attendance": 0,
     "rate": 0,
-    "by_job": {},
+    "by_job": {
+      "N高叉司机": {
+        "inservice": 0,
+        "schedule": 0,
+        "attendance": 0,
+        "rate": 0
+      }
+    },
+    "by_pos_total": {},
+    "by_pos_scheduled": {},
     "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS(播种) / 0 人",
-    "status": "error",
-    "error": "the JSON object must be str, bytes or bytearray, not dict"
+    "efficiency_formula": "9812 PCS(播种) / 0 人",
+    "outbound_efficiency": 0.0,
+    "outbound_efficiency_formula": "9812 PCS / 0 人(拣播员)",
+    "inbound_efficiency_workers": 0,
+    "status": "ok"
   }
 }

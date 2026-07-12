@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-12T10:42:57",
+  "timestamp": "2026-07-12T12:06:35",
   "date": "2026-07-12",
   "warehouse": "GZ0211",
   "inbound": {
@@ -32,30 +32,38 @@
     },
     "qc": {
       "total": 8,
-      "done": 2,
-      "pending": 6,
-      "passed": 2,
+      "done": 3,
+      "pending": 5,
+      "passed": 3,
       "rejected": 0,
-      "rate": 25.0,
-      "bill_done": 2,
+      "rate": 37.5,
+      "bill_done": 3,
       "bill_total": 8,
-      "pcs_done": 3125,
-      "pcs_passed": 3125,
+      "pcs_done": 3925,
+      "pcs_passed": 3925,
       "pcs_total": 9735,
       "pcs_rejected": 0,
-      "pcs_rate": 32.1,
-      "sku_done": 2,
+      "pcs_rate": 40.3,
+      "sku_done": 3,
       "sku_total": 8,
-      "sku_rate": 25.0
+      "sku_rate": 37.5
     },
     "putaway": {
-      "total": 18512,
+      "total": 19376,
       "done": 18512,
-      "rate": 100.0,
-      "sku_total": 25,
+      "rate": 95.5,
+      "sku_total": 28,
       "sku_done": 25,
-      "sku_rate": 100.0,
-      "details": []
+      "sku_rate": 89.3,
+      "details": [
+        {
+          "poNo": "CG202607081387",
+          "hopePcs": 864,
+          "putPcs": 0,
+          "hopeSku": 3,
+          "putSku": 0
+        }
+      ]
     },
     "dimensions": {
       "reserve": {
@@ -67,8 +75,8 @@
         "total": 21401,
         "done": 14121,
         "rate": 66.0,
-        "recv_done": 18512,
-        "recv_rate": 86.5
+        "recv_done": 19376,
+        "recv_rate": 90.5
       },
       "sku": {
         "total": 16,
@@ -80,6 +88,10 @@
         "done": 6,
         "rate": 100.0,
         "detail": {
+          "漯河市美弘食品有限公司-快乐猴-自营": {
+            "plan": 1,
+            "done": 1
+          },
           "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
@@ -93,10 +105,6 @@
             "done": 1
           },
           "山东胜农食品有限公司": {
-            "plan": 1,
-            "done": 1
-          },
-          "漯河市美弘食品有限公司-快乐猴-自营": {
             "plan": 1,
             "done": 1
           },
@@ -160,14 +168,6 @@
       "qc_pending": [
         {
           "seq": 1,
-          "supplierName": "上海熟成屋食品贸易有限公司",
-          "skuName": "快乐猴 原切牛腩块 1kg",
-          "arrivalTime": "16:00",
-          "unloadFinishTime": "10:19",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 2,
           "supplierName": "山东胜农食品有限公司",
           "skuName": "冷冻鸡爪 1kg",
           "arrivalTime": "14:30",
@@ -175,7 +175,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 3,
+          "seq": 2,
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅根 1kg",
           "arrivalTime": "14:30",
@@ -183,7 +183,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 4,
+          "seq": 3,
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡琵琶腿 1kg",
           "arrivalTime": "14:30",
@@ -191,7 +191,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 5,
+          "seq": 4,
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅尖 1kg",
           "arrivalTime": "14:30",
@@ -199,7 +199,7 @@
           "statusLabel": "待质检"
         },
         {
-          "seq": 6,
+          "seq": 5,
           "supplierName": "山东胜农食品有限公司",
           "skuName": "单冻鸡翅中 1kg",
           "arrivalTime": "14:30",
@@ -212,13 +212,19 @@
           "supplierName": "德州市金彩凤食品有限公司-快乐猴",
           "skuName": "快乐猴 虾仁三鲜水饺 400g",
           "completeTime": "10:07",
-          "waitingMins": 35
+          "waitingMins": 119
+        },
+        {
+          "supplierName": "上海熟成屋食品贸易有限公司",
+          "skuName": "快乐猴 原切牛腩块 1kg",
+          "completeTime": "10:52",
+          "waitingMins": 74
         },
         {
           "supplierName": "漯河市美弘食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 酥炸平菇 240g",
           "completeTime": "10:21",
-          "waitingMins": 22
+          "waitingMins": 105
         }
       ],
       "signed_not_recv": [
@@ -285,30 +291,8 @@
           "skuName": "快乐猴 原切牛腩块 1kg",
           "purchaseQty": 800,
           "recvQty": 0,
-          "hasQc": false,
+          "hasQc": true,
           "seq": 6
-        },
-        {
-          "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
-          "poNo": "CG202607081387",
-          "reserveBillCode": "YY20260708005724",
-          "skuId": "1483352",
-          "skuName": "红宝石 东北奶糕 325g",
-          "purchaseQty": 536,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 7
-        },
-        {
-          "supplierName": "东北大板（上海）冰淇淋销售有限公司-快乐猴-自营",
-          "poNo": "CG202607081387",
-          "reserveBillCode": "YY20260708005724",
-          "skuId": "1356348",
-          "skuName": "东北大板 五常大米口味雪糕 340g",
-          "purchaseQty": 328,
-          "recvQty": 0,
-          "hasQc": false,
-          "seq": 8
         },
         {
           "supplierName": "山东胜农食品有限公司",
@@ -319,7 +303,7 @@
           "purchaseQty": 100,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 9
+          "seq": 7
         }
       ],
       "qc_recv_pending": [],
@@ -529,10 +513,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 35,
+      "not_started": 109,
       "in_progress": 0,
       "done": 0,
-      "total": 35,
+      "total": 109,
       "status": "ok"
     }
   },
@@ -569,7 +553,7 @@
       "冷冻": 0,
       "常温": 0
     },
-    "all_count": 8,
+    "all_count": 10,
     "planned_trips": {
       "total": 0,
       "by_store": {},

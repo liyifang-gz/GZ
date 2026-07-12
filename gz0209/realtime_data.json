@@ -1,21 +1,21 @@
 {
-  "timestamp": "2026-07-12T15:41:30",
+  "timestamp": "2026-07-12T16:45:52",
   "date": "2026-07-12",
   "warehouse": "GZ0209",
   "inbound": {
     "reserve": {
       "total": 39,
-      "signed": 31,
-      "waiting": 2
+      "signed": 33,
+      "waiting": 0
     },
     "ontime": {
       "ontime": 0,
-      "early": 30,
-      "late": 1,
+      "early": 31,
+      "late": 2,
       "total": 33,
       "rate": 0.0,
-      "early_rate": 90.9,
-      "late_rate": 3.0
+      "early_rate": 93.9,
+      "late_rate": 6.1
     },
     "reserve_progress": {
       "po_total": 41,
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 26,
-      "done": 25,
-      "rate": 96.2,
-      "pcs_done": 47292,
-      "sign_pcs_done": 47292
+      "total": 28,
+      "done": 27,
+      "rate": 96.4,
+      "pcs_done": 47820,
+      "sign_pcs_done": 47820
     },
     "qc": {
-      "total": 13,
+      "total": 14,
       "done": 12,
-      "pending": 1,
+      "pending": 2,
       "passed": 12,
       "rejected": 0,
-      "rate": 92.3,
+      "rate": 85.7,
       "bill_done": 12,
-      "bill_total": 13,
+      "bill_total": 14,
       "pcs_done": 8076,
       "pcs_passed": 8076,
-      "pcs_total": 10074,
+      "pcs_total": 10122,
       "pcs_rejected": 0,
-      "pcs_rate": 80.2,
+      "pcs_rate": 79.8,
       "sku_done": 11,
-      "sku_total": 12,
-      "sku_rate": 91.7
+      "sku_total": 13,
+      "sku_rate": 84.6
     },
     "putaway": {
       "total": 55586,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 33,
-        "done": 31,
-        "rate": 93.9
+        "done": 33,
+        "rate": 100.0
       },
       "pcs": {
         "total": 64014,
@@ -72,14 +72,30 @@
       },
       "sku": {
         "total": 102,
-        "done": 100,
-        "rate": 98.0
+        "done": 102,
+        "rate": 100.0
       },
       "supplier": {
         "total": 26,
-        "done": 25,
-        "rate": 96.2,
+        "done": 26,
+        "rate": 100.0,
         "detail": {
+          "上海迦麦商贸有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
+          "深圳华新创展商贸有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "广东慧智农业科技有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "上海运盛贸易有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "苏州口水娃食品有限公司": {
             "plan": 1,
             "done": 1
@@ -132,18 +148,6 @@
             "plan": 1,
             "done": 1
           },
-          "深圳华新创展商贸有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
-          "上海迦麦商贸有限公司-快乐猴": {
-            "plan": 2,
-            "done": 1
-          },
-          "广东慧智农业科技有限公司-快乐猴": {
-            "plan": 1,
-            "done": 1
-          },
           "青岛佳美洋食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
@@ -155,10 +159,6 @@
           "福建省九鼎食品有限公司-快乐猴": {
             "plan": 1,
             "done": 1
-          },
-          "上海运盛贸易有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
           }
         }
       }
@@ -254,24 +254,7 @@
           "poStatus": "已完成"
         }
       ],
-      "unsigned": [
-        {
-          "supplierName": "上海运盛贸易有限公司-快乐猴",
-          "billCode": "YY20260712002776",
-          "skuCount": 1,
-          "pcs": 480,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 1
-        },
-        {
-          "supplierName": "上海迦麦商贸有限公司-快乐猴",
-          "billCode": "YY20260707006489",
-          "skuCount": 1,
-          "pcs": 48,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 2
-        }
-      ],
+      "unsigned": [],
       "unloading": [],
       "qc_pending": [
         {
@@ -281,6 +264,14 @@
           "arrivalTime": "15:00",
           "unloadFinishTime": "15:37",
           "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "上海迦麦商贸有限公司-快乐猴",
+          "skuName": "爱之湾 璀璨粉漾莫斯卡托甜起泡葡萄酒进口 750ml",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "16:33",
+          "statusLabel": "待质检"
         }
       ],
       "recv_pending": [
@@ -288,73 +279,73 @@
           "supplierName": "北京旺达世纪商贸有限公司-快乐猴-自营",
           "skuName": "美佳园 拼豆手作棒棒糖 38g",
           "completeTime": "16:19",
-          "waitingMins": 1402
+          "waitingMins": 1467
         },
         {
           "supplierName": "北京旺达世纪商贸有限公司-快乐猴-自营",
           "skuName": "美佳园 食玩美味街跳跳糖 2g",
           "completeTime": "16:17",
-          "waitingMins": 1404
+          "waitingMins": 1468
         },
         {
           "supplierName": "广州尚源网络科技有限公司-快乐猴",
           "skuName": "牛栏山 陈酿调香型白酒42度 500ml",
           "completeTime": "12:12",
-          "waitingMins": 209
+          "waitingMins": 273
         },
         {
           "supplierName": "广州尚源网络科技有限公司-快乐猴",
           "skuName": "可口可乐 汽水 330ml*6",
           "completeTime": "12:05",
-          "waitingMins": 216
+          "waitingMins": 281
         },
         {
           "supplierName": "广州尚源网络科技有限公司-快乐猴",
           "skuName": "牛栏山 陈酿调香型白酒42度 500ml",
           "completeTime": "12:12",
-          "waitingMins": 209
+          "waitingMins": 273
         },
         {
           "supplierName": "广东慧智农业科技有限公司-快乐猴",
           "skuName": "精选清洁鲜鸡蛋30枚 1.6kg",
           "completeTime": "13:23",
-          "waitingMins": 138
+          "waitingMins": 202
         },
         {
           "supplierName": "福建省九鼎食品有限公司-快乐猴",
           "skuName": "快乐猴 泡椒笋条 258g",
           "completeTime": "10:25",
-          "waitingMins": 316
+          "waitingMins": 380
         },
         {
           "supplierName": "北京旺达世纪商贸有限公司-快乐猴-自营",
           "skuName": "玩明糖 甜品餐车跳跳糖 2g",
           "completeTime": "12:13",
-          "waitingMins": 208
+          "waitingMins": 272
         },
         {
           "supplierName": "小熊驾到（山东）食品有限公司-快乐猴-自营",
           "skuName": "快乐猴 经典番茄肉酱意大利面 290g",
           "completeTime": "12:17",
-          "waitingMins": 204
+          "waitingMins": 268
         },
         {
           "supplierName": "深圳华新创展商贸有限公司-快乐猴",
           "skuName": "伊利 金典纯牛奶 250ml*12",
           "completeTime": "13:36",
-          "waitingMins": 125
+          "waitingMins": 190
         },
         {
           "supplierName": "深圳华新创展商贸有限公司-快乐猴",
           "skuName": "伊利 安慕希希腊风味酸奶 205g*12",
           "completeTime": "13:51",
-          "waitingMins": 110
+          "waitingMins": 174
         },
         {
           "supplierName": "深圳华新创展商贸有限公司-快乐猴",
           "skuName": "伊利 安慕希黄桃燕麦味酸奶 200g*10",
           "completeTime": "13:53",
-          "waitingMins": 108
+          "waitingMins": 172
         }
       ],
       "signed_not_recv": [
@@ -390,6 +381,17 @@
           "recvQty": 0,
           "hasQc": false,
           "seq": 3
+        },
+        {
+          "supplierName": "上海迦麦商贸有限公司-快乐猴",
+          "poNo": "CG2026070611922",
+          "reserveBillCode": "YY20260707006489",
+          "skuId": "1087447",
+          "skuName": "爱之湾 璀璨粉漾莫斯卡托甜起泡葡萄酒进口 750ml",
+          "purchaseQty": 48,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 4
         }
       ],
       "qc_recv_pending": [],
@@ -464,72 +466,82 @@
       "rate": 0.0
     },
     "sowing": {
-      "total": 109,
-      "done": 3,
-      "rate": 2.8
+      "total": 73,
+      "done": 0,
+      "rate": 0.0
     },
     "caging": {
-      "total": 109,
-      "done": 3,
-      "rate": 2.8,
-      "pcs_done": 23517,
-      "pcs_total": 55617,
-      "pcs_rate": 42.3
+      "total": 73,
+      "done": 0,
+      "rate": 0.0,
+      "pcs_done": 17016,
+      "pcs_total": 50176,
+      "pcs_rate": 33.9
     },
     "packing": {
-      "total": 51,
-      "done": 48,
-      "rate": 94.1
+      "total": 57,
+      "done": 53,
+      "rate": 93.0
     },
     "uncaged_details": [
       {
-        "containerCode": "RQ-28-03-0900385",
+        "containerCode": "RQ-28-03-0900161",
+        "poiName": "海珠星汇广场店",
+        "qty": 469
+      },
+      {
+        "containerCode": "RQ-28-03-0900163",
+        "poiName": "海珠星汇广场店",
+        "qty": 392
+      },
+      {
+        "containerCode": "RQ-28-03-0900362",
         "poiName": "白云新世界云集店",
-        "qty": 845
+        "qty": 269
       },
       {
-        "containerCode": "RQ-28-03-0900024",
-        "poiName": "禅城东方广场店",
-        "qty": 572
-      },
-      {
-        "containerCode": "RQ-28-03-0900022",
-        "poiName": "禅城东方广场店",
-        "qty": 401
+        "containerCode": "RQ-28-03-0900096",
+        "poiName": "番禺建华汇店",
+        "qty": 136
       }
     ],
     "unpacked_details": [
       {
-        "containerCode": "RQ-28-03-0900385",
+        "containerCode": "RQ-28-03-0900161",
+        "poiName": "海珠星汇广场店",
+        "qty": 469
+      },
+      {
+        "containerCode": "RQ-28-03-0900163",
+        "poiName": "海珠星汇广场店",
+        "qty": 392
+      },
+      {
+        "containerCode": "RQ-28-03-0900362",
         "poiName": "白云新世界云集店",
-        "qty": 845
+        "qty": 269
       },
       {
-        "containerCode": "RQ-28-03-0900024",
-        "poiName": "禅城东方广场店",
-        "qty": 572
-      },
-      {
-        "containerCode": "RQ-28-03-0900022",
-        "poiName": "禅城东方广场店",
-        "qty": 401
+        "containerCode": "RQ-28-03-0900096",
+        "poiName": "番禺建华汇店",
+        "qty": 136
       }
     ],
     "shipping": {
-      "total": 2028,
+      "total": 1266,
       "done": 0,
       "sku_done": 0,
       "rate": 0.0
     },
     "kpi": {
       "multi_pallet_count": 0,
-      "multi_pallet_total": 108,
+      "multi_pallet_total": 73,
       "multi_pallet_rate": 0.0,
-      "load_rate": 10.4,
+      "load_rate": 0.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "58.98%",
-      "load_rate_loaded": "79.23%",
-      "load_rate_shipped": "86.65%",
+      "load_rate_unloaded": "33.85%",
+      "load_rate_loaded": "77.32%",
+      "load_rate_shipped": "84.37%",
       "low_load_containers": [
         {
           "containerCode": "RQ-28-03-0900494",
@@ -547,15 +559,6 @@
           "loadingRateVal": 24.74,
           "skuPcs": "149.000",
           "skuVolume": "0.490",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900488",
-          "poiName": "大朗市场店",
-          "loadingRate": "38.51%",
-          "loadingRateVal": 38.51,
-          "skuPcs": "100.000",
-          "skuVolume": "0.762",
           "planOutTime": "07-12 22:00"
         },
         {
@@ -577,15 +580,6 @@
           "planOutTime": "07-12 22:00"
         },
         {
-          "containerCode": "RQ-28-03-0900491",
-          "poiName": "大朗市场店",
-          "loadingRate": "47.80%",
-          "loadingRateVal": 47.8,
-          "skuPcs": "307.000",
-          "skuVolume": "0.946",
-          "planOutTime": "07-12 22:00"
-        },
-        {
           "containerCode": "RQ-28-03-0900601",
           "poiName": "天河好邻居广场店",
           "loadingRate": "50.35%",
@@ -595,12 +589,12 @@
           "planOutTime": "07-12 22:00"
         },
         {
-          "containerCode": "RQ-28-03-0900500",
-          "poiName": "大朗市场店",
-          "loadingRate": "56.39%",
-          "loadingRateVal": 56.39,
-          "skuPcs": "629.000",
-          "skuVolume": "1.117",
+          "containerCode": "RQ-28-03-0900182",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "56.74%",
+          "loadingRateVal": 56.74,
+          "skuPcs": "752.000",
+          "skuVolume": "1.123",
           "planOutTime": "07-12 22:00"
         },
         {
@@ -610,24 +604,6 @@
           "loadingRateVal": 57.74,
           "skuPcs": "472.000",
           "skuVolume": "1.143",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900543",
-          "poiName": "龙岗三联商业广场店",
-          "loadingRate": "59.77%",
-          "loadingRateVal": 59.77,
-          "skuPcs": "788.000",
-          "skuVolume": "1.183",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900479",
-          "poiName": "大朗市场店",
-          "loadingRate": "60.21%",
-          "loadingRateVal": 60.21,
-          "skuPcs": "499.000",
-          "skuVolume": "1.192",
           "planOutTime": "07-12 22:00"
         },
         {
@@ -649,12 +625,12 @@
           "planOutTime": "07-12 22:00"
         },
         {
-          "containerCode": "RQ-28-03-0900092",
-          "poiName": "大朗市场店",
-          "loadingRate": "66.99%",
-          "loadingRateVal": 66.99,
-          "skuPcs": "718.000",
-          "skuVolume": "1.326",
+          "containerCode": "RQ-28-03-0900385",
+          "poiName": "白云新世界云集店",
+          "loadingRate": "70.15%",
+          "loadingRateVal": 70.15,
+          "skuPcs": "845.000",
+          "skuVolume": "1.389",
           "planOutTime": "07-12 22:00"
         },
         {
@@ -671,10 +647,10 @@
         {
           "containerCode": "RQ-28-03-0900132",
           "poiName": "南海国昌广场店",
-          "loadingRate": "102.13%",
-          "loadingRateVal": 102.13,
-          "skuPcs": "1061.000",
-          "skuVolume": "2.022",
+          "loadingRate": "105.52%",
+          "loadingRateVal": 105.52,
+          "skuPcs": "1081.000",
+          "skuVolume": "2.089",
           "planOutTime": "07-12 22:00"
         },
         {
@@ -732,6 +708,33 @@
           "planOutTime": "07-12 22:00"
         },
         {
+          "containerCode": "RQ-28-03-0900182",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "56.74%",
+          "loadingRateVal": 56.74,
+          "skuPcs": "752.000",
+          "skuVolume": "1.123",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900163",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "61.64%",
+          "loadingRateVal": 61.64,
+          "skuPcs": "92.000",
+          "skuVolume": "1.220",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900161",
+          "poiName": "海珠星汇广场店",
+          "loadingRate": "41.76%",
+          "loadingRateVal": 41.76,
+          "skuPcs": "469.000",
+          "skuVolume": "0.827",
+          "planOutTime": "07-12 22:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900385",
           "poiName": "白云新世界云集店",
           "loadingRate": "70.15%",
@@ -741,30 +744,21 @@
           "planOutTime": "07-12 22:00"
         },
         {
+          "containerCode": "RQ-28-03-0900362",
+          "poiName": "白云新世界云集店",
+          "loadingRate": "21.07%",
+          "loadingRateVal": 21.07,
+          "skuPcs": "269.000",
+          "skuVolume": "0.417",
+          "planOutTime": "07-12 22:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900601",
           "poiName": "天河好邻居广场店",
           "loadingRate": "50.35%",
           "loadingRateVal": 50.35,
           "skuPcs": "602.000",
           "skuVolume": "0.997",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900483",
-          "poiName": "大朗市场店",
-          "loadingRate": "134.88%",
-          "loadingRateVal": 134.88,
-          "skuPcs": "210.000",
-          "skuVolume": "2.671",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900498",
-          "poiName": "大朗市场店",
-          "loadingRate": "133.84%",
-          "loadingRateVal": 133.84,
-          "skuPcs": "124.000",
-          "skuVolume": "2.650",
           "planOutTime": "07-12 22:00"
         },
         {
@@ -804,6 +798,123 @@
           "planOutTime": "07-12 22:00"
         },
         {
+          "containerCode": "RQ-28-03-0900496",
+          "poiName": "大朗市场店",
+          "loadingRate": "82.57%",
+          "loadingRateVal": 82.57,
+          "skuPcs": "715.000",
+          "skuVolume": "1.635",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900497",
+          "poiName": "大朗市场店",
+          "loadingRate": "63.96%",
+          "loadingRateVal": 63.96,
+          "skuPcs": "992.000",
+          "skuVolume": "1.266",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900492",
+          "poiName": "大朗市场店",
+          "loadingRate": "47.50%",
+          "loadingRateVal": 47.5,
+          "skuPcs": "258.000",
+          "skuVolume": "0.940",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900494",
+          "poiName": "大朗市场店",
+          "loadingRate": "8.02%",
+          "loadingRateVal": 8.02,
+          "skuPcs": "147.000",
+          "skuVolume": "0.159",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900024",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "95.94%",
+          "loadingRateVal": 95.94,
+          "skuPcs": "1143.000",
+          "skuVolume": "1.900",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900022",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "92.40%",
+          "loadingRateVal": 92.4,
+          "skuPcs": "905.000",
+          "skuVolume": "1.830",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900038",
+          "poiName": "禅城东方广场店",
+          "loadingRate": "61.63%",
+          "loadingRateVal": 61.63,
+          "skuPcs": "716.000",
+          "skuVolume": "1.220",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900085",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "93.18%",
+          "loadingRateVal": 93.18,
+          "skuPcs": "580.000",
+          "skuVolume": "1.845",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900083",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "87.25%",
+          "loadingRateVal": 87.25,
+          "skuPcs": "78.000",
+          "skuVolume": "1.728",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900087",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "85.45%",
+          "loadingRateVal": 85.45,
+          "skuPcs": "911.000",
+          "skuVolume": "1.692",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900097",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "47.15%",
+          "loadingRateVal": 47.15,
+          "skuPcs": "598.000",
+          "skuVolume": "0.934",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900096",
+          "poiName": "番禺建华汇店",
+          "loadingRate": "10.92%",
+          "loadingRateVal": 10.92,
+          "skuPcs": "136.000",
+          "skuVolume": "0.216",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900483",
+          "poiName": "大朗市场店",
+          "loadingRate": "134.88%",
+          "loadingRateVal": 134.88,
+          "skuPcs": "210.000",
+          "skuVolume": "2.671",
+          "planOutTime": "07-12 22:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900481",
           "poiName": "大朗市场店",
           "loadingRate": "97.95%",
@@ -831,6 +942,42 @@
           "planOutTime": "07-12 22:00"
         },
         {
+          "containerCode": "RQ-28-03-0900482",
+          "poiName": "大朗市场店",
+          "loadingRate": "80.68%",
+          "loadingRateVal": 80.68,
+          "skuPcs": "833.000",
+          "skuVolume": "1.597",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900491",
+          "poiName": "大朗市场店",
+          "loadingRate": "47.80%",
+          "loadingRateVal": 47.8,
+          "skuPcs": "307.000",
+          "skuVolume": "0.946",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900488",
+          "poiName": "大朗市场店",
+          "loadingRate": "38.51%",
+          "loadingRateVal": 38.51,
+          "skuPcs": "100.000",
+          "skuVolume": "0.762",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900498",
+          "poiName": "大朗市场店",
+          "loadingRate": "133.84%",
+          "loadingRateVal": 133.84,
+          "skuPcs": "124.000",
+          "skuVolume": "2.650",
+          "planOutTime": "07-12 22:00"
+        },
+        {
           "containerCode": "RQ-28-03-0900202",
           "poiName": "大朗市场店",
           "loadingRate": "89.86%",
@@ -849,39 +996,12 @@
           "planOutTime": "07-12 22:00"
         },
         {
-          "containerCode": "RQ-28-03-0900496",
-          "poiName": "大朗市场店",
-          "loadingRate": "82.57%",
-          "loadingRateVal": 82.57,
-          "skuPcs": "715.000",
-          "skuVolume": "1.635",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900482",
-          "poiName": "大朗市场店",
-          "loadingRate": "80.68%",
-          "loadingRateVal": 80.68,
-          "skuPcs": "833.000",
-          "skuVolume": "1.597",
-          "planOutTime": "07-12 22:00"
-        },
-        {
           "containerCode": "RQ-28-03-0900092",
           "poiName": "大朗市场店",
           "loadingRate": "66.99%",
           "loadingRateVal": 66.99,
           "skuPcs": "718.000",
           "skuVolume": "1.326",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900497",
-          "poiName": "大朗市场店",
-          "loadingRate": "63.96%",
-          "loadingRateVal": 63.96,
-          "skuPcs": "992.000",
-          "skuVolume": "1.266",
           "planOutTime": "07-12 22:00"
         },
         {
@@ -900,132 +1020,6 @@
           "loadingRateVal": 56.39,
           "skuPcs": "629.000",
           "skuVolume": "1.117",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900491",
-          "poiName": "大朗市场店",
-          "loadingRate": "47.80%",
-          "loadingRateVal": 47.8,
-          "skuPcs": "307.000",
-          "skuVolume": "0.946",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900492",
-          "poiName": "大朗市场店",
-          "loadingRate": "47.50%",
-          "loadingRateVal": 47.5,
-          "skuPcs": "258.000",
-          "skuVolume": "0.940",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900488",
-          "poiName": "大朗市场店",
-          "loadingRate": "38.51%",
-          "loadingRateVal": 38.51,
-          "skuPcs": "100.000",
-          "skuVolume": "0.762",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900494",
-          "poiName": "大朗市场店",
-          "loadingRate": "8.02%",
-          "loadingRateVal": 8.02,
-          "skuPcs": "147.000",
-          "skuVolume": "0.159",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900533",
-          "poiName": "龙岗三联商业广场店",
-          "loadingRate": "94.99%",
-          "loadingRateVal": 94.99,
-          "skuPcs": "944.000",
-          "skuVolume": "1.881",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900537",
-          "poiName": "龙岗三联商业广场店",
-          "loadingRate": "87.43%",
-          "loadingRateVal": 87.43,
-          "skuPcs": "928.000",
-          "skuVolume": "1.731",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900550",
-          "poiName": "龙岗三联商业广场店",
-          "loadingRate": "76.30%",
-          "loadingRateVal": 76.3,
-          "skuPcs": "1500.000",
-          "skuVolume": "1.511",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900543",
-          "poiName": "龙岗三联商业广场店",
-          "loadingRate": "59.77%",
-          "loadingRateVal": 59.77,
-          "skuPcs": "788.000",
-          "skuVolume": "1.183",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900038",
-          "poiName": "禅城东方广场店",
-          "loadingRate": "61.63%",
-          "loadingRateVal": 61.63,
-          "skuPcs": "716.000",
-          "skuVolume": "1.220",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900022",
-          "poiName": "禅城东方广场店",
-          "loadingRate": "57.59%",
-          "loadingRateVal": 57.59,
-          "skuPcs": "401.000",
-          "skuVolume": "1.140",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900024",
-          "poiName": "禅城东方广场店",
-          "loadingRate": "49.19%",
-          "loadingRateVal": 49.19,
-          "skuPcs": "572.000",
-          "skuVolume": "0.974",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900085",
-          "poiName": "番禺建华汇店",
-          "loadingRate": "93.18%",
-          "loadingRateVal": 93.18,
-          "skuPcs": "580.000",
-          "skuVolume": "1.845",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900083",
-          "poiName": "番禺建华汇店",
-          "loadingRate": "87.25%",
-          "loadingRateVal": 87.25,
-          "skuPcs": "78.000",
-          "skuVolume": "1.728",
-          "planOutTime": "07-12 22:00"
-        },
-        {
-          "containerCode": "RQ-28-03-0900097",
-          "poiName": "番禺建华汇店",
-          "loadingRate": "47.15%",
-          "loadingRateVal": 47.15,
-          "skuPcs": "598.000",
-          "skuVolume": "0.934",
           "planOutTime": "07-12 22:00"
         },
         {
@@ -1080,6 +1074,42 @@
           "loadingRateVal": 49.26,
           "skuPcs": "524.000",
           "skuVolume": "0.975",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900533",
+          "poiName": "龙岗三联商业广场店",
+          "loadingRate": "94.99%",
+          "loadingRateVal": 94.99,
+          "skuPcs": "944.000",
+          "skuVolume": "1.881",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900537",
+          "poiName": "龙岗三联商业广场店",
+          "loadingRate": "87.43%",
+          "loadingRateVal": 87.43,
+          "skuPcs": "928.000",
+          "skuVolume": "1.731",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900550",
+          "poiName": "龙岗三联商业广场店",
+          "loadingRate": "76.30%",
+          "loadingRateVal": 76.3,
+          "skuPcs": "1500.000",
+          "skuVolume": "1.511",
+          "planOutTime": "07-12 22:00"
+        },
+        {
+          "containerCode": "RQ-28-03-0900543",
+          "poiName": "龙岗三联商业广场店",
+          "loadingRate": "59.77%",
+          "loadingRateVal": 59.77,
+          "skuPcs": "788.000",
+          "skuVolume": "1.183",
           "planOutTime": "07-12 22:00"
         },
         {
@@ -1156,72 +1186,71 @@
         }
       ],
       "outbound_efficiency": 0.0,
-      "outbound_efficiency_formula": "2028 PCS / 0 人(拣播员)"
+      "outbound_efficiency_formula": "1266 PCS / 0 人(拣播员)"
     },
     "dimensions": {
       "pcs": {
-        "total": 2028,
+        "total": 1266,
         "picked": 0,
         "sowed": 0,
-        "caged": 210,
-        "not_caged": 1818,
+        "caged": 0,
+        "not_caged": 1266,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 42.3,
-        "sowed_picked": 55617
+        "cage_rate": 33.9,
+        "sowed_picked": 50176
       },
       "sku": {
-        "total": 109,
+        "total": 73,
         "picked": 0,
         "sowed": 0,
-        "caged": 3,
+        "caged": 0,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 2.8
+        "cage_rate": 0.0
       }
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 82189,
-      "alloc_pcs": 82189,
+      "plan_pcs": 70223,
+      "alloc_pcs": 70223,
       "alloc_rate": 100.0,
-      "picked_pcs": 56528,
-      "sow_pcs": 55617,
-      "sow_rate": 67.7,
+      "picked_pcs": 50176,
+      "sow_pcs": 50176,
+      "sow_rate": 71.5,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 1992,
-      "sku_alloc": 1992,
-      "sku_sow": 1392,
+      "sku_plan": 1742,
+      "sku_alloc": 1742,
+      "sku_sow": 1294,
       "sku_ship": 0,
-      "total_orders": 44
+      "total_orders": 40
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 32,
-      "in_progress": 8,
-      "done": 212,
-      "total": 253,
+      "not_started": 11,
+      "in_progress": 3,
+      "done": 287,
+      "total": 302,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 44,
-    "total_pcs": 82189,
-    "alloc_pcs": 82189,
+    "total_orders": 40,
+    "total_pcs": 70223,
+    "alloc_pcs": 70223,
     "alloc_rate": 100.0,
-    "picked_pcs": 56528,
-    "sow_pcs": 55617,
-    "sow_rate": 67.7,
+    "picked_pcs": 50176,
+    "sow_pcs": 50176,
+    "sow_rate": 71.5,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 1992,
-    "sku_alloc": 1992,
-    "sku_sow": 1392,
-    "store_count": 12,
+    "sku_plan": 1742,
+    "sku_alloc": 1742,
+    "sku_sow": 1294,
+    "store_count": 11,
     "by_store": {
-      "快乐猴-大朗市场店-049": 17572.0,
-      "快乐猴-龙岗三联商业广场店-047": 11786.0,
+      "快乐猴-大朗市场店-049": 17392.0,
       "快乐猴-海珠星汇广场店-034": 10079.0,
       "快乐猴-番禺建华汇店-019": 7228.0,
       "快乐猴-禅城东方广场店-018": 6371.0,
@@ -1229,7 +1258,8 @@
       "快乐猴-南海比高商业中心店-041": 5253.0,
       "快乐猴-南海国昌广场店-023": 5092.0,
       "快乐猴-白云新世界云集店-042": 4333.0,
-      "快乐猴-越秀越富广场店-031": 3956.0
+      "快乐猴-越秀越富广场店-031": 3956.0,
+      "快乐猴-白云山水立方店-037": 3859.0
     },
     "unalloc_details": [],
     "status": "ok"
@@ -1245,9 +1275,9 @@
     "temp_breakdown": {
       "冷藏": 9,
       "冷冻": 0,
-      "常温": 0
+      "常温": 3
     },
-    "all_count": 13,
+    "all_count": 14,
     "planned_trips": {
       "total": 0,
       "by_store": {},
@@ -1306,9 +1336,9 @@
     "by_pos_total": {},
     "by_pos_scheduled": {},
     "predicted_efficiency": 0.0,
-    "efficiency_formula": "55617 PCS(播种) / 0 人",
+    "efficiency_formula": "50176 PCS(播种) / 0 人",
     "outbound_efficiency": 0.0,
-    "outbound_efficiency_formula": "2028 PCS / 0 人(拣播员)",
+    "outbound_efficiency_formula": "1266 PCS / 0 人(拣播员)",
     "inbound_efficiency_workers": 0,
     "status": "ok"
   }

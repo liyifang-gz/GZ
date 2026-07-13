@@ -1,5 +1,5 @@
 {
-  "timestamp": "2026-07-13T18:25:38",
+  "timestamp": "2026-07-13T19:45:26",
   "date": "2026-07-13",
   "warehouse": "GZ0211",
   "inbound": {
@@ -147,28 +147,16 @@
           "supplierName": "济南高贝食品有限公司-快乐猴",
           "skuName": "(原料)快乐猴 双拼瑞士卷(原味+伯爵茶味) 420g",
           "completeTime": "10:21",
-          "waitingMins": 484
+          "waitingMins": 564
         },
         {
           "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
           "skuName": "德华大蛋筒冰淇淋（牛奶口味冰淇淋）100g",
           "completeTime": "17:29",
-          "waitingMins": 56
+          "waitingMins": 136
         }
       ],
-      "signed_not_recv": [
-        {
-          "supplierName": "广州市艺奇雪贸易有限公司-快乐猴-自营",
-          "poNo": "CG202607131880",
-          "reserveBillCode": "YY20260713002396",
-          "skuId": "1484079",
-          "skuName": "德华大蛋筒冰淇淋（牛奶口味冰淇淋）100g",
-          "purchaseQty": 1000,
-          "recvQty": 0,
-          "hasQc": true,
-          "seq": 1
-        }
-      ],
+      "signed_not_recv": [],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -193,24 +181,36 @@
     },
     "sowing": {
       "total": 432,
-      "done": 432,
-      "rate": 100.0
+      "done": 396,
+      "rate": 91.7
     },
     "caging": {
       "total": 432,
-      "done": 432,
-      "rate": 100.0,
-      "pcs_done": 8992,
+      "done": 396,
+      "rate": 91.7,
+      "pcs_done": 8184,
       "pcs_total": 14628,
-      "pcs_rate": 61.5
+      "pcs_rate": 55.9
     },
     "packing": {
       "total": 18,
-      "done": 18,
-      "rate": 100.0
+      "done": 17,
+      "rate": 94.4
     },
-    "uncaged_details": [],
-    "unpacked_details": [],
+    "uncaged_details": [
+      {
+        "containerCode": "RQ-05-03-0700207",
+        "poiName": "白云山水立方店",
+        "qty": 808
+      }
+    ],
+    "unpacked_details": [
+      {
+        "containerCode": "RQ-05-03-0700207",
+        "poiName": "白云山水立方店",
+        "qty": 808
+      }
+    ],
     "shipping": {
       "total": 8992,
       "done": 0,
@@ -221,10 +221,10 @@
       "multi_pallet_count": 0,
       "multi_pallet_total": 431,
       "multi_pallet_rate": 0.0,
-      "load_rate": 100.0,
+      "load_rate": 91.0,
       "multi_pallet_details": [],
-      "load_rate_unloaded": "--",
-      "load_rate_loaded": "63.76%",
+      "load_rate_unloaded": "53.18%",
+      "load_rate_loaded": "64.82%",
       "load_rate_shipped": "78.65%",
       "low_load_containers": [
         {
@@ -243,15 +243,6 @@
           "loadingRateVal": 50.23,
           "skuPcs": "467.000",
           "skuVolume": "0.995",
-          "planOutTime": "07-13 19:00"
-        },
-        {
-          "containerCode": "RQ-05-03-0700207",
-          "poiName": "白云山水立方店",
-          "loadingRate": "53.18%",
-          "loadingRateVal": 53.18,
-          "skuPcs": "808.000",
-          "skuVolume": "1.053",
           "planOutTime": "07-13 19:00"
         },
         {
@@ -481,21 +472,21 @@
         "total": 8992,
         "picked": 0,
         "sowed": 0,
-        "caged": 8992,
-        "not_caged": 0,
+        "caged": 8184,
+        "not_caged": 808,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 61.5,
+        "cage_rate": 55.9,
         "sowed_picked": 14628
       },
       "sku": {
         "total": 432,
         "picked": 0,
         "sowed": 0,
-        "caged": 432,
+        "caged": 396,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 100.0
+        "cage_rate": 91.7
       }
     },
     "status": "ok",
@@ -516,10 +507,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 26,
-      "in_progress": 10,
-      "done": 340,
-      "total": 376,
+      "not_started": 3,
+      "in_progress": 5,
+      "done": 397,
+      "total": 405,
       "status": "ok"
     }
   },
@@ -553,19 +544,19 @@
     "status": "ok"
   },
   "transport": {
-    "serial_count": 1,
-    "total_depart": 2,
-    "serial_rate": 0.5,
+    "serial_count": 2,
+    "total_depart": 3,
+    "serial_rate": 0.6667,
     "trip_total": null,
     "trip_depart": null,
     "trip_arrive": null,
     "status": "ok",
     "temp_breakdown": {
-      "冷藏": 2,
+      "冷藏": 3,
       "冷冻": 0,
       "常温": 0
     },
-    "all_count": 9,
+    "all_count": 15,
     "planned_trips": {
       "total": 0,
       "by_store": {},

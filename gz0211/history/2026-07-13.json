@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-13T08:38:33",
+  "timestamp": "2026-07-13T11:09:54",
   "date": "2026-07-13",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 12,
-      "signed": 0,
-      "waiting": 9
+      "signed": 3,
+      "waiting": 6
     },
     "ontime": {
-      "ontime": 0,
-      "early": 0,
+      "ontime": 1,
+      "early": 2,
       "late": 0,
       "total": 9,
-      "rate": 0.0,
-      "early_rate": 0.0,
+      "rate": 11.1,
+      "early_rate": 22.2,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
-      "done": 0,
-      "rate": 0,
-      "pcs_done": 0,
-      "sign_pcs_done": 0
+      "total": 3,
+      "done": 3,
+      "rate": 100.0,
+      "pcs_done": 2390,
+      "sign_pcs_done": 2390
     },
     "qc": {
-      "total": 0,
-      "done": 0,
-      "pending": 0,
-      "passed": 0,
+      "total": 3,
+      "done": 1,
+      "pending": 2,
+      "passed": 1,
       "rejected": 0,
-      "rate": 0,
-      "bill_done": 0,
-      "bill_total": 0,
-      "pcs_done": 0,
-      "pcs_passed": 0,
-      "pcs_total": 0,
+      "rate": 33.3,
+      "bill_done": 1,
+      "bill_total": 3,
+      "pcs_done": 1920,
+      "pcs_passed": 1920,
+      "pcs_total": 2390,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
-      "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "pcs_rate": 80.3,
+      "sku_done": 1,
+      "sku_total": 3,
+      "sku_rate": 33.3
     },
     "putaway": {
       "total": 15913,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 9,
-        "done": 0,
-        "rate": 0.0
+        "done": 3,
+        "rate": 33.3
       },
       "pcs": {
         "total": 18257,
@@ -72,14 +72,26 @@
       },
       "sku": {
         "total": 21,
-        "done": 0,
-        "rate": 0.0
+        "done": 3,
+        "rate": 14.3
       },
       "supplier": {
         "total": 8,
-        "done": 0,
-        "rate": 0.0,
+        "done": 3,
+        "rate": 37.5,
         "detail": {
+          "泰森华东食品发展有限公司-未来唯一": {
+            "plan": 1,
+            "done": 1
+          },
+          "北京艾莱发喜食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "济南高贝食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
           "广州赛味谦食品有限公司": {
             "plan": 1,
             "done": 0
@@ -88,23 +100,11 @@
             "plan": 1,
             "done": 0
           },
-          "济南高贝食品有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
           "留恋食品（山东）有限公司-快乐猴": {
             "plan": 2,
             "done": 0
           },
           "和路雪（中国）有限公司上海分公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
-          "泰森华东食品发展有限公司-未来唯一": {
-            "plan": 1,
-            "done": 0
-          },
-          "北京艾莱发喜食品有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -160,20 +160,12 @@
           "seq": 2
         },
         {
-          "supplierName": "济南高贝食品有限公司-快乐猴",
-          "billCode": "YY20260711003781",
-          "skuCount": 1,
-          "pcs": 1920,
-          "timeSlot": "09:00 - 09:30",
-          "seq": 3
-        },
-        {
           "supplierName": "留恋食品（山东）有限公司-快乐猴",
           "billCode": "YY20260711001029",
           "skuCount": 3,
           "pcs": 1656,
           "timeSlot": "15:30 - 16:00",
-          "seq": 4
+          "seq": 3
         },
         {
           "supplierName": "和路雪（中国）有限公司上海分公司-快乐猴",
@@ -181,23 +173,7 @@
           "skuCount": 3,
           "pcs": 860,
           "timeSlot": "14:30 - 15:00",
-          "seq": 5
-        },
-        {
-          "supplierName": "泰森华东食品发展有限公司-未来唯一",
-          "billCode": "YY20260710010346",
-          "skuCount": 1,
-          "pcs": 70,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 6
-        },
-        {
-          "supplierName": "北京艾莱发喜食品有限公司-快乐猴",
-          "billCode": "YY20260710002009",
-          "skuCount": 1,
-          "pcs": 400,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 7
+          "seq": 4
         },
         {
           "supplierName": "杭州众点食品科技有限公司-快乐猴",
@@ -205,13 +181,60 @@
           "skuCount": 1,
           "pcs": 288,
           "timeSlot": "16:00 - 16:30",
-          "seq": 8
+          "seq": 5
         }
       ],
       "unloading": [],
-      "qc_pending": [],
-      "recv_pending": [],
-      "signed_not_recv": [],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "北京艾莱发喜食品有限公司-快乐猴",
+          "skuName": "八喜 缤纷六合一冰激凌 390g",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "11:09",
+          "statusLabel": "待质检"
+        },
+        {
+          "seq": 2,
+          "supplierName": "泰森华东食品发展有限公司-未来唯一",
+          "skuName": "奥尔良风味翅中10kg（泰森）",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "11:07",
+          "statusLabel": "待质检"
+        }
+      ],
+      "recv_pending": [
+        {
+          "supplierName": "济南高贝食品有限公司-快乐猴",
+          "skuName": "(原料)快乐猴 双拼瑞士卷(原味+伯爵茶味) 420g",
+          "completeTime": "10:21",
+          "waitingMins": 48
+        }
+      ],
+      "signed_not_recv": [
+        {
+          "supplierName": "北京艾莱发喜食品有限公司-快乐猴",
+          "poNo": "CG202607096137",
+          "reserveBillCode": "YY20260710002009",
+          "skuId": "1408466",
+          "skuName": "八喜 缤纷六合一冰激凌 390g",
+          "purchaseQty": 400,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "泰森华东食品发展有限公司-未来唯一",
+          "poNo": "CG202607097074",
+          "reserveBillCode": "YY20260710010346",
+          "skuId": "1159385",
+          "skuName": "奥尔良风味翅中10kg（泰森）",
+          "purchaseQty": 70,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -244,7 +267,7 @@
       "done": 217,
       "rate": 100.0,
       "pcs_done": 7257,
-      "pcs_total": 7247,
+      "pcs_total": 7257,
       "pcs_rate": 100.0
     },
     "packing": {
@@ -385,7 +408,7 @@
         "pick_rate": 0.0,
         "sow_rate": 0.0,
         "cage_rate": 100.0,
-        "sowed_picked": 7247
+        "sowed_picked": 7257
       },
       "sku": {
         "total": 217,
@@ -399,45 +422,45 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 7610,
-      "alloc_pcs": 7610,
+      "plan_pcs": 7620,
+      "alloc_pcs": 7620,
       "alloc_rate": 100.0,
-      "picked_pcs": 7247,
-      "sow_pcs": 7247,
+      "picked_pcs": 7257,
+      "sow_pcs": 7257,
       "sow_rate": 95.2,
       "ship_pcs": 0,
       "ship_rate": 0.0,
-      "sku_plan": 231,
-      "sku_alloc": 231,
-      "sku_sow": 226,
+      "sku_plan": 232,
+      "sku_alloc": 232,
+      "sku_sow": 227,
       "sku_ship": 0,
-      "total_orders": 3
+      "total_orders": 4
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 0,
+      "not_started": 91,
       "in_progress": 0,
       "done": 0,
-      "total": 0,
+      "total": 91,
       "status": "ok"
     }
   },
   "plan": {
-    "total_orders": 3,
-    "total_pcs": 7610,
-    "alloc_pcs": 7610,
+    "total_orders": 4,
+    "total_pcs": 7620,
+    "alloc_pcs": 7620,
     "alloc_rate": 100.0,
-    "picked_pcs": 7247,
-    "sow_pcs": 7247,
+    "picked_pcs": 7257,
+    "sow_pcs": 7257,
     "sow_rate": 95.2,
     "ship_pcs": 0,
     "ship_rate": 0.0,
-    "sku_plan": 231,
-    "sku_alloc": 231,
-    "sku_sow": 226,
+    "sku_plan": 232,
+    "sku_alloc": 232,
+    "sku_sow": 227,
     "store_count": 1,
     "by_store": {
-      "快乐猴-大朗市场店-049": 7610.0
+      "快乐猴-大朗市场店-049": 7620.0
     },
     "unalloc_details": [],
     "status": "ok"
@@ -502,7 +525,7 @@
     "by_pos_total": {},
     "by_pos_scheduled": {},
     "predicted_efficiency": 0.0,
-    "efficiency_formula": "7247 PCS(播种) / 0 人",
+    "efficiency_formula": "7257 PCS(播种) / 0 人",
     "outbound_efficiency": 0.0,
     "outbound_efficiency_formula": "7257 PCS / 0 人(拣播员)",
     "inbound_efficiency_workers": 0,

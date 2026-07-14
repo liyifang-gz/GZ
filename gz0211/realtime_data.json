@@ -1,19 +1,19 @@
 {
-  "timestamp": "2026-07-14T09:26:53",
+  "timestamp": "2026-07-14T10:06:06",
   "date": "2026-07-14",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 11,
-      "signed": 3,
-      "waiting": 7
+      "signed": 4,
+      "waiting": 6
     },
     "ontime": {
-      "ontime": 0,
+      "ontime": 1,
       "early": 3,
       "late": 0,
       "total": 10,
-      "rate": 0.0,
+      "rate": 10.0,
       "early_rate": 30.0,
       "late_rate": 0.0
     },
@@ -24,28 +24,28 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 2,
-      "done": 1,
-      "rate": 50.0,
-      "pcs_done": 50,
-      "sign_pcs_done": 1706
+      "total": 3,
+      "done": 2,
+      "rate": 66.7,
+      "pcs_done": 1706,
+      "sign_pcs_done": 7330
     },
     "qc": {
-      "total": 4,
+      "total": 3,
       "done": 0,
-      "pending": 4,
+      "pending": 3,
       "passed": 0,
       "rejected": 0,
       "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 4,
+      "bill_total": 3,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 1706,
+      "pcs_total": 5624,
       "pcs_rejected": 0,
       "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 4,
+      "sku_total": 3,
       "sku_rate": 0.0
     },
     "putaway": {
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 10,
-        "done": 3,
-        "rate": 30.0
+        "done": 4,
+        "rate": 40.0
       },
       "pcs": {
         "total": 14623,
@@ -72,27 +72,27 @@
       },
       "sku": {
         "total": 34,
-        "done": 7,
-        "rate": 20.6
+        "done": 10,
+        "rate": 29.4
       },
       "supplier": {
         "total": 7,
-        "done": 2,
-        "rate": 28.6,
+        "done": 3,
+        "rate": 42.9,
         "detail": {
-          "留恋食品（山东）有限公司-快乐猴": {
-            "plan": 2,
-            "done": 2
-          },
           "山东华鸭食品科技有限公司-山东华鸭食品科技有限公司": {
             "plan": 1,
             "done": 1
           },
-          "广州有林贸易有限公司-快乐猴": {
-            "plan": 1,
-            "done": 0
-          },
           "安徽橡果糯香食品有限公司-快乐猴": {
+            "plan": 1,
+            "done": 1
+          },
+          "留恋食品（山东）有限公司-快乐猴": {
+            "plan": 2,
+            "done": 2
+          },
+          "广州有林贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 0
           },
@@ -123,20 +123,12 @@
           "seq": 1
         },
         {
-          "supplierName": "安徽橡果糯香食品有限公司-快乐猴",
-          "billCode": "YY20260713002223",
-          "skuCount": 3,
-          "pcs": 5624,
-          "timeSlot": "09:00 - 10:30",
-          "seq": 2
-        },
-        {
           "supplierName": "北京雪特商贸有限公司-快乐猴",
           "billCode": "YY20260712000597",
           "skuCount": 2,
           "pcs": 992,
           "timeSlot": "15:30 - 16:00",
-          "seq": 3
+          "seq": 2
         },
         {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
@@ -144,7 +136,7 @@
           "skuCount": 1,
           "pcs": 1975,
           "timeSlot": "16:00 - 16:30",
-          "seq": 4
+          "seq": 3
         },
         {
           "supplierName": "上海大江通泰食品有限公司-快乐猴",
@@ -152,61 +144,67 @@
           "skuCount": 6,
           "pcs": 249,
           "timeSlot": "16:00 - 16:30",
-          "seq": 5
+          "seq": 4
         }
       ],
       "unloading": [
         {
-          "supplierName": "留恋食品（山东）有限公司-快乐猴",
-          "billCode": "YY20260713002238",
-          "signTime": "09:03",
-          "unloadStartTime": "09:12",
-          "status": "卸货中"
-        },
-        {
-          "supplierName": "留恋食品（山东）有限公司-快乐猴",
-          "billCode": "YY20260713002238",
-          "signTime": "09:03",
-          "unloadStartTime": "09:12",
-          "status": "卸货中"
+          "supplierName": "安徽橡果糯香食品有限公司-快乐猴",
+          "billCode": "YY20260713002223",
+          "signTime": "09:33",
+          "status": "已签到未卸货"
         }
       ],
       "qc_pending": [
         {
           "seq": 1,
-          "supplierName": "山东华鸭食品科技有限公司-山东华鸭食品科技有限公司",
-          "skuName": "快乐猴 脆皮香酥鸭 9.6Kg",
-          "arrivalTime": "16:00",
-          "unloadFinishTime": "09:10",
+          "supplierName": "安徽橡果糯香食品有限公司-快乐猴",
+          "skuName": "快乐猴 鲜汁大肉包 800g(10只)",
+          "arrivalTime": "09:00",
+          "unloadFinishTime": "--",
           "statusLabel": "待质检"
         },
         {
           "seq": 2,
-          "supplierName": "留恋食品（山东）有限公司-快乐猴",
-          "skuName": "(原料)快乐猴 榴芒班戟蛋糕 140g",
-          "arrivalTime": "15:00",
+          "supplierName": "安徽橡果糯香食品有限公司-快乐猴",
+          "skuName": "快乐猴 翡翠香菇大菜包 640g(8只)",
+          "arrivalTime": "09:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         },
         {
           "seq": 3,
-          "supplierName": "留恋食品（山东）有限公司-快乐猴",
-          "skuName": "榴莲千层蛋糕 3.6kg",
-          "arrivalTime": "15:00",
-          "unloadFinishTime": "--",
-          "statusLabel": "待质检"
-        },
-        {
-          "seq": 4,
-          "supplierName": "留恋食品（山东）有限公司-快乐猴",
-          "skuName": "(原料)快乐猴 榴莲千层蛋糕 400g",
-          "arrivalTime": "15:00",
+          "supplierName": "安徽橡果糯香食品有限公司-快乐猴",
+          "skuName": "快乐猴 蒲公英菜团子 600g",
+          "arrivalTime": "09:00",
           "unloadFinishTime": "--",
           "statusLabel": "待质检"
         }
       ],
       "recv_pending": [],
       "signed_not_recv": [
+        {
+          "supplierName": "安徽橡果糯香食品有限公司-快乐猴",
+          "poNo": "CG202607077921",
+          "reserveBillCode": "YY20260713002223",
+          "skuId": "1196842",
+          "skuName": "快乐猴 鲜汁大肉包 800g(10只)",
+          "purchaseQty": 4500,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        },
+        {
+          "supplierName": "安徽橡果糯香食品有限公司-快乐猴",
+          "poNo": "CG202607077921",
+          "reserveBillCode": "YY20260713002223",
+          "skuId": "1331400",
+          "skuName": "快乐猴 翡翠香菇大菜包 640g(8只)",
+          "purchaseQty": 996,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 2
+        },
         {
           "supplierName": "留恋食品（山东）有限公司-快乐猴",
           "poNo": "CG202607131631",
@@ -216,18 +214,18 @@
           "purchaseQty": 672,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 1
+          "seq": 3
         },
         {
-          "supplierName": "山东华鸭食品科技有限公司-山东华鸭食品科技有限公司",
-          "poNo": "CG2026062916305",
-          "reserveBillCode": "YY20260711000487",
-          "skuId": "1254294",
-          "skuName": "快乐猴 脆皮香酥鸭 9.6Kg",
-          "purchaseQty": 50,
+          "supplierName": "安徽橡果糯香食品有限公司-快乐猴",
+          "poNo": "CG202607077921",
+          "reserveBillCode": "YY20260713002223",
+          "skuId": "1476519",
+          "skuName": "快乐猴 蒲公英菜团子 600g",
+          "purchaseQty": 500,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 2
+          "seq": 4
         },
         {
           "supplierName": "留恋食品（山东）有限公司-快乐猴",
@@ -238,7 +236,7 @@
           "purchaseQty": 24,
           "recvQty": 0,
           "hasQc": false,
-          "seq": 3
+          "seq": 5
         }
       ],
       "qc_recv_pending": [],
@@ -394,10 +392,10 @@
     },
     "unalloc_details": [],
     "seeding": {
-      "not_started": 7,
+      "not_started": 35,
       "in_progress": 0,
       "done": 0,
-      "total": 7,
+      "total": 35,
       "status": "ok"
     }
   },

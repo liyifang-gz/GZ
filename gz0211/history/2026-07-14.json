@@ -1,20 +1,20 @@
 {
-  "timestamp": "2026-07-14T06:38:51",
+  "timestamp": "2026-07-14T08:55:28",
   "date": "2026-07-14",
   "warehouse": "GZ0211",
   "inbound": {
     "reserve": {
       "total": 11,
-      "signed": 0,
-      "waiting": 10
+      "signed": 1,
+      "waiting": 9
     },
     "ontime": {
       "ontime": 0,
-      "early": 0,
+      "early": 1,
       "late": 0,
       "total": 10,
       "rate": 0.0,
-      "early_rate": 0.0,
+      "early_rate": 10.0,
       "late_rate": 0.0
     },
     "reserve_progress": {
@@ -24,29 +24,29 @@
       "po_data_ok": true
     },
     "unload": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "rate": 0,
+      "rate": 0.0,
       "pcs_done": 0,
-      "sign_pcs_done": 0
+      "sign_pcs_done": 50
     },
     "qc": {
-      "total": 0,
+      "total": 1,
       "done": 0,
-      "pending": 0,
+      "pending": 1,
       "passed": 0,
       "rejected": 0,
-      "rate": 0,
+      "rate": 0.0,
       "bill_done": 0,
-      "bill_total": 0,
+      "bill_total": 1,
       "pcs_done": 0,
       "pcs_passed": 0,
-      "pcs_total": 0,
+      "pcs_total": 50,
       "pcs_rejected": 0,
-      "pcs_rate": 0,
+      "pcs_rate": 0.0,
       "sku_done": 0,
-      "sku_total": 0,
-      "sku_rate": 0
+      "sku_total": 1,
+      "sku_rate": 0.0
     },
     "putaway": {
       "total": 6392,
@@ -60,8 +60,8 @@
     "dimensions": {
       "reserve": {
         "total": 10,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 10.0
       },
       "pcs": {
         "total": 14623,
@@ -72,14 +72,18 @@
       },
       "sku": {
         "total": 34,
-        "done": 0,
-        "rate": 0.0
+        "done": 1,
+        "rate": 2.9
       },
       "supplier": {
         "total": 7,
-        "done": 0,
-        "rate": 0.0,
+        "done": 1,
+        "rate": 14.3,
         "detail": {
+          "山东华鸭食品科技有限公司-山东华鸭食品科技有限公司": {
+            "plan": 1,
+            "done": 1
+          },
           "广州有林贸易有限公司-快乐猴": {
             "plan": 1,
             "done": 0
@@ -94,10 +98,6 @@
           },
           "北京雪特商贸有限公司-快乐猴": {
             "plan": 2,
-            "done": 0
-          },
-          "山东华鸭食品科技有限公司-山东华鸭食品科技有限公司": {
-            "plan": 1,
             "done": 0
           },
           "郯城瑞发德食品加工有限公司-快乐猴-自营": {
@@ -147,20 +147,12 @@
           "seq": 4
         },
         {
-          "supplierName": "山东华鸭食品科技有限公司-山东华鸭食品科技有限公司",
-          "billCode": "YY20260711000487",
-          "skuCount": 1,
-          "pcs": 50,
-          "timeSlot": "16:00 - 16:30",
-          "seq": 5
-        },
-        {
           "supplierName": "郯城瑞发德食品加工有限公司-快乐猴-自营",
           "billCode": "YY20260710000577",
           "skuCount": 1,
           "pcs": 1975,
           "timeSlot": "16:00 - 16:30",
-          "seq": 6
+          "seq": 5
         },
         {
           "supplierName": "上海大江通泰食品有限公司-快乐猴",
@@ -168,13 +160,41 @@
           "skuCount": 6,
           "pcs": 249,
           "timeSlot": "16:00 - 16:30",
-          "seq": 7
+          "seq": 6
         }
       ],
-      "unloading": [],
-      "qc_pending": [],
+      "unloading": [
+        {
+          "supplierName": "山东华鸭食品科技有限公司-山东华鸭食品科技有限公司",
+          "billCode": "YY20260711000487",
+          "signTime": "08:54",
+          "status": "已签到未卸货"
+        }
+      ],
+      "qc_pending": [
+        {
+          "seq": 1,
+          "supplierName": "山东华鸭食品科技有限公司-山东华鸭食品科技有限公司",
+          "skuName": "快乐猴 脆皮香酥鸭 9.6Kg",
+          "arrivalTime": "16:00",
+          "unloadFinishTime": "--",
+          "statusLabel": "待质检"
+        }
+      ],
       "recv_pending": [],
-      "signed_not_recv": [],
+      "signed_not_recv": [
+        {
+          "supplierName": "山东华鸭食品科技有限公司-山东华鸭食品科技有限公司",
+          "poNo": "CG2026062916305",
+          "reserveBillCode": "YY20260711000487",
+          "skuId": "1254294",
+          "skuName": "快乐猴 脆皮香酥鸭 9.6Kg",
+          "purchaseQty": 50,
+          "recvQty": 0,
+          "hasQc": false,
+          "seq": 1
+        }
+      ],
       "qc_recv_pending": [],
       "recv_diff": [],
       "qc_rejected": [],
@@ -207,8 +227,8 @@
       "done": 52,
       "rate": 69.3,
       "pcs_done": 981,
-      "pcs_total": 0,
-      "pcs_rate": 0.0
+      "pcs_total": 1677,
+      "pcs_rate": 58.5
     },
     "packing": {
       "total": 3,
@@ -297,8 +317,8 @@
         "not_caged": 696,
         "pick_rate": 0.0,
         "sow_rate": 0.0,
-        "cage_rate": 0.0,
-        "sowed_picked": 0
+        "cage_rate": 58.5,
+        "sowed_picked": 1677
       },
       "sku": {
         "total": 75,
@@ -312,19 +332,19 @@
     },
     "status": "ok",
     "pool": {
-      "plan_pcs": 0,
-      "alloc_pcs": 0,
-      "alloc_rate": 0,
-      "picked_pcs": 0,
-      "sow_pcs": 0,
-      "sow_rate": 0,
+      "plan_pcs": 1677,
+      "alloc_pcs": 1677,
+      "alloc_rate": 100.0,
+      "picked_pcs": 1677,
+      "sow_pcs": 1677,
+      "sow_rate": 100.0,
       "ship_pcs": 0,
-      "ship_rate": 0,
-      "sku_plan": 0,
-      "sku_alloc": 0,
-      "sku_sow": 0,
+      "ship_rate": 0.0,
+      "sku_plan": 74,
+      "sku_alloc": 74,
+      "sku_sow": 74,
       "sku_ship": 0,
-      "total_orders": 0
+      "total_orders": 1
     },
     "unalloc_details": [],
     "seeding": {
@@ -336,20 +356,22 @@
     }
   },
   "plan": {
-    "total_orders": 0,
-    "total_pcs": 0,
-    "alloc_pcs": 0,
-    "alloc_rate": 0,
-    "picked_pcs": 0,
-    "sow_pcs": 0,
-    "sow_rate": 0,
+    "total_orders": 1,
+    "total_pcs": 1677,
+    "alloc_pcs": 1677,
+    "alloc_rate": 100.0,
+    "picked_pcs": 1677,
+    "sow_pcs": 1677,
+    "sow_rate": 100.0,
     "ship_pcs": 0,
-    "ship_rate": 0,
-    "sku_plan": 0,
-    "sku_alloc": 0,
-    "sku_sow": 0,
-    "store_count": 0,
-    "by_store": {},
+    "ship_rate": 0.0,
+    "sku_plan": 74,
+    "sku_alloc": 74,
+    "sku_sow": 74,
+    "store_count": 1,
+    "by_store": {
+      "快乐猴-龙岗三联商业广场店-047": 1677.0
+    },
     "unalloc_details": [],
     "status": "ok"
   },
@@ -413,7 +435,7 @@
     "by_pos_total": {},
     "by_pos_scheduled": {},
     "predicted_efficiency": 0.0,
-    "efficiency_formula": "0 PCS(播种) / 0 人",
+    "efficiency_formula": "1677 PCS(播种) / 0 人",
     "outbound_efficiency": 0.0,
     "outbound_efficiency_formula": "1677 PCS / 0 人(拣播员)",
     "inbound_efficiency_workers": 0,
